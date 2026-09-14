@@ -1,0 +1,100 @@
+import type { ProcedureDoc } from './types'
+
+/* ============================================================
+   PROCEDURES (§48) — compact but structured operative pages
+   ============================================================ */
+
+const P = 'published' as const
+function pr(p: Partial<ProcedureDoc> & Pick<ProcedureDoc, 'id' | 'title' | 'setting' | 'indications' | 'consentPoints' | 'preparation' | 'equipment' | 'anaesthesia' | 'steps' | 'complications' | 'postopCare' | 'followUp' | 'sourceIds'>): ProcedureDoc {
+  return { tags: [], status: P, lastVerifiedAt: '2026-08-23', ...p } as ProcedureDoc
+}
+
+export const PROCEDURES: ProcedureDoc[] = [
+  pr({
+    id: 'proc-pap-colposcopy', title: 'Pap Smear & Colposcopy', setting: 'office/outpatient', tags: ['screening'],
+    indications: ['Cervical screening per programme', 'Abnormal cytology/HPV-positive triage', 'Post-treatment surveillance'],
+    consentPoints: ['Purpose/limitations', 'Discomfort/spotting expected', 'Follow-up pathway explained'],
+    preparation: ['Avoid menses; no intercourse/vaginals 48 h', 'Pregnancy noted (colposcopy safe; treatment deferred)'],
+    equipment: ['Speculum, cytobrush/spatula or HPV swab, fixative/media', 'Colposcope + acetic acid 3-5% + Lugol iodine'],
+    anaesthesia: ['None usually; biopsy 1-2 min sting'],
+    steps: ['Visualise SCJ fully (document type)', 'Acetowhiting assessment + vascular patterns', 'Directed biopsies of worst lesion', 'ECC where transformation zone not seen/glandular concern'],
+    complications: [{ name: 'Bleeding post-biopsy', management: [{ kind: 'text', text: 'Pressure/silver nitrate; rare packing' }] }, { name: 'Vasovagal', management: [{ kind: 'text', text: 'Position/reassure; recover before discharge' }] }],
+    postopCare: ['Spotting advice; avoid tampons 72 h post-biopsy'],
+    followUp: ['Results appointment with defined next-step rules'],
+    sourceIds: ['cdc-sti-2021'],
+  }),
+  pr({
+    id: 'proc-iud-insertion', title: 'IUCD Insertion (Cu-IUD / LNG-IUS)', setting: 'office/outpatient',
+    indications: ['Contraception choice', 'Emergency contraception <=5 d', 'Heavy menstrual bleeding (LNG-IUS)'],
+    absoluteContraindications: ['Pregnancy', 'Active pelvic infection', 'Unexplained bleeding pending evaluation', 'Known GTD (LNG-IUS context)', 'Distorted cavity precluding placement'],
+    consentPoints: ['Perforation/expulsion/malposition risks', 'Insertion pain options', 'String checks + when to call'],
+    preparation: ['Pregnancy excluded; STI risk assessment (screen/treat policy)', 'Analgesia NSAID 1 h prior; tenaculum-free techniques reduce vasovagal'],
+    equipment: ['Sterile IUD kit, sound, tenaculum optional, antiseptic, uterine manipulator not needed'],
+    anaesthesia: ['None/local gel; paracervical block selected cases'],
+    steps: ['Aseptic speculum + cervical antisepsis', 'Sound cavity (gentle) unless immediate-postpartum technique', 'Load device per type-specific instructions', 'Insert to fundus; release; cut strings 3-4 cm', 'Confirm placement/pain check'],
+    intraOpTroubleshooting: ['Vasovagal: legs up/atropine readiness', 'Cannot pass cervix: misoprostol priming another day vs tenaculum+block by experienced inserter'],
+    complications: [{ name: 'Expulsion (~5%)', management: [{ kind: 'text', text: 'Check strings; reinsert if expelled early' }] }, { name: 'PID risk window first 20 days', management: [{ kind: 'text', text: 'Treat PID without removal usually; remove only severe/no-response' }] }, { name: 'Perforation (<0.2%)', management: [{ kind: 'text', text: 'US/laparoscopy retrieval decision; observe stable anterior-wall cases per protocol' }] }],
+    postopCare: ['Return precautions card; string self-check education'],
+    followUp: ['6-week check or symptom-driven'],
+    sourceIds: ['cdc-sti-2021'],
+  }),
+  pr({
+    id: 'proc-mva', title: 'Manual Vacuum Aspiration (miscarriage/abortion <=12 wks)', setting: 'operating theatre - gynaecology',
+    indications: ['Incomplete/missed miscarriage', 'Induced abortion <=10-12 wks (provider norms per MTP Rules)', 'Retained products with sepsis (post-antibiotic start)'],
+    absoluteContraindications: ['Suspected ectopic (treat as such)', 'Haemodynamic instability uncorrected', 'Molar pregnancy needs suction-evacuation setup (specialist)'],
+    consentPoints: ['Success rates/failure -> repeat', 'Uterine perforation/infection/bleeding risks', 'Anti-D for Rh-negative', 'Contraception same-day offer'],
+    preparation: ['CBC/group&save; sepsis screen if febrile', 'Analgesia plan (paracervical block ± sedation)'],
+    equipment: ['MVA syringe 60 mL + cannulae 4-12 mm', 'Tenaculum, sound, antiseptic, speculum', 'Histology container (molar suspicion always)'],
+    anaesthesia: ['Paracervical block 1% lignocaine ± light sedation'],
+    steps: ['Aseptic prep; tenaculum traction reduces pain/perforation', 'Sound to depth; choose cannula = weeks of gestation (mm)', 'Create vacuum ~60 mL; evacuate with rotating strokes', 'Inspect aspirate: products complete? vesicles?', 'Confirm uterus contracted; minimal bleed at end'],
+    intraOpTroubleshooting: ['No tissue obtained: reconsider ectopic/retroversion error', 'Excessive bleeding: uterotonics; complete evacuation faster is haemostatic'],
+    complications: [{ name: 'Uterine perforation', management: [{ kind: 'text', text: 'Stop; observe stable small anterior perforations; laparoscopy/laparotomy for suspected visceral injury/unstable' }] }, { name: 'Retained products', management: [{ kind: 'text', text: 'Repeat aspiration; antibiotics if infected' }] }, { name: 'Infection/endometritis', management: [{ kind: 'text', text: 'Broad-spectrum course; sepsis pathway if systemic' }] }],
+    postopCare: ['Anti-D <72 h Rh-negative', 'Analgesia + red-flag leaflet', 'hCG follow-up plan'],
+    followUp: ['1-2 wk review or urine test at 3 wks', 'Contraception started same day counselling'],
+    sourceIds: ['india-mtp-act-rules-2021', 'cdc-sti-2021'],
+  }),
+  pr({
+    id: 'proc-balloon-tamponade', title: 'Intrauterine Balloon Tamponade (PPH)', setting: 'operating theatre - obstetric',
+    indications: ['Atonic PPH refractory to uterotonics', 'Post-trauma bleeding after repair', 'Bridge during transfer'],
+    absoluteContraindications: ['Ongoing surgical bleeding source (vessels/tears)', 'Infection unmanaged', 'Uterine malformation blocking placement'],
+    consentPoints: ['Emergency consent documented', 'Failure -> surgery ladder explained'],
+    preparation: ['Bladder empty; uterotonic maximised; blood running'],
+    equipment: ['Bakri/Rusch/Foley(+condom) kit, warm saline, infusion set, tape traction, catheter bag', 'Theatre conditions preferred'],
+    anaesthesia: ['Existing epidural/GA ideal; can be done under analgesia in emergencies'],
+    steps: ['Insert balloon above internal os US-guided when feasible', 'Fill warm saline INCREMENTALLY until bleeding stops (150-500 mL typical)', 'Document fill volume; apply modest traction tape', 'Vaginal pack adjunct where device lacks stem', 'Keep catheter draining bladder continuously'],
+    intraOpTroubleshooting: ['Refills beyond ~500 mL without control = failure sign -> laparotomy promptly', 'Recurrent filling: reassess for missed trauma/coagulopathy BEFORE more volume'],
+    complications: [{ name: 'Device displacement', management: [{ kind: 'text', text: 'Traction+tape; reposition theatre if recurrent' }] }, { name: 'Infection (leave <=24 h)', management: [{ kind: 'text', text: 'Single-dose antibiotic cover; timed removal with uterotonic standby' }] }],
+    postopCare: ['Hourly bleeding observation x6', 'Remove 6-24 h with team ready for re-bleed'],
+    followUp: ['PPH recovery bundle; documentation audit'],
+    sourceIds: ['who-pph-consolidated-2025'],
+  }),
+  pr({
+    id: 'proc-hysteroscopy-diagnostic', title: 'Diagnostic Hysteroscopy (+ targeted biopsy/polypectomy)', setting: 'operating theatre - gynaecology',
+    indications: ['AUB evaluation', 'Polyps/submucous lesions', 'Retrieved-missed IUD', 'Adhesions assessment'],
+    relativeContraindications: ['Active pelvic infection', 'Pregnancy', 'Cervical cancer suspicion (staging implications)'],
+    consentPoints: ['Perforation/trail-off failures', 'Fluid-absorption risks (distension media)', 'Day-case expectations'],
+    preparation: ['Pregnancy exclusion', 'Timing proliferative phase or GnRH-primed for better views'],
+    equipment: ['Hysteroscope +/- operating sheath, distension media pump, graspers/scissors/bipolar', 'Video tower'],
+    anaesthesia: ['Outpatient no-anaesthetic/minimal vs GA per case'],
+    steps: ['Vaginoscopic entry (no tenaculum) where possible', 'Systemic survey: tubal ostia->fundus->anterior/posterior/cervix', 'Targeted biopsies/polyp morcellation', 'Document mapping + images'],
+    intraOpTroubleshooting: ['Poor distension: clamp leaks/check inflow pressure limits', 'Media deficit >1000-1500 mL hypotonic: stop + electrolytes watch (OHIA risk)'],
+    complications: [{ name: 'Uterine perforation', management: [{ kind: 'text', text: 'Usually managed conservatively if blunt/small; energy injuries need laparoscopy urgently' }] }, { name: 'Fluid overload hyponatraemia', management: [{ kind: 'text', text: 'Stop media; diuretics/electrolytes per protocol' }] }],
+    postopCare: ['Discharge same day uncomplicated; results discussion'],
+    followUp: ['Histology review clinic'],
+    sourceIds: ['cdc-sti-2021'],
+  }),
+  pr({
+    id: 'proc-caesarean-core', title: 'Caesarean Section Core Operative Page', setting: 'operating theatre - obstetric',
+    indications: ['See lscs module urgency framework'],
+    consentPoints: ['Specific injury/transfusion/hysterectomy/future-placenta risks', 'Skin-to-skin plans where feasible'],
+    preparation: ['Antibiotic timing chart; neonatal team; VTE stockings; warming blanket'],
+    equipment: ['Standard CS tray; head-elevation vacuum for impacted head; cell-salvage availability'],
+    anaesthesia: ['Regional default; GA criteria list'],
+    steps: ['Joel-Cohen/transverse skin incision', 'Blunt abdominal entry; bladder flap as needed', 'Lower-segment transverse hysterotomy (avoid placenta!)', 'Deliver head/body; cord gases', 'Oxytocin bolus+infusion; controlled placental delivery', 'Single-layer uterine closure; check ovaries/tubes opportunistically', 'Counts -> layered closure; subcuticular skin'],
+    intraOpTroubleshooting: ['Impacted head: elevation device/push-from-below', 'Praevia encountered: pas-spectrum rules', 'Angle tears: visualise ureters; extend deliberately'],
+    complications: [{ name: 'PPH', management: [{ kind: 'text', text: 'Uterotonics -> balloon/compression sutures ladder' }] }, { name: 'Bladder injury', management: [{ kind: 'text', text: 'Two-layer urology repair + catheter 7-14 days' }] }, { name: 'Endometritis', management: [{ kind: 'text', text: 'Triple antibiotics; wound review' }] }],
+    postopCare: ['ERAS bundle: early fluids/feeding/mobilisation', 'Multimodal analgesia incl. TAP blocks'],
+    followUp: ['Wound review; next-pregnancy birth-mode counselling'],
+    sourceIds: ['nice-ng235-intrapartum-2026'],
+  }),
+]

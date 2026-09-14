@@ -1,0 +1,115 @@
+import type { DiseaseTopic } from '../types'
+
+/* Delivery emergencies. Sources: NICE NG235 (2026 update). Verified 2026-08-23. */
+
+export const DELIVERY_EMERGENCY_TOPICS: DiseaseTopic[] = [
+  {
+    id: 'shoulder-dystocia',
+    title: 'Shoulder Dystocia',
+    category: 'obstetric-emergency',
+    tags: ['shoulder-dystocia', 'mcroberts', 'turtle-sign', 'helperr'],
+    status: 'clinically-verified',
+    version: 1,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'international-first',
+    summary: 'Head delivers; anterior shoulder impacts behind symphysis (turtle sign). CALL HELP then McRoberts + suprapubic pressure resolves most; then internal manoeuvres. Record times. Expect PPH and neonatal review.',
+    definition: 'Impacted anterior shoulder requiring additional manoeuvres after gentle axial traction fails.',
+    riskFactors: ['Diabetes + macrosomia', 'Previous dystocia', 'Instrumental birth', 'Prolonged second stage', 'Obesity', 'Induction/postdates', 'Many occur with NO risk factors - drill regularly'],
+    redFlags: ['Turtle sign / head retraction', 'Resolution clock: aim <5 min'],
+    initialAssessment: [{ kind: 'steps', steps: [
+      'CALL FOR HELP: senior obstetrician, neonatal team, anaesthetist - declare "SHOULDER DYSTOCIA", note time aloud',
+      'STOP pushing; stop oxytocin; NEVER fundal pressure',
+      'McRoberts hyperflexion + suprapubic pressure (continuous or rocking)',
+      'Unresolved ~30 s -> internal manoeuvres',
+    ] }],
+    investigations: [{ test: 'None - clinical emergency', lookingFor: '-' }],
+    treatment: {
+      immediateStabilization: [{ kind: 'info', title: 'HELPERR memory aid', text: 'Help · Evaluate episiotomy · Legs McRoberts · Pressure suprapubic · Enter rotational · Remove posterior arm · Roll all-fours' }],
+      firstLine: [
+        { kind: 'steps', steps: [
+          '1. McRoberts + suprapubic pressure (majority resolve)',
+          '2. Episiotomy considered for internal access if needed',
+          '3. Rubin II (push anterior shoulder forward from behind) / Woods screw (posterior shoulder pushed anteriorly)',
+          '4. POSTERIOR ARM DELIVERY: hand to sacral hollow, flex posterior elbow, sweep arm across chest',
+          '5. All-fours (Gaskin) repositioning, repeat attempts',
+          '6. RESCUE: cleidotomy, Zavanelli replacement + caesarean, symphysiotomy',
+        ] },
+      ],
+      definitiveTreatment: [{ kind: 'text', text: 'Birth by whichever step succeeds -> cord gases, neonatal resuscitation readiness, active third stage immediately.' }],
+      monitoring: [
+        { kind: 'table', headers: ['After birth', 'Action'], rows: [
+          ['Neonate', 'Brachial plexus exam, clavicle check, asphyxia surveillance, cord gases'],
+          ['Mother', 'PPH watch, genital tract exam incl. rectal assessment for occult OASIS'],
+          ['Documentation', 'Times, personnel, sequence, traction described as gentle/axial only'],
+          ['Debrief', 'Parents informed; incident form; recurrence counselling'],
+        ] },
+      ],
+      escalation: [{ kind: 'list', items: ['NICU transfer for HIE risk', 'Theatre exploration for extensive tears'] }],
+      complications: [
+        { name: 'Brachial plexus injury', management: [{ kind: 'text', text: 'Early physiotherapy; orthopaedic referral if no biceps recovery by 3 months' }] },
+        { name: 'PPH', management: [{ kind: 'text', text: 'Standard pathway' }] },
+        { name: 'Occult anal sphincter injury', management: [{ kind: 'text', text: 'Rectal exam after EVERY dystocia; theatre repair' }] },
+        { name: 'Neonatal HIE', management: [{ kind: 'text', text: 'Cooling eligibility within 6 h' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['Physiotherapy as indicated', 'Recurrence (~10-15%) counselling documented'] }],
+    },
+    algorithm: [
+      { id: 'sd1', label: 'TURTLE SIGN · time noted', type: 'start', tone: 'danger' },
+      { id: 'sd2', label: 'CALL HELP · stop pushing/oxytocin', type: 'action', tone: 'danger', next: [{ to: 'sd3' }] },
+      { id: 'sd3', label: 'McROBERTS + suprapubic pressure', type: 'action', next: [{ to: 'sd4' }] },
+      { id: 'sd4', label: 'Delivered?', type: 'decision', next: [{ to: 'done', edgeLabel: 'YES' }, { to: 'sd5', edgeLabel: '~30s NO' }] },
+      { id: 'sd5', label: 'Rubin/Woods rotation +/- episiotomy', type: 'action', tone: 'warn', next: [{ to: 'sd4' }] },
+      { id: 'sd6', label: 'Posterior arm delivery', type: 'action', tone: 'warn', next: [{ to: 'sd7' }] },
+      { id: 'sd7', label: 'All-fours repeat', type: 'action', tone: 'warn', next: [{ to: 'sd8' }] },
+      { id: 'sd8', label: 'RESCUE: cleidotomy / Zavanelli+CS / symphysiotomy', type: 'end', tone: 'danger' },
+      { id: 'done', label: 'BIRTH -> gases · PPH bundle · documentation', type: 'end', tone: 'ok' },
+    ],
+    sourceIds: ['nice-ng235-intrapartum-2026'],
+    emergencyRef: 'emg-shoulder-dystocia',
+  },
+
+  {
+    id: 'cord-prolapse',
+    title: 'Cord Prolapse',
+    category: 'obstetric-emergency',
+    tags: ['cord-prolapse', 'bradycardia', 'emergency-caesarean'],
+    status: 'published',
+    version: 1,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'international-first',
+    summary: 'Cord beside/below presenting part after ROM -> relieve compression NOW, birth FAST. Knee-chest/Sims tilt, bladder fill, manual elevation, category-1 caesarean unless vaginal birth imminent.',
+    definition: 'Umbilical cord descending below/beside presenting part after membrane rupture; hypoxia from compression.',
+    riskFactors: ['Malpresentation/transverse/breech', 'High head at ARM', 'Polyhydramnios', 'Second twin', 'Prematurity', 'Long cord', 'Unstable lie at ROM'],
+    redFlags: ['Sudden prolonged bradycardia after ROM = prolapse until excluded', 'Visible/palpable pulsating cord'],
+    initialAssessment: [{ kind: 'steps', steps: [
+      'CALL HELP + declare; note time',
+      'RELIEVE COMPRESSION NOW: gloved hand elevating presenting part off cord (keep there), knee-chest or exaggerated Sims head-down',
+      'Fill bladder 500 mL saline via catheter (tamponade)',
+      'Assess: vaginal birth faster than theatre?',
+      'Consider tocolysis (terbutaline 250 mcg SC) while preparing',
+      'Keep cord warm/wet; never push back',
+    ] }],
+    investigations: [{ test: 'None', lookingFor: '-' }],
+    treatment: {
+      immediateStabilization: [{ kind: 'warning', title: 'Golden minutes', text: 'Compression relief begins BEFORE any transfer.' }],
+      firstLine: [
+        { kind: 'list', items: [
+          'CATEGORY-1 CAESAREAN unless fully dilated + easy instrumental birth imminent OR second-twin vaginal scenario',
+          'Transport WITH relieving hand in situ; theatre prepped en route',
+          'GA commonly chosen for speed unless working regional exists',
+        ] },
+      ],
+      definitiveTreatment: [{ kind: 'text', text: 'Birth; neonatal team receives (asphyxia anticipation).' }],
+      monitoring: [{ kind: 'list', items: ['FHR until feasible', 'Maternal vitals through rapid sequence', 'Cord gases + Apgar documented'] }],
+      treatmentFailure: [{ kind: 'list', items: ['Fetal death before birth -> maternal safety focus + bereavement care'] }],
+      escalation: [{ kind: 'list', items: ['Remote facility: compression relief + bladder fill + fastest transport + tocolysis window'] }],
+      complications: [
+        { name: 'Hypoxic-ischaemic injury', management: [{ kind: 'text', text: 'Cooling eligibility assessment' }] },
+        { name: 'Maternal trauma from haste', management: [{ kind: 'text', text: 'Standard CS vigilance despite urgency' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['Debrief parents+staff', 'Precise timeline documentation', 'Next-pregnancy predisposing-factor plan'] }],
+    },
+    sourceIds: ['nice-ng235-intrapartum-2026'],
+    emergencyRef: 'emg-cord-prolapse',
+  },
+]

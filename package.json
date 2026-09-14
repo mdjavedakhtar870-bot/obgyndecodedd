@@ -1,0 +1,29 @@
+{
+  "name": "obgyn-decoded",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "OBGYN Decoded - doctor-facing obstetrics & gynaecology clinical reference and decision-support application (India-first). Static Netlify-deployable PWA.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "tsx tests/content.test.ts",
+    "docs:matrix": "tsx scripts/gen-source-matrix.mts"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.6"
+  }
+}

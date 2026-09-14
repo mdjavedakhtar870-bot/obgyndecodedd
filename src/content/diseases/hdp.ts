@@ -1,0 +1,661 @@
+import type { Block, DiseaseTopic, DrugUse } from '../types'
+
+/** Map a full DrugUse record into a compact dose-card block */
+function doseCard(d: DrugUse): Extract<Block, { kind: 'doseCard' }> {
+  return {
+    kind: 'doseCard',
+    drug: d.drug,
+    dose: d.dose,
+    route: d.route,
+    frequency: d.frequency,
+    duration: d.duration,
+    prep: d.preparation ?? (d as unknown as { prep?: string }).prep,
+    maxDose: d.maxDose,
+    sourceId: d.sourceId,
+  }
+}
+type DoseCard = ReturnType<typeof doseCard>
+
+/* ============================================================
+   HYPERTENSIVE DISORDERS OF PREGNANCY
+   Primary source: FOGSI–GESTOSIS–ICOG HDP GCPR 3rd Ed (Jan 2026)
+   International reference: ISSHP 2021; ACOG CHAP advisory 2022;
+   ESC/ESH 2024. Verified 2026-08-23.
+   ============================================================ */
+
+const SRC = { fogsi: 'fogsi-hdp-gcpr-2026', isshp: 'isshp-2021', acogChap: 'acog-chap-advisory-2022', esc: 'esc-esh-2024-htn-pregnancy' }
+
+/* ---- Reusable drug regimens (source-traced) ---- */
+export const MGSO4_PRITCHARD: DrugUse = {
+  drug: 'Magnesium sulfate (Pritchard regimen)',
+  indication: 'Eclampsia (seizure control & recurrence prevention); severe pre-eclampsia with neurological features',
+  dose: 'Loading: 4 g IV slow (over 5–10 min, given as 20% solution) PLUS 10 g IM (5 g deep into each upper outer buttock using 20-inch/long needle, 50% solution). Maintenance: 5 g IM every 4 h in ALTERNATE buttock.',
+  route: 'IV + IM',
+  frequency: 'IM maintenance 4-hourly; continue 24 h after last seizure OR delivery (whichever is later)',
+  duration: 'Until 24 h after last seizure/delivery',
+  preparation: 'IV dose: dilute to 20% (e.g., 4 g = 16 mL of 25% + 4 mL water for injection → 20 mL, give over 5–10 min). IM doses: undiluted 50% (5 g = 10 mL) deep gluteal.',
+  maxDose: 'Withhold maintenance if any toxicity sign (see monitoring)',
+  renalHepatic: 'Reduce/monitor closely in renal impairment (oliguria, creatinine rise) — check reflexes & levels',
+  pregnancyLactation: 'Standard of care antepartum/intrapartum/postpartum; neonatal hypermagnesaemia possible — inform paediatrics',
+  adverseEffects: [`Flushing, nausea, muscle weakness, diplopia, respiratory depression, cardiac arrest (toxicity)`],
+  monitoring: ['Patellar (knee) reflex present before each IM dose', 'Respiratory rate ≥12/min before each dose', 'Urine output ≥25 mL/h (≥100 mL/4 h)', 'If any sign absent/abnormal → withhold dose, check serum Mg²⁺ where available (>4.8 mEq/L toxic range)', 'Antidote: Calcium gluconate 10% 10 mL IV over 3 min'],
+  contraindications: ['Myasthenia gravis', 'Heart block', 'Caution: concurrent calcium-channel blockade (additive neuromuscular depression)'],
+  sourceId: SRC.fogsi,
+}
+
+export const MGSO4_NEUROPROTECTION: DrugUse = {
+  drug: 'Magnesium sulfate (fetal neuroprotection)',
+  indication: 'Anticipated preterm birth <32 weeks (reduces cerebral palsy risk)',
+  dose: '4 g IV over 30 min, then 1 g/h maintenance until birth',
+  route: 'IV infusion',
+  frequency: 'Loading + continuous infusion until delivery',
+  duration: 'Stop at delivery',
+  preparation: 'Dilute in compatible fluid; run via infusion pump',
+  adverseEffects: [`Maternal flushing, hypotension, respiratory depression at toxic levels`],
+  monitoring: ['RR, reflexes, urine output as for eclampsia protocol'],
+  contraindications: ['Maternal myasthenia gravis', 'Ongoing eclampsia regimen already running (do not double-dose)'],
+  sourceId: SRC.isshp,
+}
+
+export const LABETALOL_IV: DrugUse = {
+  drug: 'Labetalol IV',
+  indication: 'Acute severe hypertension in pregnancy/postpartum (SBP ≥160 and/or DBP ≥110)',
+  dose: '20 mg IV push over 2 min; if inadequate after 10 min → 40 mg; then 80 mg every 10 min as needed',
+  route: 'IV bolus',
+  frequency: 'Every 10 min step-up',
+  duration: 'Until target reached, then transition to oral agent',
+  maxDose: 'Cumulative 300 mg per course',
+  contraindications: ['Asthma/reactive airway disease', 'Heart block/bradycardia (<60 bpm)', 'Acute heart failure'],
+  adverseEffects: [`Bradycardia, hypotension, bronchospasm, neonatal hypoglycaemia (late use)`],
+  monitoring: ['BP q10 min during titration and hourly ×2 after control', 'HR', 'Fetal heart rate during acute phase'],
+  sourceId: SRC.isshp,
+}
+
+export const HYDRALAZINE_IV: DrugUse = {
+  drug: 'Hydralazine IV',
+  indication: 'Acute severe hypertension when labetalol unavailable/contraindicated',
+  dose: '5 mg IV slow; repeat 5 mg every 20 min as required',
+  route: 'IV',
+  frequency: 'q20 min',
+  duration: 'Until SBP <160 and DBP <110',
+  maxDose: 'Cumulative 20 mg per course',
+  adverseEffects: [`Reflex tachycardia, headache, flushing, hypotension (avoid precipitous drop)`],
+  monitoring: ['BP q15 min ×1 h after control', 'Avoid dropping DBP <90 rapidly (uteroplacental perfusion)'],
+  sourceId: SRC.isshp,
+}
+
+export const NIFEDIPINE_ORAL_ACUTE: DrugUse = {
+  drug: 'Nifedipine (short-acting capsule)',
+  indication: 'Acute severe hypertension — oral option (ISSHP first-line includes oral nifedipine)',
+  dose: '10 mg orally; repeat after 20 min if needed, then 10–20 mg q4–6h as required',
+  route: 'PO (swallow whole/bite-swallow capsule; NOT sublingual crushing practice)',
+  frequency: 'q20 min ×2–3 doses then maintenance',
+  duration: 'Bridge to long-acting therapy',
+  maxDose: 'Per institutional protocol; watch cumulative hypotension esp. with concurrent MgSO4',
+  adverseEffects: [`Headache, flushing, tachycardia; additive neuromuscular weakness with magnesium`],
+  monitoring: ['BP q20 min ×1 h then hourly ×4', 'Fetal heart rate', 'Do NOT combine carelessly with IV MgSO4 without extra vigilance'],
+  sourceId: SRC.isshp,
+}
+
+export const ASPIRIN_PROPHYLAXIS: DrugUse = {
+  drug: 'Aspirin (low-dose)',
+  indication: 'Pre-eclampsia prevention in women at increased risk (≥1 high-risk or ≥2 moderate-risk factors)',
+  dose: '75–150 mg once daily at night (ISSHP: 150 mg nocte after multivariable screening; NICE/ACOG: 75–162 mg range)',
+  route: 'PO',
+  frequency: 'Once daily (bedtime)',
+  duration: 'Start 11–14+0 to 16+0 weeks; continue until 36 weeks',
+  pregnancyLactation: 'Safe in pregnancy at low dose; discontinue by 36 weeks',
+  adverseEffects: [`Rare GI upset; allergy`],
+  contraindications: ['Active peptic ulcer/bleeding', 'Aspirin allergy', 'Bleeding diathesis'],
+  sourceId: SRC.isshp,
+}
+
+export const ANTENATAL_STEROIDS: DrugUse = {
+  drug: 'Betamethasone (antenatal corticosteroid)',
+  indication: 'Risk of preterm birth <34+0 weeks (offer); consider 34+0–35+6 balancing risks (RCOG GTG74)',
+  dose: '12 mg IM, 2 doses 24 h apart',
+  route: 'IM',
+  frequency: 'Two doses only; repeat/rescue course per GTG74 enhanced guidance if prior course >14 days and birth still likely within 7 days',
+  duration: 'Single course concept',
+  preparation: 'Deep IM injection',
+  adverseEffects: [`Maternal hyperglycaemia (esp. diabetes — plan glucose monitoring/sliding scale), transient fetal movement reduction`],
+  monitoring: ['Blood glucose in GDM/pregestational DM', 'Counsel reduced movements 24–48 h'],
+  contraindications: ['Systemic infection (e.g., untreated sepsis/active TB) — weigh urgently vs benefit'],
+  sourceId: 'rcog-gtg74-steroids-2022',
+}
+/** Dexamethasone alternative where betamethasone unavailable (WHO/NICE accept either) */
+export const DEXAMETHASONE_STEROIDS: Block = {
+  kind: 'info',
+  title: 'Dexamethasone alternative',
+  text: 'Dexamethasone 6 mg IM/IV q12h ×4 doses is an accepted equivalent where betamethasone is not available.',
+}
+
+/* ---------------- TOPICS ---------------- */
+
+export const HDP_TOPICS: DiseaseTopic[] = [
+  /* ================= CHRONIC HYPERTENSION ================= */
+  {
+    id: 'hdp-chronic',
+    title: 'Chronic Hypertension in Pregnancy',
+    category: 'obstetrics',
+    tags: ['hypertension', 'chronic-hypertension', 'bp', 'pre-eclampsia-prevention', 'antenatal'],
+    aliases: ['pre-existing hypertension', 'essential hypertension pregnancy', 'high BP before 20 weeks'],
+    status: 'clinically-verified',
+    version: 2,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'india-first',
+    summary: 'Hypertension present before conception or diagnosed <20 weeks; treat from ≥140/90 (CHAP-driven), prevent superimposed pre-eclampsia with aspirin, plan delivery around 38–39 weeks if controlled.',
+    definition: 'Known hypertension before pregnancy OR BP ≥140/90 mmHg confirmed before 20 weeks gestation, persisting beyond the puerperium (FOGSI GCPR 2026 §3.1; exclude trophoblastic disease/molar pregnancy and multifetal gestation as causes of early BP rise).',
+    riskFactors: ['Obesity', 'Older maternal age', 'Diabetes mellitus', 'CKD', 'Family history of hypertension'],
+    presentation: ['Often asymptomatic — detected at booking visit', 'May present with headache/dizziness if BP high', 'Superimposed pre-eclampsia declared by new proteinuria/end-organ features after 20 wks'],
+    redFlags: ['New proteinuria or organ dysfunction after 20 wks → superimposed pre-eclampsia', 'SBP ≥160/DBP ≥110 → emergency', 'Reduced fetal growth/movement', 'Symptoms: headache, visual changes, epigastric pain, brisk reflexes'],
+    initialAssessment: [
+      { kind: 'steps', steps: [
+        'Confirm BP: validated device, sitting position, correct cuff size (large cuff if mid-arm ≥33 cm), Korotkoff V for DBP (ISSHP standard technique)',
+        'If SBP ≥160/DBP ≥110 → recheck within 15 minutes and treat urgently (do not wait hours)',
+        'Baseline labs: CBC + platelets, creatinine/eGFR, LFTs, urate, urine protein quantification (PrCr/ACR/24h), TSH if indicated',
+        'Assess end-organ history: previous hypertensive complications, current medications (STOP teratogenic antihypertensives — ACE inhibitors/ARBs immediately)',
+        'Fetal assessment: dating viability scan, growth surveillance plan',
+      ] },
+    ],
+    investigations: [
+      { test: 'Creatinine (+ eGFR), electrolytes', lookingFor: 'Baseline renal function; CKD coexistence raises risk' },
+      { test: 'CBC + platelets, LFTs, urate', lookingFor: 'Baseline to detect later superimposed pre-eclampsia trends' },
+      { test: 'Spot urine PrCr/ACR or 24h protein', lookingFor: 'Baseline proteinuria (persistent baseline proteinuria predicts worse outcomes)' },
+      { test: 'Renal/bladder US ± secondary-cause screen only if clues exist', lookingFor: 'Secondary hypertension workup NOT routine (ISSHP rec 8)' },
+    ],
+    managementPrinciples: [
+      { kind: 'conflict',
+        guidelineA: { org: 'FOGSI–GESTOSIS–ICOG GCPR 2026 (WOG position)', recommendation: 'Treat all HDP including chronic HTN from BP ≥140/90; targets systolic ≤140, diastolic ≤90' },
+        guidelineB: { org: 'NICE NG133 (UK) / ACOG PB222+CHAP advisory', recommendation: 'ACOG: initiate/titrate therapy at ≥140/90 (treatment threshold, not goal); NICE: treat ≥140/90 with target ≤135/85' },
+        populationDifference: 'CHAP trial (n=2408) showed treating mild chronic HTN at 140/90 reduced severe outcomes without increasing SGA — driven largely by a US/low-risk cohort',
+        indiaConsideration: 'Indian women have higher background pre-eclampsia/eclampsia burden (NER data) and often present late; a lower treatment threshold with close supervision is pragmatic',
+        appDefault: 'Treat confirmed BP ≥140/90 with pregnancy-safe agents; maintain SBP ~120–140, DBP 80–90; avoid hypotension',
+        appDefaultReason: 'Concordant across FOGSI 2026, ISSHP 2021, ACOG advisory 2022 and ESC 2024 — no practical disagreement remains for chronic HTN' },
+    ],
+    treatment: {
+      immediateStabilization: [{ kind: 'list', items: [
+        'If SBP ≥160/DBP ≥110: manage as hypertensive emergency (see hdp-severe-features / Emergency Hub — Acute Severe Hypertension)',
+        'Otherwise: confirm diagnosis, stop teratogens (ACEi/ARB), start lifestyle advice + pharmacotherapy threshold discussion',
+      ] }],
+      investigations: [{ kind: 'list', items: ['Booking panel as above', 'Home BP monitoring if white-coat suspected (ISSHP rec 9)'] }],
+      firstLine: [
+        { kind: 'text', text: 'First-line oral agents (all major guidelines concordant): labetalol, extended-release nifedipine, or methyldopa.' },
+        { kind: 'doseCard', drug: 'Labetalol (oral)', dose: '100 mg BD, titrate up to 200–400 mg BD–TDS', route: 'PO', maxDose: '2400 mg/day', notes: ['Avoid in asthma'], sourceId: SRC.fogsi },
+        { kind: 'doseCard', drug: 'Nifedipine ER', dose: '10 mg OD-BD (ER/Oros formulation), titrate to 20–40 mg BD', route: 'PO', maxDose: '120 mg/day (ER)', notes: ['Most widely used/studied first-line agent'], sourceId: SRC.fogsi },
+        { kind: 'doseCard', drug: 'Methyldopa', dose: '250 mg BD–TDS, titrate to max 500 mg QDS', route: 'PO', maxDose: '3 g/day', notes: ['Less effective than CCB/BB in preventing severe HTN (Cochrane); caution: maternal depression/liver dysfunction; stop within 2 days postpartum if used long-term'], sourceId: SRC.fogsi },
+      ],
+      alternativesFirstLine: [{ kind: 'list', items: ['Second line: hydralazine, clonidine, prazosin; amlodipine has growing safety data', 'Thiazides: CONTINUE only if already established pre-conception and BP controlled; do not start de novo (plasma-volume contraction, oligohydramnios concerns)', 'Atenolol: AVOID (fetal growth restriction)'] }],
+      drugTreatment: [],
+      nonDrugTreatment: [{ kind: 'list', items: ['Weight management per IOM gain limits; moderate exercise ≥150 min/wk (reduces HDP risk 30–40%)', 'No routine salt restriction in pregnancy except established chronic HTN context', 'Calcium supplement ≥500 mg/day if dietary intake <900 mg/day (common in Indian diets) — ISSHP/WHO'] }],
+      definitiveTreatment: [{ kind: 'text', text: 'Delivery resolves the physiological driver but NOT necessarily chronic hypertension — plan timed birth ~38–39 weeks if controlled (individualise earlier if superimposed disease).' }],
+      monitoring: [{ kind: 'table', headers: ['What', 'Frequency'], rows: [
+        ['Home/clinic BP', 'Weekly (or HBPM daily log) once stable; twice-weekly if titrating'],
+        ['CBC+platelets, LFT, creatinine', 'Every 4 weeks (monthly) — more often if rising trend'],
+        ['Urine protein', 'At booking, then if symptoms/BP rise'],
+        ['Fetal growth (EFW/AC) + Doppler as indicated', 'From 28–32 wks every 3–4 weeks if risk factors'],
+      ] }],
+      responseAssessment: [{ kind: 'list', items: ['Target achieved without symptomatic hypotension', 'No emergence of proteinuria/organ dysfunction', 'Normal fetal growth trajectory'] }],
+      treatmentFailure: [{ kind: 'list', items: ['BP above target despite max oral monotherapy → add second agent', 'Emergence of proteinuria/end-organ signs → manage as superimposed pre-eclampsia'] }],
+      secondLine: [{ kind: 'list', items: ['Combination labetalol + nifedipine ER (or + methyldopa)', 'Refer to obstetric-medicine/cardiology if resistant'] }],
+      escalation: [{ kind: 'list', items: ['Severe-range BP → HDU-level monitoring same visit', 'Suspected superimposed PE → hospital assessment', 'End-organ involvement → tertiary centre with NICU'] }],
+      procedures: [{ kind: 'text', text: 'Mode/timing of birth: planned vaginal birth usual; caesarean only for obstetric indications. Induction ~38–39 wks for well-controlled chronic HTN (NICE); individualise with comorbidities.' }],
+      complications: [
+        { name: 'Superimposed pre-eclampsia', management: [{ kind: 'text', text: 'See hdp-severe-features; aspirin does not treat established disease' }] },
+        { name: 'Placental abruption (risk ↑)', management: [{ kind: 'text', text: 'See aph-abruption pathway' }] },
+        { name: 'FGR', management: [{ kind: 'text', text: 'Serial growth + Doppler surveillance per fgr module' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['Postpartum: resume/continue compatible agents (labetalol/nifedipine/enalapril OK breastfeeding)', 'Review at 2 weeks and 6 weeks postpartum', 'Lifetime cardiovascular risk counselling — annual review ×5–10 years (ISSHP)', 'Pre-conception planning next pregnancy: stop ACEi/ARB, start folic acid, aspirin prophylaxis plan'] }],
+    },
+    algorithm: [
+      { id: 'a1', label: 'Confirmed BP ≥140/90 before 20 wks', type: 'start', tone: 'default' },
+      { id: 'a2', label: 'Baseline organ panel + STOP ACEi/ARB', type: 'step', next: [{ to: 'a3' }] },
+      { id: 'a3', label: 'BP ≥160/110 now?', type: 'decision', next: [{ to: 'e1', edgeLabel: 'YES' }, { to: 'a4', edgeLabel: 'NO' }] },
+      { id: 'e1', label: 'EMERGENCY PATHWAY: acute severe hypertension', type: 'action', tone: 'danger', detail: 'IV/oral agent within minutes; see emergency-severe-htn', next: [{ to: 'a4', edgeLabel: 'stabilised' }] },
+      { id: 'a4', label: 'Start labetalol / nifedipine ER / methyldopa', type: 'action', tone: 'ok', next: [{ to: 'a5' }] },
+      { id: 'a5', label: 'Aspirin 75–150 mg nocte + calcium if low intake', type: 'step', tone: 'ok', next: [{ to: 'a6' }] },
+      { id: 'a6', label: 'Monthly labs + growth surveillance; reassess each visit', type: 'step', next: [{ to: 'a7' }] },
+      { id: 'a7', label: 'New proteinuria / organ dysfunction / symptoms?', type: 'decision', next: [{ to: 'e2', edgeLabel: 'YES' }, { to: 'a8', edgeLabel: 'NO' }] },
+      { id: 'e2', label: 'SUPERIMPOSED PRE-ECLAMPSIA pathway (hdp-severe-features)', type: 'end', tone: 'danger' },
+      { id: 'a8', label: 'Controlled → plan birth 38–39 wks; uncontrolled → individualise earlier', type: 'end', tone: 'ok' },
+    ],
+    followUp: [{ kind: 'list', items: ['2-week postpartum BP review', '6-week complete review incl. meds optimisation for lifelong control', 'Annual BP/CV risk review'] }],
+    patientEducation: [{ kind: 'list', items: ['Self-monitoring BP diary', 'Danger signs requiring same-day contact: severe headache, visual disturbance, epigastric pain, reduced fetal movements, swelling face/hands with symptoms'] }],
+    sourceIds: [SRC.fogsi, SRC.isshp, SRC.acogChap, SRC.esc],
+  },
+
+  /* ================= GESTATIONAL HYPERTENSION ================= */
+  {
+    id: 'hdp-gestational',
+    title: 'Gestational Hypertension',
+    category: 'obstetrics',
+    tags: ['gestational-hypertension', 'pih', 'hypertension', 'term-delivery'],
+    aliases: ['PIH without proteinuria', 'pregnancy-induced hypertension'],
+    status: 'clinically-verified',
+    version: 2,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'india-first',
+    summary: 'De novo BP ≥140/90 after 20 weeks WITHOUT proteinuria/organ dysfunction; ~25% progress to pre-eclampsia; deliver by 37 weeks.',
+    definition: 'BP ≥140/90 mmHg on two occasions ≥4 h apart after 20 weeks gestation in a previously normotensive woman, returning to normal by 42nd postpartum day, with NO features of pre-eclampsia (FOGSI GCPR 2026 §3.2 criteria framework).',
+    redFlags: ['Any new proteinuria or symptom cluster → now pre-eclampsia', 'Severe-range BP', 'Abnormal labs (platelets/LFT/creatinine)', 'FGR or abnormal Doppler'],
+    presentation: ['Usually asymptomatic at routine ANC check', 'Headache if BP high'],
+    initialAssessment: [
+      { kind: 'steps', steps: [
+        'Confirm BP twice ≥4h apart (or sooner if severe)',
+        'Quantify protein (PrCr/ACR/24h) — mandatory to classify correctly',
+        'CBC + platelets, LFTs, creatinine, urate',
+        'Fetal growth assessment + umbilical artery Doppler if growth concern',
+      ] },
+    ],
+    investigations: [
+      { test: 'Protein quantification', lookingFor: 'Exclusion of pre-eclampsia' },
+      { test: 'Platelets + LFTs', lookingFor: 'Occult HELLP/pre-eclampsia' },
+      { test: 'Growth scan ± UA Doppler', lookingFor: 'Placental dysfunction' },
+    ],
+    treatment: {
+      immediateStabilization: [{ kind: 'list', items: ['Severe-range BP → treat as emergency (emergency-severe-htn)', 'Non-severe: outpatient pathway with strict escalation rules'] }],
+      firstLine: [
+        { kind: 'conflict',
+          guidelineA: { org: 'FOGSI GCPR 2026 (adopting WOG)', recommendation: 'Treat ALL gestational hypertension pharmacologically from ≥140/90' },
+          guidelineB: { org: 'NICE NG133 / traditional ACOG approach', recommendation: 'Non-severe gestational HTN historically managed expectantly without antihypertensives (no proven benefit lowering mild BP unless chronic HTN); treat only severe range' },
+          populationDifference: 'International RCT evidence for treating non-severe de novo HTN is limited (unlike chronic HTN/CHAP); societies diverge',
+          indiaConsideration: 'Late presentation and rapid progression risk in Indian cohorts supports active treatment + close follow-up',
+          appDefault: 'Offer antihypertensive therapy from ≥140/90 (labetalol/nifedipine ER/methyldopa) with explicit safety-netting; alternatively close expectant monitoring is defensible where access to frequent review exists',
+          appDefaultReason: 'FOGSI 2026 is India-first tier-1 source and explicitly recommends treating all HDP; document choice clearly' },
+        { kind: 'doseCard', drug: 'Nifedipine ER', dose: '10 mg OD–BD titrated', route: 'PO', notes: ['Common India-practical first choice'], sourceId: SRC.fogsi },
+        { kind: 'doseCard', drug: 'Labetalol', dose: '100–200 mg BD titrating', route: 'PO', notes: ['Avoid asthma'], sourceId: SRC.fogsi },
+      ],
+      definitiveTreatment: [{ kind: 'list', items: ['Birth cures gestational hypertension: PLAN BIRTH AT 37 WEEKS (FOGSI: "pregnancy can be continued till term" for uncomplicated GH; NICE: offer birth 37 weeks)', 'Earlier if progression to PE/severe HTN/fetal compromise'] }],
+      monitoring: [{ kind: 'table', headers: ['Setting', 'Schedule'], rows: [
+        ['Outpatient (BP <160/110, normal labs, reassuring fetus)', 'Twice-weekly BP + weekly labs (platelets/LFT); growth scans q2–3 wks'],
+        ['Any severe feature', 'Hospital admission — convert to severe pathway'],
+      ] }],
+      responseAssessment: [{ kind: 'list', items: ['Stable BP without progression to PE through 37 weeks → planned birth'] }],
+      treatmentFailure: [{ kind: 'list', items: ['Progression to proteinuria/lab abnormality → reclassify as pre-eclampsia (deliver timing per severity)', 'Severe-range BP → emergency treatment + delivery decision'] }],
+      escalation: [{ kind: 'list', items: ['HDU if severe-range BP or evolving PE', 'Tertiary transfer if <34 wks needing expectant management with NICU facilities'] }],
+      complications: [
+        { name: 'Progression to pre-eclampsia (~25%)', management: [{ kind: 'text', text: 'Switch pathways; steroids if <34+6 at risk of birth' }] },
+        { name: 'Abruptio placentae (small absolute risk)', management: [{ kind: 'text', text: 'See aph-abruption' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['Postpartum BP checks (day 1–2, then clinic 1–2 weeks)', 'If BP persists >42 days postpartum → new chronic hypertension workup', 'Future CV risk counselling'] }],
+    },
+    sourceIds: [SRC.fogsi, SRC.isshp],
+  },
+
+  /* ================= PRE-ECLAMPSIA (NON-SEVERE / STANDARD) ================= */
+  {
+    id: 'hdp-pre-eclampsia',
+    title: 'Pre-eclampsia (without severe features)',
+    category: 'obstetrics',
+    tags: ['pre-eclampsia', 'proteinuria', 'hypertension', 'placental-dysfunction'],
+    aliases: ['preeclampsia', 'PET', 'pre-eclamptic toxaemia'],
+    status: 'clinically-verified',
+    version: 2,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'india-first',
+    summary: 'De novo hypertension after 20 wks + proteinuria OR end-organ dysfunction; ISSHP advises avoiding “mild/severe” labels in ongoing pregnancy — stratify instead by gestation and trajectory; birth at 37 weeks for stable disease.',
+    definition: 'Multisystem disorder: new hypertension (≥140/90 ×2, ≥4h apart) after 20 weeks WITH ≥300 mg/day proteinuria (or PrCr ≥30 mg/mmol, ACR ≥8 mg/mmol, or dipstick 2+ only if quantitative tests unavailable) AND/OR end-organ features (thrombocytopenia, renal insufficiency, impaired liver function, pulmonary oedema, cerebral/visual symptoms, uteroplacental dysfunction such as FGR) (ISSHP 2021; FOGSI 2026 recognises atypical/no-proteinuria variants).',
+    riskFactors: ['Primigravida', 'Previous PE/HDP', 'Multifetal pregnancy', 'CKD/autoimmune (SLE/APS)', 'Pregestational DM', 'Obesity BMI>30 (score 1)/>35 (score 2)', 'Maternal age >35/<19', 'IVF conception', 'Family history', 'Long inter-pregnancy interval >7 y', 'PCOS', 'Maternal hypothyroidism (score 2)', 'Low calcium diet'],
+    presentation: ['Routine detection at ANC: rising BP + proteinuria', 'Headache, visual blurring/scotomata, epigastric/RUQ pain, sudden oedema face/hands', 'FGR/reduced movements as placental manifestation', 'Some are asymptomatic until labs derange'],
+    redFlags: ['Seizure (→ eclampsia NOW)', 'Severe-range BP', 'Persistent headache unrelieved by paracetamol / visual scotomata / drowsiness', 'Epigastric pain + vomiting + abnormal LFTs', 'Platelets <100×10⁹/L', 'Creatinine >97 µmol/L (or doubling)', 'Pulmonary oedema', 'Stroke/TIA focal signs', 'Abnormal CTG / stillbirth threat'],
+    differentials: [
+      { condition: 'Chronic/superimposed HTN', clue: 'Baseline proteinuria known; BP before 20 wks' },
+      { condition: 'Flare of lupus nephropathy', clue: 'Known SLE; low complement, anti-dsDNA' },
+      { condition: 'Primary renal disease', clue: 'Longstanding proteinuria/raised creatinine pre-pregnancy' },
+      { condition: 'HELLP with minimal BP', clue: 'Platelets + haemolysis dominate picture' },
+    ],
+    initialAssessment: [
+      { kind: 'steps', steps: [
+        'ABC + vitals incl. BP both arms, HR, RR, SpO₂, temperature',
+        'Symptom screen (headache, visual, epigastric pain, chest pain, dyspnoea)',
+        'Reflexes/clonus examination',
+        'Confirm BP + quantify proteinuria',
+        'Bloods: CBC+platelets, LFT (AST/ALT, bilirubin, LDH), creatinine, urate, coagulation if platelets <100 or bleeding tendency',
+        'Fetal: CTG, growth/Doppler, amniotic fluid',
+      ] },
+    ],
+    investigations: [
+      { test: 'CBC + platelets', lookingFor: 'Thrombocytopenia (<100 = severe feature; trend matters)' },
+      { test: 'AST/ALT, bilirubin, LDH', lookingFor: 'Hepatic involvement / haemolysis' },
+      { test: 'Creatinine', lookingFor: '>97 µmol/L or doubling = severe feature' },
+      { test: 'Coagulation (PT/APTT/fibrinogen)', lookingFor: 'DIC screen if platelets <100, bruising, or bleeding' },
+      { test: 'Urinary PrCr/ACR or 24h protein', lookingFor: 'Diagnostic confirmation' },
+      { test: 'CTG + growth/UA Doppler ± MCA/DV', lookingFor: 'Uteroplacental dysfunction severity' },
+      { test: 'Chest X-ray if dyspnoea', lookingFor: 'Pulmonary oedema' },
+    ],
+    classificationTable: {
+      caption: 'Stratification (FOGSI 2026 uses non-severe/severe; ISSHP prefers trajectory-based)',
+      headers: ['Domain', 'Non-severe presentation', 'Severe-feature trigger (act now)'],
+      rows: [
+        ['BP', '140–159 / 90–109', '≥160/110 (confirmed 15 min–4 h)'],
+        ['Symptoms', 'None', 'Cerebral/visual symptoms, epigastric pain'],
+        ['Platelets', '>100×10⁹/L', '<100×10⁹/L'],
+        ['LFTs', 'Normal', 'AST/ALT >×2 ULN; severe RUQ pain'],
+        ['Renal', 'Creatinine normal', '>97 µmol/L or doubled; oliguria'],
+        ['Pulmonary', 'Clear', 'Pulmonary oedema'],
+        ['Gestation', '≥37 wks', 'Any gestation with instability'],
+      ] },
+    treatment: {
+      immediateStabilization: [{ kind: 'list', items: ['Admit (hospital-based care standard for PE)', 'IV access; bloods sent; urinalysis', 'Start antihypertensive if BP ≥140/90 (target SBP ≤140, DBP 80–90)', 'MgSO4 ONLY if severe features/neurology (not routine in stable non-severe disease)', 'Continuous fetal monitoring if compromised or intrapartum'] }],
+      firstLine: [
+        (doseCard({
+          drug: 'Oral antihypertensive (choose one)',
+          indication: 'BP ≥140/90',
+          dose: 'Labetalol 100–200 mg BD titrating OR nifedipine ER 10–20 mg BD OR methyldopa 250–500 mg TDS',
+          route: 'PO',
+          frequency: 'Per agent',
+          duration: 'Until birth',
+          sourceId: SRC.fogsi,
+        }) as DoseCard),
+        { kind: 'info', title: 'Steroids', text: 'Give antenatal corticosteroids if birth anticipated <34+6 weeks (betamethasone 12 mg IM ×2 24h apart).' },
+        { kind: 'info', title: 'Timing of birth (stable non-severe PE)', text: 'Deliver at 37 completed weeks (FOGSI/NICE concordance). Expectancy beyond 37 not recommended; before 34 wks stable disease may be individualised expectantly ONLY with intensive surveillance in a unit able to manage deterioration.' },
+      ],
+      definitiveTreatment: [{ kind: 'list', items: ['Birth = definitive treatment', 'Vaginal birth preferred if attainable safely; caesarean for obstetric indications or rapid deterioration', 'Regional anaesthesia preferred when platelets/coagulation permit'] }],
+      monitoring: [{ kind: 'table', headers: ['Parameter', 'Inpatient schedule (non-severe, expectant)'], rows: [
+        ['BP', 'q4h (more if trending up)'],
+        ['Symptom review', 'Each shift — headache/vision/epigastric'],
+        ['Platelets + LFTs + creatinine', '2–3×/week minimum; daily if trending'],
+        ['Proteinuria', 'On admission; repeat if change'],
+        ['Fetal CTG', 'Daily if expectant preterm'],
+        ['Growth/Doppler', 'Every 2 weeks (earlier if FGR)'],
+        ['Fluid balance', 'Strict input/output chart'],
+      ] }],
+      responseAssessment: [{ kind: 'list', items: ['Stable labs/BP without symptom evolution', 'Reassuring fetal surveillance'] }],
+      treatmentFailure: [{ kind: 'list', items: ['ANY severe feature emerging → escalate to severe pathway (hdp-severe-features)', 'Lab deterioration or growth arrest → expedite birth'] }],
+      rescue: [{ kind: 'list', items: ['Eclamptic seizure → emergency-seclampsia protocol (MgSO4 immediately)', 'Pulmonary oedema → sit up, O₂, stop fluids, frusemide 40 mg IV, consider delivery'] }],
+      procedures: [{ kind: 'text', text: 'Induction of labour with favourable/unfavourable cervix per iol module; continuous CTG in labour; third-stage active management (oxytocin 10 IU) — PE increases PPH risk modestly.' }],
+      escalation: [{ kind: 'list', items: ['Ward → HDU: severe BP, oliguria, neurology', 'HDU → ICU: refractory severe HTN, pulmonary oedema, DIC, stroke, renal failure', 'Transfer to tertiary centre if <32–34 wks expectancy needed beyond capability'] }],
+      complications: [
+        { name: 'Eclampsia', management: [{ kind: 'text', text: 'Immediate MgSO4 + supportive care (dedicated emergency protocol)' }] },
+        { name: 'HELLP syndrome', management: [{ kind: 'text', text: 'See hdp-hellp' }] },
+        { name: 'Pulmonary oedema', management: [{ kind: 'list', items: ['Sit upright, O₂, cease crystalloid', 'Frusemide 40 mg IV (repeat if needed)', 'Consider severe-pathway delivery', 'CXR + echo if unclear'] }] },
+        { name: 'AKI', management: [{ kind: 'text', text: 'Fluid stewardship, avoid NSAIDs, nephrology input if creatinine climbing/anuric' }] },
+        { name: 'Stroke/intracranial haemorrhage', management: [{ kind: 'text', text: 'Emergency imaging + BP control to SBP <160 (then ~130–150); neurosurgery consult; deliver once stabilised' }] },
+        { name: 'Placental abruption', management: [{ kind: 'text', text: 'See aph-abruption' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['Continue MgSO4 24 h postpartum if it was started', 'Postnatal BP monitoring: daily while inpatient; review 1–2 weeks + 6 weeks', 'Breastfeeding-compatible antihypertensives (labetalol/nifedipine/enalapril)', 'Thromboprophylaxis assessment (post-PE women are VTE high risk)', '3-month postpartum review: BP, urine, labs normalised? (ISSHP)', 'Annual cardiovascular review; lifetime CVD risk discussion', 'Recurrence risk counselling: future PE ≥15%, GH ≥4%'] }],
+    },
+    algorithm: [
+      { id: 'pe1', label: 'New HTN + proteinuria/organ signs after 20 wks', type: 'start' },
+      { id: 'pe2', label: 'Red flags? (severe BP, neurology, epigastric pain, platelets<100, creatinine↑, pulm oedema, fetal compromise)', type: 'decision', next: [{ to: 'pe3', edgeLabel: 'YES' }, { to: 'pe4', edgeLabel: 'NO' }] },
+      { id: 'pe3', label: 'SEVERE PATHWAY: admit HDU, MgSO4 if neuro, IV/oral antihypertensives, steroids <34+6, deliver (≥34 wks; individualise 24–33+6; ≤24 consider birth)', type: 'action', tone: 'danger' },
+      { id: 'pe4', label: 'Admit ward; oral antihypertensives; surveillance schedule', type: 'step', tone: 'warn', next: [{ to: 'pe5' }] },
+      { id: 'pe5', label: 'Stable?', type: 'decision', next: [{ to: 'pe6', edgeLabel: 'YES' }, { to: 'pe3', edgeLabel: 'deterioration' }] },
+      { id: 'pe6', label: 'Birth at 37 wks (vaginal induction preferred)', type: 'end', tone: 'ok' },
+    ],
+    sourceIds: [SRC.fogsi, SRC.isshp, 'rcog-gtg74-steroids-2022'],
+    emergencyRef: 'emg-eclampsia',
+  },
+
+  /* ================= SEVERE FEATURES ================= */
+  {
+    id: 'hdp-severe-features',
+    title: 'Pre-eclampsia with Severe Features / Severe Pre-eclampsia',
+    category: 'obstetric-emergency',
+    tags: ['severe-preeclampsia', 'severe-features', 'mgso4', 'hdul', 'steroids'],
+    aliases: ['severe preeclampsia', 'imminent eclampsia'],
+    status: 'clinically-verified',
+    version: 2,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'india-first',
+    summary: 'PE plus severe-range BP, neurology, hepatic/renal/haematological involvement or pulmonary oedema. Stabilise with MgSO4 + antihypertensives, steroids if <34+6, then deliver ≥34 wks (expectancy 24–33+6 only in expert centres with intensive surveillance).',
+    definition: 'Pre-eclampsia with ANY of: SBP ≥160/DBP ≥110 (confirmed), thrombocytopenia <100×10⁹/L, AST/ALT >×2 ULN with severe persistent RUQ/epigastric pain, renal insufficiency (creatinine >97 µmol/L or doubling), pulmonary oedema, new-onset cerebral/visual disturbances (FOGSI severe PE definition: BP >160/110 ± premonitory symptoms ± abnormal labs, or ≥140/90 WITH symptoms/lab abnormality).',
+    redFlags: ['Impending/actual eclamptic seizure', 'Uncontrolled BP despite two agents', 'Platelet fall + LFT rise (evolving HELLP)', 'Oliguria <25 mL/h despite fluids', 'Abnormal CTG/stillbirth risk', 'Stroke signs', 'Pulmonary oedema'],
+    initialAssessment: [
+      { kind: 'steps', steps: [
+        'Call for senior obstetrician + anaesthetist; allocate 1:1 nursing',
+        'Left-lateral tilt if supine; continuous SpO₂, BP q10–15 min initially',
+        'Send full panel INCLUDING coagulation + group & save/crossmatch',
+        'Start MgSO4 if neurological signs/symptoms or imminent birth <30 wks (neuroprotection overlap)',
+        'Control BP to SBP 130–150/DBP 80–90 (rapid drops risk placental hypoperfusion)',
+        'Strict fluid balance; restrict maintenance fluids (pulmonary oedema risk)',
+      ] },
+    ],
+    investigations: [
+      { test: 'Coagulation profile + fibrinogen', lookingFor: 'DIC before regional anaesthesia/procedures' },
+      { test: 'Group & save / crossmatch', lookingFor: 'Operative readiness' },
+      { test: 'Serum urate, LDH, blood film', lookingFor: 'Haemolysis (HELLP evolution)' },
+      { test: 'CT head if focal deficit/coma/atypical presentation', lookingFor: 'ICH vs eclampsia vs other' },
+    ],
+    treatment: {
+      immediateStabilization: [
+        { kind: 'warning', title: 'First 15 minutes', text: 'Help called · MgSO4 decision made · BP agent running · bloods incl. coags in lab · CTG running · fluid restriction documented · delivery plan being formed' },
+      ],
+      firstLine: [
+        doseCard({ ...MGSO4_PRITCHARD, drug: 'Magnesium sulfate — SEIZURE PROPHYLAXIS', indication: 'Severe PE with neuro features/symptoms; also consider for all severe disease at birth (unit policy varies; ISSHP: proteinuria+severe HTN or neuro signs ⇒ MgSO4)' }),
+        doseCard(LABETALOL_IV),
+        doseCard(HYDRALAZINE_IV),
+        doseCard(NIFEDIPINE_ORAL_ACUTE),
+        { kind: 'info', title: 'Fluid strategy', text: 'Restrict maintenance to ~80 mL/h (or 1 mL/kg/h) unless losses; NEVER chase oliguria with repeated boluses without reviewing lungs — pulmonary oedema kills in this disease.' },
+      ],
+      alternativesFirstLine: [{ kind: 'list', items: ['If MgSO4 unavailable: diazepam 10 mg IV for seizure only (inferior — arrange supply urgently)', 'Nicardipine/esmolol infusions in ICU settings where available'] }],
+      drugTreatment: [MGSO4_PRITCHARD, LABETALOL_IV, HYDRALAZINE_IV, NIFEDIPINE_ORAL_ACUTE],
+      definitiveTreatment: [{ kind: 'list', items: [
+        'DELIVERY IS THE DEFINITIVE TREATMENT',
+        '≥34 weeks: deliver after maternal stabilisation (FOGSI: severe PE delivered after 34 completed weeks)',
+        '<34 weeks: expectant management ONLY if mother stable AND fetus viable AND facility has HDU/ICU + NICU 24/7 — otherwise deliver after steroids (48 h benefit window) if stable enough',
+        '24–33+6 weeks: individualised (no trial evidence base — FOGSI explicitly notes this)',
+        '≤24 weeks: immediate delivery generally better option (FOGSI)',
+        'Indications for IMMEDIATE birth regardless of gestation: uncontrollable BP, eclampsia, pulmonary oedema, DIC, abruptio, non-reassuring fetal state, ruptured membranes/labour, HELLP with multiorgan dysfunction',
+      ] }],
+      monitoring: [{ kind: 'table', headers: ['Domain', 'Expectant-management schedule (intensive)'], rows: [
+        ['BP', 'Hourly (continuous arterial line in ICU if unstable)'],
+        ['Neuro obs + reflexes', 'Hourly'],
+        ['Labs (platelets/LFT/creatinine)', 'Minimum daily; q12h if deteriorating'],
+        ['MgSO4 toxicity', 'Before each dose: reflexes, RR ≥12, UO ≥25 mL/h'],
+        ['Fluid balance', 'Hourly urine; daily weight'],
+        ['Fetus', 'Daily CTG; UA Doppler ± DV 2–3×/wk; growth q1–2 wk'],
+      ] }],
+      responseAssessment: [{ kind: 'list', items: ['BP in target band on stable regimen', 'Labs plateau/improving', 'No seizure activity', 'Reassuring fetal parameters'] }],
+      treatmentFailure: [{ kind: 'list', items: ['Rising BP needs → add second class agent', 'Lab deterioration or symptom evolution → abandon expectancy, deliver', 'Seizure despite MgSO4 → reload per eclampsia protocol (additional 2 g IV if reflexes absent logic — see eclampsia module)'] }],
+      secondLine: [{ kind: 'list', items: ['ICU-level vasodilator infusions (nicardipine) where available', 'Plasmapheresis rarely for catastrophic HELLP/TTP confusion — haematology consult'] }],
+      rescue: [{ kind: 'text', text: 'Intracranial haemorrhage: emergent CT, neurosurgical referral, keep SBP <160 then 130–150, correct coagulopathy, deliver once salvageable. Pulmonary oedema: CPAP where available, frusemide 40–80 mg IV, stop fluids, expedite birth.' }],
+      procedures: [{ kind: 'list', items: ['Anaesthesia: regional preferred if platelets >70–75×10⁹/L with normal coagulation (local policy); GA if coagulopathy/urgent — careful intubation BP surge attenuation (labetalol/remifentanil)', 'Surgical team aware of friable tissues/bleeding tendency', 'Active third-stage management mandatory'] }],
+      escalation: [{ kind: 'list', items: ['HDU mandatory during acute control', 'ICU triggers: ventilatory support, vasopressors, dialysis, post-craniotomy, refractory seizures', 'Tertiary transfer BEFORE deterioration if local capability lacking and gestation allows expectancy'] }],
+      complications: [
+        { name: 'Eclampsia', management: [{ kind: 'text', text: 'Dedicated algorithm (hdp-eclampsia/emergency hub)' }] },
+        { name: 'HELLP', management: [{ kind: 'text', text: 'hdp-hellp module' }] },
+        { name: 'Renal failure', management: [{ kind: 'text', text: 'Nephrology; dialysis if AEIOU indications' }] },
+        { name: 'Liver rupture/infarction', management: [{ kind: 'text', text: 'Haemodynamic collapse + RUQ → CT angio, interventional radiology embolisation, surgery; massive transfusion' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['HDU/ward observation ≥24–48 h postpartum (risk persists)', 'MgSO4 continues 24 h after birth/last seizure', 'Thromboprophylaxis once haemostasis secure', 'Debrief + documentation; neonatal follow-up arranged', 'Postpartum review schedule as for PE'] }],
+    },
+    algorithm: [
+      { id: 'sv1', label: 'Severe feature recognised', type: 'start', tone: 'danger' },
+      { id: 'sv2', label: 'HELP CALL + 1:1 care + IV access + bloods(coags!)', type: 'action', next: [{ to: 'sv3' }] },
+      { id: 'sv3', label: 'MgSO4 indicated? (neuro signs/symptoms/unit policy)', type: 'decision', next: [{ to: 'sv4', edgeLabel: 'YES' }, { to: 'sv5', edgeLabel: 'NO' }] },
+      { id: 'sv4', label: 'Pritchard loading 4g IV + 10g IM', type: 'action', tone: 'danger', next: [{ to: 'sv5' }] },
+      { id: 'sv5', label: 'BP ≥160/110 → labetalol IV / hydralazine IV / nifedipine PO to 130–150/80–90', type: 'action', next: [{ to: 'sv6' }] },
+      { id: 'sv6', label: '<34+6 wks? → betamethasone course', type: 'step', next: [{ to: 'sv7' }] },
+      { id: 'sv7', label: 'Stable enough for expectancy <34 wks with HDU+NICU?', type: 'decision', next: [{ to: 'sv8', edgeLabel: 'NO / ≥34 wks' }, { to: 'sv9', edgeLabel: 'YES 24–33+6' }] },
+      { id: 'sv8', label: 'DELIVER after stabilisation', type: 'end', tone: 'danger' },
+      { id: 'sv9', label: 'Intensive surveillance; deliver at deterioration/34 wks', type: 'end', tone: 'warn' },
+    ],
+    sourceIds: [SRC.fogsi, SRC.isshp],
+    emergencyRef: 'emg-severe-htn',
+  },
+
+  /* ================= ECLAMPSIA ================= */
+  {
+    id: 'hdp-eclampsia',
+    title: 'Eclampsia',
+    category: 'obstetric-emergency',
+    tags: ['eclampsia', 'seizure', 'mgso4', 'pritchard', 'maternal-collapse'],
+    aliases: ['fits in pregnancy', 'convulsions pregnancy hypertension'],
+    status: 'clinically-verified',
+    version: 2,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'india-first',
+    summary: 'Generalised seizures in a woman with pre-eclampsia (any time antepartum/intrapartum/up to several days postpartum). MgSO4 halves recurrent seizures; stabilise THEN deliver. National Eclampsia Registry: >50% antepartum, ~13% postpartum.',
+    definition: 'Occurrence of generalised tonic-clonic seizures in a woman with pre-eclampsia, in the absence of other neurological cause (FOGSI GCPR 2026 §3.x; atypical eclampsia recognised).',
+    redFlags: ['THIS IS THE RED FLAG EVENT', 'Recurrent seizures despite MgSO4', 'Apnoea/desaturation between fits', 'Injury/tongue bite/aspiration', 'Stillbirth/abnormal CTG after fit', 'Intracranial bleed suspicion (prolonged coma, focal deficits)'],
+    initialAssessment: [
+      { kind: 'steps', steps: [
+        'RECOGNISE: convulsion in hypertensive pregnant/postpartum woman',
+        'CALL FOR HELP (senior obstetrician, anaesthetist; note time)',
+        'During fit: do NOT restrain; protect from injury; nothing in mouth',
+        'After fit: left lateral position; suction secretions; O₂ 15 L/min non-rebreather; airway adjunct if needed',
+        'IV access ×2; send bloods (incl. Mg level baseline, coags, crossmatch)',
+        'Start MgSO4 LOADING DOSE IMMEDIATELY (before transport/imaging)',
+        'BP assessment + antihypertensive if ≥160/110',
+        'Continuous fetal monitoring once maternal stabilisation under way (fetal bradycardia common transiently post-fit — observe 10–15 min before emergency caesarean unless persistent)',
+      ] },
+    ],
+    investigations: [
+      { test: 'CBC, platelets, coagulation', lookingFor: 'HELLP/DIC coexistence' },
+      { test: 'Creatinine, LFTs, LDH', lookingFor: 'Organ dysfunction severity' },
+      { test: 'Serum magnesium (where available)', lookingFor: 'Baseline before maintenance; toxicity checks' },
+      { test: 'SpO₂/ABG if cyanosis/desaturation', lookingFor: 'Aspiration/pulmonary oedema' },
+      { test: 'CT brain ONLY if atypical (coma >expected, focal signs, age atypical, no HTN/proteinuria)', lookingFor: 'ICH/venous sinus thrombosis/other pathology — do not delay MgSO4' },
+    ],
+    treatment: {
+      immediateStabilization: [
+        { kind: 'warning', title: 'ABCDE sequence (FOGSI ABCD of eclampsia care)', text: 'A airway patent lateral · B breathing O₂ 15 L/min · C circulation two IV lines · D drugs: MgSO4 FIRST, then antihypertensive' },
+      ],
+      firstLine: [
+        doseCard({ ...MGSO4_PRITCHARD, drug: 'Magnesium sulfate — PRITCHARD (India standard)', indication: 'ALL eclampsia — start loading dose immediately' }),
+        { kind: 'info', title: 'Zuspan IV alternative', text: 'Where IV-only protocols mandated: 4 g IV loading over 5–10 min then 1–2 g/h continuous infusion. Pritchard remains the widely taught Indian standard with proven efficacy.' },
+      ],
+      drugTreatment: [
+        MGSO4_PRITCHARD,
+        LABETALOL_IV,
+        HYDRALAZINE_IV,
+        { ...NIFEDIPINE_ORAL_ACUTE, contraindications: ['Use cautiously alongside MgSO4 — additive hypotension/weakness'] },
+      ],
+      nonDrugTreatment: [{ kind: 'list', items: ['Left lateral tilt/position; padding rails', 'Suction ready; bite protection', 'Catheterise for strict urine output', 'Quiet environment; minimise stimulation'] }],
+      definitiveTreatment: [
+        { kind: 'text', text: 'DELIVER ONCE MOTHER STABILISED — not during an unstable fit cycle. FOGSI: “delivered once mother is stabilized after MgSO4.”' },
+        { kind: 'list', items: [
+          '≥34 wks or unstable: proceed to birth (vaginal if labour advanced & rapid birth expected; else caesarean)',
+          '<34 wks: stabilise, steroids, individualise 24–33+6 in capable units; ≤24 wks → termination generally advised',
+          'Vaginal birth acceptable with controlled BP, no coagulopathy, progressive labour',
+        ] },
+      ],
+      monitoring: [
+        { kind: 'table', headers: ['Check', 'Standard', 'Action if failed'], rows: [
+          ['Patellar reflex', 'Present', 'Withhold maintenance dose; assess level'],
+          ['Respiratory rate', '≥12/min', 'Withhold; O₂; consider calcium gluconate if RR <12 + weakness'],
+          ['Urine output', '≥25 mL/h', 'Withhold; assess renal function/fluid status'],
+          ['Serum Mg²⁺ (if available)', '4–7 mg/dL therapeutic; >9–10 mg/dL toxic', 'Stop infusion; calcium gluconate 10% 10 mL IV over 3 min'],
+        ] },
+      ],
+      responseAssessment: [{ kind: 'list', items: ['No further seizures on maintenance', 'Improving conscious level', 'BP approaching target', 'Stable fetal state'] }],
+      treatmentFailure: [
+        { kind: 'warning', title: 'Seizure recurs despite MgSO4', text: 'Give additional MgSO4 2 g IV over 5 min (after checking RR/reflexes — if depressed, treat toxicity with calcium gluconate FIRST). Consider thiopentone/levetiracetam/phenytoin loading per anaesthetist; secure airway; ICU. Re-image if atypical.' },
+      ],
+      secondLine: [{ kind: 'list', items: ['Airway: RSII intubation if repeated seizures/coma', 'Levetiracetam 1–1.5 g IV or phenytoin 15–18 mg/kg (anaesthetist-led) as adjunct when magnesium-refractory', 'Mannitol/intensive-care measures for raised ICP suspicion'] }],
+      rescue: [{ kind: 'list', items: ['Cardiac arrest → obstetric life-support + perimortem caesarean at 4 min if ≥20 wks (emergency-obstetric-arrest)', 'Massive intracranial bleed → neurosurgery + multidisciplinary delivery decision'] }],
+      procedures: [{ kind: 'text', text: 'Caesarean under GA if coagulopathic/refractory; regional acceptable when platelets/coags safe and seizures controlled. Neonatal team informed (hyper magnesaemia → floppy infant, respiratory support readiness).' }],
+      escalation: [{ kind: 'list', items: ['ICU for: recurrent seizures, ventilation, renal failure, coagulopathy, coma', 'Peripheral-centre rule: stabilise (airway+MgSO4+BP) THEN refer with escort — never transfer mid-seizure'] }],
+      complications: [
+        { name: 'Recurrent seizures', management: [{ kind: 'text', text: 'Reload per failure pathway; check adherence to maintenance schedule' }] },
+        { name: 'Aspiration pneumonitis', management: [{ kind: 'text', text: 'Antibiotics per sepsis pathway if fever/infiltrate; physiotherapy; O₂' }] },
+        { name: 'Intracranial haemorrhage', management: [{ kind: 'text', text: 'CT; neurosurgery; BP 130–150 systolic; corrected coagulopathy' }] },
+        { name: 'Acute kidney injury', management: [{ kind: 'text', text: 'Fluid stewardship; dialysis indications per ICU' }] },
+        { name: 'Neonatal Mg toxicity', management: [{ kind: 'text', text: 'Inform paediatrics: hypotonia, respiratory depression — nursery observation' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['MgSO4 maintenance continues 24 h AFTER last seizure (even if delivered)', 'Postnatal BP + labs surveillance ≥48–72 h', 'Counselling: recurrence risk, future-pregnancy aspirin plan', 'Psychological debrief; contraception planning'] }],
+    },
+    algorithm: [
+      { id: 'ec1', label: 'SEIZURE in pre-eclamptic woman', type: 'start', tone: 'danger' },
+      { id: 'ec2', label: 'CALL HELP · time it · protect injury', type: 'action', next: [{ to: 'ec3' }] },
+      { id: 'ec3', label: 'Left lateral · suction · O₂ 15 L/min', type: 'action', next: [{ to: 'ec4' }] },
+      { id: 'ec4', label: 'MgSO4 LOADING: 4 g IV slow + 5 g IM ×2 buttocks (Pritchard)', type: 'action', tone: 'danger', next: [{ to: 'ec5' }] },
+      { id: 'ec5', label: 'BP ≥160/110 → labetalol/hydralazine/nifedipine', type: 'step', next: [{ to: 'ec6' }] },
+      { id: 'ec6', label: 'Another seizure?', type: 'decision', next: [{ to: 'ec7', edgeLabel: 'YES' }, { to: 'ec8', edgeLabel: 'NO' }] },
+      { id: 'ec7', label: 'MgSO4 2 g IV (check RR/reflexes; calcium gluconate if toxicity) · secure airway · ICU', type: 'action', tone: 'danger', next: [{ to: 'ec8' }] },
+      { id: 'ec8', label: 'STABILISED → deliver: ≥34 wks now; <34 individualise (steroids if delay)', type: 'end' },
+    ],
+    sourceIds: [SRC.fogsi, SRC.isshp],
+    emergencyRef: 'emg-eclampsia',
+  },
+
+  /* ================= HELLP ================= */
+  {
+    id: 'hdp-hellp',
+    title: 'HELLP Syndrome',
+    category: 'obstetric-emergency',
+    tags: ['hellp', 'hemolysis', 'platelets', 'liver', 'preeclampsia'],
+    status: 'published',
+    version: 1,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'india-first',
+    summary: 'Haemolysis + Elevated Liver enzymes + Low Platelets — a variant of severe pre-eclampsia that may present WITHOUT marked hypertension. Birth is definitive; transfuse selectively; beware misdiagnosis as gastritis/hepatitis.',
+    definition: 'Microangiopathic haemolysis (schistocytes, LDH >600 IU/L, bilirubin ≥1.2 mg/dL), AST ≥70 IU/L, platelets <100×10⁹/L (Tennessee classification) occurring in pregnancy/peripartum, usually with hypertensive disease.',
+    redFlags: ['RUQ pain mistaken for "gastritis" in third trimester', 'Platelets falling fast', 'Spontaneous bleeding/bruising', 'Jaundice + dark urine', 'Fetal compromise'],
+    initialAssessment: [{ kind: 'steps', steps: ['Peripheral smear for schistocytes', 'LDH, indirect bilirubin, haptoglobin', 'Platelet trend q6–12h', 'Coagulation incl. fibrinogen (DIC overlap)', 'Exclude: TTP (ADAMTS13 if available), AFLP (glucose, INR, ammonia), gastroenteritis, hepatitis serology where picture ambiguous'] }],
+    investigations: [
+      { test: 'Smear + retics + LDH', lookingFor: 'MAHA confirmation' },
+      { test: 'Serial platelets', lookingFor: 'Rate of fall; nadir typically 24–48 h POSTPARTUM' },
+      { test: 'Glucose + INR', lookingFor: 'Differentiate acute fatty liver of pregnancy (hypoglycaemia + profound INR rise favour AFLP)' },
+      { test: 'CT/MRI abdomen if RUQ severe', lookingFor: 'Subcapsular haematoma/hepatic rupture' },
+    ],
+    treatment: {
+      immediateStabilization: [{ kind: 'list', items: ['Admit HDU; IV access; crossmatch', 'Correct hypovolaemia cautiously (pulmonary oedema risk)', 'MgSO4 per severe-PE policy', 'Control BP ≥160/110'] }],
+      firstLine: [
+        { kind: 'list', items: [
+          'STEROIDS if <34+6 wks and birth planned/likely (standard antenatal course; some units extend to 35+6 with caution)',
+          'Plan birth: CLASS II HELLP (platelets ≤100) with stable mother ≥34 wks → deliver; <34 wks stable → short expectancy (24–48 h steroids) ONLY in tertiary centre',
+          'CLASS I HELLP (platelets ≤50) or any instability → DELIVER regardless of gestation',
+        ] },
+      ],
+      drugTreatment: [
+        { ...ANTENATAL_STEROIDS, drug: 'Betamethasone', indication: 'Fetal lung maturity <34+6 AND possible maternal hepatic benefit (controversial — do not delay birth awaiting course in Class I/instability)' },
+      ],
+      nonDrugTreatment: [
+        { kind: 'table', headers: ['Product', 'Trigger (typical)', 'Notes'], rows: [
+          ['Platelets', '<20×10⁹/L (or <50 with active bleeding/before surgery)', 'Prophylactic transfusion rarely changes outcome; reserve for bleeding/procedure'],
+          ['PPRC', 'Symptomatic anaemia/active loss', 'Restrictive strategy'],
+          ['FFP/cryoprecipitate', 'Coagulopathy/DIC (fibrinogen <1.5–2 g/L)', 'Per massive-haemorrhage ratios if bleeding'],
+        ] },
+      ],
+      definitiveTreatment: [{ kind: 'text', text: 'Birth (usually within 24–48 h of onset) — most mothers improve dramatically postpartum; nadir of labs occurs 24–48 h AFTER delivery — expect transient worsening.' }],
+      monitoring: [{ kind: 'table', headers: ['Parameter', 'Frequency'], rows: [['Platelets/LFT/LDH', 'q8–12h peri-delivery period'], ['Urine output', 'Hourly in HDU phase'], ['RUQ pain/shoulder tip', 'Continuous — rupture warning'], ['Fetal CTG', 'Continuous intrapartum']] }],
+      treatmentFailure: [{ kind: 'list', items: ['Persistent multiorgan failure >72 h postpartum → reconsider diagnosis (TTP/aHUS!) — haematology + plasma exchange', 'Subcapsular haematoma → IR embolisation/surgery'] }],
+      procedures: [{ kind: 'list', items: ['Regional anaesthesia CONTRAINDICATED if platelets <70–75 or coagulopathy (GA with aspiration precautions)', 'Caesarean for obstetric indications — not automatic; induction reasonable with Class II stable', 'Cell-salvage consideration; anticipate PPH'] }],
+      escalation: [{ kind: 'list', items: ['ICU: multiorgan dysfunction, ventilatory support, dialysis', 'Interventional radiology: hepatic artery embolisation for rupture', 'Haematology: diagnostic uncertainty/plasma exchange'] }],
+      complications: [
+        { name: 'DIC', management: [{ kind: 'text', text: 'Component therapy per ratio protocol; treat underlying (birth); monitor fibrinogen' }] },
+        { name: 'Hepatic rupture/infarction', management: [{ kind: 'text', text: 'Haemodynamic resuscitation + CT angio + embolisation/laparotomy; massive transfusion activation' }] },
+        { name: 'AKI', management: [{ kind: 'text', text: 'Usually prerenal/AKI of PE — fluid balance, dialysis if indicated' }] },
+        { name: 'Neonatal thrombocytopenia', management: [{ kind: 'text', text: 'Paediatric review at birth (rare serious neonatal disease)' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['Labs normalize over 48–96 h postpartum — verify before discharge', 'Contraception: avoid COCP until platelets/LFTs normal & BP controlled', 'Recurrence risk 3–19%; aspirin next pregnancy from 12 wks', 'Renal/hepatic function recheck at 6 weeks'] }],
+    },
+    sourceIds: [SRC.fogsi, SRC.isshp, 'rcog-gtg74-steroids-2022'],
+  },
+
+  /* ================= POSTPARTUM HDP ================= */
+  {
+    id: 'hdp-postpartum',
+    title: 'Postpartum Hypertension & Postpartum Pre-eclampsia',
+    category: 'obstetrics',
+    tags: ['postpartum-hypertension', 'delayed-preeclampsia', 'breastfeeding-drugs'],
+    status: 'published',
+    version: 1,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'india-first',
+    summary: 'BP can peak 3–6 days postpartum even after normotensive pregnancies; de novo postpartum PE occurs. Monitor, treat ≥150/95 (or lower threshold per chronic-HTN logic), choose lactation-compatible agents.',
+    definition: 'New or worsening hypertension (and rarely full pre-eclampsia with organ dysfunction) arising after birth — FOGSI 2026 explicitly addresses early detection/management of DE NOVO postpartum hypertension.',
+    redFlags: ['Seizure (postpartum eclampsia is real)', 'Headache + visual symptoms + BP ≥150/95', 'Epigastric pain', 'Desaturation/chest pain (consider PE differential too)'],
+    initialAssessment: [{ kind: 'steps', steps: ['Confirm BP properly (not single anxious reading)', 'Screen: headache, vision, epigastric pain, bleeding, calf pain, breathlessness', 'Bloods: platelets, LFT, creatinine if symptomatic', 'Urine protein', 'DDx: idiopathic intracranial hypertension, migraine, caffeine withdrawal, PRES, cerebral venous thrombosis (postpartum!), PE'] }],
+    treatment: {
+      immediateStabilization: [{ kind: 'list', items: ['Severe-range → treat urgently as antepartum equivalents (same agents)', 'Admit if symptomatic or organ dysfunction'] }],
+      firstLine: [
+        { kind: 'doseCard', drug: 'Labetalol (oral)', dose: '100–400 mg BD–TDS', route: 'PO', notes: ['Lactation-compatible'], sourceId: SRC.fogsi },
+        { kind: 'doseCard', drug: 'Nifedipine ER', dose: '10–30 mg BD', route: 'PO', notes: ['Lactation-compatible; suppresses lactation at high dose — counsel'], sourceId: SRC.fogsi },
+        { kind: 'doseCard', drug: 'Enalapril (postpartum only)', dose: '2.5–10 mg BD', route: 'PO', notes: ['Excellent lactation profile; CONTRAINDICATED antepartum'], sourceId: 'aha-2021-hdp-statement' },
+      ],
+      alternativesFirstLine: [{ kind: 'list', items: ['Methyldopa postpartum: avoid long-term (depression risk)', 'Diuretics: useful if pulmonary/congestion features; may reduce milk supply marginally'] }],
+      definitiveTreatment: [{ kind: 'text', text: 'Postpartum PE with organ dysfunction: MgSO4 24 h + birth already done → supportive care; most resolve as involution proceeds. De novo HTN persisting >42 days → chronic hypertension pathway.' }],
+      monitoring: [{ kind: 'list', items: ['Inpatient: BP daily (twice daily days 3–5 peak)', 'Discharged hypertensives: clinic/home BP at day 3–5, 2 wks, 6 wks', 'Labs if symptomatic'] }],
+      escalation: [{ kind: 'list', items: ['Severe BP/neurology → HDU as antepartum', 'Suspicion of CVT/PRES → imaging urgently'] }],
+      complications: [
+        { name: 'Postpartum eclampsia', management: [{ kind: 'text', text: 'Same eclampsia protocol; MgSO4 + control + ICU review' }] },
+        { name: 'Overlap PE (dyspnoea + HTN)', management: [{ kind: 'text', text: 'CTPA if clinically suspected — pregnancy-safe imaging; anticoagulate per vte module' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['6-week comprehensive review incl. urine + lipids/HbA1c where indicated', 'Lifetime CV risk programme (annual ×5–10 y per ISSHP)', 'Contraception counselling (oestrogen-containing delayed until vascular risks settled)', 'Next-pregnancy aspirin plan'] }],
+    },
+    sourceIds: [SRC.fogsi, SRC.isshp, 'aha-2021-hdp-statement'],
+  },
+]

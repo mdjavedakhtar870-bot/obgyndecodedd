@@ -1,0 +1,237 @@
+import type { DiseaseTopic } from '../types'
+
+/* ============================================================
+   INTRAPARTUM MODULES
+   Sources: NICE NG235 (2023, last updated 9 Jun 2026), WHO PPH
+   consolidated 2025, FOGSI guidance. Verified 2026-08-23.
+   ============================================================ */
+
+export const INTRAPARTUM_TOPICS: DiseaseTopic[] = [
+  {
+    id: 'labour-management',
+    title: 'Labour Management (term)',
+    category: 'obstetrics',
+    tags: ['labour', 'first-stage', 'partogram', 'oxytocin', 'analgesia'],
+    status: 'published',
+    version: 1,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'india-first',
+    summary: 'Term labour care per NICE NG235 (updated Jun 2026): one-to-one care, partogram, conservative measures before oxytocin, continuous support. Recognise dystocia early; augment judiciously; active third stage for everyone.',
+    definition: 'Regular painful contractions with progressive cervical change. Latent phase irregular vs established first stage; modern frameworks treat ~6 cm as the augmentation decision point.',
+    redFlags: ['Abnormal CTG (see ctg-fetal-monitoring)', 'Cord prolapse', 'Shoulder dystocia', 'Haemorrhage', 'Maternal fever/sepsis', 'Failure of descent with moulding/caput progression'],
+    initialAssessment: [{ kind: 'steps', steps: [
+      'Admission assessment: vitals, urinalysis, abdominal exam (lie/presentation/engagement), PV exam (dilatation, membranes, station, caput/moulding), CTG 20-30 min if risk factors',
+      'Risk stratification: low-risk (midwifery-led) vs risk factors -> obstetric unit',
+      'Partogram started at admission; PV exams offered 4-hourly in active phase',
+      'Pain relief discussion + birth plan review',
+    ] }],
+    investigations: [
+      { test: 'CBC/group&save (risk cases)', lookingFor: 'Baseline anaemia; readiness' },
+      { test: 'Urinalysis', lookingFor: 'Proteinuria/glucose' },
+      { test: 'CTG on admission (risk factors)', lookingFor: 'Baseline fetal wellbeing' },
+    ],
+    treatment: {
+      immediateStabilization: [{ kind: 'text', text: 'Emergencies during labour follow their own protocols (cord, dystocia, PPH, CTG).' }],
+      firstLine: [
+        { kind: 'list', items: [
+          'ONE-TO-ONE midwifery care throughout established labour (better outcomes, less intervention)',
+          'Mobility/positions encouraged; oral hydration; bladder emptying q2-3h',
+          'Slow progress FIRST: supportive measures - repositioning, hydration, analgesia optimisation, emotional support',
+          'AUGMENTATION when diagnosed delay: amniotomy (if membranes intact) then oxytocin titration per protocol',
+        ] },
+        { kind: 'doseCard', drug: 'Oxytocin augmentation', dose: 'Start 1-2 mIU/min (30 mIU/h); increase every 30 min until adequate contractions (4 in 10 min); max typically 12-20 mIU/min per protocol', route: 'IV infusion pump', frequency: 'Titrated q30min', notes: ['Continuous CTG once started', 'Reduce/stop for tachysystole (>5/10 min) or abnormal CTG', 'Avoid prolonged high-dose water intoxication risk'], sourceId: 'nice-ng235-intrapartum-2026' },
+      ],
+      alternativesFirstLine: [{ kind: 'list', items: ['Analgesia ladder: TENS/Entonox -> opioids (pethidine 50-100 mg IM or fentanyl PCA where available) -> regional (epidural/spinal) per NG235 pain-relief chapter'] }],
+      definitiveTreatment: [{ kind: 'text', text: 'Birth. Second stage: pushing with contractions, no fundal pressure; assisted vaginal birth criteria if second stage prolonged (nullip >2h / multip >1h active pushing, regional-adjusted). Third stage ACTIVE MANAGEMENT: uterotonic within 1 min (oxytocin 10 IU IM/IV), controlled cord traction, uterine massage (WHO 2025).' }],
+      monitoring: [
+        { kind: 'table', headers: ['Parameter', 'Frequency (established, low-risk)'], rows: [
+          ['BP/pulse/temp', 'Hourly BP+pulse; 4-hourly temp'],
+          ['Contractions', 'Half-hourly palpation'],
+          ['FHR auscultation (low-risk)', 'After contraction x1 min q15 min first stage; q5 min second stage'],
+          ['PV exams', 'Offered 4-hourly active phase'],
+          ['Bladder', 'q2-3h emptying'],
+        ] },
+        { kind: 'info', title: 'High-risk labour', text: 'Oxytocin use, meconium, FGR, PET etc.: CONTINUOUS CTG per classification framework.' },
+      ],
+      responseAssessment: [{ kind: 'list', items: ['Progressive dilatation (~1 cm/h active typical but individualised)', 'Descent of presenting part', 'Reassuring CTG category'] }],
+      treatmentFailure: [{ kind: 'list', items: [
+        'Dystocia: protraction/arrest - reassess 4Ts + pelvis; caesarean for arrest despite adequate contractions',
+        'Chorioamnionitis suspected (fever>38, foul liquor, dual tachycardia): antibiotics NOW (ampicillin+gentamicin +/- metronidazole) + expedite birth',
+      ] }],
+      escalation: [{ kind: 'list', items: ['Senior obstetric review for any delay diagnosis', 'Anaesthetist involvement for pain/BP/theatre conversion'] }],
+      complications: [
+        { name: 'Meconium-stained liquor', management: [{ kind: 'text', text: 'Thin: standard monitoring. Thick/particulate: continuous CTG; neonatal team at birth (routine intrapartum suction not recommended)' }] },
+        { name: 'Retained placenta (>30-60 min)', management: [{ kind: 'steps', steps: ['Empty bladder + repeat oxytocic attempt', 'IV access + crossmatch', 'Theatre manual removal under regional/GA + single-dose antibiotic', 'Check completeness; PPH vigilance'] }] },
+        { name: 'Perineal tears', management: [{ kind: 'text', text: 'Systematic repair per degree; 3c/3d in theatre by trained repairer + laxatives + physio follow-up' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['First hour = fourth stage: obs q15min, tone, bleeding watch', 'Early skin-to-skin + breastfeeding initiation', 'Bladder care (retention check after epidural)', 'VTE assessment + prophylaxis', 'Newborn vitamin K per NG235 Jun-2026 reintroduced guidance'] }],
+    },
+    sourceIds: ['nice-ng235-intrapartum-2026', 'who-pph-consolidated-2025'],
+    emergencyRef: 'emg-cord-prolapse',
+  },
+
+  {
+    id: 'iol',
+    title: 'Induction of Labour (IOL)',
+    category: 'obstetrics',
+    tags: ['induction', 'bishop-score', 'prostaglandin', 'foley-balloon', 'postdates'],
+    status: 'published',
+    version: 1,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'international-first',
+    summary: 'Bishop <7 needs ripening: prostaglandins OR balloon catheter (lower hyperstimulation). Membrane sweep from term. Failed induction is DEFINED then reassessed - not an automatic caesarean.',
+    definition: 'Artificial initiation of labour before spontaneous onset for maternal/fetal benefit after weighing continuation risks.',
+    redFlags: ['Hyperstimulation with abnormal CTG -> stop agent + intrauterine resuscitation + tocolysis if needed', 'Rupture signs in prior-scar inductions', 'Cord prolapse after amniotomy'],
+    initialAssessment: [{ kind: 'steps', steps: [
+      'Confirm indication + gestation; document consent incl. failure/caesarean rates',
+      'Contraindications: malpresentation, praevia/vasa previa, prior classical scar, fetal compromise where birth not beneficial',
+      'Bishop score (dilation/effacement/station/consistency/position)',
+      'CTG baseline normal before prostaglandins',
+    ] }],
+    investigations: [{ test: 'CTG pre-induction', lookingFor: 'Reassurance before agents' }, { test: 'Presentation US if uncertain', lookingFor: 'Exclude malpresentation' }],
+    treatment: {
+      immediateStabilization: [{ kind: 'text', text: 'Not applicable - structured pathway.' }],
+      firstLine: [
+        { kind: 'table', headers: ['Situation', 'Method'], rows: [
+          ['Term, any', 'MEMBRANE SWEEP offered (reduces formal IOL need)'],
+          ['Unfavourable cervix (<7)', 'Dinoprostone PGE2 gel/tablet 3 mg PV per protocol cycle (repeat 6-24h; CTG 30-60 min after insertion)'],
+          ['Unfavourable cervix', 'OR transcervical Foley/balloon 30-80 mL inflated with gentle traction - lower hyperstimulation; preferred with prior caesarean/high parity'],
+          ['Favourable >=7 or ripened', 'Amniotomy -> oxytocin titration'],
+          ['Prior caesarean', 'Balloon preferred; prostaglandins avoided (rupture risk)'],
+        ] },
+        { kind: 'doseCard', drug: 'Misoprostol (IOL, resource settings)', dose: '25 mcg vaginal/sublingual q2h up to max 8 doses before augmentation', route: 'PV/SL', frequency: 'q2h', notes: ['Heat-stable, cheap - India-practical', 'AVOID previous caesarean'], sourceId: 'nice-ng235-intrapartum-2026' },
+      ],
+      definitiveTreatment: [{ kind: 'list', items: ['Labour onset -> labour-care pathway', 'FAILED INDUCTION: no regular contractions/progressive change after full protocol cycles -> options: repeat selected courses, rest-and-rescan, or caesarean by shared informed decision'] }],
+      monitoring: [{ kind: 'table', headers: ['Phase', 'Monitoring'], rows: [
+        ['Post-prostaglandin', 'CTG 30-60 min; no repeat dosing during regular contractions'],
+        ['Oxytocin', 'Continuous CTG; stop for tachysystole; fluid balance'],
+        ['Balloon', 'Falls out at dilation; dislodgement checks'],
+      ] }],
+      treatmentFailure: [{ kind: 'list', items: ['Hyperstimulation + abnormal CTG: STOP agent, left-lateral, IV bolus, terbutaline 250 mcg SC slow if persists, reassess for emergency caesarean'] }],
+      escalation: [{ kind: 'list', items: ['Scarred-uterus inductions: consultant supervision documented', 'Failed-induction counselling documented jointly'] }],
+      complications: [
+        { name: 'Uterine hyperstimulation', management: [{ kind: 'text', text: 'Intrauterine resuscitation sequence above' }] },
+        { name: 'Uterine rupture (scarred)', management: [{ kind: 'text', text: 'Emergency laparotomy; MTP standby' }] },
+        { name: 'Water intoxication (prolonged oxytocin)', management: [{ kind: 'text', text: 'Restrict maintenance fluids; check Na+ if confusion/seizure' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['Standard third/fourth-stage care', 'Document total oxytocin dose + outcome for audit'] }],
+    },
+    algorithm: [
+      { id: 'io1', label: 'Indication confirmed · consent · contraindications excluded', type: 'start' },
+      { id: 'io2', label: 'Bishop score', type: 'step', next: [{ to: 'io3', edgeLabel: '<7' }, { to: 'io5', edgeLabel: '>=7' }] },
+      { id: 'io3', label: 'Prior scar?', type: 'decision', next: [{ to: 'io4a', edgeLabel: 'YES' }, { to: 'io4b', edgeLabel: 'NO' }] },
+      { id: 'io4a', label: 'BALLOON CATHETER', type: 'action', tone: 'warn', next: [{ to: 'io5' }] },
+      { id: 'io4b', label: 'PGE2 cycles OR balloon OR miso 25mcg', type: 'action', tone: 'warn', next: [{ to: 'io5' }] },
+      { id: 'io5', label: 'ARM -> oxytocin · continuous CTG', type: 'step', next: [{ to: 'io6' }] },
+      { id: 'io6', label: 'Established labour?', type: 'decision', next: [{ to: 'io7', edgeLabel: 'YES' }, { to: 'io8', edgeLabel: 'NO (full protocol done)' }] },
+      { id: 'io7', label: 'Labour-care pathway', type: 'end', tone: 'ok' },
+      { id: 'io8', label: 'FAILED induction defined -> shared decision', type: 'end', tone: 'warn' },
+    ],
+    sourceIds: ['nice-ng235-intrapartum-2026'],
+  },
+
+  {
+    id: 'lscs',
+    title: 'Caesarean Section',
+    category: 'obstetrics',
+    tags: ['lscs', 'caesarean', 'urgency-classification', 'antibiotic-prophylaxis', 'erac'],
+    aliases: ['cesarean', 'CS', 'c-section'],
+    status: 'published',
+    version: 1,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'international-first',
+    summary: 'Classify URGENCY (Lucas 1-4). Single-dose IV antibiotic BEFORE incision cuts infection ~40%. ERAS bundle: warming, VTE prophylaxis, early feeding, opioid-sparing analgesia with TAP blocks.',
+    definition: 'Birth via laparotomy+hysterotomy. Urgency Cat1 immediate maternal/fetal threat (30-min target), Cat2 compromise not immediate (75-min target), Cat3 planned early, Cat4 elective.',
+    redFlags: ['Category-1 declaration = simultaneous theatre prep', 'Anticipated difficult CS: obesity, multiple scars, praevia/accreta, transverse lie'],
+    initialAssessment: [{ kind: 'steps', steps: [
+      'Indication documented + urgency class assigned',
+      'Consent incl. bladder/ureteric/bowel injury, hysterectomy, transfusion, thrombosis, future-placenta risks',
+      'Pre-op: CBC, group&save (crossmatch praevia/scars), coags if indicated, diabetes plan, antacid prophylaxis + sodium citrate at trolley',
+      'Two IV lines; stockings; VTE assessment; neonatal team alert <37 wks/emergency',
+    ] }],
+    investigations: [{ test: 'Group & save minimum', lookingFor: 'Transfusion readiness' }, { test: 'Coags if PET/HELLP/DIC suspicion', lookingFor: 'Regional safety' }],
+    treatment: {
+      immediateStabilization: [{ kind: 'text', text: 'Cat-1 workflow: declare -> run -> anaesthetic choice by anaesthetist (GA if minutes count/coagulopathy/unstable).' }],
+      firstLine: [
+        { kind: 'doseCard', drug: 'Cefazolin (surgical prophylaxis)', dose: '2 g IV single dose (3 g if >120 kg) within 60 min before skin incision', route: 'IV', frequency: 'Single dose; repeat only if EBL >1500 mL or surgery >3-4 h', duration: 'No routine post-op doses (uncomplicated)', contraindications: ['Beta-lactam anaphylaxis -> clindamycin 900 mg IV alternative'], sourceId: 'nice-ng235-intrapartum-2026' },
+        { kind: 'doseCard', drug: 'Oxytocin (third stage at CS)', dose: '5 IU IV slow at birth + infusion 30-40 IU over 4 h', route: 'IV', frequency: 'Bolus then infusion', notes: ['Slow push avoids hypotension'], sourceId: 'who-pph-consolidated-2025' },
+        { kind: 'info', title: 'TXA at caesarean', text: 'NOT recommended for PROPHYLAXIS (WHO Consolidated PPH 2025 Rec 15) - reserve for treatment indications.' },
+      ],
+      definitiveTreatment: [{ kind: 'steps', steps: [
+        'Evidence-favoured technique: Joel-Cohen/transverse suprapubic skin incision; blunt abdominal entry; single-layer uterine closure (selective double-layer); routine peritoneal closure omitted; subcutaneous suture if fat >2 cm; subcuticular skin',
+        'Placental delivery: controlled cord traction + uterotonic (no vigorous manual extraction)',
+        'Impacted head aids: elevation device/vacuum or push-from-below; J/T extensions for preterm segments',
+        'Counts correct -> close -> TAP block/local infiltration analgesia',
+      ] }],
+      monitoring: [{ kind: 'table', headers: ['Postop', 'Schedule'], rows: [
+        ['Obs', 'q30min x2, hourly x4, then q4h day 0-1'],
+        ['Urine', 'Catheter 12-24 h; retention check after removal'],
+        ['Analgesia', 'Multimodal: paracetamol 1 g q6h + NSAID if safe + morphine PCA/spinal morphine; TAP blocks reduce opioids'],
+        ['Wound', '24-h review'],
+        ['VTE', 'Enoxaparin 40 mg SC daily from day 1 (neuraxial timing rules respected)'],
+        ['ERAS', 'Fluids 1 h post-regional; food when tolerated; mobilise ~6 h'],
+      ] }],
+      treatmentFailure: [{ kind: 'list', items: ['Fever >38 after day 1 -> endometritis/wound workup: swabs, cultures, empiric ampicillin+gentamicin+metronidazole (or ceftriaxone+metronidazole) until afebrile 48 h'] }],
+      procedures: [{ kind: 'text', text: 'Full operative page linked (procedures-caesarean). Accreta encountered -> pas-spectrum intraoperative rules.' }],
+      escalation: [{ kind: 'list', items: ['HDU/ICU: massive transfusion/sepsis/respiratory compromise', 'Necrotising wound infection -> surgical team same-day'] }],
+      complications: [
+        { name: 'PPH', management: [{ kind: 'text', text: 'PPH module pathways' }] },
+        { name: 'Endometritis/wound infection', management: [{ kind: 'text', text: 'Antibiotics; open/drain collections' }] },
+        { name: 'Bladder/ureteric injury', management: [{ kind: 'text', text: 'Urology repair; stents; cystogram/urogram' }] },
+        { name: 'VTE', management: [{ kind: 'text', text: 'vte module; extended prophylaxis high-risk' }] },
+        { name: 'Future-praevia/accreta risk', management: [{ kind: 'text', text: 'Counsel at discharge; targeted scans next pregnancy' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['Breastfeeding support immediately', 'Discharge day 2-3 uncomplicated', 'Next-pregnancy VBAC discussion', 'Contraception (LARC possible at CS)'] }],
+    },
+    sourceIds: ['nice-ng235-intrapartum-2026', 'who-pph-consolidated-2025'],
+  },
+
+  {
+    id: 'vbac-tolac',
+    title: 'VBAC / TOLAC',
+    category: 'obstetrics',
+    tags: ['vbac', 'tolac', 'uterine-rupture', 'prior-caesarean'],
+    status: 'published',
+    version: 1,
+    lastVerifiedAt: '2026-08-23',
+    regionPriority: 'international-first',
+    summary: 'One prior lower-segment caesarean, no contraindications -> OFFER TOLAC (success 72-75%; rupture ~0.5%). Excluded: classical/J scar, prior rupture, extensive transfundal surgery. Continuous CTG + instant theatre are non-negotiable.',
+    definition: 'Trial of labour after caesarean. Best success predictors: prior vaginal birth, spontaneous labour, BMI<30, non-recurrent index indication.',
+    redFlags: [
+      'RUPTURE SIGNS: abnormal CTG (commonest FIRST sign), loss of station, scar pain, haematuria, contractions ceasing, maternal tachycardia/hypotension',
+      'Fetal bradycardia during TOLAC = rupture until proven otherwise -> category-1 caesarean',
+    ],
+    initialAssessment: [{ kind: 'steps', steps: [
+      'Review index operative note (incision TYPE decisive)',
+      'Eligibility + documented shared decision',
+      'Facility capability confirmed: continuous CTG + immediate theatre (many Indian centres mandate in-house readiness)',
+    ] }],
+    investigations: [{ test: 'Index scar documentation', lookingFor: 'Lower-segment confirmed' }],
+    treatment: {
+      immediateStabilization: [{ kind: 'warning', title: 'Suspected rupture', text: 'Stop oxytocin · senior+anaesthetist NOW · category-1 caesarean · two IVs + crossmatch running · MTP primed' }],
+      firstLine: [
+        { kind: 'list', items: [
+          'Spontaneous labour preferred (highest success, lowest rupture)',
+          'Induction acceptable with oxytocin/mechanical methods after counselling; prostaglandins (esp. misoprostol/PGE2) avoided in scarred uterus',
+          'Continuous electronic fetal monitoring throughout active labour',
+          'Low threshold for assisted second stage',
+        ] },
+      ],
+      definitiveTreatment: [{ kind: 'text', text: 'Vaginal birth (VBAC) or conversion to caesarean - both valid endpoints; document decision points.' }],
+      monitoring: [{ kind: 'table', headers: ['Domain', 'Rule'], rows: [
+        ['CTG', 'Continuous from active labour'],
+        ['Progress', 'Strict partogram - poor progress converts earlier'],
+        ['Symptoms', 'Pain/bleeding/station loss each assessment'],
+        ['Access', 'IV in situ; group&save done; theatre aware'],
+      ] }],
+      treatmentFailure: [{ kind: 'list', items: ['Rupture -> laparotomy + repair/hysterectomy decision; neonatal cooling-capable nursery coordination', 'Arrest disorders -> repeat caesarean rather than heroic augmentation'] }],
+      escalation: [{ kind: 'list', items: ['Consultant presence per institutional policy', 'Blood bank notified at admission'] }],
+      complications: [
+        { name: 'Uterine rupture (~0.5%)', management: [{ kind: 'text', text: 'As above; MTP early' }] },
+        { name: 'Neonatal hypoxic injury', management: [{ kind: 'text', text: 'Therapeutic cooling pathway liaison' }] },
+      ],
+      postTreatmentCare: [{ kind: 'list', items: ['Successful VBAC standard care; failed -> CS bundle', 'Future rupture risk drops sharply after successful VBAC - counsel'] }],
+    },
+    sourceIds: ['nice-ng235-intrapartum-2026'],
+  },
+]
