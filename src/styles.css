@@ -262,6 +262,8 @@ table.clinical .cell-label { display: none }
 
 /* ---------- Accessible overlays ---------- */
 .dialog-backdrop { position: fixed; inset: 0; z-index: 100; display: flex; justify-content: center; align-items: flex-start; padding: 8vh 20px 20px; background: rgba(8,15,22,.65); overscroll-behavior: contain }
+/* Hosting attribution belongs below modal dialogs, like other page controls. */
+body:has(.dialog-backdrop) #nl-badge-frame { z-index: 40 !important }
 .dialog { width: 100%; max-width: 660px; max-height: 85dvh; overflow-y: auto; background: var(--bg-elev); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow) }
 .dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; position: sticky; top: 0; z-index: 1; background: var(--bg-elev); border-bottom: 1px solid var(--line) }
 .dialog-header h2 { font-size: 1rem; margin: 0 }
@@ -327,8 +329,13 @@ table.clinical .cell-label { display: none }
   .bottom-nav > * > span:first-child { font-size: 22px; line-height: 1.25 }
   .bottom-nav .active { color: var(--brand-2); background: var(--brand-soft) }
   .bottom-nav .urgent-nav { color: var(--danger) }
+  /* Netlify injects this fixed badge in production. Keep its attribution and
+     controls visible above the phone navigation, including safe-area space. */
+  #nl-badge-frame { bottom: calc(64px + env(safe-area-inset-bottom)) !important }
   .site-footer { padding: 22px 18px calc(90px + env(safe-area-inset-bottom)) }
   .toast-wrap { left: 16px; right: 16px; bottom: calc(80px + env(safe-area-inset-bottom)) }
+  body:has(#nl-badge-frame) .site-footer { padding-bottom: calc(154px + env(safe-area-inset-bottom)) }
+  body:has(#nl-badge-frame) .toast-wrap { bottom: calc(144px + env(safe-area-inset-bottom)) }
   .section-controls { top: calc(66px + env(safe-area-inset-top)) }
   .dialog-backdrop { padding: calc(12px + env(safe-area-inset-top)) 10px calc(12px + env(safe-area-inset-bottom)); align-items: flex-start }
   .dialog { max-height: calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom)); border-radius: 14px }

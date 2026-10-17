@@ -96,6 +96,32 @@ try {
   for (const cell of await cells.all()) assert.ok(await cell.locator('.cell-label').isVisible(), 'Mobile drug cell has lost its field label')
   const controls = await p.locator('.topbar button, .bottom-nav > *, input.input, select.input').evaluateAll((nodes) => nodes.filter((n) => n.getBoundingClientRect().width).map((n) => ({ text: n.getAttribute('aria-label') || n.textContent, width: n.getBoundingClientRect().width, height: n.getBoundingClientRect().height, font: parseFloat(getComputedStyle(n).fontSize) })))
   for (const control of controls) assert.ok(control.width >= 44 && control.height >= 44, `Small phone control: ${JSON.stringify(control)}`)
+  // Reproduce Netlify's production-only badge, which otherwise covers Search,
+  // Urgent and Menu despite every page passing the viewport-width checks.
+  await p.evaluate(() => {
+    const badge = document.createElement('iframe')
+    badge.id = 'nl-badge-frame'
+    badge.title = 'Powered by Netlify'
+    badge.srcdoc = '<button>Powered by Netlify</button>'
+    badge.style.cssText = 'position:fixed;bottom:0;right:0;width:211px;height:64px;border:0;z-index:2147483645'
+    document.body.append(badge)
+  })
+  const badgeBox = await p.locator('#nl-badge-frame').boundingBox()
+  const navigationBox = await p.locator('.bottom-nav').boundingBox()
+  assert.ok(badgeBox.y + badgeBox.height <= navigationBox.y, 'Hosting badge overlaps phone navigation')
+  const obscured = await p.locator('.bottom-nav > *').evaluateAll((nodes) => nodes.filter((node) => {
+    const box = node.getBoundingClientRect()
+    const target = document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2)
+    return target !== node && !node.contains(target)
+  }).map((node) => node.textContent))
+  assert.deepEqual(obscured, [], 'Phone navigation is covered by the hosting badge')
+  await p.getByRole('button', { name: 'Open full menu', exact: true }).click()
+  assert.equal(await p.locator('#nl-badge-frame').evaluate((badge) => {
+    const box = badge.getBoundingClientRect()
+    return document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2) === badge
+  }), false, 'Hosting badge appears above the modal menu')
+  await p.keyboard.press('Escape')
+  await p.locator('#nl-badge-frame').evaluate((badge) => badge.remove())
   await p.addStyleTag({ content: 'html { font-size: 20px }' })
   assert.ok(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Enlarged text overflows the phone')
 
@@ -110,7 +136,7 @@ try {
   assert.ok(!await p.locator('.bottom-nav').isVisible())
   await screenshot('home-1440')
   await phone.close()
-  console.log(`${count} layout checks passed; phone menu, focus, search, full guide, keyboard tabs, labelled dose cards, enlarged text, hydration and desktop navigation passed.`)
+  console.log(`${count} layout checks passed; phone menu, focus, search, full guide, keyboard tabs, labelled dose cards, hosting-badge clearance, enlarged text, hydration and desktop navigation passed.`)
 } finally {
   await browser.close()
   await new Promise((done) => server.close(done))

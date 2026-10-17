@@ -1,8 +1,10 @@
 # Mobile reading and clinical-content update
 
-Prepared 17 October 2026 for OBGYN Decoded. Production publishing requires the owner's approval.
+Prepared 17 October 2026 for OBGYN Decoded. The owner approved production publishing on 17 October 2026.
 
 ## Mobile findings and changes
+
+Production verification also identified Netlify's injected attribution badge covering the phone Search, Urgent and Menu controls. Its frame now sits above the bottom navigation, with additional footer and toast clearance. Modal dialogs stay above the badge. A browser regression check reproduces the fixed frame and checks actual navigation hit targets; the attribution remains visible and functional.
 
 The previous production build expanded a 390-pixel phone viewport to 702 pixels on the magnesium-sulfate reference and 999 pixels on the source register. The layout, forms, badges and tables now remain within the viewport. Clinical table rows become labelled cards below 640 pixels. Larger text and controls, safe-area spacing, labelled bottom navigation and a full menu make all sections reachable on phones.
 
@@ -47,5 +49,6 @@ The browser verifier checks all 156 generated pages at 320 and 390 pixels and re
 - 6 generated-output checks and 3 production-client tests passed (27 tests total).
 - 340 Chromium layout checks passed: all 156 pages at 320 and 390 pixels, plus 14 representative routes at 768 and 1440 pixels.
 - Phone menu navigation, dialog focus/escape, full-text search, full-guide/section controls, keyboard tab navigation, labelled dose cards, enlarged text, hydration and desktop navigation passed.
+- A production-only hosting-badge overlap was identified during live screenshot review. The follow-up browser check reproduces its fixed frame and verifies that every bottom-navigation control receives taps and the badge stays below modal dialogs.
 - Mobile and desktop screenshots were visually reviewed and are saved in `docs/mobile-review/`.
 - `git diff --check` passed.
