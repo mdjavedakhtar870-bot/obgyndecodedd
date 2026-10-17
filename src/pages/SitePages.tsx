@@ -10,6 +10,7 @@ export function AboutPage() {
     <h2>Guidelines and verification</h2>
     <p>Indian guidance is prioritised where relevant, with international references labelled. Clinical modules link to the <Link to="/sources">guideline and source register</Link>, which records each source's organisation, version, check date and verification status.</p>
     <p>Publication status and clinical verification are separate. A page without a recorded clinical verification date remains pending verification. Review and outdated labels identify content requiring further review. A source's publication date is not a clinical review date.</p>
+    <p>{ALL_TOPICS.filter((t) => t.clinicalDetail).length} topics include additional clinical detail with an explicit section check date and linked references. These explain assessment, management decisions, follow-up and pitfalls. The section check does not certify the rest of the module.</p>
     <p>Guideline-conflict blocks show the differing recommendations, population or setting differences, India considerations and the app's stated reasoning.</p>
     <h2>Intended use</h2>
     <p>This reference is intended for doctors. It supports clinical decision-making and does not replace clinical judgement or institutional protocols. Check the page's recorded status and underlying sources before relying on its recommendations.</p>
@@ -24,7 +25,7 @@ export function SitemapPage() {
   return <article>
     <h1>OBGYN Decoded site directory</h1>
     <p>All public reference pages, grouped by section. Each clinical page retains its authored status and source links.</p>
-    <p><a href="/sitemap.xml">XML sitemap</a> · <a href="/llms.txt">AI-readable directory</a></p>
+    <p><a href="/sitemap.xml">XML sitemap</a></p>
     {collections.map((p) => <section key={p.path}>
       <h2><Link to={p.path}>{p.name}</Link></h2>
       <ul>{PUBLIC_PAGES.filter((c) => c.parent === p.path && c.index).map((c) => <li key={c.path}><Link to={c.path}>{c.name}</Link>{c.status ? <span className="small muted"> · {c.status.replaceAll('-', ' ')}</span> : null}</li>)}</ul>

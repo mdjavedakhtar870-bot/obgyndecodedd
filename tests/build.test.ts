@@ -42,9 +42,13 @@ test('clinical content from all topic tabs and its registered sources is in the 
       const source = SOURCES.find((s) => s.id === id)!
       assert.ok([...d.querySelectorAll('main a')].some((a: any) => a.getAttribute('href') === source.url), `${t.id}: missing source ${id}`)
     }
-    const panels = [...d.querySelectorAll('[role="tabpanel"]')]
+    const panels = [...d.querySelectorAll('.tab-panel')]
     assert.ok(panels.some((panel: any) => panel.textContent.includes('Open source')), `${t.id}: source tab omitted from HTML`)
-    if (t.algorithm?.length) assert.ok(d.querySelector('main').textContent.includes(t.algorithm[0].label), `${t.id}: algorithm missing`)
+    for (const node of t.algorithm || []) assert.ok(d.querySelector('main').textContent.includes(node.label), `${t.id}: algorithm node ${node.id} missing`)
+    if (t.clinicalDetail) {
+      for (const text of [t.clinicalDetail.overview, ...t.clinicalDetail.assessment, ...t.clinicalDetail.decisions, ...t.clinicalDetail.followUp]) assert.ok(d.querySelector('main').textContent.includes(text), `${t.id}: clinical detail omitted from initial HTML`)
+      assert.ok(panels.every((panel: any) => !panel.hasAttribute('hidden')), `${t.id}: full guide is hidden by default`)
+    }
     if (!t.lastVerifiedAt) assert.ok(d.querySelector('main').textContent.includes('PENDING CLINICAL VERIFICATION'), t.id)
   }
 })

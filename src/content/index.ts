@@ -30,8 +30,12 @@ import { GYNAE_TOPICS_A } from './diseases/gynae'
 import { GYNAE_TOPICS_B } from './diseases/gynae2'
 import { ONC_TOPICS } from './diseases/onc'
 import { MISC_TOPICS } from './diseases/misc'
+import { CLINICAL_DETAILS } from './clinical-details'
 
-export const ALL_TOPICS: DiseaseTopic[] = [...DISEASE_TOPICS, ...MEDICAL_TOPICS_A, ...MEDICAL_TOPICS_B, ...INFECTION_TOPICS, ...GYNAE_TOPICS_A, ...GYNAE_TOPICS_B, ...ONC_TOPICS, ...MISC_TOPICS]
+export const ALL_TOPICS: DiseaseTopic[] = [...DISEASE_TOPICS, ...MEDICAL_TOPICS_A, ...MEDICAL_TOPICS_B, ...INFECTION_TOPICS, ...GYNAE_TOPICS_A, ...GYNAE_TOPICS_B, ...ONC_TOPICS, ...MISC_TOPICS].map((topic) => {
+  const clinicalDetail = CLINICAL_DETAILS[topic.id]
+  return clinicalDetail ? { ...topic, clinicalDetail, sourceIds: [...new Set([...topic.sourceIds, ...clinicalDetail.sourceIds])] } : topic
+})
 
 export function getTopic(id: string): DiseaseTopic | undefined {
   return ALL_TOPICS.find((t) => t.id === id)

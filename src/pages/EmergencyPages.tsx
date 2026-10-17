@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { Link } from '../components/links'
 import { useApp } from '../App'
-import { Blocks, SourceBadge, StatusBadge } from '../components/clinical'
+import { Blocks, DrugUseCard, SourceBadge, StatusBadge } from '../components/clinical'
 
 export function EmergencyHub() {
   const { data } = useApp()
@@ -41,7 +41,7 @@ export function EmergencyDetail() {
     </details>
   )
   return (
-    <article>
+    <article className="clinical-article">
       <span className="small muted"><Link to="/emergencies">Emergency Hub</Link> / {emg.group}</span>
       <h1 style={{ color: 'var(--danger)' }}>⚡ {emg.title}</h1>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 10 }}>
@@ -76,7 +76,7 @@ export function EmergencyDetail() {
       {!!emg.drugs?.length && (
         <>
           <h2 className="section-h">Emergency drugs</h2>
-          <Blocks blocks={emg.drugs.map((d) => ({ kind: 'doseCard', drug: d.drug, dose: d.dose, route: d.route, frequency: d.frequency, prep: d.preparation, maxDose: d.maxDose, notes: d.adverseEffects, contraindications: d.contraindications })) as never} />
+          {emg.drugs.map((d, i) => <DrugUseCard key={i} drug={d} />)}
         </>
       )}
       <h2 className="section-h">Sources</h2>

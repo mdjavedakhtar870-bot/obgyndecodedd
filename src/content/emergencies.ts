@@ -114,8 +114,8 @@ export const EMERGENCIES: EmergencyProtocol[] = [
     investigations: ['Crossmatch 4 units, CBC, Rh, quantitative hCG (never delaying surgery)'],
     definitiveManagement: [{ kind: 'text', text: 'Surgical control (salpingectomy usually); MTP if massive.' }],
     escalation: ['MTP activation; ICU if shock profound'],
-    postEventCare: ['Anti-D Rh-negative; psychological support; STI screen offer'],
-    sourceIds: ['rcog-gtg73-pprom-2019'],
+    postEventCare: ['Assess gestation-specific RhD prophylaxis using the linked NICE NG126 2026 criteria and confirmed local policy; psychological support; STI screen offer'],
+    sourceIds: ['nice-ng126-ectopic-detail', 'nice-ng126-antid-detail'], status: 'review', lastVerifiedAt: undefined,
   }),
   e({
     id: 'emg-aph-massive', title: 'Massive APH (praevia/abruption)', group: 'Haemorrhage', keywords: ['bleeding pregnancy third trimester'],

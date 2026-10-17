@@ -40,7 +40,18 @@ npm run docs:matrix    # regenerate CLINICAL-SOURCE-MATRIX / AUDIT / FINAL-REVIE
 npm run build          # typecheck + Vite bundle + HTML/text/sitemap generation
 npm run test:build     # validate every generated page, URL, source link and export
 npm run test:client    # production-bundle hydration and interaction smoke tests (DOM)
+npm run test:mobile    # Chromium layout + phone navigation/reading checks
 ```
+
+The mobile check requires a Chromium installation (`npx playwright-core install chromium`). A managed browser executable can instead be selected with `MOBILE_QA_BROWSER_PATH`; `MOBILE_QA_SERVERLESS=1` enables the flags needed by a serverless Chromium build. `MOBILE_QA_SCREENSHOTS=docs/mobile-review` saves the reviewed screenshots. The verifier tests every generated page at 320 and 390 pixels, plus representative tablet and desktop routes, and exercises the production JavaScript on a touch viewport.
+
+## Mobile reading and clinical detail
+
+- Phone navigation includes a labelled bottom bar, a complete menu, searchable clinical text, 44-pixel touch targets and 16-pixel form inputs. Dialogs trap keyboard focus, close with Escape and restore focus.
+- Clinical tables become labelled cards on narrow screens, retaining dose, route, frequency, duration and maximum relationships. No whole-page horizontal scrolling is required.
+- Topic pages open as a full guide with a section jump control. Focused sections remain available. Every authored algorithm node is rendered, with explicit links to branch destinations; an incomplete start-node connection can no longer hide the rest of a pathway.
+- Additional source-checked assessment, management-decision, follow-up and pitfall explanations cover 42 topics. Their check dates apply to those sections, not the entire module. The source register records the exact scope.
+- Identified early-pregnancy reference and pathway errors were corrected alongside the expansion. The affected modules remain in review. See `docs/MOBILE-CONTENT-UPDATE.md` for scope and validation.
 
 ## Clinical architecture
 

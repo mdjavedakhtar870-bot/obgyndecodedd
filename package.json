@@ -12,6 +12,7 @@
     "test": "node --import tsx --test tests/content.test.ts tests/seo.test.ts tests/crawler.test.ts",
     "test:build": "node --import tsx --test tests/build.test.ts",
     "test:client": "node --import tsx --test tests/client.test.ts",
+    "test:mobile": "node scripts/verify-mobile.mjs",
     "docs:matrix": "node --import tsx scripts/gen-source-matrix.mts"
   },
   "dependencies": {
@@ -29,6 +30,7 @@
     "@types/turndown": "^5.0.6",
     "@vitejs/plugin-react": "^4.3.1",
     "jsdom": "^26.1.0",
+    "playwright-core": "^1.62.1",
     "tsx": "^4.19.0",
     "turndown": "^7.2.4",
     "typescript": "^5.5.4",

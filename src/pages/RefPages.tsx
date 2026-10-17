@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import { Link } from '../components/links'
 import { useApp } from '../App'
-import { SourceBadge, StatusBadge } from '../components/clinical'
+import { Blocks, ClinicalTable, SourceBadge, StatusBadge } from '../components/clinical'
 import { getSource } from '../content/sources'
 import { getPage } from '../lib/seo'
 
@@ -28,8 +28,8 @@ export function DrugsPage() {
       <h1>{selected?.name || 'Drug database'}</h1>
       <p className="small muted">Pregnancy & gynaecology-specific. Every dose row is source-referenced; verify against institutional protocols.</p>
       {!id && <div className="row" style={{ margin: '14px 0' }}>
-        <input className="input" style={{ maxWidth: 320 }} placeholder="Search drug / class…" value={q} onChange={(e) => setQ(e.target.value)} />
-        <select className="input" style={{ maxWidth: 240 }} value={cat} onChange={(e) => setCat(e.target.value)}><option value="">All categories</option>{cats.map((c) => <option key={c}>{c}</option>)}</select>
+        <input className="input" aria-label="Search drug or drug class" style={{ maxWidth: 320 }} placeholder="Search drug / class…" value={q} onChange={(e) => setQ(e.target.value)} />
+        <select className="input" aria-label="Drug category" style={{ maxWidth: 240 }} value={cat} onChange={(e) => setCat(e.target.value)}><option value="">All categories</option>{cats.map((c) => <option key={c}>{c}</option>)}</select>
         <span className="small muted">{list.length}</span>
       </div>}
       <div style={{ display: 'grid', gap: 12 }}>
@@ -39,8 +39,7 @@ export function DrugsPage() {
             <div className="acc-body">
               {!id && <p><Link to={`/drug/${d.id}`}>Open {d.name} reference →</Link></p>}
               <p className="small">Indications: {d.indications.join(' · ')}</p>
-              <table className="clinical"><thead><tr><th>Indication</th><th>Dose</th><th>Route</th><th>Frequency</th><th>Duration/Prep</th><th>Max</th></tr></thead>
-                <tbody>{d.doseRows.map((r, i) => <tr key={i}><td>{r.indication}</td><td><b>{r.dose}</b></td><td>{r.route}</td><td>{r.frequency ?? '-'}</td><td>{[r.duration, r.preparation].filter(Boolean).join(' · ')}{r.notes?.length ? <ul>{r.notes.map((n, j) => <li key={j}>{n}</li>)}</ul> : null}</td><td>{r.max ?? '-'}</td></tr>)}</tbody></table>
+              <ClinicalTable caption={`${d.name}: indication-specific regimens`} headers={['Indication', 'Dose', 'Route', 'Frequency', 'Duration / preparation', 'Maximum']} rows={d.doseRows.map((r) => [<>{r.indication}{r.sourceId && <div style={{ marginTop: 8 }}><SourceBadge id={r.sourceId} /></div>}</>, <b>{r.dose}</b>, r.route, r.frequency ?? 'Not recorded', <>{[r.duration, r.preparation].filter(Boolean).join(' · ')}{r.notes?.length ? <ul>{r.notes.map((n, j) => <li key={j}>{n}</li>)}</ul> : null}</>, r.max ?? 'Not recorded'])} />
               <div className="kv-grid small">
                 <div className="kv"><div className="k">Pregnancy safety</div><div className="v" style={{ fontSize: 12.5 }}>{d.pregnancySafety}</div></div>
                 <div className="kv"><div className="k">Lactation</div><div className="v" style={{ fontSize: 12.5 }}>{d.lactation}</div></div>
@@ -96,7 +95,7 @@ function CalcCard({ c }: { c: import('../content/types').CalculatorDef }) {
               ? <select className="input" style={{ marginTop: 4 }} value={vals[inp.name] || ''} onChange={(e) => setVals({ ...vals, [inp.name]: e.target.value })}>
                   <option value="">—</option>{inp.options?.map((o) => <option key={o}>{o}</option>)}
                 </select>
-              : <input className="input" style={{ marginTop: 4 }} type={inp.type === 'date' ? 'date' : inp.type === 'number' ? 'number' : 'text'} step={inp.step} value={vals[inp.name] || ''} onChange={(e) => setVals({ ...vals, [inp.name]: e.target.value })} />}
+              : <input className="input" style={{ marginTop: 4 }} type={inp.type === 'date' ? 'date' : inp.type === 'number' ? 'number' : 'text'} inputMode={inp.type === 'number' ? 'decimal' : undefined} step={inp.step} min={inp.min} max={inp.max} placeholder={inp.placeholder} value={vals[inp.name] || ''} onChange={(e) => setVals({ ...vals, [inp.name]: e.target.value })} />}
           </label>
         ))}
       </div>
@@ -131,16 +130,7 @@ export function DdxPage() {
         <b>Urgent workup:</b><ul style={{ paddingLeft: 20, margin: '6px 0 0' }}>{p.urgentWorkup.map((w, i) => <li key={i}>{w}</li>)}</ul>
       </div>
       <h2 className="section-h">Structured differential — act in priority order</h2>
-      <table className="clinical">
-        <thead><tr><th></th><th>Condition</th><th>Key features</th><th>Action</th></tr></thead>
-        <tbody>{p.differential.map((d, i) => (
-          <tr key={i}>
-            <td><span className={`badge ${prioCls(d.priority)}`}>{d.priority === 'cannot-miss' ? 'CANNOT MISS' : d.priority.toUpperCase()}</span></td>
-            <td><b>{d.condition}</b></td><td>{d.keyFeatures}</td>
-            <td>{d.topicRef && referencePath(d.topicRef) ? <Link to={referencePath(d.topicRef)!}>{d.action} →</Link> : d.action}</td>
-          </tr>
-        ))}</tbody>
-      </table>
+      <ClinicalTable headers={['Priority', 'Condition', 'Key features', 'Action']} rows={p.differential.map((d) => [<span className={`badge ${prioCls(d.priority)}`}>{d.priority === 'cannot-miss' ? 'CANNOT MISS' : d.priority.toUpperCase()}</span>, <b>{d.condition}</b>, d.keyFeatures, d.topicRef && referencePath(d.topicRef) ? <Link to={referencePath(d.topicRef)!}>{d.action} →</Link> : d.action])} />
       <h2 className="section-h">First moves</h2>
       <ol className="steps-list">{p.firstMoves.map((m, i) => <li key={i}>{m}</li>)}</ol>
     </div>
@@ -163,7 +153,7 @@ export function ProceduresPage() {
             <div className="acc-body">
               {!id && <p><Link to={`/procedure/${p.id}`}>Open {p.title} reference →</Link></p>}
               <div className="badges"><StatusBadge status={p.status} /><span className="badge">{p.lastVerifiedAt ? `Last clinically verified ${p.lastVerifiedAt}` : 'PENDING CLINICAL VERIFICATION'}</span></div>
-              <div className="grid-cards small" style={{ gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', margin: '8px 0' }}>
+              <div className="grid-cards" style={{ margin: '8px 0' }}>
                 <div className="card card-pad"><b>Indications</b><ul style={{ paddingLeft: 18, margin: '6px 0 0' }}>{p.indications.map((x, i) => <li key={i}>{x}</li>)}</ul></div>
                 <div className="card card-pad"><b>Consent points</b><ul style={{ paddingLeft: 18, margin: '6px 0 0' }}>{p.consentPoints.map((x, i) => <li key={i}>{x}</li>)}</ul></div>
                 <div className="card card-pad"><b>Equipment</b><ul style={{ paddingLeft: 18, margin: '6px 0 0' }}>{p.equipment.map((x, i) => <li key={i}>{x}</li>)}</ul></div>
@@ -177,7 +167,7 @@ export function ProceduresPage() {
               {p.intraOpTroubleshooting?.length ? <div className="block-info"><b>Troubleshooting:</b><ul style={{ paddingLeft: 18, margin: '4px 0 0' }}>{p.intraOpTroubleshooting.map((x, i) => <li key={i}>{x}</li>)}</ul></div> : null}
               <b>Complications & management</b>
               {p.complications.map((cc, i) => (
-                <details key={i} className="acc"><summary>{cc.name}</summary><div className="acc-body">{(cc.management || []).map((m, j) => m.kind === 'text' ? <p key={j} style={{ fontSize: 13.5 }}>{m.text}</p> : null)}</div></details>
+                <details key={i} className="acc"><summary>{cc.name}</summary><div className="acc-body"><Blocks blocks={cc.management} /></div></details>
               ))}
               {!!p.postopCare.length && <><h2 className="section-h">Postoperative care</h2><ul>{p.postopCare.map((s, i) => <li key={i}>{s}</li>)}</ul></>}
               <div className="row small muted" style={{ marginTop: 10 }}>Follow-up: {p.followUp.join(' · ')} · Sources: {p.sourceIds.map((s) => getSource(s)?.organisation).filter(Boolean).join(', ')}</div>
@@ -200,20 +190,8 @@ export function SourcesPage() {
     <div>
       <h1>Guideline & source register</h1>
       <p className="small muted">Canonical clinical-source map. “Verified” = the implemented recommendations were checked against the source on the recorded date. Nothing is marked verified without that check.</p>
-      <input className="input" style={{ maxWidth: 380, margin: '12px 0' }} placeholder="Filter…" value={q} onChange={(e) => setQ(e.target.value)} />
-      <table className="admin-tbl card" style={{ padding: '6px 10px' }}>
-        <thead><tr><th>Organisation</th><th>Title</th><th>Version/date</th><th>Checked</th><th>Status</th><th></th></tr></thead>
-        <tbody>{sources.map((s) => (
-          <tr key={s.id}>
-            <td><b>{s.organisation}</b><br /><span className="muted small">{s.region}</span></td>
-            <td>{s.title}<br /><span className="muted small">{s.usedBySections.length} module(s)</span></td>
-            <td className="small">{s.publishedDate}{s.lastUpdatedDate ? ` · upd ${s.lastUpdatedDate}` : ''}{s.version ? <br /> : ''}<span className="muted">{s.version}</span></td>
-            <td className="small">{s.dateChecked ?? '—'}</td>
-            <td><span className={`badge ${tone(s.status)}`}>{s.status.replace('verified-', 'verified ')}</span></td>
-            <td><a href={s.url} target="_blank" rel="noreferrer" className="btn sm">Open ↗</a></td>
-          </tr>
-        ))}</tbody>
-      </table>
+      <input className="input" aria-label="Filter guidelines and sources" style={{ maxWidth: 380, margin: '12px 0' }} placeholder="Filter…" value={q} onChange={(e) => setQ(e.target.value)} />
+      <ClinicalTable headers={['Organisation', 'Title', 'Version / date', 'Checked', 'Status', 'Reference']} rows={sources.map((s) => [<><b>{s.organisation}</b><br /><span className="muted small">{s.region}</span></>, <>{s.title}<br /><span className="muted small">{s.usedBySections.length} module(s)</span>{s.checkedAgainst && <details className="source-scope"><summary>Scope of check</summary><p>{s.checkedAgainst}</p></details>}</>, <>{s.publishedDate}{s.lastUpdatedDate ? ` · updated ${s.lastUpdatedDate}` : ''}<br /><span className="muted">{s.version}</span></>, s.dateChecked ?? 'Not recorded', <span className={`badge ${tone(s.status)}`}>{s.status.replace('verified-', 'verified ')}</span>, <a href={s.url} target="_blank" rel="noreferrer" className="btn sm">Open source ↗</a>])} />
     </div>
   )
 }

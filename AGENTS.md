@@ -54,3 +54,11 @@ If an error is found: FIX → VERIFY SOURCE → UPDATE DATA → RETEST (`typeche
 - Every public OBGYN page must include a visible, followable HTML link to ICU Decoded. The verified destination used by this implementation is `https://icudecodedd.com/`; `icudecode.com` was also named by the owner but its live destination was not verified.
 - Use the shared `ICU_DECODED_URL` constant. Keep this link in the prerendered page footer, client navigation and generated text references. Do not add `nofollow` or `sponsored` to this owner's related-reference link.
 - The implemented request is a backlink: OBGYN pages retain their own content and canonical URLs, with a normal link to ICU Decoded. Do not replace the clinical site with blanket redirects as part of this SEO work.
+
+## Owner's mobile and content request — 17 October 2026
+
+- Prioritise phone reading and navigation. Test generated pages at 320 and 390 pixels, plus representative tablet and desktop widths. Wide clinical tables must retain clear field labels without stretching the page viewport.
+- Make content useful through actual assessment, decision, follow-up and pitfall explanations with relevant sources. Do not add filler, invented citations, rankings or claims that AI systems endorse the site.
+- Additional detail is authored in `src/content/clinical-details.ts` and assembled into the same HTML shown to doctors and verified crawlers. Its section check date is separate from full-module verification. Preserve that distinction in metadata, exports and generated documentation.
+- Render all authored algorithm nodes and keep branch destinations explicit. Do not invent clinical edges to repair incomplete graphs.
+- `npm run test:mobile` exercises real Chromium; DOM-only tests do not establish responsive layout correctness.

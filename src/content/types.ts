@@ -149,6 +149,18 @@ export interface DiseaseTopic {
   patientEducation?: Block[]
   sourceIds: string[]
   emergencyRef?: string
+  /** Additional checked explanations; this does not certify the rest of the module. */
+  clinicalDetail?: ClinicalDetail
+}
+
+export interface ClinicalDetail {
+  overview: string
+  assessment: string[]
+  decisions: string[]
+  followUp: string[]
+  pitfalls?: string[]
+  sourceIds: string[]
+  checkedAt: string
 }
 
 /* ---------- Emergency protocols (§54) ---------- */
@@ -184,6 +196,7 @@ export interface DrugDoseRow {
   preparation?: string
   max?: string
   notes?: string[]
+  sourceId?: string
 }
 
 export interface DrugRecord {

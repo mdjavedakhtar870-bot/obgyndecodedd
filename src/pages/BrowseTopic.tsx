@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Link } from '../components/links'
 import { useApp } from '../App'
 import { favs, recents } from '../lib/app'
-import { Accordion, AlgorithmFlow, Blocks, SourceBadge, StatusBadge, Tabs } from '../components/clinical'
+import { Accordion, AlgorithmFlow, Blocks, ClinicalTable, DrugUseCard, SourceBadge, StatusBadge, Tabs } from '../components/clinical'
 import { CATEGORY_LABELS } from '../content'
 import { getSource } from '../content/sources'
 import type { Block, DiseaseTopic, TreatmentEngine } from '../content/types'
@@ -20,8 +20,8 @@ export function BrowsePage() {
     <div>
       <h1>Browse clinical topics</h1>
       <div className="row" style={{ margin: '12px 0 18px' }}>
-        <input className="input" style={{ maxWidth: 320 }} placeholder="Filter topics…" value={q} onChange={(e) => setQ(e.target.value)} />
-        <select className="input" style={{ maxWidth: 260 }} value={cat} onChange={(e) => setCat(e.target.value)}>
+        <input className="input" aria-label="Filter clinical topics" style={{ maxWidth: 320 }} placeholder="Filter topics…" value={q} onChange={(e) => setQ(e.target.value)} />
+        <select className="input" aria-label="Clinical category" style={{ maxWidth: 260 }} value={cat} onChange={(e) => setCat(e.target.value)}>
           <option value="">All categories</option>
           {cats.map((c) => <option key={c} value={c}>{CATEGORY_LABELS[c] || c}</option>)}
         </select>
@@ -31,7 +31,8 @@ export function BrowsePage() {
         {list.map((t) => (
           <Link key={t.id} className="tile" to={`/topic/${t.id}`}>
             <div className="spread"><h3>{t.title}</h3><StatusBadge status={t.status} /></div>
-            <p>{CATEGORY_LABELS[t.category]} · v{t.version}{t.lastVerifiedAt ? ` · verified ${t.lastVerifiedAt}` : ' · pending verification'}</p>
+            <p>{t.summary}</p>
+            <span className="small muted">{CATEGORY_LABELS[t.category]} · {t.lastVerifiedAt ? `verified ${t.lastVerifiedAt}` : 'pending verification'}</span>
           </Link>
         ))}
       </div>
@@ -79,12 +80,7 @@ function TreatmentEngineView({ topic }: { topic: DiseaseTopic }) {
       </Accordion>
       {!!te.drugTreatment?.length && (
         <Accordion title={`④ Drug treatment detail (${te.drugTreatment.length} agents)`}>
-          {te.drugTreatment.map((d, i) => (
-            <div key={i}>
-              <Blocks blocks={[{ kind: 'doseCard', drug: d.drug, dose: d.dose, route: d.route, frequency: d.frequency, duration: d.duration, prep: d.preparation, maxDose: d.maxDose, notes: d.adverseEffects, contraindications: d.contraindications, sourceId: d.sourceId } as never]} />
-              {d.monitoring?.length ? <p className="small muted">Monitoring: {d.monitoring.join(' · ')}</p> : null}
-            </div>
-          ))}
+          {te.drugTreatment.map((d, i) => <DrugUseCard key={i} drug={d} />)}
         </Accordion>
       )}
       {TE_SECTIONS.filter((s) => !['immediateStabilization', 'initialAssessment', 'investigations', 'firstLine', 'alternativesFirstLine'].includes(s.id)).map((s) => {
@@ -115,15 +111,22 @@ export function TopicPage() {
   const relatedEmergencies = data.emergencies.filter((e) => e.topicRef === topic.id)
 
   const tabs = [
+    topic.clinicalDetail && { id: 'detail', label: 'Clinical detail', content: <>
+      <p className="review-scope">Additional detail checked {topic.clinicalDetail.checkedAt} against the linked sources. This check covers the section below; the rest of the module retains its displayed verification status.</p>
+      <p className="clinical-copy">{topic.clinicalDetail.overview}</p>
+      {[
+        ['Assessment & interpretation', topic.clinicalDetail.assessment],
+        ['Decisions that change management', topic.clinicalDetail.decisions],
+        ['Follow-up & safety-netting', topic.clinicalDetail.followUp],
+        ['Clinical pitfalls', topic.clinicalDetail.pitfalls],
+      ].map(([heading, items]) => Array.isArray(items) && items.length ? <div className="clinical-detail" key={String(heading)}><h3>{String(heading)}</h3><Blocks blocks={[{ kind: 'list', items }]} /></div> : null)}
+      <div className="source-line"><span className="small muted">Sources for this detail:</span><div className="row">{topic.clinicalDetail.sourceIds.map((sid) => <SourceBadge key={sid} id={sid} />)}</div></div>
+    </> },
     topic.treatment && { id: 'tx', label: 'Treatment', content: <TreatmentEngineView topic={topic} /> },
     topic.classificationTable && {
       id: 'class', label: 'Classification',
       content: (
-        <table className="clinical">
-          {topic.classificationTable.caption && <caption style={{ captionSide: 'top', textAlign: 'left', fontSize: 12.5, color: 'var(--ink-3)', paddingBottom: 4 }}>{topic.classificationTable.caption}</caption>}
-          <thead><tr>{topic.classificationTable.headers.map((h, i) => <th key={i}>{h}</th>)}</tr></thead>
-          <tbody>{topic.classificationTable.rows.map((r, i) => <tr key={i}>{r.map((c, j) => <td key={j}>{c}</td>)}</tr>)}</tbody>
-        </table>
+        <ClinicalTable {...topic.classificationTable} />
       ),
     },
     (topic.definition || topic.redFlags || topic.investigations || topic.initialAssessment || topic.presentation || topic.riskFactors || topic.differentials) && {
@@ -131,13 +134,13 @@ export function TopicPage() {
       content: (
         <>
           {topic.redFlags?.length ? <div className="block-warning"><b>Red flags:</b><ul style={{ margin: '6px 0 0', paddingLeft: 20 }}>{topic.redFlags.map((r, i) => <li key={i}>{r}</li>)}</ul></div> : null}
-          {topic.definition && <p style={{ fontSize: 14 }}><b>Definition:</b> {topic.definition}</p>}
+          {topic.definition && <p><b>Definition:</b> {topic.definition}</p>}
           {topic.riskFactors && <><h3 style={{ marginTop: 14 }}>Risk factors</h3><div className="row">{topic.riskFactors.map((r) => <span key={r} className="badge">{r}</span>)}</div></>}
           {topic.presentation && <><h3 style={{ marginTop: 14 }}>Presentation</h3><Blocks blocks={[{ kind: 'list', items: topic.presentation }]} /></>}
           {topic.initialAssessment && <><h3 style={{ marginTop: 14 }}>Initial assessment</h3><Blocks blocks={topic.initialAssessment} /></>}
-          {topic.investigations && <><h3 style={{ marginTop: 14 }}>Investigations</h3><table className="clinical"><thead><tr><th>Test</th><th>Looking for</th></tr></thead><tbody>{topic.investigations.map((iv, i) => iv && typeof iv === 'object' && 'test' in (iv as object) ? <tr key={i}><td><b>{(iv as { test: string }).test}</b></td><td>{(iv as { lookingFor: string }).lookingFor}</td></tr> : null)}</tbody></table></>}
+          {topic.investigations?.some((iv) => 'test' in iv) && <><h3 style={{ marginTop: 14 }}>Investigations</h3><ClinicalTable headers={['Test', 'Looking for']} rows={topic.investigations.filter((iv) => 'test' in iv).map((iv) => [<b>{'test' in iv ? iv.test : ''}</b>, 'lookingFor' in iv ? iv.lookingFor : ''])} /></>}
           <Blocks blocks={topic.investigations?.filter((iv): iv is Block => 'kind' in iv)} />
-          {topic.differentials && <><h3 style={{ marginTop: 14 }}>Differential diagnosis</h3><table className="clinical"><thead><tr><th>Condition</th><th>Clue</th></tr></thead><tbody>{topic.differentials.map((d, i) => <tr key={i}><td>{d.condition}</td><td>{d.clue}</td></tr>)}</tbody></table></>}
+          {topic.differentials && <><h3 style={{ marginTop: 14 }}>Differential diagnosis</h3><ClinicalTable headers={['Condition', 'Clue']} rows={topic.differentials.map((d) => [d.condition, d.clue])} /></>}
         </>
       ),
     },
@@ -172,13 +175,14 @@ export function TopicPage() {
   ].filter(Boolean) as { id: string; label: string; content: React.ReactNode }[]
 
   return (
-    <article>
-      <div className="spread">
+    <article className="clinical-article">
+      <p className="small"><Link to="/browse">← Clinical library</Link></p>
+      <div className="spread topic-heading">
         <div>
           <span className="small muted">{CATEGORY_LABELS[topic.category]}</span>
-          <h1 style={{ display: 'flex', alignItems: 'center', gap: 10 }}>{topic.title}</h1>
+          <h1>{topic.title}</h1>
         </div>
-        <button className="icon-btn" style={{ width: 42, height: 42 }} onClick={() => setIsFav(favs.toggle(topic.id))} title="Favourite">{isFav ? '★' : '☆'}</button>
+        <button className="icon-btn" aria-label={isFav ? 'Remove from favourites' : 'Save to favourites'} aria-pressed={isFav} onClick={() => setIsFav(favs.toggle(topic.id))} title="Favourite">{isFav ? '★' : '☆'}</button>
       </div>
       <div className="badges" style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
         <StatusBadge status={topic.status} />
@@ -192,6 +196,14 @@ export function TopicPage() {
       <div className="block-info">{topic.summary}</div>
       {topic.reviewerNote && <div className="block-warning"><b>Reviewer note:</b> {topic.reviewerNote}</div>}
       <Tabs key={topic.id} tabs={tabs} />
+      <aside className="related-references" aria-label="Related clinical references">
+        <h2>Continue the clinical workup</h2>
+        <ul>
+          {relatedEmergencies.map((e) => <li key={e.id}><Link to={`/emergency/${e.id}`}>Emergency pathway: {e.title}</Link></li>)}
+          {data.topics.filter((t) => t.category === topic.category && t.id !== topic.id).slice(0, 3).map((t) => <li key={t.id}><Link to={`/topic/${t.id}`}>{t.title}</Link></li>)}
+          <li><Link to="/drugs">Drug doses, safety and monitoring</Link></li><li><Link to="/calculators">Clinical calculators and their formulas</Link></li>
+        </ul>
+      </aside>
     </article>
   )
 }

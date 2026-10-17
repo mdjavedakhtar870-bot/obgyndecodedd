@@ -52,7 +52,7 @@ export const PUBLIC_PAGES: PageInfo[] = [
     { title: `${e.title} — Emergency Protocol | ${SITE_NAME}`, kind: 'MedicalWebPage', parent: '/emergencies', sourceIds: e.sourceIds, status: e.status, lastReviewed: e.lastVerifiedAt, index: !['draft', 'archived'].includes(e.status) })),
   ...DRUGS.map((d) => page(`/drug/${d.id}`, d.name,
     `${d.name}: dose tables, routes, frequency, duration, pregnancy and lactation notes, and sources. Content ${verificationText(d.status)}.`,
-    { title: `${d.name} — Drug Reference | ${SITE_NAME}`, kind: 'MedicalWebPage', parent: '/drugs', sourceIds: d.sourceId ? [d.sourceId] : [], status: d.status, index: !['draft', 'archived'].includes(d.status) })),
+    { title: `${d.name} — Drug Reference | ${SITE_NAME}`, kind: 'MedicalWebPage', parent: '/drugs', sourceIds: [...new Set([d.sourceId, ...d.doseRows.map((r) => r.sourceId)].filter((id): id is string => !!id))], status: d.status, index: !['draft', 'archived'].includes(d.status) })),
   ...CALCULATORS.map((c) => page(`/calculator/${c.id}`, c.name, `${c.name}. ${c.description} Includes the formula and registered source where available.`,
     { title: `${c.name} — Calculator | ${SITE_NAME}`, kind: 'MedicalWebPage', parent: '/calculators', sourceIds: c.sourceId ? [c.sourceId] : [] })),
   ...PROCEDURES.map((p) => page(`/procedure/${p.id}`, p.title,

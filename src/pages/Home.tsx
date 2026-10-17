@@ -2,72 +2,64 @@ import { Link } from '../components/links'
 import { useEffect, useState } from 'react'
 import { useApp } from '../App'
 import { favs, recents } from '../lib/app'
-import { StatusBadge } from '../components/clinical'
+import { CATEGORY_LABELS } from '../content'
+
+const CATEGORY_INTROS: Record<string, string> = {
+  antenatal: 'Antenatal contacts, maternal assessment and the routine-care schedule.',
+  obstetrics: 'Labour, induction, mode of birth, fetal assessment and membrane rupture.',
+  'obstetric-emergency': 'Haemorrhage, hypertensive emergencies and complications of early pregnancy and birth.',
+  'medical-disorders': 'Diabetes, anaemia, thrombosis and other medical disorders during pregnancy.',
+  'infections-pregnancy': 'Maternal infection, pregnancy-specific treatment, partner care and follow-up.',
+  'early-pregnancy': 'Pregnancy location, pregnancy loss, recurrent miscarriage and termination care.',
+  gynaecology: 'Bleeding, pelvic pain, benign gynaecology, menopause and pelvic-floor symptoms.',
+  'gynae-oncology': 'Cancer recognition, screening, staging references and specialist referral.',
+  urogynaecology: 'Urinary symptoms, prolapse, continence assessment and pelvic-floor care.',
+  'contraception-infertility': 'Contraceptive choices, reproductive goals and fertility assessment.',
+}
 
 export default function Home() {
   const { data } = useApp()
   const [ready, setReady] = useState(false)
   useEffect(() => { setReady(true) }, [])
-  if (!data) return <p className="muted">Loading clinical library…</p>
-  const emergencyTopics = data.emergencies.slice(0, 8)
-  const myRecents = (ready ? recents.all() : []).map((id) => data.topics.find((t) => t.id === id)).filter(Boolean)
-  const myFavs = (ready ? favs.all() : []).map((id) => data.topics.find((t) => t.id === id)).filter(Boolean)
-  const unverified = data.topics.filter((t) => t.status !== 'published' && t.status !== 'clinically-verified').length
+  const categories = [...new Set(data.topics.map((t) => t.category))]
+  const recentIds = ready ? [...new Set([...favs.all(), ...recents.all()])].slice(0, 6) : []
+  const personal = recentIds.map((id) => data.topics.find((t) => t.id === id)).filter((t) => t !== undefined)
+  const pending = data.topics.filter((t) => !['published', 'clinically-verified'].includes(t.status)).length
+  return <div>
+    <section className="hero">
+      <span className="eyebrow">For doctors · India-first reference</span>
+      <h1>From clinical problem<br />to the next decision.</h1>
+      <p>Find the assessment, treatment pathway, drug regimen and follow-up in one guide. Open the sources beside the clinical detail, or go straight to an emergency protocol.</p>
+      <div className="hero-actions"><Link className="btn" to="/browse">Find a condition →</Link><Link className="btn secondary" to="/emergencies">Emergency pathways</Link></div>
+    </section>
 
-  return (
-    <div>
-      <section className="hero">
-        <h1>Bedside answers. Source-traceable. India-first.</h1>
-        <p>
-          Open the problem you are facing → get assessment → exact treatment pathway with doses, routes and durations →
-          monitoring → what to do when the patient fails to improve → escalation — every step traced to its guideline.
-        </p>
-        <div className="badges">
-          <span className="badge" style={{ background: 'rgba(255,255,255,.14)', color: '#fff', borderColor: 'rgba(255,255,255,.3)' }}>FOGSI/ICOG GCPR 2026 · HDP</span>
-          <span className="badge" style={{ background: 'rgba(255,255,255,.14)', color: '#fff', borderColor: 'rgba(255,255,255,.3)' }}>WHO Consolidated PPH (Oct 2025)</span>
-          <span className="badge" style={{ background: 'rgba(255,255,255,.14)', color: '#fff', borderColor: 'rgba(255,255,255,.3)' }}>NICE NG235 (updated Jun 2026)</span>
-        </div>
-      </section>
+    <nav className="library-stats" aria-label="Clinical reference collections">
+      {[['/browse', data.topics.length, 'Clinical topics'], ['/emergencies', data.emergencies.length, 'Emergency protocols'], ['/drugs', data.drugs.length, 'Drug references'], ['/calculators', data.calculators.length, 'Calculators']].map(([to, count, label]) => <Link key={to} className="library-stat" to={String(to)}><strong>{count}</strong><span>{label}</span></Link>)}
+    </nav>
 
-      <h2 className="section-h">⚡ Emergencies — one tap away</h2>
-      <div className="grid-cards">
-        {emergencyTopics.map((e) => (
-          <Link key={e.id} className="tile" to={`/emergency/${e.id}`} style={{ borderLeft: '4px solid var(--danger)' }}>
-            <h3>{e.title}</h3><p>{e.group}</p>
-          </Link>
-        ))}
-        <Link className="tile" to="/emergencies"><h3>All protocols →</h3><p>{data.emergencies.length} emergency pathways</p></Link>
-      </div>
-
-      {(myRecents.length > 0 || myFavs.length > 0) && (
-        <>
-          <h2 className="section-h">Jump back in</h2>
-          <div className="grid-cards">
-            {myFavs.map((t) => t && (
-              <Link key={`f-${t.id}`} className="tile" to={`/topic/${t.id}`}><h3>☆ {t.title}</h3><p>Favourite</p></Link>
-            ))}
-            {myRecents.map((t) => t && !favs.has(t.id) && (
-              <Link key={`r-${t.id}`} className="tile" to={`/topic/${t.id}`}><h3>{t.title}</h3><p>Recently viewed</p></Link>
-            ))}
-          </div>
-        </>
-      )}
-
-      <h2 className="section-h">Clinical modules</h2>
-      <div className="grid-cards">
-        {data.topics.slice(0, 12).map((t) => (
-          <Link key={t.id} className="tile" to={`/topic/${t.id}`}>
-            <div className="spread"><h3>{t.title}</h3><StatusBadge status={t.status} /></div>
-            <p>{t.summary.slice(0, 110)}…</p>
-          </Link>
-        ))}
-      </div>
-
-      <div className="card card-pad small muted" style={{ marginTop: 26 }}>
-        <b>Content status:</b> {data.topics.length} topics · {data.drugs.length} drugs · {data.calculators.length} calculators ·
-        {' '}{data.emergencies.length} emergency protocols · {unverified} flagged pending/outdated for specialist review.
-        This application supports clinical decision-making but does not replace clinical judgement; verify doses against your institutional protocols.
-      </div>
+    <h2 className="section-h">Urgent problems</h2>
+    <p className="section-intro">Recognition, help, immediate actions and escalation are grouped in each emergency pathway.</p>
+    <div className="grid-cards">
+      {data.emergencies.slice(0, 4).map((e) => <Link key={e.id} className="tile emergency-tile" to={`/emergency/${e.id}`}><span className="eyebrow">{e.group}</span><h3>{e.title} →</h3><p>{e.recognize[0]}</p></Link>)}
     </div>
-  )
+    <p><Link className="btn" to="/emergencies">All {data.emergencies.length} emergency protocols →</Link></p>
+
+    {personal.length > 0 && <section><h2 className="section-h">Continue reading</h2><div className="grid-cards">{personal.map((t) => <Link className="tile" key={t.id} to={`/topic/${t.id}`}><h3>{t.title}</h3><p>{favs.has(t.id) ? 'Saved on this device' : 'Recently opened'}</p></Link>)}</div></section>}
+
+    <section>
+      <span className="eyebrow" style={{ marginTop: 32 }}>Explore the complete library</span>
+      <h2>Obstetrics & gynaecology, by clinical problem</h2>
+      <p className="section-intro">Read the full guide or focus on one section. Each topic displays its own review status; section-specific source checks do not imply that the entire module has been audited.</p>
+      {categories.map((cat) => <section key={cat} className="category-section">
+        <header><h3>{CATEGORY_LABELS[cat]}</h3><p>{CATEGORY_INTROS[cat]}</p></header>
+        <ul className="topic-list">{data.topics.filter((t) => t.category === cat).map((t) => <li key={t.id}><Link to={`/topic/${t.id}`}><span><strong>{t.title}</strong><small>{t.summary}</small></span><span className="topic-arrow" aria-hidden="true">↗</span></Link></li>)}</ul>
+      </section>)}
+    </section>
+
+    <section className="card card-pad" style={{ marginTop: 28 }}>
+      <h2>Clinical tools beside the guide</h2>
+      <p>Use <Link to="/ddx">differential-diagnosis presentations</Link> for structured workup, <Link to="/drugs">drug references</Link> for indication-specific regimens, <Link to="/calculators">calculators</Link> for entered clinical values, and <Link to="/procedures">procedure guides</Link> for preparation and follow-up.</p>
+      <p className="small muted">{pending} modules remain in review or marked outdated. Check the page status and <Link to="/sources">source register</Link> when using the reference.</p>
+    </section>
+  </div>
 }

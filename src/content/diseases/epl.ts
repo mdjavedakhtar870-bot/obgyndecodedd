@@ -14,9 +14,9 @@ export const EPL_TOPICS: DiseaseTopic[] = [
     title: 'Pregnancy of Unknown Location (PUL)',
     category: 'early-pregnancy',
     tags: ['pul', 'bhcg', 'early-pregnancy', 'ectopic-rule-out'],
-    status: 'published',
-    version: 1,
-    lastVerifiedAt: '2026-08-23',
+    status: 'review',
+    version: 2,
+    reviewerNote: 'Reference mapping and identified early-pregnancy pathway errors corrected against NICE NG126. The full legacy module, including specialist regimens, remains in clinical review.',
     regionPriority: 'international-first',
     summary: 'Positive pregnancy test with no pregnancy visualised on TVS. It is a DESCRIPTION, not a diagnosis. Serial hCG + review until location declared; ~7–20% are ectopic.',
     definition: 'Positive urinary/serum pregnancy test without sonographic evidence of intrauterine OR extrauterine pregnancy.',
@@ -24,17 +24,16 @@ export const EPL_TOPICS: DiseaseTopic[] = [
     redFlags: ['Haemodynamic instability → treat as ruptured ectopic NOW', 'Severe unilateral pain', 'Shoulder-tip pain'],
     initialAssessment: [{ kind: 'steps', steps: ['TVS by trained operator', 'Baseline serum βhCG', 'Group&save; Rh status', 'Safety-net instructions in writing'] }],
     investigations: [
-      { test: 'Serial serum βhCG (48 h apart)', lookingFor: '≥63% rise at 48h → likely viable IUP; plateau/declining or suboptimal rise → suspect non-viable/ectopic' },
-      { test: 'Repeat TVS at βhCG >1500–2000 IU/L (discriminatory zone)', lookingFor: 'Location declaration' },
-      { test: 'Progesterone (where available)', lookingFor: '<5 ng/mL strongly suggests failing pregnancy' },
+      { test: 'Serial serum βhCG (48 h apart)', lookingFor: 'Rise >63%: likely developing IUP, but ectopic not excluded; interpret symptoms and arrange follow-up' },
+      { test: 'Repeat TVS after the initial assessment', lookingFor: 'Locate pregnancy; hCG alone must not determine location. Consider earlier repeat scan if hCG ≥1500 IU/L' },
     ],
     treatment: {
       immediateStabilization: [{ kind: 'text', text: 'Unstable patient bypasses PUL pathway entirely — resuscitate + laparotomy for presumed ruptured ectopic.' }],
       firstLine: [
         { kind: 'list', items: [
-          'Stable + suboptimal hCG kinetics: repeat hCG 48-hourly; consider methotrexate pathway ONLY once ectopic suspected/confirmed per local protocol',
-          'Stable + likely failing pregnancy (hCG falling): expectant with weekly hCG to negative',
-          'hCG rising normally: rescan at 10–14 days for viability/location',
+          'Rise <63% or fall <50% at 48 hours: clinical review within 24 hours; do not offer methotrexate solely for a PUL hCG pattern',
+          'Fall >50% at 48 hours: provide urine pregnancy test for 14 days after the second blood test; positive test needs review within 24 hours',
+          'Rise >63%: repeat TVS in 7–14 days for pregnancy location; consider earlier scan at hCG ≥1500 IU/L',
         ] },
       ],
       definitiveTreatment: [{ kind: 'text', text: 'Pathway ends when pregnancy is located as viable IUP, failing PUL resolved to negative hCG, or ectopic confirmed → respective pathways.' }],
@@ -43,7 +42,7 @@ export const EPL_TOPICS: DiseaseTopic[] = [
       complications: [{ name: 'Missed ectopic during follow-up', management: [{ kind: 'text', text: 'Strict adherence to review schedule prevents; document each step' }] }],
       postTreatmentCare: [{ kind: 'list', items: ['Confirm resolution with negative hCG', 'Contraception discussion; recurrence counselling'] }],
     },
-    sourceIds: ['rcog-gtg73-pprom-2019'],
+    sourceIds: ['nice-ng126-diagnosis-detail'],
   },
 
   /* ============ ECTOPIC PREGNANCY ============ */
@@ -53,9 +52,9 @@ export const EPL_TOPICS: DiseaseTopic[] = [
     category: 'obstetric-emergency',
     tags: ['ectopic', 'tubal', 'methotrexate', 'salpingectomy', 'ruptured'],
     aliases: ['tubal pregnancy', 'extrauterine pregnancy', 'implantation outside uterus'],
-    status: 'clinically-verified',
-    version: 1,
-    lastVerifiedAt: '2026-08-23',
+    status: 'review',
+    version: 2,
+    reviewerNote: 'Reference mapping and identified early-pregnancy pathway errors corrected against NICE NG126. The full legacy module, including specialist regimens, remains in clinical review.',
     regionPriority: 'india-first',
     summary: 'Implantation outside endometrial cavity (95% tubal). Rupture kills young women — ANY reproductive-age woman with pain+bleeding has an ectopic until proven otherwise. Choose expectant/medical/surgical by stability, hCG, size, heartbeat.',
     definition: 'Pregnancy implanted outside the uterine cavity — fallopian tube (ampullary commonest), interstitial, ovarian, caesarean-scar, cervical, abdominal.',
@@ -91,8 +90,8 @@ export const EPL_TOPICS: DiseaseTopic[] = [
       caption: 'Management selection (stable tubal ectopic)',
       headers: ['Option', 'Typical criteria', 'Key numbers'],
       rows: [
-        ['Expectant', 'Minimal pain, no heartbeat, size <~3 cm, hCG <1500 IU/L and falling', '~70% success; weekly hCG to negative'],
-        ['Methotrexate (single-dose protocol)', 'Unruptured, minimal symptoms, size <3.5 cm, no fetal heartbeat (heartbeat = relative), hCG <5000 IU/L, normal FBC/renal/LFTs, reliable follow-up', 'Success ~78–88%; day 4 vs day 1 hCG: fall ≥15% between d4–d7 predicts success'],
+        ['Expectant', 'Stable and pain-free, tubal mass <35 mm, no heartbeat; offer if hCG ≤1000 IU/L, consider if >1000 and <1500', 'Repeat hCG on days 2, 4 and 7, then weekly if falling appropriately'],
+        ['Methotrexate (single-dose protocol)', 'No significant pain; unruptured tubal mass <35 mm, no heartbeat; viable IUP excluded; reliable follow-up; baseline safety bloods acceptable', 'NICE: offer MTX if hCG <1500; offer MTX or surgery at 1500–<5000 when eligible; reassess response on days 4 and 7'],
         ['Salpingectomy (laparoscopic)', 'Contralateral tube healthy; rupture/unstable; MTX failure; large/heart-beat masses', 'Gold standard surgical treatment'],
         ['Salpingostomy', 'Only tube affected / desire future fertility (specialist decision)', 'Higher persistent-trophoblast rate (~14–20%) — weekly hCG mandatory'],
       ] },
@@ -102,7 +101,7 @@ export const EPL_TOPICS: DiseaseTopic[] = [
       ],
       investigations: [{ kind: 'list', items: ['Never delay unstable patients for imaging beyond bedside US'] }],
       firstLine: [
-        { kind: 'doseCard', drug: 'Methotrexate (single-dose protocol)', dose: '50 mg/m² BSA IM (calculate body surface area!)', route: 'IM', frequency: 'Single dose day 1; check hCG day 4 & 7', duration: 'If day4→day7 fall ≥15%: weekly hCG until negative; if rise/plateau or +15%: SECOND dose 50 mg/m² day 7 (or convert to surgery)', prep: 'Prescribe with folic acid WITHHELD; antiemetic prn', maxDose: 'Two doses total then surgical conversion', contraindications: ['Rupture/signs of bleeding', 'Haemodynamic instability', 'Moderate-severe pain despite analgesia', 'Fetal heartbeat (relative — multidose protocols exist in expert units)', 'Size >3.5–4 cm', 'hCG >5000 IU/L relative', 'Breastfeeding', 'Immunodeficiency/liver/renal disease', 'Blood dyscrasias', 'Peptic ulcer disease', 'Inability to attend follow-up'], adverseEffects: ['Fatigue, nausea/mucositis, transient transaminitis, bone-marrow suppression (rare)', 'Teratogenic — no conception 3 months after'], monitoring: ['Day 4 & 7 hCG + CBC + LFT/RFT', 'Weekly hCG to <5 IU/L', 'Warn about increasing pain days 2–3 (separation pain vs rupture — telephone triage rules)'], sourceId: 'rcog-gtg73-pprom-2019' },
+        { kind: 'doseCard', drug: 'Methotrexate (single-dose protocol)', dose: '50 mg/m² BSA IM (calculate body surface area!)', route: 'IM', frequency: 'Single dose day 1; check hCG day 4 & 7', duration: 'Initial single-dose course; check hCG days 4 and 7. Fall ≥15% from day 4 to 7: weekly hCG to negative. Fall <15%, plateau or rise: senior reassessment for repeat treatment or surgery', prep: 'Prescribe with folic acid WITHHELD; antiemetic prn', maxDose: 'Repeat dosing only after reassessment confirms continued eligibility for the selected local protocol', contraindications: ['Rupture/signs of bleeding', 'Haemodynamic instability', 'Moderate-severe pain despite analgesia', 'Visible fetal heartbeat: NICE recommends surgery first line', 'Tubal mass ≥35 mm: NICE recommends surgery first line', 'hCG ≥5000 IU/L: NICE recommends surgery first line', 'Breastfeeding', 'Immunodeficiency/liver/renal disease', 'Blood dyscrasias', 'Peptic ulcer disease', 'Inability to attend follow-up'], adverseEffects: ['Fatigue, nausea/mucositis, transient transaminitis, bone-marrow suppression (rare)', 'Teratogenic — no conception 3 months after'], monitoring: ['Day 4 & 7 hCG + CBC + LFT/RFT', 'Weekly hCG to <5 IU/L', 'Warn about increasing pain days 2–3 (separation pain vs rupture — telephone triage rules)'], sourceId: 'nhs-ectopic-mtx-detail' },
       ],
       alternativesFirstLine: [{ kind: 'list', items: ['Multidose MTX protocol (1 mg/kg alternating leucovorin) — specialist centres for heartbeat/hCG>5000 cases', 'Expectant management per table above'] }],
       drugTreatment: [],
@@ -110,13 +109,13 @@ export const EPL_TOPICS: DiseaseTopic[] = [
         { kind: 'steps', steps: [
           'SURGERY (laparoscopic preferred):',
           'Salpingectomy when contralateral tube healthy — lower persistent-trophoblast risk',
-          'Salpingostomy only for sole tube/fertility priority — plan weekly hCG ×4 weeks minimum',
+          'Consider salpingotomy when other infertility risks exist; plan hCG at day 7 and weekly thereafter to negative',
           'Interstitial/angular pregnancies: specialist-led (cornual resection/hysterectomy risk counselling; MTX/systemic±local injection options)',
           'Caesarean-scar ectopic: expert-centre options (HIFU/D&C under US±balloon, laparoscopic excision, UAE adjuncts)',
           'Cervical: UAE + medical/surgical per centre expertise',
         ] },
       ],
-      monitoring: [{ kind: 'table', headers: ['Pathway', 'Schedule'], rows: [['Post-MTX', 'hCG d4, d7, then weekly to negative; CBC/LFT day 7'], ['Post-salpingostomy', 'Weekly hCG ×4 (persistent trophoblast surveillance)'], ['Rh-negative', 'Anti-D 250–500 IU within 72 h for surgical/medical management']] }],
+      monitoring: [{ kind: 'table', headers: ['Pathway', 'Schedule'], rows: [['Post-MTX', 'hCG d4, d7, then weekly to negative; CBC/LFT day 7'], ['Post-salpingostomy', 'Serum hCG at day 7 after surgery, then weekly to negative'], ['RhD prophylaxis decision', 'Use gestation-specific NICE NG126 (June 2026) criteria; confirm applicability of the local policy']] }],
       responseAssessment: [{ kind: 'list', items: ['hCG declining ≥15% d4→d7 (MTX)', 'Post-op hCG trending down appropriately'] }],
       treatmentFailure: [
         { kind: 'list', items: ['MTX failure signs: rising/plateaued hCG, new/worsening pain, free fluid growth → SURGERY (do not simply re-dose beyond protocol)', 'Persistent trophoblast post-salpingostomy: MTX 50 mg/m² rescue'] },
@@ -130,6 +129,7 @@ export const EPL_TOPICS: DiseaseTopic[] = [
       ],
       postTreatmentCare: [{ kind: 'list', items: ['hCG confirmation of resolution', 'Anti-D where indicated', 'Psychological support (pregnancy loss + emergency)', 'STI screening offer (PID association); partner treatment', 'Preconception planning: early-scan policy next pregnancy'] }],
     },
+    specialSituations: [{ kind: 'conflict', guidelineA: { org: 'NICE NG126 — national selection criteria', recommendation: 'Surgery is first line for a tubal mass ≥35 mm, visible fetal heartbeat, hCG ≥5000 IU/L, significant pain or inability to attend follow-up.' }, guidelineB: { org: 'NHS GGC local methotrexate protocol — dose reference', recommendation: 'The local protocol uses a ≥4 cm mass exclusion threshold and requires consultant review; its eligibility criteria are not identical to NICE.' }, populationDifference: 'Both concern stable ectopic pregnancy, but one is national guidance and the other a local hospital protocol.', indiaConsideration: 'Check the current institutional ectopic pathway; do not import a UK local eligibility threshold without review.', appDefault: 'Use NICE selection criteria in this topic. The NHS protocol is cited for the 50 mg/m² IM dose and hCG response assessment, not as a replacement eligibility rule.', appDefaultReason: 'Separates patient selection from the dose reference and makes the differing thresholds explicit.' }],
     algorithm: [
       { id: 'ep1', label: 'Positive hCG + pain/bleeding', type: 'start' },
       { id: 'ep2', label: 'Stable?', type: 'decision', next: [{ to: 'ep3', edgeLabel: 'NO' }, { to: 'ep4', edgeLabel: 'YES' }] },
@@ -140,7 +140,7 @@ export const EPL_TOPICS: DiseaseTopic[] = [
       { id: 'ep8', label: 'Laparoscopic surgery (salpingectomy vs salpingostomy decision)', type: 'end', tone: 'warn' },
       { id: 'ep9', label: 'hCG to negative · safety-netting · follow-up complete', type: 'end', tone: 'ok' },
     ],
-    sourceIds: ['rcog-gtg73-pprom-2019'],
+    sourceIds: ['nice-ng126-ectopic-detail', 'nhs-ectopic-mtx-detail', 'nice-ng126-antid-detail'],
     emergencyRef: 'emg-ectopic',
   },
 
@@ -151,14 +151,14 @@ export const EPL_TOPICS: DiseaseTopic[] = [
     category: 'early-pregnancy',
     tags: ['miscarriage', 'mva', 'misoprostol', 'expectant', 'evacuation'],
     aliases: ['spontaneous abortion', 'threatened abortion', 'missed abortion', 'incomplete abortion'],
-    status: 'published',
-    version: 1,
-    lastVerifiedAt: '2026-08-23',
+    status: 'review',
+    version: 2,
+    reviewerNote: 'Reference mapping and identified early-pregnancy pathway errors corrected against NICE NG126. The full legacy module, including specialist regimens, remains in clinical review.',
     regionPriority: 'india-first',
     summary: 'Offer ALL three management routes (expectant, medical, surgical) where safe. Medical: mifepristone+miso or miso-alone regimens. Surgical: MVA/EVA under analgesia. Watch: sepsis, heavy bleeding, Rh prophylaxis, psychological care.',
     definition: 'Pregnancy loss <24 wks (WHO/RCOG usage; India MTP framework covers termination contexts separately). Threatened = bleeding with closed os + viable pregnancy; Inevitable = open os; Incomplete = partial expulsion; Missed = non-viable retained; Septic = infection overlay.',
     redFlags: ['Heavy bleeding soaking >1 pad/hour', 'Fever/rigors/foul discharge (septic abortion → antibiotics THEN evacuation urgently)', 'Haemodynamic instability', 'Suspected molar (grape-like vesicles/US snowstorm — see molar module)'],
-    initialAssessment: [{ kind: 'steps', steps: ['TVS diagnosis (empty sac ≥25 mm mean or CRL ≥7 mm without cardiac activity = failed pregnancy; repeat in 7 days by second observer if borderline)', 'CBC, group&save, Rh', 'Sepsis screen if symptomatic', 'Exclude ectopic in all PUL-adjacent presentations'] }],
+    initialAssessment: [{ kind: 'steps', steps: ['TVS: for CRL ≥7 mm without heartbeat or mean sac diameter ≥25 mm without fetal pole, obtain a second opinion and/or repeat TVS after at least 7 days before diagnosing miscarriage; apply the full NICE repeat-scan criteria', 'CBC, group&save, Rh', 'Sepsis screen if symptomatic', 'Exclude ectopic in all PUL-adjacent presentations'] }],
     investigations: [
       { test: 'TVS', lookingFor: 'Viability + completeness' },
       { test: 'CBC + Rh', lookingFor: 'Anaemia/transfusion thresholds; anti-D need' },
@@ -169,10 +169,10 @@ export const EPL_TOPICS: DiseaseTopic[] = [
       firstLine: [
         { kind: 'table', headers: ['Route', 'Regimen (incomplete/missed)', 'Notes'], rows: [
           ['Expectant', 'Wait 7–14 days; success ~50–80% depending on type', 'Requires reliable return precautions'],
-          ['Medical (preferred pharmacologic)', 'Incomplete: misoprostol 600 µg PO/single dose (or 400 µg SL/sublingual); missed: mifepristone 200 mg PO 24–48 h BEFORE misoprostol 800 µg PV (then 400 µg SL/PO q3h up to 4 doses if needed)', 'Analgesia NSAIDs; antiemetics; success ~85–90% missed with combined regimen'],
+          ['Medical (preferred pharmacologic)', 'NICE incomplete miscarriage: misoprostol 600 micrograms vaginally, orally or sublingually once (800 micrograms is an alternative); no mifepristone; missed: NICE: mifepristone 200 mg orally once, then 48 hours later misoprostol 800 micrograms vaginally, orally or sublingually once, unless the sac has passed', 'Analgesia NSAIDs; antiemetics; success ~85–90% missed with combined regimen'],
           ['Surgical', 'Manual vacuum aspiration (MVA) local anaesthesia OR electric VA/S&C under sedation', 'Immediate definitive; tissue sent histology (exclude molar)'],
         ] },
-        { kind: 'doseCard', drug: 'Misoprostol (miscarriage regimen)', dose: 'Incomplete: 600 µg oral single dose. Missed: 800 µg vaginal then 400 µg SL/PO q3h ×up to 4', route: 'PV/SL/PO', frequency: 'Per regimen', notes: ['Give NSAID analgesia (e.g., ibuprofen 400–800 mg q8h)', 'Anti-D if Rh-negative'], sourceId: 'india-mtp-act-rules-2021' },
+        { kind: 'doseCard', drug: 'Misoprostol (miscarriage regimen)', dose: 'Incomplete: 600 micrograms once (800 micrograms is an alternative). Missed: 800 micrograms once, 48 hours after mifepristone 200 mg orally once', route: 'PV/SL/PO', frequency: 'Single-dose miscarriage regimen', duration: 'Initial treatment; reassess failure rather than automatically repeating an alternative regimen', notes: ['Give NSAID analgesia (e.g., ibuprofen 400–800 mg q8h)', 'RhD prophylaxis requires gestation-specific criteria; see the linked NICE NG126 2026 source'], sourceId: 'nice-ng126-miscarriage-detail' },
       ],
       definitiveTreatment: [{ kind: 'text', text: 'Complete evacuation (by whichever route) resolves bleeding/infection risk; histopathology of products where molar suspected or recurrent loss.' }],
       monitoring: [{ kind: 'list', items: ['Bleeding should reduce within days', 'hCG check 1–2 wks (or urine test 3 wks) to confirm resolution', 'Temperature/odour surveillance (retained tissue sepsis)'] }],
@@ -184,9 +184,9 @@ export const EPL_TOPICS: DiseaseTopic[] = [
         { name: 'Infection/sepsis', management: [{ kind: 'text', text: 'Cultures + IV antibiotics + prompt evacuation; never leave infected tissue' }] },
         { name: 'Asherman (late)', management: [{ kind: 'text', text: 'Gentle technique reduces risk; amenorrhoea post-EVAC → hysteroscopy referral' }] },
       ],
-      postTreatmentCare: [{ kind: 'list', items: ['Anti-D 250 IU (<12 wks)/standard dose per policy for Rh-negative women undergoing evacuation/medical loss', 'Contraception started same-day counselling (ovulation ~2 wks later!)', 'Psychological bereavement support; pregnancy-loss information leaflet', 'Recurrent loss → dedicated clinic pathway'] }],
+      postTreatmentCare: [{ kind: 'list', items: ['Apply the gestation-specific NICE NG126 (June 2026) anti-D criteria, confirming local applicability; do not use a blanket all-loss prophylaxis rule', 'Contraception started same-day counselling (ovulation ~2 wks later!)', 'Psychological bereavement support; pregnancy-loss information leaflet', 'Recurrent loss → dedicated clinic pathway'] }],
     },
-    sourceIds: ['india-mtp-act-rules-2021', 'rcog-gtg73-pprom-2019'],
+    sourceIds: ['nice-ng126-miscarriage-detail', 'nice-ng126-diagnosis-detail', 'nice-ng126-antid-detail'],
   },
 
   /* ============ RECURRENT MISCARRIAGE ============ */
@@ -196,10 +196,10 @@ export const EPL_TOPICS: DiseaseTopic[] = [
     category: 'early-pregnancy',
     tags: ['rm', 'aps', 'progesterone', 'karyotype'],
     status: 'review',
-    version: 1,
+    version: 2,
     regionPriority: 'international-first',
-    summary: '≥3 consecutive losses (or ≥2 with risk factors): investigate APS, parental karyotypes, thyroid/PCOS/anatomical factors; evidence-supported treatments: progesterone for bleeding+prior loss (PRISM), LMWH+aspirin ONLY for APS.',
-    definition: 'Loss of three or more consecutive pregnancies before 24 weeks (ESHRE allows investigation from two).',
+    summary: '≥3 early losses, not necessarily consecutive (consider earlier assessment by clinical context): investigate APS, parental karyotypes, thyroid/PCOS/anatomical factors; evidence-supported treatments: progesterone for bleeding+prior loss (PRISM), LMWH+aspirin ONLY for APS.',
+    definition: 'RCOG defines recurrent miscarriage as three or more first-trimester miscarriages; they need not be consecutive. Clinical context may justify earlier assessment.',
     investigations: [
       { test: 'Antiphospholipid panel (lupus anticoagulant + anticardiolipin + anti-β2GPI ×2, 12 wks apart)', lookingFor: 'APS — the one clearly treatable cause' },
       { test: 'Parental peripheral karyotypes', lookingFor: 'Balanced translocations (~2–5% of couples)' },
@@ -212,7 +212,7 @@ export const EPL_TOPICS: DiseaseTopic[] = [
       firstLine: [
         { kind: 'list', items: [
           'APS confirmed: low-dose aspirin 75–100 mg + prophylactic LMWH from positive test (live-birth benefit ~50%+)',
-          'Progesterone 400 mg PV twice daily from positive test through 12 wks IF previous miscarriage AND early bleeding (PRISM trial subgroup benefit)',
+          'NICE: vaginal micronised progesterone 400 mg twice daily for bleeding with a previous miscarriage once an intrauterine pregnancy is confirmed on scan; if fetal heartbeat confirmed, continue until 16 completed weeks',
           'Genetic: product karyotyping each loss; PGTA counselling where balanced translocation',
           'Untreated/unexplained: supportive early-pregnancy scanning programme (reassurance scans improve outcomes modestly)',
         ] },
@@ -222,7 +222,7 @@ export const EPL_TOPICS: DiseaseTopic[] = [
       complications: [{ name: 'Late losses', management: [{ kind: 'text', text: 'Consider cervical-length screening for cerclage indications (history-indicated if classic prior mid-trimester loss)' }] }],
       postTreatmentCare: [{ kind: 'list', items: ['Psychological support integral', 'Document cumulative live-birth rates (~65–75% overall with support)'] }],
     },
-    sourceIds: ['rcog-gtg73-pprom-2019'],
+    sourceIds: ['rcog-recurrent-detail', 'nice-ng126-miscarriage-detail'],
   },
 
   /* ============ MOLAR PREGNANCY / GTD ============ */

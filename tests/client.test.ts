@@ -36,6 +36,9 @@ test('production HTML hydrates with device preferences and tab/source controls r
     await until(() => favourite.textContent === '★', 'Saved favourite was not restored')
     favourite.click()
     await until(() => favourite.textContent === '☆', 'Favourite control did not update')
+    assert.equal(d.querySelectorAll('.tab-panel[hidden]').length, 0, 'Full guide must show every clinical section')
+    ;[...d.querySelectorAll<HTMLButtonElement>('.section-controls button')].find((n) => n.textContent!.includes('Full guide'))!.click()
+    await until(() => d.querySelector('[role="tab"]'), 'Focused section controls did not open')
     const sources = [...d.querySelectorAll<HTMLButtonElement>('[role="tab"]')].find((n) => n.textContent!.startsWith('Sources'))!
     sources.click()
     const panel = d.getElementById(sources.getAttribute('aria-controls')!)!

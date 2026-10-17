@@ -6,9 +6,11 @@
     "reviewer": "automated build-time research (requires named-clinician sign-off before clinical use)",
     "verificationLegend": {
       "verified-live": "Source opened/checked online on dateChecked and the specific recommendations used in the app were confirmed against it.",
-      "verified-summary": "Verified via the publisher's official summary/search result of the source on dateChecked; full-text cross-check still required.",
+      "verified-summary": "Limited or summary-level check on dateChecked. See checkedAgainst for the exact scope, document currency limits and work still requiring full verification.",
       "pending-verification": "Known source, not yet re-checked for currency. Content using this entry is flagged in-app."
-    }
+    },
+    "lastScopedContentUpdate": "2026-10-17",
+    "scopeNote": "42 additional clinical-detail sections and identified early-pregnancy corrections checked on this date. This is not a new full-library clinical audit; original module dates/statuses remain distinct."
   },
   "sources": [
     {
@@ -27,7 +29,16 @@
       "evidenceLevel": "Good Clinical Practice Recommendations (consensus + evidence review); National Eclampsia Registry data cited",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "PDF served from fogsi.org (2026 upload path) — definitions, HDP-Gestosis score, treatment threshold ≥140/90 (WOG), targets ≤140/90, delivery timing (GH term; mild PE 37 wks; severe PE after 34 wks; eclampsia deliver once stabilised post-MgSO4; ≤24 wks immediate delivery better; individualise 24–33+6)",
-      "usedBySections": ["hdp-chronic", "hdp-gestational", "hdp-pre-eclampsia", "hdp-severe", "hdp-eclampsia", "hdp-hellp", "emergency-eclampsia", "emergency-severe-htn"],
+      "usedBySections": [
+        "hdp-chronic",
+        "hdp-gestational",
+        "hdp-pre-eclampsia",
+        "hdp-severe",
+        "hdp-eclampsia",
+        "hdp-hellp",
+        "emergency-eclampsia",
+        "emergency-severe-htn"
+      ],
       "status": "verified-live"
     },
     {
@@ -46,7 +57,14 @@
       "evidenceLevel": "GRADE-rated recommendations",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "Full PDF: standardised BP measurement; proteinuria PrCr ≥30 mg/mmol, ACR ≥8 mg/mmol or ≥300 mg/day or dipstick 2+ if confirmatory testing unavailable; no 'mild/severe' PE label in ongoing pregnancy; treat all HDP with antihypertensives; severe HTN ≥160/110 treat within minutes-hours monitored; target DBP 85; MgSO4 for eclampsia + PE with severe HTN/neuro features; aspirin ≥150 mg night from <16 to 36 wks after multivariable screening; calcium <900 mg/d intake → supplement ≥500 mg/d; exercise recommended; LMWH/vitC/E/folate NOT for PE prevention",
-      "usedBySections": ["hdp-chronic", "hdp-gestational", "hdp-pre-eclampsia", "hdp-severe", "hdp-postpartum", "calc-map"],
+      "usedBySections": [
+        "hdp-chronic",
+        "hdp-gestational",
+        "hdp-pre-eclampsia",
+        "hdp-severe",
+        "hdp-postpartum",
+        "calc-map"
+      ],
       "status": "verified-live"
     },
     {
@@ -65,7 +83,10 @@
       "evidenceLevel": "CHAP RCT n=2408: treatment <140/90 reduced preeclampsia with severe features, indicated preterm birth <35w, abruption, fetal/neonatal death; no increase SGA",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "Publisher summary + independent 2025 review confirming advisory remains operative: initiate/titrate therapy at ≥140/90 mmHg for chronic HTN (treatment threshold, not target). Note ACOG PB222 base document last reaffirmed — verify current reaffirmation date when next audited.",
-      "usedBySections": ["hdp-chronic", "antenatal-chronic-conditions"],
+      "usedBySections": [
+        "hdp-chronic",
+        "antenatal-chronic-conditions"
+      ],
       "status": "verified-summary"
     },
     {
@@ -84,7 +105,13 @@
       "evidenceLevel": "GRADE-based; FANC(4-visit) no longer recommended",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "WHO pages + NCBI compendium: daily IFA 30–60 mg elemental iron + 400 µg folic acid; intermittent IFA only where daily not acceptable & anaemia prevalence <20%; anaemia in ANC → 120 mg elemental iron daily until Hb normal; MMS recommended only within rigorous research contexts (supersedes 2016); ≥8 contacts",
-      "usedBySections": ["anc-overview", "anc-first-trimester", "anc-second-trimester", "anc-third-trimester", "anaemia-iron-deficiency"],
+      "usedBySections": [
+        "anc-overview",
+        "anc-first-trimester",
+        "anc-second-trimester",
+        "anc-third-trimester",
+        "anaemia-iron-deficiency"
+      ],
       "status": "verified-live"
     },
     {
@@ -103,7 +130,16 @@
       "evidenceLevel": "GRADE; e.g., Rec 7 uterotonics UPDATED (oxytocin/carbetocin/misoprostol); Rec 14/15 NEW: TXA NOT for prevention (vaginal or caesarean); Rec 27 TXA for TREATMENT retained; Rec 29 TXA within treatment bundle",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "WHO page + NCBI full recommendations chapter + Bleeding-after-birth provider guide: PPH definition >500 mL vaginal / >1000 mL CS or any loss compromising haemodynamics; TXA 1 g IV over 10 min as early as possible within 3 h of birth, repeat 1 g if bleeding continues at 30 min or restarts within 24 h; oxytocin 10 IU in 100–500 mL IV as fast as possible within bundle; TXA-bupivacaine storage separation warning; heat-stable carbetocin context where cold chain unavailable",
-      "usedBySections": ["pph", "aph-previa", "aph-abruption", "pas-spectrum", "emergency-pph", "emergency-massive-transfusion", "lscs", "labour-third-stage"],
+      "usedBySections": [
+        "pph",
+        "aph-previa",
+        "aph-abruption",
+        "pas-spectrum",
+        "emergency-pph",
+        "emergency-massive-transfusion",
+        "lscs",
+        "labour-third-stage"
+      ],
       "status": "verified-live"
     },
     {
@@ -123,7 +159,16 @@
       "evidenceLevel": "NICE methodology",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "NICE overview + Update information page (dates above confirmed)",
-      "usedBySections": ["labour-management", "iol", "lscs", "shoulder-dystocia", "cord-prolapse", "ctg-fetal-monitoring", "postpartum-care", "prom-term"],
+      "usedBySections": [
+        "labour-management",
+        "iol",
+        "lscs",
+        "shoulder-dystocia",
+        "cord-prolapse",
+        "ctg-fetal-monitoring",
+        "postpartum-care",
+        "prom-term"
+      ],
       "status": "verified-live"
     },
     {
@@ -143,7 +188,16 @@
       "evidenceLevel": "Evidence-based regimens",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "CDC pages + wall chart: uncomplicated gonorrhoea cervix/urethra/rectum → ceftriaxone 500 mg IM single dose (<150 kg; 1 g if ≥150 kg); pharyngeal same; conjunctivitis 1 g IM; DGI 1 g IV/IM q24h; PID outpatient → ceftriaxone 500 mg IM ×1 + doxycycline 100 BD ×14 d + metronidazole 500 BD ×14 d; chlamydia doxycycline 100 BD ×7 d (pregnancy → azithromycin); trichomonas metronidazole 500 mg BD ×7 d (women); bacterial vaginosis metronidazole 500 BD ×7 d etc.; test-of-cure/retest intervals per section; EPT provisions US-specific (not applicable India)",
-      "usedBySections": ["pid", "sti-chlamydia", "sti-gonorrhoea", "vaginitis", "sti-syphilis", "sti-hsv", "cervicitis", "infection-pregnancy-index"],
+      "usedBySections": [
+        "pid",
+        "sti-chlamydia",
+        "sti-gonorrhoea",
+        "vaginitis",
+        "sti-syphilis",
+        "sti-hsv",
+        "cervicitis",
+        "infection-pregnancy-index"
+      ],
       "status": "verified-live"
     },
     {
@@ -162,7 +216,11 @@
       "evidenceLevel": "NICE-style graded",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "RCOG page incl. June 2022 update note aligning steroids advice with GTG 74 (offer up to 33+6; consider to 35+6 with caution per GTG74 Feb 2022)",
-      "usedBySections": ["pprom", "ptl-threatened", "ptl-established"],
+      "usedBySections": [
+        "pprom",
+        "ptl-threatened",
+        "ptl-established"
+      ],
       "status": "verified-live"
     },
     {
@@ -181,7 +239,13 @@
       "evidenceLevel": "Cochrane-based",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "Cited via RCOG GTG73 update note; direct PDF audit pending — flag",
-      "usedBySections": ["ptl-established", "pprom", "aph-previa", "fgr", "iol"],
+      "usedBySections": [
+        "ptl-established",
+        "pprom",
+        "aph-previa",
+        "fgr",
+        "iol"
+      ],
       "status": "pending-verification"
     },
     {
@@ -200,7 +264,11 @@
       "evidenceLevel": "Graded",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "RCOG listing confirms 3rd edition current + replacement in development (quarterly update page)",
-      "usedBySections": ["gbs", "prom-term", "pprom"],
+      "usedBySections": [
+        "gbs",
+        "prom-term",
+        "pprom"
+      ],
       "status": "verified-summary"
     },
     {
@@ -219,7 +287,14 @@
       "evidenceLevel": "Statute",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "Official Gazette text + SCC/LiveLaw notifications; Section 5A confidentiality (disclosure punishable up to 1 yr); place-of-performance restriction s.4; failure-of-device presumption explanation; rape anguish presumption Explanation 2",
-      "usedBySections": ["mtp-india", "miscarriage-management", "molar-pregnancy", "ectopic-pregnancy", "procedures-mva", "procedures-surgical-abortion"],
+      "usedBySections": [
+        "mtp-india",
+        "miscarriage-management",
+        "molar-pregnancy",
+        "ectopic-pregnancy",
+        "procedures-mva",
+        "procedures-surgical-abortion"
+      ],
       "status": "verified-live"
     },
     {
@@ -238,7 +313,9 @@
       "evidenceLevel": "Staging consensus incorporating molecular classes (POLEmut/MMRd/NSMP/p53abn); substages IA1/IA2/IA3/IB/IC; IIA/IIB/IIC; IIIA–IIIC micrometastasis refinements; IVA/IVB/IVC; 'm' annotation",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "FIGO announcement + PubMed abstract with full substage definitions",
-      "usedBySections": ["gyonc-endometrial"],
+      "usedBySections": [
+        "gyonc-endometrial"
+      ],
       "status": "verified-live"
     },
     {
@@ -257,7 +334,9 @@
       "evidenceLevel": "OCE levels + GRADE",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "ESGO guidelines portal + Lancet Oncology abstract + pocket-guideline content (risk-group tables, molecular-classification requirements, adjuvant strategy)",
-      "usedBySections": ["gyonc-endometrial"],
+      "usedBySections": [
+        "gyonc-endometrial"
+      ],
       "status": "verified-live"
     },
     {
@@ -276,7 +355,10 @@
       "evidenceLevel": "GRADE; letrozole first-line OI ⊕⊕⊕⊕",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "Guideline recommendation extracts: letrozole first-line pharmacological ovulation induction (off-label caveat); clomiphene > metformin alone; gonadotrophins second line low-dose step-up; laparoscopic ovarian surgery alternative second line; IVF after failed 1st/2nd line with antagonist protocol + agonist trigger/freezing strategy for OHSS risk reduction; psychological screening; metabolic/CVD/sleep surveillance; inositol experimental",
-      "usedBySections": ["pcos", "infertility-female"],
+      "usedBySections": [
+        "pcos",
+        "infertility-female"
+      ],
       "status": "verified-live"
     },
     {
@@ -295,7 +377,11 @@
       "evidenceLevel": "Strong rec, moderate-quality evidence (WOMAN trial n=20,060)",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "IRIS PDF: 1 g in 10 mL (100 mg/mL) IV at 1 mL/min (over 10 min); 2nd dose 1 g if bleeding continues after 30 min or restarts within 24 h; do not initiate beyond 3 h unless treating restarted bleeding within 24 h window; benefit falls ~10% per 15-min delay",
-      "usedBySections": ["pph", "emergency-pph", "drugs-txa"],
+      "usedBySections": [
+        "pph",
+        "emergency-pph",
+        "drugs-txa"
+      ],
       "status": "verified-live"
     },
     {
@@ -314,7 +400,10 @@
       "evidenceLevel": "GDG (2023) — calibrated gravimetric methods + bundle approach",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "WHO landing page; detailed wording pending full-text audit — flagged in module",
-      "usedBySections": ["pph", "emergency-pph"],
+      "usedBySections": [
+        "pph",
+        "emergency-pph"
+      ],
       "status": "verified-summary"
     },
     {
@@ -333,7 +422,11 @@
       "evidenceLevel": "GRADE network meta-analysis basis",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "Landing page; dose specifics via Consolidated 2025 chapter + provider guide (oxytocin 10 IU IM/IV)",
-      "usedBySections": ["labour-third-stage", "lscs", "pph"],
+      "usedBySections": [
+        "labour-third-stage",
+        "lscs",
+        "pph"
+      ],
       "status": "verified-summary"
     },
     {
@@ -352,7 +445,10 @@
       "evidenceLevel": "—",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "RCOG Green-top index shows 10a archived; app therefore uses FOGSI-HDP-2026 + ISSHP-2021 + NICE NG121-era principles instead",
-      "usedBySections": ["hdp-severe", "hdp-eclampsia"],
+      "usedBySections": [
+        "hdp-severe",
+        "hdp-eclampsia"
+      ],
       "status": "outdated"
     },
     {
@@ -371,7 +467,10 @@
       "evidenceLevel": "ESC class/LOE",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "Independent peer-reviewed comparison table (Clin Hypertens 2025): initiate drugs ≥140/90; targets SBP <140, DBP 80–90",
-      "usedBySections": ["hdp-chronic", "guideline-conflicts"],
+      "usedBySections": [
+        "hdp-chronic",
+        "guideline-conflicts"
+      ],
       "status": "verified-summary"
     },
     {
@@ -390,7 +489,9 @@
       "evidenceLevel": "Statement",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "Journal page incl. cross-guideline threshold tables",
-      "usedBySections": ["hdp-postpartum"],
+      "usedBySections": [
+        "hdp-postpartum"
+      ],
       "status": "verified-summary"
     },
     {
@@ -409,7 +510,9 @@
       "evidenceLevel": "Graded",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "Presence on current RCOG index only — FULL TEXT AUDIT REQUIRED before relying on thresholds (marked in-app)",
-      "usedBySections": ["icp"],
+      "usedBySections": [
+        "icp"
+      ],
       "status": "pending-verification"
     },
     {
@@ -428,8 +531,749 @@
       "evidenceLevel": "Graded",
       "dateChecked": "2026-08-23",
       "checkedAgainst": "Listed on current RCOG index — full-text audit pending",
-      "usedBySections": ["thyroid-pregnancy"],
+      "usedBySections": [
+        "thyroid-pregnancy"
+      ],
       "status": "pending-verification"
+    },
+    {
+      "id": "nice-ng126-diagnosis-detail",
+      "topic": "Additional clinical detail: pul",
+      "organisation": "NICE",
+      "title": "NG126 — diagnosis and pregnancy of unknown location",
+      "url": "https://www.nice.org.uk/guidance/ng126/chapter/diagnosis-of-viable-intrauterine-pregnancy-and-of-tubal-ectopic-pregnancy",
+      "version": "NG126",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for pul. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Also checked ultrasound repeat-scan/second-opinion criteria before diagnosing miscarriage.",
+      "usedBySections": [
+        "miscarriage-management",
+        "pul"
+      ],
+      "status": "verified-live",
+      "publishedDate": "17 April 2019",
+      "lastUpdatedDate": "17 June 2026"
+    },
+    {
+      "id": "nice-ng126-ectopic-detail",
+      "topic": "Additional clinical detail: ectopic-pregnancy",
+      "organisation": "NICE",
+      "title": "NG126 — management of tubal ectopic pregnancy",
+      "url": "https://www.nice.org.uk/guidance/ng126/chapter/management-of-tubal-ectopic-pregnancy",
+      "version": "NG126",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for ectopic-pregnancy. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Also corrected stable-tubal-ectopic selection and follow-up descriptions, without certifying all rare-site regimens.",
+      "usedBySections": [
+        "ectopic-pregnancy",
+        "emg-ectopic",
+        "methotrexate-ectopic"
+      ],
+      "status": "verified-live",
+      "publishedDate": "17 April 2019",
+      "lastUpdatedDate": "17 June 2026"
+    },
+    {
+      "id": "nice-ng126-miscarriage-detail",
+      "topic": "Additional clinical detail: miscarriage-management",
+      "organisation": "NICE",
+      "title": "NG126 — management of miscarriage",
+      "url": "https://www.nice.org.uk/guidance/ng126/chapter/management-of-miscarriage",
+      "version": "NG126",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for miscarriage-management. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Also checked the missed/incomplete miscarriage drug rows and the scan-confirmed intrauterine-pregnancy progesterone criterion with continuation to 16 completed weeks when a heartbeat is confirmed.",
+      "usedBySections": [
+        "mifepristone",
+        "miscarriage-management",
+        "misoprostol",
+        "proc-mva",
+        "recurrent-miscarriage"
+      ],
+      "status": "verified-live",
+      "publishedDate": "17 April 2019",
+      "lastUpdatedDate": "17 June 2026"
+    },
+    {
+      "id": "rcog-recurrent-detail",
+      "topic": "Additional clinical detail: recurrent-miscarriage",
+      "organisation": "RCOG",
+      "title": "Recurrent miscarriage — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/recurrent-miscarriage/",
+      "version": "Patient information",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for recurrent-miscarriage. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "recurrent-miscarriage"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "cdc-chlamydia-detail",
+      "topic": "Additional clinical detail: sti-chlamydia",
+      "organisation": "CDC",
+      "title": "STI Treatment Guidelines — chlamydial infections",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/chlamydia.htm",
+      "version": "2021 STI guideline",
+      "sourceType": "national clinical guideline",
+      "region": "USA (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-chlamydia. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "sti-chlamydia"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "cdc-gonorrhoea-detail",
+      "topic": "Additional clinical detail: sti-gonorrhoea",
+      "organisation": "CDC",
+      "title": "STI Treatment Guidelines — gonococcal infections in adults",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/gonorrhea-adults.htm",
+      "version": "2021 STI guideline",
+      "sourceType": "national clinical guideline",
+      "region": "USA (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-gonorrhoea. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "sti-gonorrhoea"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "cdc-syphilis-pregnancy-detail",
+      "topic": "Additional clinical detail: sti-syphilis",
+      "organisation": "CDC",
+      "title": "STI Treatment Guidelines — syphilis during pregnancy",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/syphilis-pregnancy.htm",
+      "version": "2021 STI guideline",
+      "sourceType": "national clinical guideline",
+      "region": "USA (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-syphilis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "sti-syphilis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "cdc-hsv-detail",
+      "topic": "Additional clinical detail: sti-hsv",
+      "organisation": "CDC",
+      "title": "STI Treatment Guidelines — genital herpes",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/herpes.htm",
+      "version": "2021 STI guideline",
+      "sourceType": "national clinical guideline",
+      "region": "USA (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-hsv. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "sti-hsv"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "cdc-bv-detail",
+      "topic": "Additional clinical detail: vaginitis",
+      "organisation": "CDC",
+      "title": "STI Treatment Guidelines — bacterial vaginosis",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/bv.htm",
+      "version": "2021 STI guideline",
+      "sourceType": "national clinical guideline",
+      "region": "USA (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for vaginitis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "vaginitis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "cdc-candidiasis-detail",
+      "topic": "Additional clinical detail: vaginitis",
+      "organisation": "CDC",
+      "title": "STI Treatment Guidelines — vulvovaginal candidiasis",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm",
+      "version": "2021 STI guideline",
+      "sourceType": "national clinical guideline",
+      "region": "USA (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for vaginitis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "vaginitis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "cdc-trichomoniasis-detail",
+      "topic": "Additional clinical detail: vaginitis",
+      "organisation": "CDC",
+      "title": "STI Treatment Guidelines — trichomoniasis",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/trichomoniasis.htm",
+      "version": "2021 STI guideline",
+      "sourceType": "national clinical guideline",
+      "region": "USA (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for vaginitis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "vaginitis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "cdc-pid-detail",
+      "topic": "Additional clinical detail: pid",
+      "organisation": "CDC",
+      "title": "STI Treatment Guidelines — pelvic inflammatory disease",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
+      "version": "2021 STI guideline",
+      "sourceType": "national clinical guideline",
+      "region": "USA (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for pid. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "pid"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "nice-ng88-detail",
+      "topic": "Additional clinical detail: aub, fibroids",
+      "organisation": "NICE",
+      "title": "NG88 — heavy menstrual bleeding: assessment and management",
+      "url": "https://www.nice.org.uk/guidance/ng88/chapter/recommendations",
+      "version": "NG88",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for aub, fibroids. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "aub",
+        "fibroids"
+      ],
+      "status": "verified-live",
+      "publishedDate": "14 March 2018",
+      "lastUpdatedDate": "07 July 2026"
+    },
+    {
+      "id": "nice-ng73-detail",
+      "topic": "Additional clinical detail: endometriosis",
+      "organisation": "NICE",
+      "title": "NG73 — endometriosis: diagnosis and management",
+      "url": "https://www.nice.org.uk/guidance/ng73/chapter/recommendations",
+      "version": "NG73",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for endometriosis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "endometriosis"
+      ],
+      "status": "verified-live",
+      "publishedDate": "06 September 2017",
+      "lastUpdatedDate": "11 November 2024"
+    },
+    {
+      "id": "pcos-recommendations-detail",
+      "topic": "Additional clinical detail: pcos",
+      "organisation": "International PCOS Guideline Network",
+      "title": "Recommendations from the 2023 international evidence-based PCOS guideline",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10505534/",
+      "version": "2023",
+      "sourceType": "international evidence-based guideline recommendations",
+      "region": "International",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for pcos. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "pcos"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "nice-ng123-detail",
+      "topic": "Additional clinical detail: urogynaecology-core",
+      "organisation": "NICE",
+      "title": "NG123 — urinary incontinence and pelvic organ prolapse in women",
+      "url": "https://www.nice.org.uk/guidance/ng123/chapter/recommendations",
+      "version": "NG123",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for urogynaecology-core. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "urogynaecology-core"
+      ],
+      "status": "verified-live",
+      "publishedDate": "02 April 2019",
+      "lastUpdatedDate": "24 June 2019"
+    },
+    {
+      "id": "nice-ng23-detail",
+      "topic": "Additional clinical detail: menopause",
+      "organisation": "NICE",
+      "title": "NG23 — menopause: identification and management",
+      "url": "https://www.nice.org.uk/guidance/ng23/chapter/recommendations",
+      "version": "NG23",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for menopause. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "menopause"
+      ],
+      "status": "verified-live",
+      "publishedDate": "12 November 2015",
+      "lastUpdatedDate": "15 April 2026"
+    },
+    {
+      "id": "cdc-mec-detail",
+      "topic": "Additional clinical detail: contraception",
+      "organisation": "CDC",
+      "title": "U.S. Medical Eligibility Criteria for Contraceptive Use, 2024 — summary classifications",
+      "url": "https://www.cdc.gov/contraception/hcp/usmec/summary-contraceptive.html",
+      "version": "2024",
+      "sourceType": "national clinical guideline",
+      "region": "USA (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for contraception. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "contraception"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "nice-ng257-assessment-detail",
+      "topic": "Additional clinical detail: infertility-female",
+      "organisation": "NICE",
+      "title": "NG257 — defining infertility and initial assessment",
+      "url": "https://www.nice.org.uk/guidance/ng257/chapter/Defining-infertility-and-initial-assessment",
+      "version": "NG257",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for infertility-female. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "infertility-female"
+      ],
+      "status": "verified-live",
+      "publishedDate": "31 March 2026"
+    },
+    {
+      "id": "nice-ng257-tests-detail",
+      "topic": "Additional clinical detail: infertility-female",
+      "organisation": "NICE",
+      "title": "NG257 — investigation of fertility problems and management strategies",
+      "url": "https://www.nice.org.uk/guidance/ng257/chapter/Investigation-of-fertility-problems-and-management-strategies",
+      "version": "NG257",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for infertility-female. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "infertility-female"
+      ],
+      "status": "verified-live",
+      "publishedDate": "31 March 2026"
+    },
+    {
+      "id": "nice-ng3-detail",
+      "topic": "Additional clinical detail: gdm, pregestational-diabetes",
+      "organisation": "NICE",
+      "title": "NG3 — diabetes in pregnancy",
+      "url": "https://www.nice.org.uk/guidance/ng3/chapter/recommendations",
+      "version": "NG3",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for gdm, pregestational-diabetes. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "gdm",
+        "pregestational-diabetes"
+      ],
+      "status": "verified-live",
+      "publishedDate": "25 February 2015",
+      "lastUpdatedDate": "16 December 2020"
+    },
+    {
+      "id": "rcog-hyperemesis-detail",
+      "topic": "Additional clinical detail: hyperemesis-gravidarum",
+      "organisation": "RCOG",
+      "title": "Pregnancy sickness and hyperemesis gravidarum — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/pregnancy-sickness-nausea-and-vomiting-of-pregnancy-and-hyperemesis-gravidarum/",
+      "version": "Patient information",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for hyperemesis-gravidarum. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "hyperemesis-gravidarum"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "rcog-icp-detail",
+      "topic": "Additional clinical detail: icp",
+      "organisation": "RCOG",
+      "title": "Intrahepatic cholestasis of pregnancy — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/intrahepatic-cholestasis-of-pregnancy/",
+      "version": "Patient information",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for icp. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "icp"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "rcog-vte-detail",
+      "topic": "Additional clinical detail: vte",
+      "organisation": "RCOG",
+      "title": "Diagnosis and treatment of venous thrombosis in pregnancy and after birth — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/diagnosis-and-treatment-of-venous-thrombosis-in-pregnancy-and-after-birth/",
+      "version": "Patient information",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for vte. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "vte"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "nice-ng207-detail",
+      "topic": "Additional clinical detail: iol, prom-term",
+      "organisation": "NICE",
+      "title": "NG207 — inducing labour",
+      "url": "https://www.nice.org.uk/guidance/ng207/chapter/recommendations",
+      "version": "NG207",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for iol, prom-term. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "iol",
+        "prom-term"
+      ],
+      "status": "verified-live",
+      "publishedDate": "04 November 2021"
+    },
+    {
+      "id": "nice-ng192-detail",
+      "topic": "Additional clinical detail: lscs, vbac-tolac",
+      "organisation": "NICE",
+      "title": "NG192 — caesarean birth",
+      "url": "https://www.nice.org.uk/guidance/ng192/chapter/recommendations",
+      "version": "NG192",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for lscs, vbac-tolac. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "lscs",
+        "vbac-tolac"
+      ],
+      "status": "verified-live",
+      "publishedDate": "31 March 2021",
+      "lastUpdatedDate": "10 June 2025"
+    },
+    {
+      "id": "rcog-breech-detail",
+      "topic": "Additional clinical detail: breech-ecv",
+      "organisation": "RCOG",
+      "title": "Breech baby at the end of pregnancy — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/breech-baby-at-the-end-of-pregnancy/",
+      "version": "Patient information",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for breech-ecv. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "breech-ecv"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "rcog-shoulder-detail",
+      "topic": "Additional clinical detail: shoulder-dystocia",
+      "organisation": "RCOG",
+      "title": "Shoulder dystocia — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/shoulder-dystocia/",
+      "version": "Patient information",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for shoulder-dystocia. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "shoulder-dystocia"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "rcog-cord-detail",
+      "topic": "Additional clinical detail: cord-prolapse",
+      "organisation": "RCOG",
+      "title": "Umbilical cord prolapse in late pregnancy — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/umbilical-cord-prolapse-in-late-pregnancy/",
+      "version": "Patient information",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for cord-prolapse. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "cord-prolapse"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "nice-ng229-detail",
+      "topic": "Additional clinical detail: ctg-fetal-monitoring",
+      "organisation": "NICE",
+      "title": "NG229 — fetal monitoring in labour",
+      "url": "https://www.nice.org.uk/guidance/ng229/chapter/recommendations",
+      "version": "NG229",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for ctg-fetal-monitoring. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "ctg-fetal-monitoring"
+      ],
+      "status": "verified-live",
+      "publishedDate": "14 December 2022",
+      "lastUpdatedDate": "25 March 2026"
+    },
+    {
+      "id": "nice-ng25-detail",
+      "topic": "Additional clinical detail: ptl-threatened, ptl-established",
+      "organisation": "NICE",
+      "title": "NG25 — preterm labour and birth",
+      "url": "https://www.nice.org.uk/guidance/ng25/chapter/recommendations",
+      "version": "NG25",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for ptl-threatened, ptl-established. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "ptl-threatened",
+        "ptl-established"
+      ],
+      "status": "verified-live",
+      "publishedDate": "20 November 2015",
+      "lastUpdatedDate": "10 June 2022"
+    },
+    {
+      "id": "rcog-pprom-detail",
+      "topic": "Additional clinical detail: pprom",
+      "organisation": "RCOG",
+      "title": "When your waters break prematurely — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/when-your-waters-break-prematurely/",
+      "version": "Patient information",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for pprom. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "pprom"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "nice-ng137-detail",
+      "topic": "Additional clinical detail: multiples",
+      "organisation": "NICE",
+      "title": "NG137 — twin and triplet pregnancy",
+      "url": "https://www.nice.org.uk/guidance/ng137/chapter/recommendations",
+      "version": "NG137",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for multiples. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "multiples"
+      ],
+      "status": "verified-live",
+      "publishedDate": "04 September 2019",
+      "lastUpdatedDate": "09 April 2024"
+    },
+    {
+      "id": "rcog-small-baby-detail",
+      "topic": "Additional clinical detail: fgr",
+      "organisation": "RCOG",
+      "title": "Having a small baby — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/having-a-small-baby/",
+      "version": "Patient information",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for fgr. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "fgr"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "rcog-movements-detail",
+      "topic": "Additional clinical detail: reduced-fetal-movements",
+      "organisation": "RCOG",
+      "title": "Your baby’s movements in pregnancy — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/your-babys-movements-in-pregnancy/",
+      "version": "Patient information",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for reduced-fetal-movements. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "reduced-fetal-movements"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "nice-ng133-detail",
+      "topic": "Additional clinical detail: hdp-postpartum",
+      "organisation": "NICE",
+      "title": "NG133 — hypertension in pregnancy",
+      "url": "https://www.nice.org.uk/guidance/ng133/chapter/recommendations",
+      "version": "NG133",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for hdp-postpartum. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "hdp-postpartum"
+      ],
+      "status": "verified-live",
+      "publishedDate": "25 June 2019",
+      "lastUpdatedDate": "17 April 2023"
+    },
+    {
+      "id": "nice-ng201-detail",
+      "topic": "Additional clinical detail: anc-overview",
+      "organisation": "NICE",
+      "title": "NG201 — antenatal care",
+      "url": "https://www.nice.org.uk/guidance/ng201/chapter/recommendations",
+      "version": "NG201",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for anc-overview. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "anc-overview"
+      ],
+      "status": "verified-live",
+      "publishedDate": "19 August 2021"
+    },
+    {
+      "id": "nice-ng109-detail",
+      "topic": "Additional clinical detail: uti-pyelonephritis",
+      "organisation": "NICE",
+      "title": "NG109 — lower urinary tract infection: antimicrobial prescribing",
+      "url": "https://www.nice.org.uk/guidance/ng109/chapter/recommendations",
+      "version": "NG109",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for uti-pyelonephritis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "uti-pyelonephritis"
+      ],
+      "status": "verified-live",
+      "publishedDate": "31 October 2018"
+    },
+    {
+      "id": "nice-ng111-detail",
+      "topic": "Additional clinical detail: uti-pyelonephritis",
+      "organisation": "NICE",
+      "title": "NG111 — acute pyelonephritis: antimicrobial prescribing",
+      "url": "https://www.nice.org.uk/guidance/ng111/chapter/recommendations",
+      "version": "NG111",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for uti-pyelonephritis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "uti-pyelonephritis"
+      ],
+      "status": "verified-live",
+      "publishedDate": "31 October 2018"
+    },
+    {
+      "id": "nice-ng255-detail",
+      "topic": "Additional clinical detail: maternal-sepsis",
+      "organisation": "NICE",
+      "title": "NG255 — managing suspected sepsis in pregnant or recently pregnant people",
+      "url": "https://www.nice.org.uk/guidance/ng255/chapter/managing-suspected-sepsis",
+      "version": "NG255",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for maternal-sepsis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "usedBySections": [
+        "maternal-sepsis"
+      ],
+      "status": "verified-live",
+      "publishedDate": "19 November 2025"
+    },
+    {
+      "id": "rcog-gbs-detail",
+      "topic": "Additional clinical detail: gbs",
+      "organisation": "RCOG",
+      "title": "Group B Streptococcus in pregnancy and newborn babies — patient information (under review)",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/group-b-streptococcus-gbs-in-pregnancy-and-newborn-babies/",
+      "version": "Patient information based on GTG 36 (2017); currently under review",
+      "sourceType": "patient information based on society guidance",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for gbs. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. The page explicitly says its related guideline update is in progress; do not imply universal screening policy or a 2026 guideline edition.",
+      "usedBySections": [
+        "gbs"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "nice-ng126-antid-detail",
+      "topic": "Gestation-specific RhD prophylaxis in early ectopic pregnancy and miscarriage",
+      "organisation": "NICE",
+      "title": "NG126 — anti-D immunoglobulin prophylaxis (June 2026 update)",
+      "url": "https://www.nice.org.uk/guidance/ng126/chapter/anti-d-immunoglobulin-prophylaxis",
+      "version": "NG126, June 2026",
+      "publishedDate": "2019-04-17",
+      "lastUpdatedDate": "2026-06-17",
+      "sourceType": "national clinical guideline",
+      "region": "UK (international reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Recommendations 1.18.1–1.18.5: no routine anti-D up to 11+6 weeks; offer to RhD-negative patients having medical or surgical management at 12+0–12+6 weeks, consider for heavy/recurrent threatened bleeding at that gestation. Corrected blanket all-loss anti-D wording; applicability to local Indian policy requires review. No claim to verify induced-abortion regimens.",
+      "usedBySections": [
+        "ectopic-pregnancy",
+        "miscarriage-management",
+        "emg-ectopic",
+        "proc-mva"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "nhs-ectopic-mtx-detail",
+      "topic": "Single-dose methotrexate and hCG response follow-up",
+      "organisation": "NHS Greater Glasgow and Clyde",
+      "title": "Ectopic Pregnancy Medical Management (116)",
+      "url": "https://www.rightdecisions.scot.nhs.uk/shared-content/ggc-clinical-guidelines/gynaecology/ectopic-pregnancy-medical-management-116/",
+      "version": "Version 4; last reviewed July 2021; scheduled review September 2026",
+      "sourceType": "local NHS clinical protocol",
+      "region": "Scotland, UK (local dose reference)",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Checked the 50 mg/m² IM initial dose, day-4/day-7 hCG assessment, ≥15% fall criterion and senior reassessment before further doses. The document records a next review date of 30 September 2026, already past at this check; current local protocol should be confirmed. NICE national criteria are used for patient selection and the differing size thresholds are shown in a conflict block. This is a limited protocol check, not certification of the entire ectopic module.",
+      "usedBySections": [
+        "ectopic-pregnancy",
+        "methotrexate-ectopic"
+      ],
+      "status": "verified-summary"
     }
   ]
 }

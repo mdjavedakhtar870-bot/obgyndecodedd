@@ -10,6 +10,7 @@ import { DrugsPage, CalculatorsPage, DdxPage, ProceduresPage, SourcesPage } from
 import { AboutPage, NotFoundPage, SitemapPage } from './pages/SitePages'
 import { PageMetadata } from './components/PageMetadata'
 import { getPage, ICU_DECODED_URL } from './lib/seo'
+import { Dialog } from './components/Dialog'
 
 /* ---------------- App context ---------------- */
 interface Ctx {
@@ -27,10 +28,10 @@ function Palette({ close }: { close(): void }) {
   const docs = useMemo(() => buildDocs(data), [data])
   const hits = useMemo(() => search(docs, q), [docs, q])
   return (
-    <div className="palette-backdrop" onClick={close}>
-      <div className="palette" onClick={(e) => e.stopPropagation()}>
-        <input autoFocus placeholder="Search topics, drugs, emergencies, calculators… e.g. “PPH”, “high BP 34 weeks”, “ectopic”" value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => { if (e.key === 'Escape') close(); if (e.key === 'Enter' && hits[0]) { nav(hits[0].route); close() } }} />
-        <div className="palette-results">
+    <Dialog title="Search the clinical library" close={close} className="palette">
+        <label className="sr-only" htmlFor="clinical-search">Condition, symptom, drug or calculator</label>
+        <input id="clinical-search" data-autofocus placeholder="Try PPH, ectopic, drug dose…" value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && hits[0]) { nav(hits[0].route); close() } }} />
+        <div className="palette-results" aria-live="polite">
           {q && !hits.length && <div className="pal-empty">No matches for “{q}”</div>}
           {!q && <div className="pal-empty">Try: PPH · eclampsia · ectopic · PCOS infertility · heavy menstrual bleeding · postpartum fever</div>}
           {hits.map((h) => (
@@ -39,14 +40,14 @@ function Palette({ close }: { close(): void }) {
             </button>
           ))}
         </div>
-      </div>
-    </div>
+    </Dialog>
   )
 }
 
 /* ---------------- Shell ---------------- */
 function Shell({ children }: { children: ReactNode }) {
   const [palOpen, setPalOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [themeName, setThemeName] = useState('light')
   const { toast } = useApp()
   const loc = useLocation()
@@ -55,22 +56,22 @@ function Shell({ children }: { children: ReactNode }) {
     const h = (e: KeyboardEvent) => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); setPalOpen(true) } }
     window.addEventListener('keydown', h); return () => window.removeEventListener('keydown', h)
   }, [])
-  useEffect(() => { window.scrollTo(0, 0) }, [loc.pathname])
+  useEffect(() => { window.scrollTo(0, 0); setMenuOpen(false) }, [loc.pathname])
   const navCls = ({ isActive }: { isActive: boolean }) => `nav-item ${isActive ? 'active' : ''}`
   const sideNav = (
     <>
       <Link to="/" className="brand"><span className="brand-mark">OD</span><span>OBGYN Decoded<small>Clinical reference · India-first</small></span></Link>
       <div className="nav-section">Clinical</div>
-      <NavLink to="/" end className={navCls}><span className="ico">⌂</span>Dashboard</NavLink>
-      <NavLink to="/browse" className={navCls}><span className="ico">☰</span>Browse topics</NavLink>
-      <NavLink to="/ddx" className={navCls}><span className="ico">⑃</span>Differential engine</NavLink>
-      <NavLink to="/drugs" className={navCls}><span className="ico">℞</span>Drugs</NavLink>
-      <NavLink to="/calculators" className={navCls}><span className="ico">∑</span>Calculators</NavLink>
-      <NavLink to="/procedures" className={navCls}><span className="ico">✚</span>Procedures</NavLink>
-      <NavLink to="/sources" className={navCls}><span className="ico">§</span>Guidelines & sources</NavLink>
-      <NavLink to="/about" className={navCls}><span className="ico">ⓘ</span>About this reference</NavLink>
+      <NavLink to="/" end className={navCls}><span className="ico" aria-hidden="true">⌂</span>Dashboard</NavLink>
+      <NavLink to="/browse" className={navCls}><span className="ico" aria-hidden="true">☰</span>Browse topics</NavLink>
+      <NavLink to="/ddx" className={navCls}><span className="ico" aria-hidden="true">⑃</span>Differential engine</NavLink>
+      <NavLink to="/drugs" className={navCls}><span className="ico" aria-hidden="true">℞</span>Drugs</NavLink>
+      <NavLink to="/calculators" className={navCls}><span className="ico" aria-hidden="true">∑</span>Calculators</NavLink>
+      <NavLink to="/procedures" className={navCls}><span className="ico" aria-hidden="true">✚</span>Procedures</NavLink>
+      <NavLink to="/sources" className={navCls}><span className="ico" aria-hidden="true">§</span>Guidelines & sources</NavLink>
+      <NavLink to="/about" className={navCls}><span className="ico" aria-hidden="true">ⓘ</span>About this reference</NavLink>
       <div className="nav-section">Settings</div>
-      <NavLink to="/profile" className={navCls}><span className="ico">◉</span>Profile & settings</NavLink>
+      <NavLink to="/profile" className={navCls}><span className="ico" aria-hidden="true">◉</span>Profile & settings</NavLink>
       <div className="emergency-rail">
         ⚡ EMERGENCY HUB<br />
         <Link to="/emergency/emg-pph">PPH</Link>
@@ -83,23 +84,26 @@ function Shell({ children }: { children: ReactNode }) {
   return (
     <div className="app">
       <a className="skip-link" href="#main-content">Skip to clinical content</a>
-      <aside className="sidebar">{sideNav}</aside>
+      <aside className="sidebar"><nav aria-label="Main navigation">{sideNav}</nav></aside>
       <div className="main">
         <header className="topbar">
-          <button className="search-btn" onClick={() => setPalOpen(true)}>🔍 Search clinical content…<kbd>Ctrl K</kbd></button>
-          <button className="icon-btn" title="Toggle theme" onClick={() => { theme.toggle(); setThemeName(theme.current()); toast(`Theme: ${theme.current()}`) }}>{themeName === 'dark' ? '☀' : '☾'}</button>
+          <Link to="/" className="mobile-brand" aria-label="OBGYN Decoded home"><span className="brand-mark">OD</span><span>OBGYN<small>DECODED</small></span></Link>
+          <button className="search-btn" aria-label="Search clinical content" onClick={() => setPalOpen(true)}><span aria-hidden="true">⌕</span><span className="search-label">Search clinical content…</span><kbd>Ctrl K</kbd></button>
+          <button className="icon-btn" title="Toggle theme" aria-label="Toggle colour theme" onClick={() => { theme.toggle(); setThemeName(theme.current()); toast(`Theme: ${theme.current()}`) }}>{themeName === 'dark' ? '☀' : '☾'}</button>
+          <button className="icon-btn mobile-menu-button" aria-label="Open menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(true)}>☰</button>
         </header>
         <main className="content" id="main-content">{children}</main>
         <footer className="site-footer small muted"><Link to="/about">About</Link> · <Link to="/sources">Guidelines & sources</Link> · <Link to="/sitemap">Site directory</Link><p>Related clinical reference: <a href={ICU_DECODED_URL} target="_blank" rel="noopener">ICU Decoded — critical care & internal medicine ↗</a></p><p>Clinical reference for doctors. Check each page's verification status and underlying sources.</p></footer>
-        <nav className="bottom-nav">
-          <NavLink to="/" end className={({ isActive }) => `icon-btn`} style={{ border: 'none' }}>⌂</NavLink>
-          <NavLink to="/browse" className={({ isActive }) => `icon-btn`} style={{ border: 'none' }}>☰</NavLink>
-          <button className="icon-btn" onClick={() => setPalOpen(true)} style={{ border: 'none' }}>🔍</button>
-          <NavLink to="/emergencies" className={({ isActive }) => `icon-btn`} style={{ border: 'none', color: 'var(--danger)' }}>⚡</NavLink>
-          <NavLink to="/profile" className={({ isActive }) => `icon-btn`} style={{ border: 'none' }}>◉</NavLink>
+        <nav className="bottom-nav" aria-label="Mobile navigation">
+          <NavLink to="/" end><span aria-hidden="true">⌂</span><span>Home</span></NavLink>
+          <NavLink to="/browse"><span aria-hidden="true">☰</span><span>Topics</span></NavLink>
+          <button onClick={() => setPalOpen(true)} aria-label="Search clinical content"><span aria-hidden="true">⌕</span><span>Search</span></button>
+          <NavLink to="/emergencies" className="urgent-nav"><span aria-hidden="true">⚡</span><span>Urgent</span></NavLink>
+          <button onClick={() => setMenuOpen(true)} aria-label="Open full menu" aria-expanded={menuOpen}><span aria-hidden="true">▦</span><span>Menu</span></button>
         </nav>
       </div>
       {palOpen && <Palette close={() => setPalOpen(false)} />}
+      {menuOpen && <Dialog title="Explore OBGYN Decoded" close={() => setMenuOpen(false)} className="mobile-menu"><nav aria-label="All clinical sections" onClick={(e) => { if ((e.target as HTMLElement).closest('a')) setMenuOpen(false) }}>{sideNav}</nav></Dialog>}
     </div>
   )
 }
