@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '../components/links'
 import { ALL_TOPICS, CALCULATORS, DDx_PRESENTATIONS, DRUGS, EMERGENCIES, PROCEDURES } from '../content'
 import { PUBLIC_PAGES, SITE_DESCRIPTION } from '../lib/seo'
 

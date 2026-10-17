@@ -3,7 +3,7 @@ import test from 'node:test'
 import { readFileSync, readdirSync } from 'node:fs'
 import { JSDOM, VirtualConsole } from 'jsdom'
 import { ALL_TOPICS, CALCULATORS, DRUGS } from '../src/content'
-import { getPage } from '../src/lib/seo'
+import { getPage, pageUrl } from '../src/lib/seo'
 
 const bundle = readFileSync(`dist/assets/${readdirSync('dist/assets').find((f) => f.endsWith('.js'))}`, 'utf8')
 const origin = 'https://obgyndecodedd.netlify.app'
@@ -18,7 +18,7 @@ async function boot(path: string, favourites: string[] = []) {
   virtualConsole.on('error', (...args) => errors.push(args.map(String).join(' ')))
   virtualConsole.on('jsdomError', (error) => errors.push(String(error)))
   const file = path === '/' ? 'dist/index.html' : `dist${path}/index.html`
-  const dom = new JSDOM(readFileSync(file, 'utf8'), { url: `${origin}${path}`, runScripts: 'outside-only', pretendToBeVisual: true, virtualConsole })
+  const dom = new JSDOM(readFileSync(file, 'utf8'), { url: pageUrl(origin, path), runScripts: 'outside-only', pretendToBeVisual: true, virtualConsole })
   const w = dom.window
   w.scrollTo = () => {}
   w.localStorage.setItem('od.theme', 'light')
@@ -49,11 +49,11 @@ test('production HTML hydrates with device preferences and tab/source controls r
 test('in-app navigation updates canonical, title and schema without duplicate head tags', async () => {
   const { dom, w, d, errors } = await boot('/')
   try {
-    d.querySelector<HTMLAnchorElement>('a[href="/drugs"]')!.click()
-    await until(() => w.location.pathname === '/drugs' && d.title === getPage('/drugs')!.title, 'Drug directory navigation/metadata failed')
+    d.querySelector<HTMLAnchorElement>('a[href="/drugs/"]')!.click()
+    await until(() => w.location.pathname === '/drugs/' && d.title === getPage('/drugs')!.title, 'Drug directory navigation/metadata failed')
     const details = d.querySelector<HTMLDetailsElement>('main details')!
     details.open = true
-    const path = `/drug/${DRUGS[0].id}`
+    const path = `/drug/${DRUGS[0].id}/`
     d.querySelector<HTMLAnchorElement>(`main a[href="${path}"]`)!.click()
     await until(() => w.location.pathname === path && d.title === getPage(path)!.title, 'Direct drug navigation/metadata failed')
     assert.equal(d.querySelectorAll('title').length, 1)

@@ -3,7 +3,7 @@ import test from 'node:test'
 import { ALL_TOPICS } from '../src/content'
 import { PUBLISHED_CONTENT } from '../src/lib/app'
 import { buildDocs } from '../src/lib/search'
-import { ALL_PAGES, PUBLIC_PAGES, getPage, safeJson, structuredData } from '../src/lib/seo'
+import { ALL_PAGES, PUBLIC_PAGES, canonicalPath, getPage, safeJson, structuredData } from '../src/lib/seo'
 import { resolveSiteConfig } from '../scripts/site-config'
 
 test('every search result has a directly addressable clinical page', () => {
@@ -34,6 +34,10 @@ test('unknown routes are not silently canonicalized to the homepage', () => {
   assert.equal(getPage('/missing'), undefined)
   assert.equal(getPage('/browse/')!.path, '/browse')
   assert.ok(ALL_PAGES.some((p) => p.path === '/404.html'))
+  assert.equal(canonicalPath('/topic/hdp-eclampsia'), '/topic/hdp-eclampsia/')
+  assert.equal(canonicalPath('/topic/hdp-eclampsia/'), '/topic/hdp-eclampsia/')
+  assert.equal(canonicalPath('/'), '/')
+  assert.equal(canonicalPath('/404.html'), '/404.html')
 })
 
 test('site URLs prefer the primary domain and preview builds cannot be indexed', () => {

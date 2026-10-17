@@ -29,12 +29,12 @@ function expand(q: string): string[] {
 
 export function buildDocs(data: { topics: { id: string; title: string; tags: string[]; aliases?: string[]; summary: string; category: string }[]; emergencies: { id: string; title: string; keywords: string[]; group: string }[]; drugs: { id: string; name: string; drugClass: string; dbCategory: string }[]; calculators: { id: string; name: string; description: string }[]; procedures: { id: string; title: string; tags: string[] }[]; ddx: { id: string; presentation: string }[] }): Doc[] {
   const docs: Doc[] = []
-  for (const t of data.topics) docs.push({ id: t.id, kind: 'Topic', title: t.title, text: [t.title, ...(t.tags || []), ...(t.aliases || []), t.summary].join(' ').toLowerCase(), route: `/topic/${t.id}` })
-  for (const e of data.emergencies) docs.push({ id: e.id, kind: 'Emergency', title: `EMERGENCY: ${e.title}`, text: [e.title, ...e.keywords, e.group, 'emergency'].join(' ').toLowerCase(), route: `/emergency/${e.id}` })
-  for (const d of data.drugs) docs.push({ id: d.id, kind: 'Drug', title: d.name, text: [d.name, d.drugClass, d.dbCategory, 'drug dose'].join(' ').toLowerCase(), route: `/drug/${d.id}` })
-  for (const c of data.calculators) docs.push({ id: c.id, kind: 'Calculator', title: c.name, text: `${c.name} ${c.description} calculator`.toLowerCase(), route: `/calculator/${c.id}` })
-  for (const p of data.procedures) docs.push({ id: p.id, kind: 'Procedure', title: p.title, text: [p.title, ...p.tags].join(' ').toLowerCase(), route: `/procedure/${p.id}` })
-  for (const d of data.ddx) docs.push({ id: d.id, kind: 'DDx', title: d.presentation, text: `${d.presentation} differential diagnosis presentation`.toLowerCase(), route: `/ddx/${d.id}` })
+  for (const t of data.topics) docs.push({ id: t.id, kind: 'Topic', title: t.title, text: [t.title, ...(t.tags || []), ...(t.aliases || []), t.summary].join(' ').toLowerCase(), route: `/topic/${t.id}/` })
+  for (const e of data.emergencies) docs.push({ id: e.id, kind: 'Emergency', title: `EMERGENCY: ${e.title}`, text: [e.title, ...e.keywords, e.group, 'emergency'].join(' ').toLowerCase(), route: `/emergency/${e.id}/` })
+  for (const d of data.drugs) docs.push({ id: d.id, kind: 'Drug', title: d.name, text: [d.name, d.drugClass, d.dbCategory, 'drug dose'].join(' ').toLowerCase(), route: `/drug/${d.id}/` })
+  for (const c of data.calculators) docs.push({ id: c.id, kind: 'Calculator', title: c.name, text: `${c.name} ${c.description} calculator`.toLowerCase(), route: `/calculator/${c.id}/` })
+  for (const p of data.procedures) docs.push({ id: p.id, kind: 'Procedure', title: p.title, text: [p.title, ...p.tags].join(' ').toLowerCase(), route: `/procedure/${p.id}/` })
+  for (const d of data.ddx) docs.push({ id: d.id, kind: 'DDx', title: d.presentation, text: `${d.presentation} differential diagnosis presentation`.toLowerCase(), route: `/ddx/${d.id}/` })
   return docs
 }
 

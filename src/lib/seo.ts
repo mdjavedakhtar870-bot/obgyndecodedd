@@ -2,6 +2,11 @@ import { ALL_TOPICS, CALCULATORS, DDx_PRESENTATIONS, DRUGS, EMERGENCIES, PROCEDU
 
 export const SITE_NAME = 'OBGYN Decoded'
 export const ICU_DECODED_URL = 'https://icudecodedd.com/'
+export function canonicalPath(path: string): string {
+  if (path === '/' || path.endsWith('.html')) return path
+  return `${path.replace(/\/+$/, '')}/`
+}
+export function pageUrl(origin: string, path: string): string { return `${origin}${canonicalPath(path)}` }
 export const SITE_DESCRIPTION = 'Obstetrics and gynaecology clinical reference for doctors in India: clinical topics, emergency pathways, drug references, calculators and guideline sources.'
 
 export interface PageInfo {
@@ -78,7 +83,7 @@ export function breadcrumbs(p: PageInfo): { name: string; path: string }[] {
 }
 
 export function structuredData(p: PageInfo, origin: string): Record<string, unknown> {
-  const url = `${origin}${p.path}`
+  const url = pageUrl(origin, p.path)
   const citations = (p.sourceIds || []).map((id) => SOURCES.find((s) => s.id === id)).filter((s) => s !== undefined)
   const children = p.path === '/sitemap' ? PUBLIC_PAGES.filter((x) => x.path !== '/sitemap' && x.index) : PUBLIC_PAGES.filter((x) => x.parent === p.path && x.index)
   const graph: Record<string, unknown>[] = [
@@ -93,10 +98,10 @@ export function structuredData(p: PageInfo, origin: string): Record<string, unkn
       ...(p.lastReviewed && ['clinically-verified', 'published'].includes(p.status || '') ? { lastReviewed: p.lastReviewed } : {}),
       ...(citations.length ? { citation: citations.map((s) => ({ '@type': 'CreativeWork', name: s.title, url: s.url, publisher: { '@type': 'Organization', name: s.organisation } })) } : {}),
       ...(p.path !== '/' ? { breadcrumb: { '@id': `${url}#breadcrumb` } } : {}),
-      ...(children.length ? { mainEntity: { '@type': 'ItemList', numberOfItems: children.length, itemListElement: children.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, url: `${origin}${c.path}` })) } } : {}),
+      ...(children.length ? { mainEntity: { '@type': 'ItemList', numberOfItems: children.length, itemListElement: children.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, url: pageUrl(origin, c.path) })) } } : {}),
     },
   ]
-  if (p.path !== '/') graph.push({ '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: breadcrumbs(p).map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: `${origin}${b.path}` })) })
+  if (p.path !== '/') graph.push({ '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: breadcrumbs(p).map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: pageUrl(origin, b.path) })) })
   return { '@context': 'https://schema.org', '@graph': graph }
 }
 
@@ -112,7 +117,7 @@ export function robotDirective(p: PageInfo, indexable: boolean): string {
 
 export function metadataHtml(p: PageInfo, origin: string, indexable: boolean): string {
   const e = escapeHtml
-  const url = `${origin}${p.path}`
+  const url = pageUrl(origin, p.path)
   const tags: [string, string, string][] = [
     ['name', 'description', p.description], ['name', 'robots', robotDirective(p, indexable)],
     ['property', 'og:type', 'website'], ['property', 'og:site_name', SITE_NAME], ['property', 'og:locale', 'en_IN'],

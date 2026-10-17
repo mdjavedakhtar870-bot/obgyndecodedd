@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
-import { Link, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { Link, NavLink } from './components/links'
 import { theme, PUBLISHED_CONTENT, favs, recents, type PubData } from './lib/app'
 import { search, buildDocs } from './lib/search'
 import Home from './pages/Home'

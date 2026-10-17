@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '../components/links'
 import { useEffect, useState } from 'react'
 import { useApp } from '../App'
 import { favs, recents } from '../lib/app'

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
+import { Link } from '../components/links'
 import { useApp } from '../App'
 import { SourceBadge, StatusBadge } from '../components/clinical'
 import { getSource } from '../content/sources'

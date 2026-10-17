@@ -4,7 +4,7 @@ import { readFileSync, existsSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { join } from 'node:path'
 import { ALL_TOPICS, SOURCES } from '../src/content'
-import { ALL_PAGES, PUBLIC_PAGES, getPage, ICU_DECODED_URL } from '../src/lib/seo'
+import { ALL_PAGES, PUBLIC_PAGES, pageUrl, getPage, ICU_DECODED_URL } from '../src/lib/seo'
 import { resolveSiteConfig } from '../scripts/site-config'
 
 const require = createRequire(import.meta.url)
@@ -21,12 +21,12 @@ test('every generated page contains its own readable content and metadata before
     assert.equal(d.title, p.title, p.path)
     assert.equal(d.querySelectorAll('h1').length, 1, `${p.path}: heading`)
     assert.ok(d.querySelector('main').textContent.trim().length > 70, `${p.path}: empty content`)
-    assert.equal(d.querySelector('link[rel="canonical"]').getAttribute('href'), `${site.origin}${p.path}`, p.path)
+    assert.equal(d.querySelector('link[rel="canonical"]').getAttribute('href'), pageUrl(site.origin, p.path), p.path)
     assert.equal(d.querySelector('meta[name="description"]').getAttribute('content'), p.description)
     assert.match(d.querySelector('meta[name="robots"]').getAttribute('content'), p.index && site.indexable ? /^index,/ : /^noindex,/)
-    assert.equal(d.querySelector('meta[property="og:url"]').getAttribute('content'), `${site.origin}${p.path}`)
+    assert.equal(d.querySelector('meta[property="og:url"]').getAttribute('content'), pageUrl(site.origin, p.path))
     const graph = JSON.parse(d.querySelector('#page-schema').textContent)['@graph']
-    assert.ok(graph.some((x: Record<string, unknown>) => x.url === `${site.origin}${p.path}`))
+    assert.ok(graph.some((x: Record<string, unknown>) => x.url === pageUrl(site.origin, p.path)))
     assert.ok(d.querySelector('noscript') || readFileSync(fileFor(p.path), 'utf8').includes('<noscript>'))
     const backlink = d.querySelector(`footer a[href="${ICU_DECODED_URL}"]`)
     assert.ok(backlink, `${p.path}: missing ICU Decoded backlink`)
@@ -66,7 +66,7 @@ test('the sitemap contains only canonical indexable pages and has no fabricated 
   const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1])
   assert.equal(urls.length, expected.length)
   assert.equal(new Set(urls).size, urls.length)
-  for (const p of expected) assert.ok(urls.includes(`${site.origin}${p.path}`), p.path)
+  for (const p of expected) assert.ok(urls.includes(pageUrl(site.origin, p.path)), p.path)
   assert.ok(!xml.includes('<lastmod>'))
   assert.ok(!xml.includes('/profile'))
   assert.ok(!xml.includes('#'))
