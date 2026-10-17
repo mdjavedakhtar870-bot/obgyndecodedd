@@ -1,41 +1,57 @@
-import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useMemo, useState } from 'react'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { useApp } from '../App'
 import { SourceBadge, StatusBadge } from '../components/clinical'
 import { getSource } from '../content/sources'
+import { getPage } from '../lib/seo'
+
+function referencePath(id: string) {
+  return getPage(`/topic/${id}`)?.path || getPage(`/emergency/${id}`)?.path
+}
 
 /* ---------------- Drugs ---------------- */
 export function DrugsPage() {
   const { data } = useApp()
-  const [q, setQ] = useState(() => new URLSearchParams(location.hash.slice(1)).get('q') || '')
+  const { id } = useParams()
+  const loc = useLocation()
+  const [q, setQ] = useState('')
+  useEffect(() => { setQ(new URLSearchParams(loc.hash.slice(1)).get('q') || '') }, [loc.hash])
   const cats = useMemo(() => [...new Set((data?.drugs || []).map((d) => d.dbCategory))].sort(), [data])
   const [cat, setCat] = useState('')
   if (!data) return <p className="muted">Loading…</p>
-  const list = data.drugs.filter((d) => (!cat || d.dbCategory === cat) && (!q || `${d.name} ${d.drugClass} ${d.indications.join(' ')}`.toLowerCase().includes(q.toLowerCase())))
+  const selected = data.drugs.find((d) => d.id === id)
+  const list = data.drugs.filter((d) => id ? d.id === id : (!cat || d.dbCategory === cat) && (!q || `${d.name} ${d.drugClass} ${d.indications.join(' ')}`.toLowerCase().includes(q.toLowerCase())))
   return (
     <div>
-      <h1>Drug database</h1>
+      {id && <p className="small"><Link to="/drugs">← All drug references</Link></p>}
+      <h1>{selected?.name || 'Drug database'}</h1>
       <p className="small muted">Pregnancy & gynaecology-specific. Every dose row is source-referenced; verify against institutional protocols.</p>
-      <div className="row" style={{ margin: '14px 0' }}>
+      {!id && <div className="row" style={{ margin: '14px 0' }}>
         <input className="input" style={{ maxWidth: 320 }} placeholder="Search drug / class…" value={q} onChange={(e) => setQ(e.target.value)} />
         <select className="input" style={{ maxWidth: 240 }} value={cat} onChange={(e) => setCat(e.target.value)}><option value="">All categories</option>{cats.map((c) => <option key={c}>{c}</option>)}</select>
         <span className="small muted">{list.length}</span>
-      </div>
+      </div>}
       <div style={{ display: 'grid', gap: 12 }}>
         {list.map((d) => (
-          <details key={d.id} className="acc">
+          <details key={d.id} className="acc" open={!!id}>
             <summary><span className="row">{d.name}{d.emergencyKit && <span className="badge danger">EMERGENCY KIT</span>}<span className="badge">{d.drugClass}</span></span></summary>
             <div className="acc-body">
+              {!id && <p><Link to={`/drug/${d.id}`}>Open {d.name} reference →</Link></p>}
+              <p className="small">Indications: {d.indications.join(' · ')}</p>
               <table className="clinical"><thead><tr><th>Indication</th><th>Dose</th><th>Route</th><th>Frequency</th><th>Duration/Prep</th><th>Max</th></tr></thead>
-                <tbody>{d.doseRows.map((r, i) => <tr key={i}><td>{r.indication}</td><td><b>{r.dose}</b></td><td>{r.route}</td><td>{r.frequency ?? '-'}</td><td>{[r.duration, r.preparation].filter(Boolean).join(' · ')}</td><td>{r.max ?? '-'}</td></tr>)}</tbody></table>
+                <tbody>{d.doseRows.map((r, i) => <tr key={i}><td>{r.indication}</td><td><b>{r.dose}</b></td><td>{r.route}</td><td>{r.frequency ?? '-'}</td><td>{[r.duration, r.preparation].filter(Boolean).join(' · ')}{r.notes?.length ? <ul>{r.notes.map((n, j) => <li key={j}>{n}</li>)}</ul> : null}</td><td>{r.max ?? '-'}</td></tr>)}</tbody></table>
               <div className="kv-grid small">
                 <div className="kv"><div className="k">Pregnancy safety</div><div className="v" style={{ fontSize: 12.5 }}>{d.pregnancySafety}</div></div>
                 <div className="kv"><div className="k">Lactation</div><div className="v" style={{ fontSize: 12.5 }}>{d.lactation}</div></div>
+                {d.trimesterNotes && <div className="kv"><div className="k">Trimester notes</div><div className="v">{d.trimesterNotes}</div></div>}
                 {d.contraindications?.length ? <div className="kv"><div className="k">Contraindications</div><div className="v" style={{ fontSize: 12.5 }}>{d.contraindications.join('; ')}</div></div> : null}
                 {d.monitoring?.length ? <div className="kv"><div className="k">Monitoring</div><div className="v" style={{ fontSize: 12.5 }}>{d.monitoring.join('; ')}</div></div> : null}
                 {d.renalHepatic ? <div className="kv"><div className="k">Renal/hepatic</div><div className="v" style={{ fontSize: 12.5 }}>{d.renalHepatic}</div></div> : null}
+                {d.interactions?.length ? <div className="kv"><div className="k">Interactions</div><div className="v">{d.interactions.join('; ')}</div></div> : null}
+                {d.adverseEffects?.length ? <div className="kv"><div className="k">Adverse effects</div><div className="v">{d.adverseEffects.join('; ')}</div></div> : null}
               </div>
               <div className="row" style={{ marginTop: 10 }}><SourceBadge id={d.sourceId} /><StatusBadge status={d.status} /></div>
+              <p className="small muted">Clinical verification date not recorded for this drug entry.</p>
             </div>
           </details>
         ))}
@@ -47,12 +63,15 @@ export function DrugsPage() {
 /* ---------------- Calculators ---------------- */
 export function CalculatorsPage() {
   const { data } = useApp()
+  const { id } = useParams()
+  const selected = data.calculators.find((c) => c.id === id)
   return (
     <div>
-      <h1>Clinical calculators</h1>
+      {id && <p className="small"><Link to="/calculators">← All calculators</Link></p>}
+      <h1>{selected?.name || 'Clinical calculators'}</h1>
       <p className="small muted">Validated formulas only — every calculator lists its formula and source.</p>
       <div style={{ display: 'grid', gap: 16 }}>
-        {(data?.calculators || []).map((c) => <CalcCard key={c.id} c={c} />)}
+        {(data?.calculators || []).filter((c) => !id || c.id === id).map((c) => <CalcCard key={c.id} c={c} />)}
       </div>
     </div>
   )
@@ -60,11 +79,11 @@ export function CalculatorsPage() {
 function CalcCard({ c }: { c: import('../content/types').CalculatorDef }) {
   const id = `calc-${c.id}`
   const [vals, setVals] = useState<Record<string, string>>({})
-  const result = useMemo(() => { try { return c.compute(vals) } catch { return null } }, [c, vals])
+  const result = useMemo(() => { if (!Object.values(vals).some(Boolean)) return null; try { return c.compute(vals) } catch { return null } }, [c, vals])
   return (
     <div className="card card-pad" id={id}>
       <div className="spread">
-        <h3 style={{ margin: 0 }}>{c.name}</h3>
+        <h3 style={{ margin: 0 }}><Link to={`/calculator/${c.id}`}>{c.name}</Link></h3>
         <SourceBadge id={c.sourceId} />
       </div>
       <p className="small muted">{c.description}</p>
@@ -95,15 +114,16 @@ function CalcCard({ c }: { c: import('../content/types').CalculatorDef }) {
 /* ---------------- DDx engine ---------------- */
 export function DdxPage() {
   const { data } = useApp()
-  const [sel, setSel] = useState(data?.ddx[0]?.id)
+  const { id } = useParams()
   if (!data?.ddx.length) return <p className="muted">No presentations loaded.</p>
-  const p = data.ddx.find((x) => x.id === sel) || data.ddx[0]
+  const p = data.ddx.find((x) => x.id === id) || data.ddx[0]
   const prioCls = (pr: string) => pr === 'cannot-miss' ? 'danger' : pr === 'common' ? '' : 'warn'
   return (
     <div>
-      <h1>Differential-diagnosis engine</h1>
+      {id && <p className="small"><Link to="/ddx">← All presentations</Link></p>}
+      <h1>{id ? p.presentation : 'Differential-diagnosis engine'}</h1>
       <div className="row" style={{ margin: '12px 0 18px', flexWrap: 'wrap' }}>
-        {data.ddx.map((x) => <button key={x.id} className={`btn sm ${x.id === p.id ? 'primary' : ''}`} onClick={() => setSel(x.id)}>{x.presentation}</button>)}
+        {data.ddx.map((x) => <Link key={x.id} className={`btn sm ${x.id === p.id ? 'primary' : ''}`} to={`/ddx/${x.id}`}>{x.presentation}</Link>)}
       </div>
       <div className="block-warning"><b>Immediate red flags:</b><ul style={{ margin: '6px 0 0', paddingLeft: 20 }}>{p.redFlagsImmediate.map((r, i) => <li key={i}>{r}</li>)}</ul></div>
       <div className="card card-pad" style={{ margin: '14px 0' }}>
@@ -116,7 +136,7 @@ export function DdxPage() {
           <tr key={i}>
             <td><span className={`badge ${prioCls(d.priority)}`}>{d.priority === 'cannot-miss' ? 'CANNOT MISS' : d.priority.toUpperCase()}</span></td>
             <td><b>{d.condition}</b></td><td>{d.keyFeatures}</td>
-            <td>{d.topicRef ? <Link to={`/topic/${d.topicRef}`}>{d.action} →</Link> : d.action}</td>
+            <td>{d.topicRef && referencePath(d.topicRef) ? <Link to={referencePath(d.topicRef)!}>{d.action} →</Link> : d.action}</td>
           </tr>
         ))}</tbody>
       </table>
@@ -129,20 +149,28 @@ export function DdxPage() {
 /* ---------------- Procedures ---------------- */
 export function ProceduresPage() {
   const { data } = useApp()
+  const { id } = useParams()
+  const selected = data.procedures.find((p) => p.id === id)
   return (
     <div>
-      <h1>Procedures & operative gynaecology</h1>
+      {id && <p className="small"><Link to="/procedures">← All procedures</Link></p>}
+      <h1>{selected?.title || 'Procedures & operative gynaecology'}</h1>
       <div style={{ display: 'grid', gap: 12 }}>
-        {(data?.procedures || []).map((p) => (
-          <details key={p.id} className="acc" id={p.id}>
+        {(data?.procedures || []).filter((p) => !id || p.id === id).map((p) => (
+          <details key={p.id} className="acc" id={p.id} open={!!id}>
             <summary><span>{p.title} <span className="badge">{p.setting}</span></span></summary>
             <div className="acc-body">
+              {!id && <p><Link to={`/procedure/${p.id}`}>Open {p.title} reference →</Link></p>}
+              <div className="badges"><StatusBadge status={p.status} /><span className="badge">{p.lastVerifiedAt ? `Last clinically verified ${p.lastVerifiedAt}` : 'PENDING CLINICAL VERIFICATION'}</span></div>
               <div className="grid-cards small" style={{ gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', margin: '8px 0' }}>
                 <div className="card card-pad"><b>Indications</b><ul style={{ paddingLeft: 18, margin: '6px 0 0' }}>{p.indications.map((x, i) => <li key={i}>{x}</li>)}</ul></div>
                 <div className="card card-pad"><b>Consent points</b><ul style={{ paddingLeft: 18, margin: '6px 0 0' }}>{p.consentPoints.map((x, i) => <li key={i}>{x}</li>)}</ul></div>
                 <div className="card card-pad"><b>Equipment</b><ul style={{ paddingLeft: 18, margin: '6px 0 0' }}>{p.equipment.map((x, i) => <li key={i}>{x}</li>)}</ul></div>
                 <div className="card card-pad"><b>Anaesthesia</b><ul style={{ paddingLeft: 18, margin: '6px 0 0' }}>{p.anaesthesia.map((x, i) => <li key={i}>{x}</li>)}</ul></div>
               </div>
+              {!!p.absoluteContraindications?.length && <p className="block-warning"><b>Absolute contraindications:</b> {p.absoluteContraindications.join(' · ')}</p>}
+              {!!p.relativeContraindications?.length && <p className="small"><b>Relative contraindications:</b> {p.relativeContraindications.join(' · ')}</p>}
+              {!!p.preparation.length && <><h2 className="section-h">Preparation</h2><ul>{p.preparation.map((s, i) => <li key={i}>{s}</li>)}</ul></>}
               <b>Procedure steps</b>
               <ol className="steps-list">{p.steps.map((s, i) => <li key={i}>{s}</li>)}</ol>
               {p.intraOpTroubleshooting?.length ? <div className="block-info"><b>Troubleshooting:</b><ul style={{ paddingLeft: 18, margin: '4px 0 0' }}>{p.intraOpTroubleshooting.map((x, i) => <li key={i}>{x}</li>)}</ul></div> : null}
@@ -150,7 +178,9 @@ export function ProceduresPage() {
               {p.complications.map((cc, i) => (
                 <details key={i} className="acc"><summary>{cc.name}</summary><div className="acc-body">{(cc.management || []).map((m, j) => m.kind === 'text' ? <p key={j} style={{ fontSize: 13.5 }}>{m.text}</p> : null)}</div></details>
               ))}
+              {!!p.postopCare.length && <><h2 className="section-h">Postoperative care</h2><ul>{p.postopCare.map((s, i) => <li key={i}>{s}</li>)}</ul></>}
               <div className="row small muted" style={{ marginTop: 10 }}>Follow-up: {p.followUp.join(' · ')} · Sources: {p.sourceIds.map((s) => getSource(s)?.organisation).filter(Boolean).join(', ')}</div>
+              <div className="row">{p.sourceIds.map((s) => <SourceBadge key={s} id={s} />)}</div>
             </div>
           </details>
         ))}

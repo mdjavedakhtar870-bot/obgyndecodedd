@@ -12,7 +12,7 @@ A doctor opens it during a clinical problem, searches the condition, and gets: a
 | --- | --- |
 | Web app / PWA | Vite + React 18 + TypeScript, custom design system (dark/light) |
 | Clinical content | Typed library in `src/content` + `data/clinical-source-map.json`, bundled at build time |
-| Hosting | Static Netlify deploy (`netlify.toml`, SPA fallback) — no server, no accounts, no sign-in |
+| Hosting | Static Netlify pages (`netlify.toml`, real 404 fallback), with an owner-authorized edge crawler filter — no clinical server, accounts or sign-in |
 | Docs pipeline | `npm run docs:matrix` regenerates clinical docs from `data/clinical-source-map.json` |
 
 ## Quick start
@@ -29,7 +29,7 @@ npm run build
 npm run preview        # serve the production build locally
 ```
 
-**Netlify deploy:** connect the repository — `netlify.toml` sets the build command (`npm run build`), publish directory (`dist`) and SPA redirect. No environment variables are required.
+**Netlify deploy:** `netlify.toml` sets the build command (`npm run build`) and publish directory (`dist`). The build prerenders every registered route. No secrets or custom environment variables are required. The primary Netlify `URL` is used for canonical links; `SITE_URL` can explicitly override it. Local production builds default to the verified site, `https://obgyndecodedd.netlify.app`. Deploy previews/branch deploys are noindex and deny automatic crawling. Ask the owner before updating the live production site.
 
 ## Tests & verification
 
@@ -37,6 +37,9 @@ npm run preview        # serve the production build locally
 npm run typecheck      # strict TS across app + content
 npm test               # content integrity: unique ids, every sourceId registered
 npm run docs:matrix    # regenerate CLINICAL-SOURCE-MATRIX / AUDIT / FINAL-REVIEW
+npm run build          # typecheck + Vite bundle + HTML/text/sitemap generation
+npm run test:build     # validate every generated page, URL, source link and export
+npm run test:client    # production-bundle hydration and interaction smoke tests (DOM)
 ```
 
 ## Clinical architecture
@@ -52,3 +55,14 @@ npm run docs:matrix    # regenerate CLINICAL-SOURCE-MATRIX / AUDIT / FINAL-REVIE
 - `docs/CLINICAL-SOURCE-MATRIX.md` — every source, version, date checked, status, usage map
 - `docs/CLINICAL-AUDIT.md` — module-by-module verification table (never claims unverified work)
 - `docs/FINAL-CLINICAL-REVIEW.md` — honest review report including unresolved items
+
+## SEO, AI discovery and crawler policy
+
+- 154 public canonical routes: 66 topics, 18 emergency protocols, 32 drug references, 12 calculators, 6 procedures, 10 differential presentations and 10 directories/information pages. Local preferences and the error page are noindex.
+- Each page is readable before JavaScript runs, with its own title, description, canonical link, Open Graph/Twitter metadata, Schema.org page/website/breadcrumb data and relevant clinical-source citations. All topic tabs are present in HTML; no-JavaScript readers can read each section.
+- Each page includes a normal footer backlink to [ICU Decoded](https://icudecodedd.com/), using the shared `ICU_DECODED_URL` constant. OBGYN pages retain their own canonical URLs.
+- The build generates `/sitemap.xml`, `/robots.txt`, an HTML `/sitemap`, `/llms.txt`, `/llms-full.txt`, `/content-index.json`, `/clinical-sources.json`, and per-page `/reference/*.md` text exports. Tables retain their HTML columns in text exports. Exports require a verified supported crawler; clinical HTML remains public to browsers.
+- `CRAWLER_ACCESS_POLICY.md` records the owner's five-service allowlist, verification sources and public-access limitations. Google, OpenAI and Anthropic have configured dedicated range checks. Grok and muse.ai remain pending a documented verifiable identity source; names alone never grant access.
+- No clinical content, clinical statuses, review dates or guideline-source records are changed by the SEO pipeline. Sitemap dates are omitted rather than inferred from a build. `llms.txt` is an optional convenience, not a search-engine requirement or ranking guarantee.
+
+After an approved deployment, submit `/sitemap.xml` in Google Search Console, inspect representative deep URLs, and check CDN/security settings allow the verified crawler requests. The edge guard intentionally runs on every site path, including assets, so its use has Netlify request/edge usage implications.

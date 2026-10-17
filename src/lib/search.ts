@@ -31,10 +31,10 @@ export function buildDocs(data: { topics: { id: string; title: string; tags: str
   const docs: Doc[] = []
   for (const t of data.topics) docs.push({ id: t.id, kind: 'Topic', title: t.title, text: [t.title, ...(t.tags || []), ...(t.aliases || []), t.summary].join(' ').toLowerCase(), route: `/topic/${t.id}` })
   for (const e of data.emergencies) docs.push({ id: e.id, kind: 'Emergency', title: `EMERGENCY: ${e.title}`, text: [e.title, ...e.keywords, e.group, 'emergency'].join(' ').toLowerCase(), route: `/emergency/${e.id}` })
-  for (const d of data.drugs) docs.push({ id: d.id, kind: 'Drug', title: d.name, text: [d.name, d.drugClass, d.dbCategory, 'drug dose'].join(' ').toLowerCase(), route: `/drugs?q=${encodeURIComponent(d.name)}` })
-  for (const c of data.calculators) docs.push({ id: c.id, kind: 'Calculator', title: c.name, text: `${c.name} ${c.description} calculator`.toLowerCase(), route: `/calculators#${c.id}` })
-  for (const p of data.procedures) docs.push({ id: p.id, kind: 'Procedure', title: p.title, text: [p.title, ...p.tags].join(' ').toLowerCase(), route: `/procedures#${p.id}` })
-  for (const d of data.ddx) docs.push({ id: d.id, kind: 'DDx', title: d.presentation, text: `${d.presentation} differential diagnosis presentation`.toLowerCase(), route: `/ddx` })
+  for (const d of data.drugs) docs.push({ id: d.id, kind: 'Drug', title: d.name, text: [d.name, d.drugClass, d.dbCategory, 'drug dose'].join(' ').toLowerCase(), route: `/drug/${d.id}` })
+  for (const c of data.calculators) docs.push({ id: c.id, kind: 'Calculator', title: c.name, text: `${c.name} ${c.description} calculator`.toLowerCase(), route: `/calculator/${c.id}` })
+  for (const p of data.procedures) docs.push({ id: p.id, kind: 'Procedure', title: p.title, text: [p.title, ...p.tags].join(' ').toLowerCase(), route: `/procedure/${p.id}` })
+  for (const d of data.ddx) docs.push({ id: d.id, kind: 'DDx', title: d.presentation, text: `${d.presentation} differential diagnosis presentation`.toLowerCase(), route: `/ddx/${d.id}` })
   return docs
 }
 

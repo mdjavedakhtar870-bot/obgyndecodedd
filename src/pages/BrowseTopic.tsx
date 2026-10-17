@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useApp } from '../App'
 import { favs, recents } from '../lib/app'
@@ -107,10 +107,10 @@ function TreatmentEngineView({ topic }: { topic: DiseaseTopic }) {
 export function TopicPage() {
   const { id } = useParams()
   const { data } = useApp()
-  recents.push(id || '')
+  const [isFav, setIsFav] = useState(false)
+  useEffect(() => { if (id) { recents.push(id); setIsFav(favs.has(id)) } }, [id])
   const topic = data?.topics.find((t) => t.id === id)
   if (!data || !topic) return <p className="muted">Loading / topic not found.</p>
-  const isFav = favs.has(topic.id)
   const relatedEmergencies = data.emergencies.filter((e) => e.topicRef === topic.id)
 
   const tabs = [
@@ -125,7 +125,7 @@ export function TopicPage() {
         </table>
       ),
     },
-    (topic.initialAssessment || topic.presentation || topic.riskFactors || topic.differentials) && {
+    (topic.definition || topic.redFlags || topic.investigations || topic.initialAssessment || topic.presentation || topic.riskFactors || topic.differentials) && {
       id: 'dx', label: 'Diagnosis & assessment',
       content: (
         <>
@@ -135,12 +135,13 @@ export function TopicPage() {
           {topic.presentation && <><h3 style={{ marginTop: 14 }}>Presentation</h3><Blocks blocks={[{ kind: 'list', items: topic.presentation }]} /></>}
           {topic.initialAssessment && <><h3 style={{ marginTop: 14 }}>Initial assessment</h3><Blocks blocks={topic.initialAssessment} /></>}
           {topic.investigations && <><h3 style={{ marginTop: 14 }}>Investigations</h3><table className="clinical"><thead><tr><th>Test</th><th>Looking for</th></tr></thead><tbody>{topic.investigations.map((iv, i) => iv && typeof iv === 'object' && 'test' in (iv as object) ? <tr key={i}><td><b>{(iv as { test: string }).test}</b></td><td>{(iv as { lookingFor: string }).lookingFor}</td></tr> : null)}</tbody></table></>}
+          <Blocks blocks={topic.investigations?.filter((iv): iv is Block => 'kind' in iv)} />
           {topic.differentials && <><h3 style={{ marginTop: 14 }}>Differential diagnosis</h3><table className="clinical"><thead><tr><th>Condition</th><th>Clue</th></tr></thead><tbody>{topic.differentials.map((d, i) => <tr key={i}><td>{d.condition}</td><td>{d.clue}</td></tr>)}</tbody></table></>}
         </>
       ),
     },
     topic.algorithm && { id: 'algo', label: 'Algorithm', content: <AlgorithmFlow nodes={topic.algorithm} /> },
-    (topic.managementPrinciples || topic.specialSituations || topic.followUp || topic.prevention) && {
+    (topic.managementPrinciples || topic.specialSituations || topic.followUp || topic.prevention || topic.patientEducation) && {
       id: 'extra', label: 'Principles & follow-up',
       content: (
         <>
@@ -176,7 +177,7 @@ export function TopicPage() {
           <span className="small muted">{CATEGORY_LABELS[topic.category]}</span>
           <h1 style={{ display: 'flex', alignItems: 'center', gap: 10 }}>{topic.title}</h1>
         </div>
-        <button className="icon-btn" style={{ width: 42, height: 42 }} onClick={() => favs.toggle(topic.id)} title="Favourite">{isFav ? '★' : '☆'}</button>
+        <button className="icon-btn" style={{ width: 42, height: 42 }} onClick={() => setIsFav(favs.toggle(topic.id))} title="Favourite">{isFav ? '★' : '☆'}</button>
       </div>
       <div className="badges" style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
         <StatusBadge status={topic.status} />
@@ -189,7 +190,7 @@ export function TopicPage() {
       </div>
       <div className="block-info">{topic.summary}</div>
       {topic.reviewerNote && <div className="block-warning"><b>Reviewer note:</b> {topic.reviewerNote}</div>}
-      <Tabs tabs={tabs} />
+      <Tabs key={topic.id} tabs={tabs} />
     </article>
   )
 }

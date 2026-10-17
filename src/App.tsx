@@ -6,6 +6,9 @@ import Home from './pages/Home'
 import { BrowsePage, TopicPage } from './pages/BrowseTopic'
 import { EmergencyHub, EmergencyDetail } from './pages/EmergencyPages'
 import { DrugsPage, CalculatorsPage, DdxPage, ProceduresPage, SourcesPage } from './pages/RefPages'
+import { AboutPage, NotFoundPage, SitemapPage } from './pages/SitePages'
+import { PageMetadata } from './components/PageMetadata'
+import { getPage, ICU_DECODED_URL } from './lib/seo'
 
 /* ---------------- App context ---------------- */
 interface Ctx {
@@ -43,8 +46,10 @@ function Palette({ close }: { close(): void }) {
 /* ---------------- Shell ---------------- */
 function Shell({ children }: { children: ReactNode }) {
   const [palOpen, setPalOpen] = useState(false)
+  const [themeName, setThemeName] = useState('light')
   const { toast } = useApp()
   const loc = useLocation()
+  useEffect(() => { theme.init(); setThemeName(theme.current()) }, [])
   useEffect(() => {
     const h = (e: KeyboardEvent) => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); setPalOpen(true) } }
     window.addEventListener('keydown', h); return () => window.removeEventListener('keydown', h)
@@ -62,6 +67,7 @@ function Shell({ children }: { children: ReactNode }) {
       <NavLink to="/calculators" className={navCls}><span className="ico">∑</span>Calculators</NavLink>
       <NavLink to="/procedures" className={navCls}><span className="ico">✚</span>Procedures</NavLink>
       <NavLink to="/sources" className={navCls}><span className="ico">§</span>Guidelines & sources</NavLink>
+      <NavLink to="/about" className={navCls}><span className="ico">ⓘ</span>About this reference</NavLink>
       <div className="nav-section">Settings</div>
       <NavLink to="/profile" className={navCls}><span className="ico">◉</span>Profile & settings</NavLink>
       <div className="emergency-rail">
@@ -75,13 +81,15 @@ function Shell({ children }: { children: ReactNode }) {
   )
   return (
     <div className="app">
+      <a className="skip-link" href="#main-content">Skip to clinical content</a>
       <aside className="sidebar">{sideNav}</aside>
       <div className="main">
         <header className="topbar">
           <button className="search-btn" onClick={() => setPalOpen(true)}>🔍 Search clinical content…<kbd>Ctrl K</kbd></button>
-          <button className="icon-btn" title="Toggle theme" onClick={() => { theme.toggle(); toast(`Theme: ${theme.current()}`) }}>{theme.current() === 'dark' ? '☀' : '☾'}</button>
+          <button className="icon-btn" title="Toggle theme" onClick={() => { theme.toggle(); setThemeName(theme.current()); toast(`Theme: ${theme.current()}`) }}>{themeName === 'dark' ? '☀' : '☾'}</button>
         </header>
-        <main className="content">{children}</main>
+        <main className="content" id="main-content">{children}</main>
+        <footer className="site-footer small muted"><Link to="/about">About</Link> · <Link to="/sources">Guidelines & sources</Link> · <Link to="/sitemap">Site directory</Link><p>Related clinical reference: <a href={ICU_DECODED_URL} target="_blank" rel="noopener">ICU Decoded — critical care & internal medicine ↗</a></p><p>Clinical reference for doctors. Check each page's verification status and underlying sources.</p></footer>
         <nav className="bottom-nav">
           <NavLink to="/" end className={({ isActive }) => `icon-btn`} style={{ border: 'none' }}>⌂</NavLink>
           <NavLink to="/browse" className={({ isActive }) => `icon-btn`} style={{ border: 'none' }}>☰</NavLink>
@@ -97,28 +105,35 @@ function Shell({ children }: { children: ReactNode }) {
 
 /* ---------------- App root ---------------- */
 export default function App() {
+  const { pathname } = useLocation()
   const [toasts, setToasts] = useState<{ id: number; msg: string }[]>([])
   const toastFn = (msg: string) => { const id = Date.now(); setToasts((t) => [...t, { id, msg }]); setTimeout(() => setToasts((t) => t.filter((x) => x.id !== id)), 2600) }
-  useEffect(() => { theme.init() }, [])
   const ctx = useMemo(() => ({ data: PUBLISHED_CONTENT, toast: toastFn }), [])
 
   return (
     <AppCtx.Provider value={ctx}>
+      <PageMetadata />
       <Shell>
-        <Routes>
+        {getPage(pathname) ? <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/browse" element={<BrowsePage />} />
           <Route path="/topic/:id" element={<TopicPage />} />
           <Route path="/emergencies" element={<EmergencyHub />} />
           <Route path="/emergency/:id" element={<EmergencyDetail />} />
           <Route path="/drugs" element={<DrugsPage />} />
+          <Route path="/drug/:id" element={<DrugsPage />} />
           <Route path="/calculators" element={<CalculatorsPage />} />
+          <Route path="/calculator/:id" element={<CalculatorsPage />} />
           <Route path="/ddx" element={<DdxPage />} />
+          <Route path="/ddx/:id" element={<DdxPage />} />
           <Route path="/procedures" element={<ProceduresPage />} />
+          <Route path="/procedure/:id" element={<ProceduresPage />} />
           <Route path="/sources" element={<SourcesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/sitemap" element={<SitemapPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="*" element={<div className="card card-pad">Not found. <Link to="/">Home →</Link></div>} />
-        </Routes>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes> : <NotFoundPage />}
         <div className="toast-wrap">{toasts.map((t) => <div key={t.id} className="toast">{t.msg}</div>)}</div>
       </Shell>
     </AppCtx.Provider>
@@ -127,7 +142,9 @@ export default function App() {
 
 function ProfilePage() {
   const { data } = useApp()
-  const myFavs = favs.all().map((id) => data.topics.find((t) => t.id === id)).filter(Boolean)
+  const [ready, setReady] = useState(false)
+  useEffect(() => { setReady(true) }, [])
+  const myFavs = (ready ? favs.all() : []).map((id) => data.topics.find((t) => t.id === id)).filter(Boolean)
   return (
     <div>
       <h1>Profile & settings</h1>

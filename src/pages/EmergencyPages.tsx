@@ -45,6 +45,7 @@ export function EmergencyDetail() {
       <h1 style={{ color: 'var(--danger)' }}>⚡ {emg.title}</h1>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 10 }}>
         <StatusBadge status={emg.status} />
+        <span className="badge">{emg.lastVerifiedAt ? `Last clinically verified ${emg.lastVerifiedAt}` : 'PENDING CLINICAL VERIFICATION'}</span>
         <span className="badge danger">TIME-CRITICAL PROTOCOL</span>
         {emg.topicRef && <Link className="badge src" to={`/topic/${emg.topicRef}`}>Full clinical topic →</Link>}
       </div>

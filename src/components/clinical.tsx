@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useId, useState, type ReactNode } from 'react'
 import { getSource } from '../content/sources'
 import type { Block, AlgorithmNode } from '../content/types'
 
@@ -99,13 +99,14 @@ export function AlgorithmFlow({ nodes }: { nodes: AlgorithmNode[] }) {
 
 /* ---------- Tabs ---------- */
 export function Tabs({ tabs }: { tabs: { id: string; label: string; content: ReactNode }[] }) {
+  const prefix = useId().replaceAll(':', '')
   const [active, setActive] = useState(tabs[0]?.id)
   return (
     <div>
       <div className="tabs" role="tablist">
-        {tabs.map((t) => <button key={t.id} role="tab" aria-selected={t.id === active} className={`tab ${t.id === active ? 'active' : ''}`} onClick={() => setActive(t.id)}>{t.label}</button>)}
+        {tabs.map((t) => <button key={t.id} id={`${prefix}-tab-${t.id}`} role="tab" aria-controls={`${prefix}-panel-${t.id}`} aria-selected={t.id === active} className={`tab ${t.id === active ? 'active' : ''}`} onClick={() => setActive(t.id)}>{t.label}</button>)}
       </div>
-      <div>{tabs.find((t) => t.id === active)?.content}</div>
+      {tabs.map((t) => <section key={t.id} className="tab-panel" id={`${prefix}-panel-${t.id}`} role="tabpanel" aria-labelledby={`${prefix}-tab-${t.id}`} hidden={t.id !== active}><h2 className="section-h">{t.label}</h2>{t.content}</section>)}
     </div>
   )
 }

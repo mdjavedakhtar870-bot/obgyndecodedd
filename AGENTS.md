@@ -12,7 +12,7 @@ Clinical reference application for doctors (obstetrics & gynaecology, India-firs
 2. **Never mark a source `verified-live`** unless you actually opened it and checked the implemented recommendations on that date. Record the check in `dateChecked` + `checkedAgainst`.
 3. **Doses must be complete**: drug/dose/route/frequency/duration (+preparation/max/contraindications where clinically relevant). No "as per protocol" placeholders.
 4. **Conflicting guidelines**: use the `conflict` block — show both, the population difference, India consideration, then the app default with reasoning. Never silently pick one.
-5. **Static site only**: no servers, APIs, accounts, sign-in, Google client IDs, cookies or backend dependencies. Content lives in source files and is bundled into the static build; deploy is to Netlify.
+5. **Static clinical application**: no clinical backend, accounts, sign-in, Google client IDs or cookies. Content lives in source files and is bundled into the static build; deploy is to Netlify. Owner-authorized exception (17 October 2026): a Netlify Edge Function verifies crawler identities and filters automated requests; ordinary doctor-facing pages remain public.
 6. **No automatic publishing**: statuses are authored in source and reviewed in the PR. Never mark content `published`/`clinically-verified` without completing rule 2.
 
 ## Commands
@@ -38,3 +38,19 @@ If an error is found: FIX → VERIFY SOURCE → UPDATE DATA → RETEST (`typeche
 
 - The deployed site is public and static: never commit secrets, credentials, patient data, or private endpoints.
 - No environment variables are required for deploy; all shipped content is public clinical reference material with registered sources.
+
+## Owner's crawler policy — 17 October 2026
+
+- Intended AI allowlist: **Gemini/Google Search, ChatGPT, muse.ai, Grok and Claude**. Other identified automated clients are denied. Do not silently add Bing, other AI services, SEO crawlers or social preview bots.
+- The owner explicitly selected **keep pages public for doctors**, rather than require sign-in. This is a public-site bot filter, not a confidentiality or zero-scraping guarantee. Never describe it as impossible to bypass: a scraper can impersonate a normal browser and the source repository is public.
+- Never grant a bot access just because its User-Agent, Referer (`google.com` included), claimed device, country, location, or client-supplied forwarded-IP headers look legitimate.
+- Use Netlify's trusted `context.ip` and a provider's documented, dedicated crawler ranges. Do not allow all Google Cloud/AWS/Azure addresses. Verification failures deny automated access; they must not fall back to trusting a name.
+- Grok and muse.ai remain intended providers with **no configured verifiable identity** until a dedicated official identity/range source is established. Never invent their crawler names or open a User-Agent-only exception to claim all five work.
+- See `CRAWLER_ACCESS_POLICY.md` and the edge-function security tests. Do not weaken these controls during SEO changes.
+- Ask the owner before a production deployment or a `main` update that triggers one.
+
+## Owner's backlink request — 17 October 2026
+
+- Every public OBGYN page must include a visible, followable HTML link to ICU Decoded. The verified destination used by this implementation is `https://icudecodedd.com/`; `icudecode.com` was also named by the owner but its live destination was not verified.
+- Use the shared `ICU_DECODED_URL` constant. Keep this link in the prerendered page footer, client navigation and generated text references. Do not add `nofollow` or `sponsored` to this owner's related-reference link.
+- The implemented request is a backlink: OBGYN pages retain their own content and canonical URLs, with a normal link to ICU Decoded. Do not replace the clinical site with blanket redirects as part of this SEO work.

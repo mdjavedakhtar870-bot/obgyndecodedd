@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { useApp } from '../App'
 import { favs, recents } from '../lib/app'
 import { StatusBadge } from '../components/clinical'
 
 export default function Home() {
   const { data } = useApp()
+  const [ready, setReady] = useState(false)
+  useEffect(() => { setReady(true) }, [])
   if (!data) return <p className="muted">Loading clinical library…</p>
   const emergencyTopics = data.emergencies.slice(0, 8)
-  const myRecents = recents.all().map((id) => data.topics.find((t) => t.id === id)).filter(Boolean)
-  const myFavs = favs.all().map((id) => data.topics.find((t) => t.id === id)).filter(Boolean)
+  const myRecents = (ready ? recents.all() : []).map((id) => data.topics.find((t) => t.id === id)).filter(Boolean)
+  const myFavs = (ready ? favs.all() : []).map((id) => data.topics.find((t) => t.id === id)).filter(Boolean)
   const unverified = data.topics.filter((t) => t.status !== 'published' && t.status !== 'clinically-verified').length
 
   return (

@@ -27,7 +27,7 @@ export const PUBLISHED_CONTENT: PubData = {
 /* ---------- favourites & recents ---------- */
 type ListKey = 'od.favs' | 'od.recents'
 function getList(k: ListKey): string[] { try { return JSON.parse(localStorage.getItem(k) || '[]') as string[] } catch { return [] } }
-function saveList(k: ListKey, v: string[]) { localStorage.setItem(k, JSON.stringify(v.slice(0, 60))) }
+function saveList(k: ListKey, v: string[]) { if (typeof window !== 'undefined') { try { localStorage.setItem(k, JSON.stringify(v.slice(0, 60))) } catch { /* Device storage may be disabled. */ } } }
 export const favs = {
   has: (id: string) => getList('od.favs').includes(id),
   toggle(id: string) { const l = getList('od.favs'); const i = l.indexOf(id); i >= 0 ? l.splice(i, 1) : l.unshift(id); saveList('od.favs', l); return i < 0 },
