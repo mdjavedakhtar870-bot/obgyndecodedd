@@ -3,7 +3,8 @@ import test from 'node:test'
 import { readFileSync, existsSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { join } from 'node:path'
-import { ALL_TOPICS, SOURCES } from '../src/content'
+import { ALL_TOPICS, EMERGENCIES, SOURCES } from '../src/content'
+import { ANTENATAL_DETAIL } from '../src/content/antenatal-care'
 import { ALL_PAGES, PUBLIC_PAGES, pageUrl, getPage, ICU_DECODED_URL } from '../src/lib/seo'
 import { resolveSiteConfig } from '../scripts/site-config'
 
@@ -13,6 +14,35 @@ const { createWindow } = require('@mixmark-io/domino')
 const site = resolveSiteConfig()
 const fileFor = (path: string) => join('dist', path === '/' ? 'index.html' : path === '/404.html' ? '404.html' : `${path.slice(1)}/index.html`)
 const documents = new Map(ALL_PAGES.map((p) => [p.path, createWindow(readFileSync(fileFor(p.path), 'utf8')).document]))
+
+test('antenatal trimester tables and visit calendar are present and linked before JavaScript', () => {
+  const d = documents.get('/topic/anc-overview')
+  for (const b of ANTENATAL_DETAIL.blocks || []) {
+    if (b.kind !== 'table' || !b.id) continue
+    const section = d.querySelector(`#${b.id}`)
+    assert.ok(section, `Missing ANC section ${b.id}`)
+    assert.equal(d.querySelectorAll(`#${b.id}`).length, 1)
+    assert.ok(d.querySelector(`nav[aria-label="Clinical detail sections"] a[href="#${b.id}"]`))
+    assert.ok(section.textContent.includes(b.caption))
+    for (const row of b.rows) for (const value of row) assert.ok(section.textContent.includes(value), `${b.id}: missing table cell`)
+  }
+  assert.equal(d.querySelector('#antenatal-calendar tbody').children.length, 8)
+  const text = readFileSync('dist/reference/topic/anc-overview.md', 'utf8')
+  assert.ok(text.includes('First trimester') && text.includes('Second trimester') && text.includes('Third trimester'))
+})
+
+test('emergency medication detail is visible in the initial immediate-action section', () => {
+  for (const e of EMERGENCIES) {
+    const d = documents.get(`/emergency/${e.id}`)
+    assert.equal(d.querySelectorAll('main details[open]').length, 7, e.id)
+    for (const r of e.drugs || []) {
+      const section = d.querySelector('#emergency-step-3 #emergency-regimens')
+      assert.ok(section, `${e.id}: drug section missing`)
+      for (const value of [r.drug, r.dose, r.frequency, r.duration, r.preparation, r.maxDose]) assert.ok(value && section.textContent.includes(value), `${e.id}/${r.drug}: lost regimen field`)
+      assert.ok(d.querySelector('a[href="#emergency-regimens"]'), `${e.id}: no direct medication link`)
+    }
+  }
+})
 
 test('every generated page contains its own readable content and metadata before JavaScript', () => {
   for (const p of ALL_PAGES) {

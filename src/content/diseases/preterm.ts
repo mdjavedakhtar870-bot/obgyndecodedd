@@ -1,3 +1,4 @@
+import { regimenCard } from '../medication-regimens'
 import type { Block, DiseaseTopic, DrugUse } from '../types'
 import { ANTENATAL_STEROIDS } from './hdp'
 
@@ -98,16 +99,7 @@ export const PRETERM_TOPICS: DiseaseTopic[] = [
       firstLine: [
         doseCard(ANTENATAL_STEROIDS),
         tocolysisBlock(),
-        {
-          kind: 'doseCard',
-          drug: 'Magnesium sulfate - fetal NEUROPROTECTION',
-          dose: '4 g IV over 30 min then 1 g/h until birth',
-          route: 'IV',
-          frequency: 'Loading + infusion',
-          duration: 'Until delivery',
-          contraindications: ['Myasthenia gravis'],
-          notes: ['Indicated when birth anticipated <30-32 wks (guideline variation 30 vs 32)'],
-        },
+        regimenCard('magnesium-neuro'),
       ],
       alternativesFirstLine: [{ kind: 'list', items: ['Atosiban where available/costed; no other tocolytic superior for the 48-h window goal'] }],
       drugTreatment: [],
@@ -173,7 +165,7 @@ export const PRETERM_TOPICS: DiseaseTopic[] = [
     treatment: {
       immediateStabilization: [{ kind: 'list', items: ['Admit initially; no digital PV exams', 'Anti-D for Rh-negative women'] }],
       firstLine: [
-        { kind: 'doseCard', drug: 'Erythromycin (latency antibiotic)', dose: '250 mg orally four times daily for 10 days OR until birth if sooner', route: 'PO', frequency: 'QDS', duration: '10 days max', contraindications: ['Macrolide allergy'], notes: ['GTG73 regimen; co-amoxiclav AVOIDED (NEC association)'], sourceId: 'rcog-gtg73-pprom-2019' },
+        regimenCard('erythromycin-pprom'),
         doseCard(ANTENATAL_STEROIDS),
         { kind: 'list', items: [
           'EXPECTANT management if no labour/infection and mother stable',
@@ -227,9 +219,9 @@ export const PRETERM_TOPICS: DiseaseTopic[] = [
         { kind: 'list', items: [
           'Offer INDUCTION OF LABOUR generally within 24 h (NICE NG235 framework) - reduces infection without raising caesarean rates',
           'OR wait up to 24 h if woman prefers + all reassuring (advise avoiding intercourse; report fever/reduced movements)',
-          'GBS colonisation/known carrier: induction promptly + INTRAPARTUM benzylpenicillin 1.8 g IV then 900 mg q4h until birth (or clindamycin if penicillin-allergic per sensitivities)',
+          'GBS colonisation/known carrier: prompt birth plan plus intrapartum prophylaxis using the complete benzylpenicillin card (3 g loading, then 1.5 g every 4 h until birth). Severe allergy needs a separately prescribed, susceptibility-appropriate alternative.',
         ] },
-        { kind: 'doseCard', drug: 'Benzylpenicillin (GBS intrapartum prophylaxis)', dose: '1.8 g IV loading then 900 mg q4h', route: 'IV', frequency: 'q4h', duration: 'Until birth (>=4 h before birth ideal)', contraindications: ['Penicillin anaphylaxis -> clindamycin 900 mg q8h if sensitive isolate known, else vancomycin per protocol'], sourceId: 'rcog-gtg36-gbs-2017' },
+        regimenCard('benzylpenicillin-gbs'),
       ],
       definitiveTreatment: [{ kind: 'text', text: 'Labour onset/birth.' }],
       monitoring: [{ kind: 'table', headers: ['Waiting option', 'Schedule'], rows: [['Maternal temp/pulse', '4-hourly self-report + clinic checks'], ['Liquor colour', 'Report meconium/foul immediately'], ['FM counts', 'Daily awareness']] }],

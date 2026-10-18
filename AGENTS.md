@@ -34,6 +34,16 @@ Clinical reference application for doctors (obstetrics & gynaecology, India-firs
 
 If an error is found: FIX → VERIFY SOURCE → UPDATE DATA → RETEST (`typecheck` + `test`) → CHECK DEPENDENT MODULES (drug DB rows, calculators, emergency protocols referencing the same agent) → REBUILD → REGENERATE DOCS.
 
+## Owner's medication-depth correction — 17 October 2026
+
+- A drug name or “second uterotonic” alone is insufficient. For each indicated regimen give dose, route, frequency/repeat interval, duration/stop criteria, preparation/concentration/rate, maximum or reassessment limit, contraindications and monitoring, with an actually checked primary source.
+- `data/medication-regimens.json` is the shared regimen source. `data/drug-catalogue.json`, `data/emergency-protocols.json` and topic `regimenCard()` references must reuse it. Do not restore copied legacy dose strings that can diverge between a topic, emergency and drug page.
+- Keep products, indications, units and formulations separate: ergometrine/methylergometrine, IM/IV adrenaline, elemental iron/salt weight, benzathine/aqueous penicillin, steroid routes, immediate/modified-release nifedipine, and norepinephrine tartrate/base are not interchangeable.
+- Do not invent fixed ceilings or durations when prescribing is individualised. State the titration, monitoring and reassessment decision explicitly. Product-specific preparation is not a universal recipe for all brands.
+- Check surrounding summaries, tables, algorithms, complications and dependent procedures as well as dose cards. Display genuine guideline conflicts; remove false comparisons after checking the source.
+- Emergency drug detail must remain in the initially open immediate-action section, reachable with the “Drug doses & preparation” link. On drug pages, keep monitoring/cautions attached to the indication they apply to.
+- A dated regimen check does not certify the entire clinical module. Retain honest review status and the scoped source record. See `docs/MEDICATION-EMERGENCY-AUDIT.md` for this audit's scope and remaining work.
+
 ## Security
 
 - The deployed site is public and static: never commit secrets, credentials, patient data, or private endpoints.
@@ -62,3 +72,10 @@ If an error is found: FIX → VERIFY SOURCE → UPDATE DATA → RETEST (`typeche
 - Additional detail is authored in `src/content/clinical-details.ts` and assembled into the same HTML shown to doctors and verified crawlers. Its section check date is separate from full-module verification. Preserve that distinction in metadata, exports and generated documentation.
 - Render all authored algorithm nodes and keep branch destinations explicit. Do not invent clinical edges to repair incomplete graphs.
 - `npm run test:mobile` exercises real Chromium; DOM-only tests do not establish responsive layout correctness.
+
+## Owner's trimester and visit-calendar request — 18 October 2026
+
+- Keep the antenatal guide explicit about first-, second- and third-trimester investigations, when to repeat each test, what an abnormal result changes, and how many routine contacts are recommended.
+- The WHO baseline calendar has eight contacts (one/two/five by trimester); label India's programme minimum and NICE's parity-based appointment schedules separately. Risk-driven reviews and timed investigations may require extra appointments.
+- Do not present every blood test, late ultrasound, CTG or GBS swab as mandatory in every pregnancy. Show routine, repeated and indication-driven care clearly.
+- Keep the national Indian non-fasting glucose method distinct from fasting diagnostic frameworks, including preparation, sample timing, thresholds and postpartum follow-up. Preserve the scoped check date and full-module review status.

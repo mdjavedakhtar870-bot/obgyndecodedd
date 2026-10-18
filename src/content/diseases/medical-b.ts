@@ -1,3 +1,6 @@
+import { EMERGENCIES } from '../emergencies'
+const SEPSIS_PROTOCOL = EMERGENCIES.find((e) => e.id === 'emg-sepsis')!
+import { regimenCard } from '../medication-regimens'
 import type { DiseaseTopic } from '../types'
 
 /* ============================================================
@@ -41,8 +44,10 @@ export const MEDICAL_TOPICS_B: DiseaseTopic[] = [
     treatment: {
       immediateStabilization: [{ kind: 'list', items: ['Massive PE with collapse: resuscitate + consider systemic thrombolysis (alteplase 100 mg over 2 h) - obstetric teams should not fear it; deliver decision individualised'] }],
       firstLine: [
-        { kind: 'doseCard', drug: 'Enoxaparin (TREATMENT)', dose: '1 mg/kg SC q12h (or 1.5 mg/kg once daily)', route: 'SC', frequency: 'q12h', duration: 'Antepartum until birth then >=6 wks postpartum (min total 3 months)', monitoring: ['Anti-Xa peak (3-4 h post-dose) in extremes of weight/renal disease', 'Platelets baseline (HIT rare with LMWH)'], contraindications: ['Active major bleeding', 'Severe HIT history'], notes: ['Breastfeeding-compatible'], sourceId: 'rcog-gtg36-gbs-2017' },
-        { kind: 'doseCard', drug: 'Enoxaparin (PROPHYLAXIS)', dose: '40 mg SC daily (intermediate 40 mg BD / higher weights adjusted)', route: 'SC', frequency: 'Daily', duration: 'Per risk assessment - typically from admission/CS day 1 through early postpartum (28-day extended courses for high risk)', notes: ['Timing vs neuraxial: stop 12 h pre-block; restart >=4 h after block/catheter removal (therapeutic doses: 24 h/6-12 h)'], sourceId: 'rcog-gtg36-gbs-2017' },
+        regimenCard('enoxaparin-treatment'),
+        regimenCard('enoxaparin-prophylaxis'),
+        regimenCard('enoxaparin-treatment'),
+        regimenCard('enoxaparin-prophylaxis'),
       ],
       alternativesFirstLine: [{ kind: 'list', items: ['Dalteparin/tinzaparin equivalents', 'Warfarin POSTPARTUM only (teratogenic) when longer therapy needed; breastfeeding-compatible'] }],
       drugTreatment: [],
@@ -99,7 +104,7 @@ export const MEDICAL_TOPICS_B: DiseaseTopic[] = [
       { kind: 'steps', steps: [
         'RECOGNISE: obs-triggered screening each shift',
         'CALL senior + declare sepsis; note time',
-        'SEPSIS SIX within the hour: O2 if hypoxic · IV access x2 + bloods incl. lactate+cultures · IV fluids 30 mL/kg crystalloid (caution PET/cardiac) · IV broad-spectrum antibiotics · catheter+hourly urine · reassess',
+        'SEPSIS SIX within the hour: O2 if hypoxic · IV access x2 + bloods incl. lactate+cultures · balanced crystalloid with frequent reassessment (SMFM initial 1–2 L over 3 h; avoid fluid overload) · IV broad-spectrum antibiotics · catheter+hourly urine · reassess',
         'SOURCE hunt: PV exam, US for RPOC/collections, wound inspection',
       ] },
     ],
@@ -110,19 +115,10 @@ export const MEDICAL_TOPICS_B: DiseaseTopic[] = [
       { test: 'US pelvis', lookingFor: 'Retained products/collections driving source control' },
     ],
     treatment: {
-      immediateStabilization: [{ kind: 'warning', title: 'Hour-1 bundle', text: 'Cultures+lactate drawn AND antibiotics running AND fluids started within 60 min of recognition.' }],
+      immediateStabilization: SEPSIS_PROTOCOL.immediateAction,
       investigations: [{ kind: 'text', text: 'Never delay antibiotics >45-60 min for results.' }],
-      firstLine: [
-        { kind: 'table', headers: ['Source', 'First-line empiric (adjust locally)'], rows: [
-          ['Chorioamnionitis/endometritis', 'Ampicillin 2 g IV q6h + Gentamicin 5 mg/kg q24h (+ Metronidazole 500 mg IV q8h if post-op/septic abortion context)'],
-          ['Alternative cephalosporin-based', 'Ceftriaxone 1 g IV q24h + Metronidazole 500 mg IV q8h'],
-          ['Pyelonephritis', 'Ceftriaxone 1 g IV daily (de-escalate by culture)'],
-          ['Septic abortion with RPOC', 'Above antibiotics + EVACUATION as source control'],
-          ['Group A strep suspicion', 'Add clindamycin 900 mg q8h (toxin suppression) + urgent source control'],
-        ] },
-        { kind: 'doseCard', drug: 'Crystalloid resuscitation', dose: '30 mL/kg balanced solution initial (individualise: PET pulmonary oedema risk, cardiac disease)', route: 'IV', frequency: 'Bolus-assess loops', notes: ['Noradrenaline via central/large-bore when fluids exhausted; ICU transfer'], sourceId: 'rcog-gtg36-gbs-2017' },
-      ],
-      definitiveTreatment: [{ kind: 'list', items: ['SOURCE CONTROL IS DECISIVE: evacuate retained products, drain collections (US-guided), debride necrotic wounds', 'Deliver if intrauterine infection unresponsive (obstetric judgement)'] }],
+      firstLine: [{ kind: 'text', text: "Use the source- and syndrome-specific complete antimicrobial cards with cultures, source control and prompt reassessment. Ampicillin/gentamicin, anaerobic cover and postpartum combinations are not interchangeable prescriptions for every sepsis source." }],
+      definitiveTreatment: SEPSIS_PROTOCOL.definitiveManagement,
       monitoring: [{ kind: 'table', headers: ['Parameter', 'Frequency until improving'], rows: [
         ['Obs/qSOFA elements', 'Hourly'],
         ['Urine output', 'Hourly (>0.5 mL/kg/h)'],
@@ -181,13 +177,8 @@ export const MEDICAL_TOPICS_B: DiseaseTopic[] = [
       { test: 'TVS', lookingFor: 'Twins/mole' },
     ],
     treatment: {
-      immediateStabilization: [{ kind: 'warning', title: 'THIAMINE FIRST', text: 'Give thiamine BEFORE any glucose-containing fluid (100 mg IV slow) - Wernicke prevention.' }],
-      firstLine: [
-        { kind: 'doseCard', drug: 'IV fluid rehydration', dose: '1 L Hartmann/NS over 2-4 h cycles; KCl added per protocol once urine output confirmed', route: 'IV', frequency: 'Until rehydrated then maintenance', notes: ['Correct Na slowly if severe hyponatraemia'], sourceId: 'who-anc-2016-updates' },
-        { kind: 'doseCard', drug: 'Thiamine', dose: '100 mg IV slow daily while vomiting persists', route: 'IV/PO', frequency: 'Daily', duration: 'Until eating again', sourceId: 'who-anc-2016-updates' },
-        { kind: 'doseCard', drug: 'Pyridoxine +/- doxylamine', dose: 'Pyridoxine 10-25 mg TDS (+ doxylamine 12.5-25 mg nocte)', route: 'PO', frequency: 'TDS/nocte', notes: ['First-line pharmacotherapy'], sourceId: 'who-anc-2016-updates' },
-        { kind: 'doseCard', drug: 'Antiemetic ladder additions', dose: 'Ondansetron 4-8 mg q8h PO/IV; promethazine 12.5-25 mg q8h; metoclopramide 10 mg q8h (EPSE caution young women); domperidone alternative', route: 'PO/IV/IM', frequency: 'Per agent', notes: ['Rotate/add rather than max-out single agent'], sourceId: 'who-anc-2016-updates' },
-      ],
+      immediateStabilization: [{ kind: 'text', text: "Give thiamine before carbohydrate in prolonged vomiting when possible; never delay lifesaving glucose for severe hypoglycaemia while searching for thiamine. Assess dehydration, electrolytes and nutrition immediately." }],
+      firstLine: [{ kind: 'text', text: "Use sodium chloride 0.9% for rehydration, with measured-electrolyte-guided potassium replacement and an individual volume/rate based on deficit, ongoing losses, urine output and renal/cardiac status. Reassess daily, more often if unstable. Use the complete thiamine and antiemetic cards below." } , regimenCard('thiamine-hg-oral'), regimenCard('thiamine-before-glucose'), regimenCard('doxylamine-pyridoxine'), regimenCard('promethazine-hg'), regimenCard('metoclopramide-hg'), regimenCard('ondansetron-oral'), regimenCard('ondansetron-iv')],
       alternativesFirstLine: [{ kind: 'list', items: ['Acupressure/ginger adjunct evidence modest', 'Steroids (methylprednisolone) LAST resort refractory cases - taper quickly, avoid T1 prolonged use'] }],
       definitiveTreatment: [{ kind: 'text', text: 'Symptoms typically improve substantially by 16-20 wks; nutritional rehabilitation is the endpoint.' }],
       monitoring: [{ kind: 'table', headers: ['Domain', 'Schedule'], rows: [
@@ -234,11 +225,7 @@ export const MEDICAL_TOPICS_B: DiseaseTopic[] = [
     ],
     treatment: {
       immediateStabilization: [{ kind: 'text', text: 'Not acute unless fetal compromise.' }],
-      firstLine: [
-        { kind: 'doseCard', drug: 'Ursodeoxycholic acid', dose: '500 mg BD (titrate to 15 mg/kg/day)', route: 'PO', frequency: 'BD', duration: 'Until birth', notes: ['Improves pruritus; perinatal benefit uncertain - counsel honestly'], sourceId: 'rcog-gtg43-icp' },
-        { kind: 'doseCard', drug: 'Vitamin K', dose: '10 mg PO daily if prolonged PT/coagulopathy concern', route: 'PO', frequency: 'Daily', duration: 'Until birth', sourceId: 'rcog-gtg43-icp' },
-        { kind: 'info', title: 'Delivery timing', text: 'Individualised ~35-38+0 wks by bile-acid banding and local policy; >=100 µmol/L often earlier (~35-37). Document shared decision (induction risks vs stillbirth risk).' },
-      ],
+      firstLine: [regimenCard('ursodeoxycholic-icp'), { kind: 'text', text: "Most women with ICP do not need vitamin K. Assess PT/INR and malabsorption when indicated; if coagulopathy/deficiency needs replacement, obtain a molecule- and product-specific prescription. The old generic vitamin K instruction did not distinguish menadiol, which is contraindicated in late pregnancy in its product label, from phytomenadione." }],
       definitiveTreatment: [{ kind: 'text', text: 'Birth resolves; LFTs/bile acids normalize within weeks postpartum.' }],
       monitoring: [{ kind: 'list', items: ['Weekly bile acids/LFTs', 'CTG/growth surveillance per unit policy (esp. severe band)'] }],
       responseAssessment: [{ kind: 'list', items: ['Itch improvement (UDCA); stable labs'] }],

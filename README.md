@@ -56,6 +56,7 @@ The mobile check requires a Chromium installation (`npx playwright-core install 
 ## Clinical architecture
 
 - **Source registry** — `data/clinical-source-map.json`: every recommendation traces to a registered source with URL, version, population, date-checked and honest status (`verified-live` / `verified-summary` / `pending-verification` / `outdated`).
+- **Medication depth** — 108 indication-specific regimens in `data/medication-regimens.json` are reused by topic cards, 68 drug references and 18 expanded emergency protocols. Preparation, timing, stopping criteria, limits and indication-specific safety fields remain visible. The targeted audit scope and limitations are in `docs/MEDICATION-EMERGENCY-AUDIT.md`.
 - **India-first tiering** — FOGSI/ICOG GCPRs lead where they exist (e.g., HDP GCPR 3rd Ed 2026). International references are labelled per module: ISSHP 2021, ACOG CHAP advisory 2022, NICE NG235 (updated Jun 2026), WHO Consolidated PPH guidelines (Oct 2025), CDC STI Treatment Guidelines 2021, FIGO endometrial staging 2023 + ESGO-ESTRO-ESP 2025, International PCOS Guideline 2023, MTP Amendment Act/Rules 2021 (Gazette-verified).
 - **Guideline-conflict blocks** show both positions, the population difference, the practical India consideration, and the app default with reasoning.
 - **Treatment engine** renders the full 17-section structure with dose cards, warning boxes, tables, algorithms and escalation ladders.
@@ -66,6 +67,7 @@ The mobile check requires a Chromium installation (`npx playwright-core install 
 - `docs/CLINICAL-SOURCE-MATRIX.md` — every source, version, date checked, status, usage map
 - `docs/CLINICAL-AUDIT.md` — module-by-module verification table (never claims unverified work)
 - `docs/FINAL-CLINICAL-REVIEW.md` — honest review report including unresolved items
+- `docs/MEDICATION-EMERGENCY-AUDIT.md` — medication/emergency depth, corrections, source limits and validation
 
 ## SEO, AI discovery and crawler policy
 
@@ -78,3 +80,5 @@ The mobile check requires a Chromium installation (`npx playwright-core install 
 - No clinical content, clinical statuses, review dates or guideline-source records are changed by the SEO pipeline. Sitemap dates are omitted rather than inferred from a build. `llms.txt` is an optional convenience, not a search-engine requirement or ranking guarantee.
 
 After an approved deployment, submit `/sitemap.xml` in Google Search Console, inspect representative deep URLs, and check CDN/security settings allow the verified crawler requests. The edge guard intentionally runs on every site path, including assets, so its use has Netlify request/edge usage implications.
+
+The antenatal guide at `/topic/anc-overview/` includes a source-linked eight-contact calendar, first/second/third-trimester investigation tables, repeat timing and the Indian glucose-test method. India/NICE schedule differences and risk-driven extra care are labelled. These scoped checks do not change the module's full clinical-review status.

@@ -1,3 +1,4 @@
+import { regimenCard } from '../medication-regimens'
 import type { DiseaseTopic } from '../types'
 
 /* ============================================================
@@ -39,7 +40,7 @@ export const INTRAPARTUM_TOPICS: DiseaseTopic[] = [
           'Slow progress FIRST: supportive measures - repositioning, hydration, analgesia optimisation, emotional support',
           'AUGMENTATION when diagnosed delay: amniotomy (if membranes intact) then oxytocin titration per protocol',
         ] },
-        { kind: 'doseCard', drug: 'Oxytocin augmentation', dose: 'Start 1-2 mIU/min (30 mIU/h); increase every 30 min until adequate contractions (4 in 10 min); max typically 12-20 mIU/min per protocol', route: 'IV infusion pump', frequency: 'Titrated q30min', notes: ['Continuous CTG once started', 'Reduce/stop for tachysystole (>5/10 min) or abnormal CTG', 'Avoid prolonged high-dose water intoxication risk'], sourceId: 'nice-ng235-intrapartum-2026' },
+        regimenCard('oxytocin-augmentation'),
       ],
       alternativesFirstLine: [{ kind: 'list', items: ['Analgesia ladder: TENS/Entonox -> opioids (pethidine 50-100 mg IM or fentanyl PCA where available) -> regional (epidural/spinal) per NG235 pain-relief chapter'] }],
       definitiveTreatment: [{ kind: 'text', text: 'Birth. Second stage: pushing with contractions, no fundal pressure; assisted vaginal birth criteria if second stage prolonged (nullip >2h / multip >1h active pushing, regional-adjusted). Third stage ACTIVE MANAGEMENT: uterotonic within 1 min (oxytocin 10 IU IM/IV), controlled cord traction, uterine massage (WHO 2025).' }],
@@ -94,12 +95,12 @@ export const INTRAPARTUM_TOPICS: DiseaseTopic[] = [
       firstLine: [
         { kind: 'table', headers: ['Situation', 'Method'], rows: [
           ['Term, any', 'MEMBRANE SWEEP offered (reduces formal IOL need)'],
-          ['Unfavourable cervix (<7)', 'Dinoprostone PGE2 gel/tablet 3 mg PV per protocol cycle (repeat 6-24h; CTG 30-60 min after insertion)'],
+          ['Unfavourable cervix (<7)', 'Choose ONE ripening regimen: the specific 3 mg dinoprostone VAGINAL TABLET card or the separate oral misoprostol card. Gel and controlled-release inserts have different schedules.'],
           ['Unfavourable cervix', 'OR transcervical Foley/balloon 30-80 mL inflated with gentle traction - lower hyperstimulation; preferred with prior caesarean/high parity'],
           ['Favourable >=7 or ripened', 'Amniotomy -> oxytocin titration'],
           ['Prior caesarean', 'Balloon preferred; prostaglandins avoided (rupture risk)'],
         ] },
-        { kind: 'doseCard', drug: 'Misoprostol (IOL, resource settings)', dose: '25 mcg vaginal/sublingual q2h up to max 8 doses before augmentation', route: 'PV/SL', frequency: 'q2h', notes: ['Heat-stable, cheap - India-practical', 'AVOID previous caesarean'], sourceId: 'nice-ng235-intrapartum-2026' },
+        regimenCard('misoprostol-iol'),
       ],
       definitiveTreatment: [{ kind: 'list', items: ['Labour onset -> labour-care pathway', 'FAILED INDUCTION: no regular contractions/progressive change after full protocol cycles -> options: repeat selected courses, rest-and-rescan, or caesarean by shared informed decision'] }],
       monitoring: [{ kind: 'table', headers: ['Phase', 'Monitoring'], rows: [
@@ -153,8 +154,8 @@ export const INTRAPARTUM_TOPICS: DiseaseTopic[] = [
     treatment: {
       immediateStabilization: [{ kind: 'text', text: 'Cat-1 workflow: declare -> run -> anaesthetic choice by anaesthetist (GA if minutes count/coagulopathy/unstable).' }],
       firstLine: [
-        { kind: 'doseCard', drug: 'Cefazolin (surgical prophylaxis)', dose: '2 g IV single dose (3 g if >120 kg) within 60 min before skin incision', route: 'IV', frequency: 'Single dose; repeat only if EBL >1500 mL or surgery >3-4 h', duration: 'No routine post-op doses (uncomplicated)', contraindications: ['Beta-lactam anaphylaxis -> clindamycin 900 mg IV alternative'], sourceId: 'nice-ng235-intrapartum-2026' },
-        { kind: 'doseCard', drug: 'Oxytocin (third stage at CS)', dose: '5 IU IV slow at birth + infusion 30-40 IU over 4 h', route: 'IV', frequency: 'Bolus then infusion', notes: ['Slow push avoids hypotension'], sourceId: 'who-pph-consolidated-2025' },
+        regimenCard('cefazolin-cs'),
+        regimenCard('oxytocin-prevention'),
         { kind: 'info', title: 'TXA at caesarean', text: 'NOT recommended for PROPHYLAXIS (WHO Consolidated PPH 2025 Rec 15) - reserve for treatment indications.' },
       ],
       definitiveTreatment: [{ kind: 'steps', steps: [

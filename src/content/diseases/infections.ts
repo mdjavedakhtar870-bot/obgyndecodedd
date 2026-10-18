@@ -1,3 +1,4 @@
+import { regimenCard } from '../medication-regimens'
 import type { DiseaseTopic } from '../types'
 
 /* ============================================================
@@ -35,8 +36,8 @@ export const INFECTION_TOPICS: DiseaseTopic[] = [
       immediateStabilization: [{ kind: 'list', items: ['Pyelo: admit, IV fluids, antiemetics, CTG surveillance'] }],
       firstLine: [
         { kind: 'table', headers: ['Entity', 'Regimen'], rows: [
-          ['Asymptomatic bacteriuria/cystitis', 'Nitrofurantoin 100 mg BD x5-7 d OR cephalexin 500 mg QID x7 d OR amoxicillin-clavulanate 500+125 BD x7 d (culture-guided); AVOID nitrofurantoin at term/G6PD'],
-          ['Pyelonephritis', 'Ceftriaxone 1 g IV daily (+/- gentamicin) until afebrile 24-48 h then oral course to complete 10-14 d total'],
+          ['Asymptomatic bacteriuria/cystitis', 'Use the complete pregnancy lower-UTI nitrofurantoin or cefalexin card; choose by culture, allergy, renal function and gestation.'],
+          ['Pyelonephritis', 'Use the complete ceftriaxone card, review culture and clinical response, then oral step-down to complete 14 days total (ACOG pregnancy pathway).'],
         ] },
       ],
       monitoring: [{ kind: 'list', items: ['Test-of-cure MSU after course', 'Recurrent infections: suppression dose discussion + renal US postpartum if recurrent pyelo'] }],
@@ -53,7 +54,8 @@ export const INFECTION_TOPICS: DiseaseTopic[] = [
     treatment: {
       immediateStabilization: [{ kind: 'list', items: ['Start antibiotics immediately on suspicion - do NOT await cultures', 'Expedite birth decision (induction/augment vs CS by obstetric picture)'] }],
       firstLine: [
-        { kind: 'doseCard', drug: 'Ampicillin + Gentamicin', dose: 'Ampicillin 2 g IV q6h + Gentamicin 5 mg/kg q24h (loading 2 mg/kg q8h alternative)', route: 'IV', frequency: 'q6h/q24h', duration: 'Until birth; continue post-CS (add metronidazole 500 mg q8h) until afebrile 24-48 h', notes: ['Vaginal birth without further extension typically'], sourceId: CDC },
+        regimenCard('ampicillin-chorio'),
+        regimenCard('gentamicin-obstetric'),
       ],
       monitoring: [{ kind: 'list', items: ['Hourly obs; CTG continuous; placenta histology at birth'] }],
       complications: [{ name: 'Neonatal sepsis', management: [{ kind: 'text', text: 'Paediatric workup at delivery' }] }, { name: 'PPH', management: [{ kind: 'text', text: 'Infected uterus contracts poorly - PPH bundle ready' }] }],
@@ -68,7 +70,7 @@ export const INFECTION_TOPICS: DiseaseTopic[] = [
     sourceIds: ['rcog-gtg36-gbs-2017'],
     treatment: {
       firstLine: [
-        { kind: 'doseCard', drug: 'Benzylpenicillin (IAP)', dose: '1.8 g IV then 900 mg q4h until birth', route: 'IV', frequency: 'q4h', duration: 'Until birth (>=4 h ideal)', contraindications: ['Anaphylactic penicillin allergy -> clindamycin 900 mg q8h if susceptible else vancomycin per protocol'], sourceId: 'rcog-gtg36-gbs-2017' },
+        regimenCard('benzylpenicillin-gbs'),
       ],
       definitiveTreatment: [{ kind: 'text', text: 'Risk factors mandating IAP even when unscreened: previous GBS-affected neonate, GBS bacteriuria this pregnancy, preterm labour/PPROM, fever in labour, ROM >18 h.' }],
       monitoring: [{ kind: 'list', items: ['Neonatal observation per GTG36 risk framework at birth'] }],
@@ -91,7 +93,7 @@ export const INFECTION_TOPICS: DiseaseTopic[] = [
         { kind: 'info', title: 'Jarisch-Herxheimer', text: 'Warn about febrile reaction within 24 h of treating early syphilis; supportive care; fetal monitoring counselled late pregnancy.' },
       ],
       monitoring: [{ kind: 'list', items: ['Quantitative titres at 8 wks then monthly-ish; 4-fold fall expected', 'Serofast states reviewed by specialist', 'Partner(s) treated; congenital-syphilis evaluation at birth'] }],
-      complications: [{ name: 'Congenital syphilis', management: [{'kind':'text','text':'Aqueous penicillin G 50,000 U/kg IV q12h x10 days neonatal regimen'}] }],
+      complications: [{ name: 'Congenital syphilis', management: [{ kind: 'text', text: 'Arrange neonatal evaluation and a complete paediatric prescription: treatment depends on maternal therapy, infant findings, investigations and age. A fixed every-12-hour schedule for all ten days is incorrect once the infant is older than seven days; use the current CDC congenital-syphilis pathway.' }] }],
       postTreatmentCare: [{ kind: 'list', items: ['Repeat serology postpartum per programme; STI co-screening (HIV etc.)'] }],
     },
   }),
@@ -103,7 +105,7 @@ export const INFECTION_TOPICS: DiseaseTopic[] = [
     sourceIds: [CDC],
     treatment: {
       firstLine: [
-        { kind: 'doseCard', drug: 'Azithromycin', dose: '1 g PO single dose', route: 'PO', frequency: 'Once', duration: 'Single dose', notes: ['Amoxicillin 500 mg TDS x7 d alternative'], sourceId: CDC },
+        regimenCard('azithromycin-chlamydia'),
       ],
       monitoring: [{ kind: 'list', items: ['NAAT test-of-cure 4 wks', 'Partners treated; abstain until both complete'] }],
       postTreatmentCare: [{ kind: 'list', items: ['Neonatal opthalmia/pneumonia awareness at birth'] }],
@@ -117,7 +119,7 @@ export const INFECTION_TOPICS: DiseaseTopic[] = [
     sourceIds: [CDC],
     treatment: {
       firstLine: [
-        { kind: 'doseCard', drug: 'Ceftriaxone', dose: '500 mg IM single dose (1 g if >=150 kg)', route: 'IM', frequency: 'Once', duration: 'Single dose', notes: ['Cephalosporin allergy -> specialist consultation (CDC)', 'Add azithromycin 1 g if chlamydia not excluded'], sourceId: CDC },
+        regimenCard('ceftriaxone-gonorrhoea'),
       ],
       monitoring: [{ kind: 'list', items: ['NAAT test-of-cure ~2 wks (pregnancy)', 'Pharyngeal sites considered per exposure'] }],
       postTreatmentCare: [{ kind: 'list', items: ['Ophthalmia neonatorum prevention via cure; partner management'] }],
@@ -131,7 +133,8 @@ export const INFECTION_TOPICS: DiseaseTopic[] = [
     sourceIds: [CDC],
     treatment: {
       firstLine: [
-        { kind: 'doseCard', drug: 'Acyclovir', dose: '400 mg PO TDS (first episode 7-10 d; suppression 36 wks-birth)', route: 'PO', frequency: 'TDS', notes: ['Valacyclovir alternatives per protocol'], sourceId: CDC },
+        regimenCard('acyclovir-initial'),
+        regimenCard('acyclovir-pregnancy-suppression'),
       ],
       definitiveTreatment: [{ kind: 'list', items: ['Primary-episode lesions near term -> caesarean offer', 'Recurrent lesions at birth -> individualised (risk lower) documented choice'] }],
       postTreatmentCare: [{ kind: 'list', items: ['Swab-culture newborn if lesions exposed; paediatric informed'] }],
@@ -141,13 +144,13 @@ export const INFECTION_TOPICS: DiseaseTopic[] = [
     id: 'vaginitis',
     title: 'Vaginitis Bundle (BV · candidiasis · trichomoniasis)',
     tags: ['bacterial-vaginosis', 'thrush', 'trichomonas'],
-    summary: 'BV: metronidazole 400 mg BD x5 d (asymptomatic BV treatment in pregnancy debated - treat symptomatic/high-risk PTB contexts). Candida: topical imidazoles (oral azoles avoided T1). Trichomonas: metronidazole 400-500 mg BD x5-7 d (treat symptomatic pregnancy infection; partners too).',
+    summary: 'Treat the diagnosed cause: symptomatic BV, Candida and trichomoniasis have different regimens. Use the complete seven-day oral metronidazole/BV-alternative cards or the pregnancy topical-azole course; trichomoniasis also needs partner care.',
     sourceIds: [CDC],
     treatment: {
       firstLine: [
         { kind: 'table', headers: ['Condition', 'Pregnancy regimen'], rows: [
-          ['Bacterial vaginosis (symptomatic)', 'Metronidazole 400 mg BD x5 d (or clindamycin 300 mg BD x5 d)'],
-          ['Vulvovaginal candidiasis', 'Clotrimazole/miconazole vaginal pessaries/cream 7-day courses (ORAL AZOLES avoided esp. first trimester)'],
+          ['Bacterial vaginosis (symptomatic)', 'Metronidazole 500 mg orally twice daily for 7 days, or clindamycin 300 mg orally twice daily for 7 days; see complete cards.'],
+          ['Vulvovaginal candidiasis', 'Clotrimazole/miconazole vaginal pessaries/cream 7-day courses (oral fluconazole is not recommended throughout pregnancy)'],
           ['Trichomoniasis (symptomatic)', 'Metronidazole 400-500 mg BD x7 days; treat partners simultaneously'],
         ] },
       ],

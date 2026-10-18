@@ -1,3 +1,4 @@
+import { regimenCard } from '../medication-regimens'
 import type { DiseaseTopic } from '../types'
 
 /* ============================================================
@@ -48,7 +49,7 @@ export const GYNAE_TOPICS_A: DiseaseTopic[] = [
           ['Chronic HMB hormonal', 'LNG-IUS 52 mg FIRST-LINE · COCP cyclic/continuous · norethisterone 5 mg days 5-26'],
           ['Fibroid adjuncts', 'GnRH agonist short pre-op courses; ulipristal regulatory/liver caution - verify Indian approval status'],
         ] },
-        { kind: 'doseCard', drug: 'LNG-IUS (52 mg)', dose: 'Single device; reduces menstrual loss ~70-90%', route: 'Intrauterine', frequency: 'Replace 5-yearly', duration: 'Up to 5 y', contraindications: ['Current STI/PID', 'Unexplained bleeding until evaluated', 'GTD history'], notes: ['Best medical efficacy profile'], sourceId: 'cdc-sti-2021' },
+        regimenCard('mirena-hmb'),
       ],
       definitiveTreatment: [{ kind: 'list', items: ['Structural lesions: polypectomy/fibroid surgery', 'Endometrial ablation or hysterectomy after medical failure per preference'] }],
       monitoring: [{ kind: 'list', items: ['8-12 wk response review; Hb recovery'] }],
@@ -77,9 +78,9 @@ export const GYNAE_TOPICS_A: DiseaseTopic[] = [
     treatment: {
       immediateStabilization: [{ kind: 'text', text: 'Not acute.' }],
       firstLine: [
-        { kind: 'doseCard', drug: 'Letrozole (ovulation induction)', dose: '2.5 mg daily cycle days 3-7 (up-titrate to 7.5 mg if no ovulation)', route: 'PO', frequency: 'Per cycle', duration: 'Up to ~6 monitored cycles before escalation', contraindications: ['Possible pregnancy', 'Hepatic impairment'], notes: ['FIRST-LINE OI - superior live birth vs clomiphene (off-label caveat discussed with patient)'], sourceId: 'pcos-international-2023' },
-        { kind: 'doseCard', drug: 'Metformin', dose: '500 mg OD titrated to 1500-2000 mg/day', route: 'PO', frequency: 'OD-TDS', duration: 'Long-term metabolic therapy', sourceId: 'pcos-international-2023' },
-        { kind: 'doseCard', drug: 'COCP (cycle/hirsutism control)', dose: 'Low-dose EE combination; anti-androgen progestins for dermatology after trial', route: 'PO', frequency: 'Daily', sourceId: 'pcos-international-2023' },
+        regimenCard('letrozole-ovulation'),
+        regimenCard('metformin-pcos'),
+        regimenCard('coc-ee-lng'),
       ],
       alternativesFirstLine: [{ kind: 'list', items: ['Clomiphene 50-100 mg days 2-6 second-line order', 'Gonadotrophins low-dose step-up OR laparoscopic ovarian drilling as second line'] }],
       definitiveTreatment: [{ kind: 'list', items: ['IVF after failed lines; antagonist protocol + agonist trigger/all-freeze for OHSS-risk reduction'] }],

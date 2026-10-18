@@ -27,7 +27,7 @@ function BlockView({ b }: { b: Block }) {
     case 'list': return b.ordered ? <ol className="clinical-copy clinical-list">{b.items.map((x, i) => <li key={i}>{x}</li>)}</ol> : <ul className="clinical-copy clinical-list">{b.items.map((x, i) => <li key={i}>{x}</li>)}</ul>
     case 'table':
       return (
-        <ClinicalTable headers={b.headers} rows={b.rows} caption={b.caption} />
+        b.id ? <section id={b.id} style={{ scrollMarginTop: 88 }}><ClinicalTable headers={b.headers} rows={b.rows} caption={b.caption} /></section> : <ClinicalTable headers={b.headers} rows={b.rows} caption={b.caption} />
       )
     case 'warning': return <div className="block-warning">{b.title && <b>{b.title}: </b>}{b.text}</div>
     case 'info': return <div className="block-info">{b.title && <b>{b.title}: </b>}{b.text}</div>
@@ -81,7 +81,7 @@ export function ClinicalTable({ headers, rows, caption }: { headers: string[]; r
 }
 
 export function DrugUseCard({ drug: d }: { drug: DrugUse }) {
-  return <Blocks blocks={[{ kind: 'doseCard', drug: d.drug, dose: d.dose, route: d.route, frequency: d.frequency, duration: d.duration, prep: d.preparation, maxDose: d.maxDose, adverseEffects: d.adverseEffects, monitoring: d.monitoring, contraindications: d.contraindications, sourceId: d.sourceId, notes: [d.indication ? `Indication: ${d.indication}` : '', d.renalHepatic ? `Renal / hepatic: ${d.renalHepatic}` : '', d.pregnancyLactation ? `Pregnancy / lactation: ${d.pregnancyLactation}` : ''].filter(Boolean) }]} />
+  return <Blocks blocks={[{ kind: 'doseCard', drug: d.drug, dose: d.dose, route: d.route, frequency: d.frequency, duration: d.duration, prep: d.preparation, maxDose: d.maxDose, adverseEffects: d.adverseEffects, monitoring: d.monitoring, contraindications: d.contraindications, sourceId: d.sourceId, notes: [d.indication ? `Indication: ${d.indication}` : '', d.renalHepatic ? `Renal / hepatic: ${d.renalHepatic}` : '', d.pregnancyLactation ? `Pregnancy / lactation: ${d.pregnancyLactation}` : '', ...(d.notes || [])].filter(Boolean) }]} />
 }
 
 /* ---------- Algorithm renderer ---------- */

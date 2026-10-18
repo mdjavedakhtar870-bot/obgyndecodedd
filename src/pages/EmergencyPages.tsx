@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { Link } from '../components/links'
 import { useApp } from '../App'
 import { Blocks, DrugUseCard, SourceBadge, StatusBadge } from '../components/clinical'
+import { DOSE_CONFLICTS } from '../content/medication-regimens'
 
 export function EmergencyHub() {
   const { data } = useApp()
@@ -35,7 +36,7 @@ export function EmergencyDetail() {
   const emg = data?.emergencies.find((e) => e.id === id)
   if (!emg) return <p className="muted">Protocol not found.</p>
   const Step = ({ n, title, children }: { n: string; title: string; children: React.ReactNode }) => (
-    <details className="acc" open={n === '1' || n === '3'}>
+    <details className="acc" id={`emergency-step-${n}`} open>
       <summary><span><span className="badge danger">{n}</span> {title}</span></summary>
       <div className="acc-body">{children}</div>
     </details>
@@ -51,6 +52,13 @@ export function EmergencyDetail() {
         {emg.topicRef && <Link className="badge src" to={`/topic/${emg.topicRef}`}>Full clinical topic →</Link>}
       </div>
 
+      <nav className="row emergency-jump" aria-label="Emergency protocol sections">
+        <a className="btn sm" href="#emergency-step-3">Immediate action</a>
+        {!!emg.drugs?.length && <a className="btn sm" href="#emergency-regimens">Drug doses & preparation</a>}
+        <a className="btn sm" href="#emergency-step-5">Definitive treatment</a>
+        <a className="btn sm" href="#emergency-step-6">Escalation</a>
+      </nav>
+
       <Step n="1" title="RECOGNIZE">
         <ul style={{ paddingLeft: 20, fontSize: 14 }}>{emg.recognize.map((r, i) => <li key={i}>{r}</li>)}</ul>
       </Step>
@@ -59,6 +67,13 @@ export function EmergencyDetail() {
       </Step>
       <Step n="3" title="IMMEDIATE ACTION">
         <Blocks blocks={emg.immediateAction} />
+        {!!emg.drugs?.length && <section id="emergency-regimens">
+          <h2 className="section-h">Drug doses & preparation</h2>
+          <p className="small muted">Choose the regimen for the stated indication. Alternatives are not instructions to give every medicine. Check prior doses, contraindications, concentration and the response before repeating.</p>
+          {emg.drugs.some((d) => /nifedipine/i.test(d.drug)) && <Blocks blocks={DOSE_CONFLICTS.nifedipine} />}
+          {emg.drugs.some((d) => /labetalol IV/i.test(d.drug)) && <Blocks blocks={DOSE_CONFLICTS.labetalol} />}
+          {emg.drugs.map((d, i) => <DrugUseCard key={i} drug={d} />)}
+        </section>}
       </Step>
       <Step n="4" title="INVESTIGATIONS (never delaying treatment)">
         <ul style={{ paddingLeft: 20, fontSize: 14 }}>{emg.investigations.map((r, i) => <li key={i}>{r}</li>)}</ul>
@@ -73,12 +88,6 @@ export function EmergencyDetail() {
         <ul style={{ paddingLeft: 20, fontSize: 14 }}>{emg.postEventCare.map((r, i) => <li key={i}>{r}</li>)}</ul>
       </Step>
 
-      {!!emg.drugs?.length && (
-        <>
-          <h2 className="section-h">Emergency drugs</h2>
-          {emg.drugs.map((d, i) => <DrugUseCard key={i} drug={d} />)}
-        </>
-      )}
       <h2 className="section-h">Sources</h2>
       <div className="row">{emg.sourceIds.map((s) => <SourceBadge key={s} id={s} />)}</div>
     </article>

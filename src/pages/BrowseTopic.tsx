@@ -114,6 +114,10 @@ export function TopicPage() {
     topic.clinicalDetail && { id: 'detail', label: 'Clinical detail', content: <>
       <p className="review-scope">Additional detail checked {topic.clinicalDetail.checkedAt} against the linked sources. This check covers the section below; the rest of the module retains its displayed verification status.</p>
       <p className="clinical-copy">{topic.clinicalDetail.overview}</p>
+      {topic.clinicalDetail.blocks?.some((b) => b.kind === 'table' && b.id) && <nav className="row" aria-label="Clinical detail sections" style={{ marginBottom: 16 }}>
+        {topic.clinicalDetail.blocks.filter((b): b is Extract<Block, { kind: 'table' }> => b.kind === 'table' && !!b.id).map((b) => <a key={b.id} className="btn sm" href={`#${b.id}`}>{b.caption?.split('·')[0].trim()}</a>)}
+      </nav>}
+      <Blocks blocks={topic.clinicalDetail.blocks} />
       {[
         ['Assessment & interpretation', topic.clinicalDetail.assessment],
         ['Decisions that change management', topic.clinicalDetail.decisions],

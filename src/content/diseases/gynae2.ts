@@ -1,3 +1,4 @@
+import { regimenCard } from '../medication-regimens'
 import type { DiseaseTopic } from '../types'
 
 /* Gynaecology Part B: adnexal/torsion, urogynae, menopause. Checked 2026-08-23. */
@@ -70,7 +71,9 @@ export const GYNAE_TOPICS_B: DiseaseTopic[] = [
           ['POI <40 y', 'Estrogen-progestogen until ~51 y'],
           ['Bone health', 'Ca/vit-D + exercise; bisphosphonates when indicated'],
         ] },
-        { kind: 'doseCard', drug: 'HRT example regimens', dose: 'Transdermal estradiol 50 mcg twice-weekly patch + micronized progesterone 200 mg nocte (or dydrogesterone 10 mg) sequential/continuous by phase', route: 'TD/PO', frequency: 'Per regimen', contraindications: ['Undiagnosed bleeding', 'Active VTE/liver disease/oestrogen-sensitive cancer'], notes: ['Review annually; bleeding pattern expectations set'], sourceId: 'cdc-sti-2021' },
+        regimenCard('estradiol-hrt'),
+        regimenCard('progesterone-hrt-sequential'),
+        regimenCard('progesterone-hrt-continuous'),
       ],
       definitiveTreatment: [{ kind: 'text', text: 'Symptom-based duration; no arbitrary stop dates - annual benefit-risk reviews.' }],
       monitoring: [{ kind: 'list', items: ['BP; weight; bleeding-pattern surveillance; mammography per programme'] }],

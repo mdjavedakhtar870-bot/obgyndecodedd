@@ -1,0 +1,1182 @@
+[
+  {
+    "id": "magnesium-sulfate",
+    "name": "Magnesium sulfate",
+    "drugClass": "Anticonvulsant/uterorelaxant",
+    "dbCategory": "emergency-drugs",
+    "indications": [
+      "Eclampsia: stop seizures and prevent recurrence",
+      "Eclampsia: alternative when a reliable infusion pump and monitoring are available",
+      "Recurrent eclamptic convulsion after loading; reassess airway, glucose and magnesium toxicity",
+      "Imminent preterm birth: NICE offers at 24+0–29+6 weeks and considers at 30+0–33+6 weeks; discuss 23+0–23+6 individually"
+    ],
+    "pregnancySafety": "Standard of care in pregnancy for above indications",
+    "trimesterNotes": "All trimesters when indicated",
+    "lactation": "Compatible",
+    "adverseEffects": [
+      "Flushing, weakness, diplopia, respiratory depression, cardiac arrest at toxic levels"
+    ],
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "magnesium-pritchard",
+      "magnesium-iv",
+      "magnesium-recurrence",
+      "magnesium-neuro"
+    ]
+  },
+  {
+    "id": "tranexamic-acid",
+    "name": "Tranexamic acid",
+    "drugClass": "Antifibrinolytic",
+    "dbCategory": "haematology-adjuncts",
+    "indications": [
+      "PPH of any cause; first dose as soon as possible and WITHIN 3 h of birth",
+      "Heavy uterine bleeding unrelated to pregnancy after assessment"
+    ],
+    "pregnancySafety": "Used in obstetric haemorrhage per WHO; not prophylaxis",
+    "lactation": "Compatible",
+    "adverseEffects": [
+      "Nausea/diarrhoea; thromboembolism theoretical risk"
+    ],
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "txa-pph",
+      "txa-hmb"
+    ]
+  },
+  {
+    "id": "oxytocin",
+    "name": "Oxytocin",
+    "drugClass": "Uterotonic",
+    "dbCategory": "uterotonics",
+    "indications": [
+      "Prevention of PPH after birth, distinct from treatment or labour augmentation",
+      "Atonic bleeding after delivery; treatment continues alongside the PPH bundle",
+      "Inadequate contractions after obstetric assessment; exclude obstruction and contraindications to vaginal birth"
+    ],
+    "pregnancySafety": "Intrinsic hormone; safe appropriately used",
+    "lactation": "Compatible",
+    "adverseEffects": [
+      "Water intoxication (prolonged high-dose), hypotension (rapid push), tachysystole"
+    ],
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "oxytocin-prevention",
+      "oxytocin-pph",
+      "oxytocin-augmentation"
+    ]
+  },
+  {
+    "id": "carboprost",
+    "name": "Carboprost (PGF2alpha)",
+    "drugClass": "Uterotonic",
+    "dbCategory": "uterotonics",
+    "indications": [
+      "Refractory atonic PPH after first-line uterotonic; do not use for trauma or retained tissue alone"
+    ],
+    "pregnancySafety": "Therapeutic use only",
+    "lactation": "Short-course compatible",
+    "adverseEffects": [
+      "Bronchospasm, vomiting, diarrhoea, flushing, hypertension transient"
+    ],
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "carboprost-pph"
+    ]
+  },
+  {
+    "id": "misoprostol",
+    "name": "Misoprostol",
+    "drugClass": "Prostaglandin E1 analogue",
+    "dbCategory": "uterotonics",
+    "indications": [
+      "Atonic PPH when IV oxytocin is unavailable or bleeding does not respond; additional uterotonic selection depends on drugs already given",
+      "After appropriate eligibility, pregnancy-location assessment and consent; comply with India MTP law and approved service arrangements",
+      "NICE NG126 medical management of confirmed missed miscarriage",
+      "NICE NG126 medical management of confirmed incomplete miscarriage",
+      "Unscarred uterus, live fetus and an approved hospital induction indication; cited 25-microgram product is for ≥37 weeks"
+    ],
+    "pregnancySafety": "Teratogenic reports with failed first-trimester exposure - counselling; therapeutic uses standardised by WHO/MTP guidance",
+    "lactation": "Compatible",
+    "adverseEffects": [
+      "Pyrexia/shivering (antipyretics help), GI upset"
+    ],
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "misoprostol-pph",
+      "misoprostol-abortion",
+      "misoprostol-missed",
+      "misoprostol-incomplete",
+      "misoprostol-iol"
+    ]
+  },
+  {
+    "id": "ergometrine",
+    "name": "Ergometrine and methylergometrine — distinct preparations",
+    "drugClass": "Ergot alkaloid uterotonic",
+    "dbCategory": "uterotonics",
+    "indications": [
+      "Alternative uterotonic for atonic PPH; use this row only when the ampoule is ERGOMETRINE",
+      "Atonic PPH after delivery; this is NOT the same formulation/dose as ergometrine"
+    ],
+    "pregnancySafety": "Post-BIRTH only (never before delivery - fetal effects)",
+    "lactation": "Methylergometrine label: avoid breastfeeding during treatment and for 12 h after the final dose; check the specific ergometrine product.",
+    "adverseEffects": [
+      "Hypertensive crisis in PET, nausea, coronary spasm rare"
+    ],
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "ergometrine-pph",
+      "methylergometrine-pph"
+    ]
+  },
+  {
+    "id": "labetalol",
+    "name": "Labetalol",
+    "drugClass": "Alpha-beta blocker antihypertensive",
+    "dbCategory": "antihypertensives",
+    "indications": [
+      "Persistent severe hypertension in pregnancy or postpartum (systolic ≥160 OR diastolic ≥110 mmHg)",
+      "Maintenance hypertension during pregnancy/postpartum"
+    ],
+    "pregnancySafety": "First-line across guidelines",
+    "lactation": "Compatible (low milk transfer)",
+    "adverseEffects": [
+      "Bradycardia, hypotension, bronchospasm, neonatal hypoglycaemia late use"
+    ],
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "labetalol-iv",
+      "labetalol-oral"
+    ]
+  },
+  {
+    "id": "nifedipine",
+    "name": "Nifedipine",
+    "drugClass": "Calcium channel blocker",
+    "dbCategory": "antihypertensives",
+    "indications": [
+      "Acute severe hypertension when oral dosing is appropriate",
+      "Maintenance hypertension in pregnancy/postpartum",
+      "Selected threatened preterm labour to gain time for steroids/transfer, without infection, major bleeding or a reason for immediate birth"
+    ],
+    "pregnancySafety": "First-line; most studied CCB",
+    "lactation": "Nifedipine is used in NICE postpartum/breastfeeding hypertension care; check the formulation and maternal/infant circumstances.",
+    "adverseEffects": [
+      "Headache/flushing/tachycardia; additive weakness with MgSO4"
+    ],
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "nifedipine-acute",
+      "nifedipine-maintenance",
+      "nifedipine-tocolysis"
+    ]
+  },
+  {
+    "id": "hydralazine",
+    "name": "Hydralazine",
+    "drugClass": "Direct vasodilator",
+    "dbCategory": "antihypertensives",
+    "indications": [
+      "Alternative for acute severe hypertension"
+    ],
+    "pregnancySafety": "Established obstetric use",
+    "lactation": "Compatible",
+    "adverseEffects": [
+      "Reflex tachycardia/headache/fluid retention"
+    ],
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "hydralazine-iv"
+    ]
+  },
+  {
+    "id": "methyldopa",
+    "name": "Methyldopa",
+    "drugClass": "Central alpha-2 agonist",
+    "dbCategory": "antihypertensives",
+    "indications": [
+      "Maintenance hypertension during pregnancy; not emergency BP rescue"
+    ],
+    "pregnancySafety": "Long safety record",
+    "lactation": "Compatible short-term; depression risk limits postpartum use",
+    "adverseEffects": [
+      "Sedation, dry mouth, depression, hepatitis (rare)"
+    ],
+    "status": "review",
+    "regimens": [
+      "methyldopa"
+    ]
+  },
+  {
+    "id": "aspirin-lowdose",
+    "name": "Aspirin (low-dose)",
+    "drugClass": "Antiplatelet",
+    "dbCategory": "prevention",
+    "indications": [
+      "NICE regimen for pre-eclampsia prevention in women meeting high/moderate-risk criteria"
+    ],
+    "pregnancySafety": "Safe at low dose in pregnancy",
+    "lactation": "Low-dose indication and maternal/infant risks require review; avoid extrapolating this row to analgesic doses.",
+    "status": "review",
+    "regimens": [
+      "aspirin-pe"
+    ]
+  },
+  {
+    "id": "enoxaparin",
+    "name": "Enoxaparin (LMWH)",
+    "drugClass": "Low molecular weight heparin",
+    "dbCategory": "anticoagulants",
+    "indications": [
+      "Confirmed or strongly suspected acute VTE in pregnancy unless anticoagulation is contraindicated",
+      "Risk-assessed obstetric thromboprophylaxis; standard-weight example, NOT VTE treatment"
+    ],
+    "pregnancySafety": "Preferred anticoagulant in pregnancy",
+    "lactation": "Compatible",
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "enoxaparin-treatment",
+      "enoxaparin-prophylaxis"
+    ]
+  },
+  {
+    "id": "metformin",
+    "name": "Metformin",
+    "drugClass": "Biguanide",
+    "dbCategory": "endocrine-metabolic",
+    "indications": [
+      "Selected GDM/type 2 diabetes; assess glucose, renal function and suitability for metformin versus insulin",
+      "Metabolic features of PCOS, particularly adults with BMI ≥25; not an interchangeable GDM regimen"
+    ],
+    "pregnancySafety": "NICE permits selected pregnancy use; discuss placental transfer, glucose targets and insulin alternatives.",
+    "lactation": "Compatible",
+    "adverseEffects": [
+      "GI upset (titration), B12 deficiency long-term"
+    ],
+    "status": "review",
+    "regimens": [
+      "metformin",
+      "metformin-pcos"
+    ]
+  },
+  {
+    "id": "insulin-nph",
+    "name": "NPH insulin and prescribed mealtime insulin",
+    "drugClass": "Endocrine replacement",
+    "dbCategory": "endocrine-metabolic",
+    "indications": [
+      "Pregnancy diabetes: match basal and meal insulin to the glucose pattern"
+    ],
+    "pregnancySafety": "Individualise insulin to the glucose pattern; do not use NPH intravenously.",
+    "lactation": "Compatible",
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "insulin-nph"
+    ]
+  },
+  {
+    "id": "betamethasone",
+    "name": "Betamethasone",
+    "drugClass": "Corticosteroid",
+    "dbCategory": "corticosteroids",
+    "indications": [
+      "Imminent preterm birth within the guideline gestational window; do not delay urgent maternal/fetal delivery"
+    ],
+    "pregnancySafety": "Benefit-proven; hyperglycaemia plan in diabetes",
+    "lactation": "Compatible",
+    "status": "review",
+    "regimens": [
+      "betamethasone-antenatal"
+    ]
+  },
+  {
+    "id": "dexamethasone-anc",
+    "name": "Dexamethasone (antenatal alternative)",
+    "drugClass": "Corticosteroid",
+    "dbCategory": "corticosteroids",
+    "indications": [
+      "Alternative fetal-lung-maturation course when appropriate"
+    ],
+    "pregnancySafety": "Accepted equivalent",
+    "lactation": "Compatible",
+    "status": "review",
+    "regimens": [
+      "dexamethasone-antenatal"
+    ]
+  },
+  {
+    "id": "cefazolin",
+    "name": "Cefazolin",
+    "drugClass": "First-generation cephalosporin",
+    "dbCategory": "antibiotics",
+    "indications": [
+      "Surgical prophylaxis, not treatment of established infection"
+    ],
+    "pregnancySafety": "Safe",
+    "lactation": "Compatible",
+    "status": "review",
+    "regimens": [
+      "cefazolin-cs"
+    ]
+  },
+  {
+    "id": "ampicillin",
+    "name": "Ampicillin",
+    "drugClass": "Aminopenicillin",
+    "dbCategory": "antibiotics",
+    "indications": [
+      "Intra-amniotic infection, in combination with gentamicin; add anaerobic cover for caesarean according to the chosen guideline",
+      "GBS prevention during labour when prophylaxis is indicated"
+    ],
+    "pregnancySafety": "Safe",
+    "lactation": "Compatible",
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "ampicillin-chorio",
+      "ampicillin-gbs"
+    ]
+  },
+  {
+    "id": "gentamicin",
+    "name": "Gentamicin",
+    "drugClass": "Aminoglycoside",
+    "dbCategory": "antibiotics",
+    "indications": [
+      "Combination therapy for chorioamnionitis, postpartum endometritis or septic miscarriage"
+    ],
+    "pregnancySafety": "Use when indicated (standard); fetal ototoxicity theoretical at prolonged high levels - keep courses short",
+    "lactation": "Compatible",
+    "status": "review",
+    "regimens": [
+      "gentamicin-obstetric"
+    ]
+  },
+  {
+    "id": "ceftriaxone",
+    "name": "Ceftriaxone",
+    "drugClass": "Third-gen cephalosporin",
+    "dbCategory": "antibiotics",
+    "indications": [
+      "Gonococcal cervicitis/urethritis; add pregnancy-appropriate chlamydia treatment if not excluded",
+      "Mild/moderate PID in a NON-PREGNANT patient suitable for outpatient treatment",
+      "Hospitalised PID, with appropriate combination antibiotics",
+      "Selected inpatient pyelonephritis in pregnancy, guided by cultures and resistance"
+    ],
+    "pregnancySafety": "Safe",
+    "lactation": "Compatible",
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "ceftriaxone-gonorrhoea",
+      "ceftriaxone-pid-im",
+      "ceftriaxone-pid-iv",
+      "ceftriaxone-pyelonephritis"
+    ]
+  },
+  {
+    "id": "doxycycline",
+    "name": "Doxycycline",
+    "drugClass": "Tetracycline",
+    "dbCategory": "antibiotics",
+    "indications": [
+      "Chlamydial infection in a non-pregnant adult",
+      "Non-pregnant PID; combine with ceftriaxone and metronidazole"
+    ],
+    "pregnancySafety": "The STI/PID rows here are for non-pregnant patients; use pregnancy-recommended alternatives. Other severe infections require their own risk-benefit assessment.",
+    "lactation": "Short courses acceptable but alternatives preferred",
+    "status": "review",
+    "regimens": [
+      "doxycycline-chlamydia",
+      "doxycycline-pid"
+    ]
+  },
+  {
+    "id": "metronidazole",
+    "name": "Metronidazole",
+    "drugClass": "Nitroimidazole",
+    "dbCategory": "antibiotics",
+    "indications": [
+      "Symptomatic BV, including pregnancy where treatment is indicated",
+      "Trichomoniasis, including symptomatic pregnant women",
+      "Anaerobic cover in the complete CDC PID regimen",
+      "Combination treatment of selected septic miscarriage/endometritis or caesarean chorioamnionitis"
+    ],
+    "pregnancySafety": "CDC permits treatment of indicated BV/trichomoniasis in pregnancy; select the syndrome-specific regimen.",
+    "lactation": "Usual divided-dose courses differ from a 2 g single dose; review the prescribed regimen and infant circumstances.",
+    "status": "review",
+    "regimens": [
+      "metronidazole-bv",
+      "metronidazole-trichomonas",
+      "metronidazole-pid",
+      "metronidazole-iv"
+    ]
+  },
+  {
+    "id": "azithromycin",
+    "name": "Azithromycin",
+    "drugClass": "Macrolide",
+    "dbCategory": "antibiotics",
+    "indications": [
+      "Recommended CDC regimen for chlamydia in pregnancy"
+    ],
+    "pregnancySafety": "Safe",
+    "lactation": "Compatible",
+    "status": "review",
+    "regimens": [
+      "azithromycin-chlamydia"
+    ]
+  },
+  {
+    "id": "erythromycin-latency",
+    "name": "Erythromycin (latency PPROM)",
+    "drugClass": "Macrolide",
+    "dbCategory": "antibiotics",
+    "indications": [
+      "Confirmed PPROM without established infection or another indication for immediate birth"
+    ],
+    "pregnancySafety": "GTG73 regimen",
+    "lactation": "Compatible",
+    "status": "review",
+    "regimens": [
+      "erythromycin-pprom"
+    ]
+  },
+  {
+    "id": "methotrexate-ectopic",
+    "name": "Methotrexate (ectopic protocol)",
+    "drugClass": "Antimetabolite",
+    "dbCategory": "fertility-oncology",
+    "indications": [
+      "Selected stable unruptured tubal ectopic pregnancy with assured follow-up; NICE selection criteria apply"
+    ],
+    "pregnancySafety": "INTENDED abortive/teratogenic here - strict eligibility",
+    "lactation": "Contraindicated during course",
+    "status": "review",
+    "regimens": [
+      "methotrexate-ectopic"
+    ]
+  },
+  {
+    "id": "mifepristone",
+    "name": "Mifepristone",
+    "drugClass": "Progesterone receptor antagonist",
+    "dbCategory": "abortion-care",
+    "indications": [
+      "Priming for a combined medical-abortion course <12 weeks, within the legal and service framework",
+      "Confirmed missed miscarriage choosing NICE medical management"
+    ],
+    "pregnancySafety": "Intended use under MTP Act framework",
+    "lactation": "The MSF monograph does not contraindicate breastfeeding after a single dose; repeated dosing needs separate advice.",
+    "status": "review",
+    "regimens": [
+      "mifepristone-abortion",
+      "mifepristone-missed"
+    ]
+  },
+  {
+    "id": "ondansetron",
+    "name": "Ondansetron",
+    "drugClass": "5-HT3 antagonist",
+    "dbCategory": "antiemetics",
+    "indications": [
+      "Second-line nausea/vomiting or hyperemesis after assessment and discussion of benefits and small absolute fetal-risk signals",
+      "Second-line HG when oral treatment cannot be retained"
+    ],
+    "pregnancySafety": "RCOG second-line HG option after counselling; correct electrolytes and evaluate QT risk.",
+    "lactation": "Compatible",
+    "status": "review",
+    "regimens": [
+      "ondansetron-oral",
+      "ondansetron-iv"
+    ]
+  },
+  {
+    "id": "pyridoxine-doxylamine",
+    "name": "Doxylamine/pyridoxine delayed release 10 mg/10 mg",
+    "drugClass": "Antiemetic first-line NVP",
+    "dbCategory": "antiemetics",
+    "indications": [
+      "Nausea and vomiting of pregnancy: the cited product contains 10 mg/10 mg PER tablet"
+    ],
+    "pregnancySafety": "Best-established first-line",
+    "lactation": "The cited Xonvea product does not recommend breastfeeding use; review the product and maternal need.",
+    "status": "review",
+    "regimens": [
+      "doxylamine-pyridoxine"
+    ]
+  },
+  {
+    "id": "thiamine",
+    "name": "Thiamine",
+    "drugClass": "Vitamin B1",
+    "dbCategory": "vitamins",
+    "indications": [
+      "Prolonged vomiting or markedly reduced dietary intake; protect against thiamine deficiency",
+      "Prolonged HG with inability to retain oral thiamine; before IV carbohydrate/nutrition"
+    ],
+    "pregnancySafety": "Essential",
+    "lactation": "Compatible",
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "thiamine-hg-oral",
+      "thiamine-before-glucose"
+    ]
+  },
+  {
+    "id": "iron-fcm",
+    "name": "Iron (ferric carboxymaltose class)",
+    "drugClass": "IV iron complex",
+    "dbCategory": "haematology-adjuncts",
+    "indications": [
+      "Laboratory-confirmed iron deficiency when oral iron is ineffective/intolerable or faster replacement is indicated; assess trimester and infection"
+    ],
+    "pregnancySafety": "Use only for a clear indication; the cited product restricts pregnancy use to the second/third trimester after benefit-risk assessment.",
+    "lactation": "Compatible",
+    "status": "review",
+    "regimens": [
+      "iron-fcm"
+    ]
+  },
+  {
+    "id": "levonorgestrel-ecp",
+    "name": "Levonorgestrel ECP",
+    "drugClass": "Progestogen EC",
+    "dbCategory": "contraceptives",
+    "indications": [
+      "After unprotected/inadequately protected intercourse; assess timing and offer the most effective suitable option"
+    ],
+    "pregnancySafety": "No effect on established pregnancy",
+    "lactation": "Compatible",
+    "status": "review",
+    "regimens": [
+      "levonorgestrel-ec"
+    ]
+  },
+  {
+    "id": "calcium-gluconate",
+    "name": "Calcium gluconate 10%",
+    "drugClass": "Electrolyte antidote",
+    "dbCategory": "emergency-drugs",
+    "indications": [
+      "Antidote for clinically significant magnesium toxicity",
+      "Clinically important hypocalcaemia during major transfusion, guided by ionised calcium and physiology"
+    ],
+    "pregnancySafety": "Life-saving antidote",
+    "lactation": "n/a",
+    "emergencyKit": true,
+    "status": "review",
+    "regimens": [
+      "calcium-magnesium-toxicity",
+      "calcium-hypocalcaemia"
+    ]
+  },
+  {
+    "id": "adrenaline",
+    "name": "Adrenaline (epinephrine)",
+    "drugClass": "Emergency Drugs",
+    "dbCategory": "emergency-drugs",
+    "indications": [
+      "Airway/breathing/circulation compromise from suspected anaphylaxis, including pregnancy",
+      "Maternal cardiac arrest following the adult ALS algorithm",
+      "Persistent airway/breathing/circulation compromise after two appropriate IM doses; experienced critical-care/anaesthetic staff only"
+    ],
+    "pregnancySafety": "IM anaphylaxis and IV/IO arrest are DIFFERENT doses and concentrations.",
+    "lactation": "Acute maternal stabilisation takes priority; review ongoing treatment and infant exposure with the linked source and specialist team.",
+    "status": "review",
+    "emergencyKit": true,
+    "regimens": [
+      "adrenaline-anaphylaxis",
+      "adrenaline-arrest",
+      "adrenaline-refractory"
+    ]
+  },
+  {
+    "id": "norepinephrine",
+    "name": "Norepinephrine (noradrenaline)",
+    "drugClass": "Emergency Drugs",
+    "dbCategory": "emergency-drugs",
+    "indications": [
+      "Persistent shock while fluid responsiveness/source control are addressed; first-line vasopressor in maternal septic shock"
+    ],
+    "pregnancySafety": "Life-saving vasopressor when indicated; specify TARTRATE versus BASE.",
+    "lactation": "Acute maternal stabilisation takes priority; review ongoing treatment and infant exposure with the linked source and specialist team.",
+    "status": "review",
+    "emergencyKit": true,
+    "regimens": [
+      "norepinephrine-shock"
+    ]
+  },
+  {
+    "id": "heparin-unfractionated",
+    "name": "Unfractionated heparin",
+    "drugClass": "Anticoagulants",
+    "dbCategory": "anticoagulants",
+    "indications": [
+      "Selected life-threatening PE, severe renal dysfunction or impending procedures when rapid reversibility is valuable"
+    ],
+    "pregnancySafety": "Specialist-selected IV anticoagulation when rapid reversibility is needed.",
+    "lactation": "Acute maternal stabilisation takes priority; review ongoing treatment and infant exposure with the linked source and specialist team.",
+    "status": "review",
+    "emergencyKit": true,
+    "regimens": [
+      "heparin-pe"
+    ]
+  },
+  {
+    "id": "alteplase",
+    "name": "Alteplase",
+    "drugClass": "Emergency Drugs",
+    "dbCategory": "emergency-drugs",
+    "indications": [
+      "Expert-led reperfusion decision for haemodynamically unstable massive PE; pregnancy/postpartum bleeding risks require simultaneous obstetric/critical-care input"
+    ],
+    "pregnancySafety": "Life-threatening PE: multidisciplinary decision weighing maternal death against major bleeding.",
+    "lactation": "Acute maternal stabilisation takes priority; review ongoing treatment and infant exposure with the linked source and specialist team.",
+    "status": "review",
+    "emergencyKit": true,
+    "regimens": [
+      "alteplase-pe"
+    ]
+  },
+  {
+    "id": "lorazepam",
+    "name": "Lorazepam — status epilepticus",
+    "drugClass": "Emergency Drugs",
+    "dbCategory": "emergency-drugs",
+    "indications": [
+      "Seizure lasting ≥5 min or recurrent seizures without recovery; also assess/treat eclampsia when possible"
+    ],
+    "pregnancySafety": "Time-critical seizure treatment with airway support; distinguish eclampsia and its magnesium regimen.",
+    "lactation": "Acute maternal stabilisation takes priority; review ongoing treatment and infant exposure with the linked source and specialist team.",
+    "status": "review",
+    "emergencyKit": true,
+    "regimens": [
+      "lorazepam-status"
+    ]
+  },
+  {
+    "id": "levetiracetam",
+    "name": "Levetiracetam — status loading",
+    "drugClass": "Emergency Drugs",
+    "dbCategory": "emergency-drugs",
+    "indications": [
+      "Ongoing convulsive status after adequate first-line benzodiazepine treatment; non-eclamptic cause or seizures refractory to eclampsia care"
+    ],
+    "pregnancySafety": "Emergency loading followed by a separate maintenance plan and pregnancy counselling.",
+    "lactation": "Acute maternal stabilisation takes priority; review ongoing treatment and infant exposure with the linked source and specialist team.",
+    "status": "review",
+    "emergencyKit": true,
+    "regimens": [
+      "levetiracetam-status"
+    ]
+  },
+  {
+    "id": "glucose-iv",
+    "name": "Glucose — severe hypoglycaemia",
+    "drugClass": "Endocrine Metabolic",
+    "dbCategory": "endocrine-metabolic",
+    "indications": [
+      "Impaired consciousness or unsafe swallowing; never give oral fluid to an unconscious patient"
+    ],
+    "pregnancySafety": "Treat severe hypoglycaemia promptly during pregnancy.",
+    "lactation": "Acute maternal stabilisation takes priority; review ongoing treatment and infant exposure with the linked source and specialist team.",
+    "status": "review",
+    "emergencyKit": true,
+    "regimens": [
+      "glucose-severe-hypo"
+    ]
+  },
+  {
+    "id": "glucagon",
+    "name": "Glucagon — hypoglycaemia rescue",
+    "drugClass": "Endocrine Metabolic",
+    "dbCategory": "endocrine-metabolic",
+    "indications": [
+      "Severe insulin-associated hypoglycaemia when IV access is unavailable"
+    ],
+    "pregnancySafety": "Rescue when IV access is unavailable; may fail with starvation/depleted glycogen.",
+    "lactation": "Acute maternal stabilisation takes priority; review ongoing treatment and infant exposure with the linked source and specialist team.",
+    "status": "review",
+    "emergencyKit": true,
+    "regimens": [
+      "glucagon-hypo"
+    ]
+  },
+  {
+    "id": "insulin-soluble",
+    "name": "Soluble human insulin — DKA infusion",
+    "drugClass": "Endocrine Metabolic",
+    "dbCategory": "endocrine-metabolic",
+    "indications": [
+      "Pregnancy DKA, including euglycaemic DKA; urgent monitored obstetric/diabetes care"
+    ],
+    "pregnancySafety": "Pregnancy DKA requires a joint obstetric/diabetes/critical-care plan.",
+    "lactation": "Acute maternal stabilisation takes priority; review ongoing treatment and infant exposure with the linked source and specialist team.",
+    "status": "review",
+    "emergencyKit": true,
+    "regimens": [
+      "insulin-dka"
+    ]
+  },
+  {
+    "id": "clindamycin",
+    "name": "Clindamycin",
+    "drugClass": "Antibiotics",
+    "dbCategory": "antibiotics",
+    "indications": [
+      "Postpartum endometritis, in combination with gentamicin when appropriate",
+      "Symptomatic bacterial vaginosis when an oral alternative is appropriate"
+    ],
+    "pregnancySafety": "Use for an indicated infection with appropriate combination therapy.",
+    "lactation": "Acute maternal stabilisation takes priority; review ongoing treatment and infant exposure with the linked source and specialist team.",
+    "status": "review",
+    "emergencyKit": true,
+    "regimens": [
+      "clindamycin-endometritis",
+      "clindamycin-bv"
+    ]
+  },
+  {
+    "id": "enalapril",
+    "name": "Enalapril",
+    "drugClass": "Antihypertensive / ACE inhibitor",
+    "dbCategory": "antihypertensives",
+    "regimens": [
+      "enalapril-postpartum"
+    ],
+    "indications": [
+      "After birth only; NICE recommends enalapril with maternal renal-function and potassium monitoring"
+    ],
+    "pregnancySafety": "Use postpartum; do not initiate during pregnancy",
+    "lactation": "Postpartum option with infant and maternal monitoring",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "terbutaline",
+    "name": "Terbutaline",
+    "drugClass": "Beta-2 agonist",
+    "dbCategory": "tocolytics",
+    "regimens": [
+      "terbutaline-ecv"
+    ],
+    "indications": [
+      "Hospital external cephalic version after eligibility assessment, consent and baseline CTG"
+    ],
+    "pregnancySafety": "Short procedural ECV use after obstetric assessment",
+    "lactation": "Single procedural exposure; assess maternal/infant context",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "benzylpenicillin",
+    "name": "Benzylpenicillin sodium",
+    "drugClass": "Penicillin antibacterial",
+    "dbCategory": "antibiotics",
+    "regimens": [
+      "benzylpenicillin-gbs",
+      "benzyl-neurosyphilis"
+    ],
+    "indications": [
+      "Intrapartum GBS prophylaxis when indicated, distinct from treatment of maternal sepsis",
+      "Adult neurosyphilis, ocular or otosyphilis with specialist evaluation"
+    ],
+    "pregnancySafety": "Used in pregnancy when indicated",
+    "lactation": "Penicillin exposure requires routine infant observation for GI/allergy effects",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "levothyroxine",
+    "name": "Levothyroxine",
+    "drugClass": "Thyroid hormone replacement",
+    "dbCategory": "endocrine",
+    "regimens": [
+      "levothyroxine-established",
+      "levothyroxine-new"
+    ],
+    "indications": [
+      "Already receiving replacement before pregnancy",
+      "RCOG: overt hypothyroidism or TSH >10 mIU/L; distinguish milder subclinical disease"
+    ],
+    "pregnancySafety": "Essential replacement when indicated; dose follows pregnancy TFTs",
+    "lactation": "Continue indicated maternal replacement",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "propylthiouracil",
+    "name": "Propylthiouracil (PTU)",
+    "drugClass": "Antithyroid agent",
+    "dbCategory": "endocrine",
+    "regimens": [
+      "ptu-graves",
+      "ptu-storm"
+    ],
+    "indications": [
+      "Overt hyperthyroidism requiring antithyroid medication; preferred early-pregnancy option when appropriate",
+      "ICU/endocrine-led treatment of storm from increased hormone synthesis; assess pregnancy stage and hepatic function"
+    ],
+    "pregnancySafety": "Lowest effective dose; pregnancy timing and hepatic risk determine choice",
+    "lactation": "Discuss maternal dose and infant monitoring using RCOG guidance",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "carbimazole",
+    "name": "Carbimazole",
+    "drugClass": "Antithyroid agent",
+    "dbCategory": "endocrine",
+    "regimens": [
+      "carbimazole-graves"
+    ],
+    "indications": [
+      "Specialist antithyroid option; pregnancy timing and PTU suitability determine selection"
+    ],
+    "pregnancySafety": "First-trimester embryopathy risk; specialist risk-benefit choice",
+    "lactation": "Discuss maternal dose and infant monitoring using RCOG guidance",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "propranolol",
+    "name": "Propranolol",
+    "drugClass": "Nonselective beta-blocker",
+    "dbCategory": "emergency-drugs",
+    "regimens": [
+      "propranolol-storm"
+    ],
+    "indications": [
+      "Adrenergic control only in haemodynamically stable patients without significant ventricular dysfunction"
+    ],
+    "pregnancySafety": "Storm treatment requires ICU cardiac assessment; prolonged pregnancy exposure needs fetal review",
+    "lactation": "Maternal indication and infant bradycardia/feeding monitoring matter",
+    "status": "review",
+    "emergencyKit": true
+  },
+  {
+    "id": "hydrocortisone",
+    "name": "Hydrocortisone",
+    "drugClass": "Systemic glucocorticoid",
+    "dbCategory": "emergency-drugs",
+    "regimens": [
+      "hydrocortisone-storm"
+    ],
+    "indications": [
+      "Glucocorticoid component of ICU storm treatment"
+    ],
+    "pregnancySafety": "Treat a life-threatening indication promptly; monitor glucose and infection",
+    "lactation": "Short emergency treatment and longer courses require different feeding review",
+    "status": "review",
+    "emergencyKit": true
+  },
+  {
+    "id": "potassium-iodide",
+    "name": "Potassium iodide (SSKI)",
+    "drugClass": "Iodine / antithyroid adjunct",
+    "dbCategory": "emergency-drugs",
+    "regimens": [
+      "iodide-storm"
+    ],
+    "indications": [
+      "Short-course endocrine/ICU therapy after thionamide in hormone-synthesis-driven storm"
+    ],
+    "pregnancySafety": "Short specialist storm treatment; prolonged exposure risks fetal thyroid suppression",
+    "lactation": "Iodide reaches milk; endocrine/neonatal advice and infant thyroid planning are needed",
+    "status": "review",
+    "emergencyKit": true
+  },
+  {
+    "id": "iron-oral",
+    "name": "Oral iron and folic acid",
+    "drugClass": "Haematinic",
+    "dbCategory": "haematology-adjuncts",
+    "regimens": [
+      "iron-oral-treatment",
+      "iron-folate-prevention"
+    ],
+    "indications": [
+      "Confirmed iron deficiency with anaemia; exclude haemoglobinopathy/other causes and assess urgency",
+      "Routine pregnancy supplementation, particularly high-anaemia-burden settings"
+    ],
+    "pregnancySafety": "Dose ELEMENTAL iron; distinguish treatment from prevention",
+    "lactation": "Compatible with indicated maternal supplementation",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "calcium-oral",
+    "name": "Oral calcium",
+    "drugClass": "Mineral supplement",
+    "dbCategory": "haematology-adjuncts",
+    "regimens": [
+      "calcium-antenatal"
+    ],
+    "indications": [
+      "WHO prevention of pre-eclampsia in populations with low dietary calcium intake"
+    ],
+    "pregnancySafety": "WHO low-intake population recommendation; assess renal/stone risk",
+    "lactation": "Assess diet and total supplemental dose",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "promethazine",
+    "name": "Promethazine",
+    "drugClass": "Sedating antihistamine antiemetic",
+    "dbCategory": "antiemetics",
+    "regimens": [
+      "promethazine-hg"
+    ],
+    "indications": [
+      "First-line antihistamine option in RCOG HG guidance"
+    ],
+    "pregnancySafety": "RCOG first-line NVP/HG option with sedation precautions",
+    "lactation": "Review repeated sedating doses, infant alertness and feeding",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "metoclopramide",
+    "name": "Metoclopramide",
+    "drugClass": "Dopamine antagonist antiemetic",
+    "dbCategory": "antiemetics",
+    "regimens": [
+      "metoclopramide-hg"
+    ],
+    "indications": [
+      "RCOG second-line antiemetic after assessing hydration and prior treatments"
+    ],
+    "pregnancySafety": "RCOG second-line option with neurological/short-course precautions",
+    "lactation": "Review infant effects and maternal adverse reactions; avoid prolonged unnecessary use",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "ursodeoxycholic-acid",
+    "name": "Ursodeoxycholic acid",
+    "drugClass": "Bile acid treatment",
+    "dbCategory": "hepatology",
+    "regimens": [
+      "ursodeoxycholic-icp"
+    ],
+    "indications": [
+      "Maternal itching in confirmed intrahepatic cholestasis; not a substitute for bile-acid-based birth planning"
+    ],
+    "pregnancySafety": "Used for maternal ICP symptoms; does not replace fetal-risk planning",
+    "lactation": "Review ongoing need after birth; persistent disease requires a new diagnosis",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "acyclovir",
+    "name": "Acyclovir",
+    "drugClass": "Antiviral",
+    "dbCategory": "antivirals",
+    "regimens": [
+      "acyclovir-initial",
+      "acyclovir-pregnancy-suppression"
+    ],
+    "indications": [
+      "First clinical genital-herpes episode",
+      "Recurrent genital herpes in pregnancy: CDC suppression from 36 weeks"
+    ],
+    "pregnancySafety": "CDC considers acyclovir usable in all trimesters when indicated",
+    "lactation": "CDC considers acyclovir compatible with breastfeeding",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "levonorgestrel-ius",
+    "name": "Levonorgestrel IUS 52 mg",
+    "drugClass": "Intrauterine progestogen",
+    "dbCategory": "contraception",
+    "regimens": [
+      "mirena-hmb",
+      "mirena-contraception"
+    ],
+    "indications": [
+      "Heavy menstrual bleeding after evaluating uterine/cervical/endometrial pathology",
+      "Contraception after pregnancy exclusion and eligibility assessment"
+    ],
+    "pregnancySafety": "Exclude pregnancy before insertion; assess postpartum timing and perforation risk",
+    "lactation": "Assess insertion timing and product-specific postpartum precautions",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "letrozole",
+    "name": "Letrozole",
+    "drugClass": "Aromatase inhibitor",
+    "dbCategory": "fertility",
+    "regimens": [
+      "letrozole-ovulation"
+    ],
+    "indications": [
+      "Anovulatory PCOS infertility after assessment of pregnancy, tubal/semen factors and counselling about off-label use"
+    ],
+    "pregnancySafety": "Exclude existing pregnancy before ovulation induction; do not give during pregnancy",
+    "lactation": "Not for use during breastfeeding",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "combined-pill",
+    "name": "Ethinylestradiol / levonorgestrel",
+    "drugClass": "Combined hormonal contraception",
+    "dbCategory": "contraception",
+    "regimens": [
+      "coc-ee-lng"
+    ],
+    "indications": [
+      "Eligible nonpregnant patient seeking contraception or PCOS cycle control after BP/VTE/migraine assessment"
+    ],
+    "pregnancySafety": "Not a pregnancy treatment; postpartum eligibility depends on VTE risk and timing",
+    "lactation": "Oestrogen may reduce milk supply; assess breastfeeding/postpartum eligibility",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "estradiol-hrt",
+    "name": "Estradiol transdermal HRT",
+    "drugClass": "Oestrogen replacement",
+    "dbCategory": "menopause",
+    "regimens": [
+      "estradiol-hrt"
+    ],
+    "indications": [
+      "Menopausal symptoms after individual assessment; intact uterus also needs adequate progestogen"
+    ],
+    "pregnancySafety": "Not indicated in pregnancy",
+    "lactation": "Not indicated during breastfeeding",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "progesterone-hrt",
+    "name": "Micronised progesterone for HRT",
+    "drugClass": "Progestogen / endometrial protection",
+    "dbCategory": "menopause",
+    "regimens": [
+      "progesterone-hrt-sequential",
+      "progesterone-hrt-continuous"
+    ],
+    "indications": [
+      "Endometrial protection with standard-dose systemic oestrogen in a patient with a uterus",
+      "Endometrial protection with standard-dose systemic oestrogen in a patient with a uterus"
+    ],
+    "pregnancySafety": "These are menopause HRT regimens, not miscarriage/luteal-support doses",
+    "lactation": "HRT schedules are not indicated during breastfeeding",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "anti-d-immunoglobulin",
+    "name": "Anti-D immunoglobulin",
+    "drugClass": "Human immunoglobulin",
+    "dbCategory": "antenatal-prophylaxis",
+    "regimens": [
+      "anti-d-routine",
+      "anti-d-postpartum"
+    ],
+    "indications": [
+      "Non-sensitised RhD-negative pregnancy with an indication for routine antenatal prophylaxis",
+      "Non-sensitised RhD-negative mother after an RhD-positive birth"
+    ],
+    "pregnancySafety": "For eligible non-sensitised RhD-negative mothers; never a universal injection for every pregnancy",
+    "lactation": "Postnatal maternal prophylaxis is used when indicated",
+    "status": "review",
+    "emergencyKit": false
+  },
+  {
+    "id": "nitrofurantoin",
+    "name": "Nitrofurantoin",
+    "drugClass": "Urinary antibacterial",
+    "dbCategory": "antibiotics",
+    "regimens": [
+      "nitrofurantoin-lower"
+    ],
+    "indications": [
+      "Culture-guided asymptomatic bacteriuria/cystitis; not pyelonephritis"
+    ],
+    "pregnancySafety": "Avoid at term and with G6PD deficiency; lower-UTI use only",
+    "lactation": "Assess infant age/G6PD status and the actual product guidance",
+    "status": "review"
+  },
+  {
+    "id": "cefalexin",
+    "name": "Cefalexin",
+    "drugClass": "Cephalosporin antibacterial",
+    "dbCategory": "antibiotics",
+    "regimens": [
+      "cefalexin-lower"
+    ],
+    "indications": [
+      "NICE second-choice lower-UTI option when suitable for culture results/allergy history"
+    ],
+    "pregnancySafety": "Pregnancy lower-UTI option selected by culture/allergy context",
+    "lactation": "Monitor infant for GI effects or sensitisation",
+    "status": "review"
+  },
+  {
+    "id": "benzathine-penicillin",
+    "name": "Benzathine penicillin G",
+    "drugClass": "Long-acting IM penicillin",
+    "dbCategory": "antibiotics",
+    "regimens": [
+      "benzathine-early",
+      "benzathine-late"
+    ],
+    "indications": [
+      "Primary, secondary or early latent syphilis after staging",
+      "Late latent syphilis or unknown duration without neurosyphilis"
+    ],
+    "pregnancySafety": "Stage-appropriate penicillin treats maternal infection and prevents fetal disease",
+    "lactation": "Maternal treatment is used when indicated; assess infant exposure and congenital infection risk",
+    "status": "review"
+  },
+  {
+    "id": "clotrimazole",
+    "name": "Clotrimazole vaginal",
+    "drugClass": "Topical azole antifungal",
+    "dbCategory": "obstetric-gynaecological-drugs",
+    "regimens": [
+      "clotrimazole-pregnancy"
+    ],
+    "indications": [
+      "Symptomatic confirmed/suspected vulvovaginal candidiasis; reconsider other diagnoses with persistent symptoms"
+    ],
+    "pregnancySafety": "Use the seven-day topical pregnancy course",
+    "lactation": "Local treatment has limited systemic exposure; avoid infant contact with treated skin",
+    "status": "review"
+  },
+  {
+    "id": "dinoprostone",
+    "name": "Dinoprostone",
+    "drugClass": "Prostaglandin E2 for induction",
+    "dbCategory": "obstetric-gynaecological-drugs",
+    "regimens": [
+      "dinoprostone-iol"
+    ],
+    "indications": [
+      "Hospital induction in an eligible unscarred uterus after cervical/fetal assessment; alternative to other ripening medicines"
+    ],
+    "pregnancySafety": "Specialist hospital induction after contraindication assessment",
+    "lactation": "Short intrapartum use; reassess ongoing maternal treatment after birth",
+    "status": "review"
+  }
+]

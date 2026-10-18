@@ -24,7 +24,7 @@ let count = 0
 try {
   const index = JSON.parse(await readFile('dist/content-index.json', 'utf8'))
   const paths = [...index.pages.map((p) => new URL(p.url).pathname), '/profile/', '/404.html']
-  const samples = ['/', '/browse/', '/topic/hdp-eclampsia/', '/topic/pul/', '/topic/sti-chlamydia/', '/topic/ectopic-pregnancy/', '/emergency/emg-pph/', '/drug/magnesium-sulfate/', '/drug/oxytocin/', '/calculator/edd-ga/', '/procedure/proc-pap-colposcopy/', '/ddx/', '/sources/', '/sitemap/']
+  const samples = ['/', '/browse/', '/topic/anc-overview/', '/topic/gdm/', '/topic/hdp-eclampsia/', '/topic/pul/', '/topic/sti-chlamydia/', '/topic/ectopic-pregnancy/', '/emergency/emg-pph/', '/drug/magnesium-sulfate/', '/drug/oxytocin/', '/calculator/edd-ga/', '/procedure/proc-pap-colposcopy/', '/ddx/', '/sources/', '/sitemap/']
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 320, height: 844 } })
   const page = await context.newPage()
   async function widthCheck(path, width) {
@@ -90,12 +90,34 @@ try {
   await p.getByRole('button', { name: 'Read full guide', exact: false }).click()
   assert.equal(await p.locator('.tab-panel[hidden]').count(), 0)
 
+  await open('/topic/anc-overview/')
+  assert.equal(await p.locator('#antenatal-calendar tbody tr').count(), 8)
+  for (const [name, id] of [['First trimester', 'antenatal-first-trimester'], ['Second trimester', 'antenatal-second-trimester'], ['Third trimester', 'antenatal-third-trimester']]) {
+    await p.getByRole('navigation', { name: 'Clinical detail sections' }).getByRole('link', { name, exact: true }).click()
+    const section = p.locator(`#${id}`)
+    const position = await section.boundingBox()
+    assert.ok(position && position.y >= 125 && position.y < 500, `${name} heading is obscured after its jump`)
+    assert.ok(await section.locator('caption').isVisible())
+    for (const cell of await section.locator('tbody tr').first().locator('td').all()) assert.ok(await cell.locator('.cell-label').isVisible(), `${name}: lost phone table labels`)
+    if (name !== 'Second trimester') await screenshot(`${id}-390`)
+  }
+  await p.getByRole('navigation', { name: 'Clinical detail sections' }).getByRole('link', { name: 'Visit calendar', exact: true }).click()
+  await screenshot('antenatal-calendar-390')
+
   await open('/drug/magnesium-sulfate/')
   await screenshot('drug-390')
   const cells = p.locator('main table.clinical tbody tr').first().locator('td')
   for (const cell of await cells.all()) assert.ok(await cell.locator('.cell-label').isVisible(), 'Mobile drug cell has lost its field label')
   const controls = await p.locator('.topbar button, .bottom-nav > *, input.input, select.input').evaluateAll((nodes) => nodes.filter((n) => n.getBoundingClientRect().width).map((n) => ({ text: n.getAttribute('aria-label') || n.textContent, width: n.getBoundingClientRect().width, height: n.getBoundingClientRect().height, font: parseFloat(getComputedStyle(n).fontSize) })))
   for (const control of controls) assert.ok(control.width >= 44 && control.height >= 44, `Small phone control: ${JSON.stringify(control)}`)
+  await open('/emergency/emg-pph/')
+  assert.equal(await p.locator('main details[open]').count(), 7, 'Emergency actions must be open by default')
+  await p.getByRole('link', { name: 'Drug doses & preparation', exact: true }).click()
+  const emergencyDrugs = p.locator('#emergency-regimens')
+  assert.ok(await emergencyDrugs.isVisible(), 'Emergency drug jump did not expose the regimens')
+  const emergencyText = (await emergencyDrugs.innerText()).toLowerCase()
+  for (const phrase of ['carboprost', 'preparation', 'max dose', 'duration', 'monitoring']) assert.ok(emergencyText.includes(phrase), `PPH detail missing ${phrase}`)
+  await screenshot('pph-drug-preparation-390')
   // Reproduce Netlify's production-only badge, which otherwise covers Search,
   // Urgent and Menu despite every page passing the viewport-width checks.
   await p.evaluate(() => {
@@ -136,7 +158,7 @@ try {
   assert.ok(!await p.locator('.bottom-nav').isVisible())
   await screenshot('home-1440')
   await phone.close()
-  console.log(`${count} layout checks passed; phone menu, focus, search, full guide, keyboard tabs, labelled dose cards, hosting-badge clearance, enlarged text, hydration and desktop navigation passed.`)
+  console.log(`${count} layout checks passed; phone menu, focus, search, full guide, keyboard tabs, trimester investigation jumps and calendar, labelled dose cards, emergency dose/preparation jump, hosting-badge clearance, enlarged text, hydration and desktop navigation passed.`)
 } finally {
   await browser.close()
   await new Promise((done) => server.close(done))

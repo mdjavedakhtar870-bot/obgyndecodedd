@@ -1,4 +1,5 @@
 import type { Block, DiseaseTopic, DrugUse } from '../types'
+import { REGIMENS, regimenCard } from '../medication-regimens'
 
 /** Map a full DrugUse record into a compact dose-card block */
 function doseCard(d: DrugUse): Extract<Block, { kind: 'doseCard' }> {
@@ -12,6 +13,7 @@ function doseCard(d: DrugUse): Extract<Block, { kind: 'doseCard' }> {
     prep: d.preparation ?? (d as unknown as { prep?: string }).prep,
     maxDose: d.maxDose,
     sourceId: d.sourceId,
+    notes: d.notes, contraindications: d.contraindications, monitoring: d.monitoring, adverseEffects: d.adverseEffects,
   }
 }
 type DoseCard = ReturnType<typeof doseCard>
@@ -26,109 +28,14 @@ type DoseCard = ReturnType<typeof doseCard>
 const SRC = { fogsi: 'fogsi-hdp-gcpr-2026', isshp: 'isshp-2021', acogChap: 'acog-chap-advisory-2022', esc: 'esc-esh-2024-htn-pregnancy' }
 
 /* ---- Reusable drug regimens (source-traced) ---- */
-export const MGSO4_PRITCHARD: DrugUse = {
-  drug: 'Magnesium sulfate (Pritchard regimen)',
-  indication: 'Eclampsia (seizure control & recurrence prevention); severe pre-eclampsia with neurological features',
-  dose: 'Loading: 4 g IV slow (over 5–10 min, given as 20% solution) PLUS 10 g IM (5 g deep into each upper outer buttock using 20-inch/long needle, 50% solution). Maintenance: 5 g IM every 4 h in ALTERNATE buttock.',
-  route: 'IV + IM',
-  frequency: 'IM maintenance 4-hourly; continue 24 h after last seizure OR delivery (whichever is later)',
-  duration: 'Until 24 h after last seizure/delivery',
-  preparation: 'IV dose: dilute to 20% (e.g., 4 g = 16 mL of 25% + 4 mL water for injection → 20 mL, give over 5–10 min). IM doses: undiluted 50% (5 g = 10 mL) deep gluteal.',
-  maxDose: 'Withhold maintenance if any toxicity sign (see monitoring)',
-  renalHepatic: 'Reduce/monitor closely in renal impairment (oliguria, creatinine rise) — check reflexes & levels',
-  pregnancyLactation: 'Standard of care antepartum/intrapartum/postpartum; neonatal hypermagnesaemia possible — inform paediatrics',
-  adverseEffects: [`Flushing, nausea, muscle weakness, diplopia, respiratory depression, cardiac arrest (toxicity)`],
-  monitoring: ['Patellar (knee) reflex present before each IM dose', 'Respiratory rate ≥12/min before each dose', 'Urine output ≥25 mL/h (≥100 mL/4 h)', 'If any sign absent/abnormal → withhold dose, check serum Mg²⁺ where available (>4.8 mEq/L toxic range)', 'Antidote: Calcium gluconate 10% 10 mL IV over 3 min'],
-  contraindications: ['Myasthenia gravis', 'Heart block', 'Caution: concurrent calcium-channel blockade (additive neuromuscular depression)'],
-  sourceId: SRC.fogsi,
-}
-
-export const MGSO4_NEUROPROTECTION: DrugUse = {
-  drug: 'Magnesium sulfate (fetal neuroprotection)',
-  indication: 'Anticipated preterm birth <32 weeks (reduces cerebral palsy risk)',
-  dose: '4 g IV over 30 min, then 1 g/h maintenance until birth',
-  route: 'IV infusion',
-  frequency: 'Loading + continuous infusion until delivery',
-  duration: 'Stop at delivery',
-  preparation: 'Dilute in compatible fluid; run via infusion pump',
-  adverseEffects: [`Maternal flushing, hypotension, respiratory depression at toxic levels`],
-  monitoring: ['RR, reflexes, urine output as for eclampsia protocol'],
-  contraindications: ['Maternal myasthenia gravis', 'Ongoing eclampsia regimen already running (do not double-dose)'],
-  sourceId: SRC.isshp,
-}
-
-export const LABETALOL_IV: DrugUse = {
-  drug: 'Labetalol IV',
-  indication: 'Acute severe hypertension in pregnancy/postpartum (SBP ≥160 and/or DBP ≥110)',
-  dose: '20 mg IV push over 2 min; if inadequate after 10 min → 40 mg; then 80 mg every 10 min as needed',
-  route: 'IV bolus',
-  frequency: 'Every 10 min step-up',
-  duration: 'Until target reached, then transition to oral agent',
-  maxDose: 'Cumulative 300 mg per course',
-  contraindications: ['Asthma/reactive airway disease', 'Heart block/bradycardia (<60 bpm)', 'Acute heart failure'],
-  adverseEffects: [`Bradycardia, hypotension, bronchospasm, neonatal hypoglycaemia (late use)`],
-  monitoring: ['BP q10 min during titration and hourly ×2 after control', 'HR', 'Fetal heart rate during acute phase'],
-  sourceId: SRC.isshp,
-}
-
-export const HYDRALAZINE_IV: DrugUse = {
-  drug: 'Hydralazine IV',
-  indication: 'Acute severe hypertension when labetalol unavailable/contraindicated',
-  dose: '5 mg IV slow; repeat 5 mg every 20 min as required',
-  route: 'IV',
-  frequency: 'q20 min',
-  duration: 'Until SBP <160 and DBP <110',
-  maxDose: 'Cumulative 20 mg per course',
-  adverseEffects: [`Reflex tachycardia, headache, flushing, hypotension (avoid precipitous drop)`],
-  monitoring: ['BP q15 min ×1 h after control', 'Avoid dropping DBP <90 rapidly (uteroplacental perfusion)'],
-  sourceId: SRC.isshp,
-}
-
-export const NIFEDIPINE_ORAL_ACUTE: DrugUse = {
-  drug: 'Nifedipine (short-acting capsule)',
-  indication: 'Acute severe hypertension — oral option (ISSHP first-line includes oral nifedipine)',
-  dose: '10 mg orally; repeat after 20 min if needed, then 10–20 mg q4–6h as required',
-  route: 'PO (swallow whole/bite-swallow capsule; NOT sublingual crushing practice)',
-  frequency: 'q20 min ×2–3 doses then maintenance',
-  duration: 'Bridge to long-acting therapy',
-  maxDose: 'Per institutional protocol; watch cumulative hypotension esp. with concurrent MgSO4',
-  adverseEffects: [`Headache, flushing, tachycardia; additive neuromuscular weakness with magnesium`],
-  monitoring: ['BP q20 min ×1 h then hourly ×4', 'Fetal heart rate', 'Do NOT combine carelessly with IV MgSO4 without extra vigilance'],
-  sourceId: SRC.isshp,
-}
-
-export const ASPIRIN_PROPHYLAXIS: DrugUse = {
-  drug: 'Aspirin (low-dose)',
-  indication: 'Pre-eclampsia prevention in women at increased risk (≥1 high-risk or ≥2 moderate-risk factors)',
-  dose: '75–150 mg once daily at night (ISSHP: 150 mg nocte after multivariable screening; NICE/ACOG: 75–162 mg range)',
-  route: 'PO',
-  frequency: 'Once daily (bedtime)',
-  duration: 'Start 11–14+0 to 16+0 weeks; continue until 36 weeks',
-  pregnancyLactation: 'Safe in pregnancy at low dose; discontinue by 36 weeks',
-  adverseEffects: [`Rare GI upset; allergy`],
-  contraindications: ['Active peptic ulcer/bleeding', 'Aspirin allergy', 'Bleeding diathesis'],
-  sourceId: SRC.isshp,
-}
-
-export const ANTENATAL_STEROIDS: DrugUse = {
-  drug: 'Betamethasone (antenatal corticosteroid)',
-  indication: 'Risk of preterm birth <34+0 weeks (offer); consider 34+0–35+6 balancing risks (RCOG GTG74)',
-  dose: '12 mg IM, 2 doses 24 h apart',
-  route: 'IM',
-  frequency: 'Two doses only; repeat/rescue course per GTG74 enhanced guidance if prior course >14 days and birth still likely within 7 days',
-  duration: 'Single course concept',
-  preparation: 'Deep IM injection',
-  adverseEffects: [`Maternal hyperglycaemia (esp. diabetes — plan glucose monitoring/sliding scale), transient fetal movement reduction`],
-  monitoring: ['Blood glucose in GDM/pregestational DM', 'Counsel reduced movements 24–48 h'],
-  contraindications: ['Systemic infection (e.g., untreated sepsis/active TB) — weigh urgently vs benefit'],
-  sourceId: 'rcog-gtg74-steroids-2022',
-}
-/** Dexamethasone alternative where betamethasone unavailable (WHO/NICE accept either) */
-export const DEXAMETHASONE_STEROIDS: Block = {
-  kind: 'info',
-  title: 'Dexamethasone alternative',
-  text: 'Dexamethasone 6 mg IM/IV q12h ×4 doses is an accepted equivalent where betamethasone is not available.',
-}
+export const MGSO4_PRITCHARD: DrugUse = REGIMENS['magnesium-pritchard']
+export const MGSO4_NEUROPROTECTION: DrugUse = REGIMENS['magnesium-neuro']
+export const LABETALOL_IV: DrugUse = REGIMENS['labetalol-iv']
+export const HYDRALAZINE_IV: DrugUse = REGIMENS['hydralazine-iv']
+export const NIFEDIPINE_ORAL_ACUTE: DrugUse = REGIMENS['nifedipine-acute']
+export const ASPIRIN_PROPHYLAXIS: DrugUse = REGIMENS['aspirin-pe']
+export const ANTENATAL_STEROIDS: DrugUse = REGIMENS['betamethasone-antenatal']
+export const DEXAMETHASONE_STEROIDS: Block = regimenCard('dexamethasone-antenatal')
 
 /* ---------------- TOPICS ---------------- */
 
@@ -181,13 +88,13 @@ export const HDP_TOPICS: DiseaseTopic[] = [
       investigations: [{ kind: 'list', items: ['Booking panel as above', 'Home BP monitoring if white-coat suspected (ISSHP rec 9)'] }],
       firstLine: [
         { kind: 'text', text: 'First-line oral agents (all major guidelines concordant): labetalol, extended-release nifedipine, or methyldopa.' },
-        { kind: 'doseCard', drug: 'Labetalol (oral)', dose: '100 mg BD, titrate up to 200–400 mg BD–TDS', route: 'PO', maxDose: '2400 mg/day', notes: ['Avoid in asthma'], sourceId: SRC.fogsi },
-        { kind: 'doseCard', drug: 'Nifedipine ER', dose: '10 mg OD-BD (ER/Oros formulation), titrate to 20–40 mg BD', route: 'PO', maxDose: '120 mg/day (ER)', notes: ['Most widely used/studied first-line agent'], sourceId: SRC.fogsi },
-        { kind: 'doseCard', drug: 'Methyldopa', dose: '250 mg BD–TDS, titrate to max 500 mg QDS', route: 'PO', maxDose: '3 g/day', notes: ['Less effective than CCB/BB in preventing severe HTN (Cochrane); caution: maternal depression/liver dysfunction; stop within 2 days postpartum if used long-term'], sourceId: SRC.fogsi },
+        regimenCard('labetalol-oral'),
+        regimenCard('nifedipine-maintenance'),
+        regimenCard('methyldopa'),
       ],
       alternativesFirstLine: [{ kind: 'list', items: ['Second line: hydralazine, clonidine, prazosin; amlodipine has growing safety data', 'Thiazides: CONTINUE only if already established pre-conception and BP controlled; do not start de novo (plasma-volume contraction, oligohydramnios concerns)', 'Atenolol: AVOID (fetal growth restriction)'] }],
       drugTreatment: [],
-      nonDrugTreatment: [{ kind: 'list', items: ['Weight management per IOM gain limits; moderate exercise ≥150 min/wk (reduces HDP risk 30–40%)', 'No routine salt restriction in pregnancy except established chronic HTN context', 'Calcium supplement ≥500 mg/day if dietary intake <900 mg/day (common in Indian diets) — ISSHP/WHO'] }],
+      nonDrugTreatment: [{ kind: 'list', items: ['Weight management per IOM gain limits; moderate exercise ≥150 min/wk (reduces HDP risk 30–40%)', 'No routine salt restriction in pregnancy except established chronic HTN context', 'Assess dietary calcium; the WHO low-intake-population regimen is 1.5–2 g elemental calcium/day in three divided doses, with iron separated. See the complete antenatal supplementation card.'] }],
       definitiveTreatment: [{ kind: 'text', text: 'Delivery resolves the physiological driver but NOT necessarily chronic hypertension — plan timed birth ~38–39 weeks if controlled (individualise earlier if superimposed disease).' }],
       monitoring: [{ kind: 'table', headers: ['What', 'Frequency'], rows: [
         ['Home/clinic BP', 'Weekly (or HBPM daily log) once stable; twice-weekly if titrating'],
@@ -254,18 +161,8 @@ export const HDP_TOPICS: DiseaseTopic[] = [
     ],
     treatment: {
       immediateStabilization: [{ kind: 'list', items: ['Severe-range BP → treat as emergency (emergency-severe-htn)', 'Non-severe: outpatient pathway with strict escalation rules'] }],
-      firstLine: [
-        { kind: 'conflict',
-          guidelineA: { org: 'FOGSI GCPR 2026 (adopting WOG)', recommendation: 'Treat ALL gestational hypertension pharmacologically from ≥140/90' },
-          guidelineB: { org: 'NICE NG133 / traditional ACOG approach', recommendation: 'Non-severe gestational HTN historically managed expectantly without antihypertensives (no proven benefit lowering mild BP unless chronic HTN); treat only severe range' },
-          populationDifference: 'International RCT evidence for treating non-severe de novo HTN is limited (unlike chronic HTN/CHAP); societies diverge',
-          indiaConsideration: 'Late presentation and rapid progression risk in Indian cohorts supports active treatment + close follow-up',
-          appDefault: 'Offer antihypertensive therapy from ≥140/90 (labetalol/nifedipine ER/methyldopa) with explicit safety-netting; alternatively close expectant monitoring is defensible where access to frequent review exists',
-          appDefaultReason: 'FOGSI 2026 is India-first tier-1 source and explicitly recommends treating all HDP; document choice clearly' },
-        { kind: 'doseCard', drug: 'Nifedipine ER', dose: '10 mg OD–BD titrated', route: 'PO', notes: ['Common India-practical first choice'], sourceId: SRC.fogsi },
-        { kind: 'doseCard', drug: 'Labetalol', dose: '100–200 mg BD titrating', route: 'PO', notes: ['Avoid asthma'], sourceId: SRC.fogsi },
-      ],
-      definitiveTreatment: [{ kind: 'list', items: ['Birth cures gestational hypertension: PLAN BIRTH AT 37 WEEKS (FOGSI: "pregnancy can be continued till term" for uncomplicated GH; NICE: offer birth 37 weeks)', 'Earlier if progression to PE/severe HTN/fetal compromise'] }],
+      firstLine: [{ kind: 'text', text: "NICE NG133 offers medication when BP remains above 140/90 mmHg, with target 135/85 mmHg or less during treatment. It does not restrict treatment to severe-range BP. Choose an appropriate maintenance agent and monitor for progression to pre-eclampsia." } ,regimenCard('labetalol-oral'), regimenCard('nifedipine-maintenance'), regimenCard('methyldopa')],
+      definitiveTreatment: [{ kind: 'text', text: "For stable gestational hypertension with BP below 160/110, NICE advises no planned birth before 37 weeks without another indication; after 37 weeks agree timing with the woman and senior obstetrician. Earlier birth may be needed for severe hypertension, pre-eclampsia or fetal compromise." }],
       monitoring: [{ kind: 'table', headers: ['Setting', 'Schedule'], rows: [
         ['Outpatient (BP <160/110, normal labs, reassuring fetus)', 'Twice-weekly BP + weekly labs (platelets/LFT); growth scans q2–3 wks'],
         ['Any severe feature', 'Hospital admission — convert to severe pathway'],
@@ -337,19 +234,7 @@ export const HDP_TOPICS: DiseaseTopic[] = [
       ] },
     treatment: {
       immediateStabilization: [{ kind: 'list', items: ['Admit (hospital-based care standard for PE)', 'IV access; bloods sent; urinalysis', 'Start antihypertensive if BP ≥140/90 (target SBP ≤140, DBP 80–90)', 'MgSO4 ONLY if severe features/neurology (not routine in stable non-severe disease)', 'Continuous fetal monitoring if compromised or intrapartum'] }],
-      firstLine: [
-        (doseCard({
-          drug: 'Oral antihypertensive (choose one)',
-          indication: 'BP ≥140/90',
-          dose: 'Labetalol 100–200 mg BD titrating OR nifedipine ER 10–20 mg BD OR methyldopa 250–500 mg TDS',
-          route: 'PO',
-          frequency: 'Per agent',
-          duration: 'Until birth',
-          sourceId: SRC.fogsi,
-        }) as DoseCard),
-        { kind: 'info', title: 'Steroids', text: 'Give antenatal corticosteroids if birth anticipated <34+6 weeks (betamethasone 12 mg IM ×2 24h apart).' },
-        { kind: 'info', title: 'Timing of birth (stable non-severe PE)', text: 'Deliver at 37 completed weeks (FOGSI/NICE concordance). Expectancy beyond 37 not recommended; before 34 wks stable disease may be individualised expectantly ONLY with intensive surveillance in a unit able to manage deterioration.' },
-      ],
+      firstLine: [{ kind: 'text', text: "Choose one maintenance antihypertensive for non-severe BP; severe BP uses the separate emergency sequence. Magnesium is not routine treatment of stable non-severe disease and does not replace BP control." } ,regimenCard('labetalol-oral'), regimenCard('nifedipine-maintenance'), regimenCard('methyldopa')],
       definitiveTreatment: [{ kind: 'list', items: ['Birth = definitive treatment', 'Vaginal birth preferred if attainable safely; caesarean for obstetric indications or rapid deterioration', 'Regional anaesthesia preferred when platelets/coagulation permit'] }],
       monitoring: [{ kind: 'table', headers: ['Parameter', 'Inpatient schedule (non-severe, expectant)'], rows: [
         ['BP', 'q4h (more if trending up)'],
@@ -514,7 +399,7 @@ export const HDP_TOPICS: DiseaseTopic[] = [
       ],
       firstLine: [
         doseCard({ ...MGSO4_PRITCHARD, drug: 'Magnesium sulfate — PRITCHARD (India standard)', indication: 'ALL eclampsia — start loading dose immediately' }),
-        { kind: 'info', title: 'Zuspan IV alternative', text: 'Where IV-only protocols mandated: 4 g IV loading over 5–10 min then 1–2 g/h continuous infusion. Pritchard remains the widely taught Indian standard with proven efficacy.' },
+        { kind: 'info', title: 'Zuspan IV alternative', text: 'Use the complete magnesium IV alternative card: 4 g over 15–20 minutes, then 1 g/hour in the cited MSF regimen. Choose one complete monitored regimen rather than mixing loading/maintenance schedules.' },
       ],
       drugTreatment: [
         MGSO4_PRITCHARD,
@@ -544,7 +429,7 @@ export const HDP_TOPICS: DiseaseTopic[] = [
         { kind: 'warning', title: 'Seizure recurs despite MgSO4', text: 'Give additional MgSO4 2 g IV over 5 min (after checking RR/reflexes — if depressed, treat toxicity with calcium gluconate FIRST). Consider thiopentone/levetiracetam/phenytoin loading per anaesthetist; secure airway; ICU. Re-image if atypical.' },
       ],
       secondLine: [{ kind: 'list', items: ['Airway: RSII intubation if repeated seizures/coma', 'Levetiracetam 1–1.5 g IV or phenytoin 15–18 mg/kg (anaesthetist-led) as adjunct when magnesium-refractory', 'Mannitol/intensive-care measures for raised ICP suspicion'] }],
-      rescue: [{ kind: 'list', items: ['Cardiac arrest → obstetric life-support + perimortem caesarean at 4 min if ≥20 wks (emergency-obstetric-arrest)', 'Massive intracranial bleed → neurosurgery + multidisciplinary delivery decision'] }],
+      rescue: [{ kind: 'list', items: ['Cardiac arrest → usual ALS, manual uterine displacement and early preparation for resuscitative birth at the arrest site; do not wait for a four-minute trigger', 'Massive intracranial bleed → neurosurgery + multidisciplinary delivery decision'] }],
       procedures: [{ kind: 'text', text: 'Caesarean under GA if coagulopathic/refractory; regional acceptable when platelets/coags safe and seizures controlled. Neonatal team informed (hyper magnesaemia → floppy infant, respiratory support readiness).' }],
       escalation: [{ kind: 'list', items: ['ICU for: recurrent seizures, ventilation, renal failure, coagulopathy, coma', 'Peripheral-centre rule: stabilise (airway+MgSO4+BP) THEN refer with escort — never transfer mid-seizure'] }],
       complications: [
@@ -642,9 +527,9 @@ export const HDP_TOPICS: DiseaseTopic[] = [
     treatment: {
       immediateStabilization: [{ kind: 'list', items: ['Severe-range → treat urgently as antepartum equivalents (same agents)', 'Admit if symptomatic or organ dysfunction'] }],
       firstLine: [
-        { kind: 'doseCard', drug: 'Labetalol (oral)', dose: '100–400 mg BD–TDS', route: 'PO', notes: ['Lactation-compatible'], sourceId: SRC.fogsi },
-        { kind: 'doseCard', drug: 'Nifedipine ER', dose: '10–30 mg BD', route: 'PO', notes: ['Lactation-compatible; suppresses lactation at high dose — counsel'], sourceId: SRC.fogsi },
-        { kind: 'doseCard', drug: 'Enalapril (postpartum only)', dose: '2.5–10 mg BD', route: 'PO', notes: ['Excellent lactation profile; CONTRAINDICATED antepartum'], sourceId: 'aha-2021-hdp-statement' },
+        regimenCard('labetalol-oral'),
+        regimenCard('nifedipine-maintenance'),
+        regimenCard('enalapril-postpartum'),
       ],
       alternativesFirstLine: [{ kind: 'list', items: ['Methyldopa postpartum: avoid long-term (depression risk)', 'Diuretics: useful if pulmonary/congestion features; may reduce milk supply marginally'] }],
       definitiveTreatment: [{ kind: 'text', text: 'Postpartum PE with organ dysfunction: MgSO4 24 h + birth already done → supportive care; most resolve as involution proceeds. De novo HTN persisting >42 days → chronic hypertension pathway.' }],

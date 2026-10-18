@@ -8,77 +8,77 @@ The dates below are authored records, not a claim that this documentation run re
 
 | Module | Authored status | Version | Recorded verification date | Sources |
 | --- | --- | --- | --- | --- |
-| hdp-chronic | clinically-verified | 2 | 2026-08-23 | fogsi-hdp-gcpr-2026, isshp-2021, acog-chap-advisory-2022, esc-esh-2024-htn-pregnancy |
-| hdp-gestational | clinically-verified | 2 | 2026-08-23 | fogsi-hdp-gcpr-2026, isshp-2021 |
-| hdp-pre-eclampsia | clinically-verified | 2 | 2026-08-23 | fogsi-hdp-gcpr-2026, isshp-2021, rcog-gtg74-steroids-2022 |
-| hdp-severe-features | clinically-verified | 2 | 2026-08-23 | fogsi-hdp-gcpr-2026, isshp-2021 |
-| hdp-eclampsia | clinically-verified | 2 | 2026-08-23 | fogsi-hdp-gcpr-2026, isshp-2021 |
-| hdp-hellp | published | 1 | 2026-08-23 | fogsi-hdp-gcpr-2026, isshp-2021, rcog-gtg74-steroids-2022 |
-| hdp-postpartum | published | 1 | 2026-08-23 | fogsi-hdp-gcpr-2026, isshp-2021, aha-2021-hdp-statement, nice-ng133-detail |
-| pph | clinically-verified | 2 | 2026-08-23 | who-pph-consolidated-2025, who-txa-pph-2017, who-bloodloss-bundle-2023, who-uterotonics-2018 |
-| aph-previa | published | 1 | 2026-08-23 | who-pph-consolidated-2025, rcog-gtg74-steroids-2022, nice-ng235-intrapartum-2026 |
-| aph-abruption | published | 1 | 2026-08-23 | who-pph-consolidated-2025 |
 | vasa-previa | published | 1 | 2026-08-23 | rcog-gtg74-steroids-2022 |
 | pas-spectrum | published | 1 | 2026-08-23 | who-pph-consolidated-2025 |
-| molar-pregnancy | published | 1 | 2026-08-23 | rcog-gtg73-pprom-2019 |
-| mtp-india | clinically-verified | 1 | 2026-08-23 | india-mtp-act-rules-2021 |
-| labour-management | published | 1 | 2026-08-23 | nice-ng235-intrapartum-2026, who-pph-consolidated-2025 |
-| iol | published | 1 | 2026-08-23 | nice-ng235-intrapartum-2026, nice-ng207-detail |
-| lscs | published | 1 | 2026-08-23 | nice-ng235-intrapartum-2026, who-pph-consolidated-2025, nice-ng192-detail |
 | vbac-tolac | published | 1 | 2026-08-23 | nice-ng235-intrapartum-2026, nice-ng192-detail |
 | shoulder-dystocia | clinically-verified | 1 | 2026-08-23 | nice-ng235-intrapartum-2026, rcog-shoulder-detail |
 | cord-prolapse | published | 1 | 2026-08-23 | nice-ng235-intrapartum-2026, rcog-cord-detail |
-| breech-ecv | published | 1 | 2026-08-23 | nice-ng235-intrapartum-2026, rcog-breech-detail |
 | ctg-fetal-monitoring | published | 1 | 2026-08-23 | nice-ng235-intrapartum-2026, nice-ng229-detail |
-| ptl-threatened | published | 1 | 2026-08-23 | rcog-gtg74-steroids-2022, rcog-gtg73-pprom-2019, nice-ng25-detail |
-| ptl-established | published | 1 | 2026-08-23 | rcog-gtg74-steroids-2022, rcog-gtg73-pprom-2019, nice-ng25-detail |
-| pprom | published | 1 | 2026-08-23 | rcog-gtg73-pprom-2019, rcog-gtg74-steroids-2022, rcog-pprom-detail |
-| prom-term | published | 1 | 2026-08-23 | nice-ng235-intrapartum-2026, rcog-gtg36-gbs-2017, nice-ng207-detail |
-| fgr | published | 1 | 2026-08-23 | rcog-gtg74-steroids-2022, rcog-small-baby-detail |
 | reduced-fetal-movements | published | 1 | 2026-08-23 | nice-ng235-intrapartum-2026, rcog-movements-detail |
-| gdm | clinically-verified | 1 | 2026-08-23 | who-anc-2016-updates, nice-ng3-detail |
-| pregestational-diabetes | published | 1 | 2026-08-23 | who-anc-2016-updates, nice-ng3-detail |
-| anaemia-iron-deficiency | clinically-verified | 1 | 2026-08-23 | who-anc-2016-updates |
-| vte | published | 1 | 2026-08-23 | rcog-gtg36-gbs-2017, rcog-vte-detail |
-| maternal-sepsis | clinically-verified | 1 | 2026-08-23 | rcog-gtg36-gbs-2017, nice-ng255-detail |
-| hyperemesis-gravidarum | published | 1 | 2026-08-23 | who-anc-2016-updates, rcog-hyperemesis-detail |
-| uti-pyelonephritis | published | 1 | 2026-08-23 | cdc-sti-2021, nice-ng109-detail, nice-ng111-detail |
-| chorioamnionitis | published | 1 | 2026-08-23 | cdc-sti-2021 |
-| gbs | published | 1 | 2026-08-23 | rcog-gtg36-gbs-2017, rcog-gbs-detail |
-| sti-syphilis | published | 1 | 2026-08-23 | cdc-sti-2021, cdc-syphilis-pregnancy-detail |
-| sti-chlamydia | published | 1 | 2026-08-23 | cdc-sti-2021, cdc-chlamydia-detail |
-| sti-gonorrhoea | published | 1 | 2026-08-23 | cdc-sti-2021, cdc-gonorrhoea-detail |
-| sti-hsv | published | 1 | 2026-08-23 | cdc-sti-2021, cdc-hsv-detail |
-| vaginitis | published | 1 | 2026-08-23 | cdc-sti-2021, cdc-bv-detail, cdc-candidiasis-detail, cdc-trichomoniasis-detail |
-| pid | published | 1 | 2026-08-23 | cdc-sti-2021, cdc-pid-detail |
-| aub | published | 1 | 2026-08-23 | cdc-sti-2021, nice-ng88-detail |
-| pcos | published | 1 | 2026-08-23 | pcos-international-2023, pcos-recommendations-detail |
 | endometriosis | published | 1 | 2026-08-23 | cdc-sti-2021, nice-ng73-detail |
-| fibroids | published | 1 | 2026-08-23 | cdc-sti-2021, nice-ng88-detail |
-| adnexal-mass-torsion | published | 1 | 2026-08-23 | cdc-sti-2021 |
 | urogynaecology-core | published | 1 | 2026-08-23 | cdc-sti-2021, nice-ng123-detail |
-| menopause | published | 1 | 2026-08-23 | cdc-sti-2021, nice-ng23-detail |
 | gyonc-endometrial | clinically-verified | 1 | 2026-08-23 | figo-endometrial-staging-2023, esgo-estro-esp-endometrial-2025 |
 | cervical-screening-hpv | published | 1 | 2026-08-23 | cdc-sti-2021 |
-| contraception | published | 1 | 2026-08-23 | cdc-sti-2021, cdc-mec-detail |
 | infertility-female | published | 1 | 2026-08-23 | pcos-international-2023, nice-ng257-assessment-detail, nice-ng257-tests-detail |
-| anc-overview | published | 1 | 2026-08-23 | who-anc-2016-updates, nice-ng201-detail |
 
 ## Modules pending review or without a qualifying verification record
 
 | Module | Authored status | Version | Sources |
 | --- | --- | --- | --- |
+| hdp-chronic | review | 3 | fogsi-hdp-gcpr-2026, isshp-2021, acog-chap-advisory-2022, esc-esh-2024-htn-pregnancy, med-msf-labetalol-oral, med-nhm-cemonc, med-msf-methyldopa, nice-ng133-detail |
+| hdp-gestational | review | 3 | fogsi-hdp-gcpr-2026, isshp-2021, med-msf-labetalol-oral, med-nhm-cemonc, med-msf-methyldopa |
+| hdp-pre-eclampsia | review | 3 | fogsi-hdp-gcpr-2026, isshp-2021, rcog-gtg74-steroids-2022, med-msf-labetalol-oral, med-nhm-cemonc, med-msf-methyldopa |
+| hdp-severe-features | review | 3 | fogsi-hdp-gcpr-2026, isshp-2021, med-nhm-cemonc, med-msf-hydralazine, med-msf-magnesium, med-msf-calcium, med-who-antenatal-steroids |
+| hdp-eclampsia | review | 3 | fogsi-hdp-gcpr-2026, isshp-2021, med-msf-magnesium, med-msf-calcium, med-nhm-cemonc, med-msf-hydralazine |
+| hdp-hellp | review | 2 | fogsi-hdp-gcpr-2026, isshp-2021, rcog-gtg74-steroids-2022, med-msf-magnesium, med-msf-calcium, med-nhm-cemonc, med-msf-hydralazine |
+| hdp-postpartum | review | 2 | fogsi-hdp-gcpr-2026, isshp-2021, aha-2021-hdp-statement, nice-ng133-detail, med-msf-labetalol-oral, med-nhm-cemonc, med-enalapril-label, med-msf-hydralazine |
+| pph | review | 3 | who-pph-consolidated-2025, who-txa-pph-2017, who-bloodloss-bundle-2023, who-uterotonics-2018, med-who-pph-recognition, med-msf-pph, nice-ng235-intrapartum-2026, med-msf-oxytocin, med-methylergometrine-label, med-ergometrine-label, med-carboprost-label, med-msf-misoprostol |
+| aph-previa | review | 2 | who-pph-consolidated-2025, rcog-gtg74-steroids-2022, nice-ng235-intrapartum-2026, med-who-antenatal-steroids, nice-ng25-detail |
+| aph-abruption | review | 2 | who-pph-consolidated-2025, med-who-antenatal-steroids, nice-ng25-detail |
 | pul | review | 2 | nice-ng126-diagnosis-detail |
-| ectopic-pregnancy | review | 2 | nice-ng126-ectopic-detail, nhs-ectopic-mtx-detail, nice-ng126-antid-detail |
-| miscarriage-management | review | 2 | nice-ng126-miscarriage-detail, nice-ng126-diagnosis-detail, nice-ng126-antid-detail |
+| ectopic-pregnancy | review | 3 | nice-ng126-ectopic-detail, nhs-ectopic-mtx-detail, nice-ng126-antid-detail |
+| miscarriage-management | review | 3 | nice-ng126-miscarriage-detail, nice-ng126-diagnosis-detail, nice-ng126-antid-detail |
 | recurrent-miscarriage | review | 2 | rcog-recurrent-detail, nice-ng126-miscarriage-detail |
-| multiples | review | 1 | rcog-gtg74-steroids-2022, nice-ng137-detail |
-| thyroid-pregnancy | review | 1 | rcog-gtg76-thyroid |
-| icp | outdated | 1 | rcog-gtg43-icp, rcog-icp-detail |
+| molar-pregnancy | review | 2 | med-figo-gtd-2025 |
+| mtp-india | review | 2 | india-mtp-act-rules-2021, med-who-abortion |
+| labour-management | review | 2 | nice-ng235-intrapartum-2026, who-pph-consolidated-2025, med-oxytocin-label |
+| iol | review | 2 | nice-ng235-intrapartum-2026, nice-ng207-detail, med-misoprostol-iol-label, med-dinoprostone-label, med-oxytocin-label |
+| lscs | review | 2 | nice-ng235-intrapartum-2026, who-pph-consolidated-2025, nice-ng192-detail, med-surgical-prophylaxis |
+| breech-ecv | review | 2 | nice-ng235-intrapartum-2026, rcog-breech-detail, med-nhs-ecv |
+| ptl-threatened | review | 2 | rcog-gtg74-steroids-2022, rcog-gtg73-pprom-2019, nice-ng25-detail, med-msf-nifedipine, med-who-antenatal-steroids |
+| ptl-established | review | 2 | rcog-gtg74-steroids-2022, rcog-gtg73-pprom-2019, nice-ng25-detail, med-msf-nifedipine, med-who-antenatal-steroids |
+| pprom | review | 2 | rcog-gtg73-pprom-2019, rcog-gtg74-steroids-2022, rcog-pprom-detail, nice-ng25-detail, med-who-antenatal-steroids |
+| prom-term | review | 2 | nice-ng235-intrapartum-2026, rcog-gtg36-gbs-2017, nice-ng207-detail, med-benzylpenicillin-label |
+| fgr | review | 2 | rcog-gtg74-steroids-2022, rcog-small-baby-detail, med-who-antenatal-steroids, nice-ng25-detail |
+| multiples | review | 2 | rcog-gtg74-steroids-2022, nice-ng137-detail, med-who-antenatal-steroids, nice-ng25-detail |
+| gdm | review | 2 | anc-india-gdm, nice-ng3-detail, med-msf-metformin, med-msf-insulin-nph, med-jbds-hypo |
+| pregestational-diabetes | review | 2 | who-anc-2016-updates, nice-ng3-detail, med-msf-insulin-nph, med-jbds-dka, med-jbds-hypo |
+| thyroid-pregnancy | review | 2 | rcog-gtg76-thyroid, med-ptu-label, med-carbimazole-label, med-thyroid-storm-2026 |
+| anaemia-iron-deficiency | review | 2 | who-anc-2016-updates, med-who-anc-dose, med-fcm-label |
+| vte | review | 2 | rcog-vte-detail, med-rcog-vte-37b, med-rcog-vte-37a, med-alteplase-label |
+| maternal-sepsis | review | 2 | nice-ng255-detail, med-smfm-sepsis, med-nag-obstetric, med-msf-gentamicin, med-msf-metronidazole-iv, med-msf-norepinephrine |
+| hyperemesis-gravidarum | review | 2 | who-anc-2016-updates, rcog-hyperemesis-detail, med-msf-ondansetron, med-xonvea-label, med-rcog-hg, med-metoclopramide-label |
+| icp | review | 2 | rcog-gtg43-icp, rcog-icp-detail, med-menadiol-label, med-icp-vitk-local, med-smfm-icp |
 | asthma-epilepsy-cardiac-ckd-autoimmune | review | 1 | who-anc-2016-updates |
+| uti-pyelonephritis | review | 2 | nice-ng109-detail, nice-ng111-detail, med-nice-uti, med-acog-uti |
+| chorioamnionitis | review | 2 | med-nag-obstetric, med-msf-gentamicin, med-msf-metronidazole-iv |
+| gbs | review | 2 | rcog-gtg36-gbs-2017, rcog-gbs-detail, med-benzylpenicillin-label, med-cdc-gbs |
+| sti-syphilis | review | 2 | cdc-sti-2021, cdc-syphilis-pregnancy-detail, med-cdc-syphilis, med-cdc-neurosyphilis |
+| sti-chlamydia | review | 2 | cdc-sti-2021, cdc-chlamydia-detail |
+| sti-gonorrhoea | review | 2 | cdc-sti-2021, cdc-gonorrhoea-detail, cdc-chlamydia-detail |
+| sti-hsv | review | 2 | cdc-sti-2021, cdc-hsv-detail |
+| vaginitis | review | 2 | cdc-sti-2021, cdc-bv-detail, cdc-candidiasis-detail, cdc-trichomoniasis-detail, med-cdc-candida |
+| pid | review | 2 | cdc-sti-2021, cdc-pid-detail |
 | viral-pregnancy-hbv-hcv-hiv-rubella-cmv-varicella-parvo-covid-flu | review | 1 | cdc-sti-2021 |
+| aub | review | 2 | nice-ng88-detail, med-msf-tranexamic-oral, med-mirena-label |
+| pcos | review | 2 | pcos-international-2023, pcos-recommendations-detail, med-nhs-letrozole, med-msf-coc |
+| fibroids | review | 2 | cdc-sti-2021, nice-ng88-detail, med-msf-tranexamic-oral |
+| adnexal-mass-torsion | review | 2 | med-acog-torsion, med-msf-obstetrics |
+| menopause | review | 2 | nice-ng23-detail, med-estradot-label, med-bms-progestogen |
 | gyonc-cervical | review | 1 | cdc-sti-2021 |
 | gyonc-ovarian-vulval-gtn-index | review | 1 | cdc-sti-2021 |
+| contraception | review | 2 | cdc-mec-detail, med-cdc-ec, med-mirena-label, med-msf-coc |
+| anc-overview | review | 2 | anc-who-calendar, anc-india-programme, anc-india-gdm, nice-ng201-detail, anc-who-urine, anc-rcog-gbs, med-who-anc-dose, med-who-calcium-dose, nice-ng133-detail, med-rhophylac-label |
 
 ## Additional clinical-detail checks — limited scope
 
@@ -125,4 +125,4 @@ The dates below are authored records, not a claim that this documentation run re
 | menopause | 2026-10-17 | nice-ng23-detail |
 | contraception | 2026-10-17 | cdc-mec-detail |
 | infertility-female | 2026-10-17 | nice-ng257-assessment-detail, nice-ng257-tests-detail |
-| anc-overview | 2026-10-17 | nice-ng201-detail |
+| anc-overview | 2026-10-18 | anc-who-calendar, anc-india-programme, anc-india-gdm, nice-ng201-detail, anc-who-urine, anc-rcog-gbs |

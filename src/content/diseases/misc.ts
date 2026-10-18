@@ -1,3 +1,4 @@
+import { regimenCard } from '../medication-regimens'
 import type { DiseaseTopic } from '../types'
 
 /* ============================================================
@@ -24,7 +25,7 @@ export const MISC_TOPICS: DiseaseTopic[] = [
       firstLine: [
         { kind: 'table', headers: ['Method', 'Key practical points'], rows: [
           ['Copper IUD', '>99% effective, 10 y; heavier periods; EC gold standard (within 5 d of sex/ovulation); insertion procedure page linked'],
-          ['LNG-IUS 52 mg', '5 y; reduces bleeding; MEC mostly 1-2'],
+          ['Mirena LNG-IUS 52 mg', '8 years for contraception; HMB and HRT have different durations. See product-specific cards.'],
           ['Etonogestrel implant', '3 y; irregular bleeding commonest discontinuation reason; insert days 1-5 or postpartum anytime'],
           ['DMPA injection', '150 mg IM q12 wks; BMD caution long-term; delayed return fertility'],
           ['COCP', '~9 in 100 typical-use failures; missed-pill rules on card; AVOID migraine-with-aura/VTE history/POSTPARTUM <6 wks breastfeeding (MEC 4)'],
@@ -32,7 +33,8 @@ export const MISC_TOPICS: DiseaseTopic[] = [
           ['Emergency hormonal', 'LNG 1.5 mg single dose ASAP <=72 h (efficacy falls with delay); ulipristal 30 mg <=120 h where available'],
           ['Sterilization', 'Permanent: laparoscopic tubal occlusion/vasectomy - statutory consent documentation (India forms)'],
         ] },
-        { kind: 'doseCard', drug: 'Levonorgestrel ECP', dose: '1.5 mg PO single dose as soon as possible after unprotected sex (within 72 h)', route: 'PO', frequency: 'Once', notes: ['Repeat-dose safe if vomiting within 3 h', 'Copper IUD superior when accessible'], sourceId: 'cdc-sti-2021' },
+        regimenCard('levonorgestrel-ec'),
+        regimenCard('mirena-contraception'),
       ],
       definitiveTreatment: [{ kind: 'text', text: 'Method continuation with scheduled reviews; switching strategies documented.' }],
       monitoring: [{ kind: 'list', items: ['IUD string checks; BP reviews for hormonal users; weight/BMD awareness DMPA long-term'] }],
@@ -82,37 +84,24 @@ export const MISC_TOPICS: DiseaseTopic[] = [
   }),
 
   t({
+    aliases: ["antenatal investigations","pregnancy checkups","how many antenatal visits","trimester investigations","eight contacts"],
     id: 'anc-overview',
-    title: 'Antenatal Care Core Schedule (WHO 8-contact model)',
+    title: "Antenatal care: trimester tests & visit schedule",
     category: 'antenatal',
-    tags: ['anc', 'booking', 'contacts', 'ifa', 'tt', 'aspirin-prophylaxis'],
-    summary: 'WHO model: >=8 contacts (first <12 wks; then 20/26/30/34/36/38/40). Booking: dating scan, blood group/Rh, Hb, syphilis/HIV/HBV screens, urine culture context, TT/Td per programme, IFA daily, calcium in low-intake populations, aspirin prophylaxis for high-risk PE groups from ~12 wks.',
-    sourceIds: ['who-anc-2016-updates'],
-    initialAssessment: [{ kind: 'steps', steps: [
-      'BOOKING panel: CBC, blood group+Rh(+antibodies), VDRL, HIV, HBsAg (+HCV where policy), urine routine±culture, TSH where policy/risk, HbA1c if pregestational DM suspicion',
-      'Dating ultrasound (best accuracy 8-14 wks) + nuchal translucency window 11-13+6 where aneuploidy screening chosen',
-      'Risk assessment: PET-prevention tiering (FOGSI HDP-Gestosis score available), GDM screen scheduling, haemoglobinopathy screening where indicated',
-    ] }],
-    investigations: [
-      { test: 'CBC each trimester', lookingFor: 'Anaemia trend' },
-      { test: 'OGTT 24-28 wks (universal India DIPSI often earlier booking)', lookingFor: 'GDM detection' },
-      { test: 'Anomaly scan 18-22 wks', lookingFor: 'Structural survey + placental localisation' },
-      { test: 'Growth scans 28-32 & 36 (risk-adapted)', lookingFor: 'FGR/placental issues' },
-    ],
+    tags: ["anc","booking","contacts","first trimester","second trimester","third trimester","pregnancy tests","visit calendar","ifa","aspirin-prophylaxis"],
+    summary: "Plan at least 8 WHO antenatal contacts: 1 in the first trimester, 2 in the second and 5 in the third, with extra reviews for risk or symptoms. Use the trimester tables for booking tests, scheduled repeats, scan windows and the India glucose-testing method; give every result a follow-up plan.",
+    sourceIds: ["anc-who-calendar","anc-india-programme","anc-india-gdm","nice-ng201-detail","anc-who-urine","anc-rcog-gbs"],
+    initialAssessment: [{ kind: 'list', items: ["Book as soon as pregnancy is known. Review gestational age, prior pregnancies, medical and mental health, medicines, family history, infection risk and available reports.","Record BP, weight/BMI and baseline risk; plan indicated aspirin, supplements, immunisation and specialist referrals using the relevant criteria.","Arrange the dating/screening appointment within its valid window. Give the next visit date and a separate date for every time-sensitive investigation; do not wait for the next WHO contact when a test is due earlier."] }],
+    investigations: [{"test":"First trimester: booking to 13+6 weeks","lookingFor":"Baseline CBC/Hb, group/RhD and antibodies, offered HIV/syphilis/HBV screening, urine culture pathway, dating/screening choices and India first-contact glucose testing; targeted additional tests follow risk."},{"test":"Second trimester: 14+0–27+6 weeks","lookingFor":"Structural scan within the local window, India glucose repeat at 24–28 weeks if the early test was negative, and arrangement of 28-week CBC/antibody/Rh care."},{"test":"Third trimester: from 28 weeks","lookingFor":"Review 28-week blood/antibody results, anaemia response, indicated growth/surveillance tests, presentation after 36 weeks and any missing late-booking tests."},{"test":"Every contact / symptoms between contacts","lookingFor":"Review symptoms, results and changing risk; BP and urine protein at routine face-to-face visits. New symptoms or abnormal results require their own prompt assessment, not the next calendar date."}],
     treatment: {
       firstLine: [
-        { kind: 'doseCard', drug: 'Daily iron-folic acid', dose: '60 mg elemental iron + 400 mcg folate daily (programme IFA)', route: 'PO', frequency: 'Daily', duration: 'From 2nd trimester through postpartum per programme', sourceId: 'who-anc-2016-updates' },
-        { kind: 'doseCard', drug: 'Calcium supplementation', dose: '1.5-2 g/day elemental calcium where dietary intake low (WHO recommendation for populations at PET risk)', route: 'PO', frequency: 'Daily', duration: 'From ~20 wks (or 12 wks per some programmes) to birth', sourceId: 'who-anc-2016-updates' },
-        { kind: 'doseCard', drug: 'Aspirin prophylaxis (high-risk PE)', dose: '75-150 mg nocte from 11-14+0 to 16+0 weeks until 36 wks (ISSHP prefers 150 mg after screening)', route: 'PO', frequency: 'Once nightly', duration: 'To 36 wks', contraindications: ['Active ulcer/bleeding/allergy'], sourceId: 'isshp-2021' },
-        { kind: 'doseCard', drug: 'Anti-D prophylaxis (Rh-negative, nonsensitised)', dose: '300 mcg (1500 IU) IM ~28 wks +/- birth dose per programme; additional doses after bleeds/procedures', route: 'IM', frequency: 'Per schedule', sourceId: 'who-anc-2016-updates' },
+        regimenCard('iron-folate-prevention'),
+        regimenCard('calcium-antenatal'),
+        regimenCard('aspirin-pe'),
+        regimenCard('anti-d-routine'),
+        regimenCard('anti-d-postpartum'),
       ],
-      monitoring: [{ kind: 'table', headers: ['Contact', 'Core actions'], rows: [
-        ['First <12 wks', 'Booking bundle + education + supplements start'],
-        ['20 wks', 'Anomaly scan review window ends; BP/Hb'],
-        ['26/30 wks', 'OGTT window; anaemia correction; growth baseline'],
-        ['34/36 wks', 'Growth/presentation checks; birth-plan discussion; Rh prophylaxis ~28 wks window'],
-        ['38/40 wks', 'Postdates planning; CTG/BPP policy for >41 wks induction offer'],
-      ] }],
+      monitoring: [{ kind: 'list', items: ["Use the eight-contact calendar and trimester investigation tables in Clinical detail; record the actual local appointment dates.","At each visit review results, symptoms, BP/proteinuria, adherence/tolerance and referrals. From 24 weeks assess growth and investigate a concerning trend.","Book the 24–28-week glucose test and indicated 28-week blood/anti-D care on time, even when they fall between routine contacts.","Arrange extra reviews for anaemia, diabetes, hypertension, antibodies, twins, infection or fetal concerns. Routine late-pregnancy scans and CTG are not required at every uncomplicated visit."] }],
       responseAssessment: [{ kind: 'list', items: ['Normal surveillance trajectory; supplements tolerated'] }],
       escalation: [{ kind: 'list', items: ['Any red-flag symptom pathway same-day access'] }],
       complications: [{ name: 'Hyperemesis/anaemia/infections', management: [{ kind: 'text', text: 'Respective modules' }] }],

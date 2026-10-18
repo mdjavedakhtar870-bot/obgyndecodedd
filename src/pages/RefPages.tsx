@@ -3,6 +3,7 @@ import { useLocation, useParams } from 'react-router-dom'
 import { Link } from '../components/links'
 import { useApp } from '../App'
 import { Blocks, ClinicalTable, SourceBadge, StatusBadge } from '../components/clinical'
+import { DOSE_CONFLICTS } from '../content/medication-regimens'
 import { getSource } from '../content/sources'
 import { getPage } from '../lib/seo'
 
@@ -38,20 +39,23 @@ export function DrugsPage() {
             <summary><span className="row">{d.name}{d.emergencyKit && <span className="badge danger">EMERGENCY KIT</span>}<span className="badge">{d.drugClass}</span></span></summary>
             <div className="acc-body">
               {!id && <p><Link to={`/drug/${d.id}`}>Open {d.name} reference →</Link></p>}
-              <p className="small">Indications: {d.indications.join(' · ')}</p>
-              <ClinicalTable caption={`${d.name}: indication-specific regimens`} headers={['Indication', 'Dose', 'Route', 'Frequency', 'Duration / preparation', 'Maximum']} rows={d.doseRows.map((r) => [<>{r.indication}{r.sourceId && <div style={{ marginTop: 8 }}><SourceBadge id={r.sourceId} /></div>}</>, <b>{r.dose}</b>, r.route, r.frequency ?? 'Not recorded', <>{[r.duration, r.preparation].filter(Boolean).join(' · ')}{r.notes?.length ? <ul>{r.notes.map((n, j) => <li key={j}>{n}</li>)}</ul> : null}</>, r.max ?? 'Not recorded'])} />
+              {!id && <p className="small">Indications: {d.indications.join(' · ')}</p>}
+              {DOSE_CONFLICTS[d.id] && <Blocks blocks={DOSE_CONFLICTS[d.id]} />}
+              {d.id === 'nifedipine' && <Blocks blocks={DOSE_CONFLICTS.nifedipineMagnesium} />}
+              {d.regimenCheckedAt && <p className="small muted">Regimens checked: {d.regimenCheckedAt}. Each indication has its own preparation, limits and safety checks.</p>}
+              <ClinicalTable caption={`${d.name}: indication-specific regimens`} headers={['Indication', 'Dose', 'Route', 'Frequency', 'Duration / preparation', 'Maximum', 'Monitoring / cautions']} rows={d.doseRows.map((r) => [<>{r.indication}{r.sourceId && <div style={{ marginTop: 8 }}><SourceBadge id={r.sourceId} /></div>}</>, <b>{r.dose}</b>, r.route, r.frequency ?? 'Not recorded', <>{[r.duration, r.preparation].filter(Boolean).join(' · ')}{r.notes?.length ? <ul>{r.notes.map((n, j) => <li key={j}>{n}</li>)}</ul> : null}</>, r.max ?? 'Not recorded', <>{r.monitoring?.length ? <><b>Monitor</b><ul>{r.monitoring.map((n, j) => <li key={j}>{n}</li>)}</ul></> : null}{r.contraindications?.length ? <><b>Contraindications / cautions</b><ul>{r.contraindications.map((n, j) => <li key={j}>{n}</li>)}</ul></> : null}</>])} />
               <div className="kv-grid small">
                 <div className="kv"><div className="k">Pregnancy safety</div><div className="v" style={{ fontSize: 12.5 }}>{d.pregnancySafety}</div></div>
                 <div className="kv"><div className="k">Lactation</div><div className="v" style={{ fontSize: 12.5 }}>{d.lactation}</div></div>
                 {d.trimesterNotes && <div className="kv"><div className="k">Trimester notes</div><div className="v">{d.trimesterNotes}</div></div>}
-                {d.contraindications?.length ? <div className="kv"><div className="k">Contraindications</div><div className="v" style={{ fontSize: 12.5 }}>{d.contraindications.join('; ')}</div></div> : null}
-                {d.monitoring?.length ? <div className="kv"><div className="k">Monitoring</div><div className="v" style={{ fontSize: 12.5 }}>{d.monitoring.join('; ')}</div></div> : null}
+                {d.contraindications?.length && !d.doseRows.some((r) => r.contraindications?.length) ? <div className="kv"><div className="k">Contraindications</div><div className="v" style={{ fontSize: 12.5 }}>{d.contraindications.join('; ')}</div></div> : null}
+                {d.monitoring?.length && !d.doseRows.some((r) => r.monitoring?.length) ? <div className="kv"><div className="k">Monitoring</div><div className="v" style={{ fontSize: 12.5 }}>{d.monitoring.join('; ')}</div></div> : null}
                 {d.renalHepatic ? <div className="kv"><div className="k">Renal/hepatic</div><div className="v" style={{ fontSize: 12.5 }}>{d.renalHepatic}</div></div> : null}
                 {d.interactions?.length ? <div className="kv"><div className="k">Interactions</div><div className="v">{d.interactions.join('; ')}</div></div> : null}
                 {d.adverseEffects?.length ? <div className="kv"><div className="k">Adverse effects</div><div className="v">{d.adverseEffects.join('; ')}</div></div> : null}
               </div>
               <div className="row" style={{ marginTop: 10 }}><SourceBadge id={d.sourceId} /><StatusBadge status={d.status} /></div>
-              <p className="small muted">Clinical verification date not recorded for this drug entry.</p>
+              {!d.regimenCheckedAt && <p className="small muted">Clinical verification date not recorded for this drug entry.</p>}
             </div>
           </details>
         ))}

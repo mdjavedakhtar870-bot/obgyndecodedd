@@ -2,6 +2,8 @@
 
 Prepared 17 October 2026 for OBGYN Decoded. The owner approved production publishing on 17 October 2026.
 
+The subsequent medication-depth correction is recorded in `MEDICATION-EMERGENCY-AUDIT.md`. The counts and results below describe the earlier mobile/explanatory-content release; they are retained as historical results, not the final size of the expanded medication library.
+
 ## Mobile findings and changes
 
 Production verification also identified Netlify's injected attribution badge covering the phone Search, Urgent and Menu controls. Its frame now sits above the bottom navigation, with additional footer and toast clearance. Modal dialogs stay above the badge. A browser regression check reproduces the fixed frame and checks actual navigation hit targets; the attribution remains visible and functional.

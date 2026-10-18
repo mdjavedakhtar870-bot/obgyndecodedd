@@ -28,7 +28,7 @@ export type Category =
 export type Block =
   | { kind: 'text'; text: string }
   | { kind: 'list'; items: string[]; ordered?: boolean }
-  | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string }
+  | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string; id?: string }
   | { kind: 'warning'; title?: string; text: string }
   | { kind: 'info'; title?: string; text: string }
   | {
@@ -74,6 +74,7 @@ export interface DrugUse {
   adverseEffects?: string[]
   monitoring?: string[]
   contraindications?: string[]
+  notes?: string[]
   /** id from /data/clinical-source-map.json */
   sourceId?: string
 }
@@ -155,6 +156,7 @@ export interface DiseaseTopic {
 
 export interface ClinicalDetail {
   overview: string
+  blocks?: Block[]
   assessment: string[]
   decisions: string[]
   followUp: string[]
@@ -196,6 +198,8 @@ export interface DrugDoseRow {
   preparation?: string
   max?: string
   notes?: string[]
+  monitoring?: string[]
+  contraindications?: string[]
   sourceId?: string
 }
 
@@ -217,6 +221,7 @@ export interface DrugRecord {
   sourceId?: string
   emergencyKit?: boolean
   status: WorkflowStatus
+  regimenCheckedAt?: string
 }
 
 /* ---------- Calculators (§52) ---------- */

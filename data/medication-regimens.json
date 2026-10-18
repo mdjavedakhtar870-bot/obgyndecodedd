@@ -1,0 +1,2135 @@
+{
+  "magnesium-pritchard": {
+    "drug": "Magnesium sulfate — IV/IM regimen",
+    "indication": "Eclampsia: stop seizures and prevent recurrence",
+    "dose": "4 g IV loading, then 5 g deep IM into EACH buttock (10 g IM total); maintenance 5 g IM into alternate buttocks",
+    "route": "IV loading + deep IM",
+    "frequency": "Loading once; maintenance every 4 hours",
+    "duration": "Continue until 24 hours after birth OR the last seizure, whichever is later",
+    "preparation": "Using 50% (500 mg/mL): 4 g = 8 mL; dilute in 100 mL sodium chloride 0.9% and infuse over 15–20 min. Each 5 g IM dose = 10 mL of 50% solution. Check the actual ampoule strength.",
+    "maxDose": "Do not give maintenance when toxicity criteria are present; do not run an additional magnesium regimen",
+    "sourceId": "med-msf-magnesium",
+    "monitoring": [
+      "Check patellar reflexes, respiratory rate and hourly urine output; monitor BP, pulse and consciousness",
+      "Withhold magnesium for absent reflexes, respiratory rate <12/min or urine <100 mL in 4 h; obtain serum magnesium and senior review",
+      "Stop magnesium and support ventilation for toxicity; give the calcium-gluconate antidote shown below"
+    ],
+    "contraindications": [
+      "Myasthenia gravis, heart block or magnesium toxicity",
+      "Renal impairment or oliguria requires reduced/withheld maintenance and more frequent assessment"
+    ],
+    "notes": []
+  },
+  "magnesium-iv": {
+    "drug": "Magnesium sulfate — IV regimen",
+    "indication": "Eclampsia: alternative when a reliable infusion pump and monitoring are available",
+    "dose": "4 g IV loading over 15–20 min, then 1 g/hour",
+    "route": "IV infusion",
+    "frequency": "One loading dose, then continuous infusion",
+    "duration": "24 hours after birth or last seizure, whichever is later",
+    "preparation": "50% solution: withdraw 8 mL (4 g) into 100 mL sodium chloride 0.9% for loading; for maintenance make 20 g up to a FINAL 100 mL (200 mg/mL), run at 5 mL/hour by labelled pump",
+    "maxDose": "Use ONE IV or IV/IM protocol; stop/adjust for toxicity or renal dysfunction",
+    "sourceId": "med-msf-magnesium",
+    "monitoring": [
+      "Check patellar reflexes, respiratory rate and hourly urine output; monitor BP, pulse and consciousness",
+      "Withhold magnesium for absent reflexes, respiratory rate <12/min or urine <100 mL in 4 h; obtain serum magnesium and senior review",
+      "Stop magnesium and support ventilation for toxicity; give the calcium-gluconate antidote shown below"
+    ],
+    "contraindications": [
+      "Myasthenia gravis, heart block or magnesium toxicity",
+      "Renal impairment or oliguria requires reduced/withheld maintenance and more frequent assessment"
+    ],
+    "notes": [
+      "Maintenance concentration and pump rate are calculated from the prescribed 1 g/hour; independently check the preparation."
+    ]
+  },
+  "magnesium-recurrence": {
+    "drug": "Magnesium sulfate — recurrent seizure",
+    "indication": "Recurrent eclamptic convulsion after loading; reassess airway, glucose and magnesium toxicity",
+    "dose": "2 g IV additional dose after senior assessment",
+    "route": "IV infusion",
+    "frequency": "One rescue dose, followed by reassessment",
+    "duration": "Acute rescue; continue the selected maintenance regimen",
+    "preparation": "50% solution: 2 g = 4 mL, dilute in compatible sodium chloride 0.9%; give slowly by infusion and check the total loading already received",
+    "maxDose": "MSF ceiling: no more than 8 g IV in the first hour; persistent fits need anaesthesia/ICU, not repeated blind magnesium dosing",
+    "sourceId": "med-msf-magnesium",
+    "monitoring": [
+      "Check patellar reflexes, respiratory rate and hourly urine output; monitor BP, pulse and consciousness",
+      "Withhold magnesium for absent reflexes, respiratory rate <12/min or urine <100 mL in 4 h; obtain serum magnesium and senior review",
+      "Stop magnesium and support ventilation for toxicity; give the calcium-gluconate antidote shown below"
+    ],
+    "contraindications": [
+      "Myasthenia gravis, heart block or magnesium toxicity",
+      "Renal impairment or oliguria requires reduced/withheld maintenance and more frequent assessment"
+    ],
+    "notes": []
+  },
+  "magnesium-neuro": {
+    "drug": "Magnesium sulfate — fetal neuroprotection",
+    "indication": "Imminent preterm birth: NICE offers at 24+0–29+6 weeks and considers at 30+0–33+6 weeks; discuss 23+0–23+6 individually",
+    "dose": "4 g over 15 min, then 1 g/hour",
+    "route": "IV infusion",
+    "frequency": "Loading once, then continuous infusion",
+    "duration": "Stop at birth or 24 hours, whichever occurs first",
+    "preparation": "50%: 4 g = 8 mL diluted in compatible sodium chloride 0.9%; maintenance example 20 g made up to FINAL 100 mL, 5 mL/hour via pump",
+    "maxDose": "24 hours for neuroprotection; do not add to an eclampsia regimen already running",
+    "sourceId": "nice-ng25-detail",
+    "monitoring": [
+      "Record pulse, BP, respiratory rate and tendon reflexes at least every 4 h; more often if oliguria or renal impairment"
+    ],
+    "contraindications": [
+      "Myasthenia gravis, heart block or magnesium toxicity",
+      "Renal impairment or oliguria requires reduced/withheld maintenance and more frequent assessment"
+    ],
+    "notes": []
+  },
+  "calcium-magnesium-toxicity": {
+    "drug": "Calcium gluconate 10%",
+    "indication": "Antidote for clinically significant magnesium toxicity",
+    "dose": "1 g (10 mL of 10% solution) slowly",
+    "route": "IV",
+    "frequency": "Initial antidote dose; reassess breathing, ECG and calcium before further dosing",
+    "duration": "Emergency reversal; stop magnesium and support the airway concurrently",
+    "preparation": "10% = 100 mg/mL; 10 mL contains 1 g calcium gluconate, NOT 1 g elemental calcium. Give over at least 5 min through a patent IV line; do not mix with other drugs",
+    "maxDose": "No automatic repeated-dose course; further calcium requires monitored reassessment",
+    "sourceId": "med-msf-calcium",
+    "monitoring": [
+      "Continuous ECG/heart rate; respiratory status, reflexes and injection site; serum calcium/magnesium where available"
+    ],
+    "contraindications": [
+      "Extravasation can cause tissue injury; take special care with digoxin",
+      "Do not confuse calcium gluconate with calcium chloride"
+    ],
+    "notes": []
+  },
+  "oxytocin-prevention": {
+    "drug": "Oxytocin — prevention after birth",
+    "indication": "Prevention of PPH after birth, distinct from treatment or labour augmentation",
+    "dose": "10 IU",
+    "route": "IM (or slow IV by the approved birth-unit protocol)",
+    "frequency": "Once after birth",
+    "duration": "Single prophylactic dose",
+    "preparation": "For a 10 IU/mL ampoule: 10 IU = 1 mL IM. Verify the strength. Never give a rapid undiluted IV bolus",
+    "maxDose": "10 IU for this prophylactic regimen",
+    "sourceId": "who-pph-consolidated-2025",
+    "monitoring": [
+      "Quantified blood loss, uterine tone, BP/pulse, perfusion and urine output; record every dose and time",
+      "Persistent shock or bleeding needs source control and blood products in parallel; do not wait for all drug doses"
+    ],
+    "contraindications": [
+      "Do not use the PPH dose or infusion rate for labour induction"
+    ],
+    "notes": []
+  },
+  "oxytocin-pph": {
+    "drug": "Oxytocin — treatment of atonic PPH",
+    "indication": "Atonic bleeding after delivery; treatment continues alongside the PPH bundle",
+    "dose": "5–10 IU slowly IV, then 20 IU in 1 L isotonic crystalloid over 2 hours (MSF regimen)",
+    "route": "Slow IV loading + IV infusion",
+    "frequency": "Loading followed immediately by infusion",
+    "duration": "Initial infusion over 2 h; reassess continuously and prescribe further treatment according to response",
+    "preparation": "With 10 IU/mL stock, 20 IU = 2 mL added to 1 L sodium chloride 0.9% or Ringer lactate. Pump 500 mL/hour = 10 IU/hour. Include this litre in total resuscitation fluid",
+    "maxDose": "MSF maximum total oxytocin 60 IU; avoid rapid boluses and excessive fluid",
+    "sourceId": "med-msf-oxytocin",
+    "monitoring": [
+      "Quantified blood loss, uterine tone, BP/pulse, perfusion and urine output; record every dose and time",
+      "Persistent shock or bleeding needs source control and blood products in parallel; do not wait for all drug doses",
+      "Fluid balance, sodium if prolonged/high-volume treatment; cardiac disease needs a separately prescribed concentrated infusion"
+    ],
+    "contraindications": [
+      "Rapid IV injection can cause hypotension/tachycardia",
+      "Monitor fluid overload, especially pre-eclampsia or cardiac disease"
+    ],
+    "notes": []
+  },
+  "oxytocin-augmentation": {
+    "drug": "Oxytocin — labour augmentation",
+    "indication": "Inadequate contractions after obstetric assessment; exclude obstruction and contraindications to vaginal birth",
+    "dose": "Start 1–4 milliunits/min; increase in 1–2 milliunits/min steps no more frequently than every 20 min (specified product label)",
+    "route": "IV infusion pump",
+    "frequency": "Continuous, titrated to contractions and fetal heart rate",
+    "duration": "Until effective labour/birth or an indication to stop; reassess the indication throughout",
+    "preparation": "5 IU in FINAL 500 mL isotonic fluid = 10 milliunits/mL: 1 milliunit/min = 6 mL/hour; 2 = 12; 4 = 24. Use a dedicated labelled pump",
+    "maxDose": "20 milliunits/min for the cited term-labour product regimen; higher rates require a different expressly authorised protocol",
+    "sourceId": "med-oxytocin-label",
+    "monitoring": [
+      "Continuous fetal monitoring and contraction frequency; target 3–4 contractions/10 min",
+      "Stop/reduce for excessive contractions or abnormal fetal heart rate; evaluate immediately"
+    ],
+    "contraindications": [
+      "Obstruction, fetal compromise requiring birth, contraindication to vaginal birth or uterine rupture risk",
+      "Never give as an IV push; wait at least 4 h after oral misoprostol per its product label"
+    ],
+    "notes": []
+  },
+  "txa-pph": {
+    "drug": "Tranexamic acid — PPH",
+    "indication": "PPH of any cause; first dose as soon as possible and WITHIN 3 h of birth",
+    "dose": "1 g IV over 10 min; repeat 1 g if bleeding continues after 30 min OR restarts within 24 h",
+    "route": "IV only",
+    "frequency": "One initial dose; at most one additional 1 g dose under those criteria",
+    "duration": "Acute PPH treatment, maximum 2 doses in this regimen",
+    "preparation": "100 mg/mL: 1 g = 10 mL. Give no faster than 1 mL/min, or dilute in compatible sodium chloride 0.9% and infuse over 10 min. Clearly label IV ONLY; never intrathecal",
+    "maxDose": "2 g total. The 24 h repeat rule does NOT permit a first dose after the 3 h window",
+    "sourceId": "who-txa-pph-2017",
+    "monitoring": [
+      "Quantified blood loss, uterine tone, BP/pulse, perfusion and urine output; record every dose and time",
+      "Persistent shock or bleeding needs source control and blood products in parallel; do not wait for all drug doses"
+    ],
+    "contraindications": [
+      "Clear contraindication to antifibrinolysis, such as a known thromboembolic event during pregnancy; renal dysfunction needs dose review"
+    ],
+    "notes": [],
+    "renalHepatic": "Renal clearance: assess renal function and seek dose advice with impairment; do not repeatedly dose without review"
+  },
+  "txa-hmb": {
+    "drug": "Tranexamic acid — heavy menstrual bleeding",
+    "indication": "Heavy uterine bleeding unrelated to pregnancy after assessment",
+    "dose": "1 g (two 500 mg tablets)",
+    "route": "Oral",
+    "frequency": "Three times daily; if necessary up to four times daily",
+    "duration": "During bleeding only; stop when bleeding stops, maximum 5 days per episode",
+    "preparation": "Swallow the prescribed 500 mg tablets with water; confirm pregnancy exclusion when clinically relevant",
+    "maxDose": "4 g/day and no more than 5 days per episode",
+    "sourceId": "med-msf-tranexamic-oral",
+    "monitoring": [
+      "Bleeding response, Hb/iron deficiency; investigate persistent or changed bleeding"
+    ],
+    "contraindications": [
+      "Current or previous thromboembolic disease, severe renal impairment or seizure history",
+      "Combined oestrogen use needs an individual thrombosis-risk assessment"
+    ],
+    "notes": [],
+    "renalHepatic": "Reduce dose with renal impairment"
+  },
+  "carboprost-pph": {
+    "drug": "Carboprost",
+    "indication": "Refractory atonic PPH after first-line uterotonic; do not use for trauma or retained tissue alone",
+    "dose": "250 micrograms (0.25 mg) deep IM",
+    "route": "IM only",
+    "frequency": "Repeat according to response at intervals of 15–90 min; NEVER sooner than 15 min",
+    "duration": "Acute rescue; ongoing bleeding requires parallel tamponade/surgery",
+    "preparation": "250 micrograms/mL: draw 1 mL undiluted. Verify units carefully: micrograms, not milligrams. Do not administer IV",
+    "maxDose": "2 mg total = 8 doses of 250 micrograms",
+    "sourceId": "med-carboprost-label",
+    "monitoring": [
+      "Quantified blood loss, uterine tone, BP/pulse, perfusion and urine output; record every dose and time",
+      "Persistent shock or bleeding needs source control and blood products in parallel; do not wait for all drug doses",
+      "Respiratory status/bronchospasm, BP, vomiting/diarrhoea"
+    ],
+    "contraindications": [
+      "Asthma or significant active pulmonary disease; active cardiac, renal or hepatic disease",
+      "Do not persist with repeated injections in a deteriorating patient"
+    ],
+    "notes": []
+  },
+  "methylergometrine-pph": {
+    "drug": "Methylergometrine (methylergonovine)",
+    "indication": "Atonic PPH after delivery; this is NOT the same formulation/dose as ergometrine",
+    "dose": "0.2 mg (200 micrograms)",
+    "route": "IM",
+    "frequency": "May repeat after 2–4 h if necessary, following reassessment",
+    "duration": "Acute treatment after birth; do not prescribe repeated doses while delaying haemorrhage control",
+    "preparation": "0.2 mg/mL: 1 mL IM. Check the ampoule for the actual drug name. Routine IV use is avoided because of sudden hypertension/stroke risk",
+    "maxDose": "0.2 mg per injection; further doses require documented reassessment. No invented 15-minute repeat course",
+    "sourceId": "med-methylergometrine-label",
+    "monitoring": [
+      "Quantified blood loss, uterine tone, BP/pulse, perfusion and urine output; record every dose and time",
+      "Persistent shock or bleeding needs source control and blood products in parallel; do not wait for all drug doses",
+      "BP before each dose; chest pain, vasospasm, headache and neurological symptoms"
+    ],
+    "contraindications": [
+      "Hypertension/pre-eclampsia/eclampsia; vascular or significant cardiac disease; before delivery of the last baby",
+      "Avoid strong CYP3A4 inhibitors; do not combine ergot preparations"
+    ],
+    "notes": [
+      "The product label advises no breastfeeding during treatment and for at least 12 h after the last dose; express/discard milk during that interval."
+    ]
+  },
+  "ergometrine-pph": {
+    "drug": "Ergometrine maleate",
+    "indication": "Alternative uterotonic for atonic PPH; use this row only when the ampoule is ERGOMETRINE",
+    "dose": "200–500 micrograms IM; severe haemorrhage option 250–500 micrograms slow IV by a senior clinician",
+    "route": "IM; slow IV only for severe haemorrhage",
+    "frequency": "Initial dose followed by reassessment; select another indicated intervention for continuing bleeding",
+    "duration": "Acute post-birth treatment; no routine multi-day course in this emergency row",
+    "preparation": "500 micrograms/mL formulation: 500 micrograms = 1 mL. For IV use the cited label permits dilution to 5 mL with sodium chloride 0.9%; administer slowly with BP monitoring",
+    "maxDose": "500 micrograms per dose in this label; do not substitute the methylergometrine schedule or invent a cumulative ceiling",
+    "sourceId": "med-ergometrine-label",
+    "monitoring": [
+      "Quantified blood loss, uterine tone, BP/pulse, perfusion and urine output; record every dose and time",
+      "Persistent shock or bleeding needs source control and blood products in parallel; do not wait for all drug doses",
+      "BP before and after injection; chest pain, severe headache, peripheral ischaemia"
+    ],
+    "contraindications": [
+      "Hypertension/pre-eclampsia/eclampsia, severe cardiac/vascular disease, severe renal/hepatic impairment",
+      "Never use before delivery of the last baby"
+    ],
+    "notes": []
+  },
+  "misoprostol-pph": {
+    "drug": "Misoprostol — PPH",
+    "indication": "Atonic PPH when IV oxytocin is unavailable or bleeding does not respond; additional uterotonic selection depends on drugs already given",
+    "dose": "800 micrograms",
+    "route": "Sublingual; rectal if sublingual administration is not feasible",
+    "frequency": "Single rescue dose",
+    "duration": "One acute dose; arrange further haemorrhage control if bleeding continues",
+    "preparation": "Four 200-microgram tablets = 800 micrograms; place under the tongue. Do not confuse this with the 25-microgram labour-induction dose",
+    "maxDose": "800 micrograms in this rescue regimen; do not automatically repeat",
+    "sourceId": "med-msf-misoprostol",
+    "monitoring": [
+      "Quantified blood loss, uterine tone, BP/pulse, perfusion and urine output; record every dose and time",
+      "Persistent shock or bleeding needs source control and blood products in parallel; do not wait for all drug doses",
+      "Temperature, shivering, gastrointestinal effects; distinguish drug fever from ongoing sepsis"
+    ],
+    "contraindications": [
+      "Do not use PPH dosing before birth of the baby"
+    ],
+    "notes": []
+  },
+  "labetalol-iv": {
+    "drug": "Labetalol IV",
+    "indication": "Persistent severe hypertension in pregnancy or postpartum (systolic ≥160 OR diastolic ≥110 mmHg)",
+    "dose": "20 mg over 2 min; reassess at 10 min, then 40 mg; further 80 mg doses at 10-min intervals if severe BP persists",
+    "route": "IV bolus",
+    "frequency": "10-minute reassessment and dose sequence",
+    "duration": "Acute control, then change to an appropriate oral regimen",
+    "preparation": "5 mg/mL stock: 20 mg = 4 mL, 40 mg = 8 mL, 80 mg = 16 mL. Give each dose slowly, record cumulative dose and check the stock strength",
+    "maxDose": "300 mg cumulative in the cited Indian CEmONC regimen; seek escalation before continuing beyond it",
+    "sourceId": "med-nhm-cemonc",
+    "monitoring": [
+      "Check BP and pulse before and after each acute dose; fetal monitoring when appropriate",
+      "Persistent severe BP despite the initial sequence requires senior/anaesthetic review, a different agent and HDU-level monitoring; avoid uncontrolled stacking"
+    ],
+    "contraindications": [
+      "Asthma, bradycardia/heart block or decompensated heart failure"
+    ],
+    "notes": []
+  },
+  "labetalol-oral": {
+    "drug": "Labetalol oral",
+    "indication": "Maintenance hypertension during pregnancy/postpartum",
+    "dose": "Start 100 mg twice daily; increase by 100–200 mg increments according to BP; higher daily doses divided three times daily",
+    "route": "Oral",
+    "frequency": "Twice daily initially; three divided doses if higher doses needed",
+    "duration": "Continue while clinically required; titrate down rather than stop abruptly, with a postpartum review plan",
+    "preparation": "100 mg or 200 mg tablets; prescribe the strength, dose and administration times",
+    "maxDose": "2400 mg/day",
+    "sourceId": "med-msf-labetalol-oral",
+    "monitoring": [
+      "BP/heart rate, postural symptoms; neonatal glucose/heart-rate observation after late-pregnancy exposure"
+    ],
+    "contraindications": [
+      "Asthma, heart block, marked bradycardia, decompensated heart failure"
+    ],
+    "notes": []
+  },
+  "hydralazine-iv": {
+    "drug": "Hydralazine IV",
+    "indication": "Alternative for acute severe hypertension",
+    "dose": "5 mg slowly IV over 2–4 min; reassess for 20 min and repeat 5 mg if still severe",
+    "route": "IV",
+    "frequency": "Every 20 min if required after reassessment",
+    "duration": "Acute control; transition to oral therapy once stable",
+    "preparation": "Reconstitute a 20 mg vial with 1 mL water for injection, then add 9 mL sodium chloride 0.9%: 2 mg/mL. A 5 mg dose = 2.5 mL. Use immediately; do not mix with other drugs",
+    "maxDose": "20 mg cumulative in this MSF bolus regimen",
+    "sourceId": "med-msf-hydralazine",
+    "monitoring": [
+      "Check BP and pulse before and after each acute dose; fetal monitoring when appropriate",
+      "Persistent severe BP despite the initial sequence requires senior/anaesthetic review, a different agent and HDU-level monitoring; avoid uncontrolled stacking"
+    ],
+    "contraindications": [
+      "Marked hypotension, severe tachycardia or coronary ischaemia; use cautiously in cardiac disease"
+    ],
+    "notes": [],
+    "renalHepatic": "Reduce doses with renal/hepatic impairment"
+  },
+  "nifedipine-acute": {
+    "drug": "Nifedipine immediate release",
+    "indication": "Acute severe hypertension when oral dosing is appropriate",
+    "dose": "10 mg swallowed; reassess at 20 min and give another 10–20 mg if still severe",
+    "route": "Oral, swallowed",
+    "frequency": "Reassess after each 20-minute interval; switch/escalate when the initial-course limit is reached",
+    "duration": "Acute sequence, followed by senior review and a separately prescribed maintenance regimen",
+    "preparation": "Use immediate-release oral tablets/capsules; swallow whole. NEVER sublingual administration; do not use an extended-release tablet as a rapid-loading substitute",
+    "maxDose": "30 mg cumulative for the NHM prose-based initial course; seek senior selection of another agent rather than continuing oral loading",
+    "sourceId": "med-nhm-cemonc",
+    "monitoring": [
+      "Check BP and pulse before and after each acute dose; fetal monitoring when appropriate",
+      "Persistent severe BP despite the initial sequence requires senior/anaesthetic review, a different agent and HDU-level monitoring; avoid uncontrolled stacking"
+    ],
+    "contraindications": [
+      "Hypotension, significant aortic stenosis or acute cardiac compromise",
+      "Magnesium co-administration requires close respiratory/neuromuscular and BP monitoring; follow the named unit protocol"
+    ],
+    "notes": [
+      "NHM CEmONC contains an internal discrepancy: its prose caps the initial course at 30 mg, while the adjacent flowchart shows 10 mg then 20 mg then 20 mg. The app uses the 30 mg prose limit with prompt escalation; confirm the locally approved sequence."
+    ]
+  },
+  "nifedipine-maintenance": {
+    "drug": "Nifedipine extended release",
+    "indication": "Maintenance hypertension in pregnancy/postpartum",
+    "dose": "Start sustained-release nifedipine 10 mg twice daily; titrate according to BP and the exact release formulation",
+    "route": "Oral extended release",
+    "frequency": "Twice daily for the cited sustained-release regimen",
+    "duration": "While hypertension persists; reassess after birth and reduce when BP allows",
+    "preparation": "Use the specified sustained-release tablet, swallowed intact. Other extended-release products may use different strengths/schedules; do not interchange them or use them for acute oral loading.",
+    "maxDose": "80 mg/day for the NHM CEmONC sustained-release regimen",
+    "sourceId": "med-nhm-cemonc",
+    "monitoring": [
+      "BP, headache, flushing, oedema and pulse"
+    ],
+    "contraindications": [
+      "Maternal hypotension or significant cardiac outflow obstruction"
+    ],
+    "notes": []
+  },
+  "nifedipine-tocolysis": {
+    "drug": "Nifedipine immediate release — tocolysis",
+    "indication": "Selected threatened preterm labour to gain time for steroids/transfer, without infection, major bleeding or a reason for immediate birth",
+    "dose": "10 mg orally; if contractions persist repeat every 15 min up to four loading doses; then 20 mg every 6 h",
+    "route": "Oral, never sublingual",
+    "frequency": "Loading as specified, then every 6 h",
+    "duration": "Maximum 48 hours",
+    "preparation": "10 mg immediate-release tablet/capsule; check BP before dosing and confirm the formulation",
+    "maxDose": "40 mg loading; maintenance 80 mg/day; stop after 48 h",
+    "sourceId": "med-msf-nifedipine",
+    "monitoring": [
+      "BP/pulse, contraction frequency and fetal heart rate; stop for hypotension or ischaemic chest pain"
+    ],
+    "contraindications": [
+      "Systolic BP <90 mmHg, severe cardiac disease",
+      "MSF advises against concurrent magnesium; if magnesium is needed, use the agreed obstetric/anaesthetic protocol and do not combine regimens casually"
+    ],
+    "notes": []
+  },
+  "methyldopa": {
+    "drug": "Methyldopa",
+    "indication": "Maintenance hypertension during pregnancy; not emergency BP rescue",
+    "dose": "250 mg twice or three times daily for 2 days; increase by 250 mg every 2–3 days to response",
+    "route": "Oral",
+    "frequency": "Two or three divided doses initially; prescribed divided doses thereafter",
+    "duration": "During pregnancy if required; NICE recommends stopping within 2 days after birth and substituting another agent if needed",
+    "preparation": "250 mg tablets. Do not abruptly discontinue ongoing therapy without a replacement/reduction plan",
+    "maxDose": "3 g/day",
+    "sourceId": "med-msf-methyldopa",
+    "monitoring": [
+      "BP, sedation/mood; blood count and LFTs for fever, jaundice or suspected toxicity"
+    ],
+    "contraindications": [
+      "Active liver disease, previous methyldopa hepatitis, severe depression"
+    ],
+    "notes": [
+      "Postpartum stopping recommendation: NICE NG133."
+    ]
+  },
+  "aspirin-pe": {
+    "drug": "Aspirin low dose",
+    "indication": "NICE regimen for pre-eclampsia prevention in women meeting high/moderate-risk criteria",
+    "dose": "75–150 mg",
+    "route": "Oral",
+    "frequency": "Once daily",
+    "duration": "From 12 weeks until birth (NICE NG133); use a single named prevention protocol",
+    "preparation": "Swallow the prescribed low-dose tablet; do not substitute analgesic-dose aspirin",
+    "maxDose": "150 mg/day in this NICE regimen",
+    "sourceId": "nice-ng133-detail",
+    "monitoring": [
+      "Adherence, bleeding, allergy and the evolving obstetric risk assessment"
+    ],
+    "contraindications": [
+      "Aspirin allergy/NSAID hypersensitivity, active significant bleeding or relevant bleeding disorder"
+    ],
+    "notes": [
+      "Some other named prevention protocols stop at 36 weeks. Choose and document one start/stop protocol rather than prescribing a fixed number of weeks irrespective of gestation."
+    ]
+  },
+  "enoxaparin-treatment": {
+    "drug": "Enoxaparin — VTE treatment",
+    "indication": "Confirmed or strongly suspected acute VTE in pregnancy unless anticoagulation is contraindicated",
+    "dose": "1 mg/kg using booking/early-pregnancy weight",
+    "route": "Subcutaneous",
+    "frequency": "Every 12 hours",
+    "duration": "For the remainder of pregnancy and at least 6 weeks postpartum; at least 3 months total anticoagulation",
+    "preparation": "Use a graduated prefilled syringe of the correct mg strength; inject SC, not IM. Do not interchange mg, mL and anti-Xa units",
+    "maxDose": "Weight-based therapeutic dose; renal dysfunction changes the regimen, not an arbitrary fixed maximum",
+    "sourceId": "med-rcog-vte-37b",
+    "monitoring": [
+      "Baseline CBC/platelets, renal/liver function and bleeding risk; clinical response",
+      "Routine anti-Xa monitoring is not needed for most women; consider extremes of weight, renal impairment or recurrent VTE",
+      "Stop therapeutic LMWH at least 24 h before planned neuraxial procedures; anaesthetic staff must prescribe postpartum restart using puncture time, catheter removal and haemostasis"
+    ],
+    "contraindications": [
+      "Active major bleeding, heparin-induced thrombocytopenia or imminent urgent surgery without an anticoagulation plan"
+    ],
+    "notes": [],
+    "renalHepatic": "CrCl <30 mL/min: specialist regimen; consider IV unfractionated heparin when rapid reversal is needed"
+  },
+  "enoxaparin-prophylaxis": {
+    "drug": "Enoxaparin — prophylaxis",
+    "indication": "Risk-assessed obstetric thromboprophylaxis; standard-weight example, NOT VTE treatment",
+    "dose": "40 mg for a woman weighing 50–90 kg; other weight bands require the RCOG weight table",
+    "route": "Subcutaneous",
+    "frequency": "Once daily",
+    "duration": "According to the documented risk assessment: commonly 10 days after birth or 6 weeks for high risk; antenatal use when indicated",
+    "preparation": "40 mg/0.4 mL prefilled product: use the prescribed syringe SC. Confirm its actual concentration; do not give IM",
+    "maxDose": "40 mg/day applies ONLY to this standard-weight prophylactic row; renal impairment and weight extremes require adjustment",
+    "sourceId": "med-rcog-vte-37a",
+    "monitoring": [
+      "Reassess VTE and bleeding risk after birth, surgery, admission or clinical change",
+      "At least 12 h between prophylactic LMWH and neuraxial placement; postpartum restart needs an anaesthetic plan, adequate haemostasis and consideration of time since puncture/catheter removal"
+    ],
+    "contraindications": [
+      "Active bleeding, HIT or neuraxial timing contraindication"
+    ],
+    "notes": [],
+    "renalHepatic": "Reduced renal function requires a different dose/agent; do not reuse a standard prophylactic syringe without review"
+  },
+  "metformin": {
+    "drug": "Metformin immediate release",
+    "indication": "Selected GDM/type 2 diabetes; assess glucose, renal function and suitability for metformin versus insulin",
+    "dose": "Week 1: 500 mg with breakfast; week 2: 500 mg twice daily; increase by 500 mg/week if tolerated and needed",
+    "route": "Oral",
+    "frequency": "Once daily initially, then twice daily with meals",
+    "duration": "While indicated and tolerated; GDM treatment is normally stopped after birth, with a diabetes follow-up plan",
+    "preparation": "500 mg tablets taken with meals. Use slower titration for gastrointestinal intolerance; do not silently substitute a modified-release product",
+    "maxDose": "2 g/day (1 g twice daily) for this MSF regimen",
+    "sourceId": "med-msf-metformin",
+    "monitoring": [
+      "Fasting and post-meal glucose; renal function before treatment and with acute illness; B12 with long-term use",
+      "Escalate to insulin when glucose targets are not reached or metformin is unsuitable"
+    ],
+    "contraindications": [
+      "DKA, hypoxia, major dehydration or severe renal impairment"
+    ],
+    "notes": [
+      "NICE NG3 permits metformin in selected pregnancies; placental transfer and treatment alternatives should be discussed."
+    ],
+    "renalHepatic": "Avoid if eGFR <30; reduced dosing/closer review with moderate impairment; withhold during acute dehydration, hypoxia or renal deterioration"
+  },
+  "insulin-nph": {
+    "drug": "NPH (isophane) insulin with prescribed mealtime insulin",
+    "indication": "Pregnancy diabetes: match basal and meal insulin to the glucose pattern",
+    "dose": "Patient-specific dose in UNITS; NPH once or twice daily, with separately prescribed meal doses if needed. A universal 0.3-units/kg starting prescription is not appropriate for every GDM pattern",
+    "route": "Subcutaneous only",
+    "frequency": "NPH once/twice daily; short-acting insulin before meals according to its formulation",
+    "duration": "Continue and titrate throughout pregnancy; reduce/review promptly after birth. Type 1 diabetes always requires basal insulin",
+    "preparation": "Use U-100 insulin with a matching insulin syringe/pen. Gently resuspend NPH until uniform. NPH is NEVER IV. If mixing compatible human insulins, draw clear short-acting insulin before cloudy NPH",
+    "maxDose": "No universal fixed maximum: titrate the prescribed units against glucose and hypoglycaemia, with the diabetes team",
+    "sourceId": "med-msf-insulin-nph",
+    "monitoring": [
+      "Record the actual basal/meal doses in the patient plan; monitor fasting, premeal/postmeal glucose or CGM",
+      "Review patterns rather than a single high value; teach injection technique, recognition/treatment of hypoglycaemia and sick-day ketone testing",
+      "NICE targets, if achievable without problematic hypoglycaemia: fasting <5.3 mmol/L, 1-h postmeal <7.8 or 2-h <6.4; keep glucose >4 mmol/L on insulin"
+    ],
+    "contraindications": [
+      "Current hypoglycaemia requires treatment and dose review; do not omit basal insulin in type 1 diabetes"
+    ],
+    "notes": [
+      "The linked NICE NG3 guidance provides pregnancy targets and treatment selection. The dose must be prescribed individually; this is an explicit dosing constraint, not a missing fixed dose."
+    ]
+  },
+  "betamethasone-antenatal": {
+    "drug": "Betamethasone — antenatal course",
+    "indication": "Imminent preterm birth within the guideline gestational window; do not delay urgent maternal/fetal delivery",
+    "dose": "12 mg IM, then 12 mg IM 24 hours later",
+    "route": "IM",
+    "frequency": "Two doses, 24 h apart",
+    "duration": "One 24 mg course. Consider only ONE repeat course under NICE criteria; not routine weekly courses",
+    "preparation": "Confirm product strength: for 6 mg/mL, 12 mg = 2 mL; volumes differ by formulation. Use the obstetric IM preparation",
+    "maxDose": "24 mg/course; NICE permits no more than 2 courses in total under its repeat-course criteria",
+    "sourceId": "med-who-antenatal-steroids",
+    "monitoring": [
+      "Glucose monitoring and an insulin-adjustment plan in diabetes; assess infection and timing of birth"
+    ],
+    "contraindications": [
+      "Do not delay lifesaving delivery to complete steroids; do not use a blanket “infection contraindication” without senior assessment"
+    ],
+    "notes": [
+      "NICE offers at 24+0–33+6 weeks, considers 34+0–35+6; individual discussion at 22+0–23+6. Repeat: <34 weeks, prior course >7 days ago and very high risk of birth in 48 h."
+    ]
+  },
+  "dexamethasone-antenatal": {
+    "drug": "Dexamethasone — antenatal alternative",
+    "indication": "Alternative fetal-lung-maturation course when appropriate",
+    "dose": "6 mg IM every 12 h for four doses",
+    "route": "IM",
+    "frequency": "Every 12 hours, four doses",
+    "duration": "24 mg total over 36 h; ONE course, subject to the same repeat-course restrictions",
+    "preparation": "Check the injectable product: if 4 mg/mL, 6 mg = 1.5 mL; other strengths require recalculation. Give IM for this antenatal regimen",
+    "maxDose": "Four 6 mg doses = 24 mg/course; do not combine with a full betamethasone course",
+    "sourceId": "med-who-antenatal-steroids",
+    "monitoring": [
+      "Maternal glucose, infection assessment and birth timing; diabetes team plan"
+    ],
+    "contraindications": [
+      "Do not prolong an unsafe pregnancy to finish the course"
+    ],
+    "notes": []
+  },
+  "cefazolin-cs": {
+    "drug": "Cefazolin — caesarean prophylaxis",
+    "indication": "Surgical prophylaxis, not treatment of established infection",
+    "dose": "2 g IV; 3 g for weight ≥120 kg in the cited surgical prophylaxis standard",
+    "route": "IV infusion",
+    "frequency": "Once, completed within 60 min before incision; redose for a prolonged operation or major blood loss",
+    "duration": "Single perioperative prophylaxis course; do not continue routine postoperative doses without an infection indication",
+    "preparation": "Reconstitute and dilute the specific cefazolin vial according to its label; prepare a compatible IV infusion and administer over 30 min for the cited formulation. Never use an IM lidocaine diluent IV",
+    "maxDose": "Initial 2 g (or 3 g ≥120 kg); redose cefazolin at 4 h if indicated, earlier after major blood loss per anaesthetic plan",
+    "sourceId": "med-surgical-prophylaxis",
+    "monitoring": [
+      "Allergy history, time relative to incision, operation duration and blood loss"
+    ],
+    "contraindications": [
+      "Severe beta-lactam allergy requires an alternative COMBINATION regimen, not clindamycin alone by default"
+    ],
+    "notes": [
+      "For a severe beta-lactam allergy, the cited prophylaxis standard uses clindamycin 900 mg IV PLUS gentamicin 5 mg/kg IV as a single pre-incision regimen. Confirm dosing weight/renal risk."
+    ]
+  },
+  "ampicillin-chorio": {
+    "drug": "Ampicillin — chorioamnionitis component",
+    "indication": "Intra-amniotic infection, in combination with gentamicin; add anaerobic cover for caesarean according to the chosen guideline",
+    "dose": "2 g",
+    "route": "IV infusion",
+    "frequency": "Every 6 hours",
+    "duration": "Continue through birth with postpartum review; the cited Malaysian NAG continues until afebrile/asymptomatic ≥48 h. Other national protocols shorten postpartum treatment after clinical recovery",
+    "preparation": "Reconstitute the actual vial per label; dilute each adult dose in 100 mL sodium chloride 0.9% or glucose 5% and infuse over 30 min. Use a separate line/flush from gentamicin",
+    "maxDose": "8 g/day in this 2 g every-6-h regimen; renal impairment requires adjustment",
+    "sourceId": "med-nag-obstetric",
+    "monitoring": [
+      "Temperature, pulse, BP, uterine tenderness, fetal heart rate, cultures and renal function"
+    ],
+    "contraindications": [
+      "Penicillin anaphylaxis; check severe delayed beta-lactam reactions"
+    ],
+    "notes": [
+      "This is not GBS prophylaxis and is not ampicillin monotherapy. The postpartum duration differs between guidelines; record the local choice explicitly."
+    ]
+  },
+  "ampicillin-gbs": {
+    "drug": "Ampicillin — GBS intrapartum prophylaxis",
+    "indication": "GBS prevention during labour when prophylaxis is indicated",
+    "dose": "2 g IV initially, then 1 g IV",
+    "route": "IV infusion",
+    "frequency": "Initial 2 g load, then 1 g every 4 hours",
+    "duration": "Continue UNTIL BIRTH; this is not a multi-day infection-treatment course",
+    "preparation": "Reconstitute according to the vial; dilute the adult dose in compatible fluid and infuse over 30 min. Do not mix with gentamicin",
+    "maxDose": "2 g loading, then 1 g per subsequent dose until birth",
+    "sourceId": "med-cdc-gbs",
+    "monitoring": [
+      "Penicillin allergy, dose times and delivery time; do not delay necessary obstetric intervention solely to complete antibiotic hours"
+    ],
+    "contraindications": [
+      "Penicillin anaphylaxis or severe delayed beta-lactam reaction"
+    ],
+    "notes": [
+      "Penicillin G is dosed in MILLION UNITS; its 5-million-unit loading schedule must not be copied as grams of ampicillin."
+    ]
+  },
+  "gentamicin-obstetric": {
+    "drug": "Gentamicin — obstetric infection component",
+    "indication": "Combination therapy for chorioamnionitis, postpartum endometritis or septic miscarriage",
+    "dose": "5 mg/kg using the approved aminoglycoside dosing weight",
+    "route": "IV infusion",
+    "frequency": "Every 24 h initially if renal function allows; subsequent interval depends on drug levels and renal function",
+    "duration": "Daily review; limit unnecessary exposure, stop or narrow after source control and clinical recovery. Duration follows the infection, not a universal 48–72 h rule",
+    "preparation": "40 mg/mL stock: volume in mL = prescribed mg ÷40. Dilute the adult dose in 100 mL sodium chloride 0.9%/glucose 5%; infuse over 30 min. Use a separate line/flush from beta-lactams",
+    "maxDose": "Weight-based; do not apply total body weight uncritically in obesity. Withhold/review further doses for accumulating levels or renal deterioration",
+    "sourceId": "med-msf-gentamicin",
+    "monitoring": [
+      "Baseline and serial creatinine/urine output; drug-level monitoring using the hospital once-daily schedule",
+      "Ask about tinnitus, hearing change or vertigo; stop and review suspected ototoxicity"
+    ],
+    "contraindications": [
+      "Aminoglycoside allergy; myasthenia gravis, AKI, prior auditory/vestibular toxicity require specialist assessment"
+    ],
+    "notes": [],
+    "renalHepatic": "Adjust interval/dose to renal function and measured levels; do not keep automatic daily dosing in AKI"
+  },
+  "ceftriaxone-gonorrhoea": {
+    "drug": "Ceftriaxone — uncomplicated gonorrhoea",
+    "indication": "Gonococcal cervicitis/urethritis; add pregnancy-appropriate chlamydia treatment if not excluded",
+    "dose": "500 mg IM once if weight <150 kg; 1 g IM once if ≥150 kg",
+    "route": "IM",
+    "frequency": "Once",
+    "duration": "Single treatment dose; partner management, test-of-cure when indicated and retesting remain necessary",
+    "preparation": "Use the IM diluent specified for the exact vial; lidocaine-containing IM solution must NEVER be given IV. Reconstitution volumes vary by brand",
+    "maxDose": "1 g for the ≥150 kg group in this CDC regimen",
+    "sourceId": "cdc-gonorrhoea-detail",
+    "monitoring": [
+      "Allergy, pregnancy and chlamydia status; retest at 3 months, and pharyngeal infection test-of-cure at 7–14 days"
+    ],
+    "contraindications": [
+      "Severe cephalosporin allergy requires a specific alternative and specialist advice in pregnancy"
+    ],
+    "notes": []
+  },
+  "ceftriaxone-pid-im": {
+    "drug": "Ceftriaxone — outpatient PID component",
+    "indication": "Mild/moderate PID in a NON-PREGNANT patient suitable for outpatient treatment",
+    "dose": "500 mg IM once, PLUS doxycycline 100 mg twice daily AND metronidazole 500 mg twice daily for 14 days",
+    "route": "IM ceftriaxone + oral combination partners",
+    "frequency": "Ceftriaxone once; partners twice daily",
+    "duration": "One ceftriaxone dose; oral partners for 14 days; reassess within 72 h",
+    "preparation": "Use the vial-specific IM reconstitution. Do not use lidocaine-containing IM solution IV",
+    "maxDose": "If ≥150 kg with documented gonorrhoea, ceftriaxone 1 g IM (CDC). Do not repeat daily as an outpatient substitute for reassessment",
+    "sourceId": "cdc-pid-detail",
+    "monitoring": [
+      "Clinical improvement within 72 h, STI results, adherence, partner treatment and pregnancy test"
+    ],
+    "contraindications": [
+      "Pregnancy, tubo-ovarian abscess, severe illness/vomiting or uncertain surgical diagnosis usually requires admission; this outpatient doxycycline regimen is unsuitable"
+    ],
+    "notes": []
+  },
+  "ceftriaxone-pid-iv": {
+    "drug": "Ceftriaxone — inpatient PID component",
+    "indication": "Hospitalised PID, with appropriate combination antibiotics",
+    "dose": "1 g IV daily, PLUS doxycycline 100 mg twice daily AND metronidazole 500 mg twice daily",
+    "route": "IV, with oral/IV combination partners",
+    "frequency": "Ceftriaxone every 24 h; partners every 12 h",
+    "duration": "Switch after clinical improvement (usually 24–48 h) to appropriate oral therapy to COMPLETE 14 days; abscess needs adequate anaerobic cover",
+    "preparation": "Reconstitute with water for injection per product, dilute in 100 mL compatible sodium chloride 0.9%/glucose 5% and infuse over 30 min. No calcium-containing diluent",
+    "maxDose": "1 g/day in this CDC PID regimen; do not omit the combination partners",
+    "sourceId": "cdc-pid-detail",
+    "monitoring": [
+      "Clinical response, cultures, oral tolerance and abscess/source-control assessment"
+    ],
+    "contraindications": [
+      "Pregnancy requires an obstetric/infection-specialist regimen; do not automatically continue doxycycline"
+    ],
+    "notes": []
+  },
+  "ceftriaxone-pyelonephritis": {
+    "drug": "Ceftriaxone — pyelonephritis",
+    "indication": "Selected inpatient pyelonephritis in pregnancy, guided by cultures and resistance",
+    "dose": "1–2 g",
+    "route": "IV infusion",
+    "frequency": "Every 24 hours",
+    "duration": "Review IV therapy by 48 h; step down when improving. ACOG uses 14 days TOTAL therapy for pregnancy pyelonephritis",
+    "preparation": "Use water for reconstitution and a compatible non-calcium IV diluent; adult infusion example 100 mL sodium chloride 0.9% over 30 min. Do not give lidocaine-containing IM solution IV",
+    "maxDose": "2 g/day for this row; renal/hepatic dysfunction and severe infection need individual review",
+    "sourceId": "med-acog-uti",
+    "monitoring": [
+      "Vitals, sepsis features, renal function, cultures and clinical response within 48–72 h"
+    ],
+    "contraindications": [
+      "Cephalosporin anaphylaxis; do not use nitrofurantoin/fosfomycin as renal-parenchymal step-down agents"
+    ],
+    "notes": [
+      "The NICE NG111 pregnancy table usually uses cefuroxime; this is the ACOG-compatible ceftriaxone option, not a claim that every guideline chooses the same drug."
+    ]
+  },
+  "doxycycline-chlamydia": {
+    "drug": "Doxycycline — chlamydia",
+    "indication": "Chlamydial infection in a non-pregnant adult",
+    "dose": "100 mg",
+    "route": "Oral",
+    "frequency": "Twice daily",
+    "duration": "7 days",
+    "preparation": "Take with a full glass of water while upright; stay upright for at least 1 h. Separate iron, calcium, zinc and antacids by ≥2 h",
+    "maxDose": "200 mg/day in this regimen",
+    "sourceId": "cdc-chlamydia-detail",
+    "monitoring": [
+      "Adherence, pregnancy status, partner treatment and retesting at approximately 3 months"
+    ],
+    "contraindications": [
+      "Pregnancy: use a pregnancy-recommended regimen such as azithromycin rather than this row"
+    ],
+    "notes": []
+  },
+  "doxycycline-pid": {
+    "drug": "Doxycycline — PID component",
+    "indication": "Non-pregnant PID; combine with ceftriaxone and metronidazole",
+    "dose": "100 mg",
+    "route": "Oral (IV if required in hospital)",
+    "frequency": "Every 12 hours",
+    "duration": "14 days TOTAL treatment",
+    "preparation": "Oral route is effective when tolerated; use a full glass of water and remain upright. Separate from polyvalent cations",
+    "maxDose": "200 mg/day in this PID regimen",
+    "sourceId": "cdc-pid-detail",
+    "monitoring": [
+      "Clinical response within 72 h and oral tolerance; check pregnancy and partner management"
+    ],
+    "contraindications": [
+      "Do not apply the non-pregnant PID regimen in pregnancy"
+    ],
+    "notes": []
+  },
+  "metronidazole-bv": {
+    "drug": "Metronidazole — bacterial vaginosis",
+    "indication": "Symptomatic BV, including pregnancy where treatment is indicated",
+    "dose": "500 mg",
+    "route": "Oral",
+    "frequency": "Twice daily",
+    "duration": "7 days",
+    "preparation": "One 500 mg tablet each dose. Alternative formulations/regimens must be prescribed separately",
+    "maxDose": "1 g/day for 7 days in this CDC regimen",
+    "sourceId": "cdc-bv-detail",
+    "monitoring": [
+      "Symptoms and tolerance; recurrent symptoms need reassessment, not indefinite repeat courses"
+    ],
+    "contraindications": [
+      "Nitroimidazole allergy; review warfarin, lithium and severe hepatic disease"
+    ],
+    "notes": [
+      "CDC does not require routine alcohol abstinence on evidence of a disulfiram-like interaction; product leaflets may give different advice. Follow the dispensed product instructions and discuss the difference."
+    ]
+  },
+  "metronidazole-trichomonas": {
+    "drug": "Metronidazole — trichomoniasis in women",
+    "indication": "Trichomoniasis, including symptomatic pregnant women",
+    "dose": "500 mg",
+    "route": "Oral",
+    "frequency": "Twice daily",
+    "duration": "7 days",
+    "preparation": "One 500 mg tablet each dose; assess vomiting/adherence",
+    "maxDose": "1 g/day for this 7-day regimen",
+    "sourceId": "cdc-trichomoniasis-detail",
+    "monitoring": [
+      "Treat partner(s), avoid sex until both treatment courses complete and symptoms resolve, and retest women at about 3 months"
+    ],
+    "contraindications": [
+      "Nitroimidazole allergy; review interactions and hepatic impairment"
+    ],
+    "notes": []
+  },
+  "metronidazole-pid": {
+    "drug": "Metronidazole — PID oral component",
+    "indication": "Anaerobic cover in the complete CDC PID regimen",
+    "dose": "500 mg",
+    "route": "Oral",
+    "frequency": "Twice daily",
+    "duration": "14 days",
+    "preparation": "One 500 mg tablet twice daily, with doxycycline and the appropriate cephalosporin regimen",
+    "maxDose": "1 g/day for this PID regimen",
+    "sourceId": "cdc-pid-detail",
+    "monitoring": [
+      "Clinical response within 72 h and tolerance"
+    ],
+    "contraindications": [
+      "Nitroimidazole allergy; review interactions and severe hepatic impairment"
+    ],
+    "notes": []
+  },
+  "metronidazole-iv": {
+    "drug": "Metronidazole — obstetric anaerobic cover",
+    "indication": "Combination treatment of selected septic miscarriage/endometritis or caesarean chorioamnionitis",
+    "dose": "500 mg",
+    "route": "IV infusion",
+    "frequency": "Every 8 hours",
+    "duration": "Review daily and switch to oral when feasible; duration is source-specific: uncomplicated infection recovery versus septic miscarriage (10–14 days in Malaysian NAG)",
+    "preparation": "Ready-to-use 500 mg/100 mL (5 mg/mL) bag infused over 30 min; do not add other drugs to the bag",
+    "maxDose": "1.5 g/day in this regimen; severe hepatic impairment requires reduction",
+    "sourceId": "med-msf-metronidazole-iv",
+    "monitoring": [
+      "Clinical response, LFTs in prolonged treatment, interacting anticoagulants and neuropathy with prolonged exposure"
+    ],
+    "contraindications": [
+      "Nitroimidazole allergy; severe hepatic impairment requires a reduced regimen"
+    ],
+    "notes": [],
+    "renalHepatic": "In severe hepatic impairment the cited MSF monograph reduces the daily dose to one third"
+  },
+  "azithromycin-chlamydia": {
+    "drug": "Azithromycin — pregnancy chlamydia",
+    "indication": "Recommended CDC regimen for chlamydia in pregnancy",
+    "dose": "1 g",
+    "route": "Oral",
+    "frequency": "Once",
+    "duration": "Single dose; test-of-cure at approximately 4 weeks and retest at 3 months",
+    "preparation": "Two 500 mg tablets (or four 250 mg tablets) taken together; check formulation instructions. Persistent vomiting requires reassessment",
+    "maxDose": "1 g for this single-dose regimen",
+    "sourceId": "cdc-chlamydia-detail",
+    "monitoring": [
+      "Partner treatment, adherence/retained dose, symptoms; do not test NAAT too early after treatment"
+    ],
+    "contraindications": [
+      "Macrolide allergy; QT prolongation, electrolyte disturbance or interacting QT-prolonging drugs need review"
+    ],
+    "notes": []
+  },
+  "erythromycin-pprom": {
+    "drug": "Erythromycin — PPROM latency",
+    "indication": "Confirmed PPROM without established infection or another indication for immediate birth",
+    "dose": "250 mg",
+    "route": "Oral",
+    "frequency": "Four times daily",
+    "duration": "Maximum 10 days OR until established labour, whichever occurs first (NICE NG25)",
+    "preparation": "250 mg tablets; confirm the erythromycin salt and avoid erythromycin estolate in pregnancy. Do not substitute co-amoxiclav for latency prophylaxis",
+    "maxDose": "1 g/day for at most 10 days in this regimen",
+    "sourceId": "nice-ng25-detail",
+    "monitoring": [
+      "Temperature, pulse, uterine tenderness, fetal status and drug tolerance; infection changes management"
+    ],
+    "contraindications": [
+      "Macrolide allergy; QT prolongation and interacting drugs; do not use latency antibiotics to defer delivery in sepsis"
+    ],
+    "notes": []
+  },
+  "misoprostol-abortion": {
+    "drug": "Misoprostol — induced abortion <12 weeks",
+    "indication": "After appropriate eligibility, pregnancy-location assessment and consent; comply with India MTP law and approved service arrangements",
+    "dose": "800 micrograms 24–48 h after mifepristone 200 mg",
+    "route": "Sublingual, buccal or vaginal",
+    "frequency": "Initial dose once; additional doses require a defined abortion-care regimen and reassessment",
+    "duration": "Initial combined course over 1–2 days; confirm completion using the service follow-up plan",
+    "preparation": "Four 200-microgram tablets = 800 micrograms. Use the prescribed route; do not substitute the labour-induction dose",
+    "maxDose": "WHO permits repeat doses when required without a universal fixed maximum; do not import the ≥12-week 400-microgram schedule into this <12-week row",
+    "sourceId": "med-who-abortion",
+    "monitoring": [
+      "Expected bleeding/pain, heavy bleeding, infection signs and pregnancy resolution; persistent pain or symptoms requires ectopic assessment"
+    ],
+    "contraindications": [
+      "Suspected ectopic pregnancy, haemodynamic instability, uncontrolled major bleeding; urgent assessment rather than outpatient dosing"
+    ],
+    "notes": []
+  },
+  "misoprostol-missed": {
+    "drug": "Misoprostol — missed miscarriage",
+    "indication": "NICE NG126 medical management of confirmed missed miscarriage",
+    "dose": "800 micrograms 48 h after mifepristone 200 mg orally, unless the sac has already passed",
+    "route": "Vaginal, oral or sublingual",
+    "frequency": "One initial dose",
+    "duration": "Single initial combined course; review if bleeding has not started within 48 h of misoprostol",
+    "preparation": "Four 200-microgram tablets = 800 micrograms; provide analgesia and contact arrangements",
+    "maxDose": "800 micrograms initially; further treatment follows reassessment rather than automatic repeat dosing",
+    "sourceId": "nice-ng126-miscarriage-detail",
+    "monitoring": [
+      "Bleeding, pain, fever and haemodynamic symptoms; home urine pregnancy test at 3 weeks with assessment if positive or symptomatic"
+    ],
+    "contraindications": [
+      "Uncertain viability/location, suspected ectopic or uncontrolled bleeding"
+    ],
+    "notes": []
+  },
+  "misoprostol-incomplete": {
+    "drug": "Misoprostol — incomplete miscarriage",
+    "indication": "NICE NG126 medical management of confirmed incomplete miscarriage",
+    "dose": "600 micrograms (800 micrograms may be used to align local protocols)",
+    "route": "Vaginal, oral or sublingual",
+    "frequency": "Once",
+    "duration": "Single initial treatment; follow-up and further intervention depend on symptoms/completion",
+    "preparation": "600 micrograms = three 200-microgram tablets; 800 micrograms = four. Do NOT add mifepristone for incomplete miscarriage",
+    "maxDose": "One initial 600/800-microgram dose; reassess persistent bleeding or retained tissue",
+    "sourceId": "nice-ng126-miscarriage-detail",
+    "monitoring": [
+      "Bleeding/pain, fever and urine pregnancy test at 3 weeks; positive test or concerning symptoms requires reassessment"
+    ],
+    "contraindications": [
+      "Instability, major haemorrhage, infection requiring source control or uncertain diagnosis"
+    ],
+    "notes": []
+  },
+  "misoprostol-iol": {
+    "drug": "Misoprostol — oral labour induction",
+    "indication": "Unscarred uterus, live fetus and an approved hospital induction indication; cited 25-microgram product is for ≥37 weeks",
+    "dose": "25 micrograms orally every 2 h (alternative product regimen: 50 micrograms every 4 h)",
+    "route": "Oral",
+    "frequency": "Every 2 h for the 25-microgram regimen; stop further doses when labour begins or monitoring is abnormal",
+    "duration": "At most 24 h before review; stop for labour, tachysystole or fetal concern",
+    "preparation": "Use a manufactured 25-microgram tablet. The cited tablet score is NOT for splitting. Do not estimate 25 micrograms by casually cutting a 200-microgram tablet",
+    "maxDose": "200 micrograms in 24 h; wait ≥4 h after the last dose before oxytocin",
+    "sourceId": "med-misoprostol-iol-label",
+    "monitoring": [
+      "Fetal heart rate and uterine contractions; hospital staff and emergency birth facilities available"
+    ],
+    "contraindications": [
+      "Prior caesarean/uterine scar, concurrent oxytocin, unexplained bleeding or fetal concern requiring delivery"
+    ],
+    "notes": [
+      "Vaginal and sublingual regimens have different intervals; do not copy this two-hour oral schedule to another route."
+    ]
+  },
+  "mifepristone-abortion": {
+    "drug": "Mifepristone — induced abortion",
+    "indication": "Priming for a combined medical-abortion course <12 weeks, within the legal and service framework",
+    "dose": "200 mg",
+    "route": "Oral",
+    "frequency": "Once, followed by misoprostol 800 micrograms 24–48 h later",
+    "duration": "One combined course; confirmation of completion and emergency access are essential",
+    "preparation": "One 200 mg tablet swallowed; arrange the exact subsequent misoprostol route, time and follow-up before treatment",
+    "maxDose": "200 mg in this priming regimen; not repeated daily",
+    "sourceId": "med-who-abortion",
+    "monitoring": [
+      "Bleeding, pain, ongoing pregnancy symptoms and access to urgent review"
+    ],
+    "contraindications": [
+      "Suspected ectopic/molar pregnancy, chronic adrenal failure, long-term systemic corticosteroid therapy or significant bleeding/anticoagulation concerns"
+    ],
+    "notes": [
+      "A single dose does not require a routine breastfeeding interruption in the cited MSF monograph."
+    ]
+  },
+  "mifepristone-missed": {
+    "drug": "Mifepristone — missed miscarriage",
+    "indication": "Confirmed missed miscarriage choosing NICE medical management",
+    "dose": "200 mg, followed 48 h later by misoprostol 800 micrograms unless the sac has passed",
+    "route": "Oral",
+    "frequency": "Once",
+    "duration": "One initial combined course",
+    "preparation": "One 200 mg tablet; provide written timing and contact instructions. No mifepristone for incomplete miscarriage",
+    "maxDose": "200 mg initially",
+    "sourceId": "nice-ng126-miscarriage-detail",
+    "monitoring": [
+      "Symptoms, bleeding and subsequent completion assessment"
+    ],
+    "contraindications": [
+      "Ectopic pregnancy or unconfirmed diagnosis; adrenal insufficiency or long-term systemic steroids require review"
+    ],
+    "notes": []
+  },
+  "methotrexate-ectopic": {
+    "drug": "Methotrexate — single-dose ectopic regimen",
+    "indication": "Selected stable unruptured tubal ectopic pregnancy with assured follow-up; NICE selection criteria apply",
+    "dose": "50 mg/m² body-surface area",
+    "route": "IM",
+    "frequency": "Once on day 1; hCG on days 4 and 7",
+    "duration": "Weekly hCG thereafter until resolution; falling values do not eliminate rupture risk",
+    "preparation": "Record height and weight, calculate BSA and total mg. Cytotoxic pharmacy prepares the dose at the actual product concentration; independently verify prescribed mg and final mL. Do not reuse a fixed vial volume for every patient",
+    "maxDose": "No automatic repeat dose: <15% day-4-to-day-7 fall, plateau or rise requires senior reassessment for another dose or surgery",
+    "sourceId": "nhs-ectopic-mtx-detail",
+    "monitoring": [
+      "Baseline CBC, liver/renal function and hCG; day-4/day-7 hCG, then weekly",
+      "Seek emergency care for worsening abdominal/shoulder-tip pain, dizziness, syncope or heavy bleeding",
+      "Avoid folate supplements, interacting NSAIDs and alcohol as advised; avoid conception for 3 months"
+    ],
+    "contraindications": [
+      "Rupture/instability, significant pain, inability to follow up, breastfeeding, significant cytopenia/liver/renal disease",
+      "NICE: fetal heartbeat, mass ≥35 mm or hCG ≥5000 IU/L favours surgery"
+    ],
+    "notes": [
+      "The NHS GGC protocol had a scheduled review date in September 2026; its local currency must be confirmed. NICE is used for eligibility.",
+      "If the day-4-to-day-7 fall is inadequate, do not automatically redose: reassess symptoms, hCG trend, eligibility and the need for surgery with a senior clinician."
+    ]
+  },
+  "ondansetron-oral": {
+    "drug": "Ondansetron — oral HG option",
+    "indication": "Second-line nausea/vomiting or hyperemesis after assessment and discussion of benefits and small absolute fetal-risk signals",
+    "dose": "4 mg every 8 h OR 8 mg every 12 h",
+    "route": "Oral",
+    "frequency": "Use ONE of these schedules",
+    "duration": "Review daily during acute illness; reduce/stop as oral intake and symptoms improve rather than prescribe a fixed long course",
+    "preparation": "Use the prescribed tablet/orodispersible formulation; correct dehydration and electrolyte disturbance",
+    "maxDose": "12 mg/day for 4 mg every 8 h OR 16 mg/day for 8 mg every 12 h; severe hepatic impairment max 8 mg/day",
+    "sourceId": "med-rcog-hg",
+    "monitoring": [
+      "Response, constipation, QT/ECG risk, potassium/magnesium and interacting QT-prolonging drugs"
+    ],
+    "contraindications": [
+      "Congenital long QT or significant electrolyte derangement needs correction/specialist review"
+    ],
+    "notes": [
+      "This obstetric guideline differs from the more restrictive MSF general ondansetron monograph; the app uses the RCOG HG pathway after counselling."
+    ]
+  },
+  "ondansetron-iv": {
+    "drug": "Ondansetron — IV HG option",
+    "indication": "Second-line HG when oral treatment cannot be retained",
+    "dose": "8 mg over 15 min",
+    "route": "IV infusion",
+    "frequency": "Every 12 hours",
+    "duration": "Review daily; change to oral treatment when tolerated",
+    "preparation": "2 mg/mL solution: 8 mg = 4 mL; dilute in compatible IV fluid according to the actual product label and infuse over 15 min, not rapid IV push",
+    "maxDose": "16 mg/day in this RCOG HG regimen; severe hepatic impairment max 8 mg/day",
+    "sourceId": "med-rcog-hg",
+    "monitoring": [
+      "ECG/QT risk, potassium/magnesium, symptom control and constipation"
+    ],
+    "contraindications": [
+      "Correct significant electrolyte disturbance; review other QT-prolonging drugs"
+    ],
+    "notes": []
+  },
+  "doxylamine-pyridoxine": {
+    "drug": "Doxylamine/pyridoxine delayed release",
+    "indication": "Nausea and vomiting of pregnancy: the cited product contains 10 mg/10 mg PER tablet",
+    "dose": "Day 1: two tablets at bedtime. If inadequate: day 3 add one morning tablet; day 4 may add one mid-afternoon tablet",
+    "route": "Oral delayed release",
+    "frequency": "Daily scheduled dosing, not as-needed",
+    "duration": "Reassess during pregnancy; taper gradually when no longer needed",
+    "preparation": "10 mg doxylamine +10 mg pyridoxine gastro-resistant tablets: swallow whole with water on an empty stomach. Do not crush, split or substitute a different-strength combination",
+    "maxDose": "4 tablets/day: one morning, one mid-afternoon, two bedtime (40 mg/40 mg total)",
+    "sourceId": "med-xonvea-label",
+    "monitoring": [
+      "Sedation, symptom control, ability to eat/drink; avoid driving if drowsy"
+    ],
+    "contraindications": [
+      "MAO inhibitors; additive sedation with alcohol or other CNS depressants; breastfeeding requires product-specific advice"
+    ],
+    "notes": []
+  },
+  "thiamine-hg-oral": {
+    "drug": "Thiamine — HG oral supplementation",
+    "indication": "Prolonged vomiting or markedly reduced dietary intake; protect against thiamine deficiency",
+    "dose": "100 mg",
+    "route": "Oral",
+    "frequency": "Three times daily",
+    "duration": "While vomiting/restricted intake persists; review nutritional recovery",
+    "preparation": "100 mg tablet; if oral intake is unreliable, use prescribed parenteral supplementation BEFORE carbohydrate-containing fluids/nutrition",
+    "maxDose": "300 mg/day for this oral supplementation regimen; suspected Wernicke disease requires a treatment regimen, not oral prophylaxis",
+    "sourceId": "med-rcog-hg",
+    "monitoring": [
+      "Dietary intake, weight, hydration; confusion, ataxia or eye-movement abnormalities require urgent assessment"
+    ],
+    "contraindications": [
+      "Do not treat suspected Wernicke encephalopathy with low-dose oral supplementation alone"
+    ],
+    "notes": []
+  },
+  "thiamine-before-glucose": {
+    "drug": "Thiamine — parenteral supplementation",
+    "indication": "Prolonged HG with inability to retain oral thiamine; before IV carbohydrate/nutrition",
+    "dose": "100 mg parenteral thiamine as the initial supplementation dose; follow the local vitamin-B preparation for subsequent doses",
+    "route": "Slow IV infusion",
+    "frequency": "Before carbohydrate administration, with continued prescribed supplementation while intake is inadequate",
+    "duration": "Acute supplementation with daily nutritional review; change to oral 100 mg three times daily once retained",
+    "preparation": "If the product is 100 mg/2 mL, use one ampoule diluted as specified by its label and infuse very slowly over 30 min. Monitor for hypersensitivity",
+    "maxDose": "This is PREVENTION, not a Wernicke-treatment dose; suspected Wernicke needs urgent higher-dose specialist IV treatment",
+    "sourceId": "med-rcog-hg",
+    "monitoring": [
+      "Hypersensitivity, mental state, eye signs, gait, electrolytes and nutrition"
+    ],
+    "contraindications": [
+      "Do not delay lifesaving glucose in severe hypoglycaemia while searching for thiamine; give both promptly"
+    ],
+    "notes": [
+      "RCOG HG guidance describes oral thiamine or parenteral vitamin-B preparations; product composition and the ongoing course must be explicitly prescribed."
+    ]
+  },
+  "iron-fcm": {
+    "drug": "Ferric carboxymaltose — IV infusion",
+    "indication": "Laboratory-confirmed iron deficiency when oral iron is ineffective/intolerable or faster replacement is indicated; assess trimester and infection",
+    "dose": "Determine TOTAL need from Hb and weight, then give up to 20 mg/kg per infusion, not exceeding 1000 mg",
+    "route": "IV infusion only",
+    "frequency": "Repeat only if calculated deficit remains; additional dose at least 7 days later",
+    "duration": "Finite replacement course, not automatic weekly indefinite treatment",
+    "preparation": "50 mg iron/mL: 1000 mg =20 mL. For >500–1000 mg dilute only in up to 250 mL sodium chloride 0.9% and infuse over at least 15 min. Do not dilute below 2 mg/mL",
+    "maxDose": "Lesser of 20 mg/kg or 1000 mg per infusion; maximum 1000 mg/week for adults in this Ferinject label",
+    "sourceId": "med-fcm-label",
+    "monitoring": [
+      "Observe during and at least 30 min after infusion with anaphylaxis treatment available; monitor extravasation",
+      "Hb reassessment no earlier than 4 weeks after final dose; phosphate for repeated/high-dose courses or symptoms"
+    ],
+    "contraindications": [
+      "Non-iron-deficiency anaemia, iron overload or serious parenteral-iron hypersensitivity",
+      "Restrict pregnancy treatment to clear indications in the second/third trimester; avoid during ongoing bacteraemia"
+    ],
+    "notes": [
+      "Label total-need table: Hb <10 g/dL: 35–<70 kg 1500 mg, ≥70 kg 2000 mg. Hb 10–<14: 1000 mg and 1500 mg respectively. Hb ≥14: 500 mg. Below 35 kg: use the label weight-based calculation.",
+      "A 60 kg patient with Hb 8 g/dL therefore needs 1500 mg TOTAL, split 1000 mg then 500 mg ≥7 days later; 1000 mg is not automatically the full deficit."
+    ]
+  },
+  "levonorgestrel-ec": {
+    "drug": "Levonorgestrel emergency contraception",
+    "indication": "After unprotected/inadequately protected intercourse; assess timing and offer the most effective suitable option",
+    "dose": "1.5 mg",
+    "route": "Oral",
+    "frequency": "Once, as soon as possible",
+    "duration": "Single treatment, ideally ≤72 h; CDC allows emergency pills within 5 days, with reduced LNG effectiveness late in the window",
+    "preparation": "One 1.5 mg tablet (or two 0.75 mg tablets together). If vomiting within 3 h, repeat the dose promptly (CDC)",
+    "maxDose": "1.5 mg initial course; enzyme-inducing medicines need a separate EC plan, preferably copper IUD when suitable",
+    "sourceId": "med-cdc-ec",
+    "monitoring": [
+      "Pregnancy test if no withdrawal bleed/period within 3 weeks; assess pregnancy symptoms or abdominal pain",
+      "Can start/resume hormonal contraception immediately after LNG, using condoms/abstinence for 7 days"
+    ],
+    "contraindications": [
+      "No benefit for an established pregnancy; does not protect against STIs or later unprotected intercourse"
+    ],
+    "notes": [
+      "Ulipristal or copper IUD may be more effective later in the 5-day window; do not apply ulipristal’s delayed hormonal-restart rule to LNG."
+    ]
+  },
+  "adrenaline-anaphylaxis": {
+    "drug": "Adrenaline — anaphylaxis",
+    "indication": "Airway/breathing/circulation compromise from suspected anaphylaxis, including pregnancy",
+    "dose": "500 micrograms (0.5 mg)",
+    "route": "IM into the anterolateral mid-thigh",
+    "frequency": "Repeat after 5 min if airway/breathing/circulation problems persist",
+    "duration": "Continue emergency reassessment; refractory reaction after 2 appropriate IM doses needs expert IV-infusion/critical-care support",
+    "preparation": "1 mg/mL ampoule: 0.5 mL = 500 micrograms IM. Use mg/mL labels rather than ratio alone. NEVER give this IM-strength dose as an IV bolus",
+    "maxDose": "No fixed total IM-dose ceiling while life-threatening features persist; repeat every 5 min and escalate",
+    "sourceId": "med-rcuk-anaphylaxis",
+    "monitoring": [
+      "Airway, breathing, BP/pulse, ECG and SpO2; pregnancy positioning and fetal assessment after maternal resuscitation"
+    ],
+    "contraindications": [
+      "No absolute contraindication to IM adrenaline in life-threatening anaphylaxis; do not withhold because of pregnancy",
+      "IV adrenaline requires an experienced clinician and monitored infusion; antihistamines/steroids do not replace adrenaline"
+    ],
+    "notes": []
+  },
+  "adrenaline-arrest": {
+    "drug": "Adrenaline — cardiac arrest",
+    "indication": "Maternal cardiac arrest following the adult ALS algorithm",
+    "dose": "1 mg",
+    "route": "IV or IO",
+    "frequency": "Every 3–5 min during CPR; immediately for non-shockable rhythm, after the third shock for shockable rhythm",
+    "duration": "During ongoing resuscitation, until ROSC or team decision",
+    "preparation": "Use a 1 mg/10 mL (0.1 mg/mL) resuscitation syringe. If using 1 mg/mL stock, 1 mL diluted to FINAL 10 mL gives 0.1 mg/mL; independently check. Flush the IV/IO line and continue compressions",
+    "maxDose": "1 mg each scheduled dose; do not confuse with 0.5 mg IM anaphylaxis treatment",
+    "sourceId": "med-rcuk-als",
+    "monitoring": [
+      "Rhythm checks, CPR quality, capnography and reversible causes; use usual defibrillation energy in pregnancy"
+    ],
+    "contraindications": [
+      "Do not use an IM anaphylaxis approach to treat cardiac arrest; CPR/defibrillation are not delayed for drugs"
+    ],
+    "notes": []
+  },
+  "glucose-severe-hypo": {
+    "drug": "Glucose — severe hypoglycaemia",
+    "indication": "Impaired consciousness or unsafe swallowing; never give oral fluid to an unconscious patient",
+    "dose": "20 g glucose: 200 mL of 10% OR 100 mL of 20% solution",
+    "route": "IV infusion",
+    "frequency": "Give over 10–15 min; recheck glucose at 10 min and repeat if still <4 mmol/L with reassessment",
+    "duration": "Acute rescue followed by longer-acting carbohydrate when awake and safe to swallow, or prescribed ongoing infusion",
+    "preparation": "10% =100 mg/mL; 200 mL =20 g. 20% =200 mg/mL; 100 mL =20 g. Check IV patency and use a limited volume so a whole large bag cannot infuse accidentally",
+    "maxDose": "Reassess after each 20 g treatment; recurrent/prolonged hypoglycaemia needs monitored ongoing treatment",
+    "sourceId": "med-jbds-hypo",
+    "monitoring": [
+      "Glucose 10 min after treatment, then serially until stable; consciousness, swallow and IV site",
+      "Identify missed food, insulin excess, renal failure or infection; do not omit basal insulin in type 1 diabetes"
+    ],
+    "contraindications": [
+      "Do not give oral sugar when swallowing is unsafe; hypertonic glucose extravasation can injure tissue"
+    ],
+    "notes": []
+  },
+  "glucagon-hypo": {
+    "drug": "Glucagon",
+    "indication": "Severe insulin-associated hypoglycaemia when IV access is unavailable",
+    "dose": "1 mg",
+    "route": "IM",
+    "frequency": "One rescue dose; obtain IV access and recheck glucose after 10 min",
+    "duration": "Bridge to reliable glucose delivery; give carbohydrate after recovery",
+    "preparation": "Reconstitute the 1 mg vial with its supplied solvent immediately before IM use; verify final dose",
+    "maxDose": "1 mg initially; repeated glucagon may be ineffective and must not delay IV glucose",
+    "sourceId": "med-jbds-hypo",
+    "monitoring": [
+      "Consciousness, glucose and nausea/vomiting; replenish carbohydrate once swallowing is safe"
+    ],
+    "contraindications": [
+      "Reduced effectiveness with prolonged starvation, liver disease, depleted glycogen or repeated episodes"
+    ],
+    "notes": []
+  },
+  "insulin-dka": {
+    "drug": "Soluble human insulin — DKA",
+    "indication": "Pregnancy DKA, including euglycaemic DKA; urgent monitored obstetric/diabetes care",
+    "dose": "0.1 units/kg/hour IV; no routine IV insulin bolus. Consider 0.05 units/kg/hour once glucose <14 mmol/L alongside glucose infusion",
+    "route": "IV infusion pump",
+    "frequency": "Continuous with hourly response-based review",
+    "duration": "Continue until ketones <0.6 mmol/L AND venous pH >7.3, clinical recovery and safe transition; not merely until glucose normalises",
+    "preparation": "Using U-100 SOLUBLE insulin: 50 units =0.5 mL; add to 49.5 mL sodium chloride 0.9% for FINAL 50 mL =1 unit/mL. At 0.1 units/kg/h, 70 kg =7 units/h =7 mL/h. NEVER use cloudy NPH IV",
+    "maxDose": "No universal fixed hourly ceiling; inadequate ketone fall needs line/pump and dose reassessment. Potassium <3.5 mmol/L requires urgent senior-led replacement and insulin review",
+    "sourceId": "med-jbds-dka",
+    "monitoring": [
+      "Hourly glucose and blood ketones; frequent VBG, potassium and electrolytes; target ketone fall ≥0.5 mmol/L/h",
+      "Add 10% glucose at 125 mL/h when glucose <14 mmol/L; euglycaemic pregnancy DKA may require glucose from the start",
+      "Continue usual long-acting basal insulin unless specialist contraindication; overlap IV insulin for 30–60 min after the appropriate subcutaneous meal dose during transition"
+    ],
+    "contraindications": [
+      "Severe hypokalaemia, shock, renal/cardiac disease require immediate specialist adaptation; never prescribe insulin without a fluid/potassium plan"
+    ],
+    "notes": []
+  },
+  "norepinephrine-shock": {
+    "drug": "Norepinephrine (noradrenaline) — MSF peripheral protocol",
+    "indication": "Persistent shock while fluid responsiveness/source control are addressed; first-line vasopressor in maternal septic shock",
+    "dose": "Start 0.1 microgram/kg/min of NOREPINEPHRINE TARTRATE; increase by 0.05 microgram/kg/min as required",
+    "route": "IV infusion pump through a suitable monitored large vein",
+    "frequency": "Continuous infusion; MSF reassessment/titration every 10 min initially",
+    "duration": "Until perfusion and BP recover; taper gradually, do not stop abruptly",
+    "preparation": "For the cited stock 8 mg TARTRATE/4 mL (=4 mg BASE/4 mL): 2 mL contains 4 mg tartrate. Add 38 mL compatible fluid for FINAL 40 mL =100 micrograms TARTRATE/mL. Rate = dose × kg ×60 ÷100 mL/h; at 70 kg and 0.1, rate=4.2 mL/h",
+    "maxDose": "MSF peripheral protocol ceiling 1 microgram/kg/min TARTRATE; persistent/escalating shock requires ICU and central/arterial access planning",
+    "sourceId": "med-msf-norepinephrine",
+    "monitoring": [
+      "Continuous ECG, frequent BP (arterial when possible), perfusion and urine output; inspect peripheral site frequently for extravasation",
+      "Clearly label SALT versus BASE: this MSF tartrate dose is twice the numerical BASE dose; NEVER copy its pump rate into a base-labelled concentration"
+    ],
+    "contraindications": [
+      "Correct hypovolaemia in parallel; vasopressors do not replace haemorrhage control/blood replacement",
+      "Extravasation threatens tissue; use a dedicated monitored line, not an unobserved small distal cannula"
+    ],
+    "notes": []
+  },
+  "heparin-pe": {
+    "drug": "Unfractionated heparin — acute PE",
+    "indication": "Selected life-threatening PE, severe renal dysfunction or impending procedures when rapid reversibility is valuable",
+    "dose": "80 units/kg IV loading, then 18 units/kg/hour; subsequent changes follow APTT/anti-Xa nomogram",
+    "route": "IV loading + IV infusion",
+    "frequency": "Continuous infusion after the initial loading dose",
+    "duration": "Until a definitive anticoagulation/reperfusion plan permits transition; duration individualised around bleeding and procedures",
+    "preparation": "Example: 25,000 units made up to FINAL 50 mL sodium chloride 0.9% =500 units/mL. Pump mL/h = prescribed units/h ÷500. Independently check vial units/mL, patient weight and label",
+    "maxDose": "No fixed cumulative ceiling; dose to APTT/anti-Xa with the approved nomogram. Omit/review bolus after thrombolysis or when bleeding risk requires",
+    "sourceId": "med-rcog-vte-37b",
+    "monitoring": [
+      "Baseline CBC/platelets, coagulation and renal function; check APTT 6 h after starting and after dose changes",
+      "Bleeding, Hb/platelets, HIT risk and procedure/neuraxial timing"
+    ],
+    "contraindications": [
+      "Active major bleeding or HIT; recent surgery/neuraxial procedure requires a documented specialist risk plan"
+    ],
+    "notes": []
+  },
+  "alteplase-pe": {
+    "drug": "Alteplase — life-threatening PE",
+    "indication": "Expert-led reperfusion decision for haemodynamically unstable massive PE; pregnancy/postpartum bleeding risks require simultaneous obstetric/critical-care input",
+    "dose": "100 mg over 2 hours (adult Activase-labelled PE regimen)",
+    "route": "IV infusion",
+    "frequency": "One reperfusion course",
+    "duration": "2-hour course followed by monitored anticoagulation planning; arrest dosing may follow a different resuscitation protocol",
+    "preparation": "Reconstitute the specific 50/100 mg vial only with the supplied preservative-free sterile water to 1 mg/mL. Gently swirl, do not shake; use a dedicated line. This PE regimen differs from stroke dosing",
+    "maxDose": "100 mg for the cited adult PE regimen; check local product weight limits and do not borrow an arbitrary stroke bolus schedule",
+    "sourceId": "med-alteplase-label",
+    "monitoring": [
+      "Bleeding including genital/surgical/neuraxial sites, neurological status, BP, Hb and coagulation",
+      "Pause/restart heparin according to APTT and the thrombolysis plan; arrange blood products and procedural alternatives"
+    ],
+    "contraindications": [
+      "Major active bleeding, intracranial pathology/recent intracranial surgery and recent invasive procedures are major concerns",
+      "In immediately fatal PE, the multidisciplinary team weighs contraindications against the risk of death; do not apply this row to stable suspected PE"
+    ],
+    "notes": []
+  },
+  "lorazepam-status": {
+    "drug": "Lorazepam — convulsive status",
+    "indication": "Seizure lasting ≥5 min or recurrent seizures without recovery; also assess/treat eclampsia when possible",
+    "dose": "2 mg IV over 1 min; if not terminating, another 2 mg after 2–3 min (up to 4 mg); a repeat benzodiazepine dose at 10 min if still seizing under the GGC pathway",
+    "route": "Slow IV",
+    "frequency": "Initial staged dose; at most one repeat treatment before moving to second-line therapy",
+    "duration": "Time-critical rescue; prepare airway/ventilation and second-line therapy concurrently",
+    "preparation": "Use the actual IV lorazepam product; dilute according to its label. Prescribe in mg and verify mg/mL, including any dilution",
+    "maxDose": "4 mg initial treatment; count any benzodiazepine already given. Persistent status needs second-line loading and ICU, not endless benzodiazepines",
+    "sourceId": "med-ggc-status",
+    "monitoring": [
+      "Airway, respiratory rate, SpO2, BP, ECG and glucose; assisted ventilation capability immediately available"
+    ],
+    "contraindications": [
+      "Respiratory depression is a major risk, especially after prior sedatives; do not mix several benzodiazepine schedules"
+    ],
+    "notes": []
+  },
+  "levetiracetam-status": {
+    "drug": "Levetiracetam — status loading",
+    "indication": "Ongoing convulsive status after adequate first-line benzodiazepine treatment; non-eclamptic cause or seizures refractory to eclampsia care",
+    "dose": "60 mg/kg, maximum 4500 mg",
+    "route": "IV infusion",
+    "frequency": "One loading dose with urgent reassessment",
+    "duration": "Emergency loading; ongoing maintenance is a separate neurology prescription",
+    "preparation": "100 mg/mL concentrate: prescribed mg ÷100 =mL to withdraw. Dilute the dose in at least 100 mL compatible sodium chloride 0.9% and infuse over 15 min (Keppra product preparation); the 60 mg/kg, maximum 4500 mg status load is off-label GGC emergency guidance.",
+    "maxDose": "4500 mg per loading dose",
+    "sourceId": "med-ggc-status",
+    "monitoring": [
+      "Respiratory/circulatory monitoring, clinical seizure termination and EEG if consciousness fails to recover; renal function for subsequent maintenance"
+    ],
+    "contraindications": [
+      "Known levetiracetam allergy; persistent status needs anaesthesia/ICU and evaluation of cause"
+    ],
+    "notes": []
+  },
+  "clindamycin-endometritis": {
+    "drug": "Clindamycin — endometritis component",
+    "indication": "Postpartum endometritis, in combination with gentamicin when appropriate",
+    "dose": "900 mg",
+    "route": "IV infusion",
+    "frequency": "Every 8 hours",
+    "duration": "Continue until clinical improvement and afebrile for 24–48 h in the cited NAG regimen; persistent fever needs source reassessment",
+    "preparation": "150 mg/mL concentrate: 900 mg =6 mL; dilute in compatible IV fluid and infuse over at least 30 min (not IV push)",
+    "maxDose": "2700 mg/day in this regimen",
+    "sourceId": "med-nag-obstetric",
+    "monitoring": [
+      "Temperature, uterine tenderness, renal function/gentamicin levels for the partner drug; diarrhoea/C. difficile risk"
+    ],
+    "contraindications": [
+      "Clindamycin allergy; previous severe antibiotic-associated colitis requires assessment"
+    ],
+    "notes": []
+  },
+  "calcium-hypocalcaemia": {
+    "drug": "Calcium gluconate 10% — hypocalcaemia",
+    "indication": "Clinically important hypocalcaemia during major transfusion, guided by ionised calcium and physiology",
+    "dose": "1 g (10 mL of 10% solution) slowly",
+    "route": "IV",
+    "frequency": "Initial dose followed by ionised-calcium/ECG reassessment; titrate further replacement to the monitored result",
+    "duration": "During the acute deficit and ongoing citrate exposure; stop/reduce when ionised calcium normalises",
+    "preparation": "10% = 100 mg/mL; 10 mL contains 1 g calcium gluconate, NOT 1 g elemental calcium. Give over at least 5 min through a patent IV line; do not mix with other drugs",
+    "maxDose": "No fixed every-four-units schedule: reassess calcium and prescribe further doses explicitly",
+    "sourceId": "med-msf-calcium",
+    "monitoring": [
+      "Continuous ECG/heart rate; respiratory status, reflexes and injection site; serum calcium/magnesium where available"
+    ],
+    "contraindications": [
+      "Extravasation can cause tissue injury; take special care with digoxin",
+      "Do not confuse calcium gluconate with calcium chloride"
+    ],
+    "notes": []
+  },
+  "adrenaline-refractory": {
+    "drug": "Adrenaline — refractory anaphylaxis infusion",
+    "indication": "Persistent airway/breathing/circulation compromise after two appropriate IM doses; experienced critical-care/anaesthetic staff only",
+    "dose": "Start 0.5–1 mL/kg/hour of the 10-microgram/mL solution according to severity, then titrate to response",
+    "route": "IV infusion pump",
+    "frequency": "Continuous with immediate response-based titration",
+    "duration": "Until the reaction resolves and a supervised weaning/observation plan is established",
+    "preparation": "Make 1 mg adrenaline up to FINAL 100 mL sodium chloride 0.9% =10 micrograms/mL. Use a dedicated labelled line and pump; do not piggyback where another infusion can cause an adrenaline bolus.",
+    "maxDose": "No fixed universal rate ceiling; senior titration and invasive/continuous monitoring for refractory shock",
+    "sourceId": "med-rcuk-anaphylaxis",
+    "monitoring": [
+      "Continuous ECG, frequent/continuous BP, pulse, oxygenation and clinical response; inspect the IV line",
+      "Continue IM adrenaline every 5 min while arranging the expert infusion if compromise persists; do not delay initial IM treatment"
+    ],
+    "contraindications": [
+      "Do not start an unmonitored IV infusion or give IV boluses of the IM-strength solution",
+      "Tachyarrhythmia/marked hypertension needs immediate dose and line assessment"
+    ],
+    "notes": [
+      "At 70 kg, 0.5 mL/kg/hour =35 mL/hour =350 micrograms/hour (about 5.8 micrograms/min). The higher initial rate is chosen only by the experienced team."
+    ]
+  },
+  "enalapril-postpartum": {
+    "drug": "Enalapril — postpartum hypertension",
+    "indication": "After birth only; NICE recommends enalapril with maternal renal-function and potassium monitoring",
+    "dose": "Start 5 mg once daily; use a lower supervised initial dose if volume depleted or renally impaired; titrate to BP response",
+    "route": "Oral",
+    "frequency": "Once daily initially",
+    "duration": "Review BP and dose after birth; reduce/stop as hypertension resolves or continue for persistent hypertension after medical review",
+    "preparation": "5 mg tablet swallowed with water, with or without food. Correct volume depletion; check creatinine and potassium before starting",
+    "maxDose": "40 mg/day in the product label; usual maintenance 20 mg/day, not an automatic postpartum target",
+    "sourceId": "med-enalapril-label",
+    "monitoring": [
+      "BP, symptoms, creatinine/eGFR and potassium before and after initiation/dose changes; infant feeding, alertness and urine output if breastfeeding"
+    ],
+    "contraindications": [
+      "Pregnancy, prior ACE-inhibitor angioedema, significant hyperkalaemia; avoid starting in unresolved AKI or severe volume depletion"
+    ],
+    "notes": [
+      "NICE NG133 supplies the postpartum choice. Breastfeeding requires extra caution with premature/very young infants; use a suitable alternative when clinically indicated."
+    ],
+    "renalHepatic": "Renal impairment requires a lower initial dose and adjustment from the product renal table, not the unadjusted 5 mg starter."
+  },
+  "terbutaline-ecv": {
+    "drug": "Terbutaline — ECV only",
+    "indication": "Hospital external cephalic version after eligibility assessment, consent and baseline CTG",
+    "dose": "250 micrograms, 10 minutes before ECV",
+    "route": "Subcutaneous",
+    "frequency": "One pre-procedure dose",
+    "duration": "One ECV attempt episode; not a maintenance preterm-labour regimen",
+    "preparation": "0.5 mg/mL ampoule: withdraw 0.5 mL =250 micrograms. This row is SC, not an interchangeable IV bolus",
+    "maxDose": "250 micrograms for the cited ECV regimen; no automatic repeat",
+    "sourceId": "med-nhs-ecv",
+    "monitoring": [
+      "Maternal pulse/BP before treatment and pulse 5 minutes after; fetal assessment/CTG and immediate caesarean capability"
+    ],
+    "contraindications": [
+      "Cardiac disease; caution in diabetes and pre-eclampsia; ECV contraindications must be excluded"
+    ],
+    "notes": [
+      "Assess RhD status and provide indicated anti-D after ECV."
+    ]
+  },
+  "benzylpenicillin-gbs": {
+    "drug": "Benzylpenicillin sodium — GBS prophylaxis",
+    "indication": "Intrapartum GBS prophylaxis when indicated, distinct from treatment of maternal sepsis",
+    "dose": "3 g (5 million units) IV loading, then 1.5 g (2.5 million units) every 4 hours",
+    "route": "Slow IV injection or infusion",
+    "frequency": "Load once, then every 4 hours until delivery",
+    "duration": "Intrapartum only; do not delay an indicated birth to complete four hours of antibiotics",
+    "preparation": "For the cited 1.2 g vial, dissolve each vial in at least 8 mL water for injections/0.9% saline for IV injection (powder displacement ~0.8 mL), or at least 20 mL for infusion. Account for final concentration when withdrawing partial vials. Give doses >1.2 g at least 1 minute per 300 mg: 3 g ≥10 min; 1.5 g ≥5 min",
+    "maxDose": "3 g loading then 1.5 g every 4 hours; stop at birth. Do not confuse grams with million units.",
+    "sourceId": "med-benzylpenicillin-label",
+    "monitoring": [
+      "Allergy/anaphylaxis, renal function and timing of each dose; reassess fever/chorioamnionitis for a treatment combination"
+    ],
+    "contraindications": [
+      "Immediate severe penicillin/beta-lactam allergy requires a separately prescribed alternative based on allergy and susceptibility"
+    ],
+    "notes": [
+      "Do not confuse grams, milligrams and million units; ampicillin is a different regimen with 2 g loading then 1 g every 4 h."
+    ]
+  },
+  "levothyroxine-established": {
+    "drug": "Levothyroxine — established hypothyroidism",
+    "indication": "Already receiving replacement before pregnancy",
+    "dose": "At positive pregnancy test increase the weekly dose by about 25–30%, e.g. double the usual daily dose on two days each week; then titrate to TFTs",
+    "route": "Oral",
+    "frequency": "Daily, with a clearly written seven-day dose schedule",
+    "duration": "Through pregnancy; make an individual postpartum dose plan and repeat TFTs about 6 weeks after birth",
+    "preparation": "Use the prescribed microgram-strength tablets consistently before breakfast; separate oral iron/calcium by 4–5 hours. Micrograms are not milligrams",
+    "maxDose": "No universal fixed maximum: titrate to pregnancy-specific TFTs; the initial 25–30% rise is not an instruction for repeated weekly increases",
+    "sourceId": "rcog-gtg76-thyroid",
+    "monitoring": [
+      "TSH/FT4 every 4–6 weeks to 20 weeks and again at 28 weeks; target TSH <2.5 mIU/L with FT4 in the pregnancy reference range"
+    ],
+    "contraindications": [
+      "Untreated adrenal insufficiency requires assessment/treatment; avoid overreplacement in cardiac disease"
+    ],
+    "notes": [
+      "Pre-existing adequately treated disease generally returns to the preconception dose after birth according to the RCOG postpartum plan; reassess rather than automatically stopping permanent replacement."
+    ]
+  },
+  "levothyroxine-new": {
+    "drug": "Levothyroxine — newly diagnosed in pregnancy",
+    "indication": "RCOG: overt hypothyroidism or TSH >10 mIU/L; distinguish milder subclinical disease",
+    "dose": "Overt/severe disease: 1.6 micrograms/kg/day initial replacement. For selected subclinical disease with TSH above the gestational range but ≤10, consider 1.0–1.2 micrograms/kg/day after discussing benefit",
+    "route": "Oral",
+    "frequency": "Once daily",
+    "duration": "Recheck TFTs after 4 weeks and titrate; postpartum continuation/withdrawal depends on the original diagnosis, dose and TFTs",
+    "preparation": "Calculate weight-based MICROGRAMS, prescribe an achievable tablet-strength schedule, take before breakfast and separate iron/calcium by 4–5 hours",
+    "maxDose": "Individualised TFT-guided dosing, not a fixed universal maximum",
+    "sourceId": "rcog-gtg76-thyroid",
+    "monitoring": [
+      "TSH/FT4 after initiation and every 4–6 weeks during titration; reassess adherence and absorption before increasing"
+    ],
+    "contraindications": [
+      "Do not treat isolated low FT4 with normal TSH routinely; untreated adrenal insufficiency or cardiac disease requires specialist review"
+    ],
+    "notes": [
+      "The milder subclinical-treatment decision is separate from the clear indication to treat overt hypothyroidism."
+    ]
+  },
+  "ptu-graves": {
+    "drug": "Propylthiouracil — Graves titration",
+    "indication": "Overt hyperthyroidism requiring antithyroid medication; preferred early-pregnancy option when appropriate",
+    "dose": "Product adult initial range 300–600 mg/day in divided doses until controlled; then usually 50–150 mg/day. In pregnancy use the lowest effective dose, individually selected from FT4 and severity, rather than automatically starting at the upper adult range",
+    "route": "Oral",
+    "frequency": "Divide the prescribed daily dose, commonly every 8 hours",
+    "duration": "Titrate with specialist follow-up; if still needed beyond 20 weeks consider changing to carbimazole because of PTU hepatotoxicity",
+    "preparation": "50 mg tablets; prescribe the exact mg per administration. Do not confuse the outpatient dose with the separate thyroid-storm loading regimen",
+    "maxDose": "600 mg/day is the top of the cited adult starting range, not a routine pregnancy target or an instruction to escalate without endocrine review",
+    "sourceId": "med-ptu-label",
+    "monitoring": [
+      "FT4/TSH every 2–4 weeks initially; urgent CBC for fever/sore throat; liver assessment for jaundice, dark urine or abdominal pain"
+    ],
+    "contraindications": [
+      "Previous PTU-associated hepatic injury/agranulocytosis; significant liver disease requires specialist choice"
+    ],
+    "notes": [
+      "RCOG: use the lowest dose maintaining FT4 in the upper half of its pregnancy range; do not titrate to a suppressed TSH alone. Do not use routine block-and-replace."
+    ],
+    "renalHepatic": "SmPC: GFR 10–50 mL/min use 75% dose; GFR <10 use 50%; reduce in hepatic disease with specialist review."
+  },
+  "carbimazole-graves": {
+    "drug": "Carbimazole — Graves titration",
+    "indication": "Specialist antithyroid option; pregnancy timing and PTU suitability determine selection",
+    "dose": "Adult product initial range 20–60 mg/day in 2–3 divided doses; maintenance usually 5–15 mg/day. Pregnancy requires the lowest effective dose. When switching, PTU 200 mg/day is approximately carbimazole 10 mg/day (20:1)",
+    "route": "Oral",
+    "frequency": "Initially divided 2–3 times daily; maintenance may be once daily",
+    "duration": "Reassess TFTs within 2 weeks after a switch/dose change; continuation through pregnancy and after birth is individualised",
+    "preparation": "Use the stated tablet strength to deliver the exact mg; carbimazole and methimazole are not mg-for-mg equivalent",
+    "maxDose": "60 mg/day is the adult label starting-range ceiling, not a routine pregnancy goal; thyroid-storm treatment is a separate regimen",
+    "sourceId": "med-carbimazole-label",
+    "monitoring": [
+      "FT4/TSH, fever/sore-throat agranulocytosis warning, liver symptoms; fetal/neonatal surveillance when indicated"
+    ],
+    "contraindications": [
+      "Previous carbimazole/thiamazole-associated pancreatitis, serious marrow or liver disorder; first-trimester embryopathy risk requires specialist counselling"
+    ],
+    "notes": [
+      "RCOG advises considering PTU→carbimazole if antithyroid treatment is still needed beyond 20 weeks, rather than an automatic switch at the end of trimester 1. Routine block-and-replace is not recommended."
+    ]
+  },
+  "ptu-storm": {
+    "drug": "Propylthiouracil — thyroid storm",
+    "indication": "ICU/endocrine-led treatment of storm from increased hormone synthesis; assess pregnancy stage and hepatic function",
+    "dose": "500–1000 mg loading, then 250 mg every 4 hours",
+    "route": "Oral or NG through a protected airway",
+    "frequency": "Load once, then every 4 hours",
+    "duration": "Acute high-dose treatment only; reduce promptly as the patient stabilises, with an explicit endocrine maintenance plan",
+    "preparation": "50 mg tablets: loading 10–20 tablets, maintenance 5 tablets per dose; pharmacy-assisted NG preparation if needed. Record administration before starting iodine",
+    "maxDose": "One initial load; 1500 mg/day maintenance at 250 mg every 4 h. No repeated loading without specialist reassessment",
+    "sourceId": "med-thyroid-storm-2026",
+    "monitoring": [
+      "Continuous cardiac/haemodynamic monitoring, temperature, mental state, glucose, FT4/FT3 and liver function; treat the precipitant"
+    ],
+    "contraindications": [
+      "Significant hepatic dysfunction/previous PTU liver injury favours an alternative thionamide with endocrine/hepatology input; destructive thyroiditis needs a different strategy"
+    ],
+    "notes": [
+      "2026 joint statement: no proven mortality advantage over methimazole/carbimazole; drug selection must consider hepatic injury and pregnancy."
+    ]
+  },
+  "propranolol-storm": {
+    "drug": "Propranolol — thyroid storm",
+    "indication": "Adrenergic control only in haemodynamically stable patients without significant ventricular dysfunction",
+    "dose": "The consensus lists 60–80 mg every 4 hours; assess cardiac function first and consider a lower initial dose because beta-blockade can precipitate collapse",
+    "route": "Oral or NG with protected airway",
+    "frequency": "Every 4 hours with reassessment before doses",
+    "duration": "Only while required for acute thyrotoxicosis; taper/change as control improves",
+    "preparation": "Immediate-release tablets, with exact mg prescribed; do not substitute sustained-release tablets or give this as an IV dose",
+    "maxDose": "Listed oral schedule totals 360–480 mg/day; this is a specialist ICU regimen, not a routine pregnancy symptom-treatment dose",
+    "sourceId": "med-thyroid-storm-2026",
+    "monitoring": [
+      "Continuous ECG/BP/perfusion assessment, heart failure and bronchospasm; consider echocardiography before beta-blockade"
+    ],
+    "contraindications": [
+      "Shock, decompensated cardiac failure, significant bradycardia/heart block or asthma; short-acting titratable alternatives need critical-care supervision"
+    ],
+    "notes": [
+      "The 2026 statement emphasises individualisation and the possibility of cardiovascular collapse after beta-blockade."
+    ]
+  },
+  "hydrocortisone-storm": {
+    "drug": "Hydrocortisone — thyroid storm",
+    "indication": "Glucocorticoid component of ICU storm treatment",
+    "dose": "100 mg IV loading, then 50 mg every 6 hours",
+    "route": "Slow IV injection",
+    "frequency": "Load once, then every 6 hours",
+    "duration": "Stop/review when stable if no accompanying adrenal insufficiency; the ongoing plan depends on cause and duration",
+    "preparation": "For the cited 100 mg powder vial add up to 2 mL sterile water for injections; if prepared with 2 mL, concentration is approximately 50 mg/mL: 100 mg=2 mL, 50 mg=1 mL. Give slowly over at least 1 minute and verify the actual product",
+    "maxDose": "2026 joint-statement schedule: 100 mg load plus 200 mg/day maintenance, not a blended older 300 mg loading schedule",
+    "sourceId": "med-thyroid-storm-2026",
+    "monitoring": [
+      "Glucose, electrolytes, BP, infection and clinical recovery; reassess ongoing adrenal-support need"
+    ],
+    "contraindications": [
+      "Life-saving short-course use needs risk assessment rather than delaying treatment; review systemic fungal infection or known steroid hypersensitivity"
+    ],
+    "notes": [
+      "Preparation cross-checked against the Panpharma 100 mg powder product information; solution ampoules have different concentrations."
+    ]
+  },
+  "iodide-storm": {
+    "drug": "Potassium iodide — SSKI in thyroid storm",
+    "indication": "Short-course endocrine/ICU therapy after thionamide in hormone-synthesis-driven storm",
+    "dose": "SSKI 5 drops every 6 hours, starting at least 1 hour AFTER the antithyroid drug",
+    "route": "Oral or NG",
+    "frequency": "Every 6 hours",
+    "duration": "Stop once stabilised/hormone levels controlled; prolonged iodine exposure in pregnancy can affect the fetal thyroid",
+    "preparation": "Use the pharmacy-verified SATURATED potassium iodide solution (SSKI, 1 g/mL), its calibrated dispenser and prescribed drop volume; dilute in milk/juice before oral/NG administration. Lugol solution is a different formulation and has a different drop prescription",
+    "maxDose": "5 calibrated drops per dose in this regimen; never substitute an arbitrary dropper, radioactive-emergency tablets or Lugol drops",
+    "sourceId": "med-thyroid-storm-2026",
+    "monitoring": [
+      "Clinical recovery, FT4/FT3, hypersensitivity and pregnancy/neonatal thyroid planning"
+    ],
+    "contraindications": [
+      "Do not give before the thionamide; destructive/factitious thyrotoxicosis is not an indication for this synthesis-blocking sequence"
+    ],
+    "notes": [
+      "Product concentration confirmed against SSKI prescribing information. Do not prolong iodine in pregnancy without specialist review."
+    ]
+  },
+  "iron-oral-treatment": {
+    "drug": "Oral iron — treatment of pregnancy IDA",
+    "indication": "Confirmed iron deficiency with anaemia; exclude haemoglobinopathy/other causes and assess urgency",
+    "dose": "120 mg ELEMENTAL iron per day (WHO treatment dose), with 400 micrograms folic acid daily",
+    "route": "Oral",
+    "frequency": "Daily; divide the elemental-iron dose if needed for tolerability",
+    "duration": "Until Hb normalises, then return to the preventive antenatal dose; continue the documented postnatal/repletion plan rather than stopping after an arbitrary pack",
+    "preparation": "Count ELEMENTAL iron, not total salt mass. A tablet containing 60 mg elemental iron gives 120 mg with two tablets; check combined-tablet folate content separately. Separate from calcium by several hours and from levothyroxine by 4–5 hours",
+    "maxDose": "120 mg/day elemental iron in this WHO treatment regimen; extra OTC iron can duplicate treatment",
+    "sourceId": "med-who-anc-dose",
+    "monitoring": [
+      "Hb response after 2–4 weeks, adherence, GI effects and evidence of iron deficiency; investigate non-response and consider IV replacement when indicated"
+    ],
+    "contraindications": [
+      "Iron overload or non-iron-deficiency anaemia; oral treatment is inadequate as sole treatment of unstable major bleeding"
+    ],
+    "notes": [
+      "Daily WHO treatment and prevention doses are different. Alternate-day strategies need an explicit alternative prescription and response review."
+    ]
+  },
+  "iron-folate-prevention": {
+    "drug": "Iron–folic acid — antenatal prevention",
+    "indication": "Routine pregnancy supplementation, particularly high-anaemia-burden settings",
+    "dose": "60 mg ELEMENTAL iron +400 micrograms (0.4 mg) folic acid",
+    "route": "Oral",
+    "frequency": "Once daily",
+    "duration": "Throughout pregnancy, beginning as early as possible; document any national postpartum continuation separately",
+    "preparation": "Choose a product labelled with these elemental-iron/folate amounts; no dilution. Check other prenatal supplements to avoid duplication; separate calcium and levothyroxine",
+    "maxDose": "WHO preventive range is 30–60 mg elemental iron/day; this card selects 60 mg. Do not treat established IDA with the preventive dose alone",
+    "sourceId": "med-who-anc-dose",
+    "monitoring": [
+      "Hb/anaemia screening, tolerance, adherence and additional risk of folate/B12 deficiency"
+    ],
+    "contraindications": [
+      "Known iron overload; assess microcytosis/non-response rather than repeatedly escalating iron blindly"
+    ],
+    "notes": [
+      "Start folic acid before conception where possible. High-risk neural-tube-defect prevention is a separate higher-dose folate prescription."
+    ]
+  },
+  "calcium-antenatal": {
+    "drug": "Calcium — low-intake pregnancy supplementation",
+    "indication": "WHO prevention of pre-eclampsia in populations with low dietary calcium intake",
+    "dose": "1.5–2 g ELEMENTAL calcium per day; a practical 1.5 g schedule is 500 mg three times daily",
+    "route": "Oral",
+    "frequency": "Three divided doses, preferably with meals",
+    "duration": "During pregnancy; starting time and postpartum continuation should be documented for the national programme used",
+    "preparation": "Read elemental calcium on the label: salt weight is not elemental calcium. Use 500 mg elemental-calcium tablets for the example schedule; separate iron by several hours and levothyroxine by 4–5 hours",
+    "maxDose": "2 g/day supplemental elemental calcium in this WHO regimen; count all supplements and assess renal/stone risk",
+    "sourceId": "med-who-calcium-dose",
+    "monitoring": [
+      "Dietary intake, adherence, renal disease and duplicate calcium/vitamin-D products"
+    ],
+    "contraindications": [
+      "Hypercalcaemia; renal impairment or recurrent calcium stones require individual assessment"
+    ],
+    "notes": [
+      "WHO notes that evidence does not establish one optimal start time; supplementation may begin at the first antenatal contact."
+    ]
+  },
+  "promethazine-hg": {
+    "drug": "Promethazine — oral NVP/HG option",
+    "indication": "First-line antihistamine option in RCOG HG guidance",
+    "dose": "12.5–25 mg",
+    "route": "Oral",
+    "frequency": "Every 4–8 hours as prescribed; use the lowest effective frequency",
+    "duration": "Review daily during acute illness; reduce/stop as symptoms and oral intake improve",
+    "preparation": "Use oral tablets/liquid of a verified strength; 12.5 mg requires a suitable product rather than assuming every tablet can be split",
+    "maxDose": "The listed 25 mg every 4 h schedule totals 150 mg/day; this is a regimen bound, not a target, and sedation may require much less",
+    "sourceId": "med-rcog-hg",
+    "monitoring": [
+      "Sedation, anticholinergic effects, oral intake and interactions with other sedatives/QT-prolonging drugs"
+    ],
+    "contraindications": [
+      "Significant CNS/respiratory depression; avoid alcohol and additive sedation; do not drive when drowsy"
+    ],
+    "notes": [
+      "This row is ORAL. Injectable promethazine is not interchangeable and has separate tissue-injury/administration precautions."
+    ]
+  },
+  "metoclopramide-hg": {
+    "drug": "Metoclopramide — oral HG second line",
+    "indication": "RCOG second-line antiemetic after assessing hydration and prior treatments",
+    "dose": "5–10 mg",
+    "route": "Oral",
+    "frequency": "Every 8 hours; leave at least 6 hours between any two doses even if vomiting",
+    "duration": "At most 5 days in the product safety restriction; reassess rather than issuing an indefinite repeat",
+    "preparation": "5 or 10 mg oral formulation; check strength. Do not automatically repeat a vomited dose before the minimum interval",
+    "maxDose": "Lower of 30 mg/day or 0.5 mg/kg/day",
+    "sourceId": "med-metoclopramide-label",
+    "monitoring": [
+      "Acute dystonia/akathisia, drowsiness, response, hydration and renal function; stop if neurological adverse effects occur"
+    ],
+    "contraindications": [
+      "GI obstruction/perforation/bleeding, epilepsy, Parkinson disease, phaeochromocytoma, prior tardive dyskinesia; avoid with levodopa"
+    ],
+    "notes": [
+      "RCOG places this after first-line options because of extrapyramidal reactions."
+    ],
+    "renalHepatic": "CrCl 15–60: reduce daily dose by 50%; ≤15: reduce by 75%; severe hepatic impairment: reduce by 50%."
+  },
+  "ursodeoxycholic-icp": {
+    "drug": "Ursodeoxycholic acid — ICP symptoms",
+    "indication": "Maternal itching in confirmed intrahepatic cholestasis; not a substitute for bile-acid-based birth planning",
+    "dose": "Start 10–15 mg/kg/day in 2–3 divided doses; adjust to symptoms with specialist review",
+    "route": "Oral",
+    "frequency": "Twice or three times daily",
+    "duration": "Until birth with symptom/liver-test review; confirm postnatal resolution",
+    "preparation": "Prescribe mg from maternal weight and available capsule/tablet strength. Example 60 kg at 10 mg/kg/day =600 mg/day, e.g. 300 mg twice daily if that formulation is available",
+    "maxDose": "SMFM permits escalation up to 21 mg/kg/day for persistent symptoms; do not increase indefinitely",
+    "sourceId": "med-smfm-icp",
+    "monitoring": [
+      "Itch, bile acids/LFTs and treatment tolerance; repeat postnatal liver tests/bile acids at about 6 weeks"
+    ],
+    "contraindications": [
+      "Exclude other liver disease/obstruction; urgent assessment for jaundice/coagulopathy or alternative diagnoses"
+    ],
+    "notes": [
+      "SMFM/ACOG-endorsed guidance supplies the dose. RCOG counselling: symptom benefit is limited and UDCA does not prevent stillbirth."
+    ]
+  },
+  "acyclovir-initial": {
+    "drug": "Acyclovir — first genital episode",
+    "indication": "First clinical genital-herpes episode",
+    "dose": "400 mg",
+    "route": "Oral",
+    "frequency": "Three times daily",
+    "duration": "7–10 days; extend if healing remains incomplete after 10 days",
+    "preparation": "400 mg tablet (or two 200 mg tablets); maintain hydration and check renal function; not an IV prescription",
+    "maxDose": "1200 mg/day for this schedule; adjust with renal impairment",
+    "sourceId": "cdc-hsv-detail",
+    "monitoring": [
+      "Lesion/symptom response, renal function and delivery/neonatal-risk assessment"
+    ],
+    "contraindications": [
+      "Acyclovir/valacyclovir allergy; severe/disseminated/CNS infection needs hospital IV treatment instead"
+    ],
+    "notes": [
+      "Suppression reduces recurrence but does not eliminate neonatal transmission; first acquisition near birth needs specialist obstetric/neonatal planning."
+    ]
+  },
+  "acyclovir-pregnancy-suppression": {
+    "drug": "Acyclovir — pregnancy suppression",
+    "indication": "Recurrent genital herpes in pregnancy: CDC suppression from 36 weeks",
+    "dose": "400 mg",
+    "route": "Oral",
+    "frequency": "Three times daily",
+    "duration": "From 36 weeks until birth; reassess delivery route if lesions/prodrome occur",
+    "preparation": "400 mg tablet (or two 200 mg tablets); maintain hydration and check renal function; not an IV prescription",
+    "maxDose": "1200 mg/day for this schedule; adjust with renal impairment",
+    "sourceId": "cdc-hsv-detail",
+    "monitoring": [
+      "Lesion/symptom response, renal function and delivery/neonatal-risk assessment"
+    ],
+    "contraindications": [
+      "Acyclovir/valacyclovir allergy; severe/disseminated/CNS infection needs hospital IV treatment instead"
+    ],
+    "notes": [
+      "Suppression reduces recurrence but does not eliminate neonatal transmission; first acquisition near birth needs specialist obstetric/neonatal planning."
+    ]
+  },
+  "mirena-hmb": {
+    "drug": "Levonorgestrel IUS 52 mg — HMB",
+    "indication": "Heavy menstrual bleeding after evaluating uterine/cervical/endometrial pathology",
+    "dose": "One 52 mg intrauterine system",
+    "route": "Intrauterine",
+    "frequency": "One insertion by a trained clinician",
+    "duration": "5 years for HMB, then reassess symptoms; replace/remove if bleeding returns",
+    "preparation": "Sterile, single-use Mirena system and inserter; aseptic insertion after assessment of uterine position/cavity and infection/pregnancy exclusion. Record insertion date and indication-specific removal date",
+    "maxDose": "One device; contraception duration (8 years) must not be applied to HRT endometrial protection (4 years in the UK label)",
+    "sourceId": "med-mirena-label",
+    "monitoring": [
+      "Bleeding/pain, expulsion/perforation symptoms, thread/insertion follow-up and pregnancy symptoms; investigate persistent/new abnormal bleeding"
+    ],
+    "contraindications": [
+      "Pregnancy, active pelvic/cervical infection, unexplained bleeding until assessed, uterine cavity distortion, current hormone-dependent tumour or acute severe liver disease"
+    ],
+    "notes": [
+      "52 mg systems/indications are not interchangeable with lower-dose IUS products. HMB symptom recurrence requires reassessment before assuming device failure."
+    ]
+  },
+  "mirena-contraception": {
+    "drug": "Levonorgestrel IUS 52 mg — contraception",
+    "indication": "Contraception after pregnancy exclusion and eligibility assessment",
+    "dose": "One 52 mg intrauterine system",
+    "route": "Intrauterine",
+    "frequency": "One insertion by a trained clinician",
+    "duration": "Up to 8 years for contraception with this specific Mirena 52 mg product",
+    "preparation": "Sterile, single-use Mirena system and inserter; aseptic insertion after assessment of uterine position/cavity and infection/pregnancy exclusion. Record insertion date and indication-specific removal date",
+    "maxDose": "One device; contraception duration (8 years) must not be applied to HRT endometrial protection (4 years in the UK label)",
+    "sourceId": "med-mirena-label",
+    "monitoring": [
+      "Bleeding/pain, expulsion/perforation symptoms, thread/insertion follow-up and pregnancy symptoms; investigate persistent/new abnormal bleeding"
+    ],
+    "contraindications": [
+      "Pregnancy, active pelvic/cervical infection, unexplained bleeding until assessed, uterine cavity distortion, current hormone-dependent tumour or acute severe liver disease"
+    ],
+    "notes": [
+      "52 mg systems/indications are not interchangeable with lower-dose IUS products. HMB symptom recurrence requires reassessment before assuming device failure."
+    ]
+  },
+  "letrozole-ovulation": {
+    "drug": "Letrozole — monitored ovulation induction",
+    "indication": "Anovulatory PCOS infertility after assessment of pregnancy, tubal/semen factors and counselling about off-label use",
+    "dose": "2.5 mg daily on cycle days 2–6",
+    "route": "Oral",
+    "frequency": "Once daily for 5 consecutive days per prescribed cycle",
+    "duration": "Initial monitored cycle, with review of ovulation/response before changing dose or repeating a course",
+    "preparation": "One 2.5 mg tablet daily; day 1 is the first day of fresh menstrual bleeding. Exclude pregnancy before another cycle if no period",
+    "maxDose": "2.5 mg/day in this named NHS starting regimen; dose escalation requires a new fertility prescription, not automatic self-escalation",
+    "sourceId": "med-nhs-letrozole",
+    "monitoring": [
+      "Ovulation assessment, cycle/pregnancy outcome and ultrasound monitoring where indicated; discuss multiple-pregnancy risk"
+    ],
+    "contraindications": [
+      "Possible/existing pregnancy, breastfeeding; hepatic impairment needs specialist assessment"
+    ],
+    "notes": [
+      "PCOS 2023 guidance supports letrozole first line for anovulatory infertility without other infertility factors. Cycle-day schedules vary by clinic; follow one complete prescribed schedule."
+    ]
+  },
+  "metformin-pcos": {
+    "drug": "Metformin — PCOS metabolic treatment",
+    "indication": "Metabolic features of PCOS, particularly adults with BMI ≥25; not an interchangeable GDM regimen",
+    "dose": "Start 500 mg/day with food; increase by 500 mg every 1–2 weeks if tolerated toward the individually required dose",
+    "route": "Oral",
+    "frequency": "Once daily initially, then divided with meals; extended-release requires its own product instructions",
+    "duration": "Continue while metabolic benefit outweighs adverse effects; review the indication when pregnancy occurs",
+    "preparation": "Use 500 mg immediate-release tablets for this example; slow titration reduces GI effects",
+    "maxDose": "Suggested PCOS guideline maximum 2.5 g/day in adults and 2 g/day in adolescents, subject to the lower licensed product/renal limit",
+    "sourceId": "pcos-recommendations-detail",
+    "monitoring": [
+      "Metabolic response, renal function, GI tolerance and B12 if risk factors/long-term therapy"
+    ],
+    "contraindications": [
+      "eGFR <30, metabolic acidosis, hypoxia or major dehydration; withhold during serious acute illness"
+    ],
+    "notes": [
+      "Lifestyle treatment remains foundational. Letrozole is the separate first-line ovulation-induction option."
+    ]
+  },
+  "coc-ee-lng": {
+    "drug": "Ethinylestradiol/levonorgestrel — combined pill",
+    "indication": "Eligible nonpregnant patient seeking contraception or PCOS cycle control after BP/VTE/migraine assessment",
+    "dose": "One active tablet containing ethinylestradiol 30 micrograms +levonorgestrel 150 micrograms daily for 21 days, followed by the 7 inactive tablets in the cited 28-day pack",
+    "route": "Oral",
+    "frequency": "One tablet at the same time daily, including inactive tablets; start the next pack immediately after day 28",
+    "duration": "Ongoing while eligible, with periodic BP/risk review; stop and assess new contraindications",
+    "preparation": "Check the pack has 21 active +7 inactive tablets of the stated formulation. Other pill formulations and extended regimens need their own schedule",
+    "maxDose": "One scheduled tablet/day; missed-pill/vomiting instructions are a separate decision pathway, not a reason for indefinite extra dosing",
+    "sourceId": "med-msf-coc",
+    "monitoring": [
+      "BP, adherence, bleeding, new migraine aura or VTE symptoms; review interacting medicines"
+    ],
+    "contraindications": [
+      "Migraine with aura, active/prior VTE or major thrombotic risk, uncontrolled hypertension, smoking ≥35 years, current breast cancer or severe liver disease; postpartum eligibility is time/breastfeeding dependent"
+    ],
+    "notes": [
+      "If starting >5 days after menstrual bleeding begins, use backup for 7 days. This formulation is an example; PCOS guidance does not establish one universally preferred progestogen."
+    ]
+  },
+  "estradiol-hrt": {
+    "drug": "Estradiol — transdermal HRT example",
+    "indication": "Menopausal symptoms after individual assessment; intact uterus also needs adequate progestogen",
+    "dose": "One patch releasing 50 micrograms per 24 hours",
+    "route": "Transdermal",
+    "frequency": "Replace twice weekly, every 3–4 days",
+    "duration": "Use the lowest effective dose with regular benefit/risk review; review new bleeding promptly",
+    "preparation": "Apply to clean dry intact abdominal skin, never the breasts; rotate sites, avoid waistline and do not cut the patch. Remove the old patch when replacing",
+    "maxDose": "This starting example is 50 micrograms/24 h; higher strengths require reassessment and proportionate progestogen",
+    "sourceId": "med-estradot-label",
+    "monitoring": [
+      "Symptom response, bleeding, BP and changing breast/VTE/liver risk"
+    ],
+    "contraindications": [
+      "Unexplained genital bleeding, known/suspected oestrogen-dependent cancer, active/prior VTE, arterial thrombosis or active liver disease; pregnancy/breastfeeding"
+    ],
+    "notes": [
+      "The dose is a RELEASE RATE per 24 hours; it does not mean applying a new patch every day. HRT is not contraception."
+    ]
+  },
+  "progesterone-hrt-sequential": {
+    "drug": "Micronised progesterone — sequential HRT",
+    "indication": "Endometrial protection with standard-dose systemic oestrogen in a patient with a uterus",
+    "dose": "200 mg at bedtime for 12–14 days in each 28-day/monthly cycle",
+    "route": "Oral",
+    "frequency": "Nightly on the prescribed 12–14 days each cycle",
+    "duration": "For as long as systemic oestrogen is used with an intact uterus; review bleeding and increase protection if oestrogen dose increases",
+    "preparation": "Use oral micronised-progesterone capsules: 200 mg =two 100 mg capsules where that is the available strength. Do not substitute an unverified compounded or vaginal product",
+    "maxDose": "This standard-dose-oestrogen schedule is 200 mg cyclic OR 100 mg daily, not both; high-dose oestrogen needs a revised progestogen prescription",
+    "sourceId": "med-bms-progestogen",
+    "monitoring": [
+      "Sedation, adherence to the full monthly course and new/persistent unscheduled bleeding"
+    ],
+    "contraindications": [
+      "Unexplained bleeding, hormone-dependent malignancy or serious liver disease require assessment; check the actual capsule excipients/allergies"
+    ],
+    "notes": [
+      "Choose sequential or continuous treatment according to menopausal phase and clinical assessment; never omit protection because a patch is used."
+    ]
+  },
+  "progesterone-hrt-continuous": {
+    "drug": "Micronised progesterone — continuous HRT",
+    "indication": "Endometrial protection with standard-dose systemic oestrogen in a patient with a uterus",
+    "dose": "100 mg at bedtime every day",
+    "route": "Oral",
+    "frequency": "Every night continuously",
+    "duration": "For as long as systemic oestrogen is used with an intact uterus; review bleeding and increase protection if oestrogen dose increases",
+    "preparation": "Use oral micronised-progesterone capsules: 200 mg =two 100 mg capsules where that is the available strength. Do not substitute an unverified compounded or vaginal product",
+    "maxDose": "This standard-dose-oestrogen schedule is 200 mg cyclic OR 100 mg daily, not both; high-dose oestrogen needs a revised progestogen prescription",
+    "sourceId": "med-bms-progestogen",
+    "monitoring": [
+      "Sedation, adherence to the full monthly course and new/persistent unscheduled bleeding"
+    ],
+    "contraindications": [
+      "Unexplained bleeding, hormone-dependent malignancy or serious liver disease require assessment; check the actual capsule excipients/allergies"
+    ],
+    "notes": [
+      "Choose sequential or continuous treatment according to menopausal phase and clinical assessment; never omit protection because a patch is used."
+    ]
+  },
+  "anti-d-routine": {
+    "drug": "Anti-D immunoglobulin — routine antenatal",
+    "indication": "Non-sensitised RhD-negative pregnancy with an indication for routine antenatal prophylaxis",
+    "dose": "300 micrograms (1500 IU)",
+    "route": "IM or IV for this Rhophylac product only",
+    "frequency": "Once at 28–30 weeks",
+    "duration": "One routine antenatal dose; sensitising events and birth are assessed separately",
+    "preparation": "Ready-to-use prefilled syringe 300 micrograms/2 mL (1500 IU/2 mL); bring to room temperature and give slowly. Verify product, RhD status and antibody screen; do not confuse with newborn vitamin K",
+    "maxDose": "One 300-microgram syringe covers approximately 15 mL fetal RhD-positive red cells; additional dose depends on measured FMH, not an arbitrary universal ceiling",
+    "sourceId": "med-rhophylac-label",
+    "monitoring": [
+      "Identity/product checks, prior sensitisation, allergic reactions and FMH assessment; observe after administration"
+    ],
+    "contraindications": [
+      "RhD-positive mother or established immune anti-D: prophylaxis is not treatment; IM route unsuitable with severe thrombocytopenia/coagulopathy"
+    ],
+    "notes": [
+      "Give to the mother, not the infant. Early-pregnancy losses have separate gestation/management criteria; do not apply the routine 28-week row to every miscarriage."
+    ]
+  },
+  "anti-d-postpartum": {
+    "drug": "Anti-D immunoglobulin — postpartum",
+    "indication": "Non-sensitised RhD-negative mother after an RhD-positive birth",
+    "dose": "300 micrograms (1500 IU); increase if testing shows a larger fetomaternal haemorrhage",
+    "route": "IM or IV for this Rhophylac product only",
+    "frequency": "Once as soon as possible, ideally within 72 hours of birth",
+    "duration": "Postnatal episode; if >72 hours have elapsed, do not withhold—give as soon as possible and obtain specialist advice",
+    "preparation": "Ready-to-use prefilled syringe 300 micrograms/2 mL (1500 IU/2 mL); bring to room temperature and give slowly. Verify product, RhD status and antibody screen; do not confuse with newborn vitamin K",
+    "maxDose": "One 300-microgram syringe covers approximately 15 mL fetal RhD-positive red cells; additional dose depends on measured FMH, not an arbitrary universal ceiling",
+    "sourceId": "med-rhophylac-label",
+    "monitoring": [
+      "Identity/product checks, prior sensitisation, allergic reactions and FMH assessment; observe after administration"
+    ],
+    "contraindications": [
+      "RhD-positive mother or established immune anti-D: prophylaxis is not treatment; IM route unsuitable with severe thrombocytopenia/coagulopathy"
+    ],
+    "notes": [
+      "Give to the mother, not the infant. Early-pregnancy losses have separate gestation/management criteria; do not apply the routine 28-week row to every miscarriage."
+    ]
+  },
+  "nitrofurantoin-lower": {
+    "drug": "Nitrofurantoin — lower UTI in pregnancy",
+    "indication": "Culture-guided asymptomatic bacteriuria/cystitis; not pyelonephritis",
+    "dose": "100 mg modified release twice daily; if unavailable, 50 mg immediate release four times daily",
+    "route": "Oral",
+    "frequency": "Use ONE formulation-specific schedule",
+    "duration": "7 days",
+    "preparation": "Take with food using the specified modified-release capsule or immediate-release product; do not exchange frequency between formulations",
+    "maxDose": "200 mg/day in either cited pregnancy lower-UTI regimen",
+    "sourceId": "med-nice-uti",
+    "monitoring": [
+      "Symptoms, culture/susceptibility, renal function and clinical response by 48 hours; stop/review pulmonary or hepatic symptoms"
+    ],
+    "contraindications": [
+      "Avoid at term, in G6PD deficiency and significant renal impairment; fever/loin pain or sepsis requires an upper-UTI pathway"
+    ],
+    "notes": [
+      "NICE routine eligibility is eGFR ≥45 mL/min; eGFR 30–44 use is exceptional and needs a specific resistance/benefit-risk assessment."
+    ]
+  },
+  "cefalexin-lower": {
+    "drug": "Cefalexin — lower UTI in pregnancy",
+    "indication": "NICE second-choice lower-UTI option when suitable for culture results/allergy history",
+    "dose": "500 mg",
+    "route": "Oral",
+    "frequency": "Twice daily",
+    "duration": "7 days",
+    "preparation": "500 mg capsule/tablet; swallow with water. If a suspension is used, verify its concentration and measure the prescribed mg",
+    "maxDose": "1000 mg/day in this uncomplicated lower-UTI regimen; other infections have different schedules",
+    "sourceId": "med-nice-uti",
+    "monitoring": [
+      "Culture/susceptibility, response within 48 hours, allergy, diarrhoea and renal function"
+    ],
+    "contraindications": [
+      "Cephalosporin allergy; assess severe immediate beta-lactam allergy. Systemic/upper-UTI features need a different regimen"
+    ],
+    "notes": [
+      "Dose adjustment is required with renal impairment. This is not the pyelonephritis step-down prescription for every organism."
+    ]
+  },
+  "benzathine-early": {
+    "drug": "Benzathine penicillin G — early syphilis",
+    "indication": "Primary, secondary or early latent syphilis after staging",
+    "dose": "2.4 million units",
+    "route": "Deep IM ONLY",
+    "frequency": "One initial dose; in pregnancy CDC permits an additional 2.4-million-unit dose one week later",
+    "duration": "Initial episode; document any indicated extra dose and follow-up",
+    "preparation": "Use a product labelled penicillin G BENZATHINE alone, e.g. the full prefilled Bicillin L-A syringe labelled 2.4 million units (nominal 4 mL presentation); no dilution. Powder products require their own manufacturer reconstitution, and overfill means the prefilled presentation is not a universal units/mL recipe",
+    "maxDose": "2.4 million units per dose; do not substitute benzathine for neurosyphilis therapy",
+    "sourceId": "med-cdc-syphilis",
+    "monitoring": [
+      "Allergy/anaphylaxis readiness; injection-site/vascular safety; warn about Jarisch–Herxheimer reaction and fetal symptoms; stage-appropriate maternal titres and neonatal planning"
+    ],
+    "contraindications": [
+      "Never IV, intra-arterial or into/near a nerve/vessel; pregnancy with true penicillin allergy requires desensitisation for effective fetal treatment"
+    ],
+    "notes": [
+      "Confirm the exact penicillin salt/product. Bicillin L-A is not Bicillin C-R and is not aqueous crystalline penicillin."
+    ]
+  },
+  "benzathine-late": {
+    "drug": "Benzathine penicillin G — late/unknown-duration syphilis",
+    "indication": "Late latent syphilis or unknown duration without neurosyphilis",
+    "dose": "2.4 million units",
+    "route": "Deep IM ONLY",
+    "frequency": "Every 7 days for 3 doses",
+    "duration": "Three-weekly-dose course; >9 days between doses in pregnancy requires restarting the full course",
+    "preparation": "Use a product labelled penicillin G BENZATHINE alone, e.g. the full prefilled Bicillin L-A syringe labelled 2.4 million units (nominal 4 mL presentation); no dilution. Powder products require their own manufacturer reconstitution, and overfill means the prefilled presentation is not a universal units/mL recipe",
+    "maxDose": "7.2 million units total across three correctly timed doses",
+    "sourceId": "med-cdc-syphilis",
+    "monitoring": [
+      "Allergy/anaphylaxis readiness; injection-site/vascular safety; warn about Jarisch–Herxheimer reaction and fetal symptoms; stage-appropriate maternal titres and neonatal planning"
+    ],
+    "contraindications": [
+      "Never IV, intra-arterial or into/near a nerve/vessel; pregnancy with true penicillin allergy requires desensitisation for effective fetal treatment"
+    ],
+    "notes": [
+      "Confirm the exact penicillin salt/product. Bicillin L-A is not Bicillin C-R and is not aqueous crystalline penicillin."
+    ]
+  },
+  "benzyl-neurosyphilis": {
+    "drug": "Benzylpenicillin sodium — neurosyphilis",
+    "indication": "Adult neurosyphilis, ocular or otosyphilis with specialist evaluation",
+    "dose": "4 million units (2.4 g) IV every 4 hours; this selects the upper end of the CDC 18–24-million-unit/day range",
+    "route": "Slow IV injection/infusion",
+    "frequency": "Every 4 hours",
+    "duration": "10–14 days; additional stage-dependent benzathine treatment may be considered after completion",
+    "preparation": "For the cited 1.2 g (2-million-unit) sodium vials, use two vials per 2.4 g dose. Dissolve each in at least 8 mL water for injections/0.9% saline and give the complete dose slowly over at least 8 minutes (label: ≥1 minute per 300 mg). For infusion, reconstitute each vial in at least 20 mL compatible fluid. Verify the local product and account for sodium/fluid load",
+    "maxDose": "24 million units/day in this selected schedule; reduce/adjust for significant renal impairment",
+    "sourceId": "med-cdc-neurosyphilis",
+    "monitoring": [
+      "Clinical/neurological and ophthalmic/otic assessment, renal function, electrolytes, allergy and treatment completion"
+    ],
+    "contraindications": [
+      "Benzathine IM penicillin does not treat neurosyphilis adequately; severe allergy in pregnancy requires desensitisation and specialist care"
+    ],
+    "notes": [
+      "Dose from CDC; preparation from the registered benzylpenicillin sodium SmPC. Potassium and sodium formulations have different electrolyte loads."
+    ]
+  },
+  "clindamycin-bv": {
+    "drug": "Clindamycin — oral BV alternative",
+    "indication": "Symptomatic bacterial vaginosis when an oral alternative is appropriate",
+    "dose": "300 mg",
+    "route": "Oral",
+    "frequency": "Twice daily",
+    "duration": "7 days",
+    "preparation": "300 mg capsule or two 150 mg capsules per dose; swallow with a full glass of water",
+    "maxDose": "600 mg/day in this BV regimen, separate from 900 mg IV emergency dosing",
+    "sourceId": "cdc-bv-detail",
+    "monitoring": [
+      "Symptom response, intolerance and severe/persistent diarrhoea suggestive of C. difficile"
+    ],
+    "contraindications": [
+      "Clindamycin/lincomycin allergy; previous antibiotic-associated colitis needs careful assessment"
+    ],
+    "notes": [
+      "Do not shorten this CDC pregnancy BV course to five days."
+    ]
+  },
+  "clotrimazole-pregnancy": {
+    "drug": "Clotrimazole — vaginal candidiasis in pregnancy",
+    "indication": "Symptomatic confirmed/suspected vulvovaginal candidiasis; reconsider other diagnoses with persistent symptoms",
+    "dose": "5 g of 1% vaginal cream (50 mg clotrimazole)",
+    "route": "Intravaginal",
+    "frequency": "Once daily, usually at bedtime",
+    "duration": "7 days in pregnancy",
+    "preparation": "Use a product intended for VAGINAL use with a measured 5 g dose; 1% cream is not interchangeable with a 2% three-day course or external vulval cream. Discuss insertion technique in pregnancy using the actual product instructions",
+    "maxDose": "One 5 g application/day for this regimen; persistent/recurrent disease needs assessment rather than repeated blind treatment",
+    "sourceId": "med-cdc-candida",
+    "monitoring": [
+      "Symptom response, local irritation and recurrence; culture/speciation when complicated or refractory"
+    ],
+    "contraindications": [
+      "Clotrimazole allergy; avoid oral fluconazole during pregnancy and do not use vaginal boric acid as a routine pregnancy alternative"
+    ],
+    "notes": [
+      "CDC recommends topical azoles for seven days during pregnancy. Check product effects on latex contraception."
+    ]
+  },
+  "dinoprostone-iol": {
+    "drug": "Dinoprostone — 3 mg vaginal tablet",
+    "indication": "Hospital induction in an eligible unscarred uterus after cervical/fetal assessment; alternative to other ripening medicines",
+    "dose": "3 mg vaginally; if labour is not established, one further 3 mg tablet after 6–8 hours",
+    "route": "Vaginal posterior fornix",
+    "frequency": "Initial dose, then at most ONE repeat at 6–8 hours if eligible",
+    "duration": "One induction course, with reassessment after the maximum; stop further dosing for labour/hyperstimulation or fetal concern",
+    "preparation": "Use the specific Prostin E2 3 mg VAGINAL TABLET, inserted high in the posterior fornix by trained staff. Gel and controlled-release inserts have different strengths/schedules",
+    "maxDose": "6 mg total; wait at least 6 hours after dinoprostone before oxytocin",
+    "sourceId": "med-dinoprostone-label",
+    "monitoring": [
+      "Uterine activity and fetal heart rate, maternal observations, hypertonus/tachysystole and signs of rupture; emergency obstetric cover"
+    ],
+    "contraindications": [
+      "Previous caesarean/major uterine surgery, disproportion, malpresentation, suspected fetal distress, placenta praevia/unexplained bleeding or contraindication to labour"
+    ],
+    "notes": [
+      "Do not give together with misoprostol or oxytocin as a stacked ripening regimen; asthma and major cardiac/renal/hepatic disease require assessment."
+    ]
+  }
+}

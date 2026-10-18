@@ -1,4 +1,5 @@
 import type { ClinicalDetail } from './types'
+import { ANTENATAL_DETAIL } from './antenatal-care'
 
 // These additions have a deliberately narrow source-check scope. A check here
 // does not change the authored verification date/status of an entire topic.
@@ -293,14 +294,7 @@ export const CLINICAL_DETAILS: Record<string, ClinicalDetail> = {
     pitfalls: ['The monitoring schedule for chronic hypertension, gestational hypertension and pre-eclampsia is not identical. Apply the pathway matching the diagnosis and treatment.'],
     sourceIds: ['nice-ng133-detail'],
   }),
-  'anc-overview': reviewed({
-    overview: 'Antenatal contacts should combine planned screening with reassessment of new symptoms, risk factors and the patient’s concerns. A contact schedule alone is not a complete antenatal assessment.',
-    assessment: ['Record maternal history, medicines, previous pregnancy outcomes and psychosocial needs. Review changing risks throughout pregnancy.', 'Measure blood pressure at each routine face-to-face appointment using an appropriate validated device, and act on abnormal findings.', 'Assess fetal growth using the pathway appropriate to gestation and risk rather than ordering the same scans for everyone.'],
-    decisions: ['Explain offered screening and investigations, including what a result can and cannot show.', 'Unexpected findings need a defined referral pathway, communication of results and a named next step.'],
-    followUp: ['Discuss fetal movements after 24 weeks and advise contact with maternity services at any time when movements are reduced or concerning.', 'Review preparation for birth, feeding, postnatal support and symptoms that require urgent assessment.'],
-    pitfalls: ['The existing module presents the WHO contact schedule; the additional examination and safety-netting points here come from NICE. These are labelled sources, not a claim that the two national care schedules are identical.'],
-    sourceIds: ['nice-ng201-detail'],
-  }),
+  'anc-overview': ANTENATAL_DETAIL,
   'uti-pyelonephritis': reviewed({
     overview: 'Separate lower UTI from pyelonephritis and systemic infection. The difference changes the urgency, antibiotic selection and whether outpatient treatment is suitable.',
     assessment: ['Take a midstream urine sample for culture before antibiotics when feasible. Review previous cultures, recent antibiotic exposure, allergies and renal function.', 'Fever, flank pain, vomiting or systemic illness requires assessment for upper-tract infection and sepsis.'],

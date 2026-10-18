@@ -9,8 +9,8 @@
       "verified-summary": "Limited or summary-level check on dateChecked. See checkedAgainst for the exact scope, document currency limits and work still requiring full verification.",
       "pending-verification": "Known source, not yet re-checked for currency. Content using this entry is flagged in-app."
     },
-    "lastScopedContentUpdate": "2026-10-17",
-    "scopeNote": "42 additional clinical-detail sections and identified early-pregnancy corrections checked on this date. This is not a new full-library clinical audit; original module dates/statuses remain distinct."
+    "lastScopedContentUpdate": "2026-10-18",
+    "scopeNote": "42 explanatory detail sections plus a targeted medication/emergency audit with indication-specific regimens and dependent corrections. Source checks have explicit limits and do not certify every clinical module. The 18 October addition supplies trimester-specific investigations, repeat timing and an eight-contact calendar with India/NICE service differences; GDM diagnostic dependencies are labelled."
   },
   "sources": [
     {
@@ -128,8 +128,8 @@
       "gestationalAge": "Intrapartum/postpartum",
       "postpartumApplicability": "Yes — primary focus",
       "evidenceLevel": "GRADE; e.g., Rec 7 uterotonics UPDATED (oxytocin/carbetocin/misoprostol); Rec 14/15 NEW: TXA NOT for prevention (vaginal or caesarean); Rec 27 TXA for TREATMENT retained; Rec 29 TXA within treatment bundle",
-      "dateChecked": "2026-08-23",
-      "checkedAgainst": "WHO page + NCBI full recommendations chapter + Bleeding-after-birth provider guide: PPH definition >500 mL vaginal / >1000 mL CS or any loss compromising haemodynamics; TXA 1 g IV over 10 min as early as possible within 3 h of birth, repeat 1 g if bleeding continues at 30 min or restarts within 24 h; oxytocin 10 IU in 100–500 mL IV as fast as possible within bundle; TXA-bupivacaine storage separation warning; heat-stable carbetocin context where cold chain unavailable",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Targeted recheck: WHO 2025 recognition/treatment trigger (≥500 mL or ≥300 mL with abnormal haemodynamics), concurrent first-response bundle and refractory-haemorrhage fibrinogen target ≥2 g/L if replacing a level <2 g/L. Primary recommendation chapter/table indexed at https://www.ncbi.nlm.nih.gov/books/NBK619233/ ; direct access currently presents a browser check. This is a scoped primary-text/summary check, not a new full-document clinical certification.",
       "usedBySections": [
         "pph",
         "aph-previa",
@@ -140,7 +140,7 @@
         "lscs",
         "labour-third-stage"
       ],
-      "status": "verified-live"
+      "status": "verified-summary"
     },
     {
       "id": "nice-ng235-intrapartum-2026",
@@ -375,8 +375,8 @@
       "gestationalAge": "n/a",
       "postpartumApplicability": "Within 3 h of birth (reference point = time of birth)",
       "evidenceLevel": "Strong rec, moderate-quality evidence (WOMAN trial n=20,060)",
-      "dateChecked": "2026-08-23",
-      "checkedAgainst": "IRIS PDF: 1 g in 10 mL (100 mg/mL) IV at 1 mL/min (over 10 min); 2nd dose 1 g if bleeding continues after 30 min or restarts within 24 h; do not initiate beyond 3 h unless treating restarted bleeding within 24 h window; benefit falls ~10% per 15-min delay",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "TXA 1 g IV over 10 minutes within three hours of birth; repeat 1 g for bleeding continuing at 30 minutes or recurring within 24 hours. The recurrence rule is for a second dose and does not permit a first dose beyond three hours. WHO 2025 recommendation text and original WHO dosing reviewed.",
       "usedBySections": [
         "pph",
         "emergency-pph",
@@ -519,22 +519,26 @@
       "id": "rcog-gtg76-thyroid",
       "topic": "Thyroid disorders in pregnancy",
       "organisation": "RCOG",
-      "title": "Management of Thyroid Disorders in Pregnancy (Green-top Guideline No. 76)",
-      "url": "https://www.rcog.org.uk/media/nhbnyb0i/gtg-no76-thyroid-disorders-in-pregnancy.pdf",
+      "title": "Management of Thyroid Disorders in Pregnancy — Green-top 76 (2025)",
+      "url": "https://obgyn.onlinelibrary.wiley.com/doi/full/10.1111/1471-0528.18088",
       "publishedDate": "2023 (BJOG publication year per index listing)",
-      "version": "1st edition",
+      "version": "2025; May 2026 correction checked",
       "sourceType": "green-top guideline",
       "region": "UK",
       "population": "Thyroid disease in pregnancy",
       "gestationalAge": "All",
       "postpartumApplicability": "Postpartum thyroiditis covered",
       "evidenceLevel": "Graded",
-      "dateChecked": "2026-08-23",
-      "checkedAgainst": "Listed on current RCOG index — full-text audit pending",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Full primary guideline checked for existing/new levothyroxine dosing, TFT follow-up, lowest-effective-dose antithyroid treatment, no routine block-and-replace and considering PTU→carbimazole after 20 weeks; conversion PTU:carbimazole 20:1. May 2026 correction https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.70259 checked: fetal monthly scans start at 26–28 weeks onwards; CMZ abbreviation correction. Levothyroxine tablet preparation/interactions cross-checked against https://www.medicines.org.uk/emc/product/12781/smpc .",
       "usedBySections": [
-        "thyroid-pregnancy"
+        "thyroid-pregnancy",
+        "levothyroxine-established",
+        "levothyroxine-new",
+        "ptu-graves",
+        "carbimazole-graves"
       ],
-      "status": "pending-verification"
+      "status": "verified-live"
     },
     {
       "id": "nice-ng126-diagnosis-detail",
@@ -671,7 +675,7 @@
       "sourceType": "national clinical guideline",
       "region": "USA (international reference)",
       "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-hsv. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-hsv. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Medication audit: acyclovir 400 mg three times/day for first episode 7–10 days and pregnancy suppression from 36 weeks to birth; non-elimination of neonatal risk.",
       "usedBySections": [
         "sti-hsv"
       ],
@@ -788,7 +792,7 @@
       "sourceType": "international evidence-based guideline recommendations",
       "region": "International",
       "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for pcos. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for pcos. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Medication check 17 October 2026: metabolic metformin indication, 500 mg increments every 1–2 weeks, suggested adult 2.5 g/day/adolescent 2 g/day limits, B12 risk and letrozole first-line fertility indication.",
       "usedBySections": [
         "pcos"
       ],
@@ -889,8 +893,8 @@
       "version": "NG3",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for gdm, pregestational-diabetes. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for gdm, pregestational-diabetes. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Subsequent diagnostic/dependency check: fasting 75 g OGTT thresholds (fasting ≥5.6 or two-hour ≥7.8 mmol/L), nutrition/metformin/insulin choice, immediate insulin at fasting ≥7.0 mmol/L, glucose targets in labour and uncomplicated-GDM birth by 40+6 weeks; distinguish from the Indian non-fasting programme. Additional checked dependencies: India versus NICE growth/birth/labour/postpartum schedules displayed; preconception HbA1c below 6.5% if safe, booking/later risk assessment versus glucose monitoring, renal assessment without pregnancy eGFR, uncomplicated pre-existing-diabetes birth at 37+0–38+6, individual postpartum insulin reduction, and macrosomia birth counselling.",
       "usedBySections": [
         "gdm",
         "pregestational-diabetes"
@@ -1145,7 +1149,7 @@
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
       "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for hdp-postpartum. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for hdp-postpartum. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Targeted medication audit: Table 1 offers treatment for persistent BP >140/90 in gestational hypertension, target ≤135/85; after 37 weeks stable-patient birth timing is agreed with the woman and senior obstetrician. The former false “NICE severe-only” comparison was removed.",
       "usedBySections": [
         "hdp-postpartum"
       ],
@@ -1162,8 +1166,8 @@
       "version": "NG201",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for anc-overview. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Additional full-primary-HTML check for trimester guide: NG201 1.1/1.2 booking and 10 nulliparous/7 parous contacts, baseline CBC/group/Rh and offered infection/haemoglobinopathy screening, 11+2–14+1 dating and 18+0–20+6 anomaly scan, 28-week CBC/antibodies/Rh care, BP/proteinuria each routine face-to-face appointment, fundal-height assessment after 24 weeks, risk-driven scans and no routine ultrasound after 28 weeks in uncomplicated singleton pregnancy, presentation after 36 weeks and follow-up of abnormal results. These are labelled UK recommendations, not a full verification of every ANC medication or national policy.",
       "usedBySections": [
         "anc-overview"
       ],
@@ -1274,6 +1278,1297 @@
         "methotrexate-ectopic"
       ],
       "status": "verified-summary"
+    },
+    {
+      "id": "med-msf-magnesium",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Magnesium sulfate: IV/IM and IV regimens",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/magnesium-sulfate-mgso4-injectable-16682893.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Loading and maintenance doses, 24-hour stopping rule, recurrence ceiling, urine/reflex/respiratory monitoring and toxicity management.",
+      "usedBySections": [
+        "magnesium-pritchard",
+        "magnesium-iv",
+        "magnesium-recurrence",
+        "emg-eclampsia",
+        "emg-eclampsia-postpartum-fit"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-calcium",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Calcium gluconate injectable",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/calcium-gluconate-injectable-16682510.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "10% strength, adult initial 1 g IV dose over at least 5 minutes for magnesium toxicity/severe hypocalcaemia; ECG and extravasation precautions.",
+      "usedBySections": [
+        "calcium-magnesium-toxicity",
+        "calcium-hypocalcaemia",
+        "emg-massive-transfusion"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-oxytocin",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Oxytocin injectable",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/oxytocin-injectable-16683014.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "PPH treatment 5–10 IU slow IV with 20 IU/L over 2 hours, total 60 IU ceiling; separate from prophylaxis and augmentation. Pump rates in the app are explicitly calculated.",
+      "usedBySections": [
+        "oxytocin-pph"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-tranexamic-oral",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Tranexamic acid oral",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/tranexamic-acid-oral-16684737.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Heavy abnormal uterine bleeding: 1 g three times daily, up to four times daily, at most 5 days, and renal/thrombotic cautions.",
+      "usedBySections": [
+        "txa-hmb"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-oxytocin-label",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Panpharma / emc",
+      "title": "Oxytocin 10 IU/mL product information",
+      "url": "https://www.medicines.org.uk/emc/product/13359/smpc",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Term-labour induction/augmentation dose increments, pump-compatible dilution, 20 milliunits/minute regimen ceiling, contraction/fetal monitoring and rapid-bolus risk.",
+      "usedBySections": [
+        "oxytocin-augmentation"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-carboprost-label",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Manufacturer prescribing information / DailyMed",
+      "title": "Carboprost tromethamine injection",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=84efd1c0-6323-4469-9535-237f96fcb383",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Refractory postpartum bleeding section: 250 micrograms/mL, 250 micrograms deep IM, 15–90-minute repeat intervals and 2 mg/eight-dose maximum; distinguished from the abortion section.",
+      "usedBySections": [
+        "carboprost-pph"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-methylergometrine-label",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Manufacturer prescribing information / DailyMed",
+      "title": "Methylergonovine maleate injection",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a9a3079e-b62b-4858-920e-d8f5cb38481e",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "0.2 mg/mL, IM 0.2 mg repeat at 2–4-hour intervals, IV and hypertension precautions, and breastfeeding interruption in the label. No unsupported cumulative maximum added.",
+      "usedBySections": [
+        "methylergometrine-pph"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-ergometrine-label",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Manufacturer / emc",
+      "title": "Ergometrine Injection BP 0.05%",
+      "url": "https://www.medicines.org.uk/emc/product/6265/smpc",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "200–500 micrograms IM; severe-haemorrhage slow-IV 250–500 micrograms, optional dilution to 5 mL, and vascular/hypertension contraindications. Ergometrine distinguished from methylergometrine.",
+      "usedBySections": [
+        "ergometrine-pph"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-misoprostol",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Misoprostol",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/misoprostol-oral-16684219.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "800-microgram SL PPH rescue dose, tablet strengths, route-specific labour-induction intervals and oxytocin separation.",
+      "usedBySections": [
+        "misoprostol-pph"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-nhm-cemonc",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Government of India, MoHFW / NHM",
+      "title": "Revised CEmONC Curriculum 2024, Part 1 — chapter 4",
+      "url": "https://nhm.gov.in/pdf/2024/Revised_CEmONC_Curriculum-2024-Part-1.pdf",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "India",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scanned primary PDF pages 103–104 examined by OCR and visual review: labetalol prose sequence/cumulative 300 mg, sustained-release nifedipine 10 mg twice daily/max 80 mg, and internal prose/flowchart differences for acute nifedipine and labetalol. The app exposes rather than merges the differences.",
+      "usedBySections": [
+        "labetalol-iv",
+        "nifedipine-acute",
+        "nifedipine-maintenance",
+        "emg-eclampsia",
+        "emg-severe-htn"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-labetalol-oral",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Labetalol oral",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/labetalol-oral-16683977.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "100 mg twice daily with increments, divided higher dosing, 2400 mg/day limit and beta-blocker cautions.",
+      "usedBySections": [
+        "labetalol-oral"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-hydralazine",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Hydralazine injectable",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/hydralazine-injectable-16682780.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "20 mg reconstituted/diluted to 10 mL (2 mg/mL), 5 mg over 2–4 minutes, 20-minute reassessment and cumulative 20 mg bolus regimen.",
+      "usedBySections": [
+        "hydralazine-iv",
+        "emg-severe-htn"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-nifedipine",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Nifedipine oral — tocolysis",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/nifedipine-oral-16684342.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "10 mg every 15 minutes up to 40 mg loading, 20 mg every 6 hours, 48-hour duration and maternal hypotension/concurrent-drug cautions. This is not the hypertension row.",
+      "usedBySections": [
+        "nifedipine-tocolysis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-methyldopa",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Methyldopa oral",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/methyldopa-oral-16684124.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "250 mg twice/three times daily, slow increments, 3 g/day maximum, hepatic/depression cautions. NICE NG133 supplies the separate postpartum stopping recommendation.",
+      "usedBySections": [
+        "methyldopa"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-rcog-vte-37a",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "RCOG",
+      "title": "Reducing the Risk of VTE during Pregnancy and the Puerperium — Green-top 37a",
+      "url": "https://www.rcog.org.uk/media/qejfhcaj/gtg-37a.pdf",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Standard-weight prophylaxis table, duration based on risk, renal adjustment and neuraxial cautions. 2015 guideline, not represented as a new 2026 edition.",
+      "usedBySections": [
+        "enoxaparin-prophylaxis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-rcog-vte-37b",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "RCOG",
+      "title": "Thromboembolic Disease in Pregnancy and the Puerperium: Acute Management — Green-top 37b",
+      "url": "https://www.rcog.org.uk/media/wj2lpco5/gtg-37b-1.pdf",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Empiric anticoagulation pending objective exclusion, booking-weight LMWH, unfractionated-heparin 80 units/kg and 18 units/kg/hour with monitoring, life-threatening PE specialist reperfusion and treatment duration. 2015 edition.",
+      "usedBySections": [
+        "enoxaparin-treatment",
+        "heparin-pe",
+        "emg-pe"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-metformin",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Metformin oral",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/metformin-oral-27983919.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Weekly 500 mg titration to 2 g/day, with meals, renal/acute-illness precautions; NICE NG3 separately provides pregnancy selection and targets.",
+      "usedBySections": [
+        "metformin"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-insulin-nph",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Intermediate-acting insulin",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/insulin-intermediate-acting-injectable-16682825.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Individualised once/twice-daily subcutaneous dosing, U-100 matching devices, NEVER-IV instruction and compatible insulin mixing order; no universal GDM starting dose invented.",
+      "usedBySections": [
+        "insulin-nph"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-who-antenatal-steroids",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "WHO",
+      "title": "Antenatal corticosteroids for improving preterm birth outcomes — 2022",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK585372/",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Recommendation 1.9/type-and-regimen evidence: IM dexamethasone or betamethasone total 24 mg; four 6 mg dexamethasone doses 12 hours apart or two 12 mg betamethasone doses 24 hours apart. NICE NG25 supplies gestational and repeat-course criteria.",
+      "usedBySections": [
+        "betamethasone-antenatal",
+        "dexamethasone-antenatal"
+      ],
+      "status": "verified-summary"
+    },
+    {
+      "id": "med-surgical-prophylaxis",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "ASHP / IDSA / SIS / SHEA",
+      "title": "Clinical Practice Guidelines for Antimicrobial Prophylaxis in Surgery",
+      "url": "https://www.ashp.org/-/media/assets/policy-guidelines/docs/therapeutic-guidelines/therapeutic-guidelines-antimicrobial-prophylaxis-surgery.ashx",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Adult cefazolin 2 g, 3 g at weight ≥120 kg, four-hour redosing and caesarean severe-beta-lactam-allergy alternative clindamycin plus gentamicin. 2013 standard; formulation preparation separately cross-checked against the cefazolin product label.",
+      "usedBySections": [
+        "cefazolin-cs"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-nag-obstetric",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Ministry of Health Malaysia",
+      "title": "National Antimicrobial Guideline — Obstetric and gynaecological infections",
+      "url": "https://sites.google.com/moh.gov.my/nag/contents/section-a-adult/a6-obstetrics-gyneacological-infections",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "Malaysia",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Source-specific combinations and durations for chorioamnionitis, endometritis and septic miscarriage; GBS ampicillin 2 g then 1 g every 4 h until delivery. Regional guidance is labelled; local resistance and culture review remain required.",
+      "usedBySections": [
+        "ampicillin-chorio",
+        "clindamycin-endometritis",
+        "emg-sepsis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-cdc-gbs",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "CDC",
+      "title": "GBS intrapartum antibiotic regimen aid",
+      "url": "https://www2.cdc.gov/vaccines/m/gbs3/Antibiotics.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Cross-check of ampicillin 2 g IV then 1 g every 4 h until delivery, distinct from penicillin G million-unit dosing. This CDC aid states it is based on 2010 guidance; the Malaysian national guideline also confirms the regimen.",
+      "usedBySections": [
+        "ampicillin-gbs"
+      ],
+      "status": "verified-summary"
+    },
+    {
+      "id": "med-msf-gentamicin",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Gentamicin injectable",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/gentamicin-injectable-16682735.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Adult 5–6 mg/kg daily, 40 mg/mL presentation, 100 mL adult infusion over 30 minutes and renal/ototoxicity/compatibility precautions; obstetric combination choice from the national infection guideline.",
+      "usedBySections": [
+        "gentamicin-obstetric"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-metronidazole-iv",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Metronidazole injectable",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/metronidazole-injectable-16682959.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "500 mg/100 mL over 30 minutes, every-8-hour adult dosing, switch to oral, severe hepatic reduction and interactions. Syndrome duration supplied separately by the infection guideline.",
+      "usedBySections": [
+        "metronidazole-iv"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-acog-uti",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "ACOG",
+      "title": "Urinary Tract Infections in Pregnant Individuals — 2023",
+      "url": "https://www.acog.org/clinical/clinical-guidance/clinical-consensus/articles/2023/08/urinary-tract-infections-in-pregnant-individuals",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Inpatient pyelonephritis treatment, culture-directed therapy, 14-day total treatment and inadequate renal-parenchymal coverage from nitrofurantoin/fosfomycin.",
+      "usedBySections": [
+        "ceftriaxone-pyelonephritis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-who-abortion",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "WHO",
+      "title": "Abortion care guideline, second edition — executive summary",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK617980/",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Recommendation 27: <12-week mifepristone 200 mg followed 24–48 hours later by misoprostol 800 micrograms; route options and no fabricated universal maximum for repeat doses. India legal/service eligibility remains separate.",
+      "usedBySections": [
+        "misoprostol-abortion",
+        "mifepristone-abortion"
+      ],
+      "status": "verified-summary"
+    },
+    {
+      "id": "med-misoprostol-iol-label",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Norgine / emc",
+      "title": "Angusta 25 microgram tablets",
+      "url": "https://www.medicines.org.uk/emc/product/12147/smpc",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "25 micrograms orally every 2 hours or 50 every 4 hours, 200 micrograms/24-hour ceiling, hospital monitoring, ≥4-hour separation from oxytocin, and no casual tablet splitting.",
+      "usedBySections": [
+        "misoprostol-iol"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-rcog-hg",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "RCOG / BJOG",
+      "title": "Management of NVP and Hyperemesis Gravidarum — Green-top 69 (2024)",
+      "url": "https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Primary 2024 RCOG/BJOG guideline (DOI 10.1111/1471-0528.17739) full PDF checked via an accessible copy because the publisher returned 403. Checked executive recommendations, section 7.1 and Appendix III: oral/IV ondansetron schedules, thiamine 100 mg three times daily or parenteral vitamin B, and the explicit example of 100 mg parenteral thiamine before dextrose. This does not certify the entire HG module. Copy read: https://www.missionmrcog.com/home/images/Library/Greentop_Guidelines/2024/Nausea%2C_vomiting_in_pregnancy_%26_hyperemesis_gravidarum%2C_UPDATE_2024.pdf Appendix III also checked for promethazine 12.5–25 mg every 4–8 hours and metoclopramide 5–10 mg every 8 hours; 0.9% saline with potassium guided by daily electrolytes. Thiamine 100 mg/2 mL and 30-minute very-slow IV administration cross-checked against MSF https://medicalguidelines.msf.org/en/viewport/EssDr/english/thiamine-vitamin-b1-injectable-16683171.html .",
+      "usedBySections": [
+        "ondansetron-oral",
+        "ondansetron-iv",
+        "thiamine-hg-oral",
+        "thiamine-before-glucose"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-xonvea-label",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Exeltis / emc",
+      "title": "Xonvea 10 mg/10 mg gastro-resistant tablets",
+      "url": "https://www.medicines.org.uk/emc/product/14892/smpc",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Specific delayed-release product: day-by-day escalation from two bedtime tablets to four/day, swallowing/empty-stomach instructions, scheduled use and taper.",
+      "usedBySections": [
+        "doxylamine-pyridoxine"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-fcm-label",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "CSL Vifor / emc",
+      "title": "Ferinject 50 mg iron/mL",
+      "url": "https://www.medicines.org.uk/emc/product/5910/smpc",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Hb/weight total-need table, 20 mg/kg and 1000 mg infusion limits, ≥7-day spacing, saline-only dilution, ≥15-minute infusion for >500 mg, ≥30-minute observation, phosphate and pregnancy cautions.",
+      "usedBySections": [
+        "iron-fcm"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-cdc-ec",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "CDC",
+      "title": "U.S. Selected Practice Recommendations 2024 — Emergency Contraception",
+      "url": "https://www.cdc.gov/contraception/hcp/usspr/emergency-contraception.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "LNG 1.5 mg, 5-day window with time-related effectiveness, repeat if vomiting within 3 hours, contraception restart/backup and pregnancy-test follow-up.",
+      "usedBySections": [
+        "levonorgestrel-ec"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-rcuk-anaphylaxis",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Resuscitation Council UK",
+      "title": "Emergency treatment of anaphylaxis — 2021",
+      "url": "https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Adult pregnancy IM adrenaline 500 micrograms every 5 minutes, refractory reaction after two appropriate doses, IV-infusion concentration/rate, fluids, steroid/antihistamine role and risk-based observation.",
+      "usedBySections": [
+        "adrenaline-anaphylaxis",
+        "adrenaline-refractory",
+        "emg-anaphylaxis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-rcuk-als",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Resuscitation Council UK",
+      "title": "Adult advanced life support — 2025",
+      "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/adult-advanced-life-support-guidelines",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Adult compression/rhythm algorithm and adrenaline 1 mg IV/IO timing with repeat every 3–5 minutes; pregnancy follows the usual drug/defibrillation dosing with specific modifications.",
+      "usedBySections": [
+        "adrenaline-arrest",
+        "emg-maternal-collapse"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-rcuk-special",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Resuscitation Council UK",
+      "title": "Special circumstances — 2025, cardiac arrest in pregnancy",
+      "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/special-circumstances-guidelines",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Manual left uterine displacement above 20 weeks, reversible/obstetric causes and early/as-soon-as-possible resuscitative hysterotomy at the arrest location, rather than waiting for a 4-minute trigger.",
+      "usedBySections": [
+        "emg-maternal-collapse",
+        "emg-pe",
+        "emg-afe",
+        "emg-anaphylaxis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-jbds-hypo",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "JBDS-IP / ABCD / Diabetes UK",
+      "title": "Hospital Management of Hypoglycaemia in Adults — January 2023",
+      "url": "https://abcd.care/sites/default/files/site_uploads/JBDS_Guidelines_Current/JBDS_01_Hypo_Guideline_with_QR_code_January_2023.pdf",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Treat <4 mmol/L, oral carbohydrate if safe, IV glucose 20 g using 10%/20% solutions, IM glucagon 1 mg, repeat glucose checks and subsequent carbohydrate/insulin review.",
+      "usedBySections": [
+        "glucose-severe-hypo",
+        "glucagon-hypo",
+        "emg-hypo-hyperglycemia"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-jbds-dka",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "JBDS-IP / Diabetes UK",
+      "title": "Management of DKA in Adults — March 2023",
+      "url": "https://www.diabetes.org.uk/sites/default/files/2023-03/JBDS%2002%20DKA%20Guideline%20with%20qr%20code.pdf",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Pregnancy/euglycaemic DKA cautions; soluble insulin 50 units/50 mL, 0.1 units/kg/hour, no routine bolus, glucose/ketone/electrolyte monitoring, potassium table, resolution and IV-to-SC overlap.",
+      "usedBySections": [
+        "insulin-dka",
+        "emg-hypo-hyperglycemia"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-norepinephrine",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Norepinephrine tartrate injectable",
+      "url": "https://medicalguidelines.msf.org/en/node/1861",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "MSF peripheral TARTRATE-based 0.1 microgram/kg/min starting dose, dilution to 100 micrograms TARTRATE/mL, pump formula, titration/ceiling and salt-versus-base distinction; SMFM supplies maternal-sepsis vasopressor choice.",
+      "usedBySections": [
+        "norepinephrine-shock"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-alteplase-label",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "Genentech / DailyMed",
+      "title": "Activase (alteplase) prescribing information",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c669f77c-fa48-478b-a14b-80b20a0139c2",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Adult massive-PE 100 mg over 2 hours, reconstitution to 1 mg/mL, bleeding contraindications/monitoring and post-infusion heparin criteria. Not the stroke regimen or an automatic pregnancy recommendation.",
+      "usedBySections": [
+        "alteplase-pe",
+        "emg-pe"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-ggc-status",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "NHS Greater Glasgow and Clyde",
+      "title": "Management of Generalised Convulsive Status Epilepticus in Adults — August 2024 flowchart",
+      "url": "https://handbook.ggcmedicines.org.uk/media/tekdy3dt/ggc-status-epilepticus-flowchart-august-2024-pr1-change-2.pdf",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Timed rescue: lorazepam up to 4 mg in divided IV doses, repeat benzodiazepine at 10 minutes if necessary, levetiracetam 60 mg/kg capped at 4500 mg and ICU escalation; levetiracetam preparation separately cross-checked against the Keppra concentrate SmPC https://www.medicines.org.uk/emc/product/2296/smpc (100 mg/mL, at least 100 mL compatible fluid, 15-minute infusion); the status load remains explicitly off-label.",
+      "usedBySections": [
+        "lorazepam-status",
+        "levetiracetam-status",
+        "emg-eclampsia-postpartum-fit"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-nice-status",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "NICE",
+      "title": "NG217 — status epilepticus",
+      "url": "https://www.nice.org.uk/guidance/ng217/chapter/7-Treating-status-epilepticus-repeated-or-cluster-seizures-and-prolonged-seizures",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Five-minute convulsive-status recognition, first-line benzodiazepine and second-line IV antiseizure options/escalation.",
+      "usedBySections": [
+        "emg-eclampsia-postpartum-fit"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-pph",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Early postpartum haemorrhage — obstetric manual section 8.2",
+      "url": "https://medicalguidelines.msf.org/en/viewport/ONC/english/8-2-early-postpartum-haemorrhage-51417782.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "4Ts assessment, atonic-PPH oxytocin, additional uterotonic choice, compression, source control, tamponade and urgent surgical escalation. WHO 2025 supplies the newer treatment-recognition trigger.",
+      "usedBySections": [
+        "emg-pph",
+        "emg-massive-transfusion",
+        "emg-uterine-inversion"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-who-pph-recognition",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "WHO",
+      "title": "Global health agencies issue new recommendations on postpartum haemorrhage — 5 October 2025",
+      "url": "https://www.who.int/news/item/05-10-2025-global-health-agencies-issue-new-recommendations-to-help-end-deaths-from-postpartum-haemorrhage",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Earlier PPH treatment trigger: ≥300 mL with abnormal vital signs in addition to the traditional 500 mL threshold; avoid waiting for 1000 mL after caesarean before treating compromise.",
+      "usedBySections": [
+        "emg-pph"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-obstetrics",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Essential obstetric and newborn care — practical manual",
+      "url": "https://medicalguidelines.msf.org/sites/default/files/pdf/guideline-449-en.pdf",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Scoped sections: shoulder dystocia (7.5), uterine rupture (3.3), APH (chapter 3), ectopic emergencies, maternal resuscitation and PPH/inversion. 2019 edition, PDF exported April 2025; not represented as a new 2026 edition.",
+      "usedBySections": [
+        "emg-shoulder-dystocia",
+        "emg-ectopic",
+        "emg-aph-massive",
+        "emg-torsion",
+        "emg-uterine-rupture"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-rcog-cord-gtg",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "RCOG",
+      "title": "Umbilical Cord Prolapse — Green-top 50",
+      "url": "https://www.rcog.org.uk/media/3wykswng/gtg-50-umbilicalcordprolapse-2014.pdf",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Elevation of presenting part, positioning, minimal cord handling, bladder 500–750 mL instillation for delay/transfer, emptying before birth and birth urgency. 2014 edition, scoped check.",
+      "usedBySections": [
+        "emg-cord-prolapse"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-inversion",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "MSF",
+      "title": "Uterine inversion — obstetric manual section 8.4",
+      "url": "https://medicalguidelines.msf.org/en/viewport/ONC/english/8-4-uterine-inversion-51417808.html",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Immediate replacement with concurrent resuscitation, do not remove attached placenta before reduction, temporarily stop then restart uterotonics, and surgical rescue.",
+      "usedBySections": [
+        "emg-uterine-inversion"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-smfm-afe-2026",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "SMFM",
+      "title": "Checklist for initial management of amniotic fluid embolism — updated 2026",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13565333/",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Primary 2026 statement: multidisciplinary resuscitation, haemostasis, physiology-guided support, fluid-overload risk and no routine unproven A-OK cocktail.",
+      "usedBySections": [
+        "emg-afe"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-acog-torsion",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "ACOG",
+      "title": "Adnexal Torsion in Adolescents — Committee Opinion 783",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/08/adnexal-torsion-in-adolescents",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Urgent laparoscopy, Doppler does not exclude torsion, detorsion and tissue preservation regardless of appearance in adolescents; adult/postmenopausal extrapolation explicitly limited.",
+      "usedBySections": [
+        "emg-torsion"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-smfm-sepsis",
+      "topic": "Medication regimens and emergency treatment",
+      "organisation": "SMFM",
+      "title": "Consult Series 67: Maternal sepsis — 2023",
+      "url": "https://publications.smfm.org/publications/507-society-for-maternal-fetal-medicine-consult-series-67/",
+      "sourceType": "Clinical guideline / primary medication reference",
+      "region": "International; source-specific setting",
+      "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Sepsis without obligatory fever, cultures without antibiotic delay, early broad-spectrum treatment, 1–2 L balanced crystalloid in 3 hours with response-guided reassessment, norepinephrine and uterine source control.",
+      "usedBySections": [
+        "emg-sepsis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-enalapril-label",
+      "topic": "Indication-specific medication audit",
+      "organisation": "Milpharm / emc",
+      "title": "Enalapril 5 mg tablets — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/562/smpc",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Hypertension initial 5 mg with volume/renal caution, 40 mg/day maintenance ceiling, creatinine/potassium and pregnancy/feeding warnings. NICE NG133 supplies the separately cited postpartum recommendation.",
+      "usedBySections": [
+        "enalapril-postpartum"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-nhs-ecv",
+      "topic": "Indication-specific medication audit",
+      "organisation": "NHS Greater Glasgow and Clyde",
+      "title": "External cephalic version — Clyde SOP",
+      "url": "https://www.rightdecisions.scot.nhs.uk/maternity-gynaecology-guidelines/maternity/common-obstetric-problems-maternity-assessment/external-cephalic-version-ecv-clyde-standard-operating-procedure/",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Terbutaline 250 micrograms SC (0.5 mL of 0.5 mg/mL) ten minutes before ECV; pulse check at five minutes, CTG, cardiac contraindication, diabetes/PE cautions and anti-D.",
+      "usedBySections": [
+        "terbutaline-ecv"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-benzylpenicillin-label",
+      "topic": "Indication-specific medication audit",
+      "organisation": "Bowmed Ibisqus / emc",
+      "title": "Benzylpenicillin sodium 1200 mg injection/infusion — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/102025/smpc",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "GBS maternal IV loading 3 g (5 million units) then 1.5 g (2.5 million units) every four hours until birth; >1.2 g administration at least one minute/300 mg. Section 6.6: each 1.2 g vial in at least 8 mL for injection or 20 mL for infusion; ~0.8 mL powder displacement.",
+      "usedBySections": [
+        "benzylpenicillin-gbs"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-ptu-label",
+      "topic": "Indication-specific medication audit",
+      "organisation": "Wockhardt / emc",
+      "title": "Propylthiouracil 50 mg tablets — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/3123/smpc",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Adult 300–600 mg/day initial, then 50–150 mg/day when controlled; renal reductions and hepatic/agranulocytosis warnings. The regimen explicitly distinguishes the general adult range from pregnancy-specific lowest-effective-dose selection in RCOG GTG76.",
+      "usedBySections": [
+        "ptu-graves"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-carbimazole-label",
+      "topic": "Indication-specific medication audit",
+      "organisation": "Manufacturer / emc",
+      "title": "Carbimazole tablets — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/12111/smpc",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Adult 20–60 mg/day initial divided two/three times; 5–15 mg/day maintenance; pregnancy lowest-effective-dose/no block-and-replace, pancreatitis, marrow and hepatic warnings. RCOG supplies pregnancy timing and PTU conversion.",
+      "usedBySections": [
+        "carbimazole-graves"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-thyroid-storm-2026",
+      "topic": "Indication-specific medication audit",
+      "organisation": "Society for Endocrinology / BTA / ETA joint consensus, Taylor et al.",
+      "title": "Management of thyroid emergencies: thyroid storm — 2026 joint consensus",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13506520/",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Full open-access primary statement: PTU loading/maintenance, caution with beta-blockade/cardiomyopathy, propranolol 60–80 mg every four hours, hydrocortisone 100 mg load then 50 mg four times/day, iodine at least one hour after thionamide, SSKI five drops four times/day, prompt de-escalation and failure review. Preparation companions: Panpharma hydrocortisone 100 mg powder SmPC https://www.medicines.org.uk/emc/product/9377/smpc and SSKI 1 g/mL https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ca1d3449-ea29-49a4-8863-365ec95f1553 .",
+      "usedBySections": [
+        "ptu-storm",
+        "propranolol-storm",
+        "hydrocortisone-storm",
+        "iodide-storm"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-who-anc-dose",
+      "topic": "Indication-specific medication audit",
+      "organisation": "WHO",
+      "title": "Antenatal care recommendations — iron and folate doses",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK409099/?report=reader",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Recommendation A.2.1: prevention 30–60 mg elemental iron plus 400 micrograms folic acid daily; anaemia treatment 120 mg elemental iron with 400 micrograms folic acid until Hb normal, then prevention. Limited dose-scope check through the primary WHO text indexed by NCBI; not a revalidation of every 2016 threshold.",
+      "usedBySections": [
+        "iron-oral-treatment",
+        "iron-folate-prevention"
+      ],
+      "status": "verified-summary"
+    },
+    {
+      "id": "med-who-calcium-dose",
+      "topic": "Indication-specific medication audit",
+      "organisation": "WHO",
+      "title": "Calcium supplementation in pregnancy — 2018 recommendation",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK535801/table/fm-ch1.tab1/?report=objectonly",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Low-dietary-intake population: 1.5–2 g elemental calcium/day in three divided doses, preferably with meals; separate iron, no established optimal starting gestation. Primary WHO recommendation table checked through NCBI.",
+      "usedBySections": [
+        "calcium-antenatal"
+      ],
+      "status": "verified-summary"
+    },
+    {
+      "id": "med-metoclopramide-label",
+      "topic": "Indication-specific medication audit",
+      "organisation": "Manufacturer / emc",
+      "title": "Maxolon 10 mg tablets — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/6213/smpc",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Adult 10 mg up to three times/day, daily limit 30 mg or 0.5 mg/kg, ≥6-hour interval including after vomiting, maximum five days, renal/hepatic reductions and extrapyramidal contraindications. RCOG Appendix III separately supplies pregnancy/HG 5–10 mg every eight hours.",
+      "usedBySections": [
+        "metoclopramide-hg"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-smfm-icp",
+      "topic": "Indication-specific medication audit",
+      "organisation": "SMFM / ACOG endorsed",
+      "title": "Consult Series 53: Intrahepatic cholestasis of pregnancy — 2021, reaffirmed 2024",
+      "url": "https://s3.amazonaws.com/cdn.smfm.org/attachments/876/52ce00b24a640231d1a2130433df7d3d.pdf",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Full primary PDF: UDCA starts 10–15 mg/kg/day in two/three doses, titration to at most 21 mg/kg/day for symptoms. Birth timing and fetal-risk counselling are distinct from symptom treatment; RCOG patient guidance separately confirms no demonstrated stillbirth prevention.",
+      "usedBySections": [
+        "ursodeoxycholic-icp"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-mirena-label",
+      "topic": "Indication-specific medication audit",
+      "organisation": "Bayer / emc",
+      "title": "Mirena 52 mg intrauterine delivery system — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/1132/smpc",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "One sterile 52 mg system, trained insertion, contraindications; 8-year contraception, 5-year HMB then symptom review and maximum 8 years if continued, 4-year UK-labelled HRT endometrial protection. Indication-specific durations are not interchangeable.",
+      "usedBySections": [
+        "mirena-hmb",
+        "mirena-contraception"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-nhs-letrozole",
+      "topic": "Indication-specific medication audit",
+      "organisation": "Gloucestershire Hospitals NHS Foundation Trust",
+      "title": "Ovulation induction with oral agents — patient pathway",
+      "url": "https://www.gloshospitals.nhs.uk/your-visit/patient-information-leaflets/ovulation-induction-with-oral-agents-clomid-and-letrozole/",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Initial letrozole 2.5 mg daily cycle days 2–6 for five days; day-one definition, pregnancy test if no period, response monitoring and reassessment. This named starting pathway does not establish a universal maximum for escalation.",
+      "usedBySections": [
+        "letrozole-ovulation"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-coc",
+      "topic": "Indication-specific medication audit",
+      "organisation": "MSF",
+      "title": "Ethinylestradiol / levonorgestrel oral",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/ethinylestradiol-levonorgestrel-oral-16683648.html",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "21 active 30-microgram/150-microgram tablets plus 7 inactive in a 28-day pack; one tablet daily, no gap between packs, seven-day backup for a later start and eligibility contraindications. No claim to update every missed-pill algorithm.",
+      "usedBySections": [
+        "coc-ee-lng"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-estradot-label",
+      "topic": "Indication-specific medication audit",
+      "organisation": "Novartis / emc",
+      "title": "Estradot 50 micrograms/24 hours transdermal patch — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/7226/smpc",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "50-microgram/24-hour patch starting example, replaced every three/four days; application site/rotation, progestogen need with uterus, ongoing benefit-risk review and contraindications.",
+      "usedBySections": [
+        "estradiol-hrt"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-bms-progestogen",
+      "topic": "Indication-specific medication audit",
+      "organisation": "British Menopause Society",
+      "title": "Progestogens and endometrial protection — April 2023",
+      "url": "https://thebms.org.uk/wp-content/uploads/2023/04/14-BMS-TfC-Progestogens-and-endometrial-protection-APR2023-A.pdf",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Micronised progesterone 200 mg for 12–14 days/month sequentially or 100 mg daily continuously at standard oestrogen doses; higher oestrogen requires proportional protection; unscheduled bleeding review. Does not certify all menopause therapy.",
+      "usedBySections": [
+        "progesterone-hrt-sequential",
+        "progesterone-hrt-continuous"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-rhophylac-label",
+      "topic": "Indication-specific medication audit",
+      "organisation": "CSL Behring / emc",
+      "title": "Rhophylac 300 micrograms/2 mL — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/6791/smpc",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "1500 IU/300 micrograms in 2 mL, product-specific IM/IV routes, routine 28–30-week prophylaxis, postnatal as soon as possible within 72 hours (give if delayed), 15 mL fetal-RBC coverage and FMH-based additional dose, maternal identity and route precautions.",
+      "usedBySections": [
+        "anti-d-routine",
+        "anti-d-postpartum"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-menadiol-label",
+      "topic": "Indication-specific medication audit",
+      "organisation": "Alliance / emc",
+      "title": "Menadiol diphosphate 10 mg tablets — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/1349/smpc",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Contraindication in mothers in pre/postnatal periods and late pregnancy; neonatal haemolytic anaemia, hyperbilirubinaemia/kernicterus warning. Used to flag a conflict with an older local obstetric-cholestasis pathway, not to recommend this drug routinely.",
+      "usedBySections": [],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-icp-vitk-local",
+      "topic": "Indication-specific medication audit",
+      "organisation": "NHS Lanarkshire / University Hospital Wishaw",
+      "title": "Obstetric cholestasis — October 2020 local guideline",
+      "url": "https://rightdecisions.scot.nhs.uk/media/1938/obstetric-cholestasis-october-2020docx-2.pdf",
+      "sourceType": "Primary clinical guideline / product information",
+      "region": "International; source-specific setting",
+      "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Older local pathway proposes off-label menadiol 10 mg/day from 34 weeks, discusses prolonged PT and neonatal risks. Its age and conflict with the product contraindication are displayed; it is not the app default.",
+      "usedBySections": [],
+      "status": "verified-summary"
+    },
+    {
+      "id": "med-nice-uti",
+      "topic": "Medication and dependent clinical-instruction audit",
+      "organisation": "NICE",
+      "title": "NG109: Lower UTI — pregnancy Table 2",
+      "url": "https://www.nice.org.uk/guidance/ng109/chapter/Recommendations",
+      "sourceType": "Primary guideline / product information",
+      "region": "Source-specific; international reference",
+      "population": "Pregnant/postpartum or gynaecological patients as specified",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Pregnant-patient seven-day nitrofurantoin and cefalexin schedules, modified/immediate-release distinction, renal eligibility, avoid-at-term and upper-UTI exclusions; not the adjacent three-day nonpregnant table.",
+      "usedBySections": [
+        "nitrofurantoin-lower",
+        "cefalexin-lower"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-cdc-syphilis",
+      "topic": "Medication and dependent clinical-instruction audit",
+      "organisation": "CDC; Pfizer/DailyMed preparation companion",
+      "title": "Syphilis during pregnancy — stage and timing",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/syphilis-pregnancy.htm",
+      "sourceType": "Primary guideline / product information",
+      "region": "Source-specific; international reference",
+      "population": "Pregnant/postpartum or gynaecological patients as specified",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Stage-specific benzathine penicillin: early 2.4 million units IM with optional pregnancy second dose one week later; late/unknown weekly three-dose course; >9-day interval in pregnancy restarts course, desensitisation and neonatal planning. Bicillin L-A prefilled product identity/deep-IM-only warning checked against https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=012d46f1-d0a0-4676-a879-cd320297ab16 ; do not convert nominal syringe size into a generic reconstitution recipe. Neonatal dependency corrected against CDC congenital-syphilis guidance https://www.cdc.gov/std/treatment-guidelines/congenital-syphilis.htm : evaluation/therapy is scenario- and age-specific; the old all-ten-days every-12-hour instruction is not retained.",
+      "usedBySections": [
+        "benzathine-early",
+        "benzathine-late"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-cdc-neurosyphilis",
+      "topic": "Medication and dependent clinical-instruction audit",
+      "organisation": "CDC; benzylpenicillin sodium product companion",
+      "title": "Neurosyphilis, ocular and otosyphilis treatment",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/neurosyphilis.htm",
+      "sourceType": "Primary guideline / product information",
+      "region": "Source-specific; international reference",
+      "population": "Pregnant/postpartum or gynaecological patients as specified",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "18–24 million units/day IV, 3–4 million every four hours or continuous, for 10–14 days; pregnancy penicillin desensitisation. Preparation of the selected 4-million-unit/2.4-g sodium dose cross-checked against the registered 1.2-g vial SmPC, https://www.medicines.org.uk/emc/product/102025/smpc .",
+      "usedBySections": [
+        "benzyl-neurosyphilis"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-cdc-candida",
+      "topic": "Medication and dependent clinical-instruction audit",
+      "organisation": "CDC",
+      "title": "Vulvovaginal candidiasis: pregnancy treatment",
+      "url": "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm",
+      "sourceType": "Primary guideline / product information",
+      "region": "Source-specific; international reference",
+      "population": "Pregnant/postpartum or gynaecological patients as specified",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "1% clotrimazole vaginal cream 5 g/day and pregnancy-specific seven-day topical azole recommendation; avoid oral fluconazole in pregnancy and evaluate persistent symptoms.",
+      "usedBySections": [
+        "clotrimazole-pregnancy"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-dinoprostone-label",
+      "topic": "Medication and dependent clinical-instruction audit",
+      "organisation": "Pfizer / emc",
+      "title": "Prostin E2 3 mg vaginal tablets — SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/1091/smpc",
+      "sourceType": "Primary guideline / product information",
+      "region": "Source-specific; international reference",
+      "population": "Pregnant/postpartum or gynaecological patients as specified",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "One 3 mg vaginal tablet, possible single repeat after six/eight hours, total maximum 6 mg; ≥6-hour oxytocin separation, formulation/route identity, uterine scar/fetal/obstetric contraindications and continuous clinical/fetal assessment.",
+      "usedBySections": [
+        "dinoprostone-iol"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-figo-gtd-2025",
+      "topic": "Medication and dependent clinical-instruction audit",
+      "organisation": "FIGO Cancer Report, Ngan et al.",
+      "title": "Diagnosis and management of gestational trophoblastic disease: 2025 update",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12411817/",
+      "sourceType": "Primary guideline / product information",
+      "region": "Source-specific; international reference",
+      "population": "Pregnant/postpartum or gynaecological patients as specified",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Primary paper sections 4–5: suction evacuation with ultrasound guidance and haemorrhage support, no routine second curettage, histology and referral, hCG every one/two weeks then partial-mole confirmatory test at one month versus complete-mole monthly six months; updated FIGO plateau/rise/histological choriocarcinoma criteria. Not a chemotherapy-dose audit.",
+      "usedBySections": [],
+      "status": "verified-live"
+    },
+    {
+      "id": "med-msf-ondansetron",
+      "topic": "HG guideline comparison",
+      "organisation": "MSF",
+      "title": "Ondansetron injectable — postoperative-vomiting reference",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/ondansetron-injectable-16683003.html",
+      "sourceType": "Primary medication monograph",
+      "region": "International",
+      "population": "Postoperative-vomiting reference, contrasted with a specialist HG pathway",
+      "dateChecked": "2026-10-17",
+      "checkedAgainst": "Postoperative indication/schedules and pregnancy caution (avoid first trimester; not recommended for NVP) checked. Displayed as a source/indication-specific conflict with RCOG GTG69, not silently combined with its HG doses.",
+      "usedBySections": [
+        "hyperemesis-gravidarum",
+        "ondansetron"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "anc-who-calendar",
+      "topic": "Antenatal visits and trimester investigations",
+      "organisation": "WHO",
+      "title": "Antenatal care: eight-contact model",
+      "url": "https://www.who.int/news/item/07-11-2016-new-guidelines-on-antenatal-care-for-a-positive-pregnancy-experience",
+      "sourceType": "Primary guideline / programme reference",
+      "region": "International; setting labelled",
+      "population": "Routine pregnancy with additional risk-driven care",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Primary WHO calendar checked: minimum eight contacts within 12 weeks then 20/26/30/34/36/38/40, one/two/five contacts by trimester, additional risk-driven care and ultrasound before 24 weeks. WHO current healthy-pregnancy page also continues the eight-contact recommendation.",
+      "usedBySections": [
+        "anc-overview"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "anc-india-programme",
+      "topic": "Antenatal visits and trimester investigations",
+      "organisation": "MoHFW / National Health Mission",
+      "title": "Maternal health: quality ANC and PMSMA",
+      "url": "https://nhm.gov.in/index1.php?lang=1&level=2&lid=218&sublinkid=822",
+      "sourceType": "Primary guideline / programme reference",
+      "region": "India",
+      "population": "Routine pregnancy with additional risk-driven care",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Current official programme page checked: minimum four ANCs, first-trimester registration and baseline package; PMSMA designated ninth-of-month second/third-trimester specialist care and extra high-risk follow-up. Displayed alongside WHO/NICE rather than replacing them silently.",
+      "usedBySections": [
+        "anc-overview"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "anc-india-gdm",
+      "topic": "Antenatal visits and trimester investigations",
+      "organisation": "MoHFW / National Health Mission",
+      "title": "GDM: Technical and Operational Guidelines — 2018",
+      "url": "https://www.nhm.gov.in/New_Updates_2018/NHM_Components/RMNCH_MH_Guidelines/Gestational-Diabetes-Mellitus.pdf",
+      "sourceType": "Primary guideline / programme reference",
+      "region": "India",
+      "population": "Routine pregnancy with additional risk-driven care",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full primary PDF sections 4.4–4.6: universal first-contact testing, negative-test repeat at 24–28 weeks ≥4 weeks later, late presentation >28 weeks tested at first contact; 75 g glucose in ~300 mL within 5–10 min regardless of last meal, two-hour ≥140 mg/dL, plasma-calibrated method, vomiting within 30 min repeats next day/referral; six-week postpartum OGTT and annual screening. The document is labelled 2018, and its historical claim equating other organisations’ thresholds is not adopted.",
+      "usedBySections": [
+        "anc-overview",
+        "gdm"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "anc-who-urine",
+      "topic": "Antenatal visits and trimester investigations",
+      "organisation": "WHO",
+      "title": "ANC recommendation B.1.2 — bacteriuria diagnosis",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK615641/table/part1.tab13/",
+      "sourceType": "Primary guideline / programme reference",
+      "region": "International; setting labelled",
+      "population": "Routine pregnancy with additional risk-driven care",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Primary WHO recommendation text indexed by NCBI: midstream urine culture is preferred for asymptomatic bacteriuria; dipstick protein assessment is not a substitute. Direct page currently has a browser challenge, so verification is limited to the primary indexed text.",
+      "usedBySections": [
+        "anc-overview"
+      ],
+      "status": "verified-summary"
+    },
+    {
+      "id": "anc-rcog-gbs",
+      "topic": "Antenatal visits and trimester investigations",
+      "organisation": "RCOG",
+      "title": "GBS in pregnancy: screening policy and intrapartum care",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/group-b-streptococcus-gbs-in-pregnancy-and-newborn-babies/",
+      "sourceType": "Primary guideline / programme reference",
+      "region": "International; setting labelled",
+      "population": "Routine pregnancy with additional risk-driven care",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Primary patient guidance opened: UK does not universally screen; a positive urine/swab result and risk history inform intrapartum antibiotics. Used to avoid presenting a universal third-trimester GBS test as mandatory in every health system.",
+      "usedBySections": [
+        "anc-overview"
+      ],
+      "status": "verified-live"
     }
   ]
 }

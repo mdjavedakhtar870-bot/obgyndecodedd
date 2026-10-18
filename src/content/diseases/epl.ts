@@ -1,3 +1,4 @@
+import { regimenCard } from '../medication-regimens'
 import type { DiseaseTopic } from '../types'
 
 /* ============================================================
@@ -101,7 +102,7 @@ export const EPL_TOPICS: DiseaseTopic[] = [
       ],
       investigations: [{ kind: 'list', items: ['Never delay unstable patients for imaging beyond bedside US'] }],
       firstLine: [
-        { kind: 'doseCard', drug: 'Methotrexate (single-dose protocol)', dose: '50 mg/m² BSA IM (calculate body surface area!)', route: 'IM', frequency: 'Single dose day 1; check hCG day 4 & 7', duration: 'Initial single-dose course; check hCG days 4 and 7. Fall ≥15% from day 4 to 7: weekly hCG to negative. Fall <15%, plateau or rise: senior reassessment for repeat treatment or surgery', prep: 'Prescribe with folic acid WITHHELD; antiemetic prn', maxDose: 'Repeat dosing only after reassessment confirms continued eligibility for the selected local protocol', contraindications: ['Rupture/signs of bleeding', 'Haemodynamic instability', 'Moderate-severe pain despite analgesia', 'Visible fetal heartbeat: NICE recommends surgery first line', 'Tubal mass ≥35 mm: NICE recommends surgery first line', 'hCG ≥5000 IU/L: NICE recommends surgery first line', 'Breastfeeding', 'Immunodeficiency/liver/renal disease', 'Blood dyscrasias', 'Peptic ulcer disease', 'Inability to attend follow-up'], adverseEffects: ['Fatigue, nausea/mucositis, transient transaminitis, bone-marrow suppression (rare)', 'Teratogenic — no conception 3 months after'], monitoring: ['Day 4 & 7 hCG + CBC + LFT/RFT', 'Weekly hCG to <5 IU/L', 'Warn about increasing pain days 2–3 (separation pain vs rupture — telephone triage rules)'], sourceId: 'nhs-ectopic-mtx-detail' },
+        regimenCard('methotrexate-ectopic'),
       ],
       alternativesFirstLine: [{ kind: 'list', items: ['Multidose MTX protocol (1 mg/kg alternating leucovorin) — specialist centres for heartbeat/hCG>5000 cases', 'Expectant management per table above'] }],
       drugTreatment: [],
@@ -172,7 +173,8 @@ export const EPL_TOPICS: DiseaseTopic[] = [
           ['Medical (preferred pharmacologic)', 'NICE incomplete miscarriage: misoprostol 600 micrograms vaginally, orally or sublingually once (800 micrograms is an alternative); no mifepristone; missed: NICE: mifepristone 200 mg orally once, then 48 hours later misoprostol 800 micrograms vaginally, orally or sublingually once, unless the sac has passed', 'Analgesia NSAIDs; antiemetics; success ~85–90% missed with combined regimen'],
           ['Surgical', 'Manual vacuum aspiration (MVA) local anaesthesia OR electric VA/S&C under sedation', 'Immediate definitive; tissue sent histology (exclude molar)'],
         ] },
-        { kind: 'doseCard', drug: 'Misoprostol (miscarriage regimen)', dose: 'Incomplete: 600 micrograms once (800 micrograms is an alternative). Missed: 800 micrograms once, 48 hours after mifepristone 200 mg orally once', route: 'PV/SL/PO', frequency: 'Single-dose miscarriage regimen', duration: 'Initial treatment; reassess failure rather than automatically repeating an alternative regimen', notes: ['Give NSAID analgesia (e.g., ibuprofen 400–800 mg q8h)', 'RhD prophylaxis requires gestation-specific criteria; see the linked NICE NG126 2026 source'], sourceId: 'nice-ng126-miscarriage-detail' },
+        regimenCard('misoprostol-missed'),
+        regimenCard('misoprostol-incomplete'),
       ],
       definitiveTreatment: [{ kind: 'text', text: 'Complete evacuation (by whichever route) resolves bleeding/infection risk; histopathology of products where molar suspected or recurrent loss.' }],
       monitoring: [{ kind: 'list', items: ['Bleeding should reduce within days', 'hCG check 1–2 wks (or urine test 3 wks) to confirm resolution', 'Temperature/odour surveillance (retained tissue sepsis)'] }],
@@ -227,15 +229,16 @@ export const EPL_TOPICS: DiseaseTopic[] = [
 
   /* ============ MOLAR PREGNANCY / GTD ============ */
   {
+    reviewerNote: "Evacuation, hCG surveillance and source mapping corrected against FIGO 2025; chemotherapy protocols are referral-only and not dose-certified.",
     id: 'molar-pregnancy',
     title: 'Molar Pregnancy & Gestational Trophoblastic Disease',
     category: 'gynae-oncology',
     tags: ['hydatidiform', 'mole', 'gtn', 'bhcg-surveillance', 'chemotherapy-referral'],
-    status: 'published',
-    version: 1,
-    lastVerifiedAt: '2026-08-23',
+    status: "review",
+    version: 2,
+    lastVerifiedAt: undefined,
     regionPriority: 'international-first',
-    summary: 'Complete mole (46XX paternal-only, no fetus) vs partial (triploid, fetus parts). Definite EVACUATION + histology + hCG REGISTRY surveillance; 15–20% complete moles become GTN needing chemotherapy. Contraception throughout surveillance.',
+    summary: "Confirm molar histology, arrange safe uterine evacuation and register hCG follow-up. Partial and complete moles have different surveillance after hCG normalisation; plateauing/rising hCG requires trophoblastic-centre assessment.",
     definition: 'Abnormal proliferative trophoblast: complete hydatidiform mole (diploid androgenetic), partial mole (diandric triploid), invasive mole/choriocarcinoma/placental-site tumours (GTN spectrum).',
     presentation: ['First-trimester bleeding ± hyperemesis', 'Uterus larger than dates', 'Hyperthyroidism (hCG-TSH cross-reactivity)', 'Early pre-eclampsia <20 wks (classic, now less common with earlier scans)', 'US snowstorm (complete) vs focal cystic changes with fetal parts (partial)'],
     initialAssessment: [
@@ -248,17 +251,9 @@ export const EPL_TOPICS: DiseaseTopic[] = [
     ],
     treatment: {
       immediateStabilization: [{ kind: 'list', items: ['Correct thyroid crisis/anaemia before anaesthesia if severe', 'Crossmatch; suction evacuation readiness'] }],
-      firstLine: [
-        { kind: 'doseCard', drug: 'Suction curettage (complete mole, desired fertility)', dose: '12mm suction cannula ± oxytocin infusion during procedure; second look curettage optional single pass', route: 'OR', notes: ['Avoid hysterectomy unless family complete (reduces GTN risk only marginally)', 'Medical induction methods discouraged (embolisation risk)'], sourceId: 'rcog-gtg73-pprom-2019' },
-      ],
+      firstLine: [{ kind: 'text', text: "Suction evacuation, ideally with ultrasound guidance, preserves fertility. Arrange blood/anaesthetic support and histology; give indicated Rh immunoglobulin. Avoid routine repeat curettage. Hysterectomy is an option after completed childbearing but does not remove the need for hCG surveillance." }],
       definitiveTreatment: [{ kind: 'list', items: ['EVACUATION IS TREATMENT for molar pregnancy itself', 'GTN diagnosed by hCG criteria (rise/plateau per FIGO 2000 scoring) → oncology chemotherapy referral: low-risk single-agent (methotrexate/actinomycin-D); high-risk multiagent (EMA-CO) at accredited centre'] }],
-      monitoring: [
-        { kind: 'table', headers: ['Phase', 'Schedule'], rows: [
-          ['Post-evacuation', 'βhCG every 1–2 wks until 3 consecutive normals, then monthly×6 (complete) / shorter for partial per registry protocol'],
-          ['Contraception', 'Effective hormonal/IUD THROUGHOUT surveillance (mandatory)'],
-          ['GTN suspicion triggers', 'Plateau (±10% over 4 values ×3 wks), rise (>10% over 3 values ×2 wks), persistence >6 months, histological choriocarcinoma, metastases'],
-        ] },
-      ],
+      monitoring: [{ kind: 'table', headers: ['Finding','Action'], rows: [["After evacuation","hCG every 1–2 weeks until normal; a plateau/rise needs prompt referral."],["Partial mole","Confirm normal hCG again after 1 month."],["Complete mole","Monthly hCG for 6 months after normalisation."],["FIGO postmolar GTN triggers","Plateau across four values over ≥3 weeks; rising values across three weekly measurements over ≥2 weeks; or histological choriocarcinoma."],["Contraception","Offer effective contraception during surveillance; hormonal methods are acceptable. Device suitability needs separate assessment."]] }],
       treatmentFailure: [{ kind: 'list', items: ['Second uterine evacuation considered ONLY for heavy bleeding with retained tissue + plateauing low hCG (max once; raises perforation risk)'] }],
       escalation: [{ kind: 'list', items: ['ALL GTN → specialised trophoblastic centre (chemotherapy outcomes >90% even high-risk)', 'Heavy haemoptysis/metastatic symptoms → urgent oncology'] }],
       complications: [
@@ -266,9 +261,9 @@ export const EPL_TOPICS: DiseaseTopic[] = [
         { name: 'Haemorrhage at evacuation', management: [{ kind: 'text', text: 'Uterotonics; balloon; embolisation standby' }] },
         { name: 'Hyperthyroidism', management: [{ kind: 'text', text: 'Beta-blocker cover peri-operatively until hCG falls' }] },
       ],
-      postTreatmentCare: [{ kind: 'list', items: ['Registry follow-up completion before conceiving (usually 6–12 months normal hCG)', 'Next-pregnancy: early US + hCG + products histology again'] }],
+      postTreatmentCare: [{ kind: 'text', text: "Complete the histology-specific surveillance before conception; give an early-scan plan for a subsequent pregnancy and clear contact arrangements for bleeding or abnormal results." }],
     },
-    sourceIds: ['rcog-gtg73-pprom-2019'],
+    sourceIds: ["med-figo-gtd-2025"],
   },
 
   /* ============ MTP INDIA (LEGAL MODULE) ============ */

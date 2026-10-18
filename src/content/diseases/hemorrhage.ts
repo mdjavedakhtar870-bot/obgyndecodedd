@@ -1,3 +1,6 @@
+import { EMERGENCIES } from '../emergencies'
+const PPH_PROTOCOL = EMERGENCIES.find((e) => e.id === 'emg-pph')!
+import { regimenCard } from '../medication-regimens'
 import type { DiseaseTopic } from '../types'
 
 /* ============================================================
@@ -23,8 +26,8 @@ export const HEMORRHAGE_TOPICS: DiseaseTopic[] = [
     version: 2,
     lastVerifiedAt: '2026-08-23',
     regionPriority: 'india-first',
-    summary: 'Blood loss >500 mL vaginal / >1000 mL caesarean OR any loss compromising haemodynamics. Treat as a BUNDLE: call help → uterine massage → oxytocin infusion → TXA within 3 h → examine for trauma/tissue → escalate to tamponade/surgery. Never wait for the count to fall.',
-    definition: 'Primary PPH: bleeding from genital tract within 24 h of birth exceeding 500 mL after vaginal birth or 1000 mL after caesarean, or any loss sufficient to compromise haemodynamic stability (WHO 2025). Secondary PPH: abnormal/excessive bleeding from 24 h up to 12 weeks postpartum.',
+    summary: "Recognise PPH early: measured loss ≥500 mL or ≥300 mL with abnormal haemodynamics. Treat ongoing concerning bleeding/shock immediately; resuscitation, uterotonics, early TXA and 4Ts source control proceed together.",
+    definition: "WHO 2025 includes a treatment trigger of ≥300 mL with abnormal vital signs as well as ≥500 mL blood loss. Do not wait for 1000 mL after caesarean or a low Hb before treating compromise.",
     riskFactors: [
       'Previous PPH', 'Placenta praevia/accreta', 'Multiple pregnancy', 'Polyhydramnios', 'Anaemia (Hb<9 g/dL)', 'Grandmultiparity', 'Obesity', 'Bleeding disorder / anticoagulants',
       'Intrapartum: prolonged labour (oxytocin use)', 'Precipitate labour', 'Operative vaginal birth', 'Caesarean esp. emergency', 'Chorioamnionitis', 'Retained placenta', 'MgSO4 therapy', 'Severe anaemia',
@@ -67,28 +70,12 @@ export const HEMORRHAGE_TOPICS: DiseaseTopic[] = [
       { kind: 'warning', text: 'Life-saving resuscitation must NEVER wait for lab results — treat the patient, confirm with labs.' },
     ],
     treatment: {
-      immediateStabilization: [
-        { kind: 'steps', steps: [
-          'Declare emergency + assign roles (team leader, drugs, recorder, runner)',
-          'Massage uterus bimanually until firm',
-          'Oxytocin 10 IU IM/IV slow + start INFUSION oxytocin 10 IU in 500 mL crystalloid at ~125 mL/h (40 mIU/min)',
-          'TXA 1 g IV over 10 min AS EARLY AS POSSIBLE within 3 h of birth (2nd dose 1 g if bleeding continues at 30 min)',
-          'Warm crystalloid rapid bolus; prepare blood',
-          'Examine in theatre conditions: cervix, vagina, perineum, uterus cavity — repair trauma, remove tissue',
-        ] },
-        { kind: 'info', title: 'WHO PPH treatment bundle (2025)', text: 'The bundle pairs: message/call help · IV access · uterine massage · oxytocin infusion · TXA · empty bladder · examination — delivered TOGETHER rather than sequentially.' },
-      ],
+      immediateStabilization: PPH_PROTOCOL.immediateAction,
       firstLine: [
-        { kind: 'doseCard', drug: 'Oxytocin', dose: '10 IU IM or IV slow (treatment); then 10 IU in 500 mL at 125 mL/h', route: 'IM/IV infusion', notes: ['First-line uterotonic (WHO Rec 7 family)', 'Cold-chain dependent — if storage doubtful, add alternative'], sourceId: SRC.whoUtero },
-        { kind: 'doseCard', drug: 'Tranexamic acid', dose: '1 g in 10 mL IV over 10 min; repeat 1 g after 30 min if bleeding continues or restarts within 24 h', route: 'IV', frequency: 'Max 2 doses (2 g total)', prep: 'Slow push at 1 mL/min', contraindications: ['Do NOT initiate >3 h after birth (except restarted bleeding within 24 h window)', 'History of thromboembolism in this pregnancy', 'Active renal failure caution'], notes: ['For ALL PPH causes (not only trauma/atony)', 'NOT for prophylaxis (2025 Recs 14–15)'], sourceId: SRC.whoTxa },
+        regimenCard('oxytocin-pph'),
+        regimenCard('txa-pph'),
       ],
-      alternativesFirstLine: [
-        { kind: 'table', headers: ['Second uterotonic', 'Dose', 'Cautions'], rows: [
-          ['Ergometrine', '0.5 mg IM (repeat ×4 q6–15 min max 1 mg total acute)', 'AVOID hypertension/pre-eclampsia/cardiac disease/peripheral vascular disease'],
-          ['Carboprost (PGF2α)', '250 µg IM q15 min — max 8 doses', 'Asthma (bronchospasm); avoid intramyometrial unless expert'],
-          ['Misoprostol', '800 µg sublingual (single rescue dose)', 'Where injectables unavailable; pyrexia/shivering'],
-        ] },
-      ],
+      alternativesFirstLine: [regimenCard('methylergometrine-pph'), regimenCard('ergometrine-pph'), regimenCard('carboprost-pph'), regimenCard('misoprostol-pph')],
       drugTreatment: [],
       nonDrugTreatment: [
         { kind: 'list', items: [
@@ -98,22 +85,12 @@ export const HEMORRHAGE_TOPICS: DiseaseTopic[] = [
           'Keep cumulative tally on whiteboard: EBL, products given, vitals timeline',
         ] },
       ],
-      definitiveTreatment: [
-        { kind: 'steps', steps: [
-          'STEPWISE ESCALATION once uterotonics+TXA fail:',
-          '1. UTERINE TAMPONADE: intrauterine balloon (Bakri/Rusch/Foley condom catheter) — fill with warm saline until bleeding stops (typical 150–500 mL); leave 6–24 h with antibiotic cover; document fill volume; keep traction tape',
-          '2. If balloon fills >2× without control or refills → proceed to laparotomy (do not persist)',
-          '3. LAPAROTOMY ladder: B-Lynch/compression sutures → uterine artery ligation → internal iliac ligation (expert) → stepwise devascularisation',
-          '4. PERIPARTUM HYSTERECTOMY when conservative steps fail or accreta/intractable atony — decision early beats late (mortality rises with repeated failed attempts)',
-          '5. INTERVENTIONAL RADIOLOGY: prophylactic/therapeutic iliac embolisation where available and patient stable enough',
-          '6. RECOMBINATION of care: post-op ICU transfer, repeat coags, documentation',
-        ] },
-      ],
+      definitiveTreatment: PPH_PROTOCOL.definitiveManagement,
       monitoring: [
         { kind: 'table', headers: ['Parameter', 'Major-PPH schedule', 'Target'], rows: [
           ['Vitals (BP/HR/RR/SpO₂/temp)', 'q15 min until stable', 'SBP>90, HR<120, RR<24, SpO₂>95%'],
           ['Urine output', 'Hourly catheter', '>0.5 mL/kg/h (>30 mL/h)'],
-          ['Hb + platelets + coags + fibrinogen', 'q1–2h during active phase', 'Hb>70 g/L; Plt>50; fibrinogen >1.5–2 g/L'],
+          ['Hb + platelets + coags + fibrinogen', 'q1–2h during active phase', 'Hb>70 g/L; Plt>50; fibrinogen ≥2 g/L'],
           ['Calcium (ionised) + K⁺ + ABG', 'After every 4 units', 'Correct ionised Ca <1.1 mmol/L'],
           ['Conscious level/temp', 'Continuous', 'Normothermia ≥36°C'],
         ] },
@@ -126,7 +103,7 @@ export const HEMORRHAGE_TOPICS: DiseaseTopic[] = [
         'If bleeding persists with packed pelvis → hysterectomy decision point',
       ] }],
       secondLine: [{ kind: 'list', items: ['rVIIa (recombinant activated factor VII): last-resort adjunct ONLY after pH/calcium/fibrinogen/platelet optimisation — haematology consult', 'Fibrinogen concentrate vs cryoprecipitate per availability'] }],
-      rescue: [{ kind: 'list', items: ['Massive transfusion protocol activation: components in 1:1:1 ratio (PRBC:FFP:platelets) aiming fibrinogen >1.5 g/L', 'Aortic compression/NASG as bridge during transfer', 'Perimortem caesarean if arrest ≥20 wks at 4 min'] }],
+      rescue: [{ kind: 'text', text: "Activate major-haemorrhage support and definitive source control early. Maternal arrest requires usual ALS plus manual uterine displacement and immediate preparation for resuscitative birth at the arrest location; do not wait for a four-minute trigger." }],
       procedures: [{ kind: 'text', text: 'See procedures-mva (retained tissue), procedures-balloon-tamponade, procedures-blynch, procedures-peripartum-hysterectomy pages.' }],
       escalation: [
         { kind: 'list', items: [
@@ -136,7 +113,7 @@ export const HEMORRHAGE_TOPICS: DiseaseTopic[] = [
         ] },
       ],
       complications: [
-        { name: 'DIC / dilutional coagulopathy', management: [{ kind: 'text', text: 'Ratio-based component therapy; fibrinogen replacement target >1.5 g/L; avoid FFP-only loops; recheck q1h' }] },
+        { name: 'DIC / dilutional coagulopathy', management: [{ kind: 'text', text: 'Ratio-based component therapy; fibrinogen replacement target ≥2 g/L; avoid FFP-only loops; recheck q1h' }] },
         { name: 'Dilutional thrombocytopenia', management: [{ kind: 'text', text: 'Platelets 1 pool per 6–8 units RBC or when <50×10⁹/L bleeding' }] },
         { name: 'Hypocalcaemia/hypothermia/acidosis (lethal triad partners)', management: [{ kind: 'text', text: 'Ionised Ca correction; active warming; ventilatory support for acidosis' }] },
         { name: 'Acute kidney injury', management: [{ kind: 'text', text: 'Volume restoration priority; avoid nephrotoxins; dialysis if AEIOU' }] },
@@ -206,7 +183,7 @@ export const HEMORRHAGE_TOPICS: DiseaseTopic[] = [
           'Asymptomatic low-lying (<20 mm): rescan 32 & 36 wks; vaginal birth permitted if edge ≥20 mm at 36 wks (NICE); individualise 15–20 mm',
           'True praevia asymptomatic: planned caesarean 36+0–37+0 (uncomplicated major); 37+0–38+6 for low-lying borderline cases per unit policy',
         ] },
-        { kind: 'doseCard', drug: 'Betamethasone', dose: '12 mg IM ×2 doses 24 h apart', route: 'IM', duration: 'If <34+6 and any chance of preterm birth', sourceId: 'rcog-gtg74-steroids-2022' },
+        regimenCard('betamethasone-antenatal'),
       ],
       definitiveTreatment: [{ kind: 'list', items: ['CAESAREAN BIRTH for praevia covering os — senior obstetrician + anaesthetist, cell-salvage/rapid infuser where available, anticipate accreta (see pas-spectrum)', 'Anterior praevia with prior scar: consent for possible hysterectomy; urology on standby for percreta'] }],
       monitoring: [{ kind: 'table', headers: ['Expectant inpatient schedule', 'Frequency'], rows: [['Vitals + PV loss chart', '4–6 hourly'], ['CTG', 'Daily (viable)'], ['Hb', 'Twice weekly (keep >100 g/L with iron)'], ['Rescan growth', 'Every 2–3 wks'], ['Steroid status', 'Complete course if <34+6']] }],
@@ -288,7 +265,7 @@ export const HEMORRHAGE_TOPICS: DiseaseTopic[] = [
       procedures: [{ kind: 'list', items: ['Caesarean: anticipate couvelaire uterus + PPH; active third stage mandatory; consider internal iliac identification early', 'Avoid regional anaesthesia if coagulopathy suspected pending results'] }],
       escalation: [{ kind: 'list', items: ['ICU for organ failure/coagulopathy', 'Peripheral centres: stabilize (volume+blood if any)+transfer WITH escort; do not await viability debates when mother bleeding'] }],
       complications: [
-        { name: 'DIC', management: [{ kind: 'text', text: 'Ratio components; fibrinogen >1.5–2 g/L; platelets >50–75; recheck hourly' }] },
+        { name: 'DIC', management: [{ kind: 'text', text: 'Ratio components; fibrinogen ≥2 g/L; platelets >50–75; recheck hourly' }] },
         { name: 'Acute tubular necrosis/renal cortical necrosis', management: [{ kind: 'text', text: 'Fluid resuscitation first; nephrology; dialysis indications AEIOU; long-term BP/proteinuria follow-up' }] },
         { name: 'Couvelaire uterus + PPH', management: [{ kind: 'text', text: 'Escalate directly: balloon → compression sutures → hysterectomy ladder' }] },
         { name: 'Stillbirth/neonatal encephalopathy', management: [{ kind: 'text', text: 'Bereavement care; neonatal cooling pathway where available; debrief + autopsy offer' }] },

@@ -1,3 +1,4 @@
+import { regimenCard } from '../medication-regimens'
 import type { DiseaseTopic } from '../types'
 
 /* Breech/ECV + CTG. Sources: NICE NG235 (2026). Verified 2026-08-23. */
@@ -24,7 +25,7 @@ export const BREECH_CTG_TOPICS: DiseaseTopic[] = [
     treatment: {
       immediateStabilization: [{ kind: 'warning', title: 'ECV emergencies (rare)', text: 'Transient FHR changes common -> stop/reposition/observe; persistent pathological CTG -> emergency caesarean capability mandatory wherever ECV is performed.' }],
       firstLine: [
-        { kind: 'doseCard', drug: 'Terbutaline (ECV tocolysis)', dose: '250 mcg SC/IV slow before attempt', route: 'SC/IV', frequency: 'Once', notes: ['Anti-D after ECV if Rh-negative'], sourceId: 'nice-ng235-intrapartum-2026' },
+        regimenCard('terbutaline-ecv'),
         { kind: 'list', items: [
           'Technique: US-guided forward-roll/backward-flip; abandon after 2-3 attempts',
           'Failed/refused ECV -> PLANNED CAESAREAN at 39+0 wks standard recommendation',

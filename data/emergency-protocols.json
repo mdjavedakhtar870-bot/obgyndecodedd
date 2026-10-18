@@ -1,0 +1,1108 @@
+[
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-pph",
+    "title": "Postpartum Haemorrhage",
+    "group": "Haemorrhage",
+    "keywords": [
+      "pph",
+      "bleeding after delivery",
+      "atony"
+    ],
+    "topicRef": "pph",
+    "recognize": [
+      "Start the PPH bundle for measured blood loss ≥500 mL, or ≥300 mL with abnormal haemodynamics (WHO 2025); treat concerning ongoing bleeding/shock immediately without waiting for a volume threshold.",
+      "Assess pulse, BP, shock index, perfusion and consciousness repeatedly; concealed loss and baseline anaemia can mask severity.",
+      "A soft enlarged uterus suggests atony. Persistent bleeding with a firm uterus requires urgent assessment for trauma, retained tissue, inversion/rupture or coagulopathy."
+    ],
+    "callForHelp": [
+      "Declare PPH, state time of birth and blood loss, and allocate a team leader, resuscitation/drug clinician and recorder.",
+      "Call senior obstetrician, anaesthetist, midwifery lead and blood bank together; activate the major-haemorrhage protocol early if bleeding/shock is substantial.",
+      "Prepare theatre, blood products and neonatal support; explain events to the patient/companion through a designated team member."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Resuscitate and identify the cause IN PARALLEL: two large-bore IV cannulae, bloods/crossmatch and quantified cumulative loss; oxygen for hypoxia/shock, active warming and monitored fluid/blood replacement.",
+          "Massage the uterus and use bimanual compression for atony; empty the bladder with a Foley catheter and measure urine output.",
+          "Give oxytocin loading plus infusion and TXA using the complete cards below. Record previous prophylactic uterotonics: their identity changes the next uterotonic choice.",
+          "For ongoing ATONIC bleeding, choose an appropriate additional uterotonic now: avoid ergometrine/methylergometrine with hypertension or pre-eclampsia, and avoid carboprost with asthma/significant pulmonary disease. Do not give both ergot preparations as though they are interchangeable.",
+          "Keep examining the 4Ts while drugs are administered. Do not wait to finish eight carboprost doses before preparing tamponade or surgery in ongoing haemorrhage."
+        ]
+      }
+    ],
+    "investigations": [
+      "CBC/platelets, group and crossmatch, PT/APTT and fibrinogen; repeat during ongoing major loss and after replacement.",
+      "Blood gas/lactate, ionised calcium, potassium, temperature and renal function; results guide resuscitation but never postpone haemorrhage control.",
+      "Examine placenta/membranes and inspect cervix/vagina/perineum with adequate exposure/analgesia. Ultrasound can support assessment of retained tissue but must not delay treatment."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "TONE: continue bimanual compression and the selected uterotonics. TRAUMA: inspect and repair tears/haematoma; assess rupture/inversion. TISSUE: arrange skilled manual removal/evacuation when indicated; do not forcibly detach a suspected accreta placenta. THROMBIN: correct coagulopathy with the blood bank while obtaining source control.",
+          "If atony continues despite initial treatment, consider intrauterine balloon tamponade only after assessing trauma/retained tissue and where monitoring, blood and immediate surgical rescue are available. Use sterile technique, the specific balloon’s recommended filling fluid/volume and a drainage channel; record fill volume and continuing blood loss.",
+          "Bakri-type devices have a manufacturer-specific maximum volume (commonly 500 mL); do not inflate repeatedly beyond the device limit to compensate for persistent bleeding. Continue observations, uterotonic support and an explicitly prescribed antibiotic/removal plan.",
+          "Persistent bleeding, deteriorating physiology or a failed tamponade test means immediate senior operative control. Compression sutures/devascularisation, embolisation in a stable suitable patient, or hysterectomy are selected by cause and expertise; this is not a mandatory ladder requiring every step before hysterectomy."
+        ]
+      }
+    ],
+    "escalation": [
+      "Continuing loss or shock despite initial treatment: theatre and major-haemorrhage support immediately, without an arbitrary waiting period.",
+      "HDU/ICU for ongoing shock, vasopressor/ventilation need, coagulopathy, organ dysfunction or large transfusion; a unit count is not the sole admission criterion.",
+      "During transfer, continue uterine/aortic compression as appropriate, warming and blood/fluid support with skilled escort; contact the receiving team first. Compression/tamponade must not delay transfer or definitive rescue."
+    ],
+    "postEventCare": [
+      "Continue close uterine-tone, bleeding, perfusion, urine-output and laboratory review until stable; document every product, drug and operative decision.",
+      "Correct iron deficiency/anaemia using the measured deficit and clinical status. Reassess VTE prophylaxis only after haemostasis and an anaesthetic/bleeding-risk review.",
+      "Explain the cause and treatment, offer psychological/lactation support, arrange Hb/clinical follow-up and a future-pregnancy delivery plan."
+    ],
+    "sourceIds": [
+      "who-pph-consolidated-2025",
+      "med-who-pph-recognition",
+      "med-msf-pph",
+      "nice-ng235-intrapartum-2026"
+    ],
+    "regimens": [
+      "oxytocin-pph",
+      "txa-pph",
+      "methylergometrine-pph",
+      "ergometrine-pph",
+      "carboprost-pph",
+      "misoprostol-pph"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-eclampsia",
+    "title": "Eclampsia",
+    "group": "Hypertensive",
+    "keywords": [
+      "fits",
+      "seizure pregnancy",
+      "convulsions"
+    ],
+    "topicRef": "hdp-eclampsia",
+    "recognize": [
+      "New seizure during pregnancy after 20 weeks or postpartum: treat suspected eclampsia promptly while considering other causes. Normal BP or absent proteinuria does NOT exclude it.",
+      "Persistent altered consciousness, focal deficit, fever, head injury or recurrent seizures despite treatment requires urgent investigation for an alternative/additional diagnosis."
+    ],
+    "callForHelp": [
+      "Activate obstetric emergency response with senior obstetrician, anaesthetist and resuscitation support; note onset and duration.",
+      "Bring magnesium, the correct infusion equipment, calcium gluconate and severe-BP medicines; neonatal team and theatre plan once the mother is stabilised."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Protect from injury, left-lateral positioning, suction and airway support; do not restrain forcibly or place objects in the mouth. Check glucose immediately. Give oxygen for hypoxaemia and assist ventilation if needed.",
+          "Give ONE magnesium regimen from the cards: IV/IM OR IV maintenance, not both. Maintain a running magnesium dose/time record.",
+          "Treat persistent systolic ≥160 OR diastolic ≥110 mmHg promptly with the selected acute-BP sequence. Magnesium treats seizures; it does not replace antihypertensive treatment.",
+          "Assess reflexes, respiration and urine output throughout treatment. For toxicity: stop magnesium, support ventilation, call anaesthesia and give calcium gluconate as below."
+        ]
+      }
+    ],
+    "investigations": [
+      "CBC/platelets, creatinine/electrolytes, LFTs, urine protein and coagulation when indicated; bedside glucose immediately.",
+      "After maternal stabilisation, fetal assessment if undelivered. Neuroimaging/neurology for focal findings, prolonged coma, atypical timing or refractory seizures; do not delay resuscitation/Mg for imaging."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Recurrent seizure: reassess airway, glucose and magnesium exposure/toxicity before the additional magnesium dose. Continued convulsions require anaesthetic/ICU support and a refractory-seizure plan.",
+          "Once maternal seizures, oxygenation and BP are controlled, plan birth irrespective of a reassuring gestational-age threshold; eclampsia is not managed by simply waiting until 34 weeks. Choose route by obstetric circumstances rather than automatic caesarean.",
+          "Continue the chosen magnesium regimen until 24 h after birth or the last seizure, whichever is later; individualise for renal dysfunction or toxicity."
+        ]
+      }
+    ],
+    "escalation": [
+      "Recurrent/prolonged seizures, inability to protect airway, hypoxia, pulmonary oedema, coma or organ failure: ICU/anaesthesia immediately.",
+      "Restrict maintenance fluids appropriately in severe pre-eclampsia, including drug-carrier volumes; titrate any resuscitation to clinical need and avoid fluid overload."
+    ],
+    "postEventCare": [
+      "Continue neurological/respiratory, BP, urine-output and laboratory monitoring; reassess unexpected deterioration or persistent headache/visual symptoms.",
+      "Inform neonatal staff of maternal magnesium exposure. Plan postnatal antihypertensive review and long-term cardiovascular follow-up."
+    ],
+    "sourceIds": [
+      "med-msf-magnesium",
+      "med-nhm-cemonc",
+      "nice-ng133-detail"
+    ],
+    "regimens": [
+      "magnesium-pritchard",
+      "magnesium-iv",
+      "magnesium-recurrence",
+      "calcium-magnesium-toxicity",
+      "labetalol-iv",
+      "hydralazine-iv",
+      "nifedipine-acute"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-severe-htn",
+    "title": "Acute Severe Hypertension (>=160/110)",
+    "group": "Hypertensive",
+    "keywords": [
+      "high bp emergency",
+      "severe hypertension"
+    ],
+    "topicRef": "hdp-severe-features",
+    "recognize": [
+      "Systolic ≥160 OR diastolic ≥110 mmHg persisting on prompt repeat measurement, generally within 15 min; do not wait 4 h to confirm an emergency.",
+      "Severe headache, visual disturbance, epigastric/right-upper-quadrant pain, dyspnoea, seizure or focal deficit indicates possible end-organ involvement."
+    ],
+    "callForHelp": [
+      "Urgent senior obstetric and anaesthetic review; bring acute antihypertensive drugs and monitor BP/pulse.",
+      "Screen for severe pre-eclampsia/eclampsia and alert the appropriate critical-care team for organ dysfunction."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Choose an appropriate acute agent based on IV access, airway and comorbidity. Use the complete labetalol, hydralazine or swallowed immediate-release nifedipine sequence below; do not combine several loading sequences without tracking response and cumulative doses.",
+          "Avoid abrupt hypotension: reassess BP after each scheduled interval, aiming to leave the severe range promptly, then titrate to the chosen guideline’s ongoing target. Assess pulse and fetal condition.",
+          "Consider magnesium for seizure prophylaxis in severe pre-eclampsia according to the obstetric assessment; it is not a BP drug. Avoid routine fluid loading in pre-eclampsia unless clinically indicated."
+        ]
+      }
+    ],
+    "investigations": [
+      "CBC/platelets, creatinine/electrolytes, LFTs and proteinuria assessment; coagulation when indicated.",
+      "Assess symptoms, oxygenation and fluid balance; fetal monitoring as appropriate. Image for suspected stroke or another acute neurological cause."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Persistent severe BP after the selected initial sequence requires senior review, an alternative agent/infusion and monitored care; do not exceed the regimen ceiling or keep repeating oral tablets.",
+          "Once controlled, prescribe the actual oral maintenance dose, BP observation schedule, thresholds for withholding/escalation and delivery/postnatal plan.",
+          "Delivery timing depends on gestation, maternal/fetal condition and the underlying disorder; maternal deterioration overrides a plan to complete corticosteroids."
+        ]
+      }
+    ],
+    "escalation": [
+      "Stroke symptoms, pulmonary oedema, recurrent severe BP or other end-organ dysfunction: critical-care review immediately.",
+      "Track the time severe BP was recognised and the time of treatment/response; hand over all doses and fluids."
+    ],
+    "postEventCare": [
+      "Continue frequent BP checks during acute control and after dose changes; symptoms or recurrent severe values need prompt review.",
+      "Arrange an explicit postpartum BP/medication review; methyldopa should be stopped within 2 days of birth with a substitute if treatment remains necessary (NICE)."
+    ],
+    "sourceIds": [
+      "med-nhm-cemonc",
+      "nice-ng133-detail",
+      "med-msf-hydralazine"
+    ],
+    "regimens": [
+      "labetalol-iv",
+      "hydralazine-iv",
+      "nifedipine-acute"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-maternal-collapse",
+    "title": "Maternal Collapse / Cardiac Arrest",
+    "group": "Collapse",
+    "keywords": [
+      "collapse",
+      "arrest",
+      "cpr pregnant"
+    ],
+    "recognize": [
+      "Unresponsive with absent/abnormal breathing: activate the cardiac-arrest response and start CPR; a trained clinician checks pulse without delaying compressions.",
+      "Collapse with a pulse is still an emergency: airway/oxygenation, ECG/BP and urgent cause-directed treatment."
+    ],
+    "callForHelp": [
+      "Call cardiac-arrest team, senior obstetrician, anaesthetist and neonatal team; bring defibrillator and resuscitative-birth equipment immediately.",
+      "Assign a timer/recorder, uterine displacement and early preparation for resuscitative hysterotomy at the arrest location."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "High-quality CPR on a firm surface: 100–120 compressions/min, depth 5–6 cm, full recoil and minimal pauses; 30:2 until an advanced airway. Use usual adult defibrillation energies.",
+          "For a uterus at/above the umbilicus (about ≥20 weeks), maintain MANUAL left uterine displacement during supine CPR. Do not use a tilt that compromises compressions.",
+          "Follow the rhythm-specific adult ALS sequence, including adrenaline IV/IO at the correct time and interval. Obtain IV/IO access and secure oxygenation/ventilation without prolonged compression pauses.",
+          "Prepare resuscitative hysterotomy immediately and perform as soon as possible by the skilled team at the site of arrest. Do not wait for a four-minute alarm or move to theatre before starting preparation."
+        ]
+      }
+    ],
+    "investigations": [
+      "During resuscitation, glucose, blood gas/electrolytes and focussed ultrasound only when it does not interrupt CPR or treatment.",
+      "Assess standard reversible causes (hypoxia, hypovolaemia, metabolic/electrolyte disturbance, hypothermia, thrombosis, tamponade, tension pneumothorax and toxins) plus obstetric haemorrhage, eclampsia, sepsis and peripartum cardiomyopathy."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Treat the cause during CPR: rapid haemorrhage control/blood products, PE reperfusion when indicated, anaphylaxis treatment or correction of electrolyte/drug toxicity as appropriate.",
+          "Resuscitative birth primarily relieves maternal aortocaval compression; neonatal resuscitation is managed by a separate team.",
+          "After ROSC, continue a multidisciplinary post-arrest pathway with oxygenation, ventilation, perfusion, temperature and neurological assessment."
+        ]
+      }
+    ],
+    "escalation": [
+      "ICU and cause-specific specialist support after ROSC; consider extracorporeal CPR only within a functioning experienced system."
+    ],
+    "postEventCare": [
+      "Document the full timeline, rhythms, shocks, drugs, uterine displacement and birth; maternal/neonatal follow-up and family communication.",
+      "Offer team/patient-family debrief and multidisciplinary review."
+    ],
+    "sourceIds": [
+      "med-rcuk-als",
+      "med-rcuk-special"
+    ],
+    "regimens": [
+      "adrenaline-arrest"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-sepsis",
+    "title": "Maternal Sepsis",
+    "group": "Infection",
+    "keywords": [
+      "fever postpartum",
+      "sepsis",
+      "rigors"
+    ],
+    "topicRef": "maternal-sepsis",
+    "recognize": [
+      "Suspected infection with new organ dysfunction: hypotension, altered mental state, oliguria, hypoxaemia, lactate elevation or coagulopathy. Fever can be absent.",
+      "Examine for uterine tenderness/foul lochia or retained tissue, urinary infection, pneumonia, wound infection or another source; obstetric early-warning tools support but do not replace assessment."
+    ],
+    "callForHelp": [
+      "Activate maternal-sepsis response, senior obstetrician, anaesthesia/critical care and infection/microbiology support; state whether shock is present.",
+      "Identify an urgent source-control need and prepare theatre/imaging/intervention in parallel."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Measure lactate, obtain appropriate cultures and bloods BEFORE antibiotics only if doing so causes no substantial delay. Give empiric broad-spectrum IV antibiotics ideally within 1 h for septic shock/high-likelihood sepsis.",
+          "Select treatment for the suspected source, allergies, renal function and local resistance. The complete cards below show named obstetric-infection combinations, not a claim that one antibiotic treats every maternal sepsis source: chorioamnionitis uses ampicillin PLUS gentamicin; postpartum endometritis may use clindamycin PLUS gentamicin; septic miscarriage needs broad anaerobic cover and evacuation.",
+          "For hypotension/hypoperfusion, give balanced crystalloid with frequent response/tolerance checks. SMFM recommends 1–2 L in the first 3 h; NICE NG255 uses 500 mL boluses over <15 min with reassessment and consultant review if two boluses fail. Do not apply an automatic unmonitored 30 mL/kg prescription in pregnancy.",
+          "If shock persists or fluids are poorly tolerated, start norepinephrine with critical-care supervision, using the explicit salt/concentration/pump calculation below. Catheterise and track hourly urine output; assess oxygenation and perfusion continuously."
+        ]
+      }
+    ],
+    "investigations": [
+      "Blood cultures, lactate, CBC/platelets, renal/electrolytes, LFTs, coagulation and blood gas; repeat lactate to assess trajectory.",
+      "Urine, genital/wound or respiratory samples as appropriate; ultrasound/CT/MRI according to the suspected source and clinical urgency."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Rapidly remove/control the source: evacuate infected retained tissue, drain an abscess, debride an infected wound or relieve urinary obstruction when indicated.",
+          "If the uterus is the suspected/confirmed source, prompt delivery/evacuation may be needed regardless of gestation (SMFM); sepsis alone from another source is not an automatic indication for delivery.",
+          "Review antibiotics when microbiology and the clinical response are available, usually within 24–48 h: narrow, adjust renal dosing, stop unnecessary partners and record the total course for the actual infection. Persistent fever/shock requires a search for uncontrolled source or resistant organisms."
+        ]
+      }
+    ],
+    "escalation": [
+      "Persistent hypotension, escalating vasopressor need, respiratory failure, altered consciousness, rising lactate or organ dysfunction: ICU immediately.",
+      "Assess need for ventilation, renal support and obstetric surgery without waiting for a complete test panel."
+    ],
+    "postEventCare": [
+      "Follow organ recovery, glycaemia, fluid balance and medication toxicity; reassess thromboprophylaxis when bleeding/neuraxial constraints permit.",
+      "Document a specific antibiotic stop/review date and provide post-sepsis physical/psychological follow-up and counselling."
+    ],
+    "sourceIds": [
+      "med-smfm-sepsis",
+      "nice-ng255-detail",
+      "med-nag-obstetric"
+    ],
+    "regimens": [
+      "ampicillin-chorio",
+      "gentamicin-obstetric",
+      "metronidazole-iv",
+      "clindamycin-endometritis",
+      "norepinephrine-shock"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-shoulder-dystocia",
+    "title": "Shoulder Dystocia",
+    "group": "Birth emergency",
+    "keywords": [
+      "turtle sign",
+      "shoulder stuck"
+    ],
+    "topicRef": "shoulder-dystocia",
+    "recognize": [
+      "The fetal head has delivered but the shoulders do not deliver with normal gentle axial traction; head retraction/turtle sign may be present.",
+      "This is a mechanical birth emergency: drugs do not release the impacted shoulder."
+    ],
+    "callForHelp": [
+      "Declare shoulder dystocia and start timing; call senior obstetrician, additional midwives, anaesthetist and neonatal team.",
+      "Ask an assistant to record the sequence and announce elapsed time; explain briefly and ask the mother to stop pushing while manoeuvres are organised."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Stop oxytocin and avoid fundal pressure, excessive downward traction or lateral bending of the fetal neck.",
+          "McRoberts: assistants hyperflex the maternal hips toward the abdomen; combine with correctly directed SUPRAPUBIC pressure to adduct/rotate the anterior shoulder.",
+          "If unsuccessful, a trained operator proceeds to internal rotation (Rubin/Woods/reverse Woods as appropriate) and/or posterior-arm delivery. Episiotomy may make room for a hand but does not itself remove bony impaction.",
+          "Change to all-fours when feasible and try the appropriate manoeuvre again. Move between effective manoeuvres promptly rather than repeating forceful traction; allow roughly 30–60 s for an attempted manoeuvre while tracking elapsed time.",
+          "If standard manoeuvres fail, the most experienced obstetrician selects rescue options in an equipped setting; these are not routine junior bedside procedures."
+        ]
+      }
+    ],
+    "investigations": [
+      "No scan or laboratory test should delay delivery manoeuvres. Record times and call neonatal resuscitation support."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "After delivery, hand the baby to the neonatal team for assessment/resuscitation and obtain cord gases when feasible.",
+          "Assess the mother for PPH and genital-tract injury, including severe perineal/anal-sphincter injury; treat identified bleeding and injury."
+        ]
+      }
+    ],
+    "escalation": [
+      "Failed standard manoeuvres: immediate senior rescue with anaesthetic/theatre readiness.",
+      "Neonatal depression or suspected injury: neonatal resuscitation and appropriate NICU/paediatric assessment."
+    ],
+    "postEventCare": [
+      "Document head/body delivery times, personnel, traction and manoeuvres in order, and maternal/neonatal findings.",
+      "Examine/document newborn limb movement and possible brachial-plexus injury/fracture; arrange follow-up. Debrief and discuss implications for a later pregnancy."
+    ],
+    "sourceIds": [
+      "med-msf-obstetrics",
+      "rcog-shoulder-detail"
+    ],
+    "regimens": []
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-cord-prolapse",
+    "title": "Cord Prolapse",
+    "group": "Birth emergency",
+    "keywords": [
+      "cord visible",
+      "bradycardia after ROM"
+    ],
+    "topicRef": "cord-prolapse",
+    "recognize": [
+      "Cord visible/palpable below or alongside the presenting part after membrane rupture, or sudden prolonged fetal bradycardia where prolapse is possible.",
+      "Assess fetal heart rate and whether vaginal birth can be safely accomplished immediately; avoid unnecessary handling of the cord."
+    ],
+    "callForHelp": [
+      "Declare cord prolapse, call senior obstetrician, anaesthetist, theatre and neonatal team; state fetal heart status and time of diagnosis."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Immediately elevate the presenting part OFF the cord with a gloved hand and keep relieving compression until birth or a reliable alternative is established. Position the mother knee–chest or exaggerated left lateral with head down as appropriate.",
+          "Minimise cord handling; do not repeatedly attempt to push the cord above the presenting part. Stop oxytocin.",
+          "If transfer/delay is likely, bladder filling can maintain elevation: insert a Foley catheter, instil 500–750 mL saline through the catheter and clamp. This is bladder instillation, NOT an IV fluid dose. Empty the bladder before birth.",
+          "Arrange urgent birth: category-1 caesarean with abnormal fetal heart rate unless vaginal birth is imminent and safely achievable. Do not delay birth to complete manoeuvres, tests or transfer paperwork."
+        ]
+      }
+    ],
+    "investigations": [
+      "Continuous fetal heart assessment when practical; document the response to decompression. Investigations must not delay birth."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Maintain decompression through transfer/anaesthetic preparation; transfer with an appropriately skilled person when manual elevation is needed.",
+          "If full dilatation and rapid safe vaginal birth is possible, the senior operator selects it; otherwise expedite caesarean according to fetal condition.",
+          "Tocolysis may be considered by the obstetric team when abnormal fetal heart rate persists and birth is delayed, but must not replace decompression or delay birth."
+        ]
+      }
+    ],
+    "escalation": [
+      "Persistent fetal bradycardia: immediate senior operative birth and neonatal resuscitation readiness."
+    ],
+    "postEventCare": [
+      "Cord gases and neonatal assessment; evaluate encephalopathy/cooling eligibility if indicated.",
+      "Document compression-relief measures, fetal heart changes and decision/birth times; debrief mother/family."
+    ],
+    "sourceIds": [
+      "med-rcog-cord-gtg"
+    ],
+    "regimens": []
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-eclampsia-postpartum-fit",
+    "title": "Postpartum Seizure (non-eclamptic differentials)",
+    "group": "Collapse",
+    "keywords": [
+      "fit after delivery",
+      "postpartum seizure"
+    ],
+    "recognize": [
+      "Any new postpartum seizure is an emergency. Eclampsia can occur later than 48 h and without previously documented hypertension; do not exclude it using that timing alone.",
+      "Consider hypoglycaemia, eclampsia/PRES, cerebral venous thrombosis, haemorrhage/stroke, infection, epilepsy, electrolyte disturbance and drug toxicity."
+    ],
+    "callForHelp": [
+      "Call anaesthesia/resuscitation, senior obstetrician and neurology/critical care; start seizure timing and record recovery between events."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Protect the airway, position laterally, prevent injury, give oxygen for hypoxaemia and obtain IV access. Check bedside glucose immediately and treat hypoglycaemia.",
+          "Treat suspected eclampsia with ONE magnesium regimen even if BP is not currently high, while evaluating alternative causes. Treat severe BP separately when present.",
+          "Convulsions lasting ≥5 min or recurrent without recovery need the convulsive-status pathway with airway support. Use the stated benzodiazepine regimen, counting prior doses; persistent status needs a second-line loading agent and ICU.",
+          "Labetalol is an antihypertensive, NOT an alternative anticonvulsant. Do not substitute BP treatment for seizure treatment."
+        ]
+      }
+    ],
+    "investigations": [
+      "Glucose, CBC/platelets, electrolytes including sodium/calcium/magnesium, renal/LFTs, coagulation and blood gas; infection/toxicology/antiepileptic levels if appropriate.",
+      "Urgent neuroimaging for focal signs, prolonged altered consciousness, atypical/refractory seizures or suspected intracranial disease; CT/MRI and venous imaging are chosen for the suspected diagnosis."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Manage persistent convulsions as status: second-line loading, anaesthesia/ventilation when needed and EEG for possible non-convulsive status after motor activity stops.",
+          "Confirmed cerebral venous thrombosis, stroke/haemorrhage, CNS infection or epilepsy requires its specific neurology-led treatment; do not start blanket anticoagulation before defining the diagnosis and bleeding risk.",
+          "Review magnesium/benzodiazepine exposure, renal function and interacting medicines; use calcium and ventilation for magnesium toxicity."
+        ]
+      }
+    ],
+    "escalation": [
+      "Airway compromise, persistent seizures, coma, focal deficit or deteriorating physiology: ICU/neurology immediately."
+    ],
+    "postEventCare": [
+      "Monitor consciousness, neurological examination, BP, respiration and recurrence; continue cause-specific treatment and arrange neurological/obstetric follow-up.",
+      "Discuss medication implications, driving/local safety restrictions, breastfeeding and recurrence planning once stable."
+    ],
+    "sourceIds": [
+      "med-msf-magnesium",
+      "med-ggc-status",
+      "med-nice-status"
+    ],
+    "regimens": [
+      "glucose-severe-hypo",
+      "magnesium-pritchard",
+      "magnesium-iv",
+      "magnesium-recurrence",
+      "calcium-magnesium-toxicity",
+      "lorazepam-status",
+      "levetiracetam-status"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-ectopic",
+    "title": "Suspected Ruptured Ectopic",
+    "group": "Early pregnancy",
+    "keywords": [
+      "ectopic rupture",
+      "shoulder tip pain pregnancy"
+    ],
+    "topicRef": "ectopic-pregnancy",
+    "recognize": [
+      "Possible pregnancy with abdominal/pelvic pain, bleeding, collapse, syncope or shoulder-tip pain; instability/peritonism suggests rupture.",
+      "A low/falling hCG or no previously visualised ectopic does not exclude rupture."
+    ],
+    "callForHelp": [
+      "Call senior gynaecology, anaesthetist, emergency theatre and blood bank immediately; activate major-haemorrhage support for shock."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "ABC, two large-bore IV cannulae, bloods/crossmatch and rapid access to blood. Give emergency uncrossmatched blood when required through the blood-bank policy; do not wait for hCG results to resuscitate.",
+          "Perform bedside ultrasound only while the resuscitation/surgical team is being mobilised; unstable suspected rupture proceeds to operative assessment without a prolonged diagnostic work-up.",
+          "Keep nil by mouth, monitor closely and prepare emergency laparoscopy/laparotomy according to stability, expertise and resources."
+        ]
+      }
+    ],
+    "investigations": [
+      "CBC, blood group/RhD, crossmatch and coagulation/renal tests with quantitative hCG when useful; none should delay surgery."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Obtain surgical haemostasis. Salpingectomy is commonly appropriate; salpingotomy is selected for specific fertility circumstances and requires postoperative hCG surveillance.",
+          "Methotrexate and expectant care are NOT treatments for haemodynamic instability or suspected rupture.",
+          "Assess contralateral tube/fertility implications and obtain histology as appropriate."
+        ]
+      }
+    ],
+    "escalation": [
+      "Continuing shock or haemorrhage: major-transfusion pathway, senior operative control and ICU."
+    ],
+    "postEventCare": [
+      "Gestation-specific RhD prophylaxis follows the linked NICE NG126 2026 criteria and confirmed local policy; record eligibility/product/dose rather than a blanket injection for every early loss.",
+      "Arrange hCG follow-up when required by the operation/pathology, bereavement support and advice for early assessment in a future pregnancy."
+    ],
+    "sourceIds": [
+      "nice-ng126-ectopic-detail",
+      "nice-ng126-antid-detail",
+      "med-msf-obstetrics"
+    ],
+    "regimens": []
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-aph-massive",
+    "title": "Massive APH (praevia/abruption)",
+    "group": "Haemorrhage",
+    "keywords": [
+      "bleeding pregnancy third trimester"
+    ],
+    "topicRef": "aph-previa",
+    "recognize": [
+      "Significant antepartum bleeding with instability or fetal compromise: resuscitate immediately; visible loss can underestimate concealed abruption.",
+      "Pain/tender tense uterus suggests abruption; painless bleeding may indicate praevia. Bleeding after membrane rupture with sudden fetal deterioration also raises vasa praevia."
+    ],
+    "callForHelp": [
+      "Senior obstetrician, anaesthetist, blood bank, theatre and neonatal team; major-haemorrhage activation when required."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Resuscitate with two IV cannulae, crossmatch/blood, warming and continuous maternal monitoring. Quantify loss and assess shock rather than relying on the pad count.",
+          "NO digital vaginal examination until placenta praevia is excluded or the senior team is prepared for immediate operative rescue.",
+          "Continuous fetal assessment when appropriate; localise the placenta by ultrasound if it does not delay necessary birth. A normal ultrasound does not rule out abruption.",
+          "If a preterm birth is likely and time/eligibility allow, choose ONE antenatal-steroid course and consider magnesium neuroprotection using the complete regimens below. Do not postpone urgent maternal/fetal delivery for their completion."
+        ]
+      }
+    ],
+    "investigations": [
+      "CBC/platelets, crossmatch, PT/APTT and fibrinogen; blood gas/lactate, calcium and renal function during major loss.",
+      "Ultrasound placental localisation/fetal assessment when feasible; RhD status and fetomaternal-haemorrhage testing to guide anti-D under the local gestation-specific policy."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Ongoing major bleeding, maternal deterioration or fetal compromise requires urgent birth and haemorrhage control. Route depends on cause and circumstances; praevia commonly requires caesarean.",
+          "Abruption with fetal death and a stabilised mother may favour vaginal birth, but coagulopathy/ongoing bleeding still needs active resuscitation and senior review.",
+          "Suspected accreta requires senior specialist planning; avoid forcible placental separation."
+        ]
+      }
+    ],
+    "escalation": [
+      "Major transfusion, coagulopathy or persistent shock: theatre, blood-bank/haematology and ICU support immediately."
+    ],
+    "postEventCare": [
+      "Monitor for recurrent bleeding/DIC, renal injury and anaemia; send placenta for indicated examination.",
+      "Document RhD prophylaxis assessment, neonatal outcome, cause and future pregnancy/birth plan."
+    ],
+    "sourceIds": [
+      "med-msf-obstetrics",
+      "nice-ng25-detail"
+    ],
+    "regimens": [
+      "betamethasone-antenatal",
+      "dexamethasone-antenatal",
+      "magnesium-neuro"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-pe",
+    "title": "Massive Pulmonary Embolism",
+    "group": "Vascular",
+    "keywords": [
+      "pe collapse",
+      "chest pain breathless postpartum"
+    ],
+    "topicRef": "vte",
+    "recognize": [
+      "Acute dyspnoea/chest pain, hypoxaemia, tachycardia, syncope or collapse; hypotension/shock identifies a life-threatening presentation.",
+      "Consider haemorrhage, cardiomyopathy, ACS, sepsis and AFE concurrently; pregnancy does not justify delaying objective diagnosis."
+    ],
+    "callForHelp": [
+      "Activate senior obstetric, emergency/medical and anaesthetic/critical-care review together; involve PE/cardiothoracic/interventional specialists urgently for shock."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Support airway/oxygenation and circulation; avoid an unmonitored large fluid load in right-ventricular failure. Start ALS immediately if arrest occurs, with manual uterine displacement when indicated.",
+          "If VTE is suspected and no strong contraindication exists, give appropriate anticoagulation while arranging expedited objective testing. Stable suspected PE generally uses LMWH; shock, renal dysfunction or likely procedures may favour IV unfractionated heparin.",
+          "For life-threatening unstable PE, the expert team decides thrombolysis versus surgical/catheter reperfusion without waiting for a stable-patient work-up. The drug cards below distinguish treatment anticoagulation and the adult alteplase PE regimen.",
+          "Check recent birth/surgery, active bleeding and neuraxial procedures before anticoagulant/thrombolytic decisions; in immediately fatal PE, assess risks against the mortality from withholding reperfusion."
+        ]
+      }
+    ],
+    "investigations": [
+      "ECG, chest radiograph and baseline CBC/coagulation/renal function; urgent CTPA/VQ testing according to the diagnostic pathway.",
+      "Bedside echocardiography may support decisions in an unstable patient when definitive imaging cannot be obtained safely; a normal study does not universally exclude PE."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Treat confirmed PE with the chosen anticoagulant and reassess perfusion, oxygenation and bleeding. Reperfusion is for the appropriate high-risk presentation, not every suspected PE.",
+          "After thrombolysis/procedure, restart or adjust heparin according to coagulation results and the documented reperfusion plan; do not automatically give another heparin loading bolus.",
+          "Continue pregnancy VTE therapy through pregnancy and at least 6 weeks postpartum, with at least 3 months total treatment; plan birth and neuraxial timing in advance."
+        ]
+      }
+    ],
+    "escalation": [
+      "Shock, escalating oxygen/pressor need or arrest: ICU/PE rescue team immediately; consider embolectomy/catheter therapy or extracorporeal support where available."
+    ],
+    "postEventCare": [
+      "Provide a written anticoagulant, birth/neuraxial, bleeding and postpartum follow-up plan; consider specialist thrombosis review.",
+      "Discuss recurrence symptoms, adherence and future-pregnancy prophylaxis."
+    ],
+    "sourceIds": [
+      "med-rcog-vte-37b",
+      "med-alteplase-label",
+      "med-rcuk-special"
+    ],
+    "regimens": [
+      "enoxaparin-treatment",
+      "heparin-pe",
+      "alteplase-pe"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-massive-transfusion",
+    "title": "Massive Transfusion Activation",
+    "group": "Haemorrhage",
+    "keywords": [
+      "mtp",
+      "blood products"
+    ],
+    "topicRef": "pph",
+    "recognize": [
+      "Ongoing major obstetric haemorrhage with shock or a predicted rapid substantial transfusion requirement; activate before laboratory confirmation when clinically necessary."
+    ],
+    "callForHelp": [
+      "Activate the named hospital major-haemorrhage protocol and identify one clinician to communicate with the blood bank.",
+      "Senior obstetrician/anaesthetist leads haemorrhage control and resuscitation; request haematology and ICU support early."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Give emergency red cells when indicated while crossmatched components are arranged. Request balanced component packs under the blood-bank protocol; an adult therapeutic platelet dose is not equivalent to one single-donor component in a literal “1:1:1” count.",
+          "Continue source control, TXA for eligible PPH, active warming and rapid access. Monitor delivered products and total fluids; avoid excessive crystalloid dilution.",
+          "Measure ionised calcium, potassium, blood gas and temperature repeatedly during rapid transfusion. Replace confirmed/suspected clinically important hypocalcaemia using an explicit calcium prescription and reassess, rather than an undefined “calcium after four units”."
+        ]
+      }
+    ],
+    "investigations": [
+      "Serial CBC/platelets, PT/APTT, fibrinogen, blood gas/lactate, ionised calcium, potassium and temperature; viscoelastic testing if locally available.",
+      "Use a rapid repeat/result-feedback loop after component replacement; do not wait for the Hb to fall before treating active haemorrhagic shock."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Control the bleeding surgically/obstetrically while blood products restore perfusion and haemostasis.",
+          "In ongoing PPH, aim fibrinogen ≥2 g/L with cryoprecipitate/fibrinogen replacement as appropriate; platelets are generally supported to >50×10⁹/L during major bleeding. Guide FFP by coagulation and the major-haemorrhage protocol.",
+          "Reassess the need for each component as results become available; monitor for fluid overload, hypothermia, acidosis, citrate-related hypocalcaemia and transfusion reactions."
+        ]
+      }
+    ],
+    "escalation": [
+      "Persistent bleeding, acidosis/coagulopathy, hypoperfusion or escalating product need requires immediate senior reassessment of source control and ICU support."
+    ],
+    "postEventCare": [
+      "Stop the major-haemorrhage protocol explicitly when haemostasis is achieved; reconcile products, samples and ongoing monitoring.",
+      "Assess delayed transfusion complications, anaemia/iron deficit, organ recovery and VTE risk; document and debrief."
+    ],
+    "sourceIds": [
+      "who-pph-consolidated-2025",
+      "med-msf-pph",
+      "med-msf-calcium"
+    ],
+    "regimens": [
+      "txa-pph",
+      "calcium-hypocalcaemia"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-uterine-inversion",
+    "title": "Uterine Inversion",
+    "group": "Birth emergency",
+    "keywords": [
+      "fundus not palpable",
+      "inversion"
+    ],
+    "recognize": [
+      "After birth: fundus absent/dimpled abdominally or a uterine mass in the vagina/introitus, with pain, bleeding and shock that may be disproportionate to measured loss."
+    ],
+    "callForHelp": [
+      "Senior obstetrician, anaesthetist, theatre and blood bank urgently; resuscitation and replacement must proceed together."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Treat shock/haemorrhage with IV access, blood/fluid support and warming; avoid further cord traction. Stop uterotonics temporarily while attempting replacement.",
+          "If the placenta is still attached, do NOT remove it before reducing the inversion.",
+          "A skilled operator promptly replaces the uterus by sustained pressure toward the umbilicus through the cervical ring, with abdominal counter-support. Do not delay the first attempt for elaborate investigations.",
+          "Anaesthesia may be needed for relaxation and repeat attempts; failed manual reduction requires urgent senior operative management."
+        ]
+      }
+    ],
+    "investigations": [
+      "CBC, crossmatch, coagulation/fibrinogen and perfusion tests in parallel; do not delay anatomical correction."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "After successful reduction, hold/support the uterus until tone returns; then resume/start the prescribed oxytocin regimen and manage residual PPH.",
+          "Remove retained tissue only after reduction when appropriate, explore gently, and prescribe indicated prophylactic antibiotics for intrauterine manipulation.",
+          "If reduction fails, proceed to theatre for the appropriate surgical reduction; continuing haemorrhage may require additional source control."
+        ]
+      }
+    ],
+    "escalation": [
+      "Failure to reduce or continuing shock: immediate theatre/major-haemorrhage rescue and ICU support."
+    ],
+    "postEventCare": [
+      "Monitor recurrence, bleeding, uterine tone, urine output and coagulopathy.",
+      "Document the reduction/placental sequence and explain recurrence/future-birth planning."
+    ],
+    "sourceIds": [
+      "med-msf-inversion",
+      "med-msf-pph"
+    ],
+    "regimens": [
+      "oxytocin-pph",
+      "txa-pph"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-afe",
+    "title": "Amniotic Fluid Embolism",
+    "group": "Collapse",
+    "keywords": [
+      "afe",
+      "sudden collapse labour"
+    ],
+    "recognize": [
+      "Sudden respiratory compromise, hypotension/cardiac arrest and/or major coagulopathy during labour, birth or the early postpartum period; consider AFE alongside haemorrhage, PE, anaphylaxis and other causes.",
+      "AFE is a clinical diagnosis; no single laboratory test confirms or excludes it."
+    ],
+    "callForHelp": [
+      "Full obstetric, anaesthetic, resuscitation, blood-bank and critical-care response; assign a team leader and family-communication lead."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Support oxygenation and ventilation immediately; if arrested, standard high-quality ALS with pregnancy modifications and early resuscitative-hysterotomy preparation.",
+          "Treat haemodynamic collapse with monitored vasopressor/inotropic support guided by physiology/echo; avoid reflex large fluid loads that worsen right/left ventricular failure.",
+          "Assess coagulopathy early and activate major-haemorrhage support when bleeding/DIC is present, with fibrinogen, platelets and appropriate components.",
+          "Do not delay support while seeking a confirmatory AFE test or administering an unproven “A-OK” drug cocktail."
+        ]
+      }
+    ],
+    "investigations": [
+      "CBC/platelets, PT/APTT/fibrinogen, blood gas/lactate, ionised calcium, electrolytes and crossmatch; bedside echo to guide haemodynamic management when available."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Multidisciplinary critical care, haemostasis and cause reassessment; treat ventricular failure, respiratory failure and DIC according to the observed physiology.",
+          "Expedite birth when indicated for maternal resuscitation/obstetric reasons; neonatal team provides a separate resuscitation pathway.",
+          "Consider mechanical circulatory/extracorporeal support in an experienced centre for selected refractory failure."
+        ]
+      }
+    ],
+    "escalation": [
+      "ICU-level care for suspected AFE with cardiorespiratory compromise; early referral to a centre with appropriate circulatory/respiratory support if feasible."
+    ],
+    "postEventCare": [
+      "Serial organ-function, coagulation and neurological assessment; coordinated rehabilitation and psychological support for survivors/families.",
+      "Document the diagnostic reasoning, timeline and treatments and undertake multidisciplinary review."
+    ],
+    "sourceIds": [
+      "med-smfm-afe-2026",
+      "med-rcuk-special",
+      "who-pph-consolidated-2025"
+    ],
+    "regimens": [
+      "adrenaline-arrest",
+      "norepinephrine-shock"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-anaphylaxis",
+    "title": "Anaphylaxis in Pregnancy",
+    "group": "Allergy",
+    "keywords": [
+      "allergic reaction",
+      "anaphylaxis"
+    ],
+    "recognize": [
+      "Rapid airway, breathing or circulation compromise after a likely trigger; skin/mucosal changes may be absent.",
+      "Wheeze/stridor, swelling, hypotension or collapse demands immediate treatment; do not wait for rash or a tryptase result."
+    ],
+    "callForHelp": [
+      "Call resuscitation/anaesthesia and senior obstetric team; bring IM adrenaline, oxygen, IV fluids and airway equipment."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Stop the suspected trigger/infusion and give IM adrenaline 500 micrograms immediately; repeat after 5 min for persistent airway/breathing/circulation problems. The complete concentration/volume is below.",
+          "Position appropriately: do not allow standing/sudden sitting; in later pregnancy use left-lateral positioning or manual uterine displacement if supine resuscitation is required.",
+          "Give oxygen, obtain IV access and support the airway early. Adult shock may need rapid 500–1000 mL crystalloid boluses with reassessment; monitor closely and individualise for cardiac/obstetric physiology.",
+          "Persistent features after TWO appropriate IM doses: expert-led refractory-anaphylaxis treatment with a monitored IV adrenaline infusion. Do not give IV boluses of the IM-strength solution.",
+          "Antihistamines do not treat airway/breathing/circulation compromise. Routine hydrocortisone is not first-line emergency treatment; neither should delay adrenaline or fluids."
+        ]
+      }
+    ],
+    "investigations": [
+      "Monitor ECG, BP, pulse, SpO2 and response continuously. Mast-cell tryptase sampling after initial stabilisation should not delay treatment; arrange timed samples and later baseline under the allergy pathway."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Reassess after every intervention; titrate expert infusion and fluid support for refractory shock. Prepare advanced airway/ventilation if airway oedema or exhaustion progresses.",
+          "Assess the fetus after maternal resuscitation; restoring maternal oxygenation/perfusion is the immediate priority.",
+          "Choose observation duration by reaction severity and treatment: prolonged observation is required after multiple adrenaline doses, severe respiratory compromise or other high-risk features; do not use a universal 6 h discharge rule."
+        ]
+      }
+    ],
+    "escalation": [
+      "Two IM doses with persistent compromise, airway deterioration or shock: critical care and monitored IV infusion immediately."
+    ],
+    "postEventCare": [
+      "Record trigger, drug names/doses/timing and severity; provide clear allergy documentation and specialist referral.",
+      "Before discharge give emergency advice, an appropriate adrenaline-auto-injector plan/training and follow-up arrangements."
+    ],
+    "sourceIds": [
+      "med-rcuk-anaphylaxis",
+      "med-rcuk-special"
+    ],
+    "regimens": [
+      "adrenaline-anaphylaxis",
+      "adrenaline-refractory"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-hypo-hyperglycemia",
+    "title": "Severe Hypo/Hyperglycaemia in Pregnancy",
+    "group": "Metabolic",
+    "keywords": [
+      "hypoglycaemia pregnancy",
+      "dka"
+    ],
+    "topicRef": "pregestational-diabetes",
+    "recognize": [
+      "Hypoglycaemia: glucose <4 mmol/L (72 mg/dL); severity is determined by impaired consciousness/need for assistance, not only a <54 mg/dL threshold.",
+      "DKA: ketonaemia/acidosis in a patient with diabetes or hyperglycaemia; pregnancy DKA can occur with only modest or normal-range glucose. Measure ketones and VBG when unwell, vomiting or breathless."
+    ],
+    "callForHelp": [
+      "Urgent obstetric and diabetes/medical review; DKA, impaired consciousness or haemodynamic compromise requires HDU/ICU capability."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "HYPO, awake and safe swallowing: give 15–20 g rapid carbohydrate and recheck after 10–15 min; repeat if still low. If unconscious/unsafe swallowing, give IV glucose or IM glucagon using the exact cards below; never give oral fluids.",
+          "DKA: begin monitored isotonic fluid replacement, insulin and electrolyte management with the medical/obstetric team. The usual adult first 1 L over 1 h requires adaptation in pregnancy, cardiac/renal disease or shock; reassess perfusion and fluid tolerance rather than simply prescribing “first litre fast”.",
+          "Use SOLUBLE insulin at the stated concentration/rate, not NPH or a pen formulation IV. Measure potassium before and repeatedly during insulin; add glucose early for euglycaemic DKA or when glucose <14 mmol/L.",
+          "Continue prescribed basal insulin unless the specialist team changes it. Identify infection, missed insulin, vomiting, steroid exposure or pump failure."
+        ]
+      }
+    ],
+    "investigations": [
+      "Hourly glucose and blood ketones; VBG/pH/bicarbonate, potassium/electrolytes, renal function and ECG; initial repeat electrolytes at least at 1 and 2 h, then according to clinical course.",
+      "Cultures/other precipitant tests when indicated; monitor fluid balance and fetal condition at a gestation where monitoring informs care."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "table",
+        "caption": "JBDS potassium decisions during DKA — use a monitored prescription",
+        "headers": [
+          "Potassium",
+          "Action"
+        ],
+        "rows": [
+          [
+            ">5.5 mmol/L",
+            "No potassium in the initial replacement fluid; recheck as treatment rapidly lowers potassium."
+          ],
+          [
+            "3.5–5.5 mmol/L",
+            "If passing urine and renal status permits, usual replacement is premixed potassium 40 mmol/L in resuscitation fluid; account for the infusion rate and repeat levels."
+          ],
+          [
+            "<3.5 mmol/L",
+            "Urgent senior/critical-care review for additional replacement and an insulin plan. Do not continue an unreviewed insulin prescription; concentrated potassium requires the appropriate monitored setting."
+          ],
+          [
+            "Any potassium infusion",
+            "Never IV push potassium; use premixed/approved dilution and a labelled pump under the hospital policy."
+          ]
+        ]
+      },
+      {
+        "kind": "steps",
+        "steps": [
+          "Continue IV insulin until ketones <0.6 mmol/L AND venous pH >7.3 with clinical recovery; glucose correction alone does not mean DKA has resolved.",
+          "When eating and transitioning safely, give the appropriate subcutaneous insulin and overlap IV insulin for 30–60 min. Confirm the basal regimen and prevent another missed-insulin interval.",
+          "Abnormal fetal monitoring may improve with maternal correction; do not make automatic delivery the treatment for DKA without an obstetric indication."
+        ]
+      }
+    ],
+    "escalation": [
+      "Shock, severe acidosis, altered consciousness, hypokalaemia, respiratory compromise or failure of ketones to fall: critical-care/diabetes reassessment immediately."
+    ],
+    "postEventCare": [
+      "Review the precipitant and prescribe an explicit insulin plan, ketone/sick-day instructions and hypoglycaemia rescue plan.",
+      "Arrange diabetes and obstetric follow-up; verify access to insulin, meters/strips/CGM and ability to use them."
+    ],
+    "sourceIds": [
+      "med-jbds-hypo",
+      "med-jbds-dka",
+      "nice-ng3-detail"
+    ],
+    "regimens": [
+      "glucose-severe-hypo",
+      "glucagon-hypo",
+      "insulin-dka"
+    ]
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-torsion",
+    "title": "Suspected Ovarian Torsion",
+    "group": "Gynaecology",
+    "keywords": [
+      "ovarian torsion",
+      "acute pelvic pain"
+    ],
+    "topicRef": "adnexal-mass-torsion",
+    "recognize": [
+      "Sudden unilateral pelvic/abdominal pain with nausea/vomiting, sometimes intermittent; an adnexal mass increases concern but may be absent.",
+      "Normal Doppler flow does NOT exclude torsion. Consider ectopic pregnancy, appendicitis and other surgical causes."
+    ],
+    "callForHelp": [
+      "Urgent gynaecology surgical review and anaesthesia; maintain suspicion even with equivocal imaging."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Assess haemodynamics, pregnancy status and differential diagnosis; keep nil by mouth, obtain IV access and provide monitored supportive analgesia/antiemesis.",
+          "Arrange ultrasound when immediately available, but do not allow normal Doppler or a delayed scan to postpone surgery when suspicion is high.",
+          "Prepare urgent diagnostic laparoscopy with fertility-preserving intent, appropriate consent and surgical support."
+        ]
+      }
+    ],
+    "investigations": [
+      "Pregnancy test/hCG, CBC and indicated preoperative tests; pelvic ultrasound is supportive, not a definitive exclusion test."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Detorse and preserve adnexal tissue whenever feasible. In adolescents, ACOG recommends preservation regardless of the dark/blue appearance: colour alone is not proof of irreversible loss.",
+          "Cystectomy may be deferred when tissue is oedematous/friable; the surgeon individualises management by age, mass characteristics, fertility goals and malignancy concern.",
+          "Do not use a blanket “necrotic-looking ovary = oophorectomy” rule. The cited ACOG recommendation specifically addresses adolescents; adult/postmenopausal decisions need the appropriate oncological/surgical assessment."
+        ]
+      }
+    ],
+    "escalation": [
+      "Persistent clinical suspicion: urgent theatre; instability/haemorrhage requires resuscitation and senior surgical control."
+    ],
+    "postEventCare": [
+      "Review pathology and arrange follow-up imaging when conservative treatment/cyst follow-up is required.",
+      "Explain symptoms of recurrence, fertility implications and the findings/operation performed."
+    ],
+    "sourceIds": [
+      "med-acog-torsion",
+      "med-msf-obstetrics"
+    ],
+    "regimens": []
+  },
+  {
+    "tone": "critical",
+    "status": "review",
+    "id": "emg-uterine-rupture",
+    "title": "Uterine Rupture",
+    "group": "Birth emergency",
+    "keywords": [
+      "scar dehiscence",
+      "rupture vbac"
+    ],
+    "topicRef": "vbac-tolac",
+    "recognize": [
+      "Abnormal fetal heart rate, persistent abdominal/scar pain, loss of station, bleeding, haematuria or maternal shock, especially with a uterine scar/obstruction.",
+      "A prior scar or concealed haemorrhage can produce subtle signs; do not wait for all classical findings."
+    ],
+    "callForHelp": [
+      "Immediate senior obstetrician, anaesthetist, emergency theatre, blood bank and neonatal team; activate major-haemorrhage support as needed."
+    ],
+    "immediateAction": [
+      {
+        "kind": "steps",
+        "steps": [
+          "STOP oxytocin/prostaglandin administration, resuscitate with two large-bore IV lines and prepare blood.",
+          "Immediate laparotomy for suspected rupture with maternal/fetal compromise; do not delay for imaging or a complete laboratory panel.",
+          "Continue maternal monitoring, warming and appropriate uterine displacement while preparations proceed."
+        ]
+      }
+    ],
+    "investigations": [
+      "Crossmatch, CBC/platelets, coagulation/fibrinogen, blood gas/calcium and renal function in parallel; no investigation delays surgery."
+    ],
+    "definitiveManagement": [
+      {
+        "kind": "steps",
+        "steps": [
+          "Deliver the fetus and control haemorrhage. The senior surgeon chooses repair versus hysterectomy based on rupture extent, bleeding, tissue condition, stability and fertility considerations.",
+          "Inspect for extension into broad ligament, bladder or other structures and obtain additional surgical expertise as required.",
+          "Continue balanced haemostatic resuscitation and reassess for coagulopathy/organ injury."
+        ]
+      }
+    ],
+    "escalation": [
+      "Ongoing bleeding/shock: major-transfusion and ICU support; neonatal resuscitation and specialist neonatal care."
+    ],
+    "postEventCare": [
+      "Document rupture location/extent, repair and future-pregnancy implications; provide a clear specialist birth plan for any later pregnancy.",
+      "Assess anaemia, renal/urinary injury, infection, thrombosis risk and psychological recovery; debrief mother/family."
+    ],
+    "sourceIds": [
+      "med-msf-obstetrics",
+      "nice-ng235-intrapartum-2026"
+    ],
+    "regimens": []
+  }
+]
