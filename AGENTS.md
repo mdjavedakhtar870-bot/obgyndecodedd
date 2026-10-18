@@ -87,3 +87,12 @@ If an error is found: FIX → VERIFY SOURCE → UPDATE DATA → RETEST (`typeche
 - The Google Site Verifier exception is limited to GET/HEAD requests for the homepage and the exact owner-supplied `/googlebccbb9eca5d04c4f.html` file with an IP in the official Google-controlled user-triggered-fetcher feed. Never replace it with a User-Agent-only exception or allow all Google Cloud ranges.
 
 - The owner subsequently supplied the HTML verification file. Preserve its exact bytes in `public/googlebccbb9eca5d04c4f.html`; do not wrap it in the app shell or add it as a clinical sitemap page. This is the Search Console HTML-file method.
+
+## Owner's admission and discharge request — 18 October 2026
+
+- Every clinical topic, emergency and procedure needs an explicit admission/discharge plan. Author case-specific plans in `data/admission-discharge-plans.json`; assembly and overlays live in `src/content/admission-discharge.ts`.
+- Cover admission versus outpatient selection, recovery/readiness, complete medicine reconciliation, repeat/pending results with a reviewer, home/wound/device care, actual follow-up and urgent-return warnings. The shared 12-part checklist complements the case plan.
+- Distinguish critical-care step-down, interfacility transfer and discharge home. Do not turn one normal BP/Hb/glucose/CTG or an elapsed number of hours into automatic discharge clearance.
+- Label India NHM normal-delivery observation of at least 48 hours separately from WHO's 24-hour baseline and NICE's selected UK post-caesarean 24-hour pathway. Maternal/newborn complications and access can require longer care.
+- High-risk follow-up (hCG, BP/bloods, diabetes, anticoagulation, cultures/histology, wounds/catheters) must have a timeframe and accountable reviewer. No emergency IV medicine becomes a take-home course by default.
+- Reuse the medication library for full dose cards. New scoped care guidance keeps whole modules in review and leaves full verification dates unset; source-check dates do not certify the complete library. See `docs/ADMISSION-DISCHARGE-UPDATE.md`.

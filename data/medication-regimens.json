@@ -2131,5 +2131,71 @@
     "notes": [
       "Do not give together with misoprostol or oxytocin as a stacked ripening regimen; asthma and major cardiac/renal/hepatic disease require assessment."
     ]
+  },
+  "paracetamol-acute-pain": {
+    "drug": "Paracetamol (acetaminophen) — oral pain relief",
+    "indication": "Short-term maternal postoperative/postpartum pain or other mild pain after assessment; adult ≥50 kg",
+    "dose": "1 g (two 500 mg tablets) per dose",
+    "route": "Oral",
+    "frequency": "Every 6–8 hours when needed; maximum 4 doses in 24 hours",
+    "duration": "According to clinical response: reduce/stop as pain improves. Record the prescribed supply and review date; persistent or increasing pain needs reassessment rather than an automatic repeat course.",
+    "preparation": "Check tablet strength: two 500 mg tablets = 1 g. Count paracetamol in every combination/OTC product towards the total; this is not an IV preparation.",
+    "maxDose": "4 g in 24 hours for the stated adult population. Lower weight, hepatic impairment or other risk factors require an individual reduced prescription; do not automatically use this maximum.",
+    "sourceId": "discharge-paracetamol",
+    "monitoring": [
+      "Pain and functional recovery; investigate increasing pain, fever or other warning symptoms.",
+      "Check all prescribed/OTC paracetamol, weight and hepatic risk; suspected excess dosing requires urgent assessment."
+    ],
+    "contraindications": [
+      "Paracetamol allergy; avoid duplicate paracetamol-containing products.",
+      "Hepatic impairment needs caution and a clinician-adjusted regimen. This adult ≥50 kg card is not a weight-based prescription for smaller adults or children."
+    ],
+    "notes": [
+      "MSF oral monograph: no pregnancy or breastfeeding contraindication. The dose does not replace assessment of the cause of pain."
+    ]
+  },
+  "ibuprofen-postpartum-pain": {
+    "drug": "Ibuprofen — postpartum/nonpregnant postoperative pain",
+    "indication": "Short-term pain relief after birth or gynaecological surgery when NSAIDs are appropriate; not an antenatal regimen",
+    "dose": "200–400 mg per dose",
+    "route": "Oral",
+    "frequency": "Every 8 hours when prescribed; reduce/stop as symptoms improve",
+    "duration": "Shortest course needed for recovery; MSF postoperative reference maximum 8 days. Record the actual stop/review date; ongoing or increasing pain needs clinical review.",
+    "preparation": "Check 200 mg or 400 mg tablet strength. Take with food; do not combine with another NSAID or duplicate OTC ibuprofen.",
+    "maxDose": "1,200 mg in 24 hours in this pain regimen; do not import higher anti-inflammatory schedules into a discharge prescription.",
+    "sourceId": "discharge-msf-ibuprofen",
+    "monitoring": [
+      "Pain response, hydration/urine output, GI pain or bleeding; review renal function when clinically indicated.",
+      "Check current bleeding, renal/hepatic function, allergy/asthma history, anticoagulants and interacting medicines before prescribing."
+    ],
+    "contraindications": [
+      "NSAID allergy or NSAID-triggered asthma; active peptic ulcer/GI bleeding or a significant bleeding/coagulation problem.",
+      "Severe renal/hepatic impairment, severe heart failure, uncorrected dehydration/hypovolaemia or severe infection. Avoid in OHSS because of renal risk.",
+      "Avoid concurrent NSAIDs; anticoagulants, methotrexate, ACE inhibitors/diuretics and other interacting medicines require prescriber review. This card is for postpartum/nonpregnant care, not pregnancy."
+    ],
+    "notes": [
+      "Short-term use is compatible with breastfeeding in the MSF reference. Do not prescribe while bleeding or renal contraindications remain unresolved."
+    ]
+  },
+  "iron-postpartum-treatment": {
+    "drug": "Oral iron and folic acid — postpartum anaemia treatment",
+    "indication": "Diagnosed postpartum iron-deficiency anaemia after haemorrhage is controlled and outpatient oral treatment is suitable",
+    "dose": "120 mg ELEMENTAL iron plus 400 micrograms folic acid per day",
+    "route": "Oral",
+    "frequency": "Daily; tailor administration for tolerance without accidentally changing the prescribed total",
+    "duration": "WHO postpartum anaemia treatment: until Hb normalises. Then document any continuing preventive/repletion course and review; the preventive 6–12-week recommendation is a different indication.",
+    "preparation": "Use the product’s ELEMENTAL iron content, not salt weight: two tablets each containing 60 mg elemental iron provide 120 mg. Check the combined-tablet folate separately. Separate iron from calcium by several hours and levothyroxine by 4–5 hours.",
+    "maxDose": "120 mg/day elemental iron in this WHO treatment schedule; do not add duplicate antenatal/OTC iron or overlap oral and IV courses without an explicit plan.",
+    "sourceId": "discharge-who-iron",
+    "monitoring": [
+      "Arrange Hb response review after 2–4 weeks, tolerance and adherence; investigate non-response or ongoing bleeding and reassess the replacement route.",
+      "Review the cause of anaemia and any coexisting B12/folate deficiency or haemoglobinopathy."
+    ],
+    "contraindications": [
+      "Iron overload or anaemia without iron deficiency; oral iron alone is inadequate for unstable bleeding or cardiovascular compromise."
+    ],
+    "notes": [
+      "The WHO 2025 supportive-care recommendation supplies the postpartum dose/endpoint. Preparation and response monitoring reuse the checked oral-iron reference; breastfeeding is compatible with indicated maternal supplementation."
+    ]
   }
 }

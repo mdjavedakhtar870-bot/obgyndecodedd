@@ -1,4 +1,5 @@
-import { useId, useState, type ReactNode } from 'react'
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
+import { useLocation } from 'react-router-dom'
 import { getSource } from '../content/sources'
 import type { Block, AlgorithmNode, DrugUse } from '../content/types'
 
@@ -104,8 +105,33 @@ export function AlgorithmFlow({ nodes }: { nodes: AlgorithmNode[] }) {
 export function Tabs({ tabs }: { tabs: { id: string; label: string; content: ReactNode }[] }) {
   const prefix = useId().replaceAll(':', '')
   const [active, setActive] = useState('all')
+  const sections = useRef<HTMLDivElement>(null)
+  const { hash } = useLocation()
+  useEffect(() => {
+    if (!hash) return
+    let target: string
+    try { target = decodeURIComponent(hash.slice(1)) } catch { return }
+    setActive('all')
+    const frame = requestAnimationFrame(() => document.getElementById(target)?.scrollIntoView({ block: 'start' }))
+    return () => cancelAnimationFrame(frame)
+  }, [hash])
+  useEffect(() => {
+    // Repeated fragment links must also reveal a panel hidden by focused reading.
+    const reveal = (event: MouseEvent) => {
+      const anchor = event.target instanceof Element ? event.target.closest('a[href^="#"]') : null
+      const href = anchor?.getAttribute('href')
+      if (!href || href === '#') return
+      let target: HTMLElement | null
+      try { target = document.getElementById(decodeURIComponent(href.slice(1))) } catch { return }
+      if (!target || !sections.current?.contains(target)) return
+      setActive('all')
+      requestAnimationFrame(() => target?.scrollIntoView({ block: 'start' }))
+    }
+    document.addEventListener('click', reveal)
+    return () => document.removeEventListener('click', reveal)
+  }, [])
   return (
-    <div className="clinical-sections">
+    <div className="clinical-sections" ref={sections}>
       <div className="section-controls">
         <button className={`btn sm ${active === 'all' ? 'primary' : ''}`} aria-pressed={active === 'all'} onClick={() => setActive(active === 'all' ? tabs[0]?.id : 'all')}>{active === 'all' ? 'Full guide' : 'Read full guide'} <span aria-hidden="true">☷</span></button>
         {active === 'all' && <label className="section-jump"><span className="sr-only">Jump to a section</span><select className="input" aria-label="Jump to a section" defaultValue="" onChange={(e) => { const node = document.getElementById(e.target.value); node?.scrollIntoView({ block: 'start', behavior: 'smooth' }); node?.focus({ preventScroll: true }); e.target.value = '' }}><option value="" disabled>Jump to section…</option>{tabs.map((t) => <option key={t.id} value={`${prefix}-panel-${t.id}`}>{t.label}</option>)}</select></label>}

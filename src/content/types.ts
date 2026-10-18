@@ -152,6 +152,23 @@ export interface DiseaseTopic {
   emergencyRef?: string
   /** Additional checked explanations; this does not certify the rest of the module. */
   clinicalDetail?: ClinicalDetail
+  admissionDischarge?: AdmissionDischargePlan
+}
+
+export interface AdmissionDischargePlan {
+  setting: string
+  outpatient: string[]
+  admit: string[]
+  ready: string[]
+  medicines: string[]
+  tests: string[]
+  homeCare: string[]
+  followUp: { when: string; action: string }[]
+  returnImmediately: string[]
+  medicineDetails: { regimenId: string; when: string }[]
+  sourceIds: string[]
+  checkedAt: string
+  scopeNote?: string
 }
 
 export interface ClinicalDetail {
@@ -185,6 +202,7 @@ export interface EmergencyProtocol {
   sourceIds: string[]
   status: WorkflowStatus
   lastVerifiedAt?: string
+  admissionDischarge?: AdmissionDischargePlan
 }
 
 /* ---------- Drug database (§53) ---------- */
@@ -280,6 +298,7 @@ export interface ProcedureDoc {
   sourceIds: string[]
   status: WorkflowStatus
   lastVerifiedAt?: string
+  admissionDischarge?: AdmissionDischargePlan
 }
 
 /* ---------- Differential-diagnosis engine (§51) ---------- */

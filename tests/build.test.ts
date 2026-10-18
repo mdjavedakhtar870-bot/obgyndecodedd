@@ -3,7 +3,8 @@ import test from 'node:test'
 import { readFileSync, existsSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { join } from 'node:path'
-import { ALL_TOPICS, EMERGENCIES, SOURCES } from '../src/content'
+import { ALL_TOPICS, EMERGENCIES, PROCEDURES, SOURCES } from '../src/content'
+import { DISCHARGE_CHECKLIST } from '../src/content/admission-discharge'
 import { ANTENATAL_DETAIL } from '../src/content/antenatal-care'
 import { ALL_PAGES, PUBLIC_PAGES, pageUrl, getPage, ICU_DECODED_URL } from '../src/lib/seo'
 import { resolveSiteConfig } from '../scripts/site-config'
@@ -14,6 +15,29 @@ const { createWindow } = require('@mixmark-io/domino')
 const site = resolveSiteConfig()
 const fileFor = (path: string) => join('dist', path === '/' ? 'index.html' : path === '/404.html' ? '404.html' : `${path.slice(1)}/index.html`)
 const documents = new Map(ALL_PAGES.map((p) => [p.path, createWindow(readFileSync(fileFor(p.path), 'utf8')).document]))
+
+test('admission/discharge guidance and complete handover checklist are available before JavaScript', () => {
+  const hub = documents.get('/admission-discharge')
+  assert.ok(hub)
+  for (const item of DISCHARGE_CHECKLIST) assert.ok(hub.querySelector('#discharge-checklist').textContent.includes(item.title))
+  for (const [kind, items] of [['topic', ALL_TOPICS], ['emergency', EMERGENCIES], ['procedure', PROCEDURES]] as const) {
+    for (const item of items) {
+      const d = documents.get(`/${kind}/${item.id}`)
+      const care = d.querySelector('#admission-discharge')
+      assert.ok(care, `${item.id}: omitted care plan`)
+      assert.equal(d.querySelectorAll('#admission-discharge').length, 1)
+      for (const id of ['admit', 'outpatient', 'ready', 'medicines', 'results', 'home', 'follow-up', 'return']) assert.ok(care.querySelector(`#care-${id}`), `${item.id}: missing ${id}`)
+      const plan = item.admissionDischarge!
+      for (const value of [...plan.admit, ...plan.ready, ...plan.tests, ...plan.returnImmediately, ...plan.followUp.flatMap((r) => [r.when, r.action])]) assert.ok(care.textContent.includes(value), `${item.id}: lost care guidance`)
+      assert.ok(d.querySelector('a[href="/admission-discharge/"]'))
+      const text = readFileSync(`dist/reference/${kind}/${item.id}.md`, 'utf8')
+      assert.ok(text.includes(plan.ready[0]) && text.includes('Return urgently'), `${item.id}: export omitted care plan`)
+      if (kind === 'topic') assert.ok(hub.querySelector(`a[href="/topic/${item.id}/#admission-discharge"]`))
+    }
+  }
+  assert.equal(readFileSync('dist/googlebccbb9eca5d04c4f.html', 'utf8'), 'google-site-verification: googlebccbb9eca5d04c4f.html')
+  assert.ok(documents.get('/').querySelector('meta[name="google-site-verification"]').getAttribute('content').includes('wsLjnrlvxfoOkwHH'))
+})
 
 test('antenatal trimester tables and visit calendar are present and linked before JavaScript', () => {
   const d = documents.get('/topic/anc-overview')

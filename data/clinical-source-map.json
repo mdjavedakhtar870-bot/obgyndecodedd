@@ -10,7 +10,7 @@
       "pending-verification": "Known source, not yet re-checked for currency. Content using this entry is flagged in-app."
     },
     "lastScopedContentUpdate": "2026-10-18",
-    "scopeNote": "42 explanatory detail sections plus a targeted medication/emergency audit with indication-specific regimens and dependent corrections. Source checks have explicit limits and do not certify every clinical module. The 18 October addition supplies trimester-specific investigations, repeat timing and an eight-contact calendar with India/NICE service differences; GDM diagnostic dependencies are labelled."
+    "scopeNote": "42 explanatory detail sections plus a targeted medication/emergency audit with indication-specific regimens and dependent corrections. Source checks have explicit limits and do not certify every clinical module. The 18 October addition supplies trimester-specific investigations, repeat timing and an eight-contact calendar with India/NICE service differences; GDM diagnostic dependencies are labelled. Admission/discharge plans now cover all 66 topics, 18 emergency pathways and 6 procedures, with a shared 12-part discharge checklist. Clinical readiness, medicine reconciliation, pending-result ownership, follow-up and return warnings are a scoped synthesis, not full-module clinical certification. Broad indexes and oncology retain explicit specialty limits."
   },
   "sources": [
     {
@@ -549,8 +549,8 @@
       "version": "NG126",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for pul. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Also checked ultrasound repeat-scan/second-opinion criteria before diagnosing miscarriage.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for pul. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Also checked ultrasound repeat-scan/second-opinion criteria before diagnosing miscarriage. Additional admission/discharge check 18 October 2026 (limited to the following): PUL discharge uncertainty, symptoms over hCG, paired hCG close to 48 hours but not earlier, written 24-hour contact and tracked repeat assessment.",
       "usedBySections": [
         "miscarriage-management",
         "pul"
@@ -568,8 +568,8 @@
       "version": "NG126",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for ectopic-pregnancy. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Also corrected stable-tubal-ectopic selection and follow-up descriptions, without certifying all rare-site regimens.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for ectopic-pregnancy. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Also corrected stable-tubal-ectopic selection and follow-up descriptions, without certifying all rare-site regimens. Additional admission/discharge check 18 October 2026 (limited to the following): Outpatient eligibility versus rupture/pain/surgical criteria; expectant days 2/4/7, methotrexate days 4/7 then weekly; salpingotomy day 7 then weekly; salpingectomy urine test at 3 weeks.",
       "usedBySections": [
         "ectopic-pregnancy",
         "emg-ectopic",
@@ -588,8 +588,8 @@
       "version": "NG126",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for miscarriage-management. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Also checked the missed/incomplete miscarriage drug rows and the scan-confirmed intrauterine-pregnancy progesterone criterion with continuation to 16 completed weeks when a heartbeat is confirmed.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for miscarriage-management. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Also checked the missed/incomplete miscarriage drug rows and the scan-confirmed intrauterine-pregnancy progesterone criterion with continuation to 16 completed weeks when a heartbeat is confirmed. Additional admission/discharge check 18 October 2026 (limited to the following): Expectant reassessment at 7–14 days, urine test at 3 weeks, medical-treatment no bleeding within 48 hours/contact and persistent symptoms/positive test reassessment.",
       "usedBySections": [
         "mifepristone",
         "miscarriage-management",
@@ -626,8 +626,8 @@
       "version": "2021 STI guideline",
       "sourceType": "national clinical guideline",
       "region": "USA (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-chlamydia. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-chlamydia. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Pregnancy test of cure about 4 weeks and retest at 3 months; partner treatment, adherence and persistent symptoms.",
       "usedBySections": [
         "sti-chlamydia"
       ],
@@ -642,8 +642,8 @@
       "version": "2021 STI guideline",
       "sourceType": "national clinical guideline",
       "region": "USA (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-gonorrhoea. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-gonorrhoea. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Pharyngeal test of cure 7–14 days and reinfection test at 3 months; disseminated illness/PID requires specialist hospital assessment.",
       "usedBySections": [
         "sti-gonorrhoea"
       ],
@@ -658,8 +658,8 @@
       "version": "2021 STI guideline",
       "sourceType": "national clinical guideline",
       "region": "USA (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-syphilis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-syphilis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Stage-correct treatment completion and timed serological follow-up, neonatal handover and Jarisch–Herxheimer/obstetric warning advice.",
       "usedBySections": [
         "sti-syphilis"
       ],
@@ -674,8 +674,8 @@
       "version": "2021 STI guideline",
       "sourceType": "national clinical guideline",
       "region": "USA (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-hsv. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Medication audit: acyclovir 400 mg three times/day for first episode 7–10 days and pregnancy suppression from 36 weeks to birth; non-elimination of neonatal risk.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for sti-hsv. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Medication audit: acyclovir 400 mg three times/day for first episode 7–10 days and pregnancy suppression from 36 weeks to birth; non-elimination of neonatal risk. Additional admission/discharge check 18 October 2026 (limited to the following): Severe/disseminated or neurological illness, oral-treatment feasibility, late-pregnancy/birth and neonatal precautions.",
       "usedBySections": [
         "sti-hsv"
       ],
@@ -690,8 +690,8 @@
       "version": "2021 STI guideline",
       "sourceType": "national clinical guideline",
       "region": "USA (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for vaginitis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for vaginitis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Return for persistent/recurrent symptoms and reassess alternative diagnoses; no routine hospital stay for uncomplicated vaginitis.",
       "usedBySections": [
         "vaginitis"
       ],
@@ -706,8 +706,8 @@
       "version": "2021 STI guideline",
       "sourceType": "national clinical guideline",
       "region": "USA (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for vaginitis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for vaginitis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Persistent/recurrent/complicated symptoms and pregnancy-appropriate therapy, without a generic antibiotic discharge course.",
       "usedBySections": [
         "vaginitis"
       ],
@@ -722,8 +722,8 @@
       "version": "2021 STI guideline",
       "sourceType": "national clinical guideline",
       "region": "USA (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for vaginitis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for vaginitis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Partner management and retesting sexually active women at about 3 months; recurrence reassessment.",
       "usedBySections": [
         "vaginitis"
       ],
@@ -738,8 +738,8 @@
       "version": "2021 STI guideline",
       "sourceType": "national clinical guideline",
       "region": "USA (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for pid. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for pid. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): All CDC hospitalisation indications, especially pregnancy/TOA/severe illness; oral transition after 24–48 hours clinical improvement, TOA >24-hour hospital observation, 14-day total course, response within 72 hours and GC/CT retest at 3 months.",
       "usedBySections": [
         "pid"
       ],
@@ -754,8 +754,8 @@
       "version": "NG88",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for aub, fibroids. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for aub, fibroids. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Heavy-bleeding assessment, CBC/structural cause and specialist referral/result tracking when severe or unsuccessful treatment; general recovery used with the separate surgical source.",
       "usedBySections": [
         "aub",
         "fibroids"
@@ -773,8 +773,8 @@
       "version": "NG73",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for endometriosis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for endometriosis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Persistent pain, treatment-response and specialist/endometriosis referral; surgery/pathology/fertility follow-through rather than an automatic fixed follow-up interval.",
       "usedBySections": [
         "endometriosis"
       ],
@@ -791,8 +791,8 @@
       "version": "2023",
       "sourceType": "international evidence-based guideline recommendations",
       "region": "International",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for pcos. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Medication check 17 October 2026: metabolic metformin indication, 500 mg increments every 1–2 weeks, suggested adult 2.5 g/day/adolescent 2 g/day limits, B12 risk and letrozole first-line fertility indication.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for pcos. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Medication check 17 October 2026: metabolic metformin indication, 500 mg increments every 1–2 weeks, suggested adult 2.5 g/day/adolescent 2 g/day limits, B12 risk and letrozole first-line fertility indication. Additional admission/discharge check 18 October 2026 (limited to the following): Outpatient metabolic/cycle/endometrial-protection care, abnormal bleeding and fertility-treatment complication triage. OHSS admission/recovery uses the distinct RCOG reference.",
       "usedBySections": [
         "pcos"
       ],
@@ -807,8 +807,8 @@
       "version": "NG123",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for urogynaecology-core. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for urogynaecology-core. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Catheter/emptying and postoperative complication review; stress-incontinence surgery follow-up within 6 months and prolapse review at 6 months with relevant vaginal/mesh assessment; urgent problems need earlier review.",
       "usedBySections": [
         "urogynaecology-core"
       ],
@@ -825,8 +825,8 @@
       "version": "NG23",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for menopause. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for menopause. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Treatment review at 3 months then annually, earlier for concerns; postmenopausal/unscheduled bleeding investigation and individual HRT/endometrial-protection review.",
       "usedBySections": [
         "menopause"
       ],
@@ -843,8 +843,8 @@
       "version": "2024",
       "sourceType": "national clinical guideline",
       "region": "USA (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for contraception. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for contraception. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Method selection by clinical eligibility; contraception is generally outpatient, with urgent assessment for pain/ectopic/perforation/serious complications.",
       "usedBySections": [
         "contraception"
       ],
@@ -859,8 +859,8 @@
       "version": "NG257",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for infertility-female. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for infertility-female. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Outpatient infertility assessment and appropriate partner/specialty pathways; OHSS aftercare uses the distinct RCOG source, not an inferred NG257 discharge protocol.",
       "usedBySections": [
         "infertility-female"
       ],
@@ -876,8 +876,8 @@
       "version": "NG257",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for infertility-female. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for infertility-female. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Assigning investigation/viral-test results and the appropriate fertility/specialty reviewer; no universal inpatient infertility workup.",
       "usedBySections": [
         "infertility-female"
       ],
@@ -894,7 +894,7 @@
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
       "dateChecked": "2026-10-18",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for gdm, pregestational-diabetes. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Subsequent diagnostic/dependency check: fasting 75 g OGTT thresholds (fasting ≥5.6 or two-hour ≥7.8 mmol/L), nutrition/metformin/insulin choice, immediate insulin at fasting ≥7.0 mmol/L, glucose targets in labour and uncomplicated-GDM birth by 40+6 weeks; distinguish from the Indian non-fasting programme. Additional checked dependencies: India versus NICE growth/birth/labour/postpartum schedules displayed; preconception HbA1c below 6.5% if safe, booking/later risk assessment versus glucose monitoring, renal assessment without pregnancy eGFR, uncomplicated pre-existing-diabetes birth at 37+0–38+6, individual postpartum insulin reduction, and macrosomia birth counselling.",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for gdm, pregestational-diabetes. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Subsequent diagnostic/dependency check: fasting 75 g OGTT thresholds (fasting ≥5.6 or two-hour ≥7.8 mmol/L), nutrition/metformin/insulin choice, immediate insulin at fasting ≥7.0 mmol/L, glucose targets in labour and uncomplicated-GDM birth by 40+6 weeks; distinguish from the Indian non-fasting programme. Additional checked dependencies: India versus NICE growth/birth/labour/postpartum schedules displayed; preconception HbA1c below 6.5% if safe, booking/later risk assessment versus glucose monitoring, renal assessment without pregnancy eGFR, uncomplicated pre-existing-diabetes birth at 37+0–38+6, individual postpartum insulin reduction, and macrosomia birth counselling. Additional admission/discharge check 18 October 2026 (limited to the following): Pregnancy DKA/severe hypoglycaemia admission, GDM stop treatment immediately after birth versus reduce/continue pre-existing insulin, glucose before community transfer and postpartum testing/follow-up. Neonatal assessment remains separate.",
       "usedBySections": [
         "gdm",
         "pregestational-diabetes"
@@ -928,8 +928,8 @@
       "version": "Patient information",
       "sourceType": "patient information based on society guidance",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for icp. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for icp. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Individual repeat blood testing and birth plan; 6-week postpartum symptom/liver/bile-acid reassessment and referral for persistence; most women do not need vitamin K.",
       "usedBySections": [
         "icp"
       ],
@@ -960,8 +960,8 @@
       "version": "NG207",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for iol, prom-term. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for iol, prom-term. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Specifically selected outpatient dinoprostone/mechanical induction, full assessment, exact return/review and emergency instructions; not a general home oxytocin or repeat-dose protocol.",
       "usedBySections": [
         "iol",
         "prom-term"
@@ -978,8 +978,8 @@
       "version": "NG192",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for lscs, vbac-tolac. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for lscs, vbac-tolac. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Selected afebrile uncomplicated caesarean recovery may be offered UK discharge after 24 hours with home follow-up; pain, wound/bladder/mobility/VTE assessment; paracetamol plus NSAID unless contraindicated; breastfeeding codeine caution. The 24-hour option is explicitly not automatic Indian discharge clearance.",
       "usedBySections": [
         "lscs",
         "vbac-tolac"
@@ -997,8 +997,8 @@
       "version": "Patient information",
       "sourceType": "patient information based on society guidance",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for breech-ecv. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for breech-ecv. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Same-day home care commonly possible after reassuring post-ECV monitoring; bleeding/pain/fetal concerns, anti-D assessment and subsequent presentation/birth plan.",
       "usedBySections": [
         "breech-ecv"
       ],
@@ -1013,8 +1013,8 @@
       "version": "Patient information",
       "sourceType": "patient information based on society guidance",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for shoulder-dystocia. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for shoulder-dystocia. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Maternal trauma/haemorrhage and newborn injury assessment after resolution; explanation, support and future-birth counselling.",
       "usedBySections": [
         "shoulder-dystocia"
       ],
@@ -1029,8 +1029,8 @@
       "version": "Patient information",
       "sourceType": "patient information based on society guidance",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for cord-prolapse. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for cord-prolapse. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Urgent birth/neonatal support and post-event explanation; home care follows actual maternal operation/trauma and newborn outcomes.",
       "usedBySections": [
         "cord-prolapse"
       ],
@@ -1045,8 +1045,8 @@
       "version": "NG229",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for ctg-fetal-monitoring. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for ctg-fetal-monitoring. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): CTG interpretation in the whole clinical context and escalation for maternal/fetal concerns; no discharge based on one trace snapshot.",
       "usedBySections": [
         "ctg-fetal-monitoring"
       ],
@@ -1063,8 +1063,8 @@
       "version": "NG25",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for ptl-threatened, ptl-established. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for ptl-threatened, ptl-established. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Suspected versus diagnosed preterm labour, ≥30-week cervical length >15 mm or appropriate fFN ≤50 ng/mL discussion of home care; unavailable testing means treat as diagnosed; membrane/infection/bleeding and fetal concerns override low-risk-test reassurance.",
       "usedBySections": [
         "ptl-threatened",
         "ptl-established"
@@ -1082,8 +1082,8 @@
       "version": "Patient information",
       "sourceType": "patient information based on society guidance",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for pprom. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for pprom. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Initial hospital observation and individual selection for later home surveillance, rapid-return access and infection/labour/bleeding/fetal warnings.",
       "usedBySections": [
         "pprom"
       ],
@@ -1098,8 +1098,8 @@
       "version": "NG137",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for multiples. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for multiples. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Chorionicity-specific specialist surveillance, preterm/maternal/fetal complications and transfer/birth planning, without a universal uncomplicated admission week.",
       "usedBySections": [
         "multiples"
       ],
@@ -1116,8 +1116,8 @@
       "version": "Patient information",
       "sourceType": "patient information based on society guidance",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for fgr. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for fgr. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Current primary patient information reviewed for specialist growth/Doppler surveillance and birth planning. No universal scan interval or single-test home-discharge threshold added.",
       "usedBySections": [
         "fgr"
       ],
@@ -1132,8 +1132,8 @@
       "version": "Patient information",
       "sourceType": "patient information based on society guidance",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for reduced-fetal-movements. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for reduced-fetal-movements. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Discharge only after appropriate assessment and review of ongoing concern; indicated ultrasound normally within 24 hours of request; return for every recurrence.",
       "usedBySections": [
         "reduced-fetal-movements"
       ],
@@ -1148,8 +1148,8 @@
       "version": "NG133",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for hdp-postpartum. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Targeted medication audit: Table 1 offers treatment for persistent BP >140/90 in gestational hypertension, target ≤135/85; after 37 weeks stable-patient birth timing is agreed with the woman and senior obstetrician. The former false “NICE severe-only” comparison was removed.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for hdp-postpartum. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Targeted medication audit: Table 1 offers treatment for persistent BP >140/90 in gestational hypertension, target ≤135/85; after 37 weeks stable-patient birth timing is agreed with the woman and senior obstetrician. The former false “NICE severe-only” comparison was removed. Additional admission/discharge check 18 October 2026 (limited to the following): Admission for severe BP or maternal/fetal concerns; all three postnatal PE transfer criteria (no symptoms, BP ≤150/100, bloods stable/improving); treated BP every 1–2 days up to 2 weeks, untreated day 3–5/alternate days if abnormal, 2-week treatment and 6–8-week review, persistent proteinuria/3-month renal review. Methyldopa stopping and BP reduction thresholds checked.",
       "usedBySections": [
         "hdp-postpartum"
       ],
@@ -1183,8 +1183,8 @@
       "version": "NG109",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for uti-pyelonephritis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for uti-pyelonephritis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Pregnancy lower-UTI immediate treatment, culture-based review and reassessment if not improving; do not apply the nonpregnant delayed-prescription pathway.",
       "usedBySections": [
         "uti-pyelonephritis"
       ],
@@ -1200,8 +1200,8 @@
       "version": "NG111",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for uti-pyelonephritis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for uti-pyelonephritis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Pyelonephritis referral/admission with sepsis, dehydration/unable oral treatment or pregnancy risk; review IV therapy by 48 hours and step-down when appropriate. The app retains separately labelled ACOG initial inpatient pregnancy/14-day-total treatment.",
       "usedBySections": [
         "uti-pyelonephritis"
       ],
@@ -1217,8 +1217,8 @@
       "version": "NG255",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Scope: additional clinical-detail explanation for maternal-sepsis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Scope: additional clinical-detail explanation for maternal-sepsis. Checked the assessment, management-decision and follow-up statements in that section against this source. This does not certify all pre-existing regimens, calculations or recommendations in the module. Additional admission/discharge check 18 October 2026 (limited to the following): Sepsis risk escalation and immediate hospital assessment/transfer when severe illness suspected; home care requires recovery and an explicit source/result/antimicrobial plan.",
       "usedBySections": [
         "maternal-sepsis"
       ],
@@ -1252,8 +1252,8 @@
       "lastUpdatedDate": "2026-06-17",
       "sourceType": "national clinical guideline",
       "region": "UK (international reference)",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Recommendations 1.18.1–1.18.5: no routine anti-D up to 11+6 weeks; offer to RhD-negative patients having medical or surgical management at 12+0–12+6 weeks, consider for heavy/recurrent threatened bleeding at that gestation. Corrected blanket all-loss anti-D wording; applicability to local Indian policy requires review. No claim to verify induced-abortion regimens.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Recommendations 1.18.1–1.18.5: no routine anti-D up to 11+6 weeks; offer to RhD-negative patients having medical or surgical management at 12+0–12+6 weeks, consider for heavy/recurrent threatened bleeding at that gestation. Corrected blanket all-loss anti-D wording; applicability to local Indian policy requires review. No claim to verify induced-abortion regimens. Additional admission/discharge check 18 October 2026 (limited to the following): Current gestation- and treatment-specific RhD criteria reviewed; discharge care points defer to that exact pathway rather than inventing one universal dose for miscarriage/abortion.",
       "usedBySections": [
         "ectopic-pregnancy",
         "miscarriage-management",
@@ -1523,8 +1523,8 @@
       "sourceType": "Clinical guideline / primary medication reference",
       "region": "International; source-specific setting",
       "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Standard-weight prophylaxis table, duration based on risk, renal adjustment and neuraxial cautions. 2015 guideline, not represented as a new 2026 edition.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Standard-weight prophylaxis table, duration based on risk, renal adjustment and neuraxial cautions. 2015 guideline, not represented as a new 2026 edition. Additional admission/discharge check 18 October 2026 (limited to the following): Repeat postpartum bleeding-versus-thrombosis risk assessment and documented prophylaxis indication/duration rather than a universal LMWH course.",
       "usedBySections": [
         "enoxaparin-prophylaxis"
       ],
@@ -1539,8 +1539,8 @@
       "sourceType": "Clinical guideline / primary medication reference",
       "region": "International; source-specific setting",
       "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Empiric anticoagulation pending objective exclusion, booking-weight LMWH, unfractionated-heparin 80 units/kg and 18 units/kg/hour with monitoring, life-threatening PE specialist reperfusion and treatment duration. 2015 edition.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Empiric anticoagulation pending objective exclusion, booking-weight LMWH, unfractionated-heparin 80 units/kg and 18 units/kg/hour with monitoring, life-threatening PE specialist reperfusion and treatment duration. 2015 edition. Additional admission/discharge check 18 October 2026 (limited to the following): Acute VTE treatment continued through pregnancy, at least 6 weeks postpartum and ≥3 months total; self-injection/sharps teaching and outpatient review; no automatic outpatient clearance for suspected/unstable PE.",
       "usedBySections": [
         "enoxaparin-treatment",
         "heparin-pe",
@@ -1622,8 +1622,8 @@
       "sourceType": "Clinical guideline / primary medication reference",
       "region": "Malaysia",
       "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Source-specific combinations and durations for chorioamnionitis, endometritis and septic miscarriage; GBS ampicillin 2 g then 1 g every 4 h until delivery. Regional guidance is labelled; local resistance and culture review remain required.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Source-specific combinations and durations for chorioamnionitis, endometritis and septic miscarriage; GBS ampicillin 2 g then 1 g every 4 h until delivery. Regional guidance is labelled; local resistance and culture review remain required. Additional admission/discharge check 18 October 2026 (limited to the following): Intra-amniotic infection/postpartum endometritis clinical improvement, IV reassessment and indication-specific course; no blanket prolonged oral antibiotics after uncomplicated response.",
       "usedBySections": [
         "ampicillin-chorio",
         "clindamycin-endometritis",
@@ -1772,8 +1772,8 @@
       "sourceType": "Clinical guideline / primary medication reference",
       "region": "International; source-specific setting",
       "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Hb/weight total-need table, 20 mg/kg and 1000 mg infusion limits, ≥7-day spacing, saline-only dilution, ≥15-minute infusion for >500 mg, ≥30-minute observation, phosphate and pregnancy cautions.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Hb/weight total-need table, 20 mg/kg and 1000 mg infusion limits, ≥7-day spacing, saline-only dilution, ≥15-minute infusion for >500 mg, ≥30-minute observation, phosphate and pregnancy cautions. Additional admission/discharge check 18 October 2026 (limited to the following): At least 30-minute monitored observation after each infusion and reaction assessment; completing an infusion alone does not clear anaemia/bleeding for home care.",
       "usedBySections": [
         "iron-fcm"
       ],
@@ -1788,8 +1788,8 @@
       "sourceType": "Clinical guideline / primary medication reference",
       "region": "International; source-specific setting",
       "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "LNG 1.5 mg, 5-day window with time-related effectiveness, repeat if vomiting within 3 hours, contraception restart/backup and pregnancy-test follow-up.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "LNG 1.5 mg, 5-day window with time-related effectiveness, repeat if vomiting within 3 hours, contraception restart/backup and pregnancy-test follow-up. Additional admission/discharge check 18 October 2026 (limited to the following): Emergency-contraception instructions, pregnancy testing and timing/backup distinction after ulipristal versus levonorgestrel.",
       "usedBySections": [
         "levonorgestrel-ec"
       ],
@@ -1858,8 +1858,8 @@
       "sourceType": "Clinical guideline / primary medication reference",
       "region": "International; source-specific setting",
       "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Treat <4 mmol/L, oral carbohydrate if safe, IV glucose 20 g using 10%/20% solutions, IM glucagon 1 mg, repeat glucose checks and subsequent carbohydrate/insulin review.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Treat <4 mmol/L, oral carbohydrate if safe, IV glucose 20 g using 10%/20% solutions, IM glucagon 1 mg, repeat glucose checks and subsequent carbohydrate/insulin review. Additional admission/discharge check 18 October 2026 (limited to the following): Education, precipitating-cause review, ongoing glucose checks and diabetes-team review before discharge after severe/recurrent hypoglycaemia.",
       "usedBySections": [
         "glucose-severe-hypo",
         "glucagon-hypo",
@@ -1876,8 +1876,8 @@
       "sourceType": "Clinical guideline / primary medication reference",
       "region": "International; source-specific setting",
       "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Pregnancy/euglycaemic DKA cautions; soluble insulin 50 units/50 mL, 0.1 units/kg/hour, no routine bolus, glucose/ketone/electrolyte monitoring, potassium table, resolution and IV-to-SC overlap.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Pregnancy/euglycaemic DKA cautions; soluble insulin 50 units/50 mL, 0.1 units/kg/hour, no routine bolus, glucose/ketone/electrolyte monitoring, potassium table, resolution and IV-to-SC overlap. Additional admission/discharge check 18 October 2026 (limited to the following): Resolution blood ketones <0.6 mmol/L and venous pH >7.3, clinical recovery/eating and safe IV-to-subcutaneous overlap; glucose alone does not establish resolution; diabetes education and follow-up.",
       "usedBySections": [
         "insulin-dka",
         "emg-hypo-hyperglycemia"
@@ -1960,8 +1960,8 @@
       "sourceType": "Clinical guideline / primary medication reference",
       "region": "International; source-specific setting",
       "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "4Ts assessment, atonic-PPH oxytocin, additional uterotonic choice, compression, source control, tamponade and urgent surgical escalation. WHO 2025 supplies the newer treatment-recognition trigger.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "4Ts assessment, atonic-PPH oxytocin, additional uterotonic choice, compression, source control, tamponade and urgent surgical escalation. WHO 2025 supplies the newer treatment-recognition trigger. Additional admission/discharge check 18 October 2026 (limited to the following): Haemorrhage resuscitation, cause control, organ/urine/bleeding monitoring and surgical escalation reviewed as the basis for recovery; no universal discharge Hb value or routine take-home TXA/uterotonic course inferred.",
       "usedBySections": [
         "emg-pph",
         "emg-massive-transfusion",
@@ -2030,8 +2030,8 @@
       "sourceType": "Clinical guideline / primary medication reference",
       "region": "International; source-specific setting",
       "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Immediate replacement with concurrent resuscitation, do not remove attached placenta before reduction, temporarily stop then restart uterotonics, and surgical rescue.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Immediate replacement with concurrent resuscitation, do not remove attached placenta before reduction, temporarily stop then restart uterotonics, and surgical rescue. Additional admission/discharge check 18 October 2026 (limited to the following): Reduction, recurrence risk with manipulation, uterotonic after restoration and continuing haemorrhage/urine monitoring; reduced uterus and no recurrent inversion required before home recovery is considered.",
       "usedBySections": [
         "emg-uterine-inversion"
       ],
@@ -2078,8 +2078,8 @@
       "sourceType": "Clinical guideline / primary medication reference",
       "region": "International; source-specific setting",
       "population": "Doctors caring for pregnant/postpartum and gynaecological patients; indication-specific limits apply",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Sepsis without obligatory fever, cultures without antibiotic delay, early broad-spectrum treatment, 1–2 L balanced crystalloid in 3 hours with response-guided reassessment, norepinephrine and uterine source control.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Sepsis without obligatory fever, cultures without antibiotic delay, early broad-spectrum treatment, 1–2 L balanced crystalloid in 3 hours with response-guided reassessment, norepinephrine and uterine source control. Additional admission/discharge check 18 October 2026 (limited to the following): Prompt source identification/control and organ support; comprehensive ongoing physical/cognitive/emotional support for pregnant/postpartum sepsis survivors.",
       "usedBySections": [
         "emg-sepsis"
       ],
@@ -2110,8 +2110,8 @@
       "sourceType": "Primary clinical guideline / product information",
       "region": "International; source-specific setting",
       "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Terbutaline 250 micrograms SC (0.5 mL of 0.5 mg/mL) ten minutes before ECV; pulse check at five minutes, CTG, cardiac contraindication, diabetes/PE cautions and anti-D.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Terbutaline 250 micrograms SC (0.5 mL of 0.5 mg/mL) ten minutes before ECV; pulse check at five minutes, CTG, cardiac contraindication, diabetes/PE cautions and anti-D. Additional admission/discharge check 18 October 2026 (limited to the following): Institutional ECV monitoring/complication pathway checked; no routine take-home tocolytic course inferred.",
       "usedBySections": [
         "terbutaline-ecv"
       ],
@@ -2174,8 +2174,8 @@
       "sourceType": "Primary clinical guideline / product information",
       "region": "International; source-specific setting",
       "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Full open-access primary statement: PTU loading/maintenance, caution with beta-blockade/cardiomyopathy, propranolol 60–80 mg every four hours, hydrocortisone 100 mg load then 50 mg four times/day, iodine at least one hour after thionamide, SSKI five drops four times/day, prompt de-escalation and failure review. Preparation companions: Panpharma hydrocortisone 100 mg powder SmPC https://www.medicines.org.uk/emc/product/9377/smpc and SSKI 1 g/mL https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ca1d3449-ea29-49a4-8863-365ec95f1553 .",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full open-access primary statement: PTU loading/maintenance, caution with beta-blockade/cardiomyopathy, propranolol 60–80 mg every four hours, hydrocortisone 100 mg load then 50 mg four times/day, iodine at least one hour after thionamide, SSKI five drops four times/day, prompt de-escalation and failure review. Preparation companions: Panpharma hydrocortisone 100 mg powder SmPC https://www.medicines.org.uk/emc/product/9377/smpc and SSKI 1 g/mL https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ca1d3449-ea29-49a4-8863-365ec95f1553 . Additional admission/discharge check 18 October 2026 (limited to the following): Systemic/haemodynamic/mental recovery and transition to maintenance before discharge; no pregnancy-inappropriate radioiodine recommendation added.",
       "usedBySections": [
         "ptu-storm",
         "propranolol-storm",
@@ -2242,8 +2242,8 @@
       "sourceType": "Primary clinical guideline / product information",
       "region": "International; source-specific setting",
       "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Full primary PDF: UDCA starts 10–15 mg/kg/day in two/three doses, titration to at most 21 mg/kg/day for symptoms. Birth timing and fetal-risk counselling are distinct from symptom treatment; RCOG patient guidance separately confirms no demonstrated stillbirth prevention.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full primary PDF: UDCA starts 10–15 mg/kg/day in two/three doses, titration to at most 21 mg/kg/day for symptoms. Birth timing and fetal-risk counselling are distinct from symptom treatment; RCOG patient guidance separately confirms no demonstrated stillbirth prevention. Additional admission/discharge check 18 October 2026 (limited to the following): Bile-acid-informed obstetric planning and the limitations of symptom treatment; do not substitute UDCA for surveillance/birth decisions.",
       "usedBySections": [
         "ursodeoxycholic-icp"
       ],
@@ -2258,8 +2258,8 @@
       "sourceType": "Primary clinical guideline / product information",
       "region": "International; source-specific setting",
       "population": "Clinicians; the indication and pregnancy stage are specified in each regimen",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "One sterile 52 mg system, trained insertion, contraindications; 8-year contraception, 5-year HMB then symptom review and maximum 8 years if continued, 4-year UK-labelled HRT endometrial protection. Indication-specific durations are not interchangeable.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "One sterile 52 mg system, trained insertion, contraindications; 8-year contraception, 5-year HMB then symptom review and maximum 8 years if continued, 4-year UK-labelled HRT endometrial protection. Indication-specific durations are not interchangeable. Additional admission/discharge check 18 October 2026 (limited to the following): Procedure recovery, perforation/infection/pregnancy warnings and method-specific review; no generic routine admission inferred.",
       "usedBySections": [
         "mirena-hmb",
         "mirena-contraception"
@@ -2467,8 +2467,8 @@
       "sourceType": "Primary guideline / product information",
       "region": "Source-specific; international reference",
       "population": "Pregnant/postpartum or gynaecological patients as specified",
-      "dateChecked": "2026-10-17",
-      "checkedAgainst": "Primary paper sections 4–5: suction evacuation with ultrasound guidance and haemorrhage support, no routine second curettage, histology and referral, hCG every one/two weeks then partial-mole confirmatory test at one month versus complete-mole monthly six months; updated FIGO plateau/rise/histological choriocarcinoma criteria. Not a chemotherapy-dose audit.",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Primary paper sections 4–5: suction evacuation with ultrasound guidance and haemorrhage support, no routine second curettage, histology and referral, hCG every one/two weeks then partial-mole confirmatory test at one month versus complete-mole monthly six months; updated FIGO plateau/rise/histological choriocarcinoma criteria. Not a chemotherapy-dose audit. Additional admission/discharge check 18 October 2026 (limited to the following): Post-evacuation hCG every 1–2 weeks; partial mole confirmatory test at 1 month after normalisation; complete mole monthly for 6 months after normalisation; results/service registration and contraception.",
       "usedBySections": [],
       "status": "verified-live"
     },
@@ -2531,7 +2531,7 @@
       "region": "India",
       "population": "Routine pregnancy with additional risk-driven care",
       "dateChecked": "2026-10-18",
-      "checkedAgainst": "Full primary PDF sections 4.4–4.6: universal first-contact testing, negative-test repeat at 24–28 weeks ≥4 weeks later, late presentation >28 weeks tested at first contact; 75 g glucose in ~300 mL within 5–10 min regardless of last meal, two-hour ≥140 mg/dL, plasma-calibrated method, vomiting within 30 min repeats next day/referral; six-week postpartum OGTT and annual screening. The document is labelled 2018, and its historical claim equating other organisations’ thresholds is not adopted.",
+      "checkedAgainst": "Full primary PDF sections 4.4–4.6: universal first-contact testing, negative-test repeat at 24–28 weeks ≥4 weeks later, late presentation >28 weeks tested at first contact; 75 g glucose in ~300 mL within 5–10 min regardless of last meal, two-hour ≥140 mg/dL, plasma-calibrated method, vomiting within 30 min repeats next day/referral; six-week postpartum OGTT and annual screening. The document is labelled 2018, and its historical claim equating other organisations’ thresholds is not adopted. Additional admission/discharge check 18 October 2026 (limited to the following): India post-GDM glucose follow-up distinguished from NICE fasting plasma glucose at 6–13 weeks; no mixed diagnostic method or universal postpartum treatment stop applied to pre-existing diabetes.",
       "usedBySections": [
         "anc-overview",
         "gdm"
@@ -2567,6 +2567,368 @@
       "checkedAgainst": "Primary patient guidance opened: UK does not universally screen; a positive urine/swab result and risk history inform intrapartum antibiotics. Used to avoid presenting a universal third-trimester GBS test as mandatory in every health system.",
       "usedBySections": [
         "anc-overview"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-nice-postnatal",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "NICE",
+      "title": "Postnatal care — NG194",
+      "url": "https://www.nice.org.uk/guidance/ng194/chapter/Recommendations",
+      "version": "NG194, recommendations",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Maternal/newborn transfer assessment, first void and effective feeding, handover, support/safeguarding, first midwife visit within 36 hours after transfer, postnatal danger symptoms. Full recommendations page read.",
+      "usedBySections": [
+        "pph",
+        "aph-abruption",
+        "labour-management",
+        "vbac-tolac",
+        "lscs",
+        "shoulder-dystocia",
+        "cord-prolapse",
+        "ptl-established",
+        "prom-term",
+        "multiples",
+        "maternal-sepsis",
+        "asthma-epilepsy-cardiac-ckd-autoimmune",
+        "chorioamnionitis",
+        "gbs",
+        "viral-pregnancy-hbv-hcv-hiv-rubella-cmv-varicella-parvo-covid-flu",
+        "critical-illness-aftercare",
+        "admission-discharge"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-nhm-postnatal",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "India MoHFW / NHM",
+      "title": "District Hospital Standard Operating Procedures — LaQshya",
+      "url": "https://nhm.gov.in/New_Updates_2018/NHM_Components/RMNCHA/MH/Guidelines/DH_SOP_LaQshya.pdf",
+      "version": "LaQshya district-hospital SOP, linked edition",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "India",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Normal-delivery discharge not less than 48 hours: full primary SOP PDF normal-delivery/discharge passages read. Corroborated by NHM CEmONC 2024 Part 1, chapter 8. This does not define a universal post-caesarean or complicated-case stay.",
+      "usedBySections": [
+        "pph",
+        "aph-abruption",
+        "labour-management",
+        "vbac-tolac",
+        "lscs",
+        "shoulder-dystocia",
+        "cord-prolapse",
+        "ptl-established",
+        "prom-term",
+        "multiples",
+        "maternal-sepsis",
+        "chorioamnionitis",
+        "gbs",
+        "critical-illness-aftercare",
+        "admission-discharge"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-who-postnatal",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "WHO",
+      "title": "WHO recommendations on quality postnatal care — official recommendation summary",
+      "url": "https://www.who.int/news/item/30-03-2022-who-urges-quality-care-for-women-and-newborns-in-critical-first-weeks-after-childbirth",
+      "version": "2022 official recommendation summary",
+      "sourceType": "Official recommendation summary",
+      "region": "Global",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Official WHO summary read: at least 24-hour facility care after birth; additional contacts at 48–72 hours, 7–14 days and week 6; individual assessment/support. Summary facts only, not a claim that the full 242-page PDF was reviewed.",
+      "usedBySections": [
+        "pph",
+        "aph-abruption",
+        "labour-management",
+        "vbac-tolac",
+        "lscs",
+        "shoulder-dystocia",
+        "cord-prolapse",
+        "ptl-established",
+        "prom-term",
+        "multiples",
+        "maternal-sepsis",
+        "chorioamnionitis",
+        "gbs",
+        "critical-illness-aftercare",
+        "admission-discharge"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-rcog-surgery",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "RCOG",
+      "title": "Laparoscopy — recovering well",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/laparoscopy-recovering-well/",
+      "version": "Current public recovery information",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full primary patient recovery page read: pain control, wounds, activity/VTE, urinary/bowel and infection warning signs, adult support and no driving/important decisions during the first 24 hours after general anaesthesia. Used as general recovery/handover principles, not operation-specific discharge thresholds.",
+      "usedBySections": [
+        "pas-spectrum",
+        "ectopic-pregnancy",
+        "molar-pregnancy",
+        "aub",
+        "fibroids",
+        "endometriosis",
+        "adnexal-mass-torsion",
+        "urogynaecology-core",
+        "gyonc-endometrial",
+        "gyonc-cervical",
+        "gyonc-ovarian-vulval-gtn-index",
+        "hysteroscopy-aftercare",
+        "admission-discharge"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-nice-acutely-ill",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "NICE",
+      "title": "Acutely ill adults in hospital — CG50",
+      "url": "https://www.nice.org.uk/guidance/CG50/chapter/recommendations",
+      "version": "CG50, recommendations",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full primary recommendations read, focusing on critical-care-to-ward transfer: structured written handover, shared plan, monitoring, rehabilitation and receiving-team capability. Step-down is distinct from home discharge; no universal organ-support discharge cutoff is asserted.",
+      "usedBySections": [
+        "maternal-sepsis",
+        "asthma-epilepsy-cardiac-ckd-autoimmune",
+        "viral-pregnancy-hbv-hcv-hiv-rubella-cmv-varicella-parvo-covid-flu",
+        "critical-illness-aftercare",
+        "admission-discharge"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-ng235",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "NICE",
+      "title": "Intrapartum care — full NG235 recommendations",
+      "url": "https://www.nice.org.uk/guidance/ng235/resources/intrapartum-care-pdf-66143897812933",
+      "version": "NG235, updated 9 June 2026",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full primary PDF downloaded; term prelabour rupture, selected expectant care and induction around 24 hours, temperature/return precautions, maternal post-birth assessment and newborn observation after prolonged membrane rupture checked. This is scoped to the implemented admission/transfer recommendations.",
+      "usedBySections": [
+        "aph-abruption",
+        "labour-management",
+        "vbac-tolac",
+        "iol",
+        "prom-term"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-cancer-referral",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "NICE",
+      "title": "Suspected cancer: recognition and referral — NG12",
+      "url": "https://www.nice.org.uk/guidance/ng12/chapter/Recommendations-organised-by-site-of-cancer",
+      "version": "NG12, site-specific recommendations",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full primary recommendation page read for postmenopausal bleeding, cervical/ovarian/endometrial concern and referral/result follow-through. Supports triage/referral only; it does not supply chemotherapy or tumour-specific postoperative discharge regimens.",
+      "usedBySections": [
+        "menopause",
+        "gyonc-endometrial",
+        "gyonc-cervical",
+        "gyonc-ovarian-vulval-gtn-index"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-neutropenic-sepsis",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "NICE",
+      "title": "Neutropenic sepsis: prevention and management — CG151",
+      "url": "https://www.nice.org.uk/guidance/cg151/chapter/Recommendations",
+      "version": "CG151, recommendations",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Primary recommendations read: unwell patients receiving anticancer treatment need immediate assessment and suspected neutropenic sepsis is an acute emergency; only a trained specialist using an appropriate risk assessment selects outpatient care.",
+      "usedBySections": [
+        "gyonc-endometrial",
+        "gyonc-cervical",
+        "gyonc-ovarian-vulval-gtn-index"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-rcog-abortion",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "RCOG",
+      "title": "Abortion care",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/abortion-care/",
+      "version": "Current public care information",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Primary public information read: expected recovery, bleeding/pain, infection or continuing-pregnancy concerns, follow-up access and contraceptive counselling; used with WHO abortion guidance, without inventing a mandatory visit after every uncomplicated abortion.",
+      "usedBySections": [
+        "miscarriage-management",
+        "mtp-india"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-rcog-hysteroscopy",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "RCOG",
+      "title": "Outpatient hysteroscopy",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/outpatient-hysteroscopy/",
+      "version": "Patient information based on 2024 GTG59 / 2023 GPP16",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full public page read: usual outpatient/day-case pathway, pain/bleeding, infection/perforation concerns, recovery after anaesthesia and biopsy-result communication.",
+      "usedBySections": [
+        "hysteroscopy-aftercare"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-rcog-ohss",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "RCOG",
+      "title": "Ovarian hyperstimulation syndrome — patient information",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ovarian-hyperstimulation-syndrome/",
+      "version": "2016 patient information on current RCOG webpage",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Primary information read: mild OHSS may be managed at home; uncontrolled pain/vomiting, failure to improve or inability to attend monitoring can require admission; urine/fluid/renal/thrombosis assessment and avoiding NSAIDs. Edition is 2016, not a newly issued 2026 guideline; no universal anticoagulant duration is imposed.",
+      "usedBySections": [
+        "pcos",
+        "infertility-female"
+      ],
+      "status": "verified-summary"
+    },
+    {
+      "id": "discharge-rcog-placenta",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "RCOG",
+      "title": "Placenta praevia, placenta accreta and vasa praevia",
+      "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/placenta-praevia-placenta-accreta-and-vasa-praevia/",
+      "version": "Current public care information",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Primary information read: individualised admission by bleeding/history/access, urgent attendance for bleeding/pain/contractions, specialist PAS/vasa praevia birth planning and postoperative/fertility counselling. No universal asymptomatic admission week is inferred.",
+      "usedBySections": [
+        "aph-previa",
+        "vasa-previa",
+        "pas-spectrum"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-nhs-colposcopy",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "NHS",
+      "title": "Colposcopy — recovery and results",
+      "url": "https://www.nhs.uk/tests-and-treatments/colposcopy/",
+      "version": "Current NHS patient information",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Primary full page read: usual home recovery, expected bleeding/discharge, restrictions during recovery, heavy bleeding/offensive discharge/persistent pain and tracking biopsy results.",
+      "usedBySections": [
+        "cervical-screening-hpv"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-rcuk-anaphylaxis",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "Resuscitation Council UK",
+      "title": "Emergency treatment of anaphylaxis",
+      "url": "https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf",
+      "version": "May 2021 guideline",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full primary PDF observation/discharge table read: narrowly selected 2-hour fast-track after resolution, ≥6 hours for two IM doses or previous biphasic reaction, ≥12 hours for severe/high-risk/access scenarios; action plan, auto-injectors/training and allergy referral. Pregnancy also needs obstetric/fetal assessment; generic timing is not automatic maternity clearance.",
+      "usedBySections": [
+        "anaphylaxis-aftercare"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-who-iron",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "WHO / FIGO / ICM",
+      "title": "Postpartum haemorrhage consolidated guideline — supportive postpartum iron care",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK619233/table/ch3.tab46/?report=objectonly",
+      "version": "2025 consolidated recommendations, supportive care table",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "Global",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Primary recommendation table indexed at NCBI Bookshelf checked: postpartum diagnosed anaemia 120 mg elemental iron plus 400 micrograms folic acid daily until Hb normal; preventive 6–12 weeks is a separate indication. Direct table retrieval presented a browser check, so this is a limited primary-text check. Elemental preparation and Hb response monitoring reuse med-who-anc-dose, not a newly verified universal product label.",
+      "usedBySections": [
+        "anaemia-iron-deficiency",
+        "drug-iron-oral"
+      ],
+      "status": "verified-summary"
+    },
+    {
+      "id": "discharge-paracetamol",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "Médecins Sans Frontières",
+      "title": "Paracetamol (acetaminophen) oral — Essential Drugs",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/paracetamol-acetaminophen-oral-16684400.html",
+      "version": "Current online monograph",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "International",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full primary oral monograph read: adult 1 g 3–4 times daily, maximum 4 g/day, ≥50 kg adult table, 500 mg tablets, duration according to response, hepatic caution and pregnancy/breastfeeding. Pain chapter also checked for 6–8-hour interval. Smaller adults require an individual weight-based prescription.",
+      "usedBySections": [
+        "drug-paracetamol"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-msf-ibuprofen",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "Médecins Sans Frontières",
+      "title": "Ibuprofen oral — Essential Drugs",
+      "url": "https://medicalguidelines.msf.org/en/viewport/EssDr/english/ibuprofen-oral-16683877.html",
+      "version": "Current online monograph",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "International",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full primary monograph read: pain 200–400 mg, maximum 1200 mg/day; postoperative every 8 hours, maximum 8 days; meals/formulations, renal/GI/bleeding/dehydration/infection contraindications and interactions, short-term breastfeeding. New card restricted to postpartum/nonpregnant care; OHSS renal caution also from RCOG.",
+      "usedBySections": [
+        "drug-ibuprofen"
+      ],
+      "status": "verified-live"
+    },
+    {
+      "id": "discharge-nhs-rupture",
+      "topic": "Admission, discharge and follow-up",
+      "organisation": "NHS Greater Glasgow and Clyde / Right Decisions",
+      "title": "Uterine rupture (565)",
+      "url": "https://www.rightdecisions.scot.nhs.uk/maternity-gynaecology-guidelines/maternity/common-obstetric-problems-intrapartum-labour-ward/uterine-rupture-565/",
+      "version": "Version 3, reviewed 16 December 2025",
+      "sourceType": "Primary clinical guidance / official recovery information",
+      "region": "Scotland, UK",
+      "dateChecked": "2026-10-18",
+      "checkedAgainst": "Full institutional guideline read: documented postoperative place of care, fluids/analgesia/antibiotics/VTE/catheter plan, organ-injury assessment, pre-discharge debrief, consultation in a few weeks, fertility/contraception and procedure-dependent long-term counselling. Used as a labelled local recovery pathway, not a universal subsequent-pregnancy delivery schedule.",
+      "usedBySections": [
+        "emg-uterine-rupture"
       ],
       "status": "verified-live"
     }

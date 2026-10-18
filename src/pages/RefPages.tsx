@@ -6,6 +6,7 @@ import { Blocks, ClinicalTable, SourceBadge, StatusBadge } from '../components/c
 import { DOSE_CONFLICTS } from '../content/medication-regimens'
 import { getSource } from '../content/sources'
 import { getPage } from '../lib/seo'
+import { AdmissionDischargeView } from '../components/AdmissionDischarge'
 
 function referencePath(id: string) {
   return getPage(`/topic/${id}`)?.path || getPage(`/emergency/${id}`)?.path
@@ -174,6 +175,7 @@ export function ProceduresPage() {
                 <details key={i} className="acc"><summary>{cc.name}</summary><div className="acc-body"><Blocks blocks={cc.management} /></div></details>
               ))}
               {!!p.postopCare.length && <><h2 className="section-h">Postoperative care</h2><ul>{p.postopCare.map((s, i) => <li key={i}>{s}</li>)}</ul></>}
+              {id && p.admissionDischarge && <><h2 className="section-h">Admission & discharge</h2><AdmissionDischargeView plan={p.admissionDischarge} /></>}
               <div className="row small muted" style={{ marginTop: 10 }}>Follow-up: {p.followUp.join(' · ')} · Sources: {p.sourceIds.map((s) => getSource(s)?.organisation).filter(Boolean).join(', ')}</div>
               <div className="row">{p.sourceIds.map((s) => <SourceBadge key={s} id={s} />)}</div>
             </div>

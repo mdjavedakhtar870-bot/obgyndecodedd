@@ -1,0 +1,3242 @@
+{
+  "plans": {
+    "hdp-chronic": {
+      "setting": "Usually outpatient; admit for severe BP or complications",
+      "outpatient": [
+        "Stable treated chronic hypertension can be followed in clinic with a recorded maternal/fetal surveillance plan."
+      ],
+      "admit": [
+        "Severe-range BP (systolic ≥160 or diastolic ≥110 mmHg), symptoms suggesting superimposed pre-eclampsia, concerning blood tests or fetal compromise need hospital assessment; admit when surveillance/treatment cannot be delivered safely outside hospital."
+      ],
+      "ready": [
+        "Severe BP has resolved on an established oral plan; symptoms, renal/liver/platelet results and fetal assessment have been reviewed.",
+        "After birth, BP and medicine review must be arranged before leaving; a single normal reading is insufficient after recent severe hypertension."
+      ],
+      "medicines": [
+        "Continue the selected maintenance medicine with a written dose and adjustment plan. Stop methyldopa within 2 days after birth and substitute if needed; do not automatically stop every antihypertensive.",
+        "Check breastfeeding compatibility and renal function/potassium for postpartum enalapril; it is not an antenatal medicine."
+      ],
+      "tests": [
+        "Document baseline/recent creatinine, urine protein and other tests indicated by the presentation; schedule follow-up for any abnormality."
+      ],
+      "homeCare": [
+        "Give a written BP-monitoring schedule, thresholds for contacting the unit and named responsibility for prescription changes."
+      ],
+      "followUp": [
+        {
+          "when": "After birth: first 2 days and day 3–5",
+          "action": "Arrange BP measurement; continue the individual monitoring schedule if abnormal."
+        },
+        {
+          "when": "2 weeks / 6–8 weeks after birth",
+          "action": "Review antihypertensive treatment at 2 weeks; review longer-term BP and cardiovascular/renal care at 6–8 weeks."
+        }
+      ],
+      "returnImmediately": [
+        "Severe headache, visual change, epigastric/right-upper-quadrant pain, chest pain, breathlessness or a severe BP reading require urgent reassessment."
+      ],
+      "sourceIds": [
+        "nice-ng133-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "labetalol-oral",
+          "when": "A selected maintenance option when prescribed."
+        },
+        {
+          "regimenId": "nifedipine-maintenance",
+          "when": "An alternative maintenance option; use the modified-release formulation specified."
+        }
+      ]
+    },
+    "hdp-gestational": {
+      "setting": "Outpatient surveillance if stable; admit severe hypertension",
+      "outpatient": [
+        "Non-severe gestational hypertension does not require automatic admission when investigations, fetal wellbeing and reliable follow-up are reassuring."
+      ],
+      "admit": [
+        "Admit severe hypertension; assess for pre-eclampsia when symptoms, proteinuria, laboratory abnormalities or fetal concerns develop."
+      ],
+      "ready": [
+        "No severe BP or evolving pre-eclampsia; a stable oral regimen and a feasible maternal/fetal follow-up plan are documented.",
+        "After birth, complete symptom/BP assessment and communicate the plan for the expected postpartum BP rise."
+      ],
+      "medicines": [
+        "Continue indicated antihypertensive treatment; stop methyldopa within 2 days of birth. Record the prescriber and thresholds for reducing/stopping treatment rather than advising the patient to stop on their own."
+      ],
+      "tests": [
+        "Record the urine protein and blood-test assessment used to exclude pre-eclampsia; repeat sooner if the clinical state changes."
+      ],
+      "homeCare": [
+        "Teach correct BP measurement if home monitoring is used and provide an urgent-contact number."
+      ],
+      "followUp": [
+        {
+          "when": "After birth: first 2 days and day 3–5",
+          "action": "Check BP; prescribe additional checks for abnormal readings."
+        },
+        {
+          "when": "2 weeks if on medication; 6–8 weeks for all",
+          "action": "Review treatment and whether hypertension has resolved; persistent hypertension needs ongoing primary/specialist care."
+        }
+      ],
+      "returnImmediately": [
+        "Headache, visual symptoms, upper abdominal pain, breathlessness, seizures or severe BP need immediate assessment, including after delivery."
+      ],
+      "sourceIds": [
+        "nice-ng133-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "labetalol-oral",
+          "when": "Use only if this is the selected discharge antihypertensive."
+        },
+        {
+          "regimenId": "nifedipine-maintenance",
+          "when": "Alternative maintenance option; do not substitute the acute immediate-release sequence."
+        }
+      ]
+    },
+    "hdp-pre-eclampsia": {
+      "setting": "Hospital assessment; severe disease needs admission and possible critical care",
+      "outpatient": [
+        "Antenatal outpatient care is a specialist decision only when maternal/fetal assessment and reliable surveillance support it; recent eclampsia or HELLP is not a routine outpatient pathway."
+      ],
+      "admit": [
+        "Admit for severe/persistent hypertension, seizure or neurological symptoms, pulmonary oedema, renal/liver/platelet deterioration, significant pain or fetal compromise.",
+        "Eclampsia/HELLP or organ-support needs require appropriate high-dependency/critical-care monitoring, with transfer after initial stabilisation when necessary."
+      ],
+      "ready": [
+        "Postnatal NICE transfer criteria: no pre-eclampsia symptoms, BP ≤150/100 mmHg with or without treatment, and blood results stable or improving; all criteria must be met.",
+        "Following eclampsia/HELLP, complete indicated seizure prophylaxis/monitoring and document neurological, respiratory, urine-output and blood-test recovery before considering home care. Critical-care step-down and discharge home are separate decisions."
+      ],
+      "medicines": [
+        "Continue the selected oral antihypertensive. Stop methyldopa within 2 days after birth; document replacement and review.",
+        "The prescriber should consider reduction below 140/90 and reduce below 130/80 mmHg under NICE; provide an individual written adjustment plan. Magnesium loading/infusions are inpatient treatment, not take-home medication."
+      ],
+      "tests": [
+        "Review platelet count, transaminases and creatinine at 48–72 hours after birth/critical-care step-down; abnormal results need a repeat plan until recovery.",
+        "At 6–8 weeks check urine protein; persistent proteinuria (1+ or more) needs a 3-month renal review and referral if kidney function is abnormal."
+      ],
+      "homeCare": [
+        "Provide the BP schedule, named reviewer, medicine list and explicit severe-symptom instructions. Discuss recurrence, future-pregnancy planning and long-term cardiovascular risk."
+      ],
+      "followUp": [
+        {
+          "when": "If on antihypertensives: every 1–2 days for up to 2 weeks after transfer",
+          "action": "NICE BP surveillance until off treatment with no hypertension; adapt intensity to findings."
+        },
+        {
+          "when": "If not on antihypertensives: day 3–5 after birth",
+          "action": "Check BP; repeat on alternate days if abnormal."
+        },
+        {
+          "when": "2 weeks if still on treatment; 6–8 weeks for all",
+          "action": "Review medicines, BP, recovery and urine protein; arrange renal follow-up when indicated."
+        }
+      ],
+      "returnImmediately": [
+        "Seizure, severe/persistent headache, visual disturbance, epigastric pain, dyspnoea, chest pain or severe BP: return immediately; postpartum onset can occur after discharge."
+      ],
+      "sourceIds": [
+        "nice-ng133-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "labetalol-oral",
+          "when": "One selected oral BP option; do not prescribe every alternative together."
+        },
+        {
+          "regimenId": "nifedipine-maintenance",
+          "when": "Alternative/adjunct only within the documented BP plan."
+        },
+        {
+          "regimenId": "enalapril-postpartum",
+          "when": "Postpartum only when prescribed, with renal function/potassium monitoring."
+        }
+      ]
+    },
+    "hdp-severe-features": {
+      "setting": "Hospital assessment; severe disease needs admission and possible critical care",
+      "outpatient": [
+        "Antenatal outpatient care is a specialist decision only when maternal/fetal assessment and reliable surveillance support it; recent eclampsia or HELLP is not a routine outpatient pathway."
+      ],
+      "admit": [
+        "Admit for severe/persistent hypertension, seizure or neurological symptoms, pulmonary oedema, renal/liver/platelet deterioration, significant pain or fetal compromise.",
+        "Eclampsia/HELLP or organ-support needs require appropriate high-dependency/critical-care monitoring, with transfer after initial stabilisation when necessary."
+      ],
+      "ready": [
+        "Postnatal NICE transfer criteria: no pre-eclampsia symptoms, BP ≤150/100 mmHg with or without treatment, and blood results stable or improving; all criteria must be met.",
+        "Following eclampsia/HELLP, complete indicated seizure prophylaxis/monitoring and document neurological, respiratory, urine-output and blood-test recovery before considering home care. Critical-care step-down and discharge home are separate decisions."
+      ],
+      "medicines": [
+        "Continue the selected oral antihypertensive. Stop methyldopa within 2 days after birth; document replacement and review.",
+        "The prescriber should consider reduction below 140/90 and reduce below 130/80 mmHg under NICE; provide an individual written adjustment plan. Magnesium loading/infusions are inpatient treatment, not take-home medication."
+      ],
+      "tests": [
+        "Review platelet count, transaminases and creatinine at 48–72 hours after birth/critical-care step-down; abnormal results need a repeat plan until recovery.",
+        "At 6–8 weeks check urine protein; persistent proteinuria (1+ or more) needs a 3-month renal review and referral if kidney function is abnormal."
+      ],
+      "homeCare": [
+        "Provide the BP schedule, named reviewer, medicine list and explicit severe-symptom instructions. Discuss recurrence, future-pregnancy planning and long-term cardiovascular risk."
+      ],
+      "followUp": [
+        {
+          "when": "If on antihypertensives: every 1–2 days for up to 2 weeks after transfer",
+          "action": "NICE BP surveillance until off treatment with no hypertension; adapt intensity to findings."
+        },
+        {
+          "when": "If not on antihypertensives: day 3–5 after birth",
+          "action": "Check BP; repeat on alternate days if abnormal."
+        },
+        {
+          "when": "2 weeks if still on treatment; 6–8 weeks for all",
+          "action": "Review medicines, BP, recovery and urine protein; arrange renal follow-up when indicated."
+        }
+      ],
+      "returnImmediately": [
+        "Seizure, severe/persistent headache, visual disturbance, epigastric pain, dyspnoea, chest pain or severe BP: return immediately; postpartum onset can occur after discharge."
+      ],
+      "sourceIds": [
+        "nice-ng133-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "labetalol-oral",
+          "when": "One selected oral BP option; do not prescribe every alternative together."
+        },
+        {
+          "regimenId": "nifedipine-maintenance",
+          "when": "Alternative/adjunct only within the documented BP plan."
+        },
+        {
+          "regimenId": "enalapril-postpartum",
+          "when": "Postpartum only when prescribed, with renal function/potassium monitoring."
+        }
+      ]
+    },
+    "hdp-eclampsia": {
+      "setting": "Hospital assessment; severe disease needs admission and possible critical care",
+      "outpatient": [
+        "Antenatal outpatient care is a specialist decision only when maternal/fetal assessment and reliable surveillance support it; recent eclampsia or HELLP is not a routine outpatient pathway."
+      ],
+      "admit": [
+        "Admit for severe/persistent hypertension, seizure or neurological symptoms, pulmonary oedema, renal/liver/platelet deterioration, significant pain or fetal compromise.",
+        "Eclampsia/HELLP or organ-support needs require appropriate high-dependency/critical-care monitoring, with transfer after initial stabilisation when necessary."
+      ],
+      "ready": [
+        "Postnatal NICE transfer criteria: no pre-eclampsia symptoms, BP ≤150/100 mmHg with or without treatment, and blood results stable or improving; all criteria must be met.",
+        "Following eclampsia/HELLP, complete indicated seizure prophylaxis/monitoring and document neurological, respiratory, urine-output and blood-test recovery before considering home care. Critical-care step-down and discharge home are separate decisions.",
+        "A seizure-free interval alone does not establish readiness: review other neurological causes, medication completion and the obstetric/critical-care course."
+      ],
+      "medicines": [
+        "Continue the selected oral antihypertensive. Stop methyldopa within 2 days after birth; document replacement and review.",
+        "The prescriber should consider reduction below 140/90 and reduce below 130/80 mmHg under NICE; provide an individual written adjustment plan. Magnesium loading/infusions are inpatient treatment, not take-home medication."
+      ],
+      "tests": [
+        "Review platelet count, transaminases and creatinine at 48–72 hours after birth/critical-care step-down; abnormal results need a repeat plan until recovery.",
+        "At 6–8 weeks check urine protein; persistent proteinuria (1+ or more) needs a 3-month renal review and referral if kidney function is abnormal."
+      ],
+      "homeCare": [
+        "Provide the BP schedule, named reviewer, medicine list and explicit severe-symptom instructions. Discuss recurrence, future-pregnancy planning and long-term cardiovascular risk."
+      ],
+      "followUp": [
+        {
+          "when": "If on antihypertensives: every 1–2 days for up to 2 weeks after transfer",
+          "action": "NICE BP surveillance until off treatment with no hypertension; adapt intensity to findings."
+        },
+        {
+          "when": "If not on antihypertensives: day 3–5 after birth",
+          "action": "Check BP; repeat on alternate days if abnormal."
+        },
+        {
+          "when": "2 weeks if still on treatment; 6–8 weeks for all",
+          "action": "Review medicines, BP, recovery and urine protein; arrange renal follow-up when indicated."
+        }
+      ],
+      "returnImmediately": [
+        "Seizure, severe/persistent headache, visual disturbance, epigastric pain, dyspnoea, chest pain or severe BP: return immediately; postpartum onset can occur after discharge."
+      ],
+      "sourceIds": [
+        "nice-ng133-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "labetalol-oral",
+          "when": "One selected oral BP option; do not prescribe every alternative together."
+        },
+        {
+          "regimenId": "nifedipine-maintenance",
+          "when": "Alternative/adjunct only within the documented BP plan."
+        },
+        {
+          "regimenId": "enalapril-postpartum",
+          "when": "Postpartum only when prescribed, with renal function/potassium monitoring."
+        }
+      ]
+    },
+    "hdp-hellp": {
+      "setting": "Hospital assessment; severe disease needs admission and possible critical care",
+      "outpatient": [
+        "Antenatal outpatient care is a specialist decision only when maternal/fetal assessment and reliable surveillance support it; recent eclampsia or HELLP is not a routine outpatient pathway."
+      ],
+      "admit": [
+        "Admit for severe/persistent hypertension, seizure or neurological symptoms, pulmonary oedema, renal/liver/platelet deterioration, significant pain or fetal compromise.",
+        "Eclampsia/HELLP or organ-support needs require appropriate high-dependency/critical-care monitoring, with transfer after initial stabilisation when necessary."
+      ],
+      "ready": [
+        "Postnatal NICE transfer criteria: no pre-eclampsia symptoms, BP ≤150/100 mmHg with or without treatment, and blood results stable or improving; all criteria must be met.",
+        "Following eclampsia/HELLP, complete indicated seizure prophylaxis/monitoring and document neurological, respiratory, urine-output and blood-test recovery before considering home care. Critical-care step-down and discharge home are separate decisions.",
+        "Platelet, haemolysis/liver and renal trends must support recovery; delivery does not immediately resolve every HELLP complication."
+      ],
+      "medicines": [
+        "Continue the selected oral antihypertensive. Stop methyldopa within 2 days after birth; document replacement and review.",
+        "The prescriber should consider reduction below 140/90 and reduce below 130/80 mmHg under NICE; provide an individual written adjustment plan. Magnesium loading/infusions are inpatient treatment, not take-home medication."
+      ],
+      "tests": [
+        "Review platelet count, transaminases and creatinine at 48–72 hours after birth/critical-care step-down; abnormal results need a repeat plan until recovery.",
+        "At 6–8 weeks check urine protein; persistent proteinuria (1+ or more) needs a 3-month renal review and referral if kidney function is abnormal."
+      ],
+      "homeCare": [
+        "Provide the BP schedule, named reviewer, medicine list and explicit severe-symptom instructions. Discuss recurrence, future-pregnancy planning and long-term cardiovascular risk."
+      ],
+      "followUp": [
+        {
+          "when": "If on antihypertensives: every 1–2 days for up to 2 weeks after transfer",
+          "action": "NICE BP surveillance until off treatment with no hypertension; adapt intensity to findings."
+        },
+        {
+          "when": "If not on antihypertensives: day 3–5 after birth",
+          "action": "Check BP; repeat on alternate days if abnormal."
+        },
+        {
+          "when": "2 weeks if still on treatment; 6–8 weeks for all",
+          "action": "Review medicines, BP, recovery and urine protein; arrange renal follow-up when indicated."
+        }
+      ],
+      "returnImmediately": [
+        "Seizure, severe/persistent headache, visual disturbance, epigastric pain, dyspnoea, chest pain or severe BP: return immediately; postpartum onset can occur after discharge."
+      ],
+      "sourceIds": [
+        "nice-ng133-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "labetalol-oral",
+          "when": "One selected oral BP option; do not prescribe every alternative together."
+        },
+        {
+          "regimenId": "nifedipine-maintenance",
+          "when": "Alternative/adjunct only within the documented BP plan."
+        },
+        {
+          "regimenId": "enalapril-postpartum",
+          "when": "Postpartum only when prescribed, with renal function/potassium monitoring."
+        }
+      ]
+    },
+    "hdp-postpartum": {
+      "setting": "Hospital assessment; severe disease needs admission and possible critical care",
+      "outpatient": [
+        "Outpatient follow-up is suitable only after postnatal symptoms, BP, blood results and access to surveillance meet the individual plan. Recent seizure or HELLP requires hospital recovery first."
+      ],
+      "admit": [
+        "Admit for severe/persistent hypertension, seizure or neurological symptoms, pulmonary oedema, renal/liver/platelet deterioration, significant pain or fetal compromise.",
+        "Eclampsia/HELLP or organ-support needs require appropriate high-dependency/critical-care monitoring, with transfer after initial stabilisation when necessary."
+      ],
+      "ready": [
+        "Postnatal NICE transfer criteria: no pre-eclampsia symptoms, BP ≤150/100 mmHg with or without treatment, and blood results stable or improving; all criteria must be met.",
+        "Following eclampsia/HELLP, complete indicated seizure prophylaxis/monitoring and document neurological, respiratory, urine-output and blood-test recovery before considering home care. Critical-care step-down and discharge home are separate decisions."
+      ],
+      "medicines": [
+        "Continue the selected oral antihypertensive. Stop methyldopa within 2 days after birth; document replacement and review.",
+        "The prescriber should consider reduction below 140/90 and reduce below 130/80 mmHg under NICE; provide an individual written adjustment plan. Magnesium loading/infusions are inpatient treatment, not take-home medication."
+      ],
+      "tests": [
+        "Review platelet count, transaminases and creatinine at 48–72 hours after birth/critical-care step-down; abnormal results need a repeat plan until recovery.",
+        "At 6–8 weeks check urine protein; persistent proteinuria (1+ or more) needs a 3-month renal review and referral if kidney function is abnormal."
+      ],
+      "homeCare": [
+        "Provide the BP schedule, named reviewer, medicine list and explicit severe-symptom instructions. Discuss recurrence, future-pregnancy planning and long-term cardiovascular risk."
+      ],
+      "followUp": [
+        {
+          "when": "If on antihypertensives: every 1–2 days for up to 2 weeks after transfer",
+          "action": "NICE BP surveillance until off treatment with no hypertension; adapt intensity to findings."
+        },
+        {
+          "when": "If not on antihypertensives: day 3–5 after birth",
+          "action": "Check BP; repeat on alternate days if abnormal."
+        },
+        {
+          "when": "2 weeks if still on treatment; 6–8 weeks for all",
+          "action": "Review medicines, BP, recovery and urine protein; arrange renal follow-up when indicated."
+        }
+      ],
+      "returnImmediately": [
+        "Seizure, severe/persistent headache, visual disturbance, epigastric pain, dyspnoea, chest pain or severe BP: return immediately; postpartum onset can occur after discharge."
+      ],
+      "sourceIds": [
+        "nice-ng133-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "labetalol-oral",
+          "when": "One selected oral BP option; do not prescribe every alternative together."
+        },
+        {
+          "regimenId": "nifedipine-maintenance",
+          "when": "Alternative/adjunct only within the documented BP plan."
+        },
+        {
+          "regimenId": "enalapril-postpartum",
+          "when": "Postpartum only when prescribed, with renal function/potassium monitoring."
+        }
+      ]
+    },
+    "pph": {
+      "setting": "Emergency admission; major bleeding may need theatre/critical care",
+      "outpatient": [
+        "Active PPH, shock or suspected secondary PPH with systemic illness is not suitable for routine outpatient management."
+      ],
+      "admit": [
+        "Admit and treat ongoing heavy bleeding, abnormal haemodynamics, suspected retained tissue/infection or coagulopathy. Transfer to theatre/critical care according to bleeding and organ-support requirements."
+      ],
+      "ready": [
+        "The bleeding source is controlled; uterine/perineal/wound assessment is satisfactory and there is no recurrent concerning loss.",
+        "Haemodynamics, consciousness, urine output, oral intake, mobility and pain control support home care. Review anaemia symptoms, Hb trend and any coagulopathy/organ injury; there is no single Hb value that alone certifies safe discharge."
+      ],
+      "medicines": [
+        "Prescribe iron replacement when iron deficiency/anaemia is present, using a documented formulation, dose and response plan; assess whether IV treatment or transfusion is needed before discharge.",
+        "Uterotonics and TXA used for the acute event are not automatically continued at home. Reassess VTE prophylaxis after bleeding risk has fallen."
+      ],
+      "tests": [
+        "Record quantified loss, procedures, transfusion and latest relevant CBC/coagulation/renal results; assign a reviewer/date for outstanding investigations."
+      ],
+      "homeCare": [
+        "Explain the cause and treatment, expected lochia, worsening-bleeding warnings, fatigue/feeding support and the future-birth haemorrhage plan. Offer a debrief and emotional support."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Book anaemia/Hb response review and communicate any organ-injury or transfusion follow-up to the responsible team."
+        },
+        {
+          "when": "Early postnatal contacts and 6-week review",
+          "action": "Review bleeding, recovery, mental health and the future-pregnancy plan; review sooner for symptoms or major anaemia."
+        }
+      ],
+      "returnImmediately": [
+        "Sudden/heavy or increasing bleeding, fainting, breathlessness, fever, offensive discharge or worsening abdominal pain require immediate assessment."
+      ],
+      "sourceIds": [
+        "med-msf-pph",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal",
+        "med-who-anc-dose"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "iron-postpartum-treatment",
+          "when": "Only for diagnosed postpartum iron-deficiency anaemia after bleeding is controlled."
+        }
+      ]
+    },
+    "aph-previa": {
+      "setting": "Bleeding requires hospital assessment; inpatient versus home surveillance is individualised",
+      "outpatient": [
+        "An asymptomatic, stable low-lying placenta may be managed with a specialist outpatient plan; admission depends on bleeding history, gestation, access to emergency care and support."
+      ],
+      "admit": [
+        "Any new bleeding, contractions or pain requires immediate maternity assessment. Admit ongoing/recurrent significant bleeding, maternal instability, fetal concerns or inability to reach emergency care safely."
+      ],
+      "ready": [
+        "Bleeding has stopped, maternal observations and Hb assessment are satisfactory, and fetal assessment is reassuring.",
+        "A senior obstetrician has documented why home care is safe, transport/support arrangements and the planned birth setting/date."
+      ],
+      "medicines": [
+        "Treat anaemia when indicated; do not discharge with an unspecified tocolytic or steroid continuation prescription. Reconcile any remaining scheduled treatment explicitly."
+      ],
+      "tests": [
+        "Document placental location and dates of repeat imaging; assess blood group/antibody status and indicated anti-D after bleeding."
+      ],
+      "homeCare": [
+        "Provide immediate-return instructions for any bleeding, pain, contractions or ruptured membranes and a route to a hospital with obstetric/transfusion capacity."
+      ],
+      "followUp": [
+        {
+          "when": "At the booked scan and obstetric review",
+          "action": "Review placental position and update birth timing/place; review immediately if symptoms recur."
+        },
+        {
+          "when": "Before planned birth",
+          "action": "Confirm blood availability, transport and senior operative/anaesthetic arrangements."
+        }
+      ],
+      "returnImmediately": [
+        "Any further bleeding, pain, contractions, faintness or reduced fetal movement: contact/attend the maternity unit immediately."
+      ],
+      "sourceIds": [
+        "discharge-rcog-placenta",
+        "nice-ng25-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "aph-abruption": {
+      "setting": "Emergency obstetric assessment; suspected acute abruption usually needs admission",
+      "outpatient": [
+        "Abruption must not be dismissed because visible bleeding is small or absent. Home care is considered only after specialist reassessment of a resolved/uncertain presentation with a clear surveillance plan."
+      ],
+      "admit": [
+        "Admit suspected abruption with pain, tenderness, bleeding, maternal instability, coagulopathy or fetal compromise; arrange timely delivery and resuscitation when indicated."
+      ],
+      "ready": [
+        "Acute bleeding/pain and obstetric risk have been addressed; maternal blood/renal/coagulation trends and fetal or post-birth assessment support recovery.",
+        "No ongoing transfusion/organ-support need; the senior team has documented surveillance if the pregnancy continues."
+      ],
+      "medicines": [
+        "Reconcile anaemia treatment and any indicated post-birth VTE prevention against current bleeding risk. Acute haemorrhage medicines are not routine take-home treatment."
+      ],
+      "tests": [
+        "Communicate blood loss, Hb/platelets/coagulation/renal findings and the plan for abnormal results."
+      ],
+      "homeCare": [
+        "Explain recurrence risks, future-pregnancy specialist review and urgent-return symptoms; support bereavement if relevant."
+      ],
+      "followUp": [
+        {
+          "when": "Before discharge",
+          "action": "Agree obstetric/fetal monitoring if still pregnant, or early postnatal and anaemia reviews after birth."
+        },
+        {
+          "when": "Postnatal/future-pregnancy review",
+          "action": "Review hypertension, placental-risk factors, recovery and prevention planning."
+        }
+      ],
+      "returnImmediately": [
+        "Recurrent bleeding, abdominal pain, reduced movements, collapse, dyspnoea or fever require immediate hospital care."
+      ],
+      "sourceIds": [
+        "discharge-ng235",
+        "med-msf-pph",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "vasa-previa": {
+      "setting": "Specialist birth planning; emergency admission with labour, bleeding or membrane rupture",
+      "outpatient": [
+        "If diagnosed antenatally without symptoms, hospitalisation versus outpatient monitoring requires an individual specialist plan; do not apply a universal admission week to every patient."
+      ],
+      "admit": [
+        "Ruptured membranes, bleeding or labour with suspected/known vasa praevia requires immediate obstetric attendance and preparation for urgent caesarean/neonatal care."
+      ],
+      "ready": [
+        "After antenatal assessment, a clear birth/emergency plan and reliable rapid access are in place.",
+        "After birth, use mode-of-birth recovery criteria and ensure any neonatal haemorrhage/resuscitation follow-up is handed over separately."
+      ],
+      "medicines": [
+        "Document indicated antenatal treatment; avoid an unsourced routine home tocolytic course. After birth use the actual operation/postnatal prescription."
+      ],
+      "tests": [
+        "Confirm the diagnosis and relevant imaging/birth plan with the specialist team."
+      ],
+      "homeCare": [
+        "Explain exactly which symptoms require emergency attendance and which hospital can provide urgent caesarean and neonatal care."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving antenatal care",
+          "action": "Give the next specialist review and planned birth date/place."
+        },
+        {
+          "when": "After birth",
+          "action": "Follow maternal surgical/postnatal and neonatal specialist plans."
+        }
+      ],
+      "returnImmediately": [
+        "Bleeding, ruptured membranes, contractions or reduced fetal movements need immediate maternity contact."
+      ],
+      "sourceIds": [
+        "discharge-rcog-placenta",
+        "nice-ng192-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "pas-spectrum": {
+      "setting": "Planned specialist-centre admission; urgent admission for bleeding/labour",
+      "outpatient": [
+        "Stable antenatal PAS may be followed by a specialist team until the planned admission; outpatient care needs a documented emergency-access plan."
+      ],
+      "admit": [
+        "Bleeding, labour, membrane rupture, maternal deterioration or fetal concern requires hospital assessment. Planned birth should be in an appropriately resourced multidisciplinary centre."
+      ],
+      "ready": [
+        "After surgery, no recurrent bleeding, sepsis or unresolved organ-support need; bowel, bladder, pain, mobility and nutrition are satisfactory.",
+        "Document any urinary tract injury, hysterectomy, retained placenta/conservative management, drains or planned further procedures. Conservative PAS management needs an explicit prolonged follow-up pathway."
+      ],
+      "medicines": [
+        "Provide the actual anaemia, analgesia and VTE-prevention prescription with stop/review dates; antimicrobial treatment is indication-specific."
+      ],
+      "tests": [
+        "Assign review of pathology, Hb/renal findings and outstanding imaging or specialist results."
+      ],
+      "homeCare": [
+        "Teach wound/drain/catheter care when applicable; discuss fertility consequences, future-pregnancy planning and emotional recovery."
+      ],
+      "followUp": [
+        {
+          "when": "Before discharge",
+          "action": "Name the lead obstetric/surgical team and dates for wound, blood, urinary and pathology reviews."
+        },
+        {
+          "when": "If placenta retained/conservative treatment",
+          "action": "Provide a specialist monitoring schedule and rapid-return access; ordinary post-caesarean discharge advice alone is insufficient."
+        }
+      ],
+      "returnImmediately": [
+        "Heavy bleeding, fever, worsening pain, urinary problems, breathlessness or collapse require immediate assessment."
+      ],
+      "sourceIds": [
+        "discharge-rcog-placenta",
+        "nice-ng192-detail",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "pul": {
+      "setting": "Early-pregnancy assessment; outpatient only with reliable ectopic surveillance",
+      "outpatient": [
+        "Stable PUL can be monitored outside hospital when symptoms are mild, assessment is reassuring and the patient can return for blood tests/scans and emergencies."
+      ],
+      "admit": [
+        "Admit/escalate instability, significant or worsening pain, heavy bleeding, collapse or an unsafe follow-up situation; assess urgently for ectopic rupture."
+      ],
+      "ready": [
+        "Symptoms and observations support home care, but the pregnancy location/outcome remains unresolved. Do not describe an empty uterus or falling hCG as proof of no ectopic risk.",
+        "Give written instructions, a 24-hour contact route and a named owner for every pending hCG/scan."
+      ],
+      "medicines": [
+        "Do not give methotrexate merely because the pregnancy location is unknown. Reconcile other pregnancy medicines and RhD assessment as indicated."
+      ],
+      "tests": [
+        "NICE: obtain paired hCG as close as possible to 48 hours apart, not earlier; symptoms take priority over the numeric trend. Arrange repeat ultrasound or review from the actual hCG/clinical pathway."
+      ],
+      "homeCare": [
+        "Explain the diagnostic uncertainty and that an ectopic pregnancy can still deteriorate during follow-up."
+      ],
+      "followUp": [
+        {
+          "when": "About 48 hours from the first hCG",
+          "action": "Review the paired result and decide the next scan/test or urgent assessment."
+        },
+        {
+          "when": "Until location/outcome is established",
+          "action": "Track completion of the agreed pathway; contact the patient about missed or abnormal results."
+        }
+      ],
+      "returnImmediately": [
+        "New/worsening unilateral pain, shoulder-tip pain, dizziness, fainting or heavy bleeding: attend emergency care immediately, regardless of prior hCG results."
+      ],
+      "sourceIds": [
+        "nice-ng126-diagnosis-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "ectopic-pregnancy": {
+      "setting": "Emergency admission if rupture/instability; selected stable cases can be managed as outpatients",
+      "outpatient": [
+        "Expectant or methotrexate treatment requires documented eligibility, no significant pain/instability and reliable access to serial hCG and emergency care."
+      ],
+      "admit": [
+        "Suspected rupture, instability, significant pain or major bleeding requires admission and urgent surgery. Inability to return for follow-up or surgical-treatment criteria changes the management choice."
+      ],
+      "ready": [
+        "After surgery: observations, bleeding, pain, oral intake, mobilisation and voiding are satisfactory, with review of operative findings/complications.",
+        "After medical/expectant selection: treatment and follow-up eligibility are confirmed, hCG appointments are booked and emergency access is feasible. Discharge does not mean that rupture risk has ended."
+      ],
+      "medicines": [
+        "If methotrexate was administered, give the checked regimen-specific interaction, breastfeeding and contraception advice. No automatic repeat dose is a discharge instruction.",
+        "After surgery provide the indicated oral analgesic and review any VTE/anti-D requirements."
+      ],
+      "tests": [
+        "Methotrexate: hCG on days 4 and 7, then weekly until negative, with review of inadequate fall/plateau/rise.",
+        "Expectant management: hCG days 2, 4 and 7, then weekly if the expected fall occurs. After salpingotomy: hCG at day 7 then weekly; after salpingectomy: urine pregnancy test at 3 weeks, review if positive."
+      ],
+      "homeCare": [
+        "Give written rupture symptoms, avoid becoming pregnant until the methotrexate follow-up/contraception interval is completed, and arrange an early assessment in the next pregnancy."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Book the exact hCG/urine-test schedule for the treatment received; identify the results reviewer."
+        },
+        {
+          "when": "At treatment completion",
+          "action": "Review recovery, fertility implications, contraception and early scanning in a future pregnancy."
+        }
+      ],
+      "returnImmediately": [
+        "Increasing abdominal/shoulder-tip pain, faintness, collapse, heavy bleeding, breathlessness or fever requires immediate assessment."
+      ],
+      "sourceIds": [
+        "nice-ng126-ectopic-detail",
+        "nhs-ectopic-mtx-detail",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "For uncomplicated postoperative pain when prescribed; increasing pain still needs assessment."
+        }
+      ]
+    },
+    "miscarriage-management": {
+      "setting": "Usually outpatient/day care if stable; admit haemorrhage, infection or unsafe symptoms",
+      "outpatient": [
+        "Confirmed uncomplicated miscarriage can be managed expectantly, medically or by day-case surgery according to clinical suitability and patient preference."
+      ],
+      "admit": [
+        "Admit heavy ongoing bleeding/instability, suspected sepsis, severe uncontrolled pain or inability to complete safe outpatient care. Exclude ectopic pregnancy when the location/outcome is uncertain."
+      ],
+      "ready": [
+        "Bleeding/pain and observations support home care; the diagnosis, chosen approach and possibility of incomplete treatment have been explained.",
+        "After evacuation/anaesthesia, recovery and postoperative assessment are satisfactory, with transport/adult support when needed."
+      ],
+      "medicines": [
+        "Use only the regimen for the diagnosed type of miscarriage; provide analgesia and antiemetic treatment when needed. Review RhD care using the current applicable pathway."
+      ],
+      "tests": [
+        "NICE: after expectant management, review completion at 7–14 days; if symptoms resolve, provide a urine pregnancy test for 3 weeks.",
+        "After medical management, urine pregnancy test at 3 weeks; a positive result or persistent bleeding, pain or fever needs assessment even when a test is negative."
+      ],
+      "homeCare": [
+        "Explain expected bleeding/tissue passage, pain relief, hygiene and how to contact the early-pregnancy service. Offer grief support and contraception/future pregnancy advice."
+      ],
+      "followUp": [
+        {
+          "when": "If bleeding has not begun within 48 hours of misoprostol",
+          "action": "Contact the treating service for review rather than repeating treatment independently."
+        },
+        {
+          "when": "3 weeks after treatment",
+          "action": "Check the home pregnancy test and symptoms; arrange review for a positive result or ongoing concerns."
+        }
+      ],
+      "returnImmediately": [
+        "Very heavy bleeding, fainting, severe/worsening pain, fever or offensive discharge needs urgent care."
+      ],
+      "sourceIds": [
+        "nice-ng126-miscarriage-detail",
+        "nice-ng126-diagnosis-detail",
+        "nice-ng126-antid-detail",
+        "discharge-rcog-abortion"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "Pain relief when suitable; provide the selected miscarriage regimen in the treatment section."
+        }
+      ]
+    },
+    "recurrent-miscarriage": {
+      "setting": "Usually specialist outpatient care",
+      "outpatient": [
+        "A history of recurrent miscarriage without an acute complication does not itself require admission. Arrange supportive early-pregnancy and specialist assessment."
+      ],
+      "admit": [
+        "Current heavy bleeding, instability, infection or severe pain follows the acute miscarriage/ectopic pathway; urgent mental-health assessment is needed for immediate safety concerns."
+      ],
+      "ready": [
+        "Any current acute event has been assessed and safely managed; provide a named supportive-care route and an investigation/result plan."
+      ],
+      "medicines": [
+        "Continue only treatment indicated for the current pregnancy/diagnosis; do not prescribe anticoagulation or progesterone for every history of miscarriage without eligibility."
+      ],
+      "tests": [
+        "Assign review of indicated investigations and any pending histology/genetic results; avoid repeating a broad panel without a clinical reason."
+      ],
+      "homeCare": [
+        "Discuss grief support, planning another pregnancy and how to access early scanning/support if pregnancy occurs."
+      ],
+      "followUp": [
+        {
+          "when": "At the booked specialist review",
+          "action": "Review results, possible causes and a written plan for the next pregnancy."
+        },
+        {
+          "when": "With a new positive pregnancy test",
+          "action": "Contact the early-pregnancy/support service promptly for the agreed assessment plan."
+        }
+      ],
+      "returnImmediately": [
+        "Heavy bleeding, severe/unilateral pain, collapse, fever or inability to remain safe requires urgent help."
+      ],
+      "sourceIds": [
+        "rcog-recurrent-detail",
+        "nice-ng126-miscarriage-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "molar-pregnancy": {
+      "setting": "Planned admission/day surgery for evacuation; urgent admission with bleeding or complications",
+      "outpatient": [
+        "After safe evacuation and recovery, most follow-up is through a specialist hCG surveillance service rather than continued hospital stay."
+      ],
+      "admit": [
+        "Admit haemorrhage/instability, significant anaemia, severe pregnancy complications or a need for urgent evacuation; arrange experienced anaesthetic/transfusion support."
+      ],
+      "ready": [
+        "Bleeding and physiological recovery are satisfactory; histology is sent and the patient is registered/referred to the trophoblastic follow-up service.",
+        "The patient understands that normal symptoms or one normal hCG do not by themselves complete surveillance."
+      ],
+      "medicines": [
+        "Document indicated RhD prophylaxis, anaemia treatment and effective contraception. Chemotherapy is a specialist-centre prescription, not a generic discharge course."
+      ],
+      "tests": [
+        "FIGO 2025: hCG every 1–2 weeks until normal; partial mole confirms normal again at 1 month; complete mole needs monthly hCG for 6 months after normalisation. Plateau/rise requires prompt specialist review."
+      ],
+      "homeCare": [
+        "Give the histology-specific follow-up schedule, the results contact and advice to avoid pregnancy until the surveillance service clears it."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Name the hCG service, book the first sample and establish who communicates histology."
+        },
+        {
+          "when": "Through the complete surveillance period",
+          "action": "Review missing/abnormal hCG promptly; plan an early scan in a future pregnancy."
+        }
+      ],
+      "returnImmediately": [
+        "Heavy bleeding, fainting, worsening pain, breathlessness or severe headache needs urgent assessment; an abnormal hCG callback must not be ignored."
+      ],
+      "sourceIds": [
+        "med-figo-gtd-2025",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "mtp-india": {
+      "setting": "Outpatient/day care or inpatient treatment according to gestation, method and clinical risk",
+      "outpatient": [
+        "Use a legally authorised service and a method/setting appropriate to gestation, health, safeguarding needs and preference; uncomplicated early care may be outpatient."
+      ],
+      "admit": [
+        "Admit haemorrhage, infection, severe uncontrolled pain, suspected ectopic pregnancy, major comorbidity or a procedure/gestation requiring hospital monitoring."
+      ],
+      "ready": [
+        "Clinical recovery and bleeding/pain are satisfactory; treatment completion or the agreed way of confirming completion is documented.",
+        "Written information, emergency access and any planned follow-up/test are provided. Routine follow-up is not mandatory after uncomplicated care if adequate instructions and access are available (WHO)."
+      ],
+      "medicines": [
+        "Supply the method-specific medicines, pain relief and any indicated prophylaxis exactly as prescribed. Offer contraception if wanted; do not infer RhD or antibiotic requirements from an unrelated procedure."
+      ],
+      "tests": [
+        "Record any pathology, testing or completion check that actually needs follow-up; make a clear plan for ongoing-pregnancy symptoms or uncertain completion."
+      ],
+      "homeCare": [
+        "Explain expected bleeding/pain, how to access help, fertility return and contraceptive choices without making contraception a condition of discharge."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Agree whether follow-up is required, what test is used and who reviews it; provide emergency contacts."
+        },
+        {
+          "when": "If recovery is not as explained",
+          "action": "Arrange review promptly; persistent pregnancy symptoms, little/no bleeding after medical treatment or an abnormal scheduled test requires contact."
+        }
+      ],
+      "returnImmediately": [
+        "Heavy/prolonged bleeding, collapse, fever, offensive discharge or severe/persistent pain needs urgent assessment."
+      ],
+      "sourceIds": [
+        "med-who-abortion",
+        "discharge-rcog-abortion"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "Analgesia when suitable; method-specific abortion regimens remain in Treatment."
+        }
+      ]
+    },
+    "labour-management": {
+      "setting": "Birth-facility care for established labour; postnatal discharge requires mother-and-baby assessment",
+      "outpatient": [
+        "Latent labour may be managed at home only after assessment excludes complications and the woman has a safe return plan. TOLAC requires a facility with immediate access to caesarean/transfusion when labour is established."
+      ],
+      "admit": [
+        "Established labour/birth, concerning maternal observations, abnormal fetal assessment, significant bleeding, rupture of membranes with risk factors, or a need for analgesia/monitoring requires the appropriate maternity setting.",
+        "Scar pain, collapse, bleeding or fetal bradycardia during TOLAC requires urgent assessment for rupture and operative care."
+      ],
+      "ready": [
+        "After an uncomplicated vaginal birth, the Indian NHM pathway keeps the woman under observation for at least 48 hours. The international WHO minimum is 24 hours; local clinical needs may require longer.",
+        "Before home care assess bleeding/uterine tone, observations, pain/perineum, bladder function and mobility; assess the newborn separately and observe an effective feed or document a safe feeding plan."
+      ],
+      "medicines": [
+        "Reconcile prescribed postnatal supplements, pain relief and any indicated VTE/anti-D care. Routine birth does not create a blanket need for take-home antibiotics.",
+        "For TOLAC ending in caesarean or a significant complication, use that recovery/discharge pathway instead of the uncomplicated vaginal-birth timetable."
+      ],
+      "tests": [
+        "Review maternal risk/results and the need for Hb testing after significant blood loss. Record any maternal/newborn screening or result still outstanding and its reviewer."
+      ],
+      "homeCare": [
+        "Discuss lochia, hygiene/perineal or wound care, bladder/bowel recovery, feeding support, contraception, pelvic-floor exercise and emotional wellbeing; give the maternity contact/transport plan."
+      ],
+      "followUp": [
+        {
+          "when": "Within 36 hours after transfer (NICE service model)",
+          "action": "Arrange the first face-to-face postnatal contact; the local Indian service may organise this differently."
+        },
+        {
+          "when": "WHO routine contacts: 48–72 hours, day 7–14 and week 6 after birth",
+          "action": "Ensure the actual appointment/home-visit arrangements are recorded; add earlier reviews for complications."
+        }
+      ],
+      "returnImmediately": [
+        "Heavy/increasing bleeding, fainting, fever/offensive lochia, worsening pain, severe headache/visual symptoms, dyspnoea/chest pain or unilateral leg swelling need urgent care.",
+        "A baby with poor feeding, abnormal breathing, unusual sleepiness, temperature concerns or early/worsening jaundice needs prompt newborn assessment."
+      ],
+      "sourceIds": [
+        "discharge-ng235",
+        "nice-ng192-detail",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "For maternal pain when prescribed."
+        },
+        {
+          "regimenId": "ibuprofen-postpartum-pain",
+          "when": "Postpartum only when bleeding, renal and other contraindications have been excluded."
+        }
+      ]
+    },
+    "vbac-tolac": {
+      "setting": "Birth-facility care for established labour; postnatal discharge requires mother-and-baby assessment",
+      "outpatient": [
+        "Latent labour may be managed at home only after assessment excludes complications and the woman has a safe return plan. TOLAC requires a facility with immediate access to caesarean/transfusion when labour is established."
+      ],
+      "admit": [
+        "Established labour/birth, concerning maternal observations, abnormal fetal assessment, significant bleeding, rupture of membranes with risk factors, or a need for analgesia/monitoring requires the appropriate maternity setting.",
+        "Scar pain, collapse, bleeding or fetal bradycardia during TOLAC requires urgent assessment for rupture and operative care."
+      ],
+      "ready": [
+        "After an uncomplicated vaginal birth, the Indian NHM pathway keeps the woman under observation for at least 48 hours. The international WHO minimum is 24 hours; local clinical needs may require longer.",
+        "Before home care assess bleeding/uterine tone, observations, pain/perineum, bladder function and mobility; assess the newborn separately and observe an effective feed or document a safe feeding plan."
+      ],
+      "medicines": [
+        "Reconcile prescribed postnatal supplements, pain relief and any indicated VTE/anti-D care. Routine birth does not create a blanket need for take-home antibiotics.",
+        "For TOLAC ending in caesarean or a significant complication, use that recovery/discharge pathway instead of the uncomplicated vaginal-birth timetable."
+      ],
+      "tests": [
+        "Review maternal risk/results and the need for Hb testing after significant blood loss. Record any maternal/newborn screening or result still outstanding and its reviewer."
+      ],
+      "homeCare": [
+        "Discuss lochia, hygiene/perineal or wound care, bladder/bowel recovery, feeding support, contraception, pelvic-floor exercise and emotional wellbeing; give the maternity contact/transport plan.",
+        "Document the birth outcome and operative findings, explain future birth implications and give access to a birth debrief."
+      ],
+      "followUp": [
+        {
+          "when": "Within 36 hours after transfer (NICE service model)",
+          "action": "Arrange the first face-to-face postnatal contact; the local Indian service may organise this differently."
+        },
+        {
+          "when": "WHO routine contacts: 48–72 hours, day 7–14 and week 6 after birth",
+          "action": "Ensure the actual appointment/home-visit arrangements are recorded; add earlier reviews for complications."
+        }
+      ],
+      "returnImmediately": [
+        "Heavy/increasing bleeding, fainting, fever/offensive lochia, worsening pain, severe headache/visual symptoms, dyspnoea/chest pain or unilateral leg swelling need urgent care.",
+        "A baby with poor feeding, abnormal breathing, unusual sleepiness, temperature concerns or early/worsening jaundice needs prompt newborn assessment."
+      ],
+      "sourceIds": [
+        "discharge-ng235",
+        "nice-ng192-detail",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "For maternal pain when prescribed."
+        },
+        {
+          "regimenId": "ibuprofen-postpartum-pain",
+          "when": "Postpartum only when bleeding, renal and other contraindications have been excluded."
+        }
+      ]
+    },
+    "iol": {
+      "setting": "Planned maternity admission or a specifically selected outpatient induction pathway",
+      "outpatient": [
+        "NICE permits selected outpatient induction with vaginal dinoprostone or a mechanical method after full assessment, discussion and safety planning; this is not automatic permission for every drug or high-risk pregnancy."
+      ],
+      "admit": [
+        "Maternal/fetal risk, abnormal assessment, labour, membrane rupture, bleeding, a concerning response to ripening or inability to return promptly requires inpatient care. Oxytocin infusion requires a monitored maternity setting."
+      ],
+      "ready": [
+        "For outpatient ripening, maternal/fetal assessment is reassuring, the exact method and reassessment time are recorded, and contact/transport support is reliable.",
+        "After birth use the appropriate vaginal/caesarean and complication-specific criteria; completing cervical ripening is not the same as completing maternity care."
+      ],
+      "medicines": [
+        "Document which induction agent/device was used and when; the patient must not independently repeat a dose at home.",
+        "Reconcile regular medicines and the planned next induction step."
+      ],
+      "tests": [
+        "Record pre-induction fetal assessment and the scheduled repeat/return assessment."
+      ],
+      "homeCare": [
+        "Give the planned return time and instructions for pain/contractions, bleeding, membrane rupture, side effects and reduced movements."
+      ],
+      "followUp": [
+        {
+          "when": "At the exact agreed induction reassessment time",
+          "action": "Review cervix, maternal/fetal wellbeing and the next step; do not leave an open-ended return plan."
+        },
+        {
+          "when": "After birth",
+          "action": "Follow the relevant postnatal schedule and any additional maternal/newborn review."
+        }
+      ],
+      "returnImmediately": [
+        "Return with contractions, rupture of membranes, bleeding, reduced movements, severe pain or other concerning symptoms rather than waiting for the booked time."
+      ],
+      "sourceIds": [
+        "nice-ng207-detail",
+        "discharge-ng235"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "lscs": {
+      "setting": "Planned or emergency inpatient surgery",
+      "outpatient": [
+        "A caesarean operation requires a maternity surgical setting; antenatal planning may be outpatient until the admission date if no complication requires earlier care."
+      ],
+      "admit": [
+        "Admit for the planned operation or for any urgent maternal/fetal indication. Haemorrhage, sepsis, instability or organ-support needs require increased monitoring/critical care."
+      ],
+      "ready": [
+        "Afebrile and recovering well, with no unresolved operative/anaesthetic complication, concerning bleeding or respiratory issue; pain is controlled on an oral plan and oral intake/mobility are adequate.",
+        "The urinary catheter has been removed with satisfactory bladder assessment, or a named catheter/voiding-trial plan is provided. Wound, VTE risk and maternal/newborn discharge needs are reviewed.",
+        "NICE UK offers discharge after 24 hours only for selected uncomplicated recovery with home follow-up. This is not an automatic Indian postoperative discharge time; use local service policy and individual surgical readiness."
+      ],
+      "medicines": [
+        "Use a defined oral analgesic plan: paracetamol plus ibuprofen if suitable, reducing/stopping as pain improves. Avoid codeine/co-codamol while breastfeeding.",
+        "Review the indication, dose and stop date for VTE prophylaxis; teach injections when prescribed. Antibiotic prophylaxis at surgery does not automatically justify a take-home antibiotic course."
+      ],
+      "tests": [
+        "Arrange repeat CBC/other tests after major blood loss or abnormal findings and identify who acts on the result. Assign pathology review when tissue was sent."
+      ],
+      "homeCare": [
+        "Explain wound hygiene, suture/clip removal if applicable, bladder/bowel care, progressive activity, feeding and contraception. Resume driving/heavy activity when recovered and able to perform safely, with local/insurance requirements met.",
+        "Offer a debrief after an emergency operation and record the uterine incision, complications and implications for future pregnancy."
+      ],
+      "followUp": [
+        {
+          "when": "Before discharge",
+          "action": "Provide the wound/suture or catheter appointment if required, prescription stop dates and contact details."
+        },
+        {
+          "when": "Early home/postnatal contact and week 6",
+          "action": "Assess wound, bleeding, pain, mobility, feeding and emotional recovery; bring forward review for complications."
+        }
+      ],
+      "returnImmediately": [
+        "Fever, wound redness/discharge/opening, worsening abdominal pain, heavy bleeding, urinary retention, dyspnoea/chest pain or leg swelling requires urgent review.",
+        "If a prescribed opioid causes maternal excessive sedation or the baby becomes drowsy, breathless or feeds poorly, seek urgent advice."
+      ],
+      "sourceIds": [
+        "nice-ng192-detail",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "Baseline oral pain relief when prescribed."
+        },
+        {
+          "regimenId": "ibuprofen-postpartum-pain",
+          "when": "Combine only when the clinician has excluded contraindications."
+        }
+      ]
+    },
+    "shoulder-dystocia": {
+      "setting": "Emergency intrapartum care; post-event observation and newborn assessment",
+      "outpatient": [
+        "An unresolved shoulder dystocia is not an outpatient problem. After resolution, mother and baby still need a post-event assessment."
+      ],
+      "admit": [
+        "Manage in an emergency birth setting with obstetric/neonatal help; admit/continue care for maternal trauma/haemorrhage or neonatal injury/compromise."
+      ],
+      "ready": [
+        "Maternal bleeding and perineal/anal-sphincter injury assessment are complete, with a bladder, pain and mobility plan.",
+        "The newborn has been examined for injury and neurological/respiratory compromise; any specialist assessment or follow-up is organised. Apply the postnatal observation pathway rather than discharging immediately because the shoulders delivered."
+      ],
+      "medicines": [
+        "Provide the actual perineal-trauma/analgesia/anaemia prescription; antibiotics or bowel treatment depend on the diagnosed injury and repair."
+      ],
+      "tests": [
+        "Document the manoeuvres, time course, maternal injury and neonatal assessment; assign pending investigations."
+      ],
+      "homeCare": [
+        "Explain what happened, offer a debrief and support, and record the recurrence discussion/future-birth planning needs."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Confirm maternal injury/repair follow-up and the newborn team’s plan."
+        },
+        {
+          "when": "Postnatal and future-pregnancy review",
+          "action": "Review recovery, continence/pain concerns and a senior plan for future birth."
+        }
+      ],
+      "returnImmediately": [
+        "Heavy bleeding, fever, worsening perineal pain, inability to void, new bowel-control problems or newborn weakness/poor feeding needs prompt assessment."
+      ],
+      "sourceIds": [
+        "rcog-shoulder-detail",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "cord-prolapse": {
+      "setting": "Immediate hospital obstetric emergency",
+      "outpatient": [
+        "Cord prolapse requires emergency maternity care, not observation at home."
+      ],
+      "admit": [
+        "Urgent birth and neonatal support are needed according to fetal viability/status and the obstetric situation."
+      ],
+      "ready": [
+        "After birth apply the actual delivery/operation recovery criteria. Review bleeding, pain, urinary function and any anaesthetic complications.",
+        "The neonatal team has documented the baby’s condition, any resuscitation/injury concerns and follow-up."
+      ],
+      "medicines": [
+        "Use the postnatal/operative prescription for the care actually delivered; the cord prolapse itself does not define a routine home drug course."
+      ],
+      "tests": [
+        "Complete the birth/resuscitation record and assign outstanding maternal or neonatal results."
+      ],
+      "homeCare": [
+        "Offer an explanation and debrief, psychological support and a written record of events."
+      ],
+      "followUp": [
+        {
+          "when": "Before discharge",
+          "action": "Agree maternal wound/trauma review and neonatal follow-up if needed."
+        },
+        {
+          "when": "Routine postnatal contacts",
+          "action": "Review physical and emotional recovery and concerns about future pregnancy."
+        }
+      ],
+      "returnImmediately": [
+        "Maternal heavy bleeding, fever, chest symptoms or severe pain and any newborn deterioration require urgent care."
+      ],
+      "sourceIds": [
+        "rcog-cord-detail",
+        "nice-ng192-detail",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "breech-ecv": {
+      "setting": "Usually outpatient planning; ECV in a unit with emergency caesarean access",
+      "outpatient": [
+        "Stable breech presentation can be managed through antenatal review and a documented ECV/birth plan."
+      ],
+      "admit": [
+        "Bleeding, labour, membrane rupture, abnormal fetal assessment or maternal instability needs hospital evaluation/admission; ECV complications require immediate obstetric care."
+      ],
+      "ready": [
+        "After ECV, maternal observations and the required fetal monitoring are reassuring; no persistent pain, bleeding or other complication is present.",
+        "Document whether ECV succeeded, RhD/anti-D assessment and the plan if labour starts before the next review."
+      ],
+      "medicines": [
+        "Record any tocolytic given and indicated anti-D; do not provide a routine home tocolytic course after ECV."
+      ],
+      "tests": [
+        "Record presentation and pre/post-procedure fetal assessment; organise confirmation/review if required."
+      ],
+      "homeCare": [
+        "Give clear advice about fetal movements, pain, bleeding and membrane rupture, and the planned place/mode of birth."
+      ],
+      "followUp": [
+        {
+          "when": "At the booked review",
+          "action": "Confirm presentation and finalise the birth plan after successful or unsuccessful ECV."
+        },
+        {
+          "when": "If labour or waters break",
+          "action": "Contact the maternity unit promptly rather than waiting for the next appointment."
+        }
+      ],
+      "returnImmediately": [
+        "Bleeding, persistent abdominal pain, reduced movements, contractions or rupture of membranes after ECV require immediate maternity contact."
+      ],
+      "sourceIds": [
+        "rcog-breech-detail",
+        "med-nhs-ecv"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "ctg-fetal-monitoring": {
+      "setting": "Assessment/monitoring in the appropriate maternity setting",
+      "outpatient": [
+        "A reassuring CTG supports, but does not alone establish, safe home care. Interpret it with gestation, symptoms, fetal movement, examination and other risks."
+      ],
+      "admit": [
+        "An abnormal trace, persistent reduced movements, bleeding, hypertension, growth concern or suspected infection requires escalation and admission when further monitoring/treatment or birth is indicated."
+      ],
+      "ready": [
+        "A competent clinician has reviewed the full assessment, resolved or explained the concern and documented any further test/birth plan.",
+        "Do not discharge a symptomatic patient solely because one CTG snapshot appears normal."
+      ],
+      "medicines": [
+        "No home medicine is prescribed simply to improve a CTG. Reconcile treatment for the underlying condition."
+      ],
+      "tests": [
+        "Record the trace interpretation, actions and any scan/laboratory result still needing review."
+      ],
+      "homeCare": [
+        "Explain the finding and exactly when to return; continued/recurrent reduced movement is a fresh reason to contact the unit."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Book any indicated scan or repeat assessment with a named reviewer."
+        },
+        {
+          "when": "If symptoms recur",
+          "action": "Repeat clinical assessment promptly; previous reassurance does not rule out a new problem."
+        }
+      ],
+      "returnImmediately": [
+        "Reduced/absent fetal movements, bleeding, severe abdominal pain or fluid loss requires prompt maternity assessment."
+      ],
+      "sourceIds": [
+        "nice-ng229-detail",
+        "rcog-movements-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "ptl-threatened": {
+      "setting": "Urgent maternity assessment; selected low-likelihood cases may go home",
+      "outpatient": [
+        "For symptomatic women ≥30 weeks, NICE cervical length >15 mm or, when ultrasound is unavailable/unacceptable, negative fetal fibronectin ≤50 ng/mL can support a discussion of home care after full assessment.",
+        "Do not apply these discharge test thresholds as a shortcut to every gestation or presentation."
+      ],
+      "admit": [
+        "Admit diagnosed labour, maternal/fetal concerns, membrane rupture, bleeding/infection or an unsafe home situation. If assessment at ≥30 weeks cannot obtain the indicated tests, NICE advises treating as diagnosed preterm labour."
+      ],
+      "ready": [
+        "No cervical progression or complication requiring treatment/monitoring; assessment suggests a low likelihood of imminent birth, and alternatives for symptoms have been considered.",
+        "Document the benefits/risks of home care, return instructions, gestation and neonatal/transfer considerations."
+      ],
+      "medicines": [
+        "Document any completed/remaining antenatal steroid doses and their arrangements. Do not send an unspecified maintenance tocolytic prescription home."
+      ],
+      "tests": [
+        "Record the actual cervical length or fetal fibronectin result and fetal assessment; a negative test does not remove every obstetric risk."
+      ],
+      "homeCare": [
+        "Explain that persistent/recurrent contractions or other new symptoms require reassessment."
+      ],
+      "followUp": [
+        {
+          "when": "At the agreed antenatal review or remaining treatment appointment",
+          "action": "Review recurrence and complete any scheduled care."
+        },
+        {
+          "when": "Immediately if symptoms persist or return",
+          "action": "Contact/attend the maternity unit rather than relying on the previous negative test."
+        }
+      ],
+      "returnImmediately": [
+        "Contractions, pelvic pressure, vaginal bleeding, fluid loss, fever or reduced movements require maternity contact."
+      ],
+      "sourceIds": [
+        "nice-ng25-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "ptl-established": {
+      "setting": "Inpatient maternity/neonatal pathway",
+      "outpatient": [
+        "Established preterm labour is not a routine outpatient discharge diagnosis; transfer decisions depend on gestation, progression and neonatal capacity."
+      ],
+      "admit": [
+        "Admit labour with cervical change or a high likelihood of imminent preterm birth; arrange appropriate steroids, neuroprotection, antibiotics/tocolysis when indicated and neonatal discussion."
+      ],
+      "ready": [
+        "If labour settles, discharge is a senior obstetric decision after reassessing cervical/membrane status, maternal/fetal wellbeing and access to return care.",
+        "After preterm birth, assess maternal recovery separately and arrange the baby’s neonatal care; an ongoing neonatal admission needs a clear maternal support/accommodation plan."
+      ],
+      "medicines": [
+        "Reconcile what antenatal treatment was completed and any remaining doses; do not continue magnesium infusion or acute tocolysis as home treatment."
+      ],
+      "tests": [
+        "Communicate gestation, membranes, infection assessment and fetal/neonatal findings."
+      ],
+      "homeCare": [
+        "Give a return/birth plan and discuss feeding, expressing milk and support if the baby needs neonatal admission."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving after settled labour",
+          "action": "Write the next review/treatment appointment and the receiving unit if symptoms recur."
+        },
+        {
+          "when": "After birth",
+          "action": "Follow maternal postnatal contacts and the neonatal team’s separate follow-up schedule."
+        }
+      ],
+      "returnImmediately": [
+        "Recurrent contractions, fluid loss, bleeding, fever, worsening pain or reduced movements requires immediate reassessment."
+      ],
+      "sourceIds": [
+        "nice-ng25-detail",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "pprom": {
+      "setting": "Initial hospital observation; selected stable patients may later receive home surveillance",
+      "outpatient": [
+        "RCOG describes hospital observation for a few days after PPROM, followed by individual consideration of home care if mother and baby are well and early-birth risk/access arrangements allow it."
+      ],
+      "admit": [
+        "Admit suspected infection, labour, bleeding, fetal compromise, maternal illness or inability to attend monitoring/return rapidly."
+      ],
+      "ready": [
+        "No infection/labour/bleeding or maternal/fetal concern needing inpatient care; a senior team has agreed surveillance, transport and timing/place of birth.",
+        "Counselling includes that complications can arise after leaving and a previously reassuring review does not guarantee continued safety."
+      ],
+      "medicines": [
+        "Complete only the remaining portion of the prescribed latency antibiotic course, with the original start/stop dates. Record completed/remaining steroid doses; do not restart a full course because of discharge."
+      ],
+      "tests": [
+        "Document fetal surveillance, growth/other planned scans and clinical/laboratory infection assessment. No single normal inflammatory marker rules out infection."
+      ],
+      "homeCare": [
+        "Give the unit contact, monitoring appointments and advice about temperature, colour/smell of fluid, pain, contractions and fetal movement."
+      ],
+      "followUp": [
+        {
+          "when": "At the exact scheduled maternity checks",
+          "action": "Review maternal symptoms/observations and fetal wellbeing; reassess admission/birth if concerns emerge."
+        },
+        {
+          "when": "At the agreed gestation or earlier complication",
+          "action": "Confirm the individual birth plan and neonatal arrangements."
+        }
+      ],
+      "returnImmediately": [
+        "Fever/shivering, offensive or changing fluid, abdominal/back pain, contractions, bleeding or reduced movements: return immediately."
+      ],
+      "sourceIds": [
+        "rcog-pprom-detail",
+        "nice-ng25-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "erythromycin-pprom",
+          "when": "Only the remaining prescribed latency course; confirm the course has not already finished."
+        }
+      ]
+    },
+    "prom-term": {
+      "setting": "Maternity assessment; selected expectant management may be at home with a time-limited plan",
+      "outpatient": [
+        "After assessment, discuss induction now or expectant management for up to about 24 hours when appropriate; take infection risk, GBS history/status and maternal/fetal wellbeing into account."
+      ],
+      "admit": [
+        "Admit labour or an indication for induction/monitoring, maternal/fetal concern, bleeding, abnormal fluid or suspected infection. GBS-related circumstances may favour immediate birth planning."
+      ],
+      "ready": [
+        "Mother and fetal assessment are reassuring, no condition requires inpatient care and the planned induction/review time is booked.",
+        "After birth, review the newborn observation requirements after prolonged rupture; maternal discharge criteria do not substitute for newborn assessment."
+      ],
+      "medicines": [
+        "No blanket home antibiotic course for every uncomplicated term PROM. Document indicated intrapartum antibiotics and the remaining treatment only if infection is actually diagnosed."
+      ],
+      "tests": [
+        "Record the rupture time, GBS history/status and maternal/fetal assessments; communicate duration of rupture to the neonatal team."
+      ],
+      "homeCare": [
+        "NICE: during expectant care check temperature every 4 hours while awake and report changes in discharge colour/smell or movements. Give a clear return plan."
+      ],
+      "followUp": [
+        {
+          "when": "About 24 hours from membrane rupture if labour has not started",
+          "action": "Offer induction under the selected NICE pathway; record the actual appointment and whom to call sooner."
+        },
+        {
+          "when": "After birth",
+          "action": "Complete the relevant maternal and newborn observations and follow-up."
+        }
+      ],
+      "returnImmediately": [
+        "Fever, feeling unwell, offensive/discoloured fluid, bleeding, reduced movements or labour symptoms requires immediate maternity contact."
+      ],
+      "sourceIds": [
+        "discharge-ng235",
+        "nice-ng207-detail",
+        "rcog-gbs-detail",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "fgr": {
+      "setting": "Specialist surveillance; admit if maternal/fetal findings require closer care or birth",
+      "outpatient": [
+        "Selected stable FGR/SGA can be followed with a written schedule of growth, Doppler and other fetal surveillance and a planned birth date."
+      ],
+      "admit": [
+        "Abnormal/worsening fetal assessment, concerning Doppler findings, reduced movements, maternal hypertension or another complication may require admission and delivery planning."
+      ],
+      "ready": [
+        "The specialist team has reviewed current growth/Doppler/fetal wellbeing and documented why the surveillance interval and location are safe.",
+        "The patient has reliable access to the next test and urgent assessment; do not discharge with only a generic repeat scan in a few weeks."
+      ],
+      "medicines": [
+        "Record any antenatal steroid/neuroprotection course and remaining appointments; no unproven home drug is prescribed merely to increase fetal growth."
+      ],
+      "tests": [
+        "Give exact scan/Doppler/CTG dates according to the diagnosed severity and gestation, plus the responsible reviewer."
+      ],
+      "homeCare": [
+        "Explain reduced-movement reporting and the circumstances that would bring birth forward."
+      ],
+      "followUp": [
+        {
+          "when": "At the booked specialist surveillance contacts",
+          "action": "Review fetal and maternal findings and update timing/place of birth."
+        },
+        {
+          "when": "Immediately for reduced movements/new symptoms",
+          "action": "Reassess rather than waiting for the next scan."
+        }
+      ],
+      "returnImmediately": [
+        "Reduced/absent movements, bleeding, fluid loss, severe headache/visual symptoms or abdominal pain requires prompt maternity assessment."
+      ],
+      "sourceIds": [
+        "rcog-small-baby-detail",
+        "nice-ng133-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "multiples": {
+      "setting": "Specialist outpatient care when uncomplicated; admit for complications or planned birth",
+      "outpatient": [
+        "An uncomplicated multiple pregnancy does not by itself require continuous hospital admission; chorionicity determines surveillance and birth planning."
+      ],
+      "admit": [
+        "Admit preterm labour, bleeding, membrane rupture, maternal illness or fetal concern; suspected TTTS/TAPS or other monochorionic complications needs urgent fetal-medicine assessment."
+      ],
+      "ready": [
+        "The reason for assessment is resolved or has an agreed specialist plan; chorionicity, current findings and the next surveillance date are explicit.",
+        "After birth, assess each baby separately and complete the actual maternal delivery/complication pathway."
+      ],
+      "medicines": [
+        "Reconcile indicated supplements and other prescribed medicines; do not prescribe routine home tocolysis simply because the pregnancy is multiple."
+      ],
+      "tests": [
+        "Record each fetus’s findings, chorionicity and scan plan; ensure the family knows which service reviews results."
+      ],
+      "homeCare": [
+        "Discuss preterm-labour symptoms, fetal movement concerns, feeding/support and planned birth/neonatal capacity."
+      ],
+      "followUp": [
+        {
+          "when": "At the chorionicity-specific appointments",
+          "action": "Continue the named specialist schedule; increase intensity for a diagnosed complication."
+        },
+        {
+          "when": "Before planned birth",
+          "action": "Confirm date/place, fetal presentations and neonatal/anaesthetic plans."
+        }
+      ],
+      "returnImmediately": [
+        "Contractions, bleeding, fluid loss, reduced movements, severe headache or breathlessness requires maternity assessment."
+      ],
+      "sourceIds": [
+        "nice-ng137-detail",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "reduced-fetal-movements": {
+      "setting": "Prompt maternity assessment; home only after a reassuring complete review",
+      "outpatient": [
+        "After a reassuring assessment, many patients can go home, but persistent concern or risk factors may require ultrasound and further review."
+      ],
+      "admit": [
+        "Abnormal fetal assessment, persistent/recurrent concern with other risk findings, maternal illness or a need for monitoring/birth requires escalation and possible admission."
+      ],
+      "ready": [
+        "The clinician has reviewed movement history, examination and gestation-appropriate fetal assessment and addressed the patient’s ongoing concern.",
+        "If a scan is indicated, its timing and reviewer are booked; RCOG describes ultrasound normally within 24 hours of being requested."
+      ],
+      "medicines": [
+        "There is no routine take-home medicine for a normal reduced-movement assessment. Treat an identified underlying condition separately."
+      ],
+      "tests": [
+        "Record CTG/heartbeat assessment and whether growth/fluid ultrasound is indicated; communicate pending tests."
+      ],
+      "homeCare": [
+        "Advise the patient to contact the maternity unit immediately for another episode, even after repeated normal assessments; do not recommend waiting until the next day."
+      ],
+      "followUp": [
+        {
+          "when": "Within the arranged ultrasound/review window if indicated",
+          "action": "Review growth/fluid and decide the further plan."
+        },
+        {
+          "when": "Every recurrent episode",
+          "action": "Seek maternity assessment again regardless of how often it has happened."
+        }
+      ],
+      "returnImmediately": [
+        "Reduced/absent movements, bleeding, pain or fluid loss requires immediate maternity contact."
+      ],
+      "sourceIds": [
+        "rcog-movements-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "gdm": {
+      "setting": "Usually outpatient; admit acute metabolic or obstetric complications",
+      "outpatient": [
+        "Stable GDM is managed with education, glucose monitoring, nutrition and a reviewed medicine plan rather than automatic admission."
+      ],
+      "admit": [
+        "Admit suspected DKA/ketosis with illness, severe/recurrent hypoglycaemia, dehydration, marked symptomatic hyperglycaemia or maternal/fetal compromise. Poor control may need supervised treatment adjustment."
+      ],
+      "ready": [
+        "The acute problem has resolved; the patient can eat/drink, monitor glucose and use any prescribed medicine safely, with supplies and a named reviewer.",
+        "After delivery, confirm whether this was GDM or pre-existing diabetes; persistent hyperglycaemia needs assessment."
+      ],
+      "medicines": [
+        "Before birth, continue only the individually prescribed metformin/insulin plan and provide hypoglycaemia instructions.",
+        "NICE: stop GDM glucose-lowering therapy immediately after birth and reassess glucose before community transfer. Do not apply this stopping rule to type 1/type 2 diabetes."
+      ],
+      "tests": [
+        "Arrange postpartum diabetes testing, using one named pathway: India programme 75 g OGTT at 6 weeks; NICE fasting plasma glucose at 6–13 weeks, without routine postpartum OGTT. Use non-pregnant diagnostic interpretation."
+      ],
+      "homeCare": [
+        "Provide glucose/insulin supplies when indicated, nutrition/activity advice, feeding support and future-pregnancy testing/contraception advice."
+      ],
+      "followUp": [
+        {
+          "when": "Within 1 week of diagnosis (NICE)",
+          "action": "Joint diabetes–antenatal review and an individual plan."
+        },
+        {
+          "when": "Before discharge after birth",
+          "action": "Book the actual postpartum test and result review."
+        },
+        {
+          "when": "Annually after a negative postpartum test",
+          "action": "Continue diabetes surveillance and seek preconception testing for a future pregnancy."
+        }
+      ],
+      "returnImmediately": [
+        "Vomiting/illness with hyperglycaemia or ketones, severe hypoglycaemia, inability to keep fluids down or reduced fetal movements requires urgent assessment."
+      ],
+      "sourceIds": [
+        "nice-ng3-detail",
+        "anc-india-gdm"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "metformin",
+          "when": "Antenatal use only if prescribed; GDM treatment is reassessed/stopped after birth under the documented plan."
+        },
+        {
+          "regimenId": "insulin-nph",
+          "when": "Antenatal individual insulin prescription, not a universal starting dose."
+        }
+      ]
+    },
+    "pregestational-diabetes": {
+      "setting": "Outpatient coordinated care when stable; hospital admission for DKA or severe hypoglycaemia",
+      "outpatient": [
+        "Stable type 1/type 2 diabetes needs joint obstetric/diabetes follow-up, not routine inpatient care."
+      ],
+      "admit": [
+        "Suspected DKA in pregnancy requires urgent hospital/critical-care assessment even when glucose is not extremely high. Admit severe/recurrent hypoglycaemia, inability to maintain intake or maternal/fetal compromise."
+      ],
+      "ready": [
+        "DKA resolution includes blood ketones <0.6 mmol/L and venous pH >7.3, clinical recovery and a safe insulin transition; normal glucose alone does not establish resolution.",
+        "Eating/drinking and glucose/electrolytes are stable; subcutaneous insulin has been given with the required overlap and specialist review. After hypoglycaemia, the cause/recurrence risk has been addressed."
+      ],
+      "medicines": [
+        "Never stop all insulin in type 1 diabetes. After birth reduce insulin through an individual written plan with frequent glucose review; the GDM stopping rule does not apply.",
+        "Provide insulin, delivery devices, glucose/ketone strips and prescribed rescue treatment; teach the patient/family what to do when unwell."
+      ],
+      "tests": [
+        "Review renal/electrolyte results after an acute event and record retinal/renal follow-up; glucose logs/CGM do not replace clinical review of recurrent lows."
+      ],
+      "homeCare": [
+        "Give sick-day and hypoglycaemia instructions, out-of-hours contacts, feeding-related hypo precautions and the exact pre-birth/post-birth insulin plan."
+      ],
+      "followUp": [
+        {
+          "when": "Before discharge after DKA/severe hypoglycaemia",
+          "action": "Diabetes-team review, education and a booked early contact; document the precipitating cause and prevention plan."
+        },
+        {
+          "when": "Within the existing joint pregnancy follow-up schedule / immediately after birth",
+          "action": "Review glucose and doses promptly after treatment or physiological changes; do not wait for a routine 6-week check to adjust insulin."
+        }
+      ],
+      "returnImmediately": [
+        "Vomiting, ketones, dyspnoea, confusion, inability to maintain intake or severe/recurrent low glucose requires urgent hospital care."
+      ],
+      "sourceIds": [
+        "nice-ng3-detail",
+        "med-jbds-dka",
+        "med-jbds-hypo"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "glucagon-hypo",
+          "when": "Rescue treatment when specifically prescribed with patient/family training."
+        }
+      ]
+    },
+    "thyroid-pregnancy": {
+      "setting": "Usually outpatient; thyroid storm or severe decompensation requires admission",
+      "outpatient": [
+        "Stable treated hypo-/hyperthyroidism can be followed with scheduled TFTs and specialist obstetric/endocrine care."
+      ],
+      "admit": [
+        "Admit suspected thyroid storm, significant arrhythmia/heart failure, severe systemic illness or inability to take essential treatment."
+      ],
+      "ready": [
+        "The acute cardiac/systemic problem is controlled, oral treatment is established and liver/thyroid monitoring and specialist follow-up are organised.",
+        "If Graves disease/antithyroid treatment affects neonatal risk, the birth/neonatal team has the relevant history and antibody/treatment information."
+      ],
+      "medicines": [
+        "Continue the agreed replacement/antithyroid medicine; do not stop it solely because delivery has occurred. Record any postpartum dose change and TFT date.",
+        "Explain urgent action for possible antithyroid drug toxicity, including fever/sore throat or jaundice, and avoid routine block-and-replace treatment."
+      ],
+      "tests": [
+        "Assign TFT follow-up after a dose change and the postpartum review; assess additional tests according to the illness/drug used."
+      ],
+      "homeCare": [
+        "Give written medicine instructions, toxicity warnings and a neonatal plan when relevant."
+      ],
+      "followUp": [
+        {
+          "when": "At the scheduled TFT/specialist review",
+          "action": "Adjust treatment from the measured results, not symptoms alone."
+        },
+        {
+          "when": "After birth",
+          "action": "Follow the individual replacement/Graves plan and ensure neonatal assessment when indicated."
+        }
+      ],
+      "returnImmediately": [
+        "Fever with marked tachycardia/confusion, breathlessness/chest pain, collapse, jaundice or possible drug-related agranulocytosis requires urgent assessment."
+      ],
+      "sourceIds": [
+        "rcog-gtg76-thyroid",
+        "med-thyroid-storm-2026"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "anaemia-iron-deficiency": {
+      "setting": "Usually outpatient replacement; admit instability, severe symptoms or major bleeding",
+      "outpatient": [
+        "Stable confirmed deficiency can usually be treated with oral iron or a planned infusion service when appropriate. The Hb value must be interpreted with symptoms, gestation and cause."
+      ],
+      "admit": [
+        "Admit active significant bleeding, cardiovascular compromise, syncope, severe symptoms or a need for urgent transfusion/close monitoring. Consider proximity to birth and access to definitive treatment."
+      ],
+      "ready": [
+        "No ongoing bleeding or physiological instability; the anaemia cause, treatment route and response plan are documented.",
+        "After IV iron or transfusion, the required observation is complete and any reaction has been assessed. Do not discharge only because an infusion finished."
+      ],
+      "medicines": [
+        "Use a specific elemental-iron/folate prescription for confirmed IDA; assess B12/folate or other causes when indicated. Avoid duplicate oral/IV/OTC iron.",
+        "Postpartum anaemia treatment differs from a preventive supplement; specify what continues and when it is reviewed."
+      ],
+      "tests": [
+        "Record Hb/indices and relevant deficiency investigations; repeat Hb after about 2–4 weeks of oral treatment and investigate an inadequate response."
+      ],
+      "homeCare": [
+        "Discuss administration, side effects, adherence, diet and how to access the next test or infusion."
+      ],
+      "followUp": [
+        {
+          "when": "2–4 weeks after starting oral treatment",
+          "action": "Check Hb response, tolerance and adherence; reassess the diagnosis if response is inadequate."
+        },
+        {
+          "when": "Before birth / after major blood loss",
+          "action": "Reassess urgency, replacement progress and any specialist/transfusion plan."
+        }
+      ],
+      "returnImmediately": [
+        "New chest pain, breathlessness at rest, fainting, rapid deterioration or recurrent heavy bleeding requires urgent assessment."
+      ],
+      "sourceIds": [
+        "med-who-anc-dose",
+        "med-fcm-label",
+        "discharge-who-iron"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "iron-oral-treatment",
+          "when": "For confirmed antenatal iron-deficiency anaemia."
+        },
+        {
+          "regimenId": "iron-postpartum-treatment",
+          "when": "For diagnosed postpartum iron-deficiency anaemia after the acute cause is controlled."
+        }
+      ]
+    },
+    "vte": {
+      "setting": "Urgent hospital assessment; outpatient treatment only through a suitable specialist pathway",
+      "outpatient": [
+        "Selected stable DVT/low-risk patients may be managed outside hospital only after specialist assessment, a safe anticoagulation plan and reliable follow-up/support."
+      ],
+      "admit": [
+        "Suspected PE, haemodynamic or respiratory compromise, major bleeding risk, severe pain, extensive thrombosis or unsafe home treatment requires hospital care; unstable PE needs urgent critical-care treatment."
+      ],
+      "ready": [
+        "The diagnosis/continuing investigation plan and anticoagulation indication are clear; oxygenation/haemodynamics and bleeding risk support the selected setting.",
+        "The patient can self-inject or has assistance, has medicine supply, understands missed-dose/bleeding instructions and has a birth/neuraxial plan if still pregnant."
+      ],
+      "medicines": [
+        "Use therapeutic anticoagulation for diagnosed VTE, not the lower prophylaxis dose. RCOG treatment continues through pregnancy and for at least 6 weeks postpartum and at least 3 months in total.",
+        "Reassess renal function, weight, bleeding risk and breastfeeding suitability; record exactly when to hold/restart around planned birth or procedures."
+      ],
+      "tests": [
+        "Assign review of any pending imaging, CBC/renal findings and drug monitoring required for the individual patient."
+      ],
+      "homeCare": [
+        "Teach injection technique, sharps disposal, bleeding precautions, medicine interactions and the contact route for planned labour/procedures."
+      ],
+      "followUp": [
+        {
+          "when": "Before discharge",
+          "action": "Name the anticoagulation/obstetric reviewer, provide a supply and book the next clinical review."
+        },
+        {
+          "when": "Before stopping anticoagulation",
+          "action": "Confirm the minimum course is complete and reassess continuing thrombosis risk; do not stop simply because leg symptoms improved."
+        }
+      ],
+      "returnImmediately": [
+        "Breathlessness, chest pain, haemoptysis, collapse, worsening unilateral leg symptoms or major bleeding requires immediate care."
+      ],
+      "sourceIds": [
+        "med-rcog-vte-37b",
+        "med-rcog-vte-37a"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "enoxaparin-treatment",
+          "when": "Only the selected therapeutic regimen, adjusted to the individual patient; not routine prophylaxis."
+        }
+      ]
+    },
+    "maternal-sepsis": {
+      "setting": "Emergency hospital admission; organ dysfunction may require critical care",
+      "outpatient": [
+        "Suspected maternal sepsis with systemic illness is not a routine outpatient antibiotic prescription. A localised infection without sepsis may follow its own outpatient pathway after assessment."
+      ],
+      "admit": [
+        "Admit suspected sepsis, hypotension, respiratory compromise, altered mental state, oliguria or inability to maintain intake. Arrange urgent source control and appropriate organ support."
+      ],
+      "ready": [
+        "The source has been controlled or has a definitive plan; haemodynamics/respiratory function and organ trends support care outside hospital.",
+        "No unresolved vasopressor/acute organ-support need; an effective oral regimen or a formally supported outpatient IV service is arranged if antibiotics remain necessary. Persistent fever or deterioration needs reassessment."
+      ],
+      "medicines": [
+        "Reconcile cultures with the actual infection diagnosis; give the selected antibiotic’s dose, route, remaining duration and stop/review date. Do not prescribe every sepsis example combination together."
+      ],
+      "tests": [
+        "Assign a named reviewer and action plan for pending cultures, susceptibilities, pathology and abnormal renal/liver/blood results; ensure a patient callback route."
+      ],
+      "homeCare": [
+        "Explain the source, treatment, risk of recurrence and post-sepsis physical/emotional effects. Provide written warning symptoms, 24-hour access and support for infant care if relevant."
+      ],
+      "followUp": [
+        {
+          "when": "Before discharge",
+          "action": "Book the early clinical/antimicrobial review required by the source and organ injury, with the responsible team."
+        },
+        {
+          "when": "At the documented postnatal/post-sepsis review",
+          "action": "Review recovery, medicines, outstanding results and any specialist rehabilitation needs."
+        }
+      ],
+      "returnImmediately": [
+        "Recurrent fever/rigors, confusion, faintness, breathlessness, reduced urine, worsening abdominal/wound pain or offensive lochia requires immediate reassessment."
+      ],
+      "sourceIds": [
+        "nice-ng255-detail",
+        "med-smfm-sepsis",
+        "discharge-nice-acutely-ill",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "hyperemesis-gravidarum": {
+      "setting": "Ambulatory rehydration or inpatient care according to severity",
+      "outpatient": [
+        "Some patients improve after ambulatory IV rehydration and antiemetics and can go home with a functioning oral plan."
+      ],
+      "admit": [
+        "Admit dehydration, inability to retain fluids/oral medicines, abnormal blood tests, significant ongoing weight/nutritional loss or comorbidity made unsafe by vomiting."
+      ],
+      "ready": [
+        "Hydration and electrolyte problems are corrected or safely improving, oral fluids/medicines are tolerated and a nutrition/antiemetic plan is feasible.",
+        "Review weight, ongoing needs and the risk of thiamine deficiency; ketonuria alone is not a reliable severity or discharge measure."
+      ],
+      "medicines": [
+        "Supply the selected oral antiemetic(s), with dose/frequency and how to reduce as symptoms improve; do not list all alternatives as simultaneous prescriptions.",
+        "Provide indicated oral thiamine; review whether iron worsens vomiting and assess VTE prevention for ongoing risk rather than automatically continuing inpatient prophylaxis."
+      ],
+      "tests": [
+        "Record electrolyte/renal results and any repeat testing needed. Persistent severe symptoms later in pregnancy may require growth assessment."
+      ],
+      "homeCare": [
+        "Discuss small tolerated intake, hydration, prescription supply before tablets run out and when to re-contact the maternity team."
+      ],
+      "followUp": [
+        {
+          "when": "At the booked early treatment review",
+          "action": "Review intake, weight, medicines and any repeat electrolytes; bring forward review if oral treatment fails."
+        },
+        {
+          "when": "If severe symptoms persist beyond 20 weeks",
+          "action": "Arrange maternity review and consider fetal-growth surveillance."
+        }
+      ],
+      "returnImmediately": [
+        "Inability to keep fluids/medicines down, reduced urine, faintness, confusion, haematemesis or worsening illness requires reassessment."
+      ],
+      "sourceIds": [
+        "rcog-hyperemesis-detail",
+        "med-rcog-hg"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "doxylamine-pyridoxine",
+          "when": "One selected formulation-specific option."
+        },
+        {
+          "regimenId": "ondansetron-oral",
+          "when": "Only if selected after risk/benefit review; heed hepatic/QT cautions."
+        },
+        {
+          "regimenId": "thiamine-hg-oral",
+          "when": "When prolonged poor intake makes supplementation indicated."
+        }
+      ]
+    },
+    "icp": {
+      "setting": "Usually outpatient specialist monitoring; admit concerning symptoms/tests or planned birth",
+      "outpatient": [
+        "Stable ICP is commonly monitored outside hospital with symptom, bile-acid and liver-test review and a documented birth plan."
+      ],
+      "admit": [
+        "Admit maternal/fetal compromise, severe alternative liver disease concerns, significant bleeding/coagulopathy or another obstetric indication; assess reduced movements immediately."
+      ],
+      "ready": [
+        "The diagnosis and alternative causes have been assessed; results, repeat testing and timing/place of birth are documented.",
+        "After birth, explain expected resolution and the need to confirm it rather than assuming persistent itching or abnormal tests are normal."
+      ],
+      "medicines": [
+        "Continue only symptom treatment that has been prescribed; UDCA does not replace the birth/surveillance plan. Routine vitamin K is not required for every patient."
+      ],
+      "tests": [
+        "Arrange repeat bile acids/LFTs according to the clinical plan; at the 6-week postnatal check confirm symptoms and blood tests have resolved, with further assessment if not."
+      ],
+      "homeCare": [
+        "Provide the fetal-movement and urgent-contact plan and explain how bile-acid results affect birth timing."
+      ],
+      "followUp": [
+        {
+          "when": "At each arranged blood-test/obstetric review",
+          "action": "Review the current result and birth plan rather than relying on an old peak alone."
+        },
+        {
+          "when": "6 weeks after birth",
+          "action": "Check symptom resolution and liver/bile-acid results; refer persistent abnormalities."
+        }
+      ],
+      "returnImmediately": [
+        "Reduced movements, jaundice, bleeding, severe upper abdominal pain, fever or systemic illness requires prompt assessment."
+      ],
+      "sourceIds": [
+        "rcog-icp-detail",
+        "med-smfm-icp"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "ursodeoxycholic-icp",
+          "when": "Only when prescribed for maternal symptoms; review continuation after birth."
+        }
+      ]
+    },
+    "asthma-epilepsy-cardiac-ckd-autoimmune": {
+      "setting": "Stable disease: coordinated outpatient care; acute decompensation: hospital assessment",
+      "outpatient": [
+        "A stable chronic diagnosis alone does not mandate admission. A named respiratory, neurological, cardiac, renal or rheumatology plan is required for the actual condition."
+      ],
+      "admit": [
+        "Severe breathlessness/hypoxia, chest pain/syncope, prolonged/recurrent seizure, acute kidney injury/oliguria, severe hypertension or systemic autoimmune/obstetric deterioration requires urgent hospital assessment and appropriate admission."
+      ],
+      "ready": [
+        "The acute problem is resolved and the relevant specialty has agreed treatment, monitoring and the safe care setting.",
+        "Persistent organ dysfunction, oxygen/infusion requirements or an unexplained seizure must not be covered by a generic discharge checklist."
+      ],
+      "medicines": [
+        "Reconcile each disease-specific medicine, pregnancy/postpartum changes, renal dosing and breastfeeding safety. Do not abruptly stop essential anti-seizure, cardiac or steroid treatment without a specialist plan."
+      ],
+      "tests": [
+        "Document the actual disease/organ results, pending investigations and named specialty reviewer; test schedules depend on that diagnosis."
+      ],
+      "homeCare": [
+        "Give an illness-specific action plan, medication access and clear emergency contacts."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Book the actual specialty/maternity follow-up and tests for the diagnosed condition."
+        },
+        {
+          "when": "After birth or a major medicine change",
+          "action": "Arrange early reassessment rather than assuming the prepregnancy regimen remains suitable."
+        }
+      ],
+      "returnImmediately": [
+        "Breathlessness, chest pain, collapse, seizure, severe headache, reduced urine or rapid deterioration needs urgent hospital care."
+      ],
+      "sourceIds": [
+        "discharge-nice-acutely-ill",
+        "discharge-nice-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [],
+      "scopeNote": "Triage and handover guidance for a multi-condition index. This is not a complete asthma, epilepsy, cardiac, renal or autoimmune discharge protocol; the relevant specialty plan must be attached."
+    },
+    "uti-pyelonephritis": {
+      "setting": "Cystitis often outpatient; pregnancy pyelonephritis initially inpatient under the ACOG pathway",
+      "outpatient": [
+        "Stable lower UTI without fever/flank pain or systemic illness can usually be treated orally with culture-guided follow-up."
+      ],
+      "admit": [
+        "Suspected pyelonephritis in pregnancy: initial inpatient management (ACOG). Admit sepsis, dehydration, vomiting/inability to take treatment, obstruction concerns or maternal/fetal compromise."
+      ],
+      "ready": [
+        "Clinical improvement, stable observations, adequate oral intake and a culture-directed treatment plan; investigate persistent fever/pain or failure to improve.",
+        "A suitable oral step-down or supported treatment service is arranged; nitrofurantoin/fosfomycin are not renal-tissue step-down treatment for pyelonephritis."
+      ],
+      "medicines": [
+        "For pyelonephritis, the selected ACOG regimen completes 14 days total, counting inpatient and outpatient treatment; prescribe the remaining days and a culture-appropriate drug.",
+        "For lower UTI, use the separate complete pregnancy-compatible regimen and avoid restarting a full course at discharge."
+      ],
+      "tests": [
+        "A named clinician reviews culture/susceptibility and contacts the patient if treatment changes. Record the chosen repeat-culture/recurrence plan."
+      ],
+      "homeCare": [
+        "Explain hydration, treatment completion and the difference between bladder symptoms and signs of upper/systemic infection."
+      ],
+      "followUp": [
+        {
+          "when": "If not improving within 48 hours of treatment",
+          "action": "Reassess promptly for resistance, obstruction or another diagnosis."
+        },
+        {
+          "when": "At the booked culture/result review",
+          "action": "Confirm susceptibility and clinical response; arrange further testing/suppression only when indicated."
+        }
+      ],
+      "returnImmediately": [
+        "Fever/rigors, flank pain, vomiting, reduced urine, faintness, worsening illness, contractions or reduced movements needs urgent assessment."
+      ],
+      "sourceIds": [
+        "nice-ng109-detail",
+        "nice-ng111-detail",
+        "med-acog-uti"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "nitrofurantoin-lower",
+          "when": "Lower-tract infection only when appropriate; not pyelonephritis step-down."
+        },
+        {
+          "regimenId": "cefalexin-lower",
+          "when": "This displayed regimen is for lower UTI; do not use it as a universal upper-UTI prescription."
+        }
+      ]
+    },
+    "chorioamnionitis": {
+      "setting": "Inpatient obstetric infection/birth pathway",
+      "outpatient": [
+        "Suspected intra-amniotic infection is not a home-observation diagnosis."
+      ],
+      "admit": [
+        "Admit suspected infection and assess for maternal sepsis, fetal compromise and the need for birth/source control."
+      ],
+      "ready": [
+        "After birth/source control, maternal condition and observations are improving with no unresolved sepsis or obstetric complication.",
+        "The neonatal team has received the infection, antibiotic and membrane-rupture history and made the baby’s separate observation/treatment plan."
+      ],
+      "medicines": [
+        "Document the actual antimicrobial indication, culture results and whether further post-birth therapy is needed; prolonged home antibiotics are not automatic for every treated chorioamnionitis case."
+      ],
+      "tests": [
+        "Assign culture/pathology review and repeat maternal organ/blood tests if abnormal."
+      ],
+      "homeCare": [
+        "Give postpartum infection and bleeding warnings, feeding support and a contact route; explain any neonatal stay."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Name the reviewer of outstanding microbiology and any antibiotic stop/review decision."
+        },
+        {
+          "when": "At early postnatal contacts",
+          "action": "Review fever, pain, lochia, wound status and maternal/newborn recovery."
+        }
+      ],
+      "returnImmediately": [
+        "Fever/rigors, offensive lochia, worsening abdominal/wound pain, heavy bleeding, faintness or newborn illness requires urgent reassessment."
+      ],
+      "sourceIds": [
+        "med-nag-obstetric",
+        "nice-ng255-detail",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "gbs": {
+      "setting": "Usually outpatient colonisation care; admission follows labour, membrane rupture or infection",
+      "outpatient": [
+        "GBS colonisation alone does not require hospital admission or routine antenatal eradication antibiotics. A symptomatic urinary infection follows the UTI pathway."
+      ],
+      "admit": [
+        "Labour/membrane rupture needs the documented maternity/antibiotic plan. Fever, maternal illness or fetal/newborn concerns requires hospital assessment."
+      ],
+      "ready": [
+        "Maternal postnatal assessment is satisfactory; the baby has a documented infection-risk assessment and any required observation/treatment.",
+        "Communicate maternal GBS status, intrapartum antibiotic timing and membrane-rupture duration to the newborn team."
+      ],
+      "medicines": [
+        "Intrapartum prophylaxis is not a routine take-home antibiotic course. Treat a diagnosed urinary or other infection with its own complete prescription."
+      ],
+      "tests": [
+        "Make maternal microbiology/urine results available to the maternity and neonatal team."
+      ],
+      "homeCare": [
+        "Explain the labour contact plan antenatally and signs of newborn infection after birth."
+      ],
+      "followUp": [
+        {
+          "when": "At labour or membrane rupture",
+          "action": "Contact the maternity unit promptly to implement the recorded plan."
+        },
+        {
+          "when": "After birth",
+          "action": "Follow the newborn observation/discharge and routine postnatal contact arrangements."
+        }
+      ],
+      "returnImmediately": [
+        "Maternal fever or a baby with poor feeding, unusual sleepiness, abnormal breathing or temperature concerns needs urgent assessment."
+      ],
+      "sourceIds": [
+        "rcog-gbs-detail",
+        "anc-rcog-gbs",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "sti-syphilis": {
+      "setting": "Usually outpatient stage-specific treatment; admit severe neurological/systemic disease or obstetric complications",
+      "outpatient": [
+        "Uncomplicated syphilis can be treated through a specialist antenatal/STI service with reliable attendance for all required doses."
+      ],
+      "admit": [
+        "Neurological/ocular/otic disease, severe systemic illness or a maternal/fetal complication needs urgent specialist assessment and possible admission/IV treatment."
+      ],
+      "ready": [
+        "Treatment appropriate to stage/pregnancy is given or fully arranged, allergy/penicillin needs are addressed and the follow-up/partner plan is documented.",
+        "The neonatal team has maternal stage, serology, treatment dates/completeness and the infant assessment plan."
+      ],
+      "medicines": [
+        "Use only the correct penicillin formulation and stage-specific course. Missed weekly doses in pregnancy can require restarting the course; do not simply omit a missed dose."
+      ],
+      "tests": [
+        "Document baseline and follow-up nontreponemal titres with the specialist service; track treatment and repeat-testing dates and infant results."
+      ],
+      "homeCare": [
+        "Explain treatment attendance, partner evaluation/treatment, reinfection prevention and symptoms after treatment that need review."
+      ],
+      "followUp": [
+        {
+          "when": "At every required treatment dose and serology appointment",
+          "action": "Confirm completion and assess reinfection/treatment response."
+        },
+        {
+          "when": "Before birth and newborn discharge",
+          "action": "Ensure maternal records and the infant’s investigation/treatment follow-up are available to the neonatal team."
+        }
+      ],
+      "returnImmediately": [
+        "Neurological/visual symptoms, severe illness, contractions/reduced movements after treatment or an unwell newborn requires urgent assessment."
+      ],
+      "sourceIds": [
+        "cdc-syphilis-pregnancy-detail",
+        "med-cdc-syphilis",
+        "med-cdc-neurosyphilis"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "benzathine-early",
+          "when": "Only for the documented early-stage indication."
+        },
+        {
+          "regimenId": "benzathine-late",
+          "when": "Alternative stage-specific course; not given in addition to the early-stage course."
+        }
+      ]
+    },
+    "sti-chlamydia": {
+      "setting": "Usually outpatient treatment",
+      "outpatient": [
+        "Uncomplicated chlamydia in a stable pregnant patient can usually be treated outside hospital with partner care and follow-up."
+      ],
+      "admit": [
+        "Pelvic/systemic illness, significant pain, fever or a suspected obstetric complication requires assessment for PID, ectopic pregnancy or another cause and admission when indicated."
+      ],
+      "ready": [
+        "Treatment is provided, tolerated or reliably arranged; partner management and pregnancy-specific follow-up are explained."
+      ],
+      "medicines": [
+        "Use the checked pregnancy regimen and counsel about adherence and sex/partner treatment to prevent reinfection."
+      ],
+      "tests": [
+        "Pregnancy: test of cure about 4 weeks after treatment and repeat testing at 3 months; further pregnancy retesting follows risk/programme guidance."
+      ],
+      "homeCare": [
+        "Explain partner notification and avoidance of sex until the required interval/treatment completion and partner treatment are satisfied."
+      ],
+      "followUp": [
+        {
+          "when": "About 4 weeks",
+          "action": "Pregnancy test of cure; evaluate persistent symptoms sooner."
+        },
+        {
+          "when": "3 months",
+          "action": "Retest for reinfection and reassess ongoing risk."
+        }
+      ],
+      "returnImmediately": [
+        "Fever, severe pelvic/abdominal pain, fainting or ongoing/worsening symptoms requires assessment."
+      ],
+      "sourceIds": [
+        "cdc-chlamydia-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "azithromycin-chlamydia",
+          "when": "For the selected pregnancy-compatible chlamydia regimen."
+        }
+      ]
+    },
+    "sti-gonorrhoea": {
+      "setting": "Usually outpatient treatment; admit disseminated/systemic or pelvic complications",
+      "outpatient": [
+        "Stable uncomplicated gonorrhoea is usually managed through outpatient STI/antenatal care with treatment and partner services."
+      ],
+      "admit": [
+        "Disseminated illness, joint involvement, sepsis, severe pelvic pain or suspected PID requires hospital/specialist assessment."
+      ],
+      "ready": [
+        "The correct site/weight-based treatment has been given or arranged and partner/retesting plans are documented."
+      ],
+      "medicines": [
+        "Use the checked gonorrhoea regimen. Add pregnancy-appropriate chlamydia treatment only when indicated, not an automatic doxycycline pregnancy prescription."
+      ],
+      "tests": [
+        "Pharyngeal gonorrhoea needs test of cure at 7–14 days; repeat testing at 3 months for reinfection. Persistent symptoms need earlier reassessment and resistance evaluation."
+      ],
+      "homeCare": [
+        "Give partner-treatment and sex-avoidance instructions and explain why persistent symptoms must be reported."
+      ],
+      "followUp": [
+        {
+          "when": "7–14 days for pharyngeal infection",
+          "action": "Complete test of cure with the treating service."
+        },
+        {
+          "when": "3 months",
+          "action": "Retest for reinfection; arrange earlier review for symptoms or a resistance concern."
+        }
+      ],
+      "returnImmediately": [
+        "Fever, joint pain/swelling, severe pelvic pain or worsening systemic illness requires urgent assessment."
+      ],
+      "sourceIds": [
+        "cdc-gonorrhoea-detail",
+        "cdc-chlamydia-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "ceftriaxone-gonorrhoea",
+          "when": "Document the completed injection and indication; do not repeat it routinely at home."
+        }
+      ]
+    },
+    "sti-hsv": {
+      "setting": "Usually outpatient if oral intake and urinary function are maintained",
+      "outpatient": [
+        "Uncomplicated genital herpes can usually be managed with oral treatment and a documented pregnancy/birth plan."
+      ],
+      "admit": [
+        "Severe/disseminated infection, neurological illness, hepatitis concern, urinary retention, inability to take oral therapy or obstetric/fetal concern requires hospital assessment."
+      ],
+      "ready": [
+        "Pain, hydration and voiding are satisfactory; oral treatment is feasible and the maternity team knows the infection timing/history.",
+        "Review birth/neonatal management when infection is recent or lesions/symptoms are present near labour."
+      ],
+      "medicines": [
+        "Use the complete initial-episode or indicated late-pregnancy suppression regimen; these are different courses."
+      ],
+      "tests": [
+        "Assign any pending virology and specialist/neonatal assessment results."
+      ],
+      "homeCare": [
+        "Explain lesion hygiene, transmission precautions, partner discussion and why labour symptoms must be reported promptly."
+      ],
+      "followUp": [
+        {
+          "when": "At the scheduled antenatal/STI review",
+          "action": "Review response and the late-pregnancy/birth plan."
+        },
+        {
+          "when": "At labour or a recurrent outbreak near birth",
+          "action": "Contact the maternity unit to reassess delivery/neonatal precautions."
+        }
+      ],
+      "returnImmediately": [
+        "Inability to void, severe illness, jaundice, severe headache/confusion or an unwell newborn requires urgent care."
+      ],
+      "sourceIds": [
+        "cdc-hsv-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "acyclovir-initial",
+          "when": "For the selected initial episode."
+        },
+        {
+          "regimenId": "acyclovir-pregnancy-suppression",
+          "when": "Only for the separate late-pregnancy suppression indication."
+        }
+      ]
+    },
+    "vaginitis": {
+      "setting": "Usually outpatient; systemic/pelvic symptoms require another diagnosis to be assessed",
+      "outpatient": [
+        "Uncomplicated BV, candidiasis or trichomoniasis does not normally require admission. Identify the cause rather than treating every discharge with every drug."
+      ],
+      "admit": [
+        "Fever, severe pelvic/abdominal pain, systemic illness, pregnancy fluid-loss concern or inability to tolerate treatment needs assessment for another/complicated condition."
+      ],
+      "ready": [
+        "The diagnosis, pregnancy-appropriate treatment and return advice are clear; follow-up is arranged for persistent/recurrent or uncertain symptoms."
+      ],
+      "medicines": [
+        "Use the regimen for the confirmed/likely organism. In pregnancy use the selected topical azole course for candidiasis; do not substitute routine oral fluconazole.",
+        "Partner treatment/retesting is relevant to trichomoniasis, not automatically to every cause of vaginitis."
+      ],
+      "tests": [
+        "Assign microbiology/STI results and arrange review if tests or symptoms do not fit the presumed diagnosis."
+      ],
+      "homeCare": [
+        "Discuss treatment completion, avoiding irritants and relevant partner/STI advice."
+      ],
+      "followUp": [
+        {
+          "when": "If symptoms persist or recur",
+          "action": "Reassess the diagnosis and treatment rather than repeatedly self-treating."
+        },
+        {
+          "when": "About 3 months after trichomoniasis treatment",
+          "action": "Retest sexually active women for reinfection under the CDC pathway."
+        }
+      ],
+      "returnImmediately": [
+        "Fever, severe pain, fainting, bleeding or suspected membrane rupture requires prompt assessment."
+      ],
+      "sourceIds": [
+        "cdc-bv-detail",
+        "cdc-candidiasis-detail",
+        "cdc-trichomoniasis-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "pid": {
+      "setting": "Outpatient for selected mild/moderate disease; admission for defined high-risk features",
+      "outpatient": [
+        "Selected mild/moderate PID can be treated outside hospital if oral treatment, adherence and follow-up are feasible."
+      ],
+      "admit": [
+        "CDC admission criteria include pregnancy, tubo-ovarian abscess, severe illness/vomiting or temperature >38.5°C, inability to tolerate/follow oral therapy, lack of response, or inability to exclude a surgical emergency."
+      ],
+      "ready": [
+        "Pain, fever and pelvic findings are improving; oral intake/treatment is feasible and the remaining course is supplied.",
+        "After parenteral treatment, oral transition is usually after 24–48 hours of clinical improvement. A tubo-ovarian abscess requires more than 24 hours of inpatient observation and a source-control plan when indicated."
+      ],
+      "medicines": [
+        "Complete 14 days total therapy in the selected regimen, counting inpatient doses. Doxycycline/metronidazole step-down requires the appropriate nonpregnant context; pregnancy needs specialist inpatient treatment."
+      ],
+      "tests": [
+        "Review STI tests and any imaging/abscess findings; arrange partner testing/treatment and results callback."
+      ],
+      "homeCare": [
+        "Avoid sex until treatment is completed, symptoms resolved and partners treated; discuss reinfection and fertility risks."
+      ],
+      "followUp": [
+        {
+          "when": "Within 72 hours of outpatient treatment",
+          "action": "Confirm clinical improvement; no response needs reassessment/hospital treatment."
+        },
+        {
+          "when": "3 months if gonorrhoea/chlamydia associated",
+          "action": "Retest for reinfection; follow the abscess/specialist review plan when relevant."
+        }
+      ],
+      "returnImmediately": [
+        "Worsening pain, fever, vomiting, fainting or no improvement within 72 hours requires urgent reassessment."
+      ],
+      "sourceIds": [
+        "cdc-pid-detail"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "doxycycline-pid",
+          "when": "Nonpregnant PID oral component only when selected; pregnancy is an admission criterion."
+        },
+        {
+          "regimenId": "metronidazole-pid",
+          "when": "Remaining anaerobic-cover component of the selected complete course."
+        }
+      ]
+    },
+    "viral-pregnancy-hbv-hcv-hiv-rubella-cmv-varicella-parvo-covid-flu": {
+      "setting": "Most stable cases need specialist outpatient coordination; severe infection needs admission",
+      "outpatient": [
+        "A positive viral screen or uncomplicated infection does not by itself mandate admission. The actual virus, gestation, maternal condition and fetal/newborn risk determine care."
+      ],
+      "admit": [
+        "Respiratory compromise, severe dehydration, encephalopathy, acute liver failure concern, sepsis or obstetric/fetal deterioration requires urgent hospital assessment."
+      ],
+      "ready": [
+        "Maternal illness is stable, required antiviral/other treatment is accessible and relevant infection-control and fetal/neonatal plans are documented.",
+        "Do not apply one discharge schedule or medicine list to all viruses in this index."
+      ],
+      "medicines": [
+        "Reconcile the disease-specific antiviral/other treatment with the responsible specialist, including breastfeeding and interaction considerations. Prevention of maternal-to-child transmission needs its own documented birth/newborn plan."
+      ],
+      "tests": [
+        "Assign virology/serology, liver or other organ results and any fetal testing to a named reviewer; provide the actual review date."
+      ],
+      "homeCare": [
+        "Explain infection-specific contact precautions, warning symptoms and how to access maternity/infectious-disease advice."
+      ],
+      "followUp": [
+        {
+          "when": "Before discharge",
+          "action": "Book the relevant specialist and maternity follow-up, and communicate the newborn plan."
+        },
+        {
+          "when": "At the infection-specific testing/scan interval",
+          "action": "Review results and modify the birth/prevention plan when indicated."
+        }
+      ],
+      "returnImmediately": [
+        "Breathlessness, chest pain, confusion, jaundice, persistent vomiting, reduced movements or an unwell newborn requires urgent assessment."
+      ],
+      "sourceIds": [
+        "discharge-nice-acutely-ill",
+        "nice-ng255-detail",
+        "discharge-nice-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [],
+      "scopeNote": "General triage and discharge handover for a multi-virus index. HIV/HBV prophylaxis, antiviral courses and infection-specific testing require the separate specialist pathway; they are not replaced by this checklist."
+    },
+    "aub": {
+      "setting": "Usually outpatient if stable; admit acute heavy bleeding or severe symptomatic compromise",
+      "outpatient": [
+        "Stable bleeding/fibroid symptoms can usually be investigated and treated through gynaecology follow-up. Exclude pregnancy where relevant and assess anaemia and cancer risk."
+      ],
+      "admit": [
+        "Admit uncontrolled heavy bleeding, instability/syncope, severe symptomatic anaemia, suspected infection or a surgical emergency. Acute pain requires assessment for other causes rather than assuming fibroids."
+      ],
+      "ready": [
+        "Bleeding is controlled to a safe level, observations and symptoms are satisfactory and the investigation/definitive treatment plan is documented.",
+        "If a procedure occurred, recovery, pain, bladder function and complications have been assessed; anaemia needs its own treatment/response plan."
+      ],
+      "medicines": [
+        "Use the selected bleeding-control/contraceptive or iron regimen with duration and review dates, after contraindication assessment. Do not prescribe all listed alternatives together."
+      ],
+      "tests": [
+        "Review CBC and any indicated imaging/endometrial sampling; assign responsibility for pathology and persistent/abnormal bleeding results."
+      ],
+      "homeCare": [
+        "Explain expected bleeding, what counts as deterioration, treatment adherence, contraception/fertility goals and access to the next review."
+      ],
+      "followUp": [
+        {
+          "when": "At the booked gynaecology/result review",
+          "action": "Assess response and complete evaluation of persistent bleeding or a suspected structural/malignant cause."
+        },
+        {
+          "when": "2–4 weeks if treating anaemia",
+          "action": "Check Hb response and investigate inadequate improvement."
+        }
+      ],
+      "returnImmediately": [
+        "Very heavy bleeding, fainting, chest pain/breathlessness, severe pain or fever requires urgent assessment."
+      ],
+      "sourceIds": [
+        "nice-ng88-detail",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "txa-hmb",
+          "when": "Only the selected heavy-menstrual-bleeding course after contraindication review."
+        },
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "For suitable pain symptoms; severe/worsening pain still needs assessment."
+        }
+      ]
+    },
+    "fibroids": {
+      "setting": "Usually outpatient if stable; admit acute heavy bleeding or severe symptomatic compromise",
+      "outpatient": [
+        "Stable bleeding/fibroid symptoms can usually be investigated and treated through gynaecology follow-up. Exclude pregnancy where relevant and assess anaemia and cancer risk."
+      ],
+      "admit": [
+        "Admit uncontrolled heavy bleeding, instability/syncope, severe symptomatic anaemia, suspected infection or a surgical emergency. Acute pain requires assessment for other causes rather than assuming fibroids."
+      ],
+      "ready": [
+        "Bleeding is controlled to a safe level, observations and symptoms are satisfactory and the investigation/definitive treatment plan is documented.",
+        "If a procedure occurred, recovery, pain, bladder function and complications have been assessed; anaemia needs its own treatment/response plan."
+      ],
+      "medicines": [
+        "Use the selected bleeding-control/contraceptive or iron regimen with duration and review dates, after contraindication assessment. Do not prescribe all listed alternatives together."
+      ],
+      "tests": [
+        "Review CBC and any indicated imaging/endometrial sampling; assign responsibility for pathology and persistent/abnormal bleeding results.",
+        "Record the fibroid location/size and the planned imaging or surgical review; hysterectomy/myomectomy recovery needs the actual procedure-specific plan."
+      ],
+      "homeCare": [
+        "Explain expected bleeding, what counts as deterioration, treatment adherence, contraception/fertility goals and access to the next review."
+      ],
+      "followUp": [
+        {
+          "when": "At the booked gynaecology/result review",
+          "action": "Assess response and complete evaluation of persistent bleeding or a suspected structural/malignant cause."
+        },
+        {
+          "when": "2–4 weeks if treating anaemia",
+          "action": "Check Hb response and investigate inadequate improvement."
+        }
+      ],
+      "returnImmediately": [
+        "Very heavy bleeding, fainting, chest pain/breathlessness, severe pain or fever requires urgent assessment."
+      ],
+      "sourceIds": [
+        "nice-ng88-detail",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "txa-hmb",
+          "when": "Only the selected heavy-menstrual-bleeding course after contraindication review."
+        },
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "For suitable pain symptoms; severe/worsening pain still needs assessment."
+        }
+      ]
+    },
+    "pcos": {
+      "setting": "Usually outpatient; admission is for an acute complication, not PCOS itself",
+      "outpatient": [
+        "PCOS assessment, cycle/endometrial protection, metabolic care and fertility treatment are normally outpatient services."
+      ],
+      "admit": [
+        "Severe bleeding/instability, acute pelvic pain suggesting another diagnosis, or complications of fertility treatment requires urgent assessment; OHSS follows the fertility-complication pathway."
+      ],
+      "ready": [
+        "Any acute presentation has been assessed, a specific symptom/goal-based treatment is agreed and follow-up is feasible."
+      ],
+      "medicines": [
+        "State why each medicine is prescribed: cycle/endometrial protection, metabolic care or monitored ovulation induction are different indications. Do not start ovulation-induction medicines without the required monitoring/service plan."
+      ],
+      "tests": [
+        "Document indicated metabolic/endocrine tests, bleeding/endometrial assessment and the person responsible for results."
+      ],
+      "homeCare": [
+        "Discuss cycle tracking, when prolonged amenorrhoea/abnormal bleeding needs review, lifestyle support, pregnancy goals and contraception if pregnancy is not wanted."
+      ],
+      "followUp": [
+        {
+          "when": "At the planned PCOS/metabolic review",
+          "action": "Review cycles, medicine tolerance, cardiometabolic risk and endometrial protection."
+        },
+        {
+          "when": "During fertility treatment",
+          "action": "Use the monitored-cycle appointments and emergency contact arrangements."
+        }
+      ],
+      "returnImmediately": [
+        "Acute severe pelvic pain, heavy bleeding, faintness or breathlessness/abdominal swelling during fertility treatment requires urgent care."
+      ],
+      "sourceIds": [
+        "pcos-recommendations-detail",
+        "discharge-rcog-ohss"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "endometriosis": {
+      "setting": "Usually outpatient treatment; planned surgery or an acute complication may need admission",
+      "outpatient": [
+        "Stable pain/fertility symptoms can be assessed and managed through a planned gynaecology/endometriosis service."
+      ],
+      "admit": [
+        "Uncontrolled acute pain, systemic illness, heavy bleeding, bowel/urinary obstruction concern or another surgical diagnosis requires hospital assessment."
+      ],
+      "ready": [
+        "Pain is manageable on a feasible oral plan, no unresolved acute complication is present and the investigation/specialist review plan is agreed.",
+        "After surgery, document what was done, any bowel/bladder involvement and the relevant postoperative criteria."
+      ],
+      "medicines": [
+        "Reconcile the chosen analgesic/hormonal treatment with fertility goals, pregnancy possibility and contraindications. Provide stop/review dates for short-term treatment."
+      ],
+      "tests": [
+        "Assign imaging, histology and fertility-related results; persistent symptoms need reassessment even if initial testing is reassuring."
+      ],
+      "homeCare": [
+        "Give a pain/flare plan, activity guidance after surgery and a route to specialist support."
+      ],
+      "followUp": [
+        {
+          "when": "At the booked gynaecology/endometriosis review",
+          "action": "Assess treatment response, adverse effects and fertility priorities."
+        },
+        {
+          "when": "After surgery",
+          "action": "Review histology and any bowel/urinary/wound recovery plan at the agreed appointments."
+        }
+      ],
+      "returnImmediately": [
+        "Worsening severe pain, fever, vomiting, inability to pass urine, heavy bleeding or postoperative breathlessness needs urgent assessment."
+      ],
+      "sourceIds": [
+        "nice-ng73-detail",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "Selected short-term oral pain relief when appropriate."
+        }
+      ]
+    },
+    "adnexal-mass-torsion": {
+      "setting": "Suspected torsion: urgent admission/surgical assessment; stable cyst: specialist outpatient pathway",
+      "outpatient": [
+        "A reassuring, stable cyst/mass can be managed through a documented imaging/specialist pathway when malignancy/complication risk allows."
+      ],
+      "admit": [
+        "Sudden significant unilateral pain, vomiting, peritoneal signs, haemorrhage/instability or suspected torsion requires urgent hospital assessment. A normal Doppler signal alone does not establish that torsion is absent."
+      ],
+      "ready": [
+        "After torsion/surgery, pain, observations, bleeding, oral intake, mobility and voiding are satisfactory, with operative findings and remaining concerns reviewed.",
+        "A nonoperative discharge needs an explanation of the mass/uncertainty and a dated repeat-imaging or specialist plan."
+      ],
+      "medicines": [
+        "Provide the selected oral analgesic and any indicated prophylaxis with clear duration; do not mask worsening pain with an open-ended prescription."
+      ],
+      "tests": [
+        "Assign cyst histology or repeat imaging and document the responsible reviewer; suspicious findings need a specialist oncology route."
+      ],
+      "homeCare": [
+        "Explain recurrence/acute-pain symptoms, wound care after surgery and the fertility implications of the actual operation."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Book pathology/imaging review and give the acute-pain return route."
+        },
+        {
+          "when": "At postoperative/specialist review",
+          "action": "Assess recovery, pathology and whether further cyst surveillance/treatment is needed."
+        }
+      ],
+      "returnImmediately": [
+        "New/severe unilateral pain, persistent vomiting, faintness, fever, wound problems or breathlessness requires urgent care."
+      ],
+      "sourceIds": [
+        "med-acog-torsion",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "For uncomplicated recovery when prescribed; sudden or increasing pain needs reassessment."
+        }
+      ]
+    },
+    "urogynaecology-core": {
+      "setting": "Usually outpatient; admit acute retention, infection, organ compromise or postoperative complications",
+      "outpatient": [
+        "Stable incontinence, overactive bladder or prolapse is usually assessed through outpatient pelvic-floor/urogynaecology care."
+      ],
+      "admit": [
+        "Urinary retention, sepsis, severe pain, obstructed/compromised prolapse, renal concern or a significant postoperative complication requires urgent assessment and admission if ongoing care is needed."
+      ],
+      "ready": [
+        "Bladder emptying and pain are satisfactory, or a safe catheter plan has been established with support and a named voiding-trial appointment.",
+        "After surgery, no unresolved bleeding/infection/organ injury concern; mobility, nutrition and required home support are adequate."
+      ],
+      "medicines": [
+        "Reconcile bladder, bowel, analgesic and any antimicrobial medicines, reviewing side effects/retention risk rather than automatically continuing every preoperative drug."
+      ],
+      "tests": [
+        "Record urine culture, residual-volume/renal or other relevant findings; assign pathology or repeat testing when indicated."
+      ],
+      "homeCare": [
+        "If catheterised, teach drainage/bag care, blockage warnings and who removes/reviews it. Give the actual pelvic-floor, bowel and activity instructions for the operation or conservative treatment received."
+      ],
+      "followUp": [
+        {
+          "when": "At the booked catheter/voiding-trial appointment if needed",
+          "action": "Assess emptying and decide further care."
+        },
+        {
+          "when": "At specialist/pelvic-floor review",
+          "action": "Review symptoms, treatment response and postoperative healing if applicable."
+        },
+        {
+          "when": "After stress-incontinence surgery: within 6 months; after prolapse surgery: at 6 months (NICE)",
+          "action": "Arrange the surgical review, including vaginal/mesh examination when applicable. Catheter, wound and symptomatic problems require earlier review."
+        }
+      ],
+      "returnImmediately": [
+        "Inability to void or a blocked catheter, fever, worsening pain, heavy bleeding, dyspnoea or leg swelling requires prompt assessment."
+      ],
+      "sourceIds": [
+        "nice-ng123-detail",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "menopause": {
+      "setting": "Usually outpatient assessment and treatment",
+      "outpatient": [
+        "Menopause/perimenopause/POI assessment usually does not require hospital admission."
+      ],
+      "admit": [
+        "Heavy bleeding/instability, severe acute pain, suspected VTE or another serious acute illness requires urgent assessment rather than attributing it to menopause."
+      ],
+      "ready": [
+        "Any acute concern has been excluded/addressed; the treatment choice, bleeding advice and review plan are clear."
+      ],
+      "medicines": [
+        "Reconcile the selected HRT formulation and whether endometrial protection is required; discuss risks, contraindications and review. Do not stop or duplicate hormones without a plan."
+      ],
+      "tests": [
+        "Postmenopausal or otherwise concerning bleeding needs appropriate investigation/referral; assign outstanding tests and results."
+      ],
+      "homeCare": [
+        "Discuss symptom management, bone/cardiovascular health, sexual/urogenital concerns and contraception when still relevant."
+      ],
+      "followUp": [
+        {
+          "when": "3 months after starting treatment, then annually (NICE); sooner if needed",
+          "action": "Assess symptom response, adverse effects and unscheduled bleeding; provide the actual booked date."
+        },
+        {
+          "when": "Earlier for concerning bleeding or symptoms",
+          "action": "Investigate rather than waiting for a routine medicine review."
+        }
+      ],
+      "returnImmediately": [
+        "Heavy bleeding, chest pain, sudden breathlessness, unilateral leg swelling or neurological symptoms requires urgent care."
+      ],
+      "sourceIds": [
+        "nice-ng23-detail",
+        "discharge-cancer-referral"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "gyonc-endometrial": {
+      "setting": "Specialist oncology pathway; admit acute complications or planned treatment when required",
+      "outpatient": [
+        "A stable suspected/diagnosed malignancy does not automatically require emergency admission. Arrange an urgent named gynaecological-oncology/MDT pathway and track tissue/imaging results."
+      ],
+      "admit": [
+        "Major bleeding, bowel/urinary obstruction, uncontrolled pain, dehydration, VTE, sepsis or an unwell patient receiving anticancer therapy needs urgent hospital assessment.",
+        "Suspected neutropenic sepsis is an emergency; only a specialist risk-assessed pathway can support later outpatient care."
+      ],
+      "ready": [
+        "The acute problem is controlled and the treating team has agreed treatment-specific discharge criteria; oral intake, pain, mobility and any wound/drain/stoma/catheter plan are feasible.",
+        "The patient has the cancer-team emergency contact and a named owner/date for pathology, staging and the next treatment decision."
+      ],
+      "medicines": [
+        "Reconcile analgesia, anticoagulation, supportive and any antimicrobial treatment with the oncology team. Chemotherapy/hormonal anticancer prescriptions are specialist- and regimen-specific."
+      ],
+      "tests": [
+        "List pathology, imaging, blood/organ-function results and outstanding investigations, with the MDT/clinician responsible for acting on them."
+      ],
+      "homeCare": [
+        "Teach care of any wound/drain/stoma/catheter; discuss nutrition, function, fertility/sexual health and emotional/practical support according to the actual treatment.",
+        "If hysterectomy was performed, explain the operation/pathology plan and any consequences for fertility and ovarian function."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Provide the booked oncology/MDT-result review and procedure/device appointments."
+        },
+        {
+          "when": "During anticancer treatment",
+          "action": "Follow the regimen-specific blood tests and 24-hour unwell/fever contact instructions; do not wait for routine review when ill."
+        }
+      ],
+      "returnImmediately": [
+        "Fever/rigors or feeling acutely unwell during anticancer treatment, heavy bleeding, inability to pass urine/stool with pain/vomiting, chest symptoms or collapse needs immediate assessment."
+      ],
+      "sourceIds": [
+        "discharge-cancer-referral",
+        "discharge-neutropenic-sepsis",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [],
+      "scopeNote": "Admission triage and treatment-specific handover for oncology modules. Definitive cancer-treatment discharge criteria and systemic-therapy orders remain the responsibility of the treating MDT; this is not a chemotherapy protocol."
+    },
+    "gyonc-cervical": {
+      "setting": "Specialist oncology pathway; admit acute complications or planned treatment when required",
+      "outpatient": [
+        "A stable suspected/diagnosed malignancy does not automatically require emergency admission. Arrange an urgent named gynaecological-oncology/MDT pathway and track tissue/imaging results."
+      ],
+      "admit": [
+        "Major bleeding, bowel/urinary obstruction, uncontrolled pain, dehydration, VTE, sepsis or an unwell patient receiving anticancer therapy needs urgent hospital assessment.",
+        "Suspected neutropenic sepsis is an emergency; only a specialist risk-assessed pathway can support later outpatient care."
+      ],
+      "ready": [
+        "The acute problem is controlled and the treating team has agreed treatment-specific discharge criteria; oral intake, pain, mobility and any wound/drain/stoma/catheter plan are feasible.",
+        "The patient has the cancer-team emergency contact and a named owner/date for pathology, staging and the next treatment decision."
+      ],
+      "medicines": [
+        "Reconcile analgesia, anticoagulation, supportive and any antimicrobial treatment with the oncology team. Chemotherapy/hormonal anticancer prescriptions are specialist- and regimen-specific."
+      ],
+      "tests": [
+        "List pathology, imaging, blood/organ-function results and outstanding investigations, with the MDT/clinician responsible for acting on them.",
+        "Ensure biopsy/staging and any hydronephrosis/renal findings reach the treating cervical-cancer team."
+      ],
+      "homeCare": [
+        "Teach care of any wound/drain/stoma/catheter; discuss nutrition, function, fertility/sexual health and emotional/practical support according to the actual treatment."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Provide the booked oncology/MDT-result review and procedure/device appointments."
+        },
+        {
+          "when": "During anticancer treatment",
+          "action": "Follow the regimen-specific blood tests and 24-hour unwell/fever contact instructions; do not wait for routine review when ill."
+        }
+      ],
+      "returnImmediately": [
+        "Fever/rigors or feeling acutely unwell during anticancer treatment, heavy bleeding, inability to pass urine/stool with pain/vomiting, chest symptoms or collapse needs immediate assessment."
+      ],
+      "sourceIds": [
+        "discharge-cancer-referral",
+        "discharge-neutropenic-sepsis",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [],
+      "scopeNote": "Admission triage and treatment-specific handover for oncology modules. Definitive cancer-treatment discharge criteria and systemic-therapy orders remain the responsibility of the treating MDT; this is not a chemotherapy protocol."
+    },
+    "gyonc-ovarian-vulval-gtn-index": {
+      "setting": "Specialist oncology pathway; admit acute complications or planned treatment when required",
+      "outpatient": [
+        "A stable suspected/diagnosed malignancy does not automatically require emergency admission. Arrange an urgent named gynaecological-oncology/MDT pathway and track tissue/imaging results."
+      ],
+      "admit": [
+        "Major bleeding, bowel/urinary obstruction, uncontrolled pain, dehydration, VTE, sepsis or an unwell patient receiving anticancer therapy needs urgent hospital assessment.",
+        "Suspected neutropenic sepsis is an emergency; only a specialist risk-assessed pathway can support later outpatient care."
+      ],
+      "ready": [
+        "The acute problem is controlled and the treating team has agreed treatment-specific discharge criteria; oral intake, pain, mobility and any wound/drain/stoma/catheter plan are feasible.",
+        "The patient has the cancer-team emergency contact and a named owner/date for pathology, staging and the next treatment decision."
+      ],
+      "medicines": [
+        "Reconcile analgesia, anticoagulation, supportive and any antimicrobial treatment with the oncology team. Chemotherapy/hormonal anticancer prescriptions are specialist- and regimen-specific."
+      ],
+      "tests": [
+        "List pathology, imaging, blood/organ-function results and outstanding investigations, with the MDT/clinician responsible for acting on them."
+      ],
+      "homeCare": [
+        "Teach care of any wound/drain/stoma/catheter; discuss nutrition, function, fertility/sexual health and emotional/practical support according to the actual treatment.",
+        "For a trophoblastic diagnosis, use the histology-specific hCG surveillance plan; ovarian/vulval/vaginal treatment needs its own operative/oncology plan."
+      ],
+      "followUp": [
+        {
+          "when": "Before leaving",
+          "action": "Provide the booked oncology/MDT-result review and procedure/device appointments."
+        },
+        {
+          "when": "During anticancer treatment",
+          "action": "Follow the regimen-specific blood tests and 24-hour unwell/fever contact instructions; do not wait for routine review when ill."
+        }
+      ],
+      "returnImmediately": [
+        "Fever/rigors or feeling acutely unwell during anticancer treatment, heavy bleeding, inability to pass urine/stool with pain/vomiting, chest symptoms or collapse needs immediate assessment."
+      ],
+      "sourceIds": [
+        "discharge-cancer-referral",
+        "discharge-neutropenic-sepsis",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [],
+      "scopeNote": "Admission triage and treatment-specific handover for oncology modules. Definitive cancer-treatment discharge criteria and systemic-therapy orders remain the responsibility of the treating MDT; this is not a chemotherapy protocol."
+    },
+    "cervical-screening-hpv": {
+      "setting": "Usually outpatient screening/colposcopy/day treatment",
+      "outpatient": [
+        "HPV positivity, screening abnormalities and uncomplicated colposcopy/biopsy are normally managed without admission. Ensure abnormal results reach the colposcopy pathway."
+      ],
+      "admit": [
+        "Uncontrolled bleeding, severe pain, infection concern, an anaesthetic complication or suspected invasive cancer with acute complications requires assessment/admission as indicated."
+      ],
+      "ready": [
+        "After biopsy/treatment, bleeding and pain are controlled and the patient understands what was done, expected symptoms and who communicates results."
+      ],
+      "medicines": [
+        "Provide only the indicated analgesia or other procedure-specific prescription; routine HPV positivity is not an indication for antibiotics."
+      ],
+      "tests": [
+        "Record biopsy/histology and screening follow-up ownership; a missed result is not an acceptable discharge endpoint."
+      ],
+      "homeCare": [
+        "Give the exact bleeding, vaginal-product/sex and activity advice for biopsy versus LLETZ or another treatment; instructions differ by procedure."
+      ],
+      "followUp": [
+        {
+          "when": "At the stated histology/results date",
+          "action": "Review and communicate results, with a fallback contact if no result arrives."
+        },
+        {
+          "when": "At the booked screening/colposcopy interval",
+          "action": "Complete recommended surveillance or treatment; new symptoms need assessment sooner."
+        }
+      ],
+      "returnImmediately": [
+        "Heavy bleeding, offensive discharge, fever or severe/worsening pelvic pain needs prompt assessment."
+      ],
+      "sourceIds": [
+        "discharge-nhs-colposcopy"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "Short-term pain relief when appropriate after the procedure."
+        }
+      ]
+    },
+    "contraception": {
+      "setting": "Usually outpatient counselling/procedure",
+      "outpatient": [
+        "Routine contraceptive initiation, emergency contraception or uncomplicated IUCD/IUS care does not normally need admission."
+      ],
+      "admit": [
+        "Severe abdominal pain, suspected ectopic pregnancy/perforation, uncontrolled bleeding, infection/sepsis or a serious medicine complication requires urgent assessment."
+      ],
+      "ready": [
+        "The chosen method is clinically suitable, any procedure recovery is satisfactory and the patient understands efficacy, expected effects, backup needs and when to seek help."
+      ],
+      "medicines": [
+        "Provide the selected method’s complete directions and any indicated emergency contraception, without duplicating incompatible alternatives."
+      ],
+      "tests": [
+        "Record pregnancy assessment, any STI tests and a follow-up pregnancy test when indicated; assign results review."
+      ],
+      "homeCare": [
+        "Discuss expected bleeding/side effects, relevant device warnings, STI protection and how to obtain removal or a change of method."
+      ],
+      "followUp": [
+        {
+          "when": "At the method-specific review/test date when indicated",
+          "action": "Confirm correct use, testing and concerns; do not require unnecessary routine admission."
+        },
+        {
+          "when": "Whenever new symptoms occur",
+          "action": "Review pain, bleeding, pregnancy concern or intolerance rather than persisting with an unsafe method."
+        }
+      ],
+      "returnImmediately": [
+        "Severe/unilateral abdominal pain, collapse, heavy bleeding, fever or chest/VTE symptoms requires urgent care."
+      ],
+      "sourceIds": [
+        "cdc-mec-detail",
+        "med-cdc-ec",
+        "med-mirena-label"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "infertility-female": {
+      "setting": "Usually outpatient evaluation; admit severe fertility-treatment complications",
+      "outpatient": [
+        "Infertility assessment and most monitored treatment are outpatient services; arrange partner evaluation and the indicated diagnostic pathway."
+      ],
+      "admit": [
+        "Severe OHSS, pain not controlled by oral treatment, persistent vomiting/dehydration, reduced urine, breathing/chest symptoms, thrombosis concern or inability to attend monitoring may require admission.",
+        "Acute pain/bleeding after treatment also requires assessment for ectopic pregnancy, torsion or procedural injury."
+      ],
+      "ready": [
+        "Pain/intake, urine output, observations and relevant renal/haematological findings support home care; the fertility team has agreed monitoring and emergency access.",
+        "Do not discharge significant OHSS with a generic pain prescription but no fluid, urine, thrombosis and review plan."
+      ],
+      "medicines": [
+        "Reconcile the exact fertility medicines and any VTE prevention with the treating unit; avoid NSAIDs in OHSS because of renal risk."
+      ],
+      "tests": [
+        "Assign pregnancy testing, imaging and any OHSS blood/organ tests to the fertility service with exact review dates."
+      ],
+      "homeCare": [
+        "Explain fluid intake according to thirst, symptoms/urine monitoring, activity and the treating unit’s contact arrangements; provide postoperative advice if a procedure occurred."
+      ],
+      "followUp": [
+        {
+          "when": "At the booked monitored-cycle/OHSS review",
+          "action": "Reassess symptoms, urine/fluid balance and tests; confirm the next contact before leaving."
+        },
+        {
+          "when": "After a positive pregnancy test",
+          "action": "Follow the early-pregnancy location/viability pathway, especially with pain or bleeding."
+        }
+      ],
+      "returnImmediately": [
+        "Worsening pain/distension, vomiting, reduced urine, chest pain, breathlessness, leg symptoms or fainting requires urgent hospital assessment."
+      ],
+      "sourceIds": [
+        "nice-ng257-assessment-detail",
+        "nice-ng257-tests-detail",
+        "discharge-rcog-ohss"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "anc-overview": {
+      "setting": "Routine outpatient antenatal care; admit complications rather than uncomplicated pregnancy",
+      "outpatient": [
+        "Uncomplicated antenatal care is organised through the trimester/contact calendar, with additional reviews for risk."
+      ],
+      "admit": [
+        "Bleeding, severe pain, reduced movements, membrane rupture/labour concerns, severe BP symptoms, sepsis, significant dehydration or other maternal/fetal deterioration requires prompt maternity assessment and admission when needed."
+      ],
+      "ready": [
+        "Any presenting concern has been assessed; mother/fetal findings support home care and a specific result/referral/next-contact plan is documented."
+      ],
+      "medicines": [
+        "Reconcile supplements and any risk-based preventive treatment; an antenatal checklist is not permission to prescribe every preventive medicine to everyone."
+      ],
+      "tests": [
+        "Write due dates and reviewers for the trimester investigations and outstanding results; late booking needs a catch-up plan rather than waiting for the next routine contact."
+      ],
+      "homeCare": [
+        "Give pregnancy danger signs, contact numbers, transport/place-of-birth planning and the actual appointment dates."
+      ],
+      "followUp": [
+        {
+          "when": "At the next booked antenatal contact/test",
+          "action": "Follow the trimester calendar and each investigation’s own window."
+        },
+        {
+          "when": "Earlier for symptoms or an abnormal result",
+          "action": "Arrange appropriate review/referral promptly rather than waiting for a routine visit."
+        }
+      ],
+      "returnImmediately": [
+        "Bleeding, severe abdominal pain, reduced/absent movements, severe headache/visual symptoms, fever/systemic illness, breathlessness or fluid loss requires urgent assessment."
+      ],
+      "sourceIds": [
+        "nice-ng201-detail",
+        "anc-who-calendar",
+        "anc-india-programme"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "hysteroscopy-aftercare": {
+      "setting": "Usually outpatient/day care; admit a procedural complication",
+      "outpatient": [
+        "Uncomplicated outpatient hysteroscopy may be followed by home recovery once symptoms and the clinical assessment are satisfactory."
+      ],
+      "admit": [
+        "Suspected perforation/organ injury, uncontrolled bleeding, severe persistent pain, infection or an anaesthetic problem requires hospital assessment."
+      ],
+      "ready": [
+        "Pain/bleeding and observations support home care; recovery from any anaesthesia/sedation is adequate and transport/support instructions are met.",
+        "The patient understands what was done and when/how biopsy results will be communicated."
+      ],
+      "medicines": [
+        "Provide a defined oral pain-relief plan if needed; further treatment depends on the actual procedure/findings."
+      ],
+      "tests": [
+        "Name the reviewer of histology and any other outstanding results."
+      ],
+      "homeCare": [
+        "Explain expected cramps/bleeding, hygiene and the procedure-specific advice for sex/activity; give sedation/anaesthetic restrictions when applicable."
+      ],
+      "followUp": [
+        {
+          "when": "At the specified results/review appointment",
+          "action": "Communicate histology and further management; provide a contact if results do not arrive."
+        },
+        {
+          "when": "Sooner if recovery is not improving",
+          "action": "Assess persistent pain/bleeding or infection concern."
+        }
+      ],
+      "returnImmediately": [
+        "Heavy bleeding, fever/offensive discharge, severe/worsening pain, collapse or breathing difficulty needs urgent review."
+      ],
+      "sourceIds": [
+        "discharge-rcog-hysteroscopy",
+        "discharge-rcog-surgery"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": [
+        {
+          "regimenId": "paracetamol-acute-pain",
+          "when": "When appropriate for uncomplicated recovery."
+        }
+      ]
+    },
+    "critical-illness-aftercare": {
+      "setting": "Emergency admission; critical care and later ward/home transfer are separate steps",
+      "outpatient": [
+        "An unresolved collapse, amniotic-fluid embolism or major organ dysfunction requires hospital care, not direct home discharge."
+      ],
+      "admit": [
+        "Admit to the appropriate critical-care setting for respiratory/circulatory/neurological support and definitive investigation/treatment."
+      ],
+      "ready": [
+        "The cause and ongoing risks have been assessed, acute organ support is no longer required at the proposed destination and the receiving team can provide the agreed care.",
+        "Before home discharge, organ recovery, function, oral treatment/nutrition, mobility and support are adequate, with rehabilitation/specialty follow-up for remaining impairment."
+      ],
+      "medicines": [
+        "Reconcile all temporary critical-care medicines, continuing prescriptions and indication-specific anticoagulation; document what stopped and why."
+      ],
+      "tests": [
+        "Provide a structured critical-care-to-ward handover and assign outstanding diagnostic/organ tests; ward step-down is not itself clearance for home."
+      ],
+      "homeCare": [
+        "Explain the illness/course, likely recovery issues and physical/emotional support; address infant care, bereavement or safeguarding needs when relevant."
+      ],
+      "followUp": [
+        {
+          "when": "Before each transfer",
+          "action": "Name the receiving team, monitoring/rehabilitation plan and urgent escalation triggers."
+        },
+        {
+          "when": "At booked post-critical-care/specialty and postnatal reviews",
+          "action": "Review organ/function recovery, medicines, mental health and outstanding results."
+        }
+      ],
+      "returnImmediately": [
+        "Breathlessness, chest pain, collapse, confusion, seizures, heavy bleeding or recurrent severe illness requires emergency care."
+      ],
+      "sourceIds": [
+        "discharge-nice-acutely-ill",
+        "discharge-nice-postnatal",
+        "discharge-nhm-postnatal",
+        "discharge-who-postnatal"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    },
+    "anaphylaxis-aftercare": {
+      "setting": "Emergency treatment and risk-stratified observation before any discharge",
+      "outpatient": [
+        "Acute anaphylaxis needs emergency care. Home care is considered only after complete recovery and a senior assessment of recurrence risk."
+      ],
+      "admit": [
+        "Admit/continue monitored care for persistent symptoms, repeated adrenaline needs, severe respiratory compromise, ongoing allergen absorption, comorbidity or poor emergency access.",
+        "Pregnancy needs obstetric/fetal assessment in addition to the general anaphylaxis observation decision."
+      ],
+      "ready": [
+        "RCUK: selected fast-track discharge after 2 hours from symptom resolution requires prompt response to one early adrenaline dose, complete resolution, available auto-injectors with training and adequate supervision.",
+        "Observe at least 6 hours after resolution if two IM doses were needed or there was a previous biphasic reaction; at least 12 hours for severe reactions (>2 doses), severe asthma/respiratory compromise, continuing allergen absorption or difficult access/night-time safety concerns. Longer admission may be needed."
+      ],
+      "medicines": [
+        "Prescribe/supply adrenaline auto-injectors when indicated, with device-specific training and two available devices under the RCUK/NICE pathway. Do not replace IM adrenaline with antihistamine-only advice."
+      ],
+      "tests": [
+        "Record likely trigger, treatment/dose times, observation duration and any tryptase/allergy investigation plan."
+      ],
+      "homeCare": [
+        "Give a written emergency action plan, trigger avoidance, biphasic-reaction warning and instructions to use the prescribed auto-injector and summon emergency help."
+      ],
+      "followUp": [
+        {
+          "when": "Before discharge",
+          "action": "Confirm practical device access/training and a safe supervision/transport plan."
+        },
+        {
+          "when": "At the booked specialist allergy review",
+          "action": "Investigate the trigger and confirm prevention/rescue plans; add obstetric follow-up when pregnant."
+        }
+      ],
+      "returnImmediately": [
+        "Recurrent breathing/throat symptoms, collapse or rapidly returning systemic symptoms requires immediate rescue action and emergency help."
+      ],
+      "sourceIds": [
+        "discharge-rcuk-anaphylaxis"
+      ],
+      "checkedAt": "2026-10-18",
+      "medicineDetails": []
+    }
+  },
+  "procedures": {
+    "proc-pap-colposcopy": "cervical-screening-hpv",
+    "proc-iud-insertion": "contraception",
+    "proc-mva": "miscarriage-management",
+    "proc-balloon-tamponade": "pph",
+    "proc-hysteroscopy-diagnostic": "hysteroscopy-aftercare",
+    "proc-caesarean-core": "lscs"
+  },
+  "emergencies": {
+    "emg-pph": "pph",
+    "emg-eclampsia": "hdp-eclampsia",
+    "emg-severe-htn": "hdp-severe-features",
+    "emg-maternal-collapse": "critical-illness-aftercare",
+    "emg-sepsis": "maternal-sepsis",
+    "emg-shoulder-dystocia": "shoulder-dystocia",
+    "emg-cord-prolapse": "cord-prolapse",
+    "emg-eclampsia-postpartum-fit": "hdp-postpartum",
+    "emg-ectopic": "ectopic-pregnancy",
+    "emg-aph-massive": "aph-abruption",
+    "emg-pe": "vte",
+    "emg-massive-transfusion": "pph",
+    "emg-uterine-inversion": "pph",
+    "emg-afe": "critical-illness-aftercare",
+    "emg-anaphylaxis": "anaphylaxis-aftercare",
+    "emg-hypo-hyperglycemia": "pregestational-diabetes",
+    "emg-torsion": "adnexal-mass-torsion",
+    "emg-uterine-rupture": "lscs"
+  }
+}

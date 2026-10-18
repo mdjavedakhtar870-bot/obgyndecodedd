@@ -1,4 +1,5 @@
 import { ALL_TOPICS, CALCULATORS, DDx_PRESENTATIONS, DRUGS, EMERGENCIES, PROCEDURES, SOURCES } from '../content'
+import { DISCHARGE_SHARED_SOURCES } from '../content/admission-discharge'
 
 export const SITE_NAME = 'OBGYN Decoded'
 export const ICU_DECODED_URL = 'https://icudecodedd.com/'
@@ -36,6 +37,7 @@ export function verificationText(status?: string, date?: string): string {
 export const PUBLIC_PAGES: PageInfo[] = [
   page('/', SITE_NAME, SITE_DESCRIPTION, { title: 'OBGYN Decoded | Obstetrics & Gynaecology Clinical Reference' }),
   page('/browse', 'Obstetrics & gynaecology topics', 'Browse clinical topics by category, with authored verification status and links to the guideline sources used by each module.'),
+  page('/admission-discharge', 'Admission & discharge guide', 'Condition-specific hospital admission, discharge readiness, medicines, pending results, follow-up and urgent-return guidance, with a complete obstetric and gynaecology discharge checklist.', { kind: 'MedicalWebPage', sourceIds: [...DISCHARGE_SHARED_SOURCES, 'nice-ng192-detail'], status: 'review' }),
   page('/emergencies', 'Obstetric emergency protocols', 'Browse obstetric emergency pathways, including recognition, immediate actions, investigations, escalation and source references.'),
   page('/drugs', 'Obstetrics & gynaecology drug reference', 'Browse drug dose tables, routes, frequency, duration, pregnancy and lactation notes, contraindications and registered sources.'),
   page('/calculators', 'Obstetric & gynaecology calculators', 'Clinical calculators with inputs, formula explanations and source references for obstetrics and gynaecology.'),

@@ -3,6 +3,7 @@ import { Link } from '../components/links'
 import { useApp } from '../App'
 import { Blocks, DrugUseCard, SourceBadge, StatusBadge } from '../components/clinical'
 import { DOSE_CONFLICTS } from '../content/medication-regimens'
+import { AdmissionDischargeView } from '../components/AdmissionDischarge'
 
 export function EmergencyHub() {
   const { data } = useApp()
@@ -57,6 +58,7 @@ export function EmergencyDetail() {
         {!!emg.drugs?.length && <a className="btn sm" href="#emergency-regimens">Drug doses & preparation</a>}
         <a className="btn sm" href="#emergency-step-5">Definitive treatment</a>
         <a className="btn sm" href="#emergency-step-6">Escalation</a>
+        {emg.admissionDischarge && <a className="btn sm" href="#admission-discharge">Admission & discharge</a>}
       </nav>
 
       <Step n="1" title="RECOGNIZE">
@@ -88,6 +90,7 @@ export function EmergencyDetail() {
         <ul style={{ paddingLeft: 20, fontSize: 14 }}>{emg.postEventCare.map((r, i) => <li key={i}>{r}</li>)}</ul>
       </Step>
 
+      {emg.admissionDischarge && <><h2 className="section-h">Admission & discharge after the acute event</h2><AdmissionDischargeView plan={emg.admissionDischarge} /></>}
       <h2 className="section-h">Sources</h2>
       <div className="row">{emg.sourceIds.map((s) => <SourceBadge key={s} id={s} />)}</div>
     </article>

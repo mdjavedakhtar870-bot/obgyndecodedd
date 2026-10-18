@@ -30,7 +30,7 @@ export default function Home() {
       <span className="eyebrow">For doctors · India-first reference</span>
       <h1>From clinical problem<br />to the next decision.</h1>
       <p>Find the assessment, treatment pathway, drug regimen and follow-up in one guide. Open the sources beside the clinical detail, or go straight to an emergency protocol.</p>
-      <div className="hero-actions"><Link className="btn" to="/browse">Find a condition →</Link><Link className="btn secondary" to="/emergencies">Emergency pathways</Link></div>
+      <div className="hero-actions"><Link className="btn" to="/browse">Find a condition →</Link><Link className="btn secondary" to="/emergencies">Emergency pathways</Link><Link className="btn secondary" to="/admission-discharge">Admission & discharge</Link></div>
     </section>
 
     <nav className="library-stats" aria-label="Clinical reference collections">

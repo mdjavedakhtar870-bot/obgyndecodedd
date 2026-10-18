@@ -11,6 +11,7 @@ import { AboutPage, NotFoundPage, SitemapPage } from './pages/SitePages'
 import { PageMetadata } from './components/PageMetadata'
 import { getPage, ICU_DECODED_URL } from './lib/seo'
 import { Dialog } from './components/Dialog'
+import { AdmissionDischargePage } from './pages/AdmissionDischargePage'
 
 /* ---------------- App context ---------------- */
 interface Ctx {
@@ -64,6 +65,7 @@ function Shell({ children }: { children: ReactNode }) {
       <div className="nav-section">Clinical</div>
       <NavLink to="/" end className={navCls}><span className="ico" aria-hidden="true">⌂</span>Dashboard</NavLink>
       <NavLink to="/browse" className={navCls}><span className="ico" aria-hidden="true">☰</span>Browse topics</NavLink>
+      <NavLink to="/admission-discharge" className={navCls}><span className="ico" aria-hidden="true">↗</span>Admission & discharge</NavLink>
       <NavLink to="/ddx" className={navCls}><span className="ico" aria-hidden="true">⑃</span>Differential engine</NavLink>
       <NavLink to="/drugs" className={navCls}><span className="ico" aria-hidden="true">℞</span>Drugs</NavLink>
       <NavLink to="/calculators" className={navCls}><span className="ico" aria-hidden="true">∑</span>Calculators</NavLink>
@@ -134,6 +136,7 @@ export default function App() {
           <Route path="/procedures" element={<ProceduresPage />} />
           <Route path="/procedure/:id" element={<ProceduresPage />} />
           <Route path="/sources" element={<SourcesPage />} />
+          <Route path="/admission-discharge" element={<AdmissionDischargePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/sitemap" element={<SitemapPage />} />
           <Route path="/profile" element={<ProfilePage />} />

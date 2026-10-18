@@ -32,11 +32,12 @@ import { ONC_TOPICS } from './diseases/onc'
 import { MISC_TOPICS } from './diseases/misc'
 import { CLINICAL_DETAILS } from './clinical-details'
 import { applyMedicationAudit } from './medication-audit'
+import { withAdmissionDischarge, withEmergencyCare, withProcedureCare } from './admission-discharge'
 
 export const ALL_TOPICS: DiseaseTopic[] = [...DISEASE_TOPICS, ...MEDICAL_TOPICS_A, ...MEDICAL_TOPICS_B, ...INFECTION_TOPICS, ...GYNAE_TOPICS_A, ...GYNAE_TOPICS_B, ...ONC_TOPICS, ...MISC_TOPICS].map((topic) => {
   const clinicalDetail = CLINICAL_DETAILS[topic.id]
   return clinicalDetail ? { ...topic, clinicalDetail, sourceIds: [...new Set([...topic.sourceIds, ...clinicalDetail.sourceIds])] } : topic
-}).map(applyMedicationAudit)
+}).map(applyMedicationAudit).map(withAdmissionDischarge)
 
 export function getTopic(id: string): DiseaseTopic | undefined {
   return ALL_TOPICS.find((t) => t.id === id)
@@ -61,9 +62,9 @@ export { DRUGS }
 import { CALCULATORS_A } from './calculators'
 import { CALCULATORS_B } from './calculators-b'
 export const CALCULATORS = [...CALCULATORS_A, ...CALCULATORS_B]
-import { EMERGENCIES } from './emergencies'
-export { EMERGENCIES }
-import { PROCEDURES } from './procedures'
-export { PROCEDURES }
+import { EMERGENCIES as EMERGENCY_BASE } from './emergencies'
+export const EMERGENCIES = EMERGENCY_BASE.map(withEmergencyCare)
+import { PROCEDURES as PROCEDURE_BASE } from './procedures'
+export const PROCEDURES = PROCEDURE_BASE.map(withProcedureCare)
 import { DDx_PRESENTATIONS } from './ddx'
 export { DDx_PRESENTATIONS }

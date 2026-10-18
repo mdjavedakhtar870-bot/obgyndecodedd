@@ -907,16 +907,19 @@
     "dbCategory": "haematology-adjuncts",
     "regimens": [
       "iron-oral-treatment",
-      "iron-folate-prevention"
+      "iron-folate-prevention",
+      "iron-postpartum-treatment"
     ],
     "indications": [
       "Confirmed iron deficiency with anaemia; exclude haemoglobinopathy/other causes and assess urgency",
-      "Routine pregnancy supplementation, particularly high-anaemia-burden settings"
+      "Routine pregnancy supplementation, particularly high-anaemia-burden settings",
+      "Diagnosed postpartum iron-deficiency anaemia after haemorrhage is controlled and outpatient oral treatment is suitable"
     ],
     "pregnancySafety": "Dose ELEMENTAL iron; distinguish treatment from prevention",
     "lactation": "Compatible with indicated maternal supplementation",
     "status": "review",
-    "emergencyKit": false
+    "emergencyKit": false,
+    "regimenCheckedAt": "2026-10-18"
   },
   {
     "id": "calcium-oral",
@@ -1178,5 +1181,45 @@
     "pregnancySafety": "Specialist hospital induction after contraindication assessment",
     "lactation": "Short intrapartum use; reassess ongoing maternal treatment after birth",
     "status": "review"
+  },
+  {
+    "id": "paracetamol",
+    "name": "Paracetamol (acetaminophen)",
+    "drugClass": "Analgesic / antipyretic",
+    "dbCategory": "analgesics",
+    "regimens": [
+      "paracetamol-acute-pain"
+    ],
+    "indications": [
+      "Short-term maternal postoperative/postpartum pain or other mild pain after assessment; adult ≥50 kg"
+    ],
+    "pregnancySafety": "No pregnancy contraindication in the MSF oral monograph; use the appropriate dose.",
+    "lactation": "Compatible with indicated short-term maternal use.",
+    "adverseEffects": [
+      "Hepatotoxicity in overdose; check duplicate products."
+    ],
+    "status": "review",
+    "regimenCheckedAt": "2026-10-18",
+    "emergencyKit": false
+  },
+  {
+    "id": "ibuprofen",
+    "name": "Ibuprofen",
+    "drugClass": "NSAID analgesic",
+    "dbCategory": "analgesics",
+    "regimens": [
+      "ibuprofen-postpartum-pain"
+    ],
+    "indications": [
+      "Short-term pain relief after birth or gynaecological surgery when NSAIDs are appropriate; not an antenatal regimen"
+    ],
+    "pregnancySafety": "This reference is postpartum/nonpregnant only; do not use it as an antenatal prescription.",
+    "lactation": "Compatible with indicated short-term maternal use.",
+    "adverseEffects": [
+      "GI ulceration/bleeding, renal injury, hypersensitivity/bronchospasm."
+    ],
+    "status": "review",
+    "regimenCheckedAt": "2026-10-18",
+    "emergencyKit": false
   }
 ]

@@ -7,6 +7,7 @@ import { CLINICAL_DETAILS } from '../src/content/clinical-details'
 import { REGIMENS } from '../src/content/medication-regimens'
 import { TOPIC_REGIMENS } from '../src/content/medication-audit'
 import { ANTENATAL_CONTACTS, ANTENATAL_DETAIL } from '../src/content/antenatal-care'
+import { ADMISSION_DISCHARGE_PLANS, DISCHARGE_CHECKLIST, DISCHARGE_SHARED_SOURCES, POSTNATAL_TIMING, EMERGENCY_CARE_MAP, PROCEDURE_CARE_MAP } from '../src/content/admission-discharge'
 import catalogue from '../data/drug-catalogue.json'
 import protocols from '../data/emergency-protocols.json'
 import type { Block } from '../src/content/types'
@@ -111,10 +112,56 @@ test('every medication regimen is complete, traceable and used by a drug referen
   }
   for (const d of catalogue) for (const id of d.regimens) assert.ok(id in REGIMENS, `${d.id}: missing regimen ${id}`)
   for (const d of DRUGS) {
-    assert.equal(d.regimenCheckedAt, '2026-10-17')
+    assert.equal(d.regimenCheckedAt, catalogue.find((c) => c.id === d.id)?.regimenCheckedAt || '2026-10-17')
     assert.equal(d.status, 'review', `${d.id}: a regimen check must not certify the full reference`)
     for (const r of d.doseRows) assert.ok(r.frequency && r.duration && r.preparation && r.max && r.sourceId && r.monitoring?.length && r.contraindications?.length, `${d.id}: incomplete displayed row`)
   }
+})
+
+test('all clinical topics, emergencies and procedures have complete sourced admission/discharge plans', () => {
+  const fields = ['outpatient', 'admit', 'ready', 'medicines', 'tests', 'homeCare', 'returnImmediately'] as const
+  const references = new Set([...ALL_TOPICS.map((t) => t.id), ...Object.values(EMERGENCY_CARE_MAP), ...Object.values(PROCEDURE_CARE_MAP)])
+  assert.deepEqual(Object.keys(ADMISSION_DISCHARGE_PLANS).sort(), [...references].sort())
+  for (const item of [...ALL_TOPICS, ...EMERGENCIES, ...PROCEDURES]) {
+    const p = item.admissionDischarge
+    assert.ok(p, `${item.id}: missing care plan`)
+    assert.equal(item.status, 'review', `${item.id}: scoped addition must not certify the whole module`)
+    assert.equal(item.lastVerifiedAt, undefined)
+    assert.equal(p.checkedAt, '2026-10-18')
+    assert.ok(p.setting && p.followUp.length >= 2)
+    for (const key of fields) assert.ok(p[key].length && p[key].every((v) => v.trim().length > 20), `${item.id}: empty ${key}`)
+    for (const row of p.followUp) assert.ok(row.when && row.action, `${item.id}: incomplete follow-up`)
+    for (const sid of p.sourceIds) assert.ok(sourceIds.has(sid) && item.sourceIds.includes(sid), `${item.id}: lost plan source ${sid}`)
+    for (const m of p.medicineDetails) {
+      assert.ok(m.regimenId in REGIMENS && m.when, `${item.id}: invalid medicine detail ${m.regimenId}`)
+      assert.ok(p.sourceIds.includes(REGIMENS[m.regimenId as keyof typeof REGIMENS].sourceId), `${item.id}: lost medicine source`)
+    }
+  }
+  assert.equal(DISCHARGE_CHECKLIST.length, 12)
+  assert.equal(new Set(DISCHARGE_CHECKLIST.map((c) => c.id)).size, 12)
+  for (const id of DISCHARGE_SHARED_SOURCES) assert.ok(sourceIds.has(id))
+  const timings = JSON.stringify(POSTNATAL_TIMING)
+  for (const detail of ['India', '48 hours', 'WHO', '24 hours', 'NICE', 'not an automatic Indian']) assert.ok(timings.includes(detail))
+})
+
+test('high-risk discharge plans retain diagnosis-specific recovery and surveillance decisions', () => {
+  const p = (id: string) => JSON.stringify(ALL_TOPICS.find((t) => t.id === id)!.admissionDischarge)
+  for (const detail of ['≤150/100', 'stable or improving', '1–2 days', '6–8 weeks', '3-month renal']) assert.ok(p('hdp-pre-eclampsia').includes(detail), detail)
+  for (const detail of ['days 4 and 7', 'days 2, 4 and 7', 'salpingotomy', 'salpingectomy', '3 weeks']) assert.ok(p('ectopic-pregnancy').includes(detail), detail)
+  assert.match(p('pul'), /48 hours.*not earlier/)
+  assert.match(p('gdm'), /stop GDM glucose-lowering therapy immediately after birth/)
+  for (const detail of ['Never stop all insulin', 'ketones <0.6', 'pH >7.3', 'normal glucose alone']) assert.ok(p('pregestational-diabetes').includes(detail), detail)
+  assert.ok(!ALL_TOPICS.find((t) => t.id === 'pregestational-diabetes')!.admissionDischarge!.medicineDetails.some((m) => m.regimenId === 'glucose-severe-hypo'))
+  for (const detail of ['pregnancy', 'tubo-ovarian abscess', '72 hours', '24–48 hours', '14']) assert.ok(p('pid').includes(detail), detail)
+  assert.match(p('uti-pyelonephritis'), /14 days/)
+  assert.match(p('infertility-female'), /avoid NSAIDs in OHSS/)
+  assert.match(p('molar-pregnancy'), /partial mole.*1 month.*complete mole.*6 months/)
+  assert.match(JSON.stringify(PROCEDURES.find((p) => p.id === 'proc-balloon-tamponade')!.admissionDischarge), /removed.*bleeding reassessed/)
+  assert.match(JSON.stringify(EMERGENCIES.find((e) => e.id === 'emg-uterine-inversion')!.admissionDischarge), /inversion has been reduced/)
+  assert.match(JSON.stringify(EMERGENCIES.find((e) => e.id === 'emg-uterine-rupture')!.admissionDischarge), /uterine repair or hysterectomy/)
+  assert.match(REGIMENS['iron-postpartum-treatment'].dose, /120 mg ELEMENTAL.*400 micrograms/)
+  assert.match(REGIMENS['ibuprofen-postpartum-pain'].maxDose, /1,200 mg/)
+  assert.match(REGIMENS['paracetamol-acute-pain'].maxDose, /4 g in 24 hours/)
 })
 
 test('topic dose cards retain preparation, limits, monitoring and source after assembly', () => {

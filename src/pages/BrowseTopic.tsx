@@ -7,6 +7,7 @@ import { Accordion, AlgorithmFlow, Blocks, ClinicalTable, DrugUseCard, SourceBad
 import { CATEGORY_LABELS } from '../content'
 import { getSource } from '../content/sources'
 import type { Block, DiseaseTopic, TreatmentEngine } from '../content/types'
+import { AdmissionDischargeView } from '../components/AdmissionDischarge'
 
 /* ---------------- Browse ---------------- */
 export function BrowsePage() {
@@ -126,6 +127,7 @@ export function TopicPage() {
       ].map(([heading, items]) => Array.isArray(items) && items.length ? <div className="clinical-detail" key={String(heading)}><h3>{String(heading)}</h3><Blocks blocks={[{ kind: 'list', items }]} /></div> : null)}
       <div className="source-line"><span className="small muted">Sources for this detail:</span><div className="row">{topic.clinicalDetail.sourceIds.map((sid) => <SourceBadge key={sid} id={sid} />)}</div></div>
     </> },
+    topic.admissionDischarge && { id: 'care', label: 'Admission & discharge', content: <AdmissionDischargeView plan={topic.admissionDischarge} /> },
     topic.treatment && { id: 'tx', label: 'Treatment', content: <TreatmentEngineView topic={topic} /> },
     topic.classificationTable && {
       id: 'class', label: 'Classification',
@@ -198,6 +200,7 @@ export function TopicPage() {
         {relatedEmergencies.map((e) => <Link key={e.id} to={`/emergency/${e.id}`} className="badge danger">⚡ {e.title}</Link>)}
       </div>
       <div className="block-info">{topic.summary}</div>
+      {topic.admissionDischarge && <p><a className="btn sm" href="#admission-discharge">Admission & discharge ↓</a></p>}
       {topic.reviewerNote && <div className="block-warning"><b>Reviewer note:</b> {topic.reviewerNote}</div>}
       <Tabs key={topic.id} tabs={tabs} />
       <aside className="related-references" aria-label="Related clinical references">

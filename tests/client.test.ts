@@ -22,12 +22,32 @@ async function boot(path: string, favourites: string[] = []) {
   const dom = new JSDOM(readFileSync(file, 'utf8'), { url: pageUrl(origin, path), runScripts: 'outside-only', pretendToBeVisual: true, virtualConsole })
   const w = dom.window
   w.scrollTo = () => {}
+  w.HTMLElement.prototype.scrollIntoView = () => {}
   w.localStorage.setItem('od.theme', 'light')
   w.localStorage.setItem('od.favs', JSON.stringify(favourites))
   w.eval(bundle)
   await until(() => w.document.documentElement.getAttribute('data-theme') === 'light', 'Client did not hydrate and run its effects')
   return { dom, w, d: w.document, errors }
 }
+
+test('case-plan links reveal discharge guidance and repeated jumps work after focused reading', async () => {
+  const { dom, w, d, errors } = await boot('/admission-discharge')
+  try {
+    const link = d.querySelector<HTMLAnchorElement>('main a[href="/topic/pph/#admission-discharge"]')!
+    link.click()
+    await until(() => w.location.hash === '#admission-discharge' && d.querySelector('#care-ready'), 'Case plan did not open')
+    assert.equal(d.querySelectorAll('.tab-panel[hidden]').length, 0)
+    const focus = () => [...d.querySelectorAll<HTMLButtonElement>('.section-controls button')].find((n) => n.textContent!.includes('Full guide'))!.click()
+    focus()
+    await until(() => d.querySelectorAll('.tab-panel[hidden]').length > 0, 'Focused view did not open')
+    d.querySelector<HTMLAnchorElement>('a[href="#admission-discharge"]')!.click()
+    await until(() => d.querySelectorAll('.tab-panel[hidden]').length === 0, 'Repeated care jump left the plan hidden')
+    d.querySelector<HTMLAnchorElement>('a[href="#care-follow-up"]')!.click()
+    await until(() => w.location.hash === '#care-follow-up', 'Follow-up jump failed')
+    assert.ok(d.querySelector('#care-follow-up')!.textContent!.includes('6-week'))
+    assert.deepEqual(errors, [], 'Care navigation produced errors')
+  } finally { dom.window.close() }
+})
 
 test('production HTML hydrates with device preferences and tab/source controls remain usable', async () => {
   const topic = ALL_TOPICS.find((t) => t.id === 'hdp-eclampsia')!

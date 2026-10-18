@@ -24,7 +24,7 @@ let count = 0
 try {
   const index = JSON.parse(await readFile('dist/content-index.json', 'utf8'))
   const paths = [...index.pages.map((p) => new URL(p.url).pathname), '/profile/', '/404.html']
-  const samples = ['/', '/browse/', '/topic/anc-overview/', '/topic/gdm/', '/topic/hdp-eclampsia/', '/topic/pul/', '/topic/sti-chlamydia/', '/topic/ectopic-pregnancy/', '/emergency/emg-pph/', '/drug/magnesium-sulfate/', '/drug/oxytocin/', '/calculator/edd-ga/', '/procedure/proc-pap-colposcopy/', '/ddx/', '/sources/', '/sitemap/']
+  const samples = ['/', '/browse/', '/topic/anc-overview/', '/topic/gdm/', '/topic/hdp-eclampsia/', '/topic/pul/', '/topic/sti-chlamydia/', '/topic/ectopic-pregnancy/', '/emergency/emg-pph/', '/drug/magnesium-sulfate/', '/drug/oxytocin/', '/calculator/edd-ga/', '/procedure/proc-pap-colposcopy/', '/ddx/', '/sources/', '/sitemap/', '/admission-discharge/', '/topic/lscs/', '/topic/pid/', '/procedure/proc-balloon-tamponade/']
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 320, height: 844 } })
   const page = await context.newPage()
   async function widthCheck(path, width) {
@@ -118,6 +118,37 @@ try {
   const emergencyText = (await emergencyDrugs.innerText()).toLowerCase()
   for (const phrase of ['carboprost', 'preparation', 'max dose', 'duration', 'monitoring']) assert.ok(emergencyText.includes(phrase), `PPH detail missing ${phrase}`)
   await screenshot('pph-drug-preparation-390')
+  await open('/admission-discharge/')
+  await p.getByLabel('Find an admission or discharge plan').fill('haemorrhage')
+  assert.ok(await p.locator('main #case-plans .grid-cards article').count() > 0)
+  await p.getByLabel('Find an admission or discharge plan').fill('')
+  await p.getByLabel('Filter discharge plans by category').selectOption('early-pregnancy')
+  assert.ok(await p.locator('main #case-plans .grid-cards article').count() < 66)
+  await p.getByLabel('Filter discharge plans by category').selectOption('')
+  await screenshot('admission-discharge-hub-390')
+  await p.locator('main a[href="/topic/pph/#admission-discharge"]').click()
+  await p.waitForURL('**/topic/pph/#admission-discharge')
+  assert.equal(await p.locator('.tab-panel[hidden]').count(), 0)
+  await p.getByRole('navigation', { name: 'Admission and discharge sections' }).getByRole('link', { name: 'Discharge readiness', exact: true }).click()
+  await p.waitForTimeout(180)
+  const readyBox = await p.locator('#care-ready').boundingBox()
+  assert.ok(readyBox && readyBox.y >= 125 && readyBox.y < 500, 'Discharge readiness jump is hidden by the phone header')
+  await screenshot('pph-discharge-readiness-390')
+  await p.getByRole('button', { name: 'Full guide', exact: false }).click()
+  assert.ok(await p.locator('.tab-panel[hidden]').count() > 0)
+  await p.locator('a[href="#admission-discharge"]').first().click()
+  await p.waitForTimeout(180)
+  assert.equal(await p.locator('.tab-panel[hidden]').count(), 0, 'Repeated care jump left the plan hidden')
+  await p.getByRole('navigation', { name: 'Admission and discharge sections' }).getByRole('link', { name: 'Medicines', exact: true }).click()
+  await p.locator('#care-medicines summary').click()
+  assert.ok(await p.locator('#care-medicines .dose-card').isVisible())
+  for (const path of ['/topic/hdp-pre-eclampsia/', '/topic/lscs/']) {
+    await open(path)
+    await p.locator('a[href="#admission-discharge"]').first().click()
+    await p.getByRole('navigation', { name: 'Admission and discharge sections' }).getByRole('link', { name: 'Follow-up', exact: true }).click()
+    await p.waitForTimeout(180)
+    await screenshot(`${path.includes('lscs') ? 'caesarean' : 'preeclampsia'}-discharge-followup-390`)
+  }
   // Reproduce Netlify's production-only badge, which otherwise covers Search,
   // Urgent and Menu despite every page passing the viewport-width checks.
   await p.evaluate(() => {
@@ -158,7 +189,7 @@ try {
   assert.ok(!await p.locator('.bottom-nav').isVisible())
   await screenshot('home-1440')
   await phone.close()
-  console.log(`${count} layout checks passed; phone menu, focus, search, full guide, keyboard tabs, trimester investigation jumps and calendar, labelled dose cards, emergency dose/preparation jump, hosting-badge clearance, enlarged text, hydration and desktop navigation passed.`)
+  console.log(`${count} layout checks passed; phone menu, focus, search, full guide, keyboard tabs, trimester investigation jumps and calendar, labelled dose cards, emergency dose/preparation jump, admission-plan search/filter, discharge readiness/medicine/follow-up jumps, repeated care links after focused reading, hosting-badge clearance, enlarged text, hydration and desktop navigation passed.`)
 } finally {
   await browser.close()
   await new Promise((done) => server.close(done))
