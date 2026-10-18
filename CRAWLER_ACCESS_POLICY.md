@@ -13,6 +13,7 @@ Owner instruction, 17 October 2026: allow Gemini, ChatGPT, muse.ai, Grok and Cla
 | Intended service | Verification source | Current support |
 | --- | --- | --- |
 | Gemini / Google Search | Google's dedicated common-crawler and Google-controlled user-triggered-fetcher ranges | Verified range check; excludes general Google Cloud ranges and customer-controlled fetchers |
+| GoogleOther / GoogleOther-Image / GoogleOther-Video | Google's `common-crawlers.json` dedicated ranges | Verified common-crawler check; also explicitly permitted by robots.txt |
 | ChatGPT / OpenAI | `openai.com/searchbot.json`, `openai.com/chatgpt-user.json`, `openai.com/gptbot.json` | Verified range check per documented agent |
 | Claude / Anthropic | `claude.com/crawling/bots.json`, linked by Anthropic's crawler documentation | Verified range check |
 | Grok | No dedicated official verifiable crawler identity source established in this research | No automatic exception; requests claiming this service are denied until verified support is added |
@@ -43,3 +44,13 @@ The owner authorised deploying the supplied HTML verification tag. `Google-Site-
 References checked: https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers and https://support.google.com/webmasters/answer/9008080 .
 
 The HTML verification file is copied unchanged into `public/` and served at the site root. No wildcard verification-file allowance is configured; unrelated files and clinical content remain outside the verifier exception.
+
+## GoogleOther correction — 18 October 2026
+
+The owner reported a legitimate `GoogleOther` request to `/ddx/ddx-dyspnoea-pregnancy/` from `66.249.66.8` receiving 403. The guard recognised the name as automation but omitted it from the supported Google candidates, so it denied the request before checking Google's feed. The default robots rule also disallowed this crawler.
+
+Google's official common-crawler documentation lists `GoogleOther`, `GoogleOther-Image` and `GoogleOther-Video`. Their access now requires the same trusted `context.ip` check against the dedicated common-crawler feed, with explicit robots permission. No all-Google-network or name-only exception was added. Unknown Google agents remain denied, verification-feed failure remains 503 and the ownership verifier retains its separate path restriction.
+
+Checked 18 October 2026: Google's feed (creation time `2026-10-16T14:46:09.000000`) contains `66.249.66.0/27`, which includes the reported IP. Reverse DNS returned `crawl-66-249-66-8.googlebot.com`, and the hostname's A record returned `66.249.66.8`. This confirms the request's network identity as shown in the owner's log; it is not inferred from country, phone model or referrer. Google describes GoogleOther as a generic crawler for product teams, including research and development; it is distinct from Googlebot's search-indexing role.
+
+Primary references: https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers , https://developers.google.com/static/crawling/ipranges/common-crawlers.json and https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests .

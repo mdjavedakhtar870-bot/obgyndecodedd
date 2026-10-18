@@ -30,6 +30,23 @@ test('referrers, location/device claims and forwarded IP headers do not grant ac
   assert.equal((await evaluateCrawlerRequest(forgedOpenAI, '8.8.8.8', load)).action, 'deny')
 })
 
+test('the reported GoogleOther request and its documented variants require Google common-crawler identity', async () => {
+  const reported = 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.52 Mobile Safari/537.36 (compatible; GoogleOther)'
+  const path = '/ddx/ddx-dyspnoea-pregnancy/'
+  for (const ua of [reported, 'GoogleOther', 'GoogleOther-Image/1.0', 'GoogleOther-Video/1.0']) {
+    const feeds: FeedId[] = []
+    const exactGoogleRange = async (feed: FeedId) => { feeds.push(feed); return feed === 'google-common' ? ['66.249.66.0/27', '2001:4860:4801:10::/64'] : [] }
+    assert.equal((await evaluateCrawlerRequest(request(ua, path), '66.249.66.8', exactGoogleRange)).reason, 'verified-GoogleOther', ua)
+    assert.deepEqual(feeds, ['google-common'])
+    assert.equal((await evaluateCrawlerRequest(request(ua, '/assets/app.js'), '2001:4860:4801:10::1', exactGoogleRange)).action, 'allow')
+    assert.equal((await evaluateCrawlerRequest(request(ua, path), '66.249.66.32', exactGoogleRange)).action, 'deny', 'Outside the dedicated range')
+    assert.equal((await evaluateCrawlerRequest(request(ua, path, { referer: 'https://google.com/', 'x-forwarded-for': '66.249.66.8' }), '8.8.8.8', exactGoogleRange)).action, 'deny', 'Forged identity headers')
+    assert.equal((await evaluateCrawlerRequest(request(ua, path), '192.0.2.1', load)).action, 'deny', 'A different Google feed does not establish common-crawler identity')
+    assert.equal((await evaluateCrawlerRequest(request(ua, path), '66.249.66.8', async () => { throw new Error('feed down') })).action, 'unavailable')
+  }
+  for (const ua of ['GoogleOther-Unknown/1.0', 'GoogleOtherFake', 'FakeGoogleOther', 'Google-Read-Aloud']) assert.equal((await evaluateCrawlerRequest(request(ua, path), '66.249.66.8', load)).action, 'deny', ua)
+})
+
 test('Google site verification requires its Google-controlled network and is limited to ownership-verification resources', async () => {
   const ua = 'Mozilla/5.0 (compatible; Google-Site-Verification/1.0)'
   const file = '/googlebccbb9eca5d04c4f.html'
@@ -46,7 +63,7 @@ test('Google site verification requires its Google-controlled network and is lim
 })
 
 test('other declared bots and services without verified identities are denied', async () => {
-  for (const ua of ['bingbot/2.0', 'Perplexity-User/1.0', 'Applebot/0.1', 'Bytespider', 'CCBot/2.0', 'GoogleOther', 'xAI-Grok/1.0', 'MuseBot/1.0', 'muse.ai', 'curl/8.0', '', `${browser} HeadlessChrome/140`]) {
+  for (const ua of ['bingbot/2.0', 'Perplexity-User/1.0', 'Applebot/0.1', 'Bytespider', 'CCBot/2.0', 'xAI-Grok/1.0', 'MuseBot/1.0', 'muse.ai', 'curl/8.0', '', `${browser} HeadlessChrome/140`]) {
     assert.equal((await evaluateCrawlerRequest(request(ua), '66.249.66.1', load)).action, 'deny', ua)
   }
 })

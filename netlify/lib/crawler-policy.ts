@@ -66,6 +66,9 @@ function candidate(ua: string): { name: string; feeds: FeedId[] } | undefined {
   if (/\bGPTBot\b/i.test(ua)) return { name: 'OpenAI', feeds: ['openai-training'] }
   if (/\bClaude(?:Bot|-SearchBot|-User)\b/i.test(ua)) return { name: 'Claude', feeds: ['anthropic'] }
   if (/\bGoogle-Site-Verification\b/i.test(ua)) return { name: 'Google site verification', feeds: ['google-user'] }
+  // GoogleOther is a documented common crawler, separate from Googlebot.
+  // Recognise only its documented tokens; the trusted-IP check still applies.
+  if (/(?:^|[\s;(])GoogleOther(?:-(?:Image|Video))?(?=$|[\s;/)])/i.test(ua)) return { name: 'GoogleOther', feeds: ['google-common'] }
   if (/\b(?:Googlebot(?:-Image|-Video)?|Google-InspectionTool|Google-CloudVertexBot)\b/i.test(ua)) return { name: 'Google Search/Vertex', feeds: ['google-common'] }
   if (/\bGoogle-GeminiNotebook\b/i.test(ua)) return { name: 'Gemini Notebook retrieval', feeds: ['google-user'] }
   return undefined

@@ -149,7 +149,7 @@ test('robots deny other agents and Netlify is configured to enforce identity che
   assert.match(robots, /User-agent: \*\nDisallow: \/\n/)
   assert.ok(!robots.includes('User-agent: bingbot'))
   if (site.indexable) {
-    for (const ua of ['Googlebot', 'OAI-SearchBot', 'ChatGPT-User', 'Claude-SearchBot', 'Claude-User', 'Google-Extended']) assert.ok(robots.includes(`User-agent: ${ua}\n`))
+    for (const ua of ['Googlebot', 'GoogleOther', 'GoogleOther-Image', 'GoogleOther-Video', 'OAI-SearchBot', 'ChatGPT-User', 'Claude-SearchBot', 'Claude-User', 'Google-Extended']) assert.ok(robots.includes(`User-agent: ${ua}\n`))
     assert.ok(robots.includes(`Sitemap: ${site.origin}/sitemap.xml`))
   }
   const edge = readFileSync('netlify/edge-functions/crawler-access.ts', 'utf8')

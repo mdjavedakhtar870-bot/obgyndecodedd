@@ -57,6 +57,7 @@ If an error is found: FIX → VERIFY SOURCE → UPDATE DATA → RETEST (`typeche
 - Use Netlify's trusted `context.ip` and a provider's documented, dedicated crawler ranges. Do not allow all Google Cloud/AWS/Azure addresses. Verification failures deny automated access; they must not fall back to trusting a name.
 - Grok and muse.ai remain intended providers with **no configured verifiable identity** until a dedicated official identity/range source is established. Never invent their crawler names or open a User-Agent-only exception to claim all five work.
 - See `CRAWLER_ACCESS_POLICY.md` and the edge-function security tests. Do not weaken these controls during SEO changes.
+- Owner's 18 October correction: recognise documented `GoogleOther`, `GoogleOther-Image` and `GoogleOther-Video` under the Google provider and permit them in robots.txt only with the existing common-crawler network verification. The reported `66.249.66.8` request was verified using Google's feed and reverse/forward DNS. Do not restore its blanket name-based denial or add an unverified name-only allowance.
 - Ask the owner before a production deployment or a `main` update that triggers one.
 
 ## Owner's backlink request — 17 October 2026
