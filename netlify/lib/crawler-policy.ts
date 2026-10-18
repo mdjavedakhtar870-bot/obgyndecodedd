@@ -63,12 +63,13 @@ function candidate(ua: string): { name: string; feeds: FeedId[] } | undefined {
   if (/\bChatGPT-User\b/i.test(ua)) return { name: 'ChatGPT user retrieval', feeds: ['openai-user'] }
   if (/\bGPTBot\b/i.test(ua)) return { name: 'OpenAI', feeds: ['openai-training'] }
   if (/\bClaude(?:Bot|-SearchBot|-User)\b/i.test(ua)) return { name: 'Claude', feeds: ['anthropic'] }
+  if (/\bGoogle-Site-Verification\b/i.test(ua)) return { name: 'Google site verification', feeds: ['google-user'] }
   if (/\b(?:Googlebot(?:-Image|-Video)?|Google-InspectionTool|Google-CloudVertexBot)\b/i.test(ua)) return { name: 'Google Search/Vertex', feeds: ['google-common'] }
   if (/\bGoogle-GeminiNotebook\b/i.test(ua)) return { name: 'Gemini Notebook retrieval', feeds: ['google-user'] }
   return undefined
 }
 
-const AUTOMATED = /bot\b|crawler|spider|scrap(?:e|er|ing)|headless|python|curl\b|wget\b|httpclient|go-http-client|node-fetch|undici|axios|aiohttp|requests\b|selenium|playwright|puppeteer|facebookexternalhit|whatsapp|GPT|Claude|Gemini|Grok|muse\.ai|MuseBot|GoogleOther|Google-Agent|Google-NotebookLM|Google-CWS|GoogleMessages|Google-Pinpoint|GoogleProducer|Google-Read-Aloud|Perplexity|DeepSeek|Qwen|Meta-External|Amazon-User|Ahrefs|Semrush/i
+const AUTOMATED = /bot\b|crawler|spider|scrap(?:e|er|ing)|headless|python|curl\b|wget\b|httpclient|go-http-client|node-fetch|undici|axios|aiohttp|requests\b|selenium|playwright|puppeteer|facebookexternalhit|whatsapp|GPT|Claude|Gemini|Grok|muse\.ai|MuseBot|GoogleOther|Google-Agent|Google-Site-Verification|Google-NotebookLM|Google-CWS|GoogleMessages|Google-Pinpoint|GoogleProducer|Google-Read-Aloud|Perplexity|DeepSeek|Qwen|Meta-External|Amazon-User|Ahrefs|Semrush/i
 
 export async function evaluateCrawlerRequest(request: Request, trustedIp: string, load: LoadRanges): Promise<Decision> {
   let path: string
@@ -77,6 +78,9 @@ export async function evaluateCrawlerRequest(request: Request, trustedIp: string
   const ua = request.headers.get('user-agent') || ''
   const who = candidate(ua)
   if (who) {
+    // Search Console HTML-tag verification needs only the public homepage.
+    // This does not grant the verifier clinical pages, assets or text exports.
+    if (who.name === 'Google site verification' && (path !== '/' || !['GET', 'HEAD'].includes(request.method))) return { action: 'deny', reason: 'verification-homepage-only' }
     try {
       const sets = await Promise.all(who.feeds.map(load))
       return sets.some((ranges) => ipInRanges(trustedIp, ranges)) ? { action: 'allow', reason: `verified-${who.name}` } : { action: 'deny', reason: 'unverified-provider-claim' }

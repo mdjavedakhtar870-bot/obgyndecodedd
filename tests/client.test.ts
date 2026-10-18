@@ -4,9 +4,10 @@ import { readFileSync, readdirSync } from 'node:fs'
 import { JSDOM, VirtualConsole } from 'jsdom'
 import { ALL_TOPICS, CALCULATORS, DRUGS } from '../src/content'
 import { getPage, pageUrl } from '../src/lib/seo'
+import { resolveSiteConfig } from '../scripts/site-config'
 
 const bundle = readFileSync(`dist/assets/${readdirSync('dist/assets').find((f) => f.endsWith('.js'))}`, 'utf8')
-const origin = 'https://obgyndecodedd.netlify.app'
+const { origin } = resolveSiteConfig()
 const pause = () => new Promise((r) => setTimeout(r, 10))
 async function until(predicate: () => unknown, message: string) {
   for (let i = 0; i < 200; i++) { if (predicate()) return; await pause() }

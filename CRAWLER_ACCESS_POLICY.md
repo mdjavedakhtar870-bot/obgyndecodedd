@@ -35,3 +35,9 @@ A materially stronger confidentiality boundary would require authenticated docto
 - Anthropic crawlers and official range feed: https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler
 
 Do not confuse this SEO/crawler work with a new clinical audit. Existing clinical content and its authored verification statuses have not been independently reverified by this change.
+
+## Search Console ownership verification — 18 October 2026
+
+The owner authorised deploying the supplied HTML verification tag. `Google-Site-Verification` is recognised only for homepage GET/HEAD requests and must match `user-triggered-fetchers-google.json` using trusted `context.ip`. It receives no exception for clinical pages, assets or text exports. Other Google user-triggered tools and customer-controlled Google Cloud fetchers remain outside this exception. Feed failure still returns 503, and forged names/referrers/forwarded IPs are denied.
+
+References checked: https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers and https://support.google.com/webmasters/answer/9008080 .

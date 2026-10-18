@@ -79,3 +79,9 @@ If an error is found: FIX → VERIFY SOURCE → UPDATE DATA → RETEST (`typeche
 - The WHO baseline calendar has eight contacts (one/two/five by trimester); label India's programme minimum and NICE's parity-based appointment schedules separately. Risk-driven reviews and timed investigations may require extra appointments.
 - Do not present every blood test, late ultrasound, CTG or GBS swab as mandatory in every pregnancy. Show routine, repeated and indication-driven care clearly.
 - Keep the national Indian non-fasting glucose method distinct from fasting diagnostic frameworks, including preparation, sample timing, thresholds and postpartum follow-up. Preserve the scoped check date and full-module review status.
+
+## Owner's Search Console verification request — 18 October 2026
+
+- The owner explicitly authorised the supplied Google verification tag and production deployment. Preserve the tag in the initial homepage head, outside generated SEO markers.
+- The project’s current primary Netlify address is `https://obgyndecode.netlify.app/`; build canonical URLs from Netlify's primary URL and keep the local fallback current.
+- The Google Site Verifier exception is limited to homepage GET/HEAD requests with an IP in the official Google-controlled user-triggered-fetcher feed. Never replace it with a User-Agent-only exception or allow all Google Cloud ranges.

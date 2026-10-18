@@ -29,7 +29,7 @@ npm run build
 npm run preview        # serve the production build locally
 ```
 
-**Netlify deploy:** `netlify.toml` sets the build command (`npm run build`) and publish directory (`dist`). The build prerenders every registered route. No secrets or custom environment variables are required. The primary Netlify `URL` is used for canonical links; `SITE_URL` can explicitly override it. Local production builds default to the verified site, `https://obgyndecodedd.netlify.app`. Deploy previews/branch deploys are noindex and deny automatic crawling. Ask the owner before updating the live production site.
+**Netlify deploy:** `netlify.toml` sets the build command (`npm run build`) and publish directory (`dist`). The build prerenders every registered route. No secrets or custom environment variables are required. The primary Netlify `URL` is used for canonical links; `SITE_URL` can explicitly override it. Local production builds default to the current Netlify site, `https://obgyndecode.netlify.app`. Deploy previews/branch deploys are noindex and deny automatic crawling. Ask the owner before updating the live production site.
 
 ## Tests & verification
 
@@ -82,3 +82,5 @@ The mobile check requires a Chromium installation (`npx playwright-core install 
 After an approved deployment, submit `/sitemap.xml` in Google Search Console, inspect representative deep URLs, and check CDN/security settings allow the verified crawler requests. The edge guard intentionally runs on every site path, including assets, so its use has Netlify request/edge usage implications.
 
 The antenatal guide at `/topic/anc-overview/` includes a source-linked eight-contact calendar, first/second/third-trimester investigation tables, repeat timing and the Indian glucose-test method. India/NICE schedule differences and risk-driven extra care are labelled. These scoped checks do not change the module's full clinical-review status.
+
+Google Search Console HTML-tag verification is configured in the source `index.html`, outside the generated SEO markers so it survives prerendering. Keep the owner’s verification tag in the initial `<head>`. Google Site Verifier can fetch only the homepage with GET/HEAD after its trusted client IP matches Google’s dedicated Google-controlled fetcher feed; a claimed Google name, referrer or forwarded-IP header is insufficient. The URL-prefix property must match the current HTTPS site address.

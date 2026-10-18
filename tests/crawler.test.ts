@@ -30,6 +30,18 @@ test('referrers, location/device claims and forwarded IP headers do not grant ac
   assert.equal((await evaluateCrawlerRequest(forgedOpenAI, '8.8.8.8', load)).action, 'deny')
 })
 
+test('Google site verification requires its Google-controlled network and is limited to the homepage', async () => {
+  const ua = 'Mozilla/5.0 (compatible; Google-Site-Verification/1.0)'
+  assert.equal((await evaluateCrawlerRequest(request(ua, '/'), '192.0.2.1', load)).action, 'allow')
+  assert.equal((await evaluateCrawlerRequest(new Request('https://site.example/', { method: 'HEAD', headers: { 'user-agent': ua } }), '192.0.2.1', load)).action, 'allow')
+  assert.equal((await evaluateCrawlerRequest(request(ua, '/', { referer: 'https://www.google.com/', 'x-forwarded-for': '192.0.2.1' }), '8.8.8.8', load)).action, 'deny')
+  assert.equal((await evaluateCrawlerRequest(request(ua, '/'), '66.249.66.1', load)).action, 'deny', 'Common crawler ranges are not verifier identity')
+  for (const path of ['/topic/anc-overview/', '/assets/app.js', '/llms-full.txt']) assert.equal((await evaluateCrawlerRequest(request(ua, path), '192.0.2.1', load)).reason, 'verification-homepage-only')
+  assert.equal((await evaluateCrawlerRequest(new Request('https://site.example/', { method: 'POST', headers: { 'user-agent': ua } }), '192.0.2.1', load)).action, 'deny')
+  assert.equal((await evaluateCrawlerRequest(request(ua, '/'), '192.0.2.1', async () => { throw new Error('feed down') })).action, 'unavailable')
+  assert.equal((await evaluateCrawlerRequest(request('Google-Read-Aloud', '/'), '192.0.2.1', load)).action, 'deny')
+})
+
 test('other declared bots and services without verified identities are denied', async () => {
   for (const ua of ['bingbot/2.0', 'Perplexity-User/1.0', 'Applebot/0.1', 'Bytespider', 'CCBot/2.0', 'GoogleOther', 'xAI-Grok/1.0', 'MuseBot/1.0', 'muse.ai', 'curl/8.0', '', `${browser} HeadlessChrome/140`]) {
     assert.equal((await evaluateCrawlerRequest(request(ua), '66.249.66.1', load)).action, 'deny', ua)

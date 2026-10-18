@@ -1,7 +1,7 @@
 export function resolveSiteConfig(env: Record<string, string | undefined> = process.env) {
   // Netlify supplies URL for the production site's primary domain, including
   // custom domains. DEPLOY_URL must not become a canonical production URL.
-  const value = env.SITE_URL || env.URL || 'https://obgyndecodedd.netlify.app'
+  const value = env.SITE_URL || env.URL || 'https://obgyndecode.netlify.app'
   const parsed = new URL(value)
   // The Netlify API may report an HTTP primary URL even though its .netlify.app
   // domain supports automatic HTTPS. Canonical pages use the verified HTTPS URL.
