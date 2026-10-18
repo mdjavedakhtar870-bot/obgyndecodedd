@@ -14,6 +14,8 @@ export const FEED_URLS: Record<FeedId, string> = {
   anthropic: 'https://claude.com/crawling/bots.json',
 }
 
+const VERIFICATION_PATHS = new Set(['/', '/googlebccbb9eca5d04c4f.html'])
+
 export type Decision = { action: 'allow' | 'deny' | 'unavailable'; reason: string }
 export type LoadRanges = (feed: FeedId) => Promise<string[]>
 
@@ -78,9 +80,9 @@ export async function evaluateCrawlerRequest(request: Request, trustedIp: string
   const ua = request.headers.get('user-agent') || ''
   const who = candidate(ua)
   if (who) {
-    // Search Console HTML-tag verification needs only the public homepage.
+    // Search Console verification needs only the homepage or the exact owner-supplied file.
     // This does not grant the verifier clinical pages, assets or text exports.
-    if (who.name === 'Google site verification' && (path !== '/' || !['GET', 'HEAD'].includes(request.method))) return { action: 'deny', reason: 'verification-homepage-only' }
+    if (who.name === 'Google site verification' && (!VERIFICATION_PATHS.has(path) || !['GET', 'HEAD'].includes(request.method))) return { action: 'deny', reason: 'verification-resource-only' }
     try {
       const sets = await Promise.all(who.feeds.map(load))
       return sets.some((ranges) => ipInRanges(trustedIp, ranges)) ? { action: 'allow', reason: `verified-${who.name}` } : { action: 'deny', reason: 'unverified-provider-claim' }

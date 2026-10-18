@@ -84,4 +84,6 @@ If an error is found: FIX → VERIFY SOURCE → UPDATE DATA → RETEST (`typeche
 
 - The owner explicitly authorised the supplied Google verification tag and production deployment. Preserve the tag in the initial homepage head, outside generated SEO markers.
 - The project’s current primary Netlify address is `https://obgyndecode.netlify.app/`; build canonical URLs from Netlify's primary URL and keep the local fallback current.
-- The Google Site Verifier exception is limited to homepage GET/HEAD requests with an IP in the official Google-controlled user-triggered-fetcher feed. Never replace it with a User-Agent-only exception or allow all Google Cloud ranges.
+- The Google Site Verifier exception is limited to GET/HEAD requests for the homepage and the exact owner-supplied `/googlebccbb9eca5d04c4f.html` file with an IP in the official Google-controlled user-triggered-fetcher feed. Never replace it with a User-Agent-only exception or allow all Google Cloud ranges.
+
+- The owner subsequently supplied the HTML verification file. Preserve its exact bytes in `public/googlebccbb9eca5d04c4f.html`; do not wrap it in the app shell or add it as a clinical sitemap page. This is the Search Console HTML-file method.

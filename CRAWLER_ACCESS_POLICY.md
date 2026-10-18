@@ -38,6 +38,8 @@ Do not confuse this SEO/crawler work with a new clinical audit. Existing clinica
 
 ## Search Console ownership verification — 18 October 2026
 
-The owner authorised deploying the supplied HTML verification tag. `Google-Site-Verification` is recognised only for homepage GET/HEAD requests and must match `user-triggered-fetchers-google.json` using trusted `context.ip`. It receives no exception for clinical pages, assets or text exports. Other Google user-triggered tools and customer-controlled Google Cloud fetchers remain outside this exception. Feed failure still returns 503, and forged names/referrers/forwarded IPs are denied.
+The owner authorised deploying the supplied HTML verification tag. `Google-Site-Verification` is recognised only for GET/HEAD requests for the homepage or the exact owner-supplied `/googlebccbb9eca5d04c4f.html` file and must match `user-triggered-fetchers-google.json` using trusted `context.ip`. It receives no exception for clinical pages, assets or text exports. Other Google user-triggered tools and customer-controlled Google Cloud fetchers remain outside this exception. Feed failure still returns 503, and forged names/referrers/forwarded IPs are denied.
 
 References checked: https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers and https://support.google.com/webmasters/answer/9008080 .
+
+The HTML verification file is copied unchanged into `public/` and served at the site root. No wildcard verification-file allowance is configured; unrelated files and clinical content remain outside the verifier exception.
